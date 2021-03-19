@@ -12,7 +12,7 @@ PROJECT_DIR = os.environ.get("PROJECT_DIR")
 schedule_data_dir = PROJECT_DIR + '/data/raw/Schedule Data/'
 
 # Output files
-processed_schedule_data_file = PROJECT_DIR + '/data/clean/schedule_data.csv'
+processed_schedule_data_file = PROJECT_DIR + '/data/processed/schedule_data.csv'
 
 ##### Cleaning Functions
 def clean_calendar_data():

@@ -1,0 +1,4100 @@
+JudgeName,FullAssignment,Week,Assignment,County
+ALFORD,Union GS,49-2000,Union GS,Union
+BARBER,Richland CP,49-2000,Richland CP,Richland
+BAXLEY,Williamsburg GS,49-2000,Williamsburg GS,Williamsburg
+BEATTY,7th Cir. CPNJ,49-2000,7th Cir. CPNJ,na
+BREEDEN,Horry GS,49-2000,Horry GS,Horry
+BROGDON,Marion GS,49-2000,Marion GS,Marion
+BUCKNER,Colleton GS,49-2000,Colleton GS,Colleton
+BURCH,Jasper CP,49-2000,Jasper CP,Jasper
+CLARY,Medical,49-2000,Medical,na
+COLE,Cherokee CP,49-2000,Cherokee CP,Cherokee
+COOPER TW,Lee GS ,49-2000,Lee GS ,Lee
+DENNIS,Berkeley CP + Charleston GS(SGJ) 8,49-2000,Berkeley CP ,Berkeley
+FEW,Greenville GS,49-2000,Greenville GS,Greenville
+FLOYD H,13th Cir. CPNJ/PCR,49-2000,13th Cir. CPNJ/PCR,na
+FLOYD S,Horry GS,49-2000,Horry GS,Horry
+GOODE,Lexington CP,49-2000,Lexington CP,Lexington
+GOODSTEIN,Orangeburg GS,49-2000,Orangeburg GS,Orangeburg
+GREGORY,Beaufort GS,49-2000,Beaufort GS,Beaufort
+HALL,Anderson GS,49-2000,Anderson GS,Anderson
+HARWELL,12th Cir. CPNJ,49-2000,12th Cir. CPNJ,na
+HAYES,York CP,49-2000,York CP,York
+JOHNSON,Laurens GS,49-2000,Laurens GS,Laurens
+KEESLEY,Sick,49-2000,Sick,na
+KINARD,Kershaw GS,49-2000,Kershaw GS,Kershaw
+KING,Sumter CP,49-2000,Sumter CP,Sumter
+KITTREDGE,Greenville CP,49-2000,Greenville CP,Greenville
+LEE,Richland CP,49-2000,Richland CP,Richland
+LOCKEMY,Chesterfield GS,49-2000,Chesterfield GS,Chester
+MACAULAY,10th Cir. CPNJ/PCR,49-2000,10th Cir. CPNJ/PCR,na
+MANNING,Richland GS,49-2000,Richland GS,Richland
+MARTIN,Charleston GS,49-2000,Charleston GS,Charleston
+MCKELLAR,Charleston CP,49-2000,Charleston CP,Charleston
+MILLING,14th Cir. CPNJ,49-2000,14th Cir. CPNJ,na
+NICHOLSON,Anderson CP,49-2000,Anderson CP,Anderson
+PATTERSON,Greenville GS,49-2000,Greenville GS,Greenville
+PEEPLES,X,49-2000,X,na
+PIEPER,Berkeley GS,49-2000,Berkeley GS,Berkeley
+RAWL,Beaufort CP,49-2000,Beaufort CP,Beaufort
+SAUNDERS,Greenwood GS,49-2000,Greenwood GS,Greenwood
+SHORT,Lancaster GS,49-2000,Lancaster GS,Lancaster
+THOMAS,15th Cir. CPNJ + Horry GS CP CC 5,49-2000,15th Cir. CPNJ ,na
+WATSON,11th Cir. CPNJ,49-2000,11th Cir. CPNJ,na
+WESTBROOK,Lexington GS,49-2000,Lexington GS,Lexington
+WILLIAMS,Richland GS,49-2000,Richland GS,Richland
+BROWN,Charleston GS,49-2000,Charleston GS,Charleston
+COTTINGHAM,Dillon GS,49-2000,Dillon GS,Dillon
+HUGHSTON,Dorchester CP,49-2000,Dorchester CP,Dorchester
+PYLE,Pickens CP,49-2000,Pickens CP,Pickens
+SMOAK,Spartanburg GS,49-2000,Spartanburg GS,Spartanburg
+COOPER GT,X,49-2000,X,na
+NEWMAN,Clarendon CP,49-2000,Clarendon CP,Clarendon
+SIMMONS,na,49-2000,na,na
+GIER,na,49-2000,na,na
+BERGDORF,Orangeburg CPNJ 6,49-2000,Orangeburg CPNJ 6,Orangeburg
+ALFORD,York GS,50-2000,York GS,York
+BARBER,X,50-2000,X,na
+BAXLEY,X,50-2000,X,na
+BEATTY,X,50-2000,X,na
+BREEDEN,Horry CP,50-2000,Horry CP,Horry
+BROGDON,Marion CP,50-2000,Marion CP,Marion
+BUCKNER,X,50-2000,X,na
+BURCH,X,50-2000,X,na
+CLARY,Medical,50-2000,Medical,na
+COLE,Spartanburg GS,50-2000,Spartanburg GS,Spartanburg
+COOPER TW,Lee GS + Aiken GS CC 15,50-2000,Lee GS ,Lee
+DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,50-2000,Berkeley CP ,Berkeley
+FEW,13th Cir. CPNJ,50-2000,13th Cir. CPNJ,na
+FLOYD H,X,50-2000,X,na
+FLOYD S,Horry GS,50-2000,Horry GS,Horry
+GOODE,Lancaster GS,50-2000,Lancaster GS,Lancaster
+GOODSTEIN,X,50-2000,X,na
+GREGORY,Beaufort GS,50-2000,Beaufort GS,Beaufort
+HALL,Anderson GS,50-2000,Anderson GS,Anderson
+HARWELL,Florence GS,50-2000,Florence GS,Florence
+HAYES,York GS,50-2000,York GS,York
+JOHNSON,Anderson GS,50-2000,Anderson GS,Anderson
+KEESLEY,Sick,50-2000,Sick,na
+KINARD,Richland GS,50-2000,Richland GS,Richland
+KING,Clarendon GS,50-2000,Clarendon GS,Clarendon
+KITTREDGE,Greenville GS,50-2000,Greenville GS,Greenville
+LEE,Orangeburg CP,50-2000,Orangeburg CP,Orangeburg
+LOCKEMY,Florence CP,50-2000,Florence CP,Florence
+MACAULAY,Oconee GS,50-2000,Oconee GS,Oconee
+MANNING,5th Cir. CPNJ/PCR,50-2000,5th Cir. CPNJ/PCR,na
+MARTIN,Charleston CP,50-2000,Charleston CP,Charleston
+MCKELLAR,5th Cir. CPNJ,50-2000,5th Cir. CPNJ,na
+MILLING,"4th Cir. CPNJ 11 + X 12,13,14,15",50-2000,4th Cir. CPNJ 11 ,na
+NICHOLSON,Anderson CP,50-2000,Anderson CP,Anderson
+PATTERSON,Greenville GS,50-2000,Greenville GS,Greenville
+PEEPLES,X,50-2000,X,na
+PIEPER,X,50-2000,X,na
+RAWL,Charleston CP,50-2000,Charleston CP,Charleston
+SAUNDERS,Greenwood GS,50-2000,Greenwood GS,Greenwood
+SHORT,Chester CP,50-2000,Chester CP,Chester
+THOMAS,Georgetown GS,50-2000,Georgetown GS,Georgetown
+WATSON,X,50-2000,X,na
+WESTBROOK,X,50-2000,X,na
+WILLIAMS,Richland GS,50-2000,Richland GS,Richland
+BROWN,Charleston GS,50-2000,Charleston GS,Charleston
+COTTINGHAM,Darlington GS,50-2000,Darlington GS,Darlington
+HUGHSTON,Dorchester CP,50-2000,Dorchester CP,Dorchester
+PYLE,Pickens GS,50-2000,Pickens GS,Pickens
+SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,50-2000,Aiken GS CC ,Aiken
+COOPER GT,X,50-2000,X,na
+NEWMAN,Spartanburg CP,50-2000,Spartanburg CP,Spartanburg
+SIMMONS,"Greenville CPNJ 14,15",50-2000,"Greenville CPNJ 14,15",Greenville
+GIER,York CPNJ 14,50-2000,York CPNJ 14,York
+BERGDORF,na,50-2000,na,na
+ALFORD,in chambers,51-2000,in chambers,na
+BARBER,in chambers,51-2000,in chambers,na
+BAXLEY,in chambers,51-2000,in chambers,na
+BEATTY,in chambers,51-2000,in chambers,na
+BREEDEN,"in chambers + 15th Cir. CPNJ 18,20",51-2000,in chambers ,na
+BROGDON,"in chambers + 12th Cir. CPNJ 18,19",51-2000,in chambers ,na
+BUCKNER,in chambers,51-2000,in chambers,na
+BURCH,in chambers + Chesterfield GS 21,51-2000,in chambers ,na
+CLARY,Medical,51-2000,Medical,na
+COLE,X,51-2000,X,na
+COOPER TW,"in chambers + 3rd Cir. CPNJ 20,21",51-2000,in chambers ,na
+DENNIS,in chambers,51-2000,in chambers,na
+FEW,"in chambers + 13th Cir. CPNJ 20,21 + Greenville GS 19",51-2000,in chambers ,na
+FLOYD H,in chambers,51-2000,in chambers,na
+FLOYD S,in chambers,51-2000,in chambers,na
+GOODE,in chambers,51-2000,in chambers,na
+GOODSTEIN,"in chambers + X 18,19,20,21",51-2000,in chambers ,na
+GREGORY,in chambers + Orangeburg GS 18 + 14th Cir. CPNJ 20,51-2000,in chambers ,na
+HALL,in chambers + Anderson GS 19,51-2000,in chambers ,na
+HARWELL,in chambers + Florence GS 20,51-2000,in chambers ,na
+HAYES,in chambers,51-2000,in chambers,na
+JOHNSON,in chambers,51-2000,in chambers,na
+KEESLEY,in chambers,51-2000,in chambers,na
+KINARD,in chambers + 5th Cir. CPNJ 20 + 8th Cir. Cap.PCR 21,51-2000,in chambers ,na
+KING,"in chambers + 3rd Cir. CPNJ 20,21",51-2000,in chambers ,na
+KITTREDGE,"in chambers + X 18,19,20",51-2000,in chambers ,na
+LEE,in chambers,51-2000,in chambers,na
+LOCKEMY,in chambers,51-2000,in chambers,na
+MACAULAY,in chambers,51-2000,in chambers,na
+MANNING,in chambers,51-2000,in chambers,na
+MARTIN,in chambers,51-2000,in chambers,na
+MCKELLAR,in chambers,51-2000,in chambers,na
+MILLING,"in chambers + X 18,19,20",51-2000,in chambers ,na
+NICHOLSON,in chambers + 10th Cir. CPNJ 18 + 10th Cir. CPNJ 19 + Anderson GS CC 19,51-2000,in chambers ,na
+PATTERSON,in chambers,51-2000,in chambers,na
+PEEPLES,in chambers,51-2000,in chambers,na
+PIEPER,in chambers + 9th Cir. CPNJ 19,51-2000,in chambers ,na
+RAWL,in chambers,51-2000,in chambers,na
+SAUNDERS,in chambers + 13th Cir. CPNJ 19,51-2000,in chambers ,na
+SHORT,in chambers,51-2000,in chambers,na
+THOMAS,in chambers,51-2000,in chambers,na
+WATSON,in chambers,51-2000,in chambers,na
+WESTBROOK,in chambers + 11th Cir. CPNJ 19,51-2000,in chambers ,na
+WILLIAMS,in chambers,51-2000,in chambers,na
+BROWN,na,51-2000,na,na
+COTTINGHAM,na,51-2000,na,na
+HUGHSTON,na,51-2000,na,na
+PYLE,na,51-2000,na,na
+SMOAK,na,51-2000,na,na
+COOPER GT,in chambers,51-2000,in chambers,na
+NEWMAN,in chambers + 3rd Cir. CPNJ 18,51-2000,in chambers ,na
+SIMMONS,Greenville GS 22,51-2000,Greenville GS 22,Greenville
+GIER,na,51-2000,na,na
+BERGDORF,na,51-2000,na,na
+ALFORD,in chambers,52-2000,in chambers,na
+BARBER,in chambers,52-2000,in chambers,na
+BAXLEY,in chambers,52-2000,in chambers,na
+BEATTY,in chambers,52-2000,in chambers,na
+BREEDEN,in chambers,52-2000,in chambers,na
+BROGDON,"in chambers + X 28,29",52-2000,in chambers ,na
+BUCKNER,in chambers + 14th Cir. CPNJ 27,52-2000,in chambers ,na
+BURCH,in chambers,52-2000,in chambers,na
+CLARY,Medical,52-2000,Medical,na
+COLE,in chambers,52-2000,in chambers,na
+COOPER TW,in chambers,52-2000,in chambers,na
+DENNIS,in chambers,52-2000,in chambers,na
+FEW,in chambers,52-2000,in chambers,na
+FLOYD H,in chambers,52-2000,in chambers,na
+FLOYD S,in chambers,52-2000,in chambers,na
+GOODE,in chambers,52-2000,in chambers,na
+GOODSTEIN,in chambers + 15th Cir. CPNJ 27,52-2000,in chambers ,na
+GREGORY,in chambers,52-2000,in chambers,na
+HALL,in chambers,52-2000,in chambers,na
+HARWELL,in chambers,52-2000,in chambers,na
+HAYES,in chambers,52-2000,in chambers,na
+JOHNSON,in chambers,52-2000,in chambers,na
+KEESLEY,in chambers,52-2000,in chambers,na
+KINARD,in chambers,52-2000,in chambers,na
+KING,in chambers,52-2000,in chambers,na
+KITTREDGE,in chambers + Greenville GS 29,52-2000,in chambers ,na
+LEE,in chambers,52-2000,in chambers,na
+LOCKEMY,in chambers,52-2000,in chambers,na
+MACAULAY,in chambers,52-2000,in chambers,na
+MANNING,in chambers,52-2000,in chambers,na
+MARTIN,in chambers,52-2000,in chambers,na
+MCKELLAR,in chambers + 5th Cir. CPNJ 29,52-2000,in chambers ,na
+MILLING,in chambers + 4th Cir. CPNJ 28,52-2000,in chambers ,na
+NICHOLSON,in chambers,52-2000,in chambers,na
+PATTERSON,in chambers,52-2000,in chambers,na
+PEEPLES,in chambers,52-2000,in chambers,na
+PIEPER,in chambers,52-2000,in chambers,na
+RAWL,in chambers,52-2000,in chambers,na
+SAUNDERS,in chambers,52-2000,in chambers,na
+SHORT,in chambers,52-2000,in chambers,na
+THOMAS,in chambers,52-2000,in chambers,na
+WATSON,in chambers,52-2000,in chambers,na
+WESTBROOK,in chambers + 11th Cir. CPNJ 27 + X 29,52-2000,in chambers ,na
+WILLIAMS,in chambers,52-2000,in chambers,na
+BROWN,na,52-2000,na,na
+COTTINGHAM,na,52-2000,na,na
+HUGHSTON,na,52-2000,na,na
+PYLE,na,52-2000,na,na
+SMOAK,na,52-2000,na,na
+COOPER GT,in chambers,52-2000,in chambers,na
+NEWMAN,in chambers,52-2000,in chambers,na
+SIMMONS,na,52-2000,na,na
+GIER,na,52-2000,na,na
+BERGDORF,na,52-2000,na,na
+DENNIS,Berkeley CP + Charleston GS(SGJ) 8,49-2000, Charleston GS(SGJ) 8,Charleston
+THOMAS,15th Cir. CPNJ + Horry GS CP CC 5,49-2000, Horry GS CP CC 5,Horry
+SIMMONS,na,49-2000,na,na
+GIER,na,49-2000,na,na
+COOPER TW,Lee GS + Aiken GS CC 15,50-2000, Aiken GS CC 15,Aiken
+DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,50-2000, Sumter GS(SGJ) ,Sumter
+MILLING,"4th Cir. CPNJ 11 + X 12,13,14,15",50-2000," X 12,13,14,15",na
+SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,50-2000, Barnwell GS CC ,Barnwell
+BERGDORF,na,50-2000,na,na
+BREEDEN,"in chambers + 15th Cir. CPNJ 18,20",51-2000," 15th Cir. CPNJ 18,20",na
+BROGDON,"in chambers + 12th Cir. CPNJ 18,19",51-2000," 12th Cir. CPNJ 18,19",na
+BURCH,in chambers + Chesterfield GS 21,51-2000, Chesterfield GS 21,Chester
+COOPER TW,"in chambers + 3rd Cir. CPNJ 20,21",51-2000," 3rd Cir. CPNJ 20,21",na
+FEW,"in chambers + 13th Cir. CPNJ 20,21 + Greenville GS 19",51-2000," 13th Cir. CPNJ 20,21 ",na
+GOODSTEIN,"in chambers + X 18,19,20,21",51-2000," X 18,19,20,21",na
+GREGORY,in chambers + Orangeburg GS 18 + 14th Cir. CPNJ 20,51-2000, Orangeburg GS 18 ,Orangeburg
+HALL,in chambers + Anderson GS 19,51-2000, Anderson GS 19,Anderson
+HARWELL,in chambers + Florence GS 20,51-2000, Florence GS 20,Florence
+KINARD,in chambers + 5th Cir. CPNJ 20 + 8th Cir. Cap.PCR 21,51-2000, 5th Cir. CPNJ 20 ,na
+KING,"in chambers + 3rd Cir. CPNJ 20,21",51-2000," 3rd Cir. CPNJ 20,21",na
+KITTREDGE,"in chambers + X 18,19,20",51-2000," X 18,19,20",na
+MILLING,"in chambers + X 18,19,20",51-2000," X 18,19,20",na
+NICHOLSON,in chambers + 10th Cir. CPNJ 18 + 10th Cir. CPNJ 19 + Anderson GS CC 19,51-2000, 10th Cir. CPNJ 18 ,na
+PIEPER,in chambers + 9th Cir. CPNJ 19,51-2000, 9th Cir. CPNJ 19,na
+SAUNDERS,in chambers + 13th Cir. CPNJ 19,51-2000, 13th Cir. CPNJ 19,na
+WESTBROOK,in chambers + 11th Cir. CPNJ 19,51-2000, 11th Cir. CPNJ 19,na
+BROWN,na,51-2000,na,na
+COTTINGHAM,na,51-2000,na,na
+HUGHSTON,na,51-2000,na,na
+PYLE,na,51-2000,na,na
+SMOAK,na,51-2000,na,na
+NEWMAN,in chambers + 3rd Cir. CPNJ 18,51-2000, 3rd Cir. CPNJ 18,na
+GIER,na,51-2000,na,na
+BERGDORF,na,51-2000,na,na
+BROGDON,"in chambers + X 28,29",52-2000," X 28,29",na
+BUCKNER,in chambers + 14th Cir. CPNJ 27,52-2000, 14th Cir. CPNJ 27,na
+GOODSTEIN,in chambers + 15th Cir. CPNJ 27,52-2000, 15th Cir. CPNJ 27,na
+KITTREDGE,in chambers + Greenville GS 29,52-2000, Greenville GS 29,Greenville
+MCKELLAR,in chambers + 5th Cir. CPNJ 29,52-2000, 5th Cir. CPNJ 29,na
+MILLING,in chambers + 4th Cir. CPNJ 28,52-2000, 4th Cir. CPNJ 28,na
+WESTBROOK,in chambers + 11th Cir. CPNJ 27 + X 29,52-2000, 11th Cir. CPNJ 27 ,na
+BROWN,na,52-2000,na,na
+COTTINGHAM,na,52-2000,na,na
+HUGHSTON,na,52-2000,na,na
+PYLE,na,52-2000,na,na
+SMOAK,na,52-2000,na,na
+SIMMONS,na,52-2000,na,na
+GIER,na,52-2000,na,na
+BERGDORF,na,52-2000,na,na
+SIMMONS,na,49-2000,na,na
+GIER,na,49-2000,na,na
+DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,50-2000, Charleston CP CC,Charleston
+SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,50-2000, Bamberg GS,Bamberg
+BERGDORF,na,50-2000,na,na
+FEW,"in chambers + 13th Cir. CPNJ 20,21 + Greenville GS 19",51-2000, Greenville GS 19,Greenville
+GREGORY,in chambers + Orangeburg GS 18 + 14th Cir. CPNJ 20,51-2000, 14th Cir. CPNJ 20,na
+KINARD,in chambers + 5th Cir. CPNJ 20 + 8th Cir. Cap.PCR 21,51-2000, 8th Cir. Cap.PCR 21,na
+NICHOLSON,in chambers + 10th Cir. CPNJ 18 + 10th Cir. CPNJ 19 + Anderson GS CC 19,51-2000, 10th Cir. CPNJ 19 ,na
+BROWN,na,51-2000,na,na
+COTTINGHAM,na,51-2000,na,na
+HUGHSTON,na,51-2000,na,na
+PYLE,na,51-2000,na,na
+SMOAK,na,51-2000,na,na
+GIER,na,51-2000,na,na
+BERGDORF,na,51-2000,na,na
+WESTBROOK,in chambers + 11th Cir. CPNJ 27 + X 29,52-2000, X 29,na
+BROWN,na,52-2000,na,na
+COTTINGHAM,na,52-2000,na,na
+HUGHSTON,na,52-2000,na,na
+PYLE,na,52-2000,na,na
+SMOAK,na,52-2000,na,na
+SIMMONS,na,52-2000,na,na
+GIER,na,52-2000,na,na
+BERGDORF,na,52-2000,na,na
+SIMMONS,na,49-2000,na,na
+GIER,na,49-2000,na,na
+BERGDORF,na,50-2000,na,na
+NICHOLSON,in chambers + 10th Cir. CPNJ 18 + 10th Cir. CPNJ 19 + Anderson GS CC 19,51-2000, Anderson GS CC 19,Anderson
+BROWN,na,51-2000,na,na
+COTTINGHAM,na,51-2000,na,na
+HUGHSTON,na,51-2000,na,na
+PYLE,na,51-2000,na,na
+SMOAK,na,51-2000,na,na
+GIER,na,51-2000,na,na
+BERGDORF,na,51-2000,na,na
+BROWN,na,52-2000,na,na
+COTTINGHAM,na,52-2000,na,na
+HUGHSTON,na,52-2000,na,na
+PYLE,na,52-2000,na,na
+SMOAK,na,52-2000,na,na
+SIMMONS,na,52-2000,na,na
+GIER,na,52-2000,na,na
+BERGDORF,na,52-2000,na,na
+SIMMONS,na,49-2000,na,na
+GIER,na,49-2000,na,na
+BERGDORF,na,50-2000,na,na
+BROWN,na,51-2000,na,na
+COTTINGHAM,na,51-2000,na,na
+HUGHSTON,na,51-2000,na,na
+PYLE,na,51-2000,na,na
+SMOAK,na,51-2000,na,na
+GIER,na,51-2000,na,na
+BERGDORF,na,51-2000,na,na
+BROWN,na,52-2000,na,na
+COTTINGHAM,na,52-2000,na,na
+HUGHSTON,na,52-2000,na,na
+PYLE,na,52-2000,na,na
+SMOAK,na,52-2000,na,na
+SIMMONS,na,52-2000,na,na
+GIER,na,52-2000,na,na
+BERGDORF,na,52-2000,na,na
+ALFORD,York GS,32-2000,York GS,York
+BARBER,X,32-2000,X,na
+BAXLEY,Charleston GS,32-2000,Charleston GS,Charleston
+BEATTY,Spartanburg GS,32-2000,Spartanburg GS,Spartanburg
+BREEDEN,Horry GS,32-2000,Horry GS,Horry
+BROGDON,Florence GS,32-2000,Florence GS,Florence
+BUCKNER,Richland CP,32-2000,Richland CP,Richland
+BURCH,X,32-2000,X,na
+CLARY,Spartanburg GS,32-2000,Spartanburg GS,Spartanburg
+COLE,X,32-2000,X,na
+COOPER TW,Sumter GS,32-2000,Sumter GS,Sumter
+DENNIS,9th Cir. CPNJ,32-2000,9th Cir. CPNJ,na
+FEW,Beaufort GS,32-2000,Beaufort GS,Beaufort
+FLOYD H,Pickens CP,32-2000,Pickens CP,Pickens
+FLOYD S,Horry GS,32-2000,Horry GS,Horry
+GOODE,Fairfield GS,32-2000,Fairfield GS,Fairfield
+GOODSTEIN,Orangeburg CP,32-2000,Orangeburg CP,Orangeburg
+GREGORY,Beaufort CP,32-2000,Beaufort CP,Beaufort
+HALL,10th Cir. CPNJ,32-2000,10th Cir. CPNJ,na
+HARWELL,Florence GS,32-2000,Florence GS,Florence
+HAYES,York GS,32-2000,York GS,York
+JOHNSON,Newberry GS,32-2000,Newberry GS,Newberry
+KEESLEY,Aiken GS,32-2000,Aiken GS,Aiken
+KINARD,Richland GS,32-2000,Richland GS,Richland
+KING,Clarendon CP,32-2000,Clarendon CP,Clarendon
+KITTREDGE,Greenville GS,32-2000,Greenville GS,Greenville
+LEE,X,32-2000,X,na
+LOCKEMY,Military,32-2000,Military,na
+MACAULAY,Darlington GS,32-2000,Darlington GS,Darlington
+MANNING,Richland GS,32-2000,Richland GS,Richland
+MARTIN,X,32-2000,X,na
+MCKELLAR,Jasper CP,32-2000,Jasper CP,Jasper
+MILLING,3rd Cir. CPNJ/PCR + Sumter GS CC 8,32-2000,3rd Cir. CPNJ/PCR ,na
+NICHOLSON,Anderson CP,32-2000,Anderson CP,Anderson
+PATTERSON,Greenville CP,32-2000,Greenville CP,Greenville
+PEEPLES,11th Cir. CPNJ,32-2000,11th Cir. CPNJ,na
+PIEPER,Charleston CP,32-2000,Charleston CP,Charleston
+RAWL,Berkeley CP,32-2000,Berkeley CP,Berkeley
+SAUNDERS,Sick,32-2000,Sick,na
+SHORT,X,32-2000,X,na
+THOMAS,Georgetown CP,32-2000,Georgetown CP,Georgetown
+WATSON,X,32-2000,X,na
+WESTBROOK,Lexington CP,32-2000,Lexington CP,Lexington
+WILLIAMS,Dorchester CP ,32-2000,Dorchester CP ,Dorchester
+BROWN,Colleton GS,32-2000,Colleton GS,Colleton
+COTTINGHAM,na,32-2000,na,na
+HUGHSTON,Greenville GS,32-2000,Greenville GS,Greenville
+COUCH,na,32-2000,na,na
+SMOAK,Charleston GS,32-2000,Charleston GS,Charleston
+COOPER GT,Greenwood CP,32-2000,Greenwood CP,Greenwood
+NEWMAN,Charleston CP,32-2000,Charleston CP,Charleston
+SIMMONS,na,32-2000,na,na
+GIER,York CPNJ 10,32-2000,York CPNJ 10,York
+BERGDORF,na,32-2000,na,na
+ALFORD,in chambers,33-2000,in chambers,na
+BARBER,in chambers + Richland GS(SGJ) 15,33-2000,in chambers ,na
+BAXLEY,in chambers,33-2000,in chambers,na
+BEATTY,in chambers,33-2000,in chambers,na
+BREEDEN,in chambers + 15th Cir. CPNJ 15,33-2000,in chambers ,na
+BROGDON,in chambers + 12th Cir. CPNJ 15,33-2000,in chambers ,na
+BUCKNER,in chambers,33-2000,in chambers,na
+BURCH,in chambers,33-2000,in chambers,na
+CLARY,in chambers,33-2000,in chambers,na
+COLE,in chambers,33-2000,in chambers,na
+COOPER TW,in chambers + 3rd Cir. CPNJ 14,33-2000,in chambers ,na
+DENNIS,in chambers + Berkeley GS(SGJ) 14,33-2000,in chambers ,na
+FEW,in chambers + 13th Cir. CPNJ 14,33-2000,in chambers ,na
+FLOYD H,in chambers,33-2000,in chambers,na
+FLOYD S,in chambers,33-2000,in chambers,na
+GOODE,in chambers,33-2000,in chambers,na
+GOODSTEIN,in chambers + 1st Cir. CPNJ 14,33-2000,in chambers ,na
+GREGORY,"in chambers + 14th Cir. CPNJ 14,15",33-2000,in chambers ,na
+HALL,in chambers + Horry GS,33-2000,in chambers ,na
+HARWELL,in chambers,33-2000,in chambers,na
+HAYES,in chambers,33-2000,in chambers,na
+JOHNSON,in chambers + Laurens GS(SGJ) 14,33-2000,in chambers ,na
+KEESLEY,in chambers + Lexington GS 16,33-2000,in chambers ,na
+KINARD,in chambers,33-2000,in chambers,na
+KING,in chambers,33-2000,in chambers,na
+KITTREDGE,in chambers + 13th Cir. CPNJ 15,33-2000,in chambers ,na
+LEE,in chambers,33-2000,in chambers,na
+LOCKEMY,in chambers + 4th Cir. CPNJ 14,33-2000,in chambers ,na
+MACAULAY,in chambers,33-2000,in chambers,na
+MANNING,in chambers,33-2000,in chambers,na
+MARTIN,in chambers,33-2000,in chambers,na
+MCKELLAR,in chambers,33-2000,in chambers,na
+MILLING,in chambers + 4th Cir. CPNJ 14,33-2000,in chambers ,na
+NICHOLSON,in chambers,33-2000,in chambers,na
+PATTERSON,in chambers + 13th Cir. CPNJ 14,33-2000,in chambers ,na
+PEEPLES,in chambers,33-2000,in chambers,na
+PIEPER,in chambers,33-2000,in chambers,na
+RAWL,in chambers + 9th Cir. CPNJ 14,33-2000,in chambers ,na
+SAUNDERS,in chambers,33-2000,in chambers,na
+SHORT,XX,33-2000,XX,na
+THOMAS,in chambers,33-2000,in chambers,na
+WATSON,in chambers,33-2000,in chambers,na
+WESTBROOK,in chambers + 11th Cir. CPNJ 15,33-2000,in chambers ,na
+WILLIAMS,in chambers,33-2000,in chambers,na
+BROWN,na,33-2000,na,na
+COTTINGHAM,na,33-2000,na,na
+HUGHSTON,na,33-2000,na,na
+COUCH,na,33-2000,na,na
+SMOAK,na,33-2000,na,na
+COOPER GT,in chambers,33-2000,in chambers,na
+NEWMAN,in chambers,33-2000,in chambers,na
+SIMMONS,na,33-2000,na,na
+GIER,na,33-2000,na,na
+BERGDORF,Orangeburg CPNJ 17,33-2000,Orangeburg CPNJ 17,Orangeburg
+ALFORD,York GS,34-2000,York GS,York
+BARBER,Richland CP,34-2000,Richland CP,Richland
+BAXLEY,Charleston CP,34-2000,Charleston CP,Charleston
+BEATTY,7th Cir. CPNJ,34-2000,7th Cir. CPNJ,na
+BREEDEN,Marlboro GS,34-2000,Marlboro GS,Marlboro
+BROGDON,Florence CP,34-2000,Florence CP,Florence
+BUCKNER,Richland CP,34-2000,Richland CP,Richland
+BURCH,Horry GS CP CC,34-2000,Horry GS CP CC,Horry
+CLARY,Spartanburg GS,34-2000,Spartanburg GS,Spartanburg
+COLE,Spartanburg GS,34-2000,Spartanburg GS,Spartanburg
+COOPER TW,Sumter CP,34-2000,Sumter CP,Sumter
+DENNIS,X,34-2000,X,na
+FEW,Anderson GS,34-2000,Anderson GS,Anderson
+FLOYD H,13th Cir. CPNJ,34-2000,13th Cir. CPNJ,na
+FLOYD S,15th Cir. CPNJ,34-2000,15th Cir. CPNJ,na
+GOODE,Fairfield CP + Lexington CP CC 24,34-2000,Fairfield CP ,Fairfield
+GOODSTEIN,1st Cir. CPNJ/PCR + 2nd Cir. CPNJ CC 25,34-2000,1st Cir. CPNJ/PCR ,na
+GREGORY,Beaufort GS,34-2000,Beaufort GS,Beaufort
+HALL,Anderson GS 23,34-2000,Anderson GS 23,Anderson
+HARWELL,Florence GS,34-2000,Florence GS,Florence
+HAYES,York GS,34-2000,York GS,York
+JOHNSON,Newberry GS,34-2000,Newberry GS,Newberry
+KEESLEY,Lexington GS,34-2000,Lexington GS,Lexington
+KINARD,Kershaw CP,34-2000,Kershaw CP,Kershaw
+KING,Lee GS,34-2000,Lee GS,Lee
+KITTREDGE,Greenville GS CP CC,34-2000,Greenville GS CP CC,Greenville
+LEE,Richland CP,34-2000,Richland CP,Richland
+LOCKEMY,Colleton GS,34-2000,Colleton GS,Colleton
+MACAULAY,Lexington CP,34-2000,Lexington CP,Lexington
+MANNING,5th Cir. CPNJ,34-2000,5th Cir. CPNJ,na
+MARTIN,X,34-2000,X,na
+MCKELLAR,14th Cir. CPNJ,34-2000,14th Cir. CPNJ,na
+MILLING,"X 23,24,25 + 3rd Cir. CPNJ 21,22",34-2000,"X 23,24,25 ",na
+NICHOLSON,Oconee CP,34-2000,Oconee CP,Oconee
+PATTERSON,"Greenville CP 21,22,23,24 + X 25",34-2000,"Greenville CP 21,22,23,24 ",Greenville
+PEEPLES,2nd Cir. CPNJ,34-2000,2nd Cir. CPNJ,na
+PIEPER,Charleston CP,34-2000,Charleston CP,Charleston
+RAWL,Charleston CP,34-2000,Charleston CP,Charleston
+SAUNDERS,Abbeville GS,34-2000,Abbeville GS,Abbeville
+SHORT,Lancaster GS,34-2000,Lancaster GS,Lancaster
+THOMAS,Horry CP,34-2000,Horry CP,Horry
+WATSON,York CP,34-2000,York CP,York
+WESTBROOK,Edgefield GS,34-2000,Edgefield GS,Edgefield
+WILLIAMS,Richland GS,34-2000,Richland GS,Richland
+BROWN,Orangeburg GS,34-2000,Orangeburg GS,Orangeburg
+COTTINGHAM,Marion GS,34-2000,Marion GS,Marion
+HUGHSTON,Greenville GS,34-2000,Greenville GS,Greenville
+COUCH,na,34-2000,na,na
+SMOAK,9th Cir. CPNJ,34-2000,9th Cir. CPNJ,na
+COOPER GT,Greenville GS,34-2000,Greenville GS,Greenville
+NEWMAN,Berkeley GS,34-2000,Berkeley GS,Berkeley
+SIMMONS,na,34-2000,na,na
+GIER,York CPNJ 24,34-2000,York CPNJ 24,York
+BERGDORF,na,34-2000,na,na
+ALFORD,X,35-2000,X,na
+BARBER,Richland CP,35-2000,Richland CP,Richland
+BAXLEY,Charleston CP,35-2000,Charleston CP,Charleston
+BEATTY,Spartanburg GS(SGJ),35-2000,Spartanburg GS(SGJ),Spartanburg
+BREEDEN,Horry CP,35-2000,Horry CP,Horry
+BROGDON,Marion GS,35-2000,Marion GS,Marion
+BUCKNER,Richland GS,35-2000,Richland GS,Richland
+BURCH,Dillon GS,35-2000,Dillon GS,Dillon
+CLARY,X,35-2000,X,na
+COLE,Florence CP,35-2000,Florence CP,Florence
+COOPER TW,Williamsburg GS + Orangeburg GS CC 1,35-2000,Williamsburg GS ,Williamsburg
+DENNIS,Sumter GS(SGJ),35-2000,Sumter GS(SGJ),Sumter
+FEW,Beaufort CP,35-2000,Beaufort CP,Beaufort
+FLOYD H,Pickens GS,35-2000,Pickens GS,Pickens
+FLOYD S,Georgetown GS,35-2000,Georgetown GS,Georgetown
+GOODE,Chester CP,35-2000,Chester CP,Chester
+GOODSTEIN,Dorchester CP,35-2000,Dorchester CP,Dorchester
+GREGORY,Beaufort GS CP CC,35-2000,Beaufort GS CP CC,Beaufort
+HALL,Lexington GS,35-2000,Lexington GS,Lexington
+HARWELL,12th Cir. CPNJ,35-2000,12th Cir. CPNJ,na
+HAYES,Union GS,35-2000,Union GS,Union
+JOHNSON,Laurens GS,35-2000,Laurens GS,Laurens
+KEESLEY,Barnwell GS,35-2000,Barnwell GS,Barnwell
+KINARD,Richland CP,35-2000,Richland CP,Richland
+KING,Clarendon GS,35-2000,Clarendon GS,Clarendon
+KITTREDGE,13th Cir. CPNJ/PCR,35-2000,13th Cir. CPNJ/PCR,na
+LEE,5th Cir. CPNJ,35-2000,5th Cir. CPNJ,na
+LOCKEMY,Lee CP,35-2000,Lee CP,Lee
+MACAULAY,Anderson GS,35-2000,Anderson GS,Anderson
+MANNING,X,35-2000,X,na
+MARTIN,Berkeley CP,35-2000,Berkeley CP,Berkeley
+MCKELLAR,Hampton CP,35-2000,Hampton CP,Hampton
+MILLING,Chesterfield CP,35-2000,Chesterfield CP,Chester
+NICHOLSON,Anderson CP + Oconee GS CC 1,35-2000,Anderson CP ,Anderson
+PATTERSON,X,35-2000,X,na
+PEEPLES,Aiken CP,35-2000,Aiken CP,Aiken
+PIEPER,Charleston CP,35-2000,Charleston CP,Charleston
+RAWL,9th Cir. CPNJ,35-2000,9th Cir. CPNJ,na
+SAUNDERS,Newberry CP + Laurens GS CC 1,35-2000,Newberry CP ,Newberry
+SHORT,Lancaster GS,35-2000,Lancaster GS,Lancaster
+THOMAS,"15th Cir. CPNJ/PCR 28,29,30,31 + X 1",35-2000,"15th Cir. CPNJ/PCR 28,29,30,31 ",na
+WATSON,Greenville CP,35-2000,Greenville CP,Greenville
+WESTBROOK,Edgefield GS,35-2000,Edgefield GS,Edgefield
+WILLIAMS,Richland GS,35-2000,Richland GS,Richland
+BROWN,Orangeburg GS,35-2000,Orangeburg GS,Orangeburg
+COTTINGHAM,Horry CP,35-2000,Horry CP,Horry
+HUGHSTON,Charleston GS,35-2000,Charleston GS,Charleston
+COUCH,Cherokee CPNJ 28,35-2000,Cherokee CPNJ 28,Cherokee
+SMOAK,na,35-2000,na,na
+COOPER GT,Greenville CP + Richland CP CC,35-2000,Greenville CP ,Greenville
+NEWMAN,Charleston GS,35-2000,Charleston GS,Charleston
+SIMMONS,Greenville GS 1,35-2000,Greenville GS 1,Greenville
+GIER,na,35-2000,na,na
+BERGDORF,na,35-2000,na,na
+MILLING,3rd Cir. CPNJ/PCR + Sumter GS CC 8,32-2000, Sumter GS CC 8,Sumter
+COTTINGHAM,na,32-2000,na,na
+COUCH,na,32-2000,na,na
+SIMMONS,na,32-2000,na,na
+BERGDORF,na,32-2000,na,na
+BARBER,in chambers + Richland GS(SGJ) 15,33-2000, Richland GS(SGJ) 15,Richland
+BREEDEN,in chambers + 15th Cir. CPNJ 15,33-2000, 15th Cir. CPNJ 15,na
+BROGDON,in chambers + 12th Cir. CPNJ 15,33-2000, 12th Cir. CPNJ 15,na
+COOPER TW,in chambers + 3rd Cir. CPNJ 14,33-2000, 3rd Cir. CPNJ 14,na
+DENNIS,in chambers + Berkeley GS(SGJ) 14,33-2000, Berkeley GS(SGJ) 14,Berkeley
+FEW,in chambers + 13th Cir. CPNJ 14,33-2000, 13th Cir. CPNJ 14,na
+GOODSTEIN,in chambers + 1st Cir. CPNJ 14,33-2000, 1st Cir. CPNJ 14,na
+GREGORY,"in chambers + 14th Cir. CPNJ 14,15",33-2000," 14th Cir. CPNJ 14,15",na
+HALL,in chambers + Horry GS,33-2000, Horry GS,Horry
+JOHNSON,in chambers + Laurens GS(SGJ) 14,33-2000, Laurens GS(SGJ) 14,Laurens
+KEESLEY,in chambers + Lexington GS 16,33-2000, Lexington GS 16,Lexington
+KITTREDGE,in chambers + 13th Cir. CPNJ 15,33-2000, 13th Cir. CPNJ 15,na
+LOCKEMY,in chambers + 4th Cir. CPNJ 14,33-2000, 4th Cir. CPNJ 14,na
+MILLING,in chambers + 4th Cir. CPNJ 14,33-2000, 4th Cir. CPNJ 14,na
+PATTERSON,in chambers + 13th Cir. CPNJ 14,33-2000, 13th Cir. CPNJ 14,na
+RAWL,in chambers + 9th Cir. CPNJ 14,33-2000, 9th Cir. CPNJ 14,na
+WESTBROOK,in chambers + 11th Cir. CPNJ 15,33-2000, 11th Cir. CPNJ 15,na
+BROWN,na,33-2000,na,na
+COTTINGHAM,na,33-2000,na,na
+HUGHSTON,na,33-2000,na,na
+COUCH,na,33-2000,na,na
+SMOAK,na,33-2000,na,na
+SIMMONS,na,33-2000,na,na
+GIER,na,33-2000,na,na
+GOODE,Fairfield CP + Lexington CP CC 24,34-2000, Lexington CP CC 24,Lexington
+GOODSTEIN,1st Cir. CPNJ/PCR + 2nd Cir. CPNJ CC 25,34-2000, 2nd Cir. CPNJ CC 25,na
+MILLING,"X 23,24,25 + 3rd Cir. CPNJ 21,22",34-2000," 3rd Cir. CPNJ 21,22",na
+PATTERSON,"Greenville CP 21,22,23,24 + X 25",34-2000, X 25,na
+COUCH,na,34-2000,na,na
+SIMMONS,na,34-2000,na,na
+BERGDORF,na,34-2000,na,na
+COOPER TW,Williamsburg GS + Orangeburg GS CC 1,35-2000, Orangeburg GS CC 1,Orangeburg
+NICHOLSON,Anderson CP + Oconee GS CC 1,35-2000, Oconee GS CC 1,Oconee
+SAUNDERS,Newberry CP + Laurens GS CC 1,35-2000, Laurens GS CC 1,Laurens
+THOMAS,"15th Cir. CPNJ/PCR 28,29,30,31 + X 1",35-2000, X 1,na
+SMOAK,na,35-2000,na,na
+COOPER GT,Greenville CP + Richland CP CC,35-2000, Richland CP CC,Richland
+GIER,na,35-2000,na,na
+BERGDORF,na,35-2000,na,na
+COTTINGHAM,na,32-2000,na,na
+COUCH,na,32-2000,na,na
+SIMMONS,na,32-2000,na,na
+BERGDORF,na,32-2000,na,na
+BROWN,na,33-2000,na,na
+COTTINGHAM,na,33-2000,na,na
+HUGHSTON,na,33-2000,na,na
+COUCH,na,33-2000,na,na
+SMOAK,na,33-2000,na,na
+SIMMONS,na,33-2000,na,na
+GIER,na,33-2000,na,na
+COUCH,na,34-2000,na,na
+SIMMONS,na,34-2000,na,na
+BERGDORF,na,34-2000,na,na
+SMOAK,na,35-2000,na,na
+GIER,na,35-2000,na,na
+BERGDORF,na,35-2000,na,na
+COTTINGHAM,na,32-2000,na,na
+COUCH,na,32-2000,na,na
+SIMMONS,na,32-2000,na,na
+BERGDORF,na,32-2000,na,na
+BROWN,na,33-2000,na,na
+COTTINGHAM,na,33-2000,na,na
+HUGHSTON,na,33-2000,na,na
+COUCH,na,33-2000,na,na
+SMOAK,na,33-2000,na,na
+SIMMONS,na,33-2000,na,na
+GIER,na,33-2000,na,na
+COUCH,na,34-2000,na,na
+SIMMONS,na,34-2000,na,na
+BERGDORF,na,34-2000,na,na
+SMOAK,na,35-2000,na,na
+GIER,na,35-2000,na,na
+BERGDORF,na,35-2000,na,na
+COTTINGHAM,na,32-2000,na,na
+COUCH,na,32-2000,na,na
+SIMMONS,na,32-2000,na,na
+BERGDORF,na,32-2000,na,na
+BROWN,na,33-2000,na,na
+COTTINGHAM,na,33-2000,na,na
+HUGHSTON,na,33-2000,na,na
+COUCH,na,33-2000,na,na
+SMOAK,na,33-2000,na,na
+SIMMONS,na,33-2000,na,na
+GIER,na,33-2000,na,na
+COUCH,na,34-2000,na,na
+SIMMONS,na,34-2000,na,na
+BERGDORF,na,34-2000,na,na
+SMOAK,na,35-2000,na,na
+GIER,na,35-2000,na,na
+BERGDORF,na,35-2000,na,na
+ALFORD,in chambers,27-2000,in chambers,na
+BARBER,in chambers,27-2000,in chambers,na
+BAXLEY,in chambers,27-2000,in chambers,na
+BEATTY,in chambers,27-2000,in chambers,na
+BREEDEN,in chambers,27-2000,in chambers,na
+BROGDON,in chambers + 12th Cir. CPNJ 6,27-2000,in chambers ,na
+BUCKNER,in chambers,27-2000,in chambers,na
+BURCH,in chambers,27-2000,in chambers,na
+CLARY,in chambers,27-2000,in chambers,na
+COLE,in chambers,27-2000,in chambers,na
+COOPER TW,in chambers + 3rd Cir. CPNJ 5,27-2000,in chambers ,na
+DENNIS,in chambers + Sumter GS(SGJ) 6,27-2000,in chambers ,na
+FEW,in chambers,27-2000,in chambers,na
+FLOYD H,in chambers,27-2000,in chambers,na
+FLOYD S,in chambers + 15th Cir. CPNJ 6,27-2000,in chambers ,na
+GOODE,in chambers,27-2000,in chambers,na
+GOODSTEIN,in chambers + 14th Cir. CPNJ 6 + Beaufort GS CC 4,27-2000,in chambers ,na
+GREGORY,in chambers,27-2000,in chambers,na
+HALL,in chambers,27-2000,in chambers,na
+HARWELL,in chambers,27-2000,in chambers,na
+HAYES,X,27-2000,X,na
+JOHNSON,in chambers,27-2000,in chambers,na
+KEESLEY,in chambers + Richland GS 7,27-2000,in chambers ,na
+KINARD,in chambers + 14th Cir. CPNJ 6,27-2000,in chambers ,na
+KING,in chambers + 15th Cir. CPNJ 3,27-2000,in chambers ,na
+KITTREDGE,in chambers + 13th Cir. CPNJ 7,27-2000,in chambers ,na
+LEE,in chambers,27-2000,in chambers,na
+LOCKEMY,"in chambers + XX 5,6,7",27-2000,in chambers ,na
+MACAULAY,"in chambers + X 6,7",27-2000,in chambers ,na
+MANNING,in chambers,27-2000,in chambers,na
+MARTIN,in chambers,27-2000,in chambers,na
+MCKELLAR,in chambers,27-2000,in chambers,na
+MILLING,in chambers,27-2000,in chambers,na
+NICHOLSON,"in chambers + 10th Cir. CPNJ 5,6,7",27-2000,in chambers ,na
+PATTERSON,in chambers + 12th Cir. CPNJ 5,27-2000,in chambers ,na
+PEEPLES,in chambers,27-2000,in chambers,na
+PIEPER,in chambers,27-2000,in chambers,na
+RAWL,in chambers,27-2000,in chambers,na
+SAUNDERS,in chambers,27-2000,in chambers,na
+SHORT,in chambers,27-2000,in chambers,na
+THOMAS,in chambers,27-2000,in chambers,na
+WATSON,"in chambers + X 5,6,7",27-2000,in chambers ,na
+WESTBROOK,in chambers,27-2000,in chambers,na
+WILLIAMS,in chambers,27-2000,in chambers,na
+BROWN,na,27-2000,na,na
+HUGHSTON,na,27-2000,na,na
+SIMMONS,na,27-2000,na,na
+SMOAK,na,27-2000,na,na
+COOPER GT,in chambers,27-2000,in chambers,na
+NEWMAN,in chambers,27-2000,in chambers,na
+GIER,na,27-2000,na,na
+WATTS,na,27-2000,na,na
+ALFORD,York GS,28-2000,York GS,York
+BARBER,5th Cir. AW,28-2000,5th Cir. AW,na
+BAXLEY,Orientation School,28-2000,Orientation School,na
+BEATTY,X,28-2000,X,na
+BREEDEN,15th Cir. CPNJ,28-2000,15th Cir. CPNJ,na
+BROGDON,Florence CP,28-2000,Florence CP,Florence
+BUCKNER,Orientation School,28-2000,Orientation School,na
+BURCH,"Darlington GS 11,12,13,14 + XX 10",28-2000,"Darlington GS 11,12,13,14 ",Darlington
+CLARY,Orientation School,28-2000,Orientation School,na
+COLE,Spartanburg GS,28-2000,Spartanburg GS,Spartanburg
+COOPER TW,Orientation School + Aiken GS 13,28-2000,Orientation School ,na
+DENNIS,X,28-2000,X,na
+FEW,Orientation School,28-2000,Orientation School,na
+FLOYD H,Orientation School,28-2000,Orientation School,na
+FLOYD S,Horry GS,28-2000,Horry GS,Horry
+GOODE,11th Cir. CPNJ,28-2000,11th Cir. CPNJ,na
+GOODSTEIN,Orangeburg CP,28-2000,Orangeburg CP,Orangeburg
+GREGORY,Jasper GS,28-2000,Jasper GS,Jasper
+HALL,Orientation School,28-2000,Orientation School,na
+HARWELL,Marion GS,28-2000,Marion GS,Marion
+HAYES,York GS + 16th Cir. AW,28-2000,York GS ,York
+JOHNSON,Orientation School + 5th Cir. CPNJ 13,28-2000,Orientation School ,na
+KEESLEY,Bamberg GS,28-2000,Bamberg GS,Bamberg
+KINARD,Laurens GS,28-2000,Laurens GS,Laurens
+KING,X,28-2000,X,na
+KITTREDGE,X,28-2000,X,na
+LEE,Williamsburg GS,28-2000,Williamsburg GS,Williamsburg
+LOCKEMY,"4th Cir. CPNJ 12,13,14 + X 10,11",28-2000,"4th Cir. CPNJ 12,13,14 ",na
+MACAULAY,X,28-2000,X,na
+MANNING,Orientation School,28-2000,Orientation School,na
+MARTIN,9th Cir. AW,28-2000,9th Cir. AW,na
+MCKELLAR,Richland GS,28-2000,Richland GS,Richland
+MILLING,Clarendon GS,28-2000,Clarendon GS,Clarendon
+NICHOLSON,10th Cir. CPNJ,28-2000,10th Cir. CPNJ,na
+PATTERSON,Greenville GS,28-2000,Greenville GS,Greenville
+PEEPLES,Barnwell CP,28-2000,Barnwell CP,Barnwell
+PIEPER,Charleston GS,28-2000,Charleston GS,Charleston
+RAWL,Charleston GS,28-2000,Charleston GS,Charleston
+SAUNDERS,Sick,28-2000,Sick,na
+SHORT,Chester GS,28-2000,Chester GS,Chester
+THOMAS,Horry GS,28-2000,Horry GS,Horry
+WATSON,Greenville GS,28-2000,Greenville GS,Greenville
+WESTBROOK,Lexington GS,28-2000,Lexington GS,Lexington
+WILLIAMS,Richland GS,28-2000,Richland GS,Richland
+BROWN,Dorchester GS,28-2000,Dorchester GS,Dorchester
+HUGHSTON,Abbeville GS CP CC,28-2000,Abbeville GS CP CC,Abbeville
+SIMMONS,Greenville GS 10,28-2000,Greenville GS 10,Greenville
+SMOAK,na,28-2000,na,na
+COOPER GT,"Orientation School + 5th Cir. CPNJ 13,14",28-2000,Orientation School ,na
+NEWMAN,Orientation School,28-2000,Orientation School,na
+GIER,na,28-2000,na,na
+WATTS,na,28-2000,na,na
+ALFORD,X,29-2000,X,na
+BARBER,Richland GS,29-2000,Richland GS,Richland
+BAXLEY,Marlboro CP (Sitting with Burch),29-2000,Marlboro CP (Sitting with Burch),Marlboro
+BEATTY,Spartanburg GS,29-2000,Spartanburg GS,Spartanburg
+BREEDEN,Horry CP,29-2000,Horry CP,Horry
+BROGDON,X,29-2000,X,na
+BUCKNER,Laurens GS (Sitting with Johnson),29-2000,Laurens GS (Sitting with Johnson),Laurens
+BURCH,Marlboro CP,29-2000,Marlboro CP,Marlboro
+CLARY,Cherokee GS,29-2000,Cherokee GS,Cherokee
+COLE,Spartanburg GS,29-2000,Spartanburg GS,Spartanburg
+COOPER TW,X,29-2000,X,na
+DENNIS,Sumter GS(SGJ),29-2000,Sumter GS(SGJ),Sumter
+FEW,Cherokee GS (Sitting with Clary),29-2000,Cherokee GS (Sitting with Clary),Cherokee
+FLOYD H,York CP CC + York GS CC 20,29-2000,York CP CC ,York
+FLOYD S,"Horry GS 17 + Family Death 18,19,20,21",29-2000,Horry GS 17 ,Horry
+GOODE,Lexington CP,29-2000,Lexington CP,Lexington
+GOODSTEIN,1st Cir. CPNJ,29-2000,1st Cir. CPNJ,na
+GREGORY,Beaufort GS,29-2000,Beaufort GS,Beaufort
+HALL,Anderson GS,29-2000,Anderson GS,Anderson
+HARWELL,12th Cir. CPNJ,29-2000,12th Cir. CPNJ,na
+HAYES,Union GS,29-2000,Union GS,Union
+JOHNSON,Laurens GS,29-2000,Laurens GS,Laurens
+KEESLEY,Edgefield CP,29-2000,Edgefield CP,Edgefield
+KINARD,Kershaw GS,29-2000,Kershaw GS,Kershaw
+KING,Williamsburg GS,29-2000,Williamsburg GS,Williamsburg
+KITTREDGE,"13th Cir. CPNJ 17,18,19 + X 20,21",29-2000,"13th Cir. CPNJ 17,18,19 ",na
+LEE,Richland CP,29-2000,Richland CP,Richland
+LOCKEMY,Dillon CP,29-2000,Dillon CP,Dillon
+MACAULAY,"X 17,18,19 + 10th Cir. CPNJ 20,21",29-2000,"X 17,18,19 ",na
+MANNING,Orangeburg CP,29-2000,Orangeburg CP,Orangeburg
+MARTIN,Charleston GS,29-2000,Charleston GS,Charleston
+MCKELLAR,5th Cir. CPNJ,29-2000,5th Cir. CPNJ,na
+MILLING,Clarendon GS CP CC,29-2000,Clarendon GS CP CC,Clarendon
+NICHOLSON,Anderson GS,29-2000,Anderson GS,Anderson
+PATTERSON,Greenville GS,29-2000,Greenville GS,Greenville
+PEEPLES,2nd Cir. CPNJ,29-2000,2nd Cir. CPNJ,na
+PIEPER,Charleston CP,29-2000,Charleston CP,Charleston
+RAWL,Berkeley GS,29-2000,Berkeley GS,Berkeley
+SAUNDERS,Sick,29-2000,Sick,na
+SHORT,6th Cir. CPNJ,29-2000,6th Cir. CPNJ,na
+THOMAS,Horry GS,29-2000,Horry GS,Horry
+WATSON,Greenville GS,29-2000,Greenville GS,Greenville
+WESTBROOK,"Lexington GS 17,18,19,20 + X 21",29-2000,"Lexington GS 17,18,19,20 ",Lexington
+WILLIAMS,Richland GS,29-2000,Richland GS,Richland
+BROWN,Dorchester GS,29-2000,Dorchester GS,Dorchester
+HUGHSTON,Charleston GS,29-2000,Charleston GS,Charleston
+SIMMONS,na,29-2000,na,na
+SMOAK,14th Cir. CPNJ,29-2000,14th Cir. CPNJ,na
+COOPER GT,Berkeley GS (Sitting with Rawl),29-2000,Berkeley GS (Sitting with Rawl),Berkeley
+NEWMAN,Charleston GS (Sitting with Martin),29-2000,Charleston GS (Sitting with Martin),Charleston
+GIER,na,29-2000,na,na
+WATTS,na,29-2000,na,na
+ALFORD,16th Cir. CPNJ/PCR,30-2000,16th Cir. CPNJ/PCR,na
+BARBER,Richland GS,30-2000,Richland GS,Richland
+BAXLEY,"Sumter GS (Sitting with Milling) 26,27,28 + Marlboro GS (Sitting with Burch) 24,25",30-2000,"Sumter GS (Sitting with Milling) 26,27,28 ",Sumter
+BEATTY,Florence CP,30-2000,Florence CP,Florence
+BREEDEN,Horry CP,30-2000,Horry CP,Horry
+BROGDON,Marion CP,30-2000,Marion CP,Marion
+BUCKNER,Laurens CP (Sitting with Johnson),30-2000,Laurens CP (Sitting with Johnson),Laurens
+BURCH,Marlboro GS,30-2000,Marlboro GS,Marlboro
+CLARY,Anderson GS,30-2000,Anderson GS,Anderson
+COLE,Cherokee GS,30-2000,Cherokee GS,Cherokee
+COOPER TW,X,30-2000,X,na
+DENNIS,"Sumter GS(SGJ) CC 27 + Clarendon GS CC 27 + 3rd Cir. CPNJ 27,28 + X 24,25,26",30-2000,Sumter GS(SGJ) CC 27 ,Sumter
+FEW,"York CP (Sitting with Floyd, H.)",30-2000,"York CP (Sitting with Floyd, H.)",York
+FLOYD H,Greenville CP,30-2000,Greenville CP,Greenville
+FLOYD S,Georgetown GS,30-2000,Georgetown GS,Georgetown
+GOODE,Lexington CP,30-2000,Lexington CP,Lexington
+GOODSTEIN,Dorchester CP,30-2000,Dorchester CP,Dorchester
+GREGORY,Beaufort GS,30-2000,Beaufort GS,Beaufort
+HALL,X,30-2000,X,na
+HARWELL,Florence CP,30-2000,Florence CP,Florence
+HAYES,York GS,30-2000,York GS,York
+JOHNSON,Laurens CP,30-2000,Laurens CP,Laurens
+KEESLEY,in chambers,30-2000,in chambers,na
+KINARD,Kershaw GS,30-2000,Kershaw GS,Kershaw
+KING,3rd Cir. CPNJ,30-2000,3rd Cir. CPNJ,na
+KITTREDGE,X,30-2000,X,na
+LEE,Richland GS,30-2000,Richland GS,Richland
+LOCKEMY,Darlington CP,30-2000,Darlington CP,Darlington
+MACAULAY,Anderson GS,30-2000,Anderson GS,Anderson
+MANNING,Richland CP,30-2000,Richland CP,Richland
+MARTIN,Charleston CP,30-2000,Charleston CP,Charleston
+MCKELLAR,Orangeburg GS,30-2000,Orangeburg GS,Orangeburg
+MILLING,Sumter GS,30-2000,Sumter GS,Sumter
+NICHOLSON,Anderson CP,30-2000,Anderson CP,Anderson
+PATTERSON,7th Cir. CP/PCR,30-2000,7th Cir. CP/PCR,na
+PEEPLES,2nd Cir. CPNJ,30-2000,2nd Cir. CPNJ,na
+PIEPER,Berkeley CP,30-2000,Berkeley CP,Berkeley
+RAWL,9th Cir. CPNJ/PCR,30-2000,9th Cir. CPNJ/PCR,na
+SAUNDERS,Sick,30-2000,Sick,na
+SHORT,York CP,30-2000,York CP,York
+THOMAS,15th Cir. CPNJ,30-2000,15th Cir. CPNJ,na
+WATSON,Pickens GS,30-2000,Pickens GS,Pickens
+WESTBROOK,Lexington CP,30-2000,Lexington CP,Lexington
+WILLIAMS,Richland CP + Richland GS CC 28,30-2000,Richland CP ,Richland
+BROWN,na,30-2000,na,na
+HUGHSTON,na,30-2000,na,na
+SIMMONS,"Greenville CPNJ 26,27 + Greenville GS 28",30-2000,"Greenville CPNJ 26,27 ",Greenville
+SMOAK,na,30-2000,na,na
+COOPER GT,Richland CP (Sitting with Williams),30-2000,Richland CP (Sitting with Williams),Richland
+NEWMAN,Greenwood GS,30-2000,Greenwood GS,Greenwood
+GIER,York CPNJ 27,30-2000,York CPNJ 27,York
+WATTS,"Dorchester CPNJ 24,26,27,28",30-2000,"Dorchester CPNJ 24,26,27,28",Dorchester
+ALFORD,York CP,31-2000,York CP,York
+BARBER,Richland CP,31-2000,Richland CP,Richland
+BAXLEY,X,31-2000,X,na
+BEATTY,7th Cir. CPNJ,31-2000,7th Cir. CPNJ,na
+BREEDEN,Horry CP,31-2000,Horry CP,Horry
+BROGDON,Florence GS,31-2000,Florence GS,Florence
+BUCKNER,Richland CP,31-2000,Richland CP,Richland
+BURCH,Marlboro GS + Sumter GS CC,31-2000,Marlboro GS ,Marlboro
+CLARY,Spartanburg CP,31-2000,Spartanburg CP,Spartanburg
+COLE,Spartanburg CP,31-2000,Spartanburg CP,Spartanburg
+COOPER TW,Sumter CP,31-2000,Sumter CP,Sumter
+DENNIS,9th Cir. CPNJ,31-2000,9th Cir. CPNJ,na
+FEW,Beaufort CP,31-2000,Beaufort CP,Beaufort
+FLOYD H,13th Cir. CPNJ,31-2000,13th Cir. CPNJ,na
+FLOYD S,Horry CP,31-2000,Horry CP,Horry
+GOODE,Lexington CP,31-2000,Lexington CP,Lexington
+GOODSTEIN,Aiken GS,31-2000,Aiken GS,Aiken
+GREGORY,Hampton CP,31-2000,Hampton CP,Hampton
+HALL,Oconee GS,31-2000,Oconee GS,Oconee
+HARWELL,Florence CP,31-2000,Florence CP,Florence
+HAYES,16th Cir. CPNJ,31-2000,16th Cir. CPNJ,na
+JOHNSON,8th Cir. CPNJ/PCR,31-2000,8th Cir. CPNJ/PCR,na
+KEESLEY,X,31-2000,X,na
+KINARD,Richland GS + Lexington GS CC 3,31-2000,Richland GS ,Richland
+KING,Williamsburg CP,31-2000,Williamsburg CP,Williamsburg
+KITTREDGE,Union CP,31-2000,Union CP,Union
+LEE,Richland GS,31-2000,Richland GS,Richland
+LOCKEMY,Chesterfield GS,31-2000,Chesterfield GS,Chester
+MACAULAY,10th Cir. CPNJ,31-2000,10th Cir. CPNJ,na
+MANNING,5th Cir. CPNJ,31-2000,5th Cir. CPNJ,na
+MARTIN,Charleston GS,31-2000,Charleston GS,Charleston
+MCKELLAR,Beaufort CP,31-2000,Beaufort CP,Beaufort
+MILLING,Sumter GS + Marlboro GS CC,31-2000,Sumter GS ,Sumter
+NICHOLSON,Anderson CP,31-2000,Anderson CP,Anderson
+PATTERSON,Greenville CP,31-2000,Greenville CP,Greenville
+PEEPLES,Aiken CP,31-2000,Aiken CP,Aiken
+PIEPER,Charleston CP,31-2000,Charleston CP,Charleston
+RAWL,Berkeley GS,31-2000,Berkeley GS,Berkeley
+SAUNDERS,Sick,31-2000,Sick,na
+SHORT,Fairfield GS,31-2000,Fairfield GS,Fairfield
+THOMAS,Georgetown CP,31-2000,Georgetown CP,Georgetown
+WATSON,13th Cir. CPNJ/PCR,31-2000,13th Cir. CPNJ/PCR,na
+WESTBROOK,11th Cir. CPNJ,31-2000,11th Cir. CPNJ,na
+WILLIAMS,X,31-2000,X,na
+BROWN,Orangeburg GS,31-2000,Orangeburg GS,Orangeburg
+HUGHSTON,Colleton CP,31-2000,Colleton CP,Colleton
+SIMMONS,Greenville GS 4,31-2000,Greenville GS 4,Greenville
+SMOAK,Charleston GS,31-2000,Charleston GS,Charleston
+COOPER GT,Greenville GS,31-2000,Greenville GS,Greenville
+NEWMAN,Charleston CP,31-2000,Charleston CP,Charleston
+GIER,na,31-2000,na,na
+WATTS,na,31-2000,na,na
+BROGDON,in chambers + 12th Cir. CPNJ 6,27-2000, 12th Cir. CPNJ 6,na
+COOPER TW,in chambers + 3rd Cir. CPNJ 5,27-2000, 3rd Cir. CPNJ 5,na
+DENNIS,in chambers + Sumter GS(SGJ) 6,27-2000, Sumter GS(SGJ) 6,Sumter
+FLOYD S,in chambers + 15th Cir. CPNJ 6,27-2000, 15th Cir. CPNJ 6,na
+GOODSTEIN,in chambers + 14th Cir. CPNJ 6 + Beaufort GS CC 4,27-2000, 14th Cir. CPNJ 6 ,na
+KEESLEY,in chambers + Richland GS 7,27-2000, Richland GS 7,Richland
+KINARD,in chambers + 14th Cir. CPNJ 6,27-2000, 14th Cir. CPNJ 6,na
+KING,in chambers + 15th Cir. CPNJ 3,27-2000, 15th Cir. CPNJ 3,na
+KITTREDGE,in chambers + 13th Cir. CPNJ 7,27-2000, 13th Cir. CPNJ 7,na
+LOCKEMY,"in chambers + XX 5,6,7",27-2000," XX 5,6,7",na
+MACAULAY,"in chambers + X 6,7",27-2000," X 6,7",na
+NICHOLSON,"in chambers + 10th Cir. CPNJ 5,6,7",27-2000," 10th Cir. CPNJ 5,6,7",na
+PATTERSON,in chambers + 12th Cir. CPNJ 5,27-2000, 12th Cir. CPNJ 5,na
+WATSON,"in chambers + X 5,6,7",27-2000," X 5,6,7",na
+BROWN,na,27-2000,na,na
+HUGHSTON,na,27-2000,na,na
+SIMMONS,na,27-2000,na,na
+SMOAK,na,27-2000,na,na
+GIER,na,27-2000,na,na
+WATTS,na,27-2000,na,na
+BURCH,"Darlington GS 11,12,13,14 + XX 10",28-2000, XX 10,na
+COOPER TW,Orientation School + Aiken GS 13,28-2000, Aiken GS 13,Aiken
+HAYES,York GS + 16th Cir. AW,28-2000, 16th Cir. AW,na
+JOHNSON,Orientation School + 5th Cir. CPNJ 13,28-2000, 5th Cir. CPNJ 13,na
+LOCKEMY,"4th Cir. CPNJ 12,13,14 + X 10,11",28-2000," X 10,11",na
+SMOAK,na,28-2000,na,na
+COOPER GT,"Orientation School + 5th Cir. CPNJ 13,14",28-2000," 5th Cir. CPNJ 13,14",na
+GIER,na,28-2000,na,na
+WATTS,na,28-2000,na,na
+FLOYD H,York CP CC + York GS CC 20,29-2000, York GS CC 20,York
+FLOYD S,"Horry GS 17 + Family Death 18,19,20,21",29-2000," Family Death 18,19,20,21",na
+KITTREDGE,"13th Cir. CPNJ 17,18,19 + X 20,21",29-2000," X 20,21",na
+MACAULAY,"X 17,18,19 + 10th Cir. CPNJ 20,21",29-2000," 10th Cir. CPNJ 20,21",na
+WESTBROOK,"Lexington GS 17,18,19,20 + X 21",29-2000, X 21,na
+SIMMONS,na,29-2000,na,na
+GIER,na,29-2000,na,na
+WATTS,na,29-2000,na,na
+BAXLEY,"Sumter GS (Sitting with Milling) 26,27,28 + Marlboro GS (Sitting with Burch) 24,25",30-2000," Marlboro GS (Sitting with Burch) 24,25",Marlboro
+DENNIS,"Sumter GS(SGJ) CC 27 + Clarendon GS CC 27 + 3rd Cir. CPNJ 27,28 + X 24,25,26",30-2000, Clarendon GS CC 27 ,Clarendon
+WILLIAMS,Richland CP + Richland GS CC 28,30-2000, Richland GS CC 28,Richland
+BROWN,na,30-2000,na,na
+HUGHSTON,na,30-2000,na,na
+SIMMONS,"Greenville CPNJ 26,27 + Greenville GS 28",30-2000, Greenville GS 28,Greenville
+SMOAK,na,30-2000,na,na
+BURCH,Marlboro GS + Sumter GS CC,31-2000, Sumter GS CC,Sumter
+KINARD,Richland GS + Lexington GS CC 3,31-2000, Lexington GS CC 3,Lexington
+MILLING,Sumter GS + Marlboro GS CC,31-2000, Marlboro GS CC,Marlboro
+GIER,na,31-2000,na,na
+WATTS,na,31-2000,na,na
+GOODSTEIN,in chambers + 14th Cir. CPNJ 6 + Beaufort GS CC 4,27-2000, Beaufort GS CC 4,Beaufort
+BROWN,na,27-2000,na,na
+HUGHSTON,na,27-2000,na,na
+SIMMONS,na,27-2000,na,na
+SMOAK,na,27-2000,na,na
+GIER,na,27-2000,na,na
+WATTS,na,27-2000,na,na
+SMOAK,na,28-2000,na,na
+GIER,na,28-2000,na,na
+WATTS,na,28-2000,na,na
+SIMMONS,na,29-2000,na,na
+GIER,na,29-2000,na,na
+WATTS,na,29-2000,na,na
+DENNIS,"Sumter GS(SGJ) CC 27 + Clarendon GS CC 27 + 3rd Cir. CPNJ 27,28 + X 24,25,26",30-2000," 3rd Cir. CPNJ 27,28 ",na
+BROWN,na,30-2000,na,na
+HUGHSTON,na,30-2000,na,na
+SMOAK,na,30-2000,na,na
+GIER,na,31-2000,na,na
+WATTS,na,31-2000,na,na
+BROWN,na,27-2000,na,na
+HUGHSTON,na,27-2000,na,na
+SIMMONS,na,27-2000,na,na
+SMOAK,na,27-2000,na,na
+GIER,na,27-2000,na,na
+WATTS,na,27-2000,na,na
+SMOAK,na,28-2000,na,na
+GIER,na,28-2000,na,na
+WATTS,na,28-2000,na,na
+SIMMONS,na,29-2000,na,na
+GIER,na,29-2000,na,na
+WATTS,na,29-2000,na,na
+DENNIS,"Sumter GS(SGJ) CC 27 + Clarendon GS CC 27 + 3rd Cir. CPNJ 27,28 + X 24,25,26",30-2000," X 24,25,26",na
+BROWN,na,30-2000,na,na
+HUGHSTON,na,30-2000,na,na
+SMOAK,na,30-2000,na,na
+GIER,na,31-2000,na,na
+WATTS,na,31-2000,na,na
+BROWN,na,27-2000,na,na
+HUGHSTON,na,27-2000,na,na
+SIMMONS,na,27-2000,na,na
+SMOAK,na,27-2000,na,na
+GIER,na,27-2000,na,na
+WATTS,na,27-2000,na,na
+SMOAK,na,28-2000,na,na
+GIER,na,28-2000,na,na
+WATTS,na,28-2000,na,na
+SIMMONS,na,29-2000,na,na
+GIER,na,29-2000,na,na
+WATTS,na,29-2000,na,na
+BROWN,na,30-2000,na,na
+HUGHSTON,na,30-2000,na,na
+SMOAK,na,30-2000,na,na
+GIER,na,31-2000,na,na
+WATTS,na,31-2000,na,na
+ALFORD,in chambers,14-2001,in chambers,na
+BARBER,in chambers,14-2001,in chambers,na
+BAXLEY,in chambers,14-2001,in chambers,na
+BEATTY,in chambers,14-2001,in chambers,na
+BREEDEN,in chambers,14-2001,in chambers,na
+BUCKNER,"14th Cir. CPNJ 2,3",14-2001,"14th Cir. CPNJ 2,3",na
+BROGDON,in chambers,14-2001,in chambers,na
+BURCH,in chambers + 12th Cir. CPNJ 5,14-2001,in chambers ,na
+CLARY,8th Cir. CPNJ CC 3 + Spartanburg GS 3 + Lexington GS 5,14-2001,8th Cir. CPNJ CC 3 ,na
+COLE,"in chambers + 7th Cir. CPNJ 2,5",14-2001,in chambers ,na
+COOPER GT,in chambers,14-2001,in chambers,na
+COOPER TW,in chambers,14-2001,in chambers,na
+DENNIS,"in chambers + 1st Cir. CPNJ 4,5",14-2001,in chambers ,na
+FEW,in chambers,14-2001,in chambers,na
+FLOYD H,in chambers,14-2001,in chambers,na
+FLOYD S,in chambers,14-2001,in chambers,na
+GOODE,in chambers,14-2001,in chambers,na
+GOODSTEIN,in chambers,14-2001,in chambers,na
+GREGORY,14th Cir. CPNJ 3,14-2001,14th Cir. CPNJ 3,na
+HALL,in chambers,14-2001,in chambers,na
+HARWELL,in chambers,14-2001,in chambers,na
+HAYES,in chambers,14-2001,in chambers,na
+JOHNSON,in chambers + 10th Cir. CPNJ 4,14-2001,in chambers ,na
+KEESLEY,in chambers,14-2001,in chambers,na
+KINARD,4th Cir. CPNJ/PCR,14-2001,4th Cir. CPNJ/PCR,na
+KING,in chambers,14-2001,in chambers,na
+KITTREDGE,in chambers + 10th Cir. CPNJ 6 + Medical 2,14-2001,in chambers ,na
+LEE,in chambers,14-2001,in chambers,na
+LOCKEMY,in chambers + 4th Cir. CPNJ 4,14-2001,in chambers ,na
+MACAULAY,in chambers,14-2001,in chambers,na
+MANNING,12th Cir. CPNJ/PCR,14-2001,12th Cir. CPNJ/PCR,na
+MARTIN,in chambers,14-2001,in chambers,na
+MCKELLAR,in chambers + 5th Cir. CPNJ 3,14-2001,in chambers ,na
+MILLING,in chambers + 15th Cir. CPNJ 2,14-2001,in chambers ,na
+NEWMAN,in chambers + 3rd Cir. CPNJ 5,14-2001,in chambers ,na
+NICHOLSON,in chambers,14-2001,in chambers,na
+PATTERSON,in chambers,14-2001,in chambers,na
+PEEPLES,in chambers,14-2001,in chambers,na
+PIEPER,in chambers + 9th Cir. CPNJ 2 + Charleston GS CC 2,14-2001,in chambers ,na
+RAWL,in chambers,14-2001,in chambers,na
+SAUNDERS,in chambers,14-2001,in chambers,na
+SHORT,in chambers,14-2001,in chambers,na
+THOMAS,in chambers + Horry GS 3,14-2001,in chambers ,na
+WATSON,in chambers + 13th Cir. CPNJ 2,14-2001,in chambers ,na
+WESTBROOK,"in chambers + Richland GS 2,3,4,5",14-2001,in chambers ,na
+WILLIAMS,in chambers + 1st Cir. CPNJ 2,14-2001,in chambers ,na
+BROWN,na,14-2001,na,na
+COTTINGHAM,na,14-2001,na,na
+HUGHSTON,na,14-2001,na,na
+PYLE,na,14-2001,na,na
+GIER,na,14-2001,na,na
+COUCH,na,14-2001,na,na
+SIMMONS,Greenville GS 6,14-2001,Greenville GS 6,Greenville
+YOUNG,Charleston CPNJ 6,14-2001,Charleston CPNJ 6,Charleston
+SMOAK,na,14-2001,na,na
+WATTS,na,14-2001,na,na
+ALFORD,7th Cir. CP/PCR,15-2001,7th Cir. CP/PCR,na
+BARBER,Aiken GS,15-2001,Aiken GS,Aiken
+BAXLEY,Horry GS,15-2001,Horry GS,Horry
+BEATTY,Fairfield GS,15-2001,Fairfield GS,Fairfield
+BREEDEN,Richland GS,15-2001,Richland GS,Richland
+BUCKNER,X,15-2001,X,na
+BROGDON,X,15-2001,X,na
+BURCH,12th Cir. AW,15-2001,12th Cir. AW,na
+CLARY,X,15-2001,X,na
+COLE,X,15-2001,X,na
+COOPER GT,Lexington GS,15-2001,Lexington GS,Lexington
+COOPER TW,Richland GS,15-2001,Richland GS,Richland
+DENNIS,X,15-2001,X,na
+FEW,Spartanburg GS,15-2001,Spartanburg GS,Spartanburg
+FLOYD H,Pickens GS,15-2001,Pickens GS,Pickens
+FLOYD S,X,15-2001,X,na
+GOODE,X,15-2001,X,na
+GOODSTEIN,X,15-2001,X,na
+GREGORY,Berkeley GS,15-2001,Berkeley GS,Berkeley
+HALL,X,15-2001,X,na
+HARWELL,Horry GS,15-2001,Horry GS,Horry
+HAYES,Spartanburg GS,15-2001,Spartanburg GS,Spartanburg
+JOHNSON,Anderson GS,15-2001,Anderson GS,Anderson
+KEESLEY,11th Cir. CPNJ,15-2001,11th Cir. CPNJ,na
+KINARD,Chesterfield GS,15-2001,Chesterfield GS,Chester
+KING,York GS,15-2001,York GS,York
+KITTREDGE,Oconee CP,15-2001,Oconee CP,Oconee
+LEE,5th Cir. AW,15-2001,5th Cir. AW,na
+LOCKEMY,Charleston CP + Horry GS CC 9 ,15-2001,Charleston CP ,Charleston
+MACAULAY,X,15-2001,X,na
+MANNING,Florence CP,15-2001,Florence CP,Florence
+MARTIN,Colleton GS,15-2001,Colleton GS,Colleton
+MCKELLAR,X,15-2001,X,na
+MILLING,X,15-2001,X,na
+NEWMAN,Charleston GS,15-2001,Charleston GS,Charleston
+NICHOLSON,11th Cir. AW,15-2001,11th Cir. AW,na
+PATTERSON,Greenville GS,15-2001,Greenville GS,Greenville
+PEEPLES,2nd Cir. CPNJ,15-2001,2nd Cir. CPNJ,na
+PIEPER,9th Cir. AW + 9th Cir. CPNJ CC 11,15-2001,9th Cir. AW ,na
+RAWL,Beaufort GS,15-2001,Beaufort GS,Beaufort
+SAUNDERS,7th Cir. CPNJ,15-2001,7th Cir. CPNJ,na
+SHORT,York GS,15-2001,York GS,York
+THOMAS,Charleston GS,15-2001,Charleston GS,Charleston
+WATSON,Newberry GS,15-2001,Newberry GS,Newberry
+WESTBROOK,Richland GS,15-2001,Richland GS,Richland
+WILLIAMS,Sumter GS,15-2001,Sumter GS,Sumter
+BROWN,Orangeburg GS,15-2001,Orangeburg GS,Orangeburg
+COTTINGHAM,"Marlboro GS 10,11",15-2001,"Marlboro GS 10,11",Marlboro
+HUGHSTON,Greenwood GS,15-2001,Greenwood GS,Greenwood
+PYLE,Greenville GS,15-2001,Greenville GS,Greenville
+GIER,na,15-2001,na,na
+COUCH,na,15-2001,na,na
+SIMMONS,na,15-2001,na,na
+YOUNG,Charleston CPNJ 13,15-2001,Charleston CPNJ 13,Charleston
+SMOAK,na,15-2001,na,na
+WATTS,na,15-2001,na,na
+ALFORD,Chester CP,16-2001,Chester CP,Chester
+BARBER,Aiken GS,16-2001,Aiken GS,Aiken
+BAXLEY,Horry CP,16-2001,Horry CP,Horry
+BEATTY,Fairfield GS,16-2001,Fairfield GS,Fairfield
+BREEDEN,X,16-2001,X,na
+BUCKNER,1st Cir. CPNJ,16-2001,1st Cir. CPNJ,na
+BROGDON,"Horry GS 16,17,18,19 + X 20",16-2001,"Horry GS 16,17,18,19 ",Horry
+BURCH,Florence CP,16-2001,Florence CP,Florence
+CLARY,Greenwood GS,16-2001,Greenwood GS,Greenwood
+COLE,7th Cir. AW,16-2001,7th Cir. AW,na
+COOPER GT,13th Cir. CPNJ,16-2001,13th Cir. CPNJ,na
+COOPER TW,5th Cir. CPNJ,16-2001,5th Cir. CPNJ,na
+DENNIS,Dorchester CP,16-2001,Dorchester CP,Dorchester
+FEW,Spartanburg GS,16-2001,Spartanburg GS,Spartanburg
+FLOYD H,"13th Cir. CPNJ 16 + Lexington GS 17,18,19,20",16-2001,13th Cir. CPNJ 16 ,na
+FLOYD S,"X 16,18,19,20 + Darlington GS 17",16-2001,"X 16,18,19,20 ",na
+GOODE,Sumter CP + Sumter GS CC 19,16-2001,Sumter CP ,Sumter
+GOODSTEIN,"14th Cir. AW + 14th Cir. CPNJ CC 16,18,19,20",16-2001,14th Cir. AW ,na
+GREGORY,Charleston GS,16-2001,Charleston GS,Charleston
+HALL,Greenville GS,16-2001,Greenville GS,Greenville
+HARWELL,Horry GS,16-2001,Horry GS,Horry
+HAYES,Spartanburg CP,16-2001,Spartanburg CP,Spartanburg
+JOHNSON,Anderson GS,16-2001,Anderson GS,Anderson
+KEESLEY,Sick,16-2001,Sick,na
+KINARD,Marlboro CP,16-2001,Marlboro CP,Marlboro
+KING,Union GS,16-2001,Union GS,Union
+KITTREDGE,10th Cir. CPNJ,16-2001,10th Cir. CPNJ,na
+LEE,X,16-2001,X,na
+LOCKEMY,Charleston GS,16-2001,Charleston GS,Charleston
+MACAULAY,Richland GS,16-2001,Richland GS,Richland
+MANNING,Florence GS + 5th Cir. CPNJ CC 20,16-2001,Florence GS ,Florence
+MARTIN,Beaufort CP,16-2001,Beaufort CP,Beaufort
+MCKELLAR,Williamsburg CP,16-2001,Williamsburg CP,Williamsburg
+MILLING,15th Cir. CPNJ,16-2001,15th Cir. CPNJ,na
+NEWMAN,Berkeley CP,16-2001,Berkeley CP,Berkeley
+NICHOLSON,11th Cir. CPNJ/PCR,16-2001,11th Cir. CPNJ/PCR,na
+PATTERSON,13th Cir. AW,16-2001,13th Cir. AW,na
+PEEPLES,Aiken CP,16-2001,Aiken CP,Aiken
+PIEPER,Charleston CP,16-2001,Charleston CP,Charleston
+RAWL,Beaufort GS,16-2001,Beaufort GS,Beaufort
+SAUNDERS,Greenville GS,16-2001,Greenville GS,Greenville
+SHORT,16th Cir. CPNJ,16-2001,16th Cir. CPNJ,na
+THOMAS,X,16-2001,X,na
+WATSON,"X 16 + 8th Cir. CPNJ 17,18,19,20",16-2001,X 16 ,na
+WESTBROOK,Richland GS,16-2001,Richland GS,Richland
+WILLIAMS,Sumter GS,16-2001,Sumter GS,Sumter
+BROWN,Orangeburg GS,16-2001,Orangeburg GS,Orangeburg
+COTTINGHAM,Georgetown GS,16-2001,Georgetown GS,Georgetown
+HUGHSTON,Charleston CP,16-2001,Charleston CP,Charleston
+PYLE,na,16-2001,na,na
+GIER,na,16-2001,na,na
+COUCH,na,16-2001,na,na
+SIMMONS,na,16-2001,na,na
+YOUNG,Charleston CPNJ 20,16-2001,Charleston CPNJ 20,Charleston
+SMOAK,4th Cir. CPNJ,16-2001,4th Cir. CPNJ,na
+WATTS,na,16-2001,na,na
+ALFORD,X,17-2001,X,na
+BARBER,Bamberg GS,17-2001,Bamberg GS,Bamberg
+BAXLEY,15th Cir. CPNJ/PCR,17-2001,15th Cir. CPNJ/PCR,na
+BEATTY,6th Cir. CPNJ/PCR,17-2001,6th Cir. CPNJ/PCR,na
+BREEDEN,Richland GS,17-2001,Richland GS,Richland
+BUCKNER,Hampton CP,17-2001,Hampton CP,Hampton
+BROGDON,Horry CP,17-2001,Horry CP,Horry
+BURCH,Marion CP,17-2001,Marion CP,Marion
+CLARY,Laurens GS,17-2001,Laurens GS,Laurens
+COLE,Spartanburg CP,17-2001,Spartanburg CP,Spartanburg
+COOPER GT,Lexington GS,17-2001,Lexington GS,Lexington
+COOPER TW,Richland CP,17-2001,Richland CP,Richland
+DENNIS,Orangeburg CP,17-2001,Orangeburg CP,Orangeburg
+FEW,Spartanburg GS,17-2001,Spartanburg GS,Spartanburg
+FLOYD H,Pickens GS,17-2001,Pickens GS,Pickens
+FLOYD S,Darlington GS,17-2001,Darlington GS,Darlington
+GOODE,York GS,17-2001,York GS,York
+GOODSTEIN,Beaufort CP,17-2001,Beaufort CP,Beaufort
+GREGORY,9th Cir. CPNJ,17-2001,9th Cir. CPNJ,na
+HALL,Greenville CP,17-2001,Greenville CP,Greenville
+HARWELL,Florence GS,17-2001,Florence GS,Florence
+HAYES,Spartanburg GS,17-2001,Spartanburg GS,Spartanburg
+JOHNSON,Anderson CP,17-2001,Anderson CP,Anderson
+KEESLEY,"Lexington CP 23,24 + Edgefield CP 25,26,27",17-2001,"Lexington CP 23,24 ",Lexington
+KINARD,XX,17-2001,XX,na
+KING,York GS,17-2001,York GS,York
+KITTREDGE,Oconee GS,17-2001,Oconee GS,Oconee
+LEE,Richland GS,17-2001,Richland GS,Richland
+LOCKEMY,5th Cir. CPNJ + Richland GS CC 27,17-2001,5th Cir. CPNJ ,na
+MACAULAY,5th Cir. CPNJ,17-2001,5th Cir. CPNJ,na
+MANNING,Florence GS,17-2001,Florence GS,Florence
+MARTIN,Allendale GS,17-2001,Allendale GS,Allendale
+MCKELLAR,Lee GS,17-2001,Lee GS,Lee
+MILLING,Horry CP,17-2001,Horry CP,Horry
+NEWMAN,Berkeley CP,17-2001,Berkeley CP,Berkeley
+NICHOLSON,"Lexington CP 25,26,27 + Edgefield CP 23,24",17-2001,"Lexington CP 25,26,27 ",Lexington
+PATTERSON,Greenville CP,17-2001,Greenville CP,Greenville
+PEEPLES,Aiken CP,17-2001,Aiken CP,Aiken
+PIEPER,Charleston CP,17-2001,Charleston CP,Charleston
+RAWL,Colleton GS + Charleston GS,17-2001,Colleton GS ,Colleton
+SAUNDERS,13th Cir. CPNJ,17-2001,13th Cir. CPNJ,na
+SHORT,X,17-2001,X,na
+THOMAS,Charleston CP + Horry GS CC 27,17-2001,Charleston CP ,Charleston
+WATSON,13th Cir. CPNJ,17-2001,13th Cir. CPNJ,na
+WESTBROOK,Richland GS,17-2001,Richland GS,Richland
+WILLIAMS,Sumter CP,17-2001,Sumter CP,Sumter
+BROWN,Dorchester GS,17-2001,Dorchester GS,Dorchester
+COTTINGHAM,Georgetown GS,17-2001,Georgetown GS,Georgetown
+HUGHSTON,na,17-2001,na,na
+PYLE,na,17-2001,na,na
+GIER,York CPNJ 26,17-2001,York CPNJ 26,York
+COUCH,7th Cir. CPNJ,17-2001,7th Cir. CPNJ,na
+SIMMONS,"Greenville GS 25,27",17-2001,"Greenville GS 25,27",Greenville
+YOUNG,na,17-2001,na,na
+SMOAK,na,17-2001,na,na
+WATTS,na,17-2001,na,na
+ALFORD,Lancaster GS,18-2001,Lancaster GS,Lancaster
+BARBER,Aiken GS CC + 2nd Cir. CP/PCR,18-2001,Aiken GS CC ,Aiken
+BAXLEY,Georgetown CP,18-2001,Georgetown CP,Georgetown
+BEATTY,X,18-2001,X,na
+BREEDEN,Georgetown CP + Horry CP,18-2001,Georgetown CP ,Georgetown
+BUCKNER,Orangeburg CP,18-2001,Orangeburg CP,Orangeburg
+BROGDON,Horry CP,18-2001,Horry CP,Horry
+BURCH,Florence GS,18-2001,Florence GS,Florence
+CLARY,Laurens GS,18-2001,Laurens GS,Laurens
+COLE,Spartanburg CP,18-2001,Spartanburg CP,Spartanburg
+COOPER GT,Lexington CP,18-2001,Lexington CP,Lexington
+COOPER TW,Kershaw CP,18-2001,Kershaw CP,Kershaw
+DENNIS,Dorchester GS,18-2001,Dorchester GS,Dorchester
+FEW,Anderson CP,18-2001,Anderson CP,Anderson
+FLOYD H,13th Cir. CPNJ/PCR,18-2001,13th Cir. CPNJ/PCR,na
+FLOYD S,Marion GS,18-2001,Marion GS,Marion
+GOODE,Clarendon CP,18-2001,Clarendon CP,Clarendon
+GOODSTEIN,Jasper CP,18-2001,Jasper CP,Jasper
+GREGORY,Charleston CP,18-2001,Charleston CP,Charleston
+HALL,Greenville CP,18-2001,Greenville CP,Greenville
+HARWELL,15th Cir. CPNJ,18-2001,15th Cir. CPNJ,na
+HAYES,Cherokee CP,18-2001,Cherokee CP,Cherokee
+JOHNSON,10th Cir. CPNJ,18-2001,10th Cir. CPNJ,na
+KEESLEY,Richland CP,18-2001,Richland CP,Richland
+KINARD,Marlboro GS,18-2001,Marlboro GS,Marlboro
+KING,York CP,18-2001,York CP,York
+KITTREDGE,Anderson CP,18-2001,Anderson CP,Anderson
+LEE,Richland CP,18-2001,Richland CP,Richland
+LOCKEMY,Berkeley GS + Richland GS CC 2,18-2001,Berkeley GS ,Berkeley
+MACAULAY,Richland GS,18-2001,Richland GS,Richland
+MANNING,Florence GS,18-2001,Florence GS,Florence
+MARTIN,Beaufort CP,18-2001,Beaufort CP,Beaufort
+MCKELLAR,Lee GS,18-2001,Lee GS,Lee
+MILLING,Horry CP,18-2001,Horry CP,Horry
+NEWMAN,9th Cir. CPNJ,18-2001,9th Cir. CPNJ,na
+NICHOLSON,Saluda GS,18-2001,Saluda GS,Saluda
+PATTERSON,Pickens CP,18-2001,Pickens CP,Pickens
+PEEPLES,Aiken CP,18-2001,Aiken CP,Aiken
+PIEPER,Charleston CP,18-2001,Charleston CP,Charleston
+RAWL,X,18-2001,X,na
+SAUNDERS,13th Cir. CPNJ,18-2001,13th Cir. CPNJ,na
+SHORT,Union CP,18-2001,Union CP,Union
+THOMAS,Charleston GS,18-2001,Charleston GS,Charleston
+WATSON,Abbeville GS,18-2001,Abbeville GS,Abbeville
+WESTBROOK,Richland GS,18-2001,Richland GS,Richland
+WILLIAMS,Sumter CP,18-2001,Sumter CP,Sumter
+BROWN,na,18-2001,na,na
+COTTINGHAM,na,18-2001,na,na
+HUGHSTON,Charleston GS,18-2001,Charleston GS,Charleston
+PYLE,na,18-2001,na,na
+GIER,na,18-2001,na,na
+COUCH,na,18-2001,na,na
+SIMMONS,Greenville GS 4,18-2001,Greenville GS 4,Greenville
+YOUNG,Charleston CPNJ 4,18-2001,Charleston CPNJ 4,Charleston
+SMOAK,Lexington CP,18-2001,Lexington CP,Lexington
+WATTS,"Dorchester CPNJ 30,1,2,3",18-2001,"Dorchester CPNJ 30,1,2,3",Dorchester
+BURCH,in chambers + 12th Cir. CPNJ 5,14-2001, 12th Cir. CPNJ 5,na
+CLARY,8th Cir. CPNJ CC 3 + Spartanburg GS 3 + Lexington GS 5,14-2001, Spartanburg GS 3 ,Spartanburg
+COLE,"in chambers + 7th Cir. CPNJ 2,5",14-2001," 7th Cir. CPNJ 2,5",na
+DENNIS,"in chambers + 1st Cir. CPNJ 4,5",14-2001," 1st Cir. CPNJ 4,5",na
+JOHNSON,in chambers + 10th Cir. CPNJ 4,14-2001, 10th Cir. CPNJ 4,na
+KITTREDGE,in chambers + 10th Cir. CPNJ 6 + Medical 2,14-2001, 10th Cir. CPNJ 6 ,na
+LOCKEMY,in chambers + 4th Cir. CPNJ 4,14-2001, 4th Cir. CPNJ 4,na
+MCKELLAR,in chambers + 5th Cir. CPNJ 3,14-2001, 5th Cir. CPNJ 3,na
+MILLING,in chambers + 15th Cir. CPNJ 2,14-2001, 15th Cir. CPNJ 2,na
+NEWMAN,in chambers + 3rd Cir. CPNJ 5,14-2001, 3rd Cir. CPNJ 5,na
+PIEPER,in chambers + 9th Cir. CPNJ 2 + Charleston GS CC 2,14-2001, 9th Cir. CPNJ 2 ,na
+THOMAS,in chambers + Horry GS 3,14-2001, Horry GS 3,Horry
+WATSON,in chambers + 13th Cir. CPNJ 2,14-2001, 13th Cir. CPNJ 2,na
+WESTBROOK,"in chambers + Richland GS 2,3,4,5",14-2001," Richland GS 2,3,4,5",Richland
+WILLIAMS,in chambers + 1st Cir. CPNJ 2,14-2001, 1st Cir. CPNJ 2,na
+BROWN,na,14-2001,na,na
+COTTINGHAM,na,14-2001,na,na
+HUGHSTON,na,14-2001,na,na
+PYLE,na,14-2001,na,na
+GIER,na,14-2001,na,na
+COUCH,na,14-2001,na,na
+SMOAK,na,14-2001,na,na
+WATTS,na,14-2001,na,na
+LOCKEMY,Charleston CP + Horry GS CC 9 ,15-2001, Horry GS CC 9 ,Horry
+PIEPER,9th Cir. AW + 9th Cir. CPNJ CC 11,15-2001, 9th Cir. CPNJ CC 11,na
+GIER,na,15-2001,na,na
+COUCH,na,15-2001,na,na
+SIMMONS,na,15-2001,na,na
+SMOAK,na,15-2001,na,na
+WATTS,na,15-2001,na,na
+BROGDON,"Horry GS 16,17,18,19 + X 20",16-2001, X 20,na
+FLOYD H,"13th Cir. CPNJ 16 + Lexington GS 17,18,19,20",16-2001," Lexington GS 17,18,19,20",Lexington
+FLOYD S,"X 16,18,19,20 + Darlington GS 17",16-2001, Darlington GS 17,Darlington
+GOODE,Sumter CP + Sumter GS CC 19,16-2001, Sumter GS CC 19,Sumter
+GOODSTEIN,"14th Cir. AW + 14th Cir. CPNJ CC 16,18,19,20",16-2001," 14th Cir. CPNJ CC 16,18,19,20",na
+MANNING,Florence GS + 5th Cir. CPNJ CC 20,16-2001, 5th Cir. CPNJ CC 20,na
+WATSON,"X 16 + 8th Cir. CPNJ 17,18,19,20",16-2001," 8th Cir. CPNJ 17,18,19,20",na
+PYLE,na,16-2001,na,na
+GIER,na,16-2001,na,na
+COUCH,na,16-2001,na,na
+SIMMONS,na,16-2001,na,na
+WATTS,na,16-2001,na,na
+KEESLEY,"Lexington CP 23,24 + Edgefield CP 25,26,27",17-2001," Edgefield CP 25,26,27",Edgefield
+LOCKEMY,5th Cir. CPNJ + Richland GS CC 27,17-2001, Richland GS CC 27,Richland
+NICHOLSON,"Lexington CP 25,26,27 + Edgefield CP 23,24",17-2001," Edgefield CP 23,24",Edgefield
+RAWL,Colleton GS + Charleston GS,17-2001, Charleston GS,Charleston
+THOMAS,Charleston CP + Horry GS CC 27,17-2001, Horry GS CC 27,Horry
+HUGHSTON,na,17-2001,na,na
+PYLE,na,17-2001,na,na
+YOUNG,na,17-2001,na,na
+SMOAK,na,17-2001,na,na
+WATTS,na,17-2001,na,na
+BARBER,Aiken GS CC + 2nd Cir. CP/PCR,18-2001, 2nd Cir. CP/PCR,na
+BREEDEN,Georgetown CP + Horry CP,18-2001, Horry CP,Horry
+LOCKEMY,Berkeley GS + Richland GS CC 2,18-2001, Richland GS CC 2,Richland
+BROWN,na,18-2001,na,na
+COTTINGHAM,na,18-2001,na,na
+PYLE,na,18-2001,na,na
+GIER,na,18-2001,na,na
+COUCH,na,18-2001,na,na
+CLARY,8th Cir. CPNJ CC 3 + Spartanburg GS 3 + Lexington GS 5,14-2001, Lexington GS 5,Lexington
+KITTREDGE,in chambers + 10th Cir. CPNJ 6 + Medical 2,14-2001, Medical 2,na
+PIEPER,in chambers + 9th Cir. CPNJ 2 + Charleston GS CC 2,14-2001, Charleston GS CC 2,Charleston
+BROWN,na,14-2001,na,na
+COTTINGHAM,na,14-2001,na,na
+HUGHSTON,na,14-2001,na,na
+PYLE,na,14-2001,na,na
+GIER,na,14-2001,na,na
+COUCH,na,14-2001,na,na
+SMOAK,na,14-2001,na,na
+WATTS,na,14-2001,na,na
+GIER,na,15-2001,na,na
+COUCH,na,15-2001,na,na
+SIMMONS,na,15-2001,na,na
+SMOAK,na,15-2001,na,na
+WATTS,na,15-2001,na,na
+PYLE,na,16-2001,na,na
+GIER,na,16-2001,na,na
+COUCH,na,16-2001,na,na
+SIMMONS,na,16-2001,na,na
+WATTS,na,16-2001,na,na
+HUGHSTON,na,17-2001,na,na
+PYLE,na,17-2001,na,na
+YOUNG,na,17-2001,na,na
+SMOAK,na,17-2001,na,na
+WATTS,na,17-2001,na,na
+BROWN,na,18-2001,na,na
+COTTINGHAM,na,18-2001,na,na
+PYLE,na,18-2001,na,na
+GIER,na,18-2001,na,na
+COUCH,na,18-2001,na,na
+BROWN,na,14-2001,na,na
+COTTINGHAM,na,14-2001,na,na
+HUGHSTON,na,14-2001,na,na
+PYLE,na,14-2001,na,na
+GIER,na,14-2001,na,na
+COUCH,na,14-2001,na,na
+SMOAK,na,14-2001,na,na
+WATTS,na,14-2001,na,na
+GIER,na,15-2001,na,na
+COUCH,na,15-2001,na,na
+SIMMONS,na,15-2001,na,na
+SMOAK,na,15-2001,na,na
+WATTS,na,15-2001,na,na
+PYLE,na,16-2001,na,na
+GIER,na,16-2001,na,na
+COUCH,na,16-2001,na,na
+SIMMONS,na,16-2001,na,na
+WATTS,na,16-2001,na,na
+HUGHSTON,na,17-2001,na,na
+PYLE,na,17-2001,na,na
+YOUNG,na,17-2001,na,na
+SMOAK,na,17-2001,na,na
+WATTS,na,17-2001,na,na
+BROWN,na,18-2001,na,na
+COTTINGHAM,na,18-2001,na,na
+PYLE,na,18-2001,na,na
+GIER,na,18-2001,na,na
+COUCH,na,18-2001,na,na
+BROWN,na,14-2001,na,na
+COTTINGHAM,na,14-2001,na,na
+HUGHSTON,na,14-2001,na,na
+PYLE,na,14-2001,na,na
+GIER,na,14-2001,na,na
+COUCH,na,14-2001,na,na
+SMOAK,na,14-2001,na,na
+WATTS,na,14-2001,na,na
+GIER,na,15-2001,na,na
+COUCH,na,15-2001,na,na
+SIMMONS,na,15-2001,na,na
+SMOAK,na,15-2001,na,na
+WATTS,na,15-2001,na,na
+PYLE,na,16-2001,na,na
+GIER,na,16-2001,na,na
+COUCH,na,16-2001,na,na
+SIMMONS,na,16-2001,na,na
+WATTS,na,16-2001,na,na
+HUGHSTON,na,17-2001,na,na
+PYLE,na,17-2001,na,na
+YOUNG,na,17-2001,na,na
+SMOAK,na,17-2001,na,na
+WATTS,na,17-2001,na,na
+BROWN,na,18-2001,na,na
+COTTINGHAM,na,18-2001,na,na
+PYLE,na,18-2001,na,na
+GIER,na,18-2001,na,na
+COUCH,na,18-2001,na,na
+ALFORD,in chambers + 7th Cir. CP/PCR,19-2001,in chambers ,na
+BARBER,in chambers,19-2001,in chambers,na
+BAXLEY,in chambers,19-2001,in chambers,na
+BEATTY,in chambers,19-2001,in chambers,na
+BREEDEN,in chambers,19-2001,in chambers,na
+BROGDON,in chambers + Horry GS 9,19-2001,in chambers ,na
+BUCKNER,in chambers,19-2001,in chambers,na
+BURCH,in chambers,19-2001,in chambers,na
+CLARY,in chambers,19-2001,in chambers,na
+COLE,in chambers,19-2001,in chambers,na
+COOPER GT,in chambers,19-2001,in chambers,na
+COOPER TW,in chambers,19-2001,in chambers,na
+DENNIS,in chambers + 9th Cir. CPNJ 7 + 1st Cir. CPNJ 8 + 9th Cir. CPNJ 8 + 1st Cir. CPNJ 9,19-2001,in chambers ,na
+FEW,Greenville GS 7,19-2001,Greenville GS 7,Greenville
+FLOYD H,in chambers,19-2001,in chambers,na
+FLOYD S,in chambers,19-2001,in chambers,na
+GOODE,in chambers,19-2001,in chambers,na
+GOODSTEIN,in chambers + 14th Cir. CPNJ 7,19-2001,in chambers ,na
+GREGORY,in chambers,19-2001,in chambers,na
+HALL,in chambers,19-2001,in chambers,na
+HARWELL,in chambers,19-2001,in chambers,na
+HAYES,in chambers,19-2001,in chambers,na
+JOHNSON,in chambers,19-2001,in chambers,na
+KEESLEY,in chambers,19-2001,in chambers,na
+KINARD,in chambers + 8th Cir. CPNJ/PCR 7,19-2001,in chambers ,na
+KING,in chambers + Clarendon GS 8 + 3rd Cir. CPNJ 8,19-2001,in chambers ,na
+KITTREDGE,in chambers,19-2001,in chambers,na
+LEE,in chambers + 5th Cir. CPNJ 8,19-2001,in chambers ,na
+LOCKEMY,in chambers,19-2001,in chambers,na
+MACAULAY,in chambers,19-2001,in chambers,na
+MANNING,in chambers + 5th Cir. CPNJ 7,19-2001,in chambers ,na
+MARTIN,in chambers,19-2001,in chambers,na
+MCKELLAR,in chambers + 5th Cir. CPNJ 8,19-2001,in chambers ,na
+MILLING,in chambers,19-2001,in chambers,na
+NEWMAN,in chambers,19-2001,in chambers,na
+NICHOLSON,in chambers,19-2001,in chambers,na
+PATTERSON,in chambers + Greenville GS(SGJ) 7 + 13th Cir. CPNJ 8,19-2001,in chambers ,na
+PEEPLES,in chambers + Lancaster 8,19-2001,in chambers ,na
+PIEPER,in chambers,19-2001,in chambers,na
+RAWL,in chambers + 9th Cir. CPNJ 8,19-2001,in chambers ,na
+SAUNDERS,in chambers,19-2001,in chambers,na
+SHORT,in chambers,19-2001,in chambers,na
+THOMAS,in chambers,19-2001,in chambers,na
+WATSON,in chambers,19-2001,in chambers,na
+WESTBROOK,"in chambers + Richland GS 7,8",19-2001,in chambers ,na
+WILLIAMS,in chambers,19-2001,in chambers,na
+BROWN,na,19-2001,na,na
+COTTINGHAM,na,19-2001,na,na
+HUGHSTON,na,19-2001,na,na
+PYLE,na,19-2001,na,na
+SMOAK,na,19-2001,na,na
+GIER,York CPNJ 10,19-2001,York CPNJ 10,York
+SIMMONS,Greenville GS 11,19-2001,Greenville GS 11,Greenville
+YOUNG,Charleston CPNJ 11,19-2001,Charleston CPNJ 11,Charleston
+ALFORD,Lancaster GS,20-2001,Lancaster GS,Lancaster
+BARBER,Aiken GS,20-2001,Aiken GS,Aiken
+BAXLEY,Horry GS,20-2001,Horry GS,Horry
+BEATTY,York GS,20-2001,York GS,York
+BREEDEN,Kershaw GS,20-2001,Kershaw GS,Kershaw
+BROGDON,Horry GS,20-2001,Horry GS,Horry
+BUCKNER,Hampton CP,20-2001,Hampton CP,Hampton
+BURCH,Florence CP,20-2001,Florence CP,Florence
+CLARY,Newberry GS,20-2001,Newberry GS,Newberry
+COLE,Spartanburg GS,20-2001,Spartanburg GS,Spartanburg
+COOPER GT,Lexington GS,20-2001,Lexington GS,Lexington
+COOPER TW,5th Cir. CPNJ,20-2001,5th Cir. CPNJ,na
+DENNIS,Calhoun CP + Kershaw GS CC 17,20-2001,Calhoun CP ,Calhoun
+FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC,20-2001,7th Cir. CPNJ/PCR ,na
+FLOYD H,Greenville GS,20-2001,Greenville GS,Greenville
+FLOYD S,Chesterfield GS,20-2001,Chesterfield GS,Chester
+GOODE,Clarendon GS,20-2001,Clarendon GS,Clarendon
+GOODSTEIN,Charleston CP,20-2001,Charleston CP,Charleston
+GREGORY,9th Cir. CPNJ/PCR,20-2001,9th Cir. CPNJ/PCR,na
+HALL,Greenville GS,20-2001,Greenville GS,Greenville
+HARWELL,12th Cir. CPNJ,20-2001,12th Cir. CPNJ,na
+HAYES,Charleston CP,20-2001,Charleston CP,Charleston
+JOHNSON,Anderson GS,20-2001,Anderson GS,Anderson
+KEESLEY,11th Cir. CPNJ,20-2001,11th Cir. CPNJ,na
+KINARD,Darlington CP,20-2001,Darlington CP,Darlington
+KING,York GS,20-2001,York GS,York
+KITTREDGE,Anderson GS,20-2001,Anderson GS,Anderson
+LEE,Richland CP,20-2001,Richland CP,Richland
+LOCKEMY,Richland CP + Richland GS CC 18,20-2001,Richland CP ,Richland
+MACAULAY,Richland GS,20-2001,Richland GS,Richland
+MANNING,Marion GS  + 5th Cir. CPNJ CC 14,20-2001,Marion GS  ,Marion
+MARTIN,Beaufort GS,20-2001,Beaufort GS,Beaufort
+MCKELLAR,3rd Cir. CPNJ,20-2001,3rd Cir. CPNJ,na
+MILLING,15th Cir. CPNJ,20-2001,15th Cir. CPNJ,na
+NEWMAN,Lexington CP,20-2001,Lexington CP,Lexington
+NICHOLSON,X,20-2001,X,na
+PATTERSON,Pickens CP,20-2001,Pickens CP,Pickens
+PEEPLES,2nd Cir. CPNJ,20-2001,2nd Cir. CPNJ,na
+PIEPER,Charleston GS,20-2001,Charleston GS,Charleston
+RAWL,"Colleton GS 14,15,16 + X 17,18",20-2001,"Colleton GS 14,15,16 ",Colleton
+SAUNDERS,X,20-2001,X,na
+SHORT,"X 15,16,17,18 + Williamsburg GS 14",20-2001,"X 15,16,17,18 ",na
+THOMAS,"Charleston GS + Horry GS CC 17,18",20-2001,Charleston GS ,Charleston
+WATSON,Greenwood GS,20-2001,Greenwood GS,Greenwood
+WESTBROOK,Richland GS,20-2001,Richland GS,Richland
+WILLIAMS,"Williamsburg GS 16,17,18 + Medical 14,15",20-2001,"Williamsburg GS 16,17,18 ",Williamsburg
+BROWN,Orangeburg GS,20-2001,Orangeburg GS,Orangeburg
+COTTINGHAM,15th Cir. CPNJ,20-2001,15th Cir. CPNJ,na
+HUGHSTON,Charleston CP,20-2001,Charleston CP,Charleston
+PYLE,na,20-2001,na,na
+SMOAK,10th Cir. CPNJ,20-2001,10th Cir. CPNJ,na
+GIER,na,20-2001,na,na
+SIMMONS,"13th Cir. CPNJ 14,16",20-2001,"13th Cir. CPNJ 14,16",na
+YOUNG,na,20-2001,na,na
+ALFORD,Lancaster GS,21-2001,Lancaster GS,Lancaster
+BARBER,Aiken GS,21-2001,Aiken GS,Aiken
+BAXLEY,X,21-2001,X,na
+BEATTY,6th Cir. CPNJ,21-2001,6th Cir. CPNJ,na
+BREEDEN,Kershaw GS,21-2001,Kershaw GS,Kershaw
+BROGDON,Horry GS,21-2001,Horry GS,Horry
+BUCKNER,Hampton CP,21-2001,Hampton CP,Hampton
+BURCH,Florence CP,21-2001,Florence CP,Florence
+CLARY,Abbeville CP,21-2001,Abbeville CP,Abbeville
+COLE,Spartanburg GS,21-2001,Spartanburg GS,Spartanburg
+COOPER GT,Edgefield CP,21-2001,Edgefield CP,Edgefield
+COOPER TW,Richland GS,21-2001,Richland GS,Richland
+DENNIS,Dorchester GS,21-2001,Dorchester GS,Dorchester
+FEW,Greenville GS,21-2001,Greenville GS,Greenville
+FLOYD H,Pickens GS,21-2001,Pickens GS,Pickens
+FLOYD S,Darlington GS,21-2001,Darlington GS,Darlington
+GOODE,Clarendon GS,21-2001,Clarendon GS,Clarendon
+GOODSTEIN,Allendale CP,21-2001,Allendale CP,Allendale
+GREGORY,X,21-2001,X,na
+HALL,Greenville GS,21-2001,Greenville GS,Greenville
+HARWELL,12th Cir. CPNJ,21-2001,12th Cir. CPNJ,na
+HAYES,7th Cir. CPNJ,21-2001,7th Cir. CPNJ,na
+JOHNSON,X,21-2001,X,na
+KEESLEY,Lexington GS,21-2001,Lexington GS,Lexington
+KINARD,4th Cir. CPNJ,21-2001,4th Cir. CPNJ,na
+KING,York CP,21-2001,York CP,York
+KITTREDGE,"Anderson GS 21,22,23 + Medical 24,25",21-2001,"Anderson GS 21,22,23 ",Anderson
+LEE,Richland CP,21-2001,Richland CP,Richland
+LOCKEMY,9th Cir. CPNJ,21-2001,9th Cir. CPNJ,na
+MACAULAY,5th Cir. CPNJ,21-2001,5th Cir. CPNJ,na
+MANNING,"Marion GS 21,22,23 + X 24,25",21-2001,"Marion GS 21,22,23 ",Marion
+MARTIN,Beaufort CP,21-2001,Beaufort CP,Beaufort
+MCKELLAR,Sumter CP,21-2001,Sumter CP,Sumter
+MILLING,Horry CP,21-2001,Horry CP,Horry
+NEWMAN,Richland CP,21-2001,Richland CP,Richland
+NICHOLSON,Lexington CP,21-2001,Lexington CP,Lexington
+PATTERSON,Pickens CP,21-2001,Pickens CP,Pickens
+PEEPLES,Bamberg CP,21-2001,Bamberg CP,Bamberg
+PIEPER,Berkeley CP,21-2001,Berkeley CP,Berkeley
+RAWL,14th Cir. CPNJ,21-2001,14th Cir. CPNJ,na
+SAUNDERS,X,21-2001,X,na
+SHORT,Union GS,21-2001,Union GS,Union
+THOMAS,Berkeley GS,21-2001,Berkeley GS,Berkeley
+WATSON,Greenwood GS,21-2001,Greenwood GS,Greenwood
+WESTBROOK,Richland GS,21-2001,Richland GS,Richland
+WILLIAMS,Williamsburg GS,21-2001,Williamsburg GS,Williamsburg
+BROWN,Orangeburg GS,21-2001,Orangeburg GS,Orangeburg
+COTTINGHAM,Charleston CP,21-2001,Charleston CP,Charleston
+HUGHSTON,Charleston CP,21-2001,Charleston CP,Charleston
+PYLE,Greenville CP,21-2001,Greenville CP,Greenville
+SMOAK,Beaufort GS,21-2001,Beaufort GS,Beaufort
+GIER,York CPNJ 24,21-2001,York CPNJ 24,York
+SIMMONS,"13th Cir. CPNJ 22,23",21-2001,"13th Cir. CPNJ 22,23",na
+YOUNG,Charleston CPNJ 25,21-2001,Charleston CPNJ 25,Charleston
+ALFORD,Fairfield CP,22-2001,Fairfield CP,Fairfield
+BARBER,Kershaw CP,22-2001,Kershaw CP,Kershaw
+BAXLEY,Georgetown GS,22-2001,Georgetown GS,Georgetown
+BEATTY,Chester CP,22-2001,Chester CP,Chester
+BREEDEN,5th Cir. CPNJ,22-2001,5th Cir. CPNJ,na
+BROGDON,Horry CP,22-2001,Horry CP,Horry
+BUCKNER,Barnwell CP,22-2001,Barnwell CP,Barnwell
+BURCH,Florence CP,22-2001,Florence CP,Florence
+CLARY,Laurens GS,22-2001,Laurens GS,Laurens
+COLE,Spartanburg CP,22-2001,Spartanburg CP,Spartanburg
+COOPER GT,11th Cir. CPNJ,22-2001,11th Cir. CPNJ,na
+COOPER TW,Richland GS,22-2001,Richland GS,Richland
+DENNIS,Dorchester GS,22-2001,Dorchester GS,Dorchester
+FEW,7th Cir. CPNJ,22-2001,7th Cir. CPNJ,na
+FLOYD H,XX,22-2001,XX,na
+FLOYD S,Dillon GS,22-2001,Dillon GS,Dillon
+GOODE,Lee CP,22-2001,Lee CP,Lee
+GOODSTEIN,Beaufort CP,22-2001,Beaufort CP,Beaufort
+GREGORY,9th Cir. CPNJ,22-2001,9th Cir. CPNJ,na
+HALL,Anderson CP,22-2001,Anderson CP,Anderson
+HARWELL,15th Cir. CPNJ,22-2001,15th Cir. CPNJ,na
+HAYES,Cherokee GS,22-2001,Cherokee GS,Cherokee
+JOHNSON,"10th Cir. CPNJ/PCR 28,29,30 + Lexington GS 31,1",22-2001,"10th Cir. CPNJ/PCR 28,29,30 ",na
+KEESLEY,McCormick CP,22-2001,McCormick CP,McCormick
+KINARD,Chesterfield CP,22-2001,Chesterfield CP,Chester
+KING,York GS,22-2001,York GS,York
+KITTREDGE,Oconee GS,22-2001,Oconee GS,Oconee
+LEE,Richland CP,22-2001,Richland CP,Richland
+LOCKEMY,Charleston GS,22-2001,Charleston GS,Charleston
+MACAULAY,Richland GS,22-2001,Richland GS,Richland
+MANNING,"Florence CP 30,31,1 + X 29",22-2001,"Florence CP 30,31,1 ",Florence
+MARTIN,14th Cir. CPNJ,22-2001,14th Cir. CPNJ,na
+MCKELLAR,Sumter GS,22-2001,Sumter GS,Sumter
+MILLING,Horry CP,22-2001,Horry CP,Horry
+NEWMAN,5th Cir. CPNJ,22-2001,5th Cir. CPNJ,na
+NICHOLSON,"10th Cir. CPNJ/PCR 31,1 + Lexington GS 28,29,30",22-2001,"10th Cir. CPNJ/PCR 31,1 ",na
+PATTERSON,Greenville CP,22-2001,Greenville CP,Greenville
+PEEPLES,Orangeburg CP,22-2001,Orangeburg CP,Orangeburg
+PIEPER,Charleston CP,22-2001,Charleston CP,Charleston
+RAWL,Beaufort CP,22-2001,Beaufort CP,Beaufort
+SAUNDERS,13th Cir. CPNJ,22-2001,13th Cir. CPNJ,na
+SHORT,York GS,22-2001,York GS,York
+THOMAS,Charleston CP,22-2001,Charleston CP,Charleston
+WATSON,Newberry CP,22-2001,Newberry CP,Newberry
+WESTBROOK,XX,22-2001,XX,na
+WILLIAMS,3rd Cir. CPNJ/PCR,22-2001,3rd Cir. CPNJ/PCR,na
+BROWN,Hampton GS,22-2001,Hampton GS,Hampton
+COTTINGHAM,na,22-2001,na,na
+HUGHSTON,Charleston GS,22-2001,Charleston GS,Charleston
+PYLE,Greenville GS,22-2001,Greenville GS,Greenville
+SMOAK,na,22-2001,na,na
+GIER,na,22-2001,na,na
+SIMMONS,na,22-2001,na,na
+YOUNG,na,22-2001,na,na
+ALFORD,in chambers + 7th Cir. CP/PCR,19-2001, 7th Cir. CP/PCR,na
+BROGDON,in chambers + Horry GS 9,19-2001, Horry GS 9,Horry
+DENNIS,in chambers + 9th Cir. CPNJ 7 + 1st Cir. CPNJ 8 + 9th Cir. CPNJ 8 + 1st Cir. CPNJ 9,19-2001, 9th Cir. CPNJ 7 ,na
+GOODSTEIN,in chambers + 14th Cir. CPNJ 7,19-2001, 14th Cir. CPNJ 7,na
+KINARD,in chambers + 8th Cir. CPNJ/PCR 7,19-2001, 8th Cir. CPNJ/PCR 7,na
+KING,in chambers + Clarendon GS 8 + 3rd Cir. CPNJ 8,19-2001, Clarendon GS 8 ,Clarendon
+LEE,in chambers + 5th Cir. CPNJ 8,19-2001, 5th Cir. CPNJ 8,na
+MANNING,in chambers + 5th Cir. CPNJ 7,19-2001, 5th Cir. CPNJ 7,na
+MCKELLAR,in chambers + 5th Cir. CPNJ 8,19-2001, 5th Cir. CPNJ 8,na
+PATTERSON,in chambers + Greenville GS(SGJ) 7 + 13th Cir. CPNJ 8,19-2001, Greenville GS(SGJ) 7 ,Greenville
+PEEPLES,in chambers + Lancaster 8,19-2001, Lancaster 8,Lancaster
+RAWL,in chambers + 9th Cir. CPNJ 8,19-2001, 9th Cir. CPNJ 8,na
+WESTBROOK,"in chambers + Richland GS 7,8",19-2001," Richland GS 7,8",Richland
+BROWN,na,19-2001,na,na
+COTTINGHAM,na,19-2001,na,na
+HUGHSTON,na,19-2001,na,na
+PYLE,na,19-2001,na,na
+SMOAK,na,19-2001,na,na
+DENNIS,Calhoun CP + Kershaw GS CC 17,20-2001, Kershaw GS CC 17,Kershaw
+FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC,20-2001, Spartanburg GS CC,Spartanburg
+LOCKEMY,Richland CP + Richland GS CC 18,20-2001, Richland GS CC 18,Richland
+MANNING,Marion GS  + 5th Cir. CPNJ CC 14,20-2001, 5th Cir. CPNJ CC 14,na
+RAWL,"Colleton GS 14,15,16 + X 17,18",20-2001," X 17,18",na
+SHORT,"X 15,16,17,18 + Williamsburg GS 14",20-2001, Williamsburg GS 14,Williamsburg
+THOMAS,"Charleston GS + Horry GS CC 17,18",20-2001," Horry GS CC 17,18",Horry
+WILLIAMS,"Williamsburg GS 16,17,18 + Medical 14,15",20-2001," Medical 14,15",na
+PYLE,na,20-2001,na,na
+GIER,na,20-2001,na,na
+YOUNG,na,20-2001,na,na
+KITTREDGE,"Anderson GS 21,22,23 + Medical 24,25",21-2001," Medical 24,25",na
+MANNING,"Marion GS 21,22,23 + X 24,25",21-2001," X 24,25",na
+JOHNSON,"10th Cir. CPNJ/PCR 28,29,30 + Lexington GS 31,1",22-2001," Lexington GS 31,1",Lexington
+MANNING,"Florence CP 30,31,1 + X 29",22-2001, X 29,na
+NICHOLSON,"10th Cir. CPNJ/PCR 31,1 + Lexington GS 28,29,30",22-2001," Lexington GS 28,29,30",Lexington
+COTTINGHAM,na,22-2001,na,na
+SMOAK,na,22-2001,na,na
+GIER,na,22-2001,na,na
+SIMMONS,na,22-2001,na,na
+YOUNG,na,22-2001,na,na
+DENNIS,in chambers + 9th Cir. CPNJ 7 + 1st Cir. CPNJ 8 + 9th Cir. CPNJ 8 + 1st Cir. CPNJ 9,19-2001, 1st Cir. CPNJ 8 ,na
+KING,in chambers + Clarendon GS 8 + 3rd Cir. CPNJ 8,19-2001, 3rd Cir. CPNJ 8,na
+PATTERSON,in chambers + Greenville GS(SGJ) 7 + 13th Cir. CPNJ 8,19-2001, 13th Cir. CPNJ 8,na
+BROWN,na,19-2001,na,na
+COTTINGHAM,na,19-2001,na,na
+HUGHSTON,na,19-2001,na,na
+PYLE,na,19-2001,na,na
+SMOAK,na,19-2001,na,na
+PYLE,na,20-2001,na,na
+GIER,na,20-2001,na,na
+YOUNG,na,20-2001,na,na
+COTTINGHAM,na,22-2001,na,na
+SMOAK,na,22-2001,na,na
+GIER,na,22-2001,na,na
+SIMMONS,na,22-2001,na,na
+YOUNG,na,22-2001,na,na
+DENNIS,in chambers + 9th Cir. CPNJ 7 + 1st Cir. CPNJ 8 + 9th Cir. CPNJ 8 + 1st Cir. CPNJ 9,19-2001, 9th Cir. CPNJ 8 ,na
+BROWN,na,19-2001,na,na
+COTTINGHAM,na,19-2001,na,na
+HUGHSTON,na,19-2001,na,na
+PYLE,na,19-2001,na,na
+SMOAK,na,19-2001,na,na
+PYLE,na,20-2001,na,na
+GIER,na,20-2001,na,na
+YOUNG,na,20-2001,na,na
+COTTINGHAM,na,22-2001,na,na
+SMOAK,na,22-2001,na,na
+GIER,na,22-2001,na,na
+SIMMONS,na,22-2001,na,na
+YOUNG,na,22-2001,na,na
+DENNIS,in chambers + 9th Cir. CPNJ 7 + 1st Cir. CPNJ 8 + 9th Cir. CPNJ 8 + 1st Cir. CPNJ 9,19-2001, 1st Cir. CPNJ 9,na
+BROWN,na,19-2001,na,na
+COTTINGHAM,na,19-2001,na,na
+HUGHSTON,na,19-2001,na,na
+PYLE,na,19-2001,na,na
+SMOAK,na,19-2001,na,na
+PYLE,na,20-2001,na,na
+GIER,na,20-2001,na,na
+YOUNG,na,20-2001,na,na
+COTTINGHAM,na,22-2001,na,na
+SMOAK,na,22-2001,na,na
+GIER,na,22-2001,na,na
+SIMMONS,na,22-2001,na,na
+YOUNG,na,22-2001,na,na
+ALFORD,York GS,45-2000,York GS,York
+BARBER,5th Cir. AW,45-2000,5th Cir. AW,na
+BAXLEY,Newberry GS,45-2000,Newberry GS,Newberry
+BEATTY,Medical,45-2000,Medical,na
+BREEDEN,"X 8,9 + 15th Cir. CPNJ 6,7",45-2000,"X 8,9 ",na
+BROGDON,Florence GS,45-2000,Florence GS,Florence
+BUCKNER,Aiken GS,45-2000,Aiken GS,Aiken
+BURCH,X,45-2000,X,na
+CLARY,X,45-2000,X,na
+COLE,Cherokee GS,45-2000,Cherokee GS,Cherokee
+COOPER TW,Williamsburg CP,45-2000,Williamsburg CP,Williamsburg
+DENNIS,York GS,45-2000,York GS,York
+FEW,Greenville GS,45-2000,Greenville GS,Greenville
+FLOYD H,X,45-2000,X,na
+FLOYD S,Horry GS,45-2000,Horry GS,Horry
+GOODE,Edgefield GS,45-2000,Edgefield GS,Edgefield
+GOODSTEIN,Beaufort GS,45-2000,Beaufort GS,Beaufort
+GREGORY,14th Cir. CPNJ,45-2000,14th Cir. CPNJ,na
+HALL,10th Cir. CPNJ,45-2000,10th Cir. CPNJ,na
+HARWELL,Florence GS,45-2000,Florence GS,Florence
+HAYES,Charleston CP,45-2000,Charleston CP,Charleston
+JOHNSON,Greenwood GS,45-2000,Greenwood GS,Greenwood
+KEESLEY,Sick,45-2000,Sick,na
+KINARD,Richland CP,45-2000,Richland CP,Richland
+KING,3rd Cir. CPNJ,45-2000,3rd Cir. CPNJ,na
+KITTREDGE,Greenville GS,45-2000,Greenville GS,Greenville
+LEE,1st Cir. CPNJ,45-2000,1st Cir. CPNJ,na
+LOCKEMY,Dillon GS,45-2000,Dillon GS,Dillon
+MACAULAY,Anderson CP,45-2000,Anderson CP,Anderson
+MANNING,X,45-2000,X,na
+MARTIN,9th Cir. AW,45-2000,9th Cir. AW,na
+MCKELLAR,5th Cir. CPNJ,45-2000,5th Cir. CPNJ,na
+MILLING,Chesterfield GS,45-2000,Chesterfield GS,Chester
+NICHOLSON,Anderson GS + 10th Cir. CPNJ CC 8,45-2000,Anderson GS ,Anderson
+PATTERSON,13th Cir. CPNJ/PCR,45-2000,13th Cir. CPNJ/PCR,na
+PEEPLES,Aiken CP,45-2000,Aiken CP,Aiken
+PIEPER,Charleston GS,45-2000,Charleston GS,Charleston
+RAWL,9th Cir. CPNJ,45-2000,9th Cir. CPNJ,na
+SAUNDERS,8th Cir. CPNJ,45-2000,8th Cir. CPNJ,na
+SHORT,6th Cir. CPNJ,45-2000,6th Cir. CPNJ,na
+THOMAS,Horry CP,45-2000,Horry CP,Horry
+WATSON,16th Cir. CPNJ,45-2000,16th Cir. CPNJ,na
+WESTBROOK,11th Cir. CPNJ,45-2000,11th Cir. CPNJ,na
+WILLIAMS,Kershaw GS,45-2000,Kershaw GS,Kershaw
+BROWN,Orangeburg GS,45-2000,Orangeburg GS,Orangeburg
+COTTINGHAM,Horry GS,45-2000,Horry GS,Horry
+HUGHSTON,Charleston CP + Charleston GS CC 9,45-2000,Charleston CP ,Charleston
+PYLE,Greenville CP,45-2000,Greenville CP,Greenville
+COUCH,na,45-2000,na,na
+SMOAK,Charleston GS,45-2000,Charleston GS,Charleston
+COOPER GT,Richland GS,45-2000,Richland GS,Richland
+NEWMAN,Sumter GS,45-2000,Sumter GS,Sumter
+SIMMONS,Greenville GS 8,45-2000,Greenville GS 8,Greenville
+GIER,York CPNJ 9,45-2000,York CPNJ 9,York
+DREW,10th Cir. CPNJ 8,45-2000,10th Cir. CPNJ 8,na
+WATTS,na,45-2000,na,na
+ALFORD,York CP,46-2000,York CP,York
+BARBER,Aiken GS,46-2000,Aiken GS,Aiken
+BAXLEY,3rd Cir. CPNJ/PCR,46-2000,3rd Cir. CPNJ/PCR,na
+BEATTY,Spartanburg GS,46-2000,Spartanburg GS,Spartanburg
+BREEDEN,15th Cir. CPNJ,46-2000,15th Cir. CPNJ,na
+BROGDON,Florence CP,46-2000,Florence CP,Florence
+BUCKNER,Beaufort CP,46-2000,Beaufort CP,Beaufort
+BURCH,Hampton GS,46-2000,Hampton GS,Hampton
+CLARY,Lexington CP,46-2000,Lexington CP,Lexington
+COLE,Spartanburg GS,46-2000,Spartanburg GS,Spartanburg
+COOPER TW,Sumter GS,46-2000,Sumter GS,Sumter
+DENNIS,Berkeley GS,46-2000,Berkeley GS,Berkeley
+FEW,13th Cir. CPNJ,46-2000,13th Cir. CPNJ,na
+FLOYD H,Pickens GS,46-2000,Pickens GS,Pickens
+FLOYD S,Horry GS,46-2000,Horry GS,Horry
+GOODE,Chester GS,46-2000,Chester GS,Chester
+GOODSTEIN,Dorchester GS,46-2000,Dorchester GS,Dorchester
+GREGORY,Colleton CP,46-2000,Colleton CP,Colleton
+HALL,Oconee CP,46-2000,Oconee CP,Oconee
+HARWELL,12th Cir. CPNJ/PCR,46-2000,12th Cir. CPNJ/PCR,na
+HAYES,Charleston CP,46-2000,Charleston CP,Charleston
+JOHNSON,Greenwood GS + Medical 17,46-2000,Greenwood GS ,Greenwood
+KEESLEY,Sick,46-2000,Sick,na
+KINARD,Kershaw GS,46-2000,Kershaw GS,Kershaw
+KING,"Williamsburg CP + Sumter GS CC 15,16,17",46-2000,Williamsburg CP ,Williamsburg
+KITTREDGE,Greenville GS,46-2000,Greenville GS,Greenville
+LEE,Richland GS,46-2000,Richland GS,Richland
+LOCKEMY,1st Cir. Cap.PCR,46-2000,1st Cir. Cap.PCR,na
+MACAULAY,Anderson GS,46-2000,Anderson GS,Anderson
+MANNING,Orangeburg GS,46-2000,Orangeburg GS,Orangeburg
+MARTIN,Charleston GS,46-2000,Charleston GS,Charleston
+MCKELLAR,Richland CP,46-2000,Richland CP,Richland
+MILLING,Darlington CP,46-2000,Darlington CP,Darlington
+NICHOLSON,Anderson GS,46-2000,Anderson GS,Anderson
+PATTERSON,Greenville CP,46-2000,Greenville CP,Greenville
+PEEPLES,11th Cir. CPNJ/PCR,46-2000,11th Cir. CPNJ/PCR,na
+PIEPER,Cherokee CP,46-2000,Cherokee CP,Cherokee
+RAWL,Union GS,46-2000,Union GS,Union
+SAUNDERS,Newberry GS,46-2000,Newberry GS,Newberry
+SHORT,Lancaster CP,46-2000,Lancaster CP,Lancaster
+THOMAS,Georgetown CP,46-2000,Georgetown CP,Georgetown
+WATSON,Greenville CP,46-2000,Greenville CP,Greenville
+WESTBROOK,Lexington GS(SGJ),46-2000,Lexington GS(SGJ),Lexington
+WILLIAMS,Richland GS,46-2000,Richland GS,Richland
+BROWN,Charleston GS,46-2000,Charleston GS,Charleston
+COTTINGHAM,Marlboro GS,46-2000,Marlboro GS,Marlboro
+HUGHSTON,Beaufort GS,46-2000,Beaufort GS,Beaufort
+PYLE,Greenville GS,46-2000,Greenville GS,Greenville
+COUCH,na,46-2000,na,na
+SMOAK,9th Cir. CPNJ,46-2000,9th Cir. CPNJ,na
+COOPER GT,5th Cir. CPNJ,46-2000,5th Cir. CPNJ,na
+NEWMAN,Marion CP,46-2000,Marion CP,Marion
+SIMMONS,na,46-2000,na,na
+GIER,na,46-2000,na,na
+DREW,na,46-2000,na,na
+WATTS,na,46-2000,na,na
+ALFORD,in chambers,47-2000,in chambers,na
+BARBER,in chambers,47-2000,in chambers,na
+BAXLEY,in chambers,47-2000,in chambers,na
+BEATTY,in chambers,47-2000,in chambers,na
+BREEDEN,in chambers + Horry GS 20,47-2000,in chambers ,na
+BROGDON,"in chambers + 12th Cir. CPNJ 20,21",47-2000,in chambers ,na
+BUCKNER,in chambers,47-2000,in chambers,na
+BURCH,in chambers,47-2000,in chambers,na
+CLARY,in chambers,47-2000,in chambers,na
+COLE,in chambers,47-2000,in chambers,na
+COOPER TW,"in chambers + 3rd Cir. CPNJ 20,21",47-2000,in chambers ,na
+DENNIS,Charleston CP,47-2000,Charleston CP,Charleston
+FEW,in chambers,47-2000,in chambers,na
+FLOYD H,in chambers,47-2000,in chambers,na
+FLOYD S,in chambers,47-2000,in chambers,na
+GOODE,in chambers,47-2000,in chambers,na
+GOODSTEIN,in chambers + 15th Cir. CPNJ 20,47-2000,in chambers ,na
+GREGORY,in chambers,47-2000,in chambers,na
+HALL,in chambers,47-2000,in chambers,na
+HARWELL,in chambers,47-2000,in chambers,na
+HAYES,in chambers,47-2000,in chambers,na
+JOHNSON,in chambers,47-2000,in chambers,na
+KEESLEY,in chambers,47-2000,in chambers,na
+KINARD,in chambers + 5th Cir. CPNJ 20,47-2000,in chambers ,na
+KING,"in chambers + 3rd Cir. CPNJ 20,21,22",47-2000,in chambers ,na
+KITTREDGE,"in chambers + 13th Cir. CPNJ 21,22",47-2000,in chambers ,na
+LEE,in chambers,47-2000,in chambers,na
+LOCKEMY,in chambers,47-2000,in chambers,na
+MACAULAY,in chambers,47-2000,in chambers,na
+MANNING,in chambers,47-2000,in chambers,na
+MARTIN,in chambers,47-2000,in chambers,na
+MCKELLAR,in chambers,47-2000,in chambers,na
+MILLING,in chambers,47-2000,in chambers,na
+NICHOLSON,in chambers,47-2000,in chambers,na
+PATTERSON,in chambers + 13th Cir. CPNJ 20,47-2000,in chambers ,na
+PEEPLES,in chambers,47-2000,in chambers,na
+PIEPER,in chambers + 9th Cir. CPNJ 20,47-2000,in chambers ,na
+RAWL,in chambers,47-2000,in chambers,na
+SAUNDERS,"in chambers + 8th Cir. CPNJ 20,21,22",47-2000,in chambers ,na
+SHORT,in chambers,47-2000,in chambers,na
+THOMAS,in chambers,47-2000,in chambers,na
+WATSON,in chambers,47-2000,in chambers,na
+WESTBROOK,in chambers,47-2000,in chambers,na
+WILLIAMS,in chambers + Richland GS 20,47-2000,in chambers ,na
+BROWN,na,47-2000,na,na
+COTTINGHAM,na,47-2000,na,na
+HUGHSTON,na,47-2000,na,na
+PYLE,na,47-2000,na,na
+COUCH,na,47-2000,na,na
+SMOAK,na,47-2000,na,na
+COOPER GT,in chambers,47-2000,in chambers,na
+NEWMAN,in chambers,47-2000,in chambers,na
+SIMMONS,Greenville GS 22,47-2000,Greenville GS 22,Greenville
+GIER,na,47-2000,na,na
+DREW,na,47-2000,na,na
+WATTS,na,47-2000,na,na
+ALFORD,X,48-2000,X,na
+BARBER,Richland GS,48-2000,Richland GS,Richland
+BAXLEY,Dillon CP,48-2000,Dillon CP,Dillon
+BEATTY,X,48-2000,X,na
+BREEDEN,Horry CP,48-2000,Horry CP,Horry
+BROGDON,Florence CP,48-2000,Florence CP,Florence
+BUCKNER,Hampton CP,48-2000,Hampton CP,Hampton
+BURCH,Darlington GS,48-2000,Darlington GS,Darlington
+CLARY,"York GS 27,28,29,30 + Medical 1",48-2000,"York GS 27,28,29,30 ",York
+COLE,Spartanburg GS,48-2000,Spartanburg GS,Spartanburg
+COOPER TW,Clarendon CP,48-2000,Clarendon CP,Clarendon
+DENNIS,Charleston GS,48-2000,Charleston GS,Charleston
+FEW,"XX 1 + Aiken GS 27,28,29,30",48-2000,XX 1 ,na
+FLOYD H,Pickens GS + Greenville CP CC 1,48-2000,Pickens GS ,Pickens
+FLOYD S,15th Cir. CPNJ/PCR,48-2000,15th Cir. CPNJ/PCR,na
+GOODE,Chester GS,48-2000,Chester GS,Chester
+GOODSTEIN,"Dorchester GS 27,29,30,1 + Medical 28",48-2000,"Dorchester GS 27,29,30,1 ",Dorchester
+GREGORY,14th Cir. CPNJ/PCR,48-2000,14th Cir. CPNJ/PCR,na
+HALL,Oconee GS,48-2000,Oconee GS,Oconee
+HARWELL,Marion GS,48-2000,Marion GS,Marion
+HAYES,York GS,48-2000,York GS,York
+JOHNSON,Laurens GS,48-2000,Laurens GS,Laurens
+KEESLEY,Sick,48-2000,Sick,na
+KINARD,Richland CP,48-2000,Richland CP,Richland
+KING,Sumter CP,48-2000,Sumter CP,Sumter
+KITTREDGE,13th Cir. CPNJ,48-2000,13th Cir. CPNJ,na
+LEE,Richland GS,48-2000,Richland GS,Richland
+LOCKEMY,X,48-2000,X,na
+MACAULAY,Anderson CP,48-2000,Anderson CP,Anderson
+MANNING,5th Cir. CPNJ,48-2000,5th Cir. CPNJ,na
+MARTIN,Charleston GS,48-2000,Charleston GS,Charleston
+MCKELLAR,Berkeley CP,48-2000,Berkeley CP,Berkeley
+MILLING,Marlboro CP,48-2000,Marlboro CP,Marlboro
+NICHOLSON,X,48-2000,X,na
+PATTERSON,Greenville CP,48-2000,Greenville CP,Greenville
+PEEPLES,X,48-2000,X,na
+PIEPER,9th Cir. CPNJ/PCR,48-2000,9th Cir. CPNJ/PCR,na
+RAWL,Orangeburg CP,48-2000,Orangeburg CP,Orangeburg
+SAUNDERS,X,48-2000,X,na
+SHORT,Fairfield CP,48-2000,Fairfield CP,Fairfield
+THOMAS,Georgetown GS,48-2000,Georgetown GS,Georgetown
+WATSON,Spartanburg GS,48-2000,Spartanburg GS,Spartanburg
+WESTBROOK,Edgefield CP,48-2000,Edgefield CP,Edgefield
+WILLIAMS,Richland CP,48-2000,Richland CP,Richland
+BROWN,Jasper GS,48-2000,Jasper GS,Jasper
+COTTINGHAM,Horry CP,48-2000,Horry CP,Horry
+HUGHSTON,Abbeville GS,48-2000,Abbeville GS,Abbeville
+PYLE,na,48-2000,na,na
+COUCH,Cherokee CPNJ 27,48-2000,Cherokee CPNJ 27,Cherokee
+SMOAK,Lexington GS,48-2000,Lexington GS,Lexington
+COOPER GT,Newberry GS CP CC,48-2000,Newberry GS CP CC,Newberry
+NEWMAN,X,48-2000,X,na
+SIMMONS,Greenville GS 1,48-2000,Greenville GS 1,Greenville
+GIER,na,48-2000,na,na
+DREW,na,48-2000,na,na
+WATTS,"Dorchester CPNJ 27,28,29,30",48-2000,"Dorchester CPNJ 27,28,29,30",Dorchester
+BREEDEN,"X 8,9 + 15th Cir. CPNJ 6,7",45-2000," 15th Cir. CPNJ 6,7",na
+NICHOLSON,Anderson GS + 10th Cir. CPNJ CC 8,45-2000, 10th Cir. CPNJ CC 8,na
+HUGHSTON,Charleston CP + Charleston GS CC 9,45-2000, Charleston GS CC 9,Charleston
+COUCH,na,45-2000,na,na
+WATTS,na,45-2000,na,na
+JOHNSON,Greenwood GS + Medical 17,46-2000, Medical 17,na
+KING,"Williamsburg CP + Sumter GS CC 15,16,17",46-2000," Sumter GS CC 15,16,17",Sumter
+COUCH,na,46-2000,na,na
+SIMMONS,na,46-2000,na,na
+GIER,na,46-2000,na,na
+DREW,na,46-2000,na,na
+WATTS,na,46-2000,na,na
+BREEDEN,in chambers + Horry GS 20,47-2000, Horry GS 20,Horry
+BROGDON,"in chambers + 12th Cir. CPNJ 20,21",47-2000," 12th Cir. CPNJ 20,21",na
+COOPER TW,"in chambers + 3rd Cir. CPNJ 20,21",47-2000," 3rd Cir. CPNJ 20,21",na
+GOODSTEIN,in chambers + 15th Cir. CPNJ 20,47-2000, 15th Cir. CPNJ 20,na
+KINARD,in chambers + 5th Cir. CPNJ 20,47-2000, 5th Cir. CPNJ 20,na
+KING,"in chambers + 3rd Cir. CPNJ 20,21,22",47-2000," 3rd Cir. CPNJ 20,21,22",na
+KITTREDGE,"in chambers + 13th Cir. CPNJ 21,22",47-2000," 13th Cir. CPNJ 21,22",na
+PATTERSON,in chambers + 13th Cir. CPNJ 20,47-2000, 13th Cir. CPNJ 20,na
+PIEPER,in chambers + 9th Cir. CPNJ 20,47-2000, 9th Cir. CPNJ 20,na
+SAUNDERS,"in chambers + 8th Cir. CPNJ 20,21,22",47-2000," 8th Cir. CPNJ 20,21,22",na
+WILLIAMS,in chambers + Richland GS 20,47-2000, Richland GS 20,Richland
+BROWN,na,47-2000,na,na
+COTTINGHAM,na,47-2000,na,na
+HUGHSTON,na,47-2000,na,na
+PYLE,na,47-2000,na,na
+COUCH,na,47-2000,na,na
+SMOAK,na,47-2000,na,na
+GIER,na,47-2000,na,na
+DREW,na,47-2000,na,na
+WATTS,na,47-2000,na,na
+CLARY,"York GS 27,28,29,30 + Medical 1",48-2000, Medical 1,na
+FEW,"XX 1 + Aiken GS 27,28,29,30",48-2000," Aiken GS 27,28,29,30",Aiken
+FLOYD H,Pickens GS + Greenville CP CC 1,48-2000, Greenville CP CC 1,Greenville
+GOODSTEIN,"Dorchester GS 27,29,30,1 + Medical 28",48-2000, Medical 28,na
+PYLE,na,48-2000,na,na
+GIER,na,48-2000,na,na
+DREW,na,48-2000,na,na
+COUCH,na,45-2000,na,na
+WATTS,na,45-2000,na,na
+COUCH,na,46-2000,na,na
+SIMMONS,na,46-2000,na,na
+GIER,na,46-2000,na,na
+DREW,na,46-2000,na,na
+WATTS,na,46-2000,na,na
+BROWN,na,47-2000,na,na
+COTTINGHAM,na,47-2000,na,na
+HUGHSTON,na,47-2000,na,na
+PYLE,na,47-2000,na,na
+COUCH,na,47-2000,na,na
+SMOAK,na,47-2000,na,na
+GIER,na,47-2000,na,na
+DREW,na,47-2000,na,na
+WATTS,na,47-2000,na,na
+PYLE,na,48-2000,na,na
+GIER,na,48-2000,na,na
+DREW,na,48-2000,na,na
+COUCH,na,45-2000,na,na
+WATTS,na,45-2000,na,na
+COUCH,na,46-2000,na,na
+SIMMONS,na,46-2000,na,na
+GIER,na,46-2000,na,na
+DREW,na,46-2000,na,na
+WATTS,na,46-2000,na,na
+BROWN,na,47-2000,na,na
+COTTINGHAM,na,47-2000,na,na
+HUGHSTON,na,47-2000,na,na
+PYLE,na,47-2000,na,na
+COUCH,na,47-2000,na,na
+SMOAK,na,47-2000,na,na
+GIER,na,47-2000,na,na
+DREW,na,47-2000,na,na
+WATTS,na,47-2000,na,na
+PYLE,na,48-2000,na,na
+GIER,na,48-2000,na,na
+DREW,na,48-2000,na,na
+COUCH,na,45-2000,na,na
+WATTS,na,45-2000,na,na
+COUCH,na,46-2000,na,na
+SIMMONS,na,46-2000,na,na
+GIER,na,46-2000,na,na
+DREW,na,46-2000,na,na
+WATTS,na,46-2000,na,na
+BROWN,na,47-2000,na,na
+COTTINGHAM,na,47-2000,na,na
+HUGHSTON,na,47-2000,na,na
+PYLE,na,47-2000,na,na
+COUCH,na,47-2000,na,na
+SMOAK,na,47-2000,na,na
+GIER,na,47-2000,na,na
+DREW,na,47-2000,na,na
+WATTS,na,47-2000,na,na
+PYLE,na,48-2000,na,na
+GIER,na,48-2000,na,na
+DREW,na,48-2000,na,na
+ALFORD,Fairfield GS,6-2001,Fairfield GS,Fairfield
+BARBER,Barnwell GS,6-2001,Barnwell GS,Barnwell
+BAXLEY,15th Cir. CPNJ,6-2001,15th Cir. CPNJ,na
+BEATTY,Spartanburg GS,6-2001,Spartanburg GS,Spartanburg
+BREEDEN,Richland GS,6-2001,Richland GS,Richland
+BROGDON,Horry GS,6-2001,Horry GS,Horry
+BUCKNER,Orangeburg GS,6-2001,Orangeburg GS,Orangeburg
+BURCH,Florence GS,6-2001,Florence GS,Florence
+CLARY,Lexington GS,6-2001,Lexington GS,Lexington
+COLE,Spartanburg CP,6-2001,Spartanburg CP,Spartanburg
+COOPER GT,Laurens GS,6-2001,Laurens GS,Laurens
+COOPER TW,5th Cir. CPNJ + Orangeburg GS CC 9,6-2001,5th Cir. CPNJ ,na
+DENNIS,Dorchester CP,6-2001,Dorchester CP,Dorchester
+FEW,7th Cir. CPNJ,6-2001,7th Cir. CPNJ,na
+FLOYD H,Greenville GS,6-2001,Greenville GS,Greenville
+FLOYD S,Chesterfield GS,6-2001,Chesterfield GS,Chester
+GOODE,Sumter CP,6-2001,Sumter CP,Sumter
+GOODSTEIN,Beaufort CP,6-2001,Beaufort CP,Beaufort
+GREGORY,9th Cir. CPNJ,6-2001,9th Cir. CPNJ,na
+HALL,Greenville CP,6-2001,Greenville CP,Greenville
+HARWELL,4th Cir. CPNJ/PCR,6-2001,4th Cir. CPNJ/PCR,na
+HAYES,Cherokee CP,6-2001,Cherokee CP,Cherokee
+JOHNSON,10th Cir. CPNJ,6-2001,10th Cir. CPNJ,na
+KEESLEY,"11th Cir. CPNJ 7,8,9 + XX 5,6",6-2001,"11th Cir. CPNJ 7,8,9 ",na
+KINARD,Saluda GS,6-2001,Saluda GS,Saluda
+KING,York GS,6-2001,York GS,York
+KITTREDGE,Anderson GS,6-2001,Anderson GS,Anderson
+LEE,Richland CP,6-2001,Richland CP,Richland
+LOCKEMY,5th Cir. CPNJ,6-2001,5th Cir. CPNJ,na
+MACAULAY,Richland CP,6-2001,Richland CP,Richland
+MANNING,Florence GS,6-2001,Florence GS,Florence
+MARTIN,na,6-2001,na,na
+MCKELLAR,Williamsburg GS,6-2001,Williamsburg GS,Williamsburg
+MILLING,Horry GS,6-2001,Horry GS,Horry
+NEWMAN,Charleston CP,6-2001,Charleston CP,Charleston
+NICHOLSON,Anderson GS,6-2001,Anderson GS,Anderson
+PATTERSON,Greenville GS,6-2001,Greenville GS,Greenville
+PEEPLES,2nd Cir. CPNJ,6-2001,2nd Cir. CPNJ,na
+PIEPER,Charleston CP,6-2001,Charleston CP,Charleston
+RAWL,Beaufort CP,6-2001,Beaufort CP,Beaufort
+SAUNDERS,Greenville CP,6-2001,Greenville CP,Greenville
+SHORT,York GS,6-2001,York GS,York
+THOMAS,Charleston GS,6-2001,Charleston GS,Charleston
+WATSON,8th Cir. CPNJ,6-2001,8th Cir. CPNJ,na
+WESTBROOK,Richland GS,6-2001,Richland GS,Richland
+WILLIAMS,Clarendon GS,6-2001,Clarendon GS,Clarendon
+BROWN,Colleton GS,6-2001,Colleton GS,Colleton
+COTTINGHAM,na,6-2001,na,na
+HUGHSTON,Charleston GS,6-2001,Charleston GS,Charleston
+PYLE,Greenville GS,6-2001,Greenville GS,Greenville
+GIER,York CPNJ 8,6-2001,York CPNJ 8,York
+SIMMONS,na,6-2001,na,na
+YOUNG,na,6-2001,na,na
+SMOAK,na,6-2001,na,na
+WATTS,na,6-2001,na,na
+ALFORD,Chester CP,7-2001,Chester CP,Chester
+BARBER,Aiken GS,7-2001,Aiken GS,Aiken
+BAXLEY,Horry CP,7-2001,Horry CP,Horry
+BEATTY,Lancaster GS,7-2001,Lancaster GS,Lancaster
+BREEDEN,Richland CP,7-2001,Richland CP,Richland
+BROGDON,Horry GS,7-2001,Horry GS,Horry
+BUCKNER,Beaufort GS,7-2001,Beaufort GS,Beaufort
+BURCH,Marion CP,7-2001,Marion CP,Marion
+CLARY,Lexington GS,7-2001,Lexington GS,Lexington
+COLE,Spartanburg GS,7-2001,Spartanburg GS,Spartanburg
+COOPER GT,Newberry CP,7-2001,Newberry CP,Newberry
+COOPER TW,X,7-2001,X,na
+DENNIS,1st Cir. CPNJ/PCR,7-2001,1st Cir. CPNJ/PCR,na
+FEW,Greenville GS,7-2001,Greenville GS,Greenville
+FLOYD H,Pickens CP,7-2001,Pickens CP,Pickens
+FLOYD S,4th Cir. CPNJ,7-2001,4th Cir. CPNJ,na
+GOODE,3rd Cir. CPNJ,7-2001,3rd Cir. CPNJ,na
+GOODSTEIN,Charleston CP,7-2001,Charleston CP,Charleston
+GREGORY,5th Cir. CPNJ,7-2001,5th Cir. CPNJ,na
+HALL,Greenville GS,7-2001,Greenville GS,Greenville
+HARWELL,12th Cir. CPNJ,7-2001,12th Cir. CPNJ,na
+HAYES,Spartanburg GS,7-2001,Spartanburg GS,Spartanburg
+JOHNSON,Anderson GS,7-2001,Anderson GS,Anderson
+KEESLEY,Edgefield CP,7-2001,Edgefield CP,Edgefield
+KINARD,Dillon GS,7-2001,Dillon GS,Dillon
+KING,Union GS,7-2001,Union GS,Union
+KITTREDGE,Anderson CP,7-2001,Anderson CP,Anderson
+LEE,Richland CP,7-2001,Richland CP,Richland
+LOCKEMY,Richland CP,7-2001,Richland CP,Richland
+MACAULAY,Richland GS,7-2001,Richland GS,Richland
+MANNING,"Florence CP 12,13,15,16 + X 14",7-2001,"Florence CP 12,13,15,16 ",Florence
+MARTIN,Beaufort CP,7-2001,Beaufort CP,Beaufort
+MCKELLAR,Sumter CP,7-2001,Sumter CP,Sumter
+MILLING,Horry GS,7-2001,Horry GS,Horry
+NEWMAN,9th Cir. CPNJ,7-2001,9th Cir. CPNJ,na
+NICHOLSON,Lexington CP,7-2001,Lexington CP,Lexington
+PATTERSON,na,7-2001,na,na
+PEEPLES,Bamberg CP,7-2001,Bamberg CP,Bamberg
+PIEPER,Charleston CP,7-2001,Charleston CP,Charleston
+RAWL,14th Cir. CPNJ/PCR,7-2001,14th Cir. CPNJ/PCR,na
+SAUNDERS,13th Cir. CPNJ,7-2001,13th Cir. CPNJ,na
+SHORT,York CP,7-2001,York CP,York
+THOMAS,Berkeley CP,7-2001,Berkeley CP,Berkeley
+WATSON,Abbeville GS,7-2001,Abbeville GS,Abbeville
+WESTBROOK,Richland GS,7-2001,Richland GS,Richland
+WILLIAMS,Lee GS,7-2001,Lee GS,Lee
+BROWN,Orangeburg GS,7-2001,Orangeburg GS,Orangeburg
+COTTINGHAM,Marlboro GS,7-2001,Marlboro GS,Marlboro
+HUGHSTON,Charleston CP,7-2001,Charleston CP,Charleston
+PYLE,Greenville CP,7-2001,Greenville CP,Greenville
+GIER,na,7-2001,na,na
+SIMMONS,na,7-2001,na,na
+YOUNG,Charleston CPNJ 16,7-2001,Charleston CPNJ 16,Charleston
+SMOAK,Berkeley CP,7-2001,Berkeley CP,Berkeley
+WATTS,na,7-2001,na,na
+ALFORD,in chambers,8-2001,in chambers,na
+BARBER,in chambers + Aiken GS 22,8-2001,in chambers ,na
+BAXLEY,in chambers,8-2001,in chambers,na
+BEATTY,in chambers,8-2001,in chambers,na
+BREEDEN,in chambers + 15th Cir. CPNJ/PCR 21 + Horry GS 23,8-2001,in chambers ,na
+BROGDON,in chambers + 13th Cir. CPNJ CC 20 + 15th Cir. CPNJ 20 + Horry GS 21,8-2001,in chambers ,na
+BUCKNER,in chambers,8-2001,in chambers,na
+BURCH,in chambers,8-2001,in chambers,na
+CLARY,8th Cir. CPNJ,8-2001,8th Cir. CPNJ,na
+COLE,in chambers + Cherokee GS 22,8-2001,in chambers ,na
+COOPER GT,X,8-2001,X,na
+COOPER TW,in chambers + 3rd Cir. CPNJ 22 ,8-2001,in chambers ,na
+DENNIS,15th Cir. CPNJ,8-2001,15th Cir. CPNJ,na
+FEW,in chambers + 13th Cir. CPNJ 22,8-2001,in chambers ,na
+FLOYD H,in chambers,8-2001,in chambers,na
+FLOYD S,in chambers,8-2001,in chambers,na
+GOODE,in chambers,8-2001,in chambers,na
+GOODSTEIN,"in chambers + 1st Cir. CPNJ 22 + 14th Cir. CPNJ 22,23",8-2001,in chambers ,na
+GREGORY,in chambers + 14th Cir. CPNJ 20,8-2001,in chambers ,na
+HALL,in chambers,8-2001,in chambers,na
+HARWELL,in chambers,8-2001,in chambers,na
+HAYES,in chambers + York GS 23,8-2001,in chambers ,na
+JOHNSON,in chambers,8-2001,in chambers,na
+KEESLEY,"in chambers + 11th Cir. CPNJ 22 + XX 19,20",8-2001,in chambers ,na
+KINARD,in chambers + 4th Cir. CPNJ 20,8-2001,in chambers ,na
+KING,in chambers + 3rd Cir. CPNJ 21 + Beaufort GS 20,8-2001,in chambers ,na
+KITTREDGE,in chambers,8-2001,in chambers,na
+LEE,in chambers,8-2001,in chambers,na
+LOCKEMY,in chambers + 15th Cir. CPNJ/PCR 20,8-2001,in chambers ,na
+MACAULAY,in chambers,8-2001,in chambers,na
+MANNING,in chambers + 15th Cir. CPNJ 20 + X 23,8-2001,in chambers ,na
+MARTIN,in chambers,8-2001,in chambers,na
+MCKELLAR,in chambers,8-2001,in chambers,na
+MILLING,in chambers + 15th Cir. CPNJ 21,8-2001,in chambers ,na
+NEWMAN,in chambers,8-2001,in chambers,na
+NICHOLSON,"in chambers 19,23 + X 20,21,22",8-2001,"in chambers 19,23 ",na
+PATTERSON,in chambers,8-2001,in chambers,na
+PEEPLES,in chambers,8-2001,in chambers,na
+PIEPER,in chambers,8-2001,in chambers,na
+RAWL,in chambers + 9th Cir. CPNJ 20,8-2001,in chambers ,na
+SAUNDERS,in chambers,8-2001,in chambers,na
+SHORT,in chambers,8-2001,in chambers,na
+THOMAS,in chambers + Horry GS 20,8-2001,in chambers ,na
+WATSON,in chambers,8-2001,in chambers,na
+WESTBROOK,in chambers,8-2001,in chambers,na
+WILLIAMS,in chambers + 15th Cir. CPNJ 23,8-2001,in chambers ,na
+BROWN,na,8-2001,na,na
+COTTINGHAM,na,8-2001,na,na
+HUGHSTON,Fairfield CPNJ,8-2001,Fairfield CPNJ,Fairfield
+PYLE,na,8-2001,na,na
+GIER,York CPNJ 22,8-2001,York CPNJ 22,York
+SIMMONS,na,8-2001,na,na
+YOUNG,Charleston CPNJ 23,8-2001,Charleston CPNJ 23,Charleston
+SMOAK,na,8-2001,na,na
+WATTS,na,8-2001,na,na
+ALFORD,Lancaster GS,9-2001,Lancaster GS,Lancaster
+BARBER,Richland CP,9-2001,Richland CP,Richland
+BAXLEY,Georgetown GS,9-2001,Georgetown GS,Georgetown
+BEATTY,Spartanburg GS,9-2001,Spartanburg GS,Spartanburg
+BREEDEN,Richland GS,9-2001,Richland GS,Richland
+BROGDON,Horry CP,9-2001,Horry CP,Horry
+BUCKNER,Orangeburg CP,9-2001,Orangeburg CP,Orangeburg
+BURCH,12th Cir. CPNJ,9-2001,12th Cir. CPNJ,na
+CLARY,Newberry GS,9-2001,Newberry GS,Newberry
+COLE,Cherokee GS,9-2001,Cherokee GS,Cherokee
+COOPER GT,Greenville CP,9-2001,Greenville CP,Greenville
+COOPER TW,Richland GS + Orangeburg GS CC 2,9-2001,Richland GS ,Richland
+DENNIS,Calhoun GS,9-2001,Calhoun GS,Calhoun
+FEW,Pickens GS,9-2001,Pickens GS,Pickens
+FLOYD H,na,9-2001,na,na
+FLOYD S,Darlington GS,9-2001,Darlington GS,Darlington
+GOODE,Sumter CP,9-2001,Sumter CP,Sumter
+GOODSTEIN,Beaufort CP,9-2001,Beaufort CP,Beaufort
+GREGORY,Hampton GS,9-2001,Hampton GS,Hampton
+HALL,13th Cir. CPNJ,9-2001,13th Cir. CPNJ,na
+HARWELL,Florence CP,9-2001,Florence CP,Florence
+HAYES,X,9-2001,X,na
+JOHNSON,Anderson CP,9-2001,Anderson CP,Anderson
+KEESLEY,Saluda CP,9-2001,Saluda CP,Saluda
+KINARD,Marlboro CP,9-2001,Marlboro CP,Marlboro
+KING,York GS,9-2001,York GS,York
+KITTREDGE,"Anderson CP 26,27,28,1 + Cherokee GS 2 + 10th Cir. CPNJ/GS 2",9-2001,"Anderson CP 26,27,28,1 ",Anderson
+LEE,Kershaw CP,9-2001,Kershaw CP,Kershaw
+LOCKEMY,Charleston CP,9-2001,Charleston CP,Charleston
+MACAULAY,5th Cir. CPNJ,9-2001,5th Cir. CPNJ,na
+MANNING,Marion GS,9-2001,Marion GS,Marion
+MARTIN,14th Cir. CPNJ,9-2001,14th Cir. CPNJ,na
+MCKELLAR,Lee CP,9-2001,Lee CP,Lee
+MILLING,Horry CP,9-2001,Horry CP,Horry
+NEWMAN,Charleston GS,9-2001,Charleston GS,Charleston
+NICHOLSON,McCormick GS,9-2001,McCormick GS,McCormick
+PATTERSON,na,9-2001,na,na
+PEEPLES,Barnwell CP,9-2001,Barnwell CP,Barnwell
+PIEPER,Charleston CP,9-2001,Charleston CP,Charleston
+RAWL,Jasper CP,9-2001,Jasper CP,Jasper
+SAUNDERS,13th Cir. CPNJ/PCR,9-2001,13th Cir. CPNJ/PCR,na
+SHORT,York GS,9-2001,York GS,York
+THOMAS,Berkeley GS,9-2001,Berkeley GS,Berkeley
+WATSON,13th Cir. CPNJ,9-2001,13th Cir. CPNJ,na
+WESTBROOK,Richland CP,9-2001,Richland CP,Richland
+WILLIAMS,Sumter GS,9-2001,Sumter GS,Sumter
+BROWN,Charleston GS,9-2001,Charleston GS,Charleston
+COTTINGHAM,na,9-2001,na,na
+HUGHSTON,Greenwood GS + 8th Cir. CPNJ CC 26,9-2001,Greenwood GS ,Greenwood
+PYLE,na,9-2001,na,na
+GIER,na,9-2001,na,na
+SIMMONS,Greenville GS 2,9-2001,Greenville GS 2,Greenville
+YOUNG,Charleston CPNJ 2,9-2001,Charleston CPNJ 2,Charleston
+SMOAK,9th Cir. CPNJ + Charleston GS CC 2,9-2001,9th Cir. CPNJ ,na
+WATTS,"Dorchester CPNJ 27,28,1",9-2001,"Dorchester CPNJ 27,28,1",Dorchester
+COOPER TW,5th Cir. CPNJ + Orangeburg GS CC 9,6-2001, Orangeburg GS CC 9,Orangeburg
+KEESLEY,"11th Cir. CPNJ 7,8,9 + XX 5,6",6-2001," XX 5,6",na
+MARTIN,na,6-2001,na,na
+COTTINGHAM,na,6-2001,na,na
+SIMMONS,na,6-2001,na,na
+YOUNG,na,6-2001,na,na
+SMOAK,na,6-2001,na,na
+WATTS,na,6-2001,na,na
+MANNING,"Florence CP 12,13,15,16 + X 14",7-2001, X 14,na
+PATTERSON,na,7-2001,na,na
+GIER,na,7-2001,na,na
+SIMMONS,na,7-2001,na,na
+WATTS,na,7-2001,na,na
+BARBER,in chambers + Aiken GS 22,8-2001, Aiken GS 22,Aiken
+BREEDEN,in chambers + 15th Cir. CPNJ/PCR 21 + Horry GS 23,8-2001, 15th Cir. CPNJ/PCR 21 ,na
+BROGDON,in chambers + 13th Cir. CPNJ CC 20 + 15th Cir. CPNJ 20 + Horry GS 21,8-2001, 13th Cir. CPNJ CC 20 ,na
+COLE,in chambers + Cherokee GS 22,8-2001, Cherokee GS 22,Cherokee
+COOPER TW,in chambers + 3rd Cir. CPNJ 22 ,8-2001, 3rd Cir. CPNJ 22 ,na
+FEW,in chambers + 13th Cir. CPNJ 22,8-2001, 13th Cir. CPNJ 22,na
+GOODSTEIN,"in chambers + 1st Cir. CPNJ 22 + 14th Cir. CPNJ 22,23",8-2001, 1st Cir. CPNJ 22 ,na
+GREGORY,in chambers + 14th Cir. CPNJ 20,8-2001, 14th Cir. CPNJ 20,na
+HAYES,in chambers + York GS 23,8-2001, York GS 23,York
+KEESLEY,"in chambers + 11th Cir. CPNJ 22 + XX 19,20",8-2001, 11th Cir. CPNJ 22 ,na
+KINARD,in chambers + 4th Cir. CPNJ 20,8-2001, 4th Cir. CPNJ 20,na
+KING,in chambers + 3rd Cir. CPNJ 21 + Beaufort GS 20,8-2001, 3rd Cir. CPNJ 21 ,na
+LOCKEMY,in chambers + 15th Cir. CPNJ/PCR 20,8-2001, 15th Cir. CPNJ/PCR 20,na
+MANNING,in chambers + 15th Cir. CPNJ 20 + X 23,8-2001, 15th Cir. CPNJ 20 ,na
+MILLING,in chambers + 15th Cir. CPNJ 21,8-2001, 15th Cir. CPNJ 21,na
+NICHOLSON,"in chambers 19,23 + X 20,21,22",8-2001," X 20,21,22",na
+RAWL,in chambers + 9th Cir. CPNJ 20,8-2001, 9th Cir. CPNJ 20,na
+THOMAS,in chambers + Horry GS 20,8-2001, Horry GS 20,Horry
+WILLIAMS,in chambers + 15th Cir. CPNJ 23,8-2001, 15th Cir. CPNJ 23,na
+BROWN,na,8-2001,na,na
+COTTINGHAM,na,8-2001,na,na
+PYLE,na,8-2001,na,na
+SIMMONS,na,8-2001,na,na
+SMOAK,na,8-2001,na,na
+WATTS,na,8-2001,na,na
+COOPER TW,Richland GS + Orangeburg GS CC 2,9-2001, Orangeburg GS CC 2,Orangeburg
+FLOYD H,na,9-2001,na,na
+KITTREDGE,"Anderson CP 26,27,28,1 + Cherokee GS 2 + 10th Cir. CPNJ/GS 2",9-2001, Cherokee GS 2 ,Cherokee
+PATTERSON,na,9-2001,na,na
+COTTINGHAM,na,9-2001,na,na
+HUGHSTON,Greenwood GS + 8th Cir. CPNJ CC 26,9-2001, 8th Cir. CPNJ CC 26,na
+PYLE,na,9-2001,na,na
+GIER,na,9-2001,na,na
+SMOAK,9th Cir. CPNJ + Charleston GS CC 2,9-2001, Charleston GS CC 2,Charleston
+MARTIN,na,6-2001,na,na
+COTTINGHAM,na,6-2001,na,na
+SIMMONS,na,6-2001,na,na
+YOUNG,na,6-2001,na,na
+SMOAK,na,6-2001,na,na
+WATTS,na,6-2001,na,na
+PATTERSON,na,7-2001,na,na
+GIER,na,7-2001,na,na
+SIMMONS,na,7-2001,na,na
+WATTS,na,7-2001,na,na
+BREEDEN,in chambers + 15th Cir. CPNJ/PCR 21 + Horry GS 23,8-2001, Horry GS 23,Horry
+BROGDON,in chambers + 13th Cir. CPNJ CC 20 + 15th Cir. CPNJ 20 + Horry GS 21,8-2001, 15th Cir. CPNJ 20 ,na
+GOODSTEIN,"in chambers + 1st Cir. CPNJ 22 + 14th Cir. CPNJ 22,23",8-2001," 14th Cir. CPNJ 22,23",na
+KEESLEY,"in chambers + 11th Cir. CPNJ 22 + XX 19,20",8-2001," XX 19,20",na
+KING,in chambers + 3rd Cir. CPNJ 21 + Beaufort GS 20,8-2001, Beaufort GS 20,Beaufort
+MANNING,in chambers + 15th Cir. CPNJ 20 + X 23,8-2001, X 23,na
+BROWN,na,8-2001,na,na
+COTTINGHAM,na,8-2001,na,na
+PYLE,na,8-2001,na,na
+SIMMONS,na,8-2001,na,na
+SMOAK,na,8-2001,na,na
+WATTS,na,8-2001,na,na
+FLOYD H,na,9-2001,na,na
+KITTREDGE,"Anderson CP 26,27,28,1 + Cherokee GS 2 + 10th Cir. CPNJ/GS 2",9-2001, 10th Cir. CPNJ/GS 2,na
+PATTERSON,na,9-2001,na,na
+COTTINGHAM,na,9-2001,na,na
+PYLE,na,9-2001,na,na
+GIER,na,9-2001,na,na
+MARTIN,na,6-2001,na,na
+COTTINGHAM,na,6-2001,na,na
+SIMMONS,na,6-2001,na,na
+YOUNG,na,6-2001,na,na
+SMOAK,na,6-2001,na,na
+WATTS,na,6-2001,na,na
+PATTERSON,na,7-2001,na,na
+GIER,na,7-2001,na,na
+SIMMONS,na,7-2001,na,na
+WATTS,na,7-2001,na,na
+BROGDON,in chambers + 13th Cir. CPNJ CC 20 + 15th Cir. CPNJ 20 + Horry GS 21,8-2001, Horry GS 21,Horry
+BROWN,na,8-2001,na,na
+COTTINGHAM,na,8-2001,na,na
+PYLE,na,8-2001,na,na
+SIMMONS,na,8-2001,na,na
+SMOAK,na,8-2001,na,na
+WATTS,na,8-2001,na,na
+FLOYD H,na,9-2001,na,na
+PATTERSON,na,9-2001,na,na
+COTTINGHAM,na,9-2001,na,na
+PYLE,na,9-2001,na,na
+GIER,na,9-2001,na,na
+MARTIN,na,6-2001,na,na
+COTTINGHAM,na,6-2001,na,na
+SIMMONS,na,6-2001,na,na
+YOUNG,na,6-2001,na,na
+SMOAK,na,6-2001,na,na
+WATTS,na,6-2001,na,na
+PATTERSON,na,7-2001,na,na
+GIER,na,7-2001,na,na
+SIMMONS,na,7-2001,na,na
+WATTS,na,7-2001,na,na
+BROWN,na,8-2001,na,na
+COTTINGHAM,na,8-2001,na,na
+PYLE,na,8-2001,na,na
+SIMMONS,na,8-2001,na,na
+SMOAK,na,8-2001,na,na
+WATTS,na,8-2001,na,na
+FLOYD H,na,9-2001,na,na
+PATTERSON,na,9-2001,na,na
+COTTINGHAM,na,9-2001,na,na
+PYLE,na,9-2001,na,na
+GIER,na,9-2001,na,na
+ALFORD,Lancaster GS,10-2001,Lancaster GS,Lancaster
+BARBER,Richland CP,10-2001,Richland CP,Richland
+BAXLEY,XX,10-2001,XX,na
+BEATTY,6th Cir. CPNJ,10-2001,6th Cir. CPNJ,na
+BREEDEN,5th Cir. CPNJ,10-2001,5th Cir. CPNJ,na
+BROGDON,Horry GS,10-2001,Horry GS,Horry
+BUCKNER,XX,10-2001,XX,na
+BURCH,Marion GS,10-2001,Marion GS,Marion
+CLARY,Greenwood GS,10-2001,Greenwood GS,Greenwood
+COLE,Union GS CC 5 + Cherokee GS,10-2001,Union GS CC 5 ,Union
+COOPER GT,McCormick GS + Edgefield GS CC 8,10-2001,McCormick GS ,McCormick
+COOPER TW,5th Cir. CPNJ/PCR,10-2001,5th Cir. CPNJ/PCR,na
+DENNIS,1st Cir. CPNJ/PCR,10-2001,1st Cir. CPNJ/PCR,na
+FEW,X,10-2001,X,na
+FLOYD H,Greenville GS,10-2001,Greenville GS,Greenville
+FLOYD S,Darlington CP,10-2001,Darlington CP,Darlington
+GOODE,XX,10-2001,XX,na
+GOODSTEIN,Beaufort CP,10-2001,Beaufort CP,Beaufort
+GREGORY,9th Cir. CPNJ/PCR,10-2001,9th Cir. CPNJ/PCR,na
+HALL,Greenville GS,10-2001,Greenville GS,Greenville
+HARWELL,Florence CP,10-2001,Florence CP,Florence
+HAYES,7th Cir. CPNJ + York GS CC 8,10-2001,7th Cir. CPNJ ,na
+JOHNSON,Anderson CP,10-2001,Anderson CP,Anderson
+KEESLEY,11th Cir. CPNJ,10-2001,11th Cir. CPNJ,na
+KINARD,Chesterfield GS,10-2001,Chesterfield GS,Chester
+KING,York CP,10-2001,York CP,York
+KITTREDGE,"X 5,6,7,8 + 10th Cir. CPNJ 9",10-2001,"X 5,6,7,8 ",na
+LEE,Richland GS,10-2001,Richland GS,Richland
+LOCKEMY,Charleston GS + Horry GS CC 9,10-2001,Charleston GS ,Charleston
+MACAULAY,Richland GS,10-2001,Richland GS,Richland
+MANNING,"12th Cir. CPNJ/PCR 5,6 + X 7,8,9",10-2001,"12th Cir. CPNJ/PCR 5,6 ",na
+MARTIN,Hampton CP,10-2001,Hampton CP,Hampton
+MCKELLAR,Sumter GS,10-2001,Sumter GS,Sumter
+MILLING,Horry CP,10-2001,Horry CP,Horry
+NEWMAN,Colleton GS,10-2001,Colleton GS,Colleton
+NICHOLSON,Lexington GS,10-2001,Lexington GS,Lexington
+PATTERSON,Sick,10-2001,Sick,na
+PEEPLES,X,10-2001,X,na
+PIEPER,Charleston CP,10-2001,Charleston CP,Charleston
+RAWL,14th Cir. CPNJ,10-2001,14th Cir. CPNJ,na
+SAUNDERS,Aiken GS,10-2001,Aiken GS,Aiken
+SHORT,16th Cir. CPNJ,10-2001,16th Cir. CPNJ,na
+THOMAS,9th Cir. CPNJ,10-2001,9th Cir. CPNJ,na
+WATSON,X,10-2001,X,na
+WESTBROOK,Richland CP,10-2001,Richland CP,Richland
+WILLIAMS,3rd Cir. CPNJ + Sumter GS,10-2001,3rd Cir. CPNJ ,na
+BROWN,Charleston GS,10-2001,Charleston GS,Charleston
+COTTINGHAM,na,10-2001,na,na
+HUGHSTON,Charleston CP,10-2001,Charleston CP,Charleston
+PYLE,na,10-2001,na,na
+SMOAK,na,10-2001,na,na
+GIER,York CPNJ 8,10-2001,York CPNJ 8,York
+SIMMONS,na,10-2001,na,na
+YOUNG,na,10-2001,na,na
+ALFORD,Fairfield CP,11-2001,Fairfield CP,Fairfield
+BARBER,Aiken GS,11-2001,Aiken GS,Aiken
+BAXLEY,XX,11-2001,XX,na
+BEATTY,16th Cir. CPNJ,11-2001,16th Cir. CPNJ,na
+BREEDEN,Richland GS,11-2001,Richland GS,Richland
+BROGDON,Horry GS,11-2001,Horry GS,Horry
+BUCKNER,XX,11-2001,XX,na
+BURCH,12th Cir. CPNJ,11-2001,12th Cir. CPNJ,na
+CLARY,8th Cir. CPNJ/PCR,11-2001,8th Cir. CPNJ/PCR,na
+COLE,York GS,11-2001,York GS,York
+COOPER GT,11th Cir. CPNJ,11-2001,11th Cir. CPNJ,na
+COOPER TW,Orangeburg GS,11-2001,Orangeburg GS,Orangeburg
+DENNIS,Kershaw GS,11-2001,Kershaw GS,Kershaw
+FEW,Spartanburg GS,11-2001,Spartanburg GS,Spartanburg
+FLOYD H,Spartanburg CP + Cherokee GS CC 15,11-2001,Spartanburg CP ,Spartanburg
+FLOYD S,4th Cir. CPNJ,11-2001,4th Cir. CPNJ,na
+GOODE,XX,11-2001,XX,na
+GOODSTEIN,Beaufort CP,11-2001,Beaufort CP,Beaufort
+GREGORY,X,11-2001,X,na
+HALL,Greenville GS,11-2001,Greenville GS,Greenville
+HARWELL,Georgetown CP,11-2001,Georgetown CP,Georgetown
+HAYES,York GS,11-2001,York GS,York
+JOHNSON,Anderson GS,11-2001,Anderson GS,Anderson
+KEESLEY,Lexington CP,11-2001,Lexington CP,Lexington
+KINARD,Chesterfield GS ,11-2001,Chesterfield GS ,Chester
+KING,"York CP 12 + X 13,14,15,16",11-2001,York CP 12 ,York
+KITTREDGE,Anderson GS,11-2001,Anderson GS,Anderson
+LEE,"Richland CP + Charleston GS CC 12,13,14,15",11-2001,Richland CP ,Richland
+LOCKEMY,"Charleston CP 12,13,14,15 + X 16",11-2001,"Charleston CP 12,13,14,15 ",Charleston
+MACAULAY,5th Cir. CPNJ,11-2001,5th Cir. CPNJ,na
+MANNING,Florence CP,11-2001,Florence CP,Florence
+MARTIN,na,11-2001,na,na
+MCKELLAR,Sumter GS,11-2001,Sumter GS,Sumter
+MILLING,Horry CP,11-2001,Horry CP,Horry
+NEWMAN,XX,11-2001,XX,na
+NICHOLSON,Lexington GS,11-2001,Lexington GS,Lexington
+PATTERSON,Sick,11-2001,Sick,na
+PEEPLES,2nd Cir. CPNJ,11-2001,2nd Cir. CPNJ,na
+PIEPER,Charleston GS,11-2001,Charleston GS,Charleston
+RAWL,Allendale CP,11-2001,Allendale CP,Allendale
+SAUNDERS,Greenville GS,11-2001,Greenville GS,Greenville
+SHORT,7th Cir. CPNJ/PCR,11-2001,7th Cir. CPNJ/PCR,na
+THOMAS,Charleston CP,11-2001,Charleston CP,Charleston
+WATSON,Laurens CP,11-2001,Laurens CP,Laurens
+WESTBROOK,Richland GS,11-2001,Richland GS,Richland
+WILLIAMS,X,11-2001,X,na
+BROWN,Beaufort GS,11-2001,Beaufort GS,Beaufort
+COTTINGHAM,Marlboro GS,11-2001,Marlboro GS,Marlboro
+HUGHSTON,na,11-2001,na,na
+PYLE,na,11-2001,na,na
+SMOAK,9th Cir. CPNJ + Berkeley GS CC 12,11-2001,9th Cir. CPNJ ,na
+GIER,na,11-2001,na,na
+SIMMONS,na,11-2001,na,na
+YOUNG,Charleston CPNJ 14,11-2001,Charleston CPNJ 14,Charleston
+ALFORD,Chester GS,12-2001,Chester GS,Chester
+BARBER,Aiken GS,12-2001,Aiken GS,Aiken
+BAXLEY,15th Cir. CPNJ,12-2001,15th Cir. CPNJ,na
+BEATTY,Spartanburg GS,12-2001,Spartanburg GS,Spartanburg
+BREEDEN,Richland CP,12-2001,Richland CP,Richland
+BROGDON,"Horry GS CP CC 21,22,23",12-2001,"Horry GS CP CC 21,22,23",Horry
+BUCKNER,Charleston CP,12-2001,Charleston CP,Charleston
+BURCH,Florence GS,12-2001,Florence GS,Florence
+CLARY,Laurens GS,12-2001,Laurens GS,Laurens
+COLE,Spartanburg CP,12-2001,Spartanburg CP,Spartanburg
+COOPER GT,13th Cir. CPNJ,12-2001,13th Cir. CPNJ,na
+COOPER TW,Orangeburg GS,12-2001,Orangeburg GS,Orangeburg
+DENNIS,Kershaw GS,12-2001,Kershaw GS,Kershaw
+FEW,Spartanburg GS,12-2001,Spartanburg GS,Spartanburg
+FLOYD H,X,12-2001,X,na
+FLOYD S,Dillon CP,12-2001,Dillon CP,Dillon
+GOODE,Williamsburg GS,12-2001,Williamsburg GS,Williamsburg
+GOODSTEIN,Beaufort CP,12-2001,Beaufort CP,Beaufort
+GREGORY,Dorchester GS(SGJ),12-2001,Dorchester GS(SGJ),Dorchester
+HALL,10th Cir. CPNJ,12-2001,10th Cir. CPNJ,na
+HARWELL,X,12-2001,X,na
+HAYES,York GS,12-2001,York GS,York
+JOHNSON,X,12-2001,X,na
+KEESLEY,Lexington CP,12-2001,Lexington CP,Lexington
+KINARD,Darlington GS + Dillon GS CC 23,12-2001,Darlington GS ,Darlington
+KING,16th Cir. CPNJ/PCR,12-2001,16th Cir. CPNJ/PCR,na
+KITTREDGE,Anderson GS,12-2001,Anderson GS,Anderson
+LEE,Richland CP,12-2001,Richland CP,Richland
+LOCKEMY,Charleston CP,12-2001,Charleston CP,Charleston
+MACAULAY,Richland GS,12-2001,Richland GS,Richland
+MANNING,12th Cir. CPNJ,12-2001,12th Cir. CPNJ,na
+MARTIN,"14th Cir. CPNJ 21,22,23",12-2001,"14th Cir. CPNJ 21,22,23",na
+MCKELLAR,Sumter CP,12-2001,Sumter CP,Sumter
+MILLING,Horry CP,12-2001,Horry CP,Horry
+NEWMAN,Charleston GS,12-2001,Charleston GS,Charleston
+NICHOLSON,Lexington GS,12-2001,Lexington GS,Lexington
+PATTERSON,Sick,12-2001,Sick,na
+PEEPLES,Aiken CP,12-2001,Aiken CP,Aiken
+PIEPER,X,12-2001,X,na
+RAWL,Colleton CP,12-2001,Colleton CP,Colleton
+SAUNDERS,Greenville CP,12-2001,Greenville CP,Greenville
+SHORT,York CP,12-2001,York CP,York
+THOMAS,Berkeley GS,12-2001,Berkeley GS,Berkeley
+WATSON,8th Cir. CPNJ,12-2001,8th Cir. CPNJ,na
+WESTBROOK,Richland GS,12-2001,Richland GS,Richland
+WILLIAMS,Clarendon GS,12-2001,Clarendon GS,Clarendon
+BROWN,Jasper GS,12-2001,Jasper GS,Jasper
+COTTINGHAM,Georgetown GS,12-2001,Georgetown GS,Georgetown
+HUGHSTON,Charleston GS,12-2001,Charleston GS,Charleston
+PYLE,Greenwood CP,12-2001,Greenwood CP,Greenwood
+SMOAK,"14th Cir. CPNJ 19,20",12-2001,"14th Cir. CPNJ 19,20",na
+GIER,York CPNJ 22,12-2001,York CPNJ 22,York
+SIMMONS,na,12-2001,na,na
+YOUNG,na,12-2001,na,na
+ALFORD,Chester GS,13-2001,Chester GS,Chester
+BARBER,Barnwell GS,13-2001,Barnwell GS,Barnwell
+BAXLEY,15th Cir. CPNJ,13-2001,15th Cir. CPNJ,na
+BEATTY,Lancaster CP,13-2001,Lancaster CP,Lancaster
+BREEDEN,5th Cir. CPNJ,13-2001,5th Cir. CPNJ,na
+BROGDON,Horry CP,13-2001,Horry CP,Horry
+BUCKNER,Dorchester GS,13-2001,Dorchester GS,Dorchester
+BURCH,Florence GS,13-2001,Florence GS,Florence
+CLARY,Laurens GS,13-2001,Laurens GS,Laurens
+COLE,Spartanburg CP,13-2001,Spartanburg CP,Spartanburg
+COOPER GT,Edgefield GS,13-2001,Edgefield GS,Edgefield
+COOPER TW,Richland CP,13-2001,Richland CP,Richland
+DENNIS,Orangeburg CP,13-2001,Orangeburg CP,Orangeburg
+FEW,Spartanburg GS,13-2001,Spartanburg GS,Spartanburg
+FLOYD H,13th Cir. CPNJ,13-2001,13th Cir. CPNJ,na
+FLOYD S,Marlboro GS,13-2001,Marlboro GS,Marlboro
+GOODE,Williamsburg GS,13-2001,Williamsburg GS,Williamsburg
+GOODSTEIN,Beaufort CP,13-2001,Beaufort CP,Beaufort
+GREGORY,Charleston GS,13-2001,Charleston GS,Charleston
+HALL,Greenville CP,13-2001,Greenville CP,Greenville
+HARWELL,Chesterfield CP,13-2001,Chesterfield CP,Chester
+HAYES,York GS,13-2001,York GS,York
+JOHNSON,10th Cir. CPNJ,13-2001,10th Cir. CPNJ,na
+KEESLEY,11th Cir. CPNJ,13-2001,11th Cir. CPNJ,na
+KINARD,Dillon GS,13-2001,Dillon GS,Dillon
+KING,York GS,13-2001,York GS,York
+KITTREDGE,Oconee GS,13-2001,Oconee GS,Oconee
+LEE,Richland CP,13-2001,Richland CP,Richland
+LOCKEMY,9th Cir. CPNJ,13-2001,9th Cir. CPNJ,na
+MACAULAY,Richland GS,13-2001,Richland GS,Richland
+MANNING,Florence GS,13-2001,Florence GS,Florence
+MARTIN,Beaufort CP,13-2001,Beaufort CP,Beaufort
+MCKELLAR,Sumter CP,13-2001,Sumter CP,Sumter
+MILLING,15th Cir. AW,13-2001,15th Cir. AW,na
+NEWMAN,Lexington CP,13-2001,Lexington CP,Lexington
+NICHOLSON,Lexington CP,13-2001,Lexington CP,Lexington
+PATTERSON,Greenville CP,13-2001,Greenville CP,Greenville
+PEEPLES,Aiken CP,13-2001,Aiken CP,Aiken
+PIEPER,Charleston GS,13-2001,Charleston GS,Charleston
+RAWL,Colleton CP,13-2001,Colleton CP,Colleton
+SAUNDERS,Pickens GS,13-2001,Pickens GS,Pickens
+SHORT,na,13-2001,na,na
+THOMAS,"Charleston CP 29,30 + Medical 26,27,28",13-2001,"Charleston CP 29,30 ",Charleston
+WATSON,Abbeville GS,13-2001,Abbeville GS,Abbeville
+WESTBROOK,Richland GS + Lexington GS CC 28,13-2001,Richland GS ,Richland
+WILLIAMS,Clarendon GS,13-2001,Clarendon GS,Clarendon
+BROWN,na,13-2001,na,na
+COTTINGHAM,na,13-2001,na,na
+HUGHSTON,Charleston CP,13-2001,Charleston CP,Charleston
+PYLE,Greenville GS,13-2001,Greenville GS,Greenville
+SMOAK,5th Cir. CPNJ,13-2001,5th Cir. CPNJ,na
+GIER,na,13-2001,na,na
+SIMMONS,na,13-2001,na,na
+YOUNG,na,13-2001,na,na
+COLE,Union GS CC 5 + Cherokee GS,10-2001, Cherokee GS,Cherokee
+COOPER GT,McCormick GS + Edgefield GS CC 8,10-2001, Edgefield GS CC 8,Edgefield
+HAYES,7th Cir. CPNJ + York GS CC 8,10-2001, York GS CC 8,York
+KITTREDGE,"X 5,6,7,8 + 10th Cir. CPNJ 9",10-2001, 10th Cir. CPNJ 9,na
+LOCKEMY,Charleston GS + Horry GS CC 9,10-2001, Horry GS CC 9,Horry
+MANNING,"12th Cir. CPNJ/PCR 5,6 + X 7,8,9",10-2001," X 7,8,9",na
+WILLIAMS,3rd Cir. CPNJ + Sumter GS,10-2001, Sumter GS,Sumter
+COTTINGHAM,na,10-2001,na,na
+PYLE,na,10-2001,na,na
+SMOAK,na,10-2001,na,na
+SIMMONS,na,10-2001,na,na
+YOUNG,na,10-2001,na,na
+FLOYD H,Spartanburg CP + Cherokee GS CC 15,11-2001, Cherokee GS CC 15,Cherokee
+KING,"York CP 12 + X 13,14,15,16",11-2001," X 13,14,15,16",na
+LEE,"Richland CP + Charleston GS CC 12,13,14,15",11-2001," Charleston GS CC 12,13,14,15",Charleston
+LOCKEMY,"Charleston CP 12,13,14,15 + X 16",11-2001, X 16,na
+MARTIN,na,11-2001,na,na
+HUGHSTON,na,11-2001,na,na
+PYLE,na,11-2001,na,na
+SMOAK,9th Cir. CPNJ + Berkeley GS CC 12,11-2001, Berkeley GS CC 12,Berkeley
+GIER,na,11-2001,na,na
+SIMMONS,na,11-2001,na,na
+KINARD,Darlington GS + Dillon GS CC 23,12-2001, Dillon GS CC 23,Dillon
+SIMMONS,na,12-2001,na,na
+YOUNG,na,12-2001,na,na
+SHORT,na,13-2001,na,na
+THOMAS,"Charleston CP 29,30 + Medical 26,27,28",13-2001," Medical 26,27,28",na
+WESTBROOK,Richland GS + Lexington GS CC 28,13-2001, Lexington GS CC 28,Lexington
+BROWN,na,13-2001,na,na
+COTTINGHAM,na,13-2001,na,na
+GIER,na,13-2001,na,na
+SIMMONS,na,13-2001,na,na
+YOUNG,na,13-2001,na,na
+COTTINGHAM,na,10-2001,na,na
+PYLE,na,10-2001,na,na
+SMOAK,na,10-2001,na,na
+SIMMONS,na,10-2001,na,na
+YOUNG,na,10-2001,na,na
+MARTIN,na,11-2001,na,na
+HUGHSTON,na,11-2001,na,na
+PYLE,na,11-2001,na,na
+GIER,na,11-2001,na,na
+SIMMONS,na,11-2001,na,na
+SIMMONS,na,12-2001,na,na
+YOUNG,na,12-2001,na,na
+SHORT,na,13-2001,na,na
+BROWN,na,13-2001,na,na
+COTTINGHAM,na,13-2001,na,na
+GIER,na,13-2001,na,na
+SIMMONS,na,13-2001,na,na
+YOUNG,na,13-2001,na,na
+COTTINGHAM,na,10-2001,na,na
+PYLE,na,10-2001,na,na
+SMOAK,na,10-2001,na,na
+SIMMONS,na,10-2001,na,na
+YOUNG,na,10-2001,na,na
+MARTIN,na,11-2001,na,na
+HUGHSTON,na,11-2001,na,na
+PYLE,na,11-2001,na,na
+GIER,na,11-2001,na,na
+SIMMONS,na,11-2001,na,na
+SIMMONS,na,12-2001,na,na
+YOUNG,na,12-2001,na,na
+SHORT,na,13-2001,na,na
+BROWN,na,13-2001,na,na
+COTTINGHAM,na,13-2001,na,na
+GIER,na,13-2001,na,na
+SIMMONS,na,13-2001,na,na
+YOUNG,na,13-2001,na,na
+COTTINGHAM,na,10-2001,na,na
+PYLE,na,10-2001,na,na
+SMOAK,na,10-2001,na,na
+SIMMONS,na,10-2001,na,na
+YOUNG,na,10-2001,na,na
+MARTIN,na,11-2001,na,na
+HUGHSTON,na,11-2001,na,na
+PYLE,na,11-2001,na,na
+GIER,na,11-2001,na,na
+SIMMONS,na,11-2001,na,na
+SIMMONS,na,12-2001,na,na
+YOUNG,na,12-2001,na,na
+SHORT,na,13-2001,na,na
+BROWN,na,13-2001,na,na
+COTTINGHAM,na,13-2001,na,na
+GIER,na,13-2001,na,na
+SIMMONS,na,13-2001,na,na
+YOUNG,na,13-2001,na,na
+ALFORD,"6th Cir. CPNJ 3,4,5 + X- 2",1-2001,"6th Cir. CPNJ 3,4,5 ",na
+BARBER,2nd Cir. CPNJ/PCR,1-2001,2nd Cir. CPNJ/PCR,na
+BAXLEY,15th Cir. CPNJ/PCR,1-2001,15th Cir. CPNJ/PCR,na
+BEATTY,Lancaster GS,1-2001,Lancaster GS,Lancaster
+BREEDEN,5th Cir. CPNJ,1-2001,5th Cir. CPNJ,na
+BROGDON,15th Cir. AW,1-2001,15th Cir. AW,na
+BUCKNER,1st Cir. CPNJ,1-2001,1st Cir. CPNJ,na
+BURCH,12th Cir. AW,1-2001,12th Cir. AW,na
+CLARY,8th Cir. CPNJ,1-2001,8th Cir. CPNJ,na
+COLE,7th Cir. AW,1-2001,7th Cir. AW,na
+COOPER GT,11th Cir. CPNJ,1-2001,11th Cir. CPNJ,na
+COOPER TW,5th Cir. CPNJ + Aiken GS CC 5,1-2001,5th Cir. CPNJ ,na
+DENNIS,1st Cir. CPNJ,1-2001,1st Cir. CPNJ,na
+FEW,7th Cir. CPNJ,1-2001,7th Cir. CPNJ,na
+FLOYD H,13th Cir. CPNJ,1-2001,13th Cir. CPNJ,na
+FLOYD S,4th Cir. CPNJ,1-2001,4th Cir. CPNJ,na
+GOODE,3rd Cir. CPNJ,1-2001,3rd Cir. CPNJ,na
+GOODSTEIN,14th Cir. AW,1-2001,14th Cir. AW,na
+GREGORY,9th Cir. CPNJ,1-2001,9th Cir. CPNJ,na
+HALL,13th Cir. AW,1-2001,13th Cir. AW,na
+HARWELL,15th Cir. CPNJ,1-2001,15th Cir. CPNJ,na
+HAYES,7th Cir. CPNJ,1-2001,7th Cir. CPNJ,na
+JOHNSON,"10th Cir. CPNJ 3,4,5 + X 2",1-2001,"10th Cir. CPNJ 3,4,5 ",na
+KEESLEY,11th Cir. CPNJ,1-2001,11th Cir. CPNJ,na
+KINARD,4th Cir. CPNJ,1-2001,4th Cir. CPNJ,na
+KING,16th Cir. AW,1-2001,16th Cir. AW,na
+KITTREDGE,10th Cir. CPNJ,1-2001,10th Cir. CPNJ,na
+LEE,5th Cir. AW,1-2001,5th Cir. AW,na
+LOCKEMY,"9th Cir. CPNJ 4,5",1-2001,"9th Cir. CPNJ 4,5",na
+MACAULAY,5th Cir. CPNJ,1-2001,5th Cir. CPNJ,na
+MANNING,12th Cir. CPNJ,1-2001,12th Cir. CPNJ,na
+MARTIN,14th Cir. CPNJ,1-2001,14th Cir. CPNJ,na
+MCKELLAR,3rd Cir. AW,1-2001,3rd Cir. AW,na
+MILLING,15th Cir. AW,1-2001,15th Cir. AW,na
+NEWMAN,9th Cir. CPNJ,1-2001,9th Cir. CPNJ,na
+NICHOLSON,11th Cir. AW,1-2001,11th Cir. AW,na
+PATTERSON,13th Cir. AW,1-2001,13th Cir. AW,na
+PEEPLES,2nd Cir. CPNJ,1-2001,2nd Cir. CPNJ,na
+PIEPER,9th Cir. AW,1-2001,9th Cir. AW,na
+RAWL,14th Cir. CPNJ,1-2001,14th Cir. CPNJ,na
+SAUNDERS,13th Cir. CPNJ,1-2001,13th Cir. CPNJ,na
+SHORT,16th Cir. CPNJ,1-2001,16th Cir. CPNJ,na
+THOMAS,9th Cir AW,1-2001,9th Cir AW,na
+WATSON,8th Cir. CPNJ,1-2001,8th Cir. CPNJ,na
+WESTBROOK,"5th Cir. AW 3,4,5 + X 2",1-2001,"5th Cir. AW 3,4,5 ",na
+WILLIAMS,3rd Cir. CPNJ,1-2001,3rd Cir. CPNJ,na
+BROWN,na,1-2001,na,na
+COTTINGHAM,na,1-2001,na,na
+HUGHSTON,na,1-2001,na,na
+PYLE,na,1-2001,na,na
+GIER,na,1-2001,na,na
+COUCH,na,1-2001,na,na
+DREW,10th Cir. CPNJ 2,1-2001,10th Cir. CPNJ 2,na
+SIMMONS,Greenville GS 4,1-2001,Greenville GS 4,Greenville
+YOUNG,na,1-2001,na,na
+SMOAK,na,1-2001,na,na
+ALFORD,Chester GS,2-2001,Chester GS,Chester
+BARBER,Bamberg GS,2-2001,Bamberg GS,Bamberg
+BAXLEY,Horry GS,2-2001,Horry GS,Horry
+BEATTY,Fairfield CP,2-2001,Fairfield CP,Fairfield
+BREEDEN,X,2-2001,X,na
+BROGDON,Horry GS,2-2001,Horry GS,Horry
+BUCKNER,Dorchester CP,2-2001,Dorchester CP,Dorchester
+BURCH,Florence GS + Lee GS,2-2001,Florence GS ,Florence
+CLARY,Greenwood CP,2-2001,Greenwood CP,Greenwood
+COLE,Chester GS,2-2001,Chester GS,Chester
+COOPER GT,McCormick CP,2-2001,McCormick CP,McCormick
+COOPER TW,Richland GS + Aiken GS CC 12,2-2001,Richland GS ,Richland
+DENNIS,Richland CP,2-2001,Richland CP,Richland
+FEW,Spartanburg CP,2-2001,Spartanburg CP,Spartanburg
+FLOYD H,Pickens CP,2-2001,Pickens CP,Pickens
+FLOYD S,Darlington GS,2-2001,Darlington GS,Darlington
+GOODE,Sumter GS,2-2001,Sumter GS,Sumter
+GOODSTEIN,Beaufort CP,2-2001,Beaufort CP,Beaufort
+GREGORY,Charleston CP,2-2001,Charleston CP,Charleston
+HALL,Greenville GS,2-2001,Greenville GS,Greenville
+HARWELL,15th Cir. CPNJ,2-2001,15th Cir. CPNJ,na
+HAYES,7th Cir. CPNJ/PCR,2-2001,7th Cir. CPNJ/PCR,na
+JOHNSON,Anderson GS,2-2001,Anderson GS,Anderson
+KEESLEY,Lexington CP,2-2001,Lexington CP,Lexington
+KINARD,Marlboro GS,2-2001,Marlboro GS,Marlboro
+KING,York GS,2-2001,York GS,York
+KITTREDGE,Anderson GS,2-2001,Anderson GS,Anderson
+LEE,Richland CP,2-2001,Richland CP,Richland
+LOCKEMY,Colleton GS,2-2001,Colleton GS,Colleton
+MACAULAY,Richland CP,2-2001,Richland CP,Richland
+MANNING,"12th Cir. CPNJ 8,9,11,12 + X 10",2-2001,"12th Cir. CPNJ 8,9,11,12 ",na
+MARTIN,Allendale CP,2-2001,Allendale CP,Allendale
+MCKELLAR,Clarendon CP,2-2001,Clarendon CP,Clarendon
+MILLING,Georgetown GS,2-2001,Georgetown GS,Georgetown
+NEWMAN,Charleston GS,2-2001,Charleston GS,Charleston
+NICHOLSON,Lexington GS,2-2001,Lexington GS,Lexington
+PATTERSON,Greenville CP,2-2001,Greenville CP,Greenville
+PEEPLES,2nd Cir. CPNJ,2-2001,2nd Cir. CPNJ,na
+PIEPER,Charleston CP,2-2001,Charleston CP,Charleston
+RAWL,Beaufort GS,2-2001,Beaufort GS,Beaufort
+SAUNDERS,Greenville GS,2-2001,Greenville GS,Greenville
+SHORT,York GS,2-2001,York GS,York
+THOMAS,Berkeley GS,2-2001,Berkeley GS,Berkeley
+WATSON,Abbeville GS,2-2001,Abbeville GS,Abbeville
+WESTBROOK,Richland GS,2-2001,Richland GS,Richland
+WILLIAMS,Orangeburg GS,2-2001,Orangeburg GS,Orangeburg
+BROWN,Charleston GS,2-2001,Charleston GS,Charleston
+COTTINGHAM,na,2-2001,na,na
+HUGHSTON,Dorchester CP,2-2001,Dorchester CP,Dorchester
+PYLE,na,2-2001,na,na
+GIER,York CPNJ 11,2-2001,York CPNJ 11,York
+COUCH,na,2-2001,na,na
+DREW,na,2-2001,na,na
+SIMMONS,na,2-2001,na,na
+YOUNG,na,2-2001,na,na
+SMOAK,9th Cir. CPNJ,2-2001,9th Cir. CPNJ,na
+ALFORD,Chester GS,3-2001,Chester GS,Chester
+BARBER,Aiken GS,3-2001,Aiken GS,Aiken
+BAXLEY,15th Cir. CPNJ,3-2001,15th Cir. CPNJ,na
+BEATTY,"16th Cir. CPNJ 16 + Richland CP 17,18,19",3-2001,16th Cir. CPNJ 16 ,na
+BREEDEN,Richland GS,3-2001,Richland GS,Richland
+BROGDON,Horry GS,3-2001,Horry GS,Horry
+BUCKNER,Lancaster GS,3-2001,Lancaster GS,Lancaster
+BURCH,Florence CP,3-2001,Florence CP,Florence
+CLARY,Newberry GS,3-2001,Newberry GS,Newberry
+COLE,Spartanburg GS,3-2001,Spartanburg GS,Spartanburg
+COOPER GT,11th Cir. CPNJ,3-2001,11th Cir. CPNJ,na
+COOPER TW,Kershaw GS,3-2001,Kershaw GS,Kershaw
+DENNIS,Orangeburg GS,3-2001,Orangeburg GS,Orangeburg
+FEW,Spartanburg CP,3-2001,Spartanburg CP,Spartanburg
+FLOYD H,13th Cir. CPNJ,3-2001,13th Cir. CPNJ,na
+FLOYD S,Chesterfield GS,3-2001,Chesterfield GS,Chester
+GOODE,Sumter GS,3-2001,Sumter GS,Sumter
+GOODSTEIN,Hampton CP,3-2001,Hampton CP,Hampton
+GREGORY,Charleston CP,3-2001,Charleston CP,Charleston
+HALL,Greenville GS ,3-2001,Greenville GS ,Greenville
+HARWELL,Horry CP,3-2001,Horry CP,Horry
+HAYES,Cherokee GS,3-2001,Cherokee GS,Cherokee
+JOHNSON,Anderson GS,3-2001,Anderson GS,Anderson
+KEESLEY,Lexington GS,3-2001,Lexington GS,Lexington
+KINARD,Dillon CP,3-2001,Dillon CP,Dillon
+KING,Union GS,3-2001,Union GS,Union
+KITTREDGE,Oconee CP,3-2001,Oconee CP,Oconee
+LEE,Richland CP,3-2001,Richland CP,Richland
+LOCKEMY,Charleston GS,3-2001,Charleston GS,Charleston
+MACAULAY,5th Cir. CPNJ/PCR,3-2001,5th Cir. CPNJ/PCR,na
+MANNING,Florence CP,3-2001,Florence CP,Florence
+MARTIN,Beaufort CP,3-2001,Beaufort CP,Beaufort
+MCKELLAR,Sumter CP,3-2001,Sumter CP,Sumter
+MILLING,Georgetown CP + Georgetown GS CC 19,3-2001,Georgetown CP ,Georgetown
+NEWMAN,Berkeley CP,3-2001,Berkeley CP,Berkeley
+NICHOLSON,Lexington CP,3-2001,Lexington CP,Lexington
+PATTERSON,Greenville CP,3-2001,Greenville CP,Greenville
+PEEPLES,Aiken CP,3-2001,Aiken CP,Aiken
+PIEPER,Charleston CP,3-2001,Charleston CP,Charleston
+RAWL,Beaufort CP,3-2001,Beaufort CP,Beaufort
+SAUNDERS,Greenville GS,3-2001,Greenville GS,Greenville
+SHORT,York CP,3-2001,York CP,York
+THOMAS,"X 16,17,18 + Horry GS 19",3-2001,"X 16,17,18 ",na
+WATSON,Laurens CP,3-2001,Laurens CP,Laurens
+WESTBROOK,Richland GS,3-2001,Richland GS,Richland
+WILLIAMS,Williamsburg CP,3-2001,Williamsburg CP,Williamsburg
+BROWN,Beaufort GS,3-2001,Beaufort GS,Beaufort
+COTTINGHAM,na,3-2001,na,na
+HUGHSTON,Dorchester CP,3-2001,Dorchester CP,Dorchester
+PYLE,na,3-2001,na,na
+GIER,na,3-2001,na,na
+COUCH,na,3-2001,na,na
+DREW,na,3-2001,na,na
+SIMMONS,na,3-2001,na,na
+YOUNG,Chester CPNJ 19,3-2001,Chester CPNJ 19,Chester
+SMOAK,na,3-2001,na,na
+ALFORD,Lancaster CP,4-2001,Lancaster CP,Lancaster
+BARBER,Kershaw GS,4-2001,Kershaw GS,Kershaw
+BAXLEY,Georgetown GS,4-2001,Georgetown GS,Georgetown
+BEATTY,York GS,4-2001,York GS,York
+BREEDEN,Richland CP,4-2001,Richland CP,Richland
+BROGDON,Horry CP,4-2001,Horry CP,Horry
+BUCKNER,Allendale GS,4-2001,Allendale GS,Allendale
+BURCH,Florence GS,4-2001,Florence GS,Florence
+CLARY,Abbeville CP + Lexington GS CC 25,4-2001,Abbeville CP ,Abbeville
+COLE,Spartanburg GS,4-2001,Spartanburg GS,Spartanburg
+COOPER GT,11th Cir. CPNJ,4-2001,11th Cir. CPNJ,na
+COOPER TW,Aiken GS,4-2001,Aiken GS,Aiken
+DENNIS,Calhoun CP,4-2001,Calhoun CP,Calhoun
+FEW,7th Cir. CPNJ,4-2001,7th Cir. CPNJ,na
+FLOYD H,Pickens GS,4-2001,Pickens GS,Pickens
+FLOYD S,Darlington CP,4-2001,Darlington CP,Darlington
+GOODE,York GS,4-2001,York GS,York
+GOODSTEIN,Colleton CP,4-2001,Colleton CP,Colleton
+GREGORY,9th Cir. CPNJ,4-2001,9th Cir. CPNJ,na
+HALL,Greenville CP + Horry GS CC 25,4-2001,Greenville CP ,Greenville
+HARWELL,15th Cir. CPNJ,4-2001,15th Cir. CPNJ,na
+HAYES,Spartanburg GS,4-2001,Spartanburg GS,Spartanburg
+JOHNSON,Anderson CP,4-2001,Anderson CP,Anderson
+KEESLEY,XX ,4-2001,XX ,na
+KINARD,Dillon GS,4-2001,Dillon GS,Dillon
+KING,York CP,4-2001,York CP,York
+KITTREDGE,10th Cir. CPNJ,4-2001,10th Cir. CPNJ,na
+LEE,Richland GS,4-2001,Richland GS,Richland
+LOCKEMY,9th Cir. CPNJ/PCR,4-2001,9th Cir. CPNJ/PCR,na
+MACAULAY,Richland GS,4-2001,Richland GS,Richland
+MANNING,Florence CP,4-2001,Florence CP,Florence
+MARTIN,Beaufort CP,4-2001,Beaufort CP,Beaufort
+MCKELLAR,Sumter CP,4-2001,Sumter CP,Sumter
+MILLING,Horry CP,4-2001,Horry CP,Horry
+NEWMAN,Berkeley CP,4-2001,Berkeley CP,Berkeley
+NICHOLSON,Lexington CP,4-2001,Lexington CP,Lexington
+PATTERSON,Greenville CP,4-2001,Greenville CP,Greenville
+PEEPLES,Aiken CP,4-2001,Aiken CP,Aiken
+PIEPER,Charleston CP,4-2001,Charleston CP,Charleston
+RAWL,14th Cir. CPNJ,4-2001,14th Cir. CPNJ,na
+SAUNDERS,13th Cir. CPNJ,4-2001,13th Cir. CPNJ,na
+SHORT,16th Cir. CPNJ,4-2001,16th Cir. CPNJ,na
+THOMAS,Charleston CP,4-2001,Charleston CP,Charleston
+WATSON,Greenwood GS,4-2001,Greenwood GS,Greenwood
+WESTBROOK,Richland CP,4-2001,Richland CP,Richland
+WILLIAMS,Sumter GS,4-2001,Sumter GS,Sumter
+BROWN,Dorchester GS,4-2001,Dorchester GS,Dorchester
+COTTINGHAM,na,4-2001,na,na
+HUGHSTON,Charleston CP,4-2001,Charleston CP,Charleston
+PYLE,Anderson CP,4-2001,Anderson CP,Anderson
+GIER,York CPNJ 25,4-2001,York CPNJ 25,York
+COUCH,na,4-2001,na,na
+DREW,na,4-2001,na,na
+SIMMONS,"Greenville GS 26,25",4-2001,"Greenville GS 26,25",Greenville
+YOUNG,na,4-2001,na,na
+SMOAK,Lexington GS,4-2001,Lexington GS,Lexington
+ALFORD,Fairfield GS,5-2001,Fairfield GS,Fairfield
+BARBER,Richland CP,5-2001,Richland CP,Richland
+BAXLEY,Georgetown GS,5-2001,Georgetown GS,Georgetown
+BEATTY,Pickens GS(SGJ),5-2001,Pickens GS(SGJ),Pickens
+BREEDEN,5th Cir. CPNJ,5-2001,5th Cir. CPNJ,na
+BROGDON,Horry CP,5-2001,Horry CP,Horry
+BUCKNER,Dorchester GS,5-2001,Dorchester GS,Dorchester
+BURCH,Florence GS,5-2001,Florence GS,Florence
+CLARY,Laurens GS,5-2001,Laurens GS,Laurens
+COLE,Spartanburg GS CP CC,5-2001,Spartanburg GS CP CC,Spartanburg
+COOPER GT,Lexington CP,5-2001,Lexington CP,Lexington
+COOPER TW,Aiken GS + Beaufort GS CC,5-2001,Aiken GS ,Aiken
+DENNIS,Orangeburg CP,5-2001,Orangeburg CP,Orangeburg
+FEW,Spartanburg CP,5-2001,Spartanburg CP,Spartanburg
+FLOYD H,13th Cir. CPNJ,5-2001,13th Cir. CPNJ,na
+FLOYD S,Darlington GS,5-2001,Darlington GS,Darlington
+GOODE,3rd Cir. CPNJ/PCR,5-2001,3rd Cir. CPNJ/PCR,na
+GOODSTEIN,"Colleton CP 29,30,31,1 + Medical 2",5-2001,"Colleton CP 29,30,31,1 ",Colleton
+GREGORY,Charleston GS,5-2001,Charleston GS,Charleston
+HALL,Greenville CP,5-2001,Greenville CP,Greenville
+HARWELL,Horry CP,5-2001,Horry CP,Horry
+HAYES,Spartanburg CP,5-2001,Spartanburg CP,Spartanburg
+JOHNSON,Anderson CP + Anderson GS CC 30,5-2001,Anderson CP ,Anderson
+KEESLEY,Lexington CP,5-2001,Lexington CP,Lexington
+KINARD,Chesterfield CP,5-2001,Chesterfield CP,Chester
+KING,York CP,5-2001,York CP,York
+KITTREDGE,Anderson CP,5-2001,Anderson CP,Anderson
+LEE,Richland CP,5-2001,Richland CP,Richland
+LOCKEMY,Charleston GS,5-2001,Charleston GS,Charleston
+MACAULAY,Richland GS,5-2001,Richland GS,Richland
+MANNING,"Florence CP 29,30,1,2 + X 31",5-2001,"Florence CP 29,30,1,2 ",Florence
+MARTIN,Beaufort CP,5-2001,Beaufort CP,Beaufort
+MCKELLAR,Williamsburg GS,5-2001,Williamsburg GS,Williamsburg
+MILLING,Horry CP,5-2001,Horry CP,Horry
+NEWMAN,9th Cir. CPNJ,5-2001,9th Cir. CPNJ,na
+NICHOLSON,Saluda GS,5-2001,Saluda GS,Saluda
+PATTERSON,X,5-2001,X,na
+PEEPLES,Aiken CP,5-2001,Aiken CP,Aiken
+PIEPER,Charleston CP,5-2001,Charleston CP,Charleston
+RAWL,Beaufort CP,5-2001,Beaufort CP,Beaufort
+SAUNDERS,13th Cir. CPNJ,5-2001,13th Cir. CPNJ,na
+SHORT,Union CP,5-2001,Union CP,Union
+THOMAS,Berkeley GS,5-2001,Berkeley GS,Berkeley
+WATSON,Greenwood GS,5-2001,Greenwood GS,Greenwood
+WESTBROOK,Richland GS,5-2001,Richland GS,Richland
+WILLIAMS,Clarendon GS,5-2001,Clarendon GS,Clarendon
+BROWN,na,5-2001,na,na
+COTTINGHAM,"Florence GS 30,31",5-2001,"Florence GS 30,31",Florence
+HUGHSTON,Charleston CP,5-2001,Charleston CP,Charleston
+PYLE,Oconee GS,5-2001,Oconee GS,Oconee
+GIER,na,5-2001,na,na
+COUCH,Cherokee CPNJ 29,5-2001,Cherokee CPNJ 29,Cherokee
+DREW,na,5-2001,na,na
+SIMMONS,Greenville GS 2,5-2001,Greenville GS 2,Greenville
+YOUNG,Chester CPNJ 2,5-2001,Chester CPNJ 2,Chester
+SMOAK,na,5-2001,na,na
+ALFORD,"6th Cir. CPNJ 3,4,5 + X- 2",1-2001, X- 2,na
+COOPER TW,5th Cir. CPNJ + Aiken GS CC 5,1-2001, Aiken GS CC 5,Aiken
+JOHNSON,"10th Cir. CPNJ 3,4,5 + X 2",1-2001, X 2,na
+WESTBROOK,"5th Cir. AW 3,4,5 + X 2",1-2001, X 2,na
+BROWN,na,1-2001,na,na
+COTTINGHAM,na,1-2001,na,na
+HUGHSTON,na,1-2001,na,na
+PYLE,na,1-2001,na,na
+GIER,na,1-2001,na,na
+COUCH,na,1-2001,na,na
+YOUNG,na,1-2001,na,na
+SMOAK,na,1-2001,na,na
+BURCH,Florence GS + Lee GS,2-2001, Lee GS,Lee
+COOPER TW,Richland GS + Aiken GS CC 12,2-2001, Aiken GS CC 12,Aiken
+MANNING,"12th Cir. CPNJ 8,9,11,12 + X 10",2-2001, X 10,na
+COTTINGHAM,na,2-2001,na,na
+PYLE,na,2-2001,na,na
+COUCH,na,2-2001,na,na
+DREW,na,2-2001,na,na
+SIMMONS,na,2-2001,na,na
+YOUNG,na,2-2001,na,na
+BEATTY,"16th Cir. CPNJ 16 + Richland CP 17,18,19",3-2001," Richland CP 17,18,19",Richland
+MILLING,Georgetown CP + Georgetown GS CC 19,3-2001, Georgetown GS CC 19,Georgetown
+THOMAS,"X 16,17,18 + Horry GS 19",3-2001, Horry GS 19,Horry
+COTTINGHAM,na,3-2001,na,na
+PYLE,na,3-2001,na,na
+GIER,na,3-2001,na,na
+COUCH,na,3-2001,na,na
+DREW,na,3-2001,na,na
+SIMMONS,na,3-2001,na,na
+SMOAK,na,3-2001,na,na
+CLARY,Abbeville CP + Lexington GS CC 25,4-2001, Lexington GS CC 25,Lexington
+HALL,Greenville CP + Horry GS CC 25,4-2001, Horry GS CC 25,Horry
+COTTINGHAM,na,4-2001,na,na
+COUCH,na,4-2001,na,na
+DREW,na,4-2001,na,na
+YOUNG,na,4-2001,na,na
+COOPER TW,Aiken GS + Beaufort GS CC,5-2001, Beaufort GS CC,Beaufort
+GOODSTEIN,"Colleton CP 29,30,31,1 + Medical 2",5-2001, Medical 2,na
+JOHNSON,Anderson CP + Anderson GS CC 30,5-2001, Anderson GS CC 30,Anderson
+MANNING,"Florence CP 29,30,1,2 + X 31",5-2001, X 31,na
+BROWN,na,5-2001,na,na
+GIER,na,5-2001,na,na
+DREW,na,5-2001,na,na
+SMOAK,na,5-2001,na,na
+BROWN,na,1-2001,na,na
+COTTINGHAM,na,1-2001,na,na
+HUGHSTON,na,1-2001,na,na
+PYLE,na,1-2001,na,na
+GIER,na,1-2001,na,na
+COUCH,na,1-2001,na,na
+YOUNG,na,1-2001,na,na
+SMOAK,na,1-2001,na,na
+COTTINGHAM,na,2-2001,na,na
+PYLE,na,2-2001,na,na
+COUCH,na,2-2001,na,na
+DREW,na,2-2001,na,na
+SIMMONS,na,2-2001,na,na
+YOUNG,na,2-2001,na,na
+COTTINGHAM,na,3-2001,na,na
+PYLE,na,3-2001,na,na
+GIER,na,3-2001,na,na
+COUCH,na,3-2001,na,na
+DREW,na,3-2001,na,na
+SIMMONS,na,3-2001,na,na
+SMOAK,na,3-2001,na,na
+COTTINGHAM,na,4-2001,na,na
+COUCH,na,4-2001,na,na
+DREW,na,4-2001,na,na
+YOUNG,na,4-2001,na,na
+BROWN,na,5-2001,na,na
+GIER,na,5-2001,na,na
+DREW,na,5-2001,na,na
+SMOAK,na,5-2001,na,na
+BROWN,na,1-2001,na,na
+COTTINGHAM,na,1-2001,na,na
+HUGHSTON,na,1-2001,na,na
+PYLE,na,1-2001,na,na
+GIER,na,1-2001,na,na
+COUCH,na,1-2001,na,na
+YOUNG,na,1-2001,na,na
+SMOAK,na,1-2001,na,na
+COTTINGHAM,na,2-2001,na,na
+PYLE,na,2-2001,na,na
+COUCH,na,2-2001,na,na
+DREW,na,2-2001,na,na
+SIMMONS,na,2-2001,na,na
+YOUNG,na,2-2001,na,na
+COTTINGHAM,na,3-2001,na,na
+PYLE,na,3-2001,na,na
+GIER,na,3-2001,na,na
+COUCH,na,3-2001,na,na
+DREW,na,3-2001,na,na
+SIMMONS,na,3-2001,na,na
+SMOAK,na,3-2001,na,na
+COTTINGHAM,na,4-2001,na,na
+COUCH,na,4-2001,na,na
+DREW,na,4-2001,na,na
+YOUNG,na,4-2001,na,na
+BROWN,na,5-2001,na,na
+GIER,na,5-2001,na,na
+DREW,na,5-2001,na,na
+SMOAK,na,5-2001,na,na
+BROWN,na,1-2001,na,na
+COTTINGHAM,na,1-2001,na,na
+HUGHSTON,na,1-2001,na,na
+PYLE,na,1-2001,na,na
+GIER,na,1-2001,na,na
+COUCH,na,1-2001,na,na
+YOUNG,na,1-2001,na,na
+SMOAK,na,1-2001,na,na
+COTTINGHAM,na,2-2001,na,na
+PYLE,na,2-2001,na,na
+COUCH,na,2-2001,na,na
+DREW,na,2-2001,na,na
+SIMMONS,na,2-2001,na,na
+YOUNG,na,2-2001,na,na
+COTTINGHAM,na,3-2001,na,na
+PYLE,na,3-2001,na,na
+GIER,na,3-2001,na,na
+COUCH,na,3-2001,na,na
+DREW,na,3-2001,na,na
+SIMMONS,na,3-2001,na,na
+SMOAK,na,3-2001,na,na
+COTTINGHAM,na,4-2001,na,na
+COUCH,na,4-2001,na,na
+DREW,na,4-2001,na,na
+YOUNG,na,4-2001,na,na
+BROWN,na,5-2001,na,na
+GIER,na,5-2001,na,na
+DREW,na,5-2001,na,na
+SMOAK,na,5-2001,na,na
+ALFORD,in chambers,40-2000,in chambers,na
+BARBER,"in chambers + 2nd Cir. CPNJ/PCR 2 + 5th Cir. CPNJ 3,4 + Richland GS 5",40-2000,in chambers ,na
+BAXLEY,in chambers,40-2000,in chambers,na
+BEATTY,in chambers,40-2000,in chambers,na
+BREEDEN,X,40-2000,X,na
+BROGDON,in chambers + 12th Cir. CPNJ + Florence GS 5,40-2000,in chambers ,na
+BUCKNER,in chambers,40-2000,in chambers,na
+BURCH,in chambers,40-2000,in chambers,na
+CLARY,"in chambers + 7th Cir. CPNJ 2,3,5",40-2000,in chambers ,na
+COLE,in chambers,40-2000,in chambers,na
+COOPER TW,"in chambers + 3rd Cir. CPNJ 2,3,4,6",40-2000,in chambers ,na
+DENNIS,in chambers + Sumter GS(SGJ) 3,40-2000,in chambers ,na
+FEW,in chambers,40-2000,in chambers,na
+FLOYD H,in chambers,40-2000,in chambers,na
+FLOYD S,in chambers + 15th Cir. CPNJ 5,40-2000,in chambers ,na
+GOODE,in chambers,40-2000,in chambers,na
+GOODSTEIN,in chambers + 14th Cir. CPNJ 5,40-2000,in chambers ,na
+GREGORY,in chambers + 14th Cir. CPNJ 6,40-2000,in chambers ,na
+HALL,in chambers,40-2000,in chambers,na
+HARWELL,in chambers,40-2000,in chambers,na
+HAYES,in chambers,40-2000,in chambers,na
+JOHNSON,in chambers + Richland GS 5,40-2000,in chambers ,na
+KEESLEY,in chambers + Bamberg GS 2,40-2000,in chambers ,na
+KINARD,in chambers,40-2000,in chambers,na
+KING,in chambers,40-2000,in chambers,na
+KITTREDGE,in chambers + Greenville GS 6,40-2000,in chambers ,na
+LEE,in chambers,40-2000,in chambers,na
+LOCKEMY,3rd Cir. CPNJ,40-2000,3rd Cir. CPNJ,na
+MACAULAY,in chambers,40-2000,in chambers,na
+MANNING,in chambers,40-2000,in chambers,na
+MARTIN,"in chambers + 9th Cir. CPNJ 2,6",40-2000,in chambers ,na
+MCKELLAR,in chambers,40-2000,in chambers,na
+MILLING,in chambers,40-2000,in chambers,na
+NICHOLSON,in chambers,40-2000,in chambers,na
+PATTERSON,in chambers + 13th Cir. CPNJ 5,40-2000,in chambers ,na
+PEEPLES,in chambers,40-2000,in chambers,na
+PIEPER,in chambers,40-2000,in chambers,na
+RAWL,X,40-2000,X,na
+SAUNDERS,in chambers,40-2000,in chambers,na
+SHORT,in chambers,40-2000,in chambers,na
+THOMAS,in chambers,40-2000,in chambers,na
+WATSON,in chambers,40-2000,in chambers,na
+WESTBROOK,in chambers,40-2000,in chambers,na
+WILLIAMS,in chambers,40-2000,in chambers,na
+BROWN,14th Cir. CPNJ,40-2000,14th Cir. CPNJ,na
+COTTINGHAM,na,40-2000,na,na
+HUGHSTON,na,40-2000,na,na
+PYLE,na,40-2000,na,na
+COUCH,na,40-2000,na,na
+SMOAK,na,40-2000,na,na
+COOPER GT,in chambers,40-2000,in chambers,na
+NEWMAN,in chambers,40-2000,in chambers,na
+SIMMONS,Pickens GS 4 + Greenville GS 6,40-2000,Pickens GS 4 ,Pickens
+GIER,na,40-2000,na,na
+WATTS,"Dorchester CPNJ 4,5",40-2000,"Dorchester CPNJ 4,5",Dorchester
+ALFORD,York GS,41-2000,York GS,York
+BARBER,Richland CP,41-2000,Richland CP,Richland
+BAXLEY,Sumter CP,41-2000,Sumter CP,Sumter
+BEATTY,Spartanburg GS,41-2000,Spartanburg GS,Spartanburg
+BREEDEN,Georgetown CP,41-2000,Georgetown CP,Georgetown
+BROGDON,Florence CP,41-2000,Florence CP,Florence
+BUCKNER,Dorchester CP,41-2000,Dorchester CP,Dorchester
+BURCH,Horry CP,41-2000,Horry CP,Horry
+CLARY,Cherokee CP,41-2000,Cherokee CP,Cherokee
+COLE,Spartanburg GS,41-2000,Spartanburg GS,Spartanburg
+COOPER TW,Lee GS,41-2000,Lee GS,Lee
+DENNIS,Sumter GS(SGJ) + Aiken GS CC,41-2000,Sumter GS(SGJ) ,Sumter
+FEW,X,41-2000,X,na
+FLOYD H,X,41-2000,X,na
+FLOYD S,X,41-2000,X,na
+GOODE,Lancaster GS,41-2000,Lancaster GS,Lancaster
+GOODSTEIN,1st Cir CPNJ,41-2000,1st Cir CPNJ,na
+GREGORY,Allendale GS,41-2000,Allendale GS,Allendale
+HALL,X,41-2000,X,na
+HARWELL,12th Cir. CPNJ,41-2000,12th Cir. CPNJ,na
+HAYES,York GS,41-2000,York GS,York
+JOHNSON,Laurens CP,41-2000,Laurens CP,Laurens
+KEESLEY,Aiken GS,41-2000,Aiken GS,Aiken
+KINARD,X,41-2000,X,na
+KING,Sumter CP,41-2000,Sumter CP,Sumter
+KITTREDGE,Pickens GS,41-2000,Pickens GS,Pickens
+LEE,Richland GS,41-2000,Richland GS,Richland
+LOCKEMY,Darlington GS,41-2000,Darlington GS,Darlington
+MACAULAY,Lexington GS,41-2000,Lexington GS,Lexington
+MANNING,Richland GS,41-2000,Richland GS,Richland
+MARTIN,Charleston GS,41-2000,Charleston GS,Charleston
+MCKELLAR,5th Cir. CPNJ,41-2000,5th Cir. CPNJ,na
+MILLING,16th Cir. CPNJ,41-2000,16th Cir. CPNJ,na
+NICHOLSON,Anderson GS,41-2000,Anderson GS,Anderson
+PATTERSON,13th Cir. AW,41-2000,13th Cir. AW,na
+PEEPLES,Bamberg CP,41-2000,Bamberg CP,Bamberg
+PIEPER,Charleston CP,41-2000,Charleston CP,Charleston
+RAWL,Berkeley GS,41-2000,Berkeley GS,Berkeley
+SAUNDERS,"X 10,11,12,13 + 8th Cir. CPNJ 9",41-2000,"X 10,11,12,13 ",na
+SHORT,X,41-2000,X,na
+THOMAS,"X 11,12,13 + 15th Cir. CPNJ 9,10",41-2000,"X 11,12,13 ",na
+WATSON,13th Cir. CPNJ,41-2000,13th Cir. CPNJ,na
+WESTBROOK,McCormick GS,41-2000,McCormick GS,McCormick
+WILLIAMS,Charleston CP,41-2000,Charleston CP,Charleston
+BROWN,na,41-2000,na,na
+COTTINGHAM,Marlboro CP,41-2000,Marlboro CP,Marlboro
+HUGHSTON,Greenwood GS,41-2000,Greenwood GS,Greenwood
+PYLE,na,41-2000,na,na
+COUCH,na,41-2000,na,na
+SMOAK,9th Cir. CPNJ,41-2000,9th Cir. CPNJ,na
+COOPER GT,Richland CP,41-2000,Richland CP,Richland
+NEWMAN,9th Cir. CPNJ,41-2000,9th Cir. CPNJ,na
+SIMMONS,na,41-2000,na,na
+GIER,York CPNJ 12,41-2000,York CPNJ 12,York
+WATTS,na,41-2000,na,na
+ALFORD,Union GS,42-2000,Union GS,Union
+BARBER,Richland GS,42-2000,Richland GS,Richland
+BAXLEY,York CP,42-2000,York CP,York
+BEATTY,7th Cir. CPNJ,42-2000,7th Cir. CPNJ,na
+BREEDEN,"15th Cir. AW 16,19,20 + Aiken 17,18",42-2000,"15th Cir. AW 16,19,20 ",na
+BROGDON,Florence CP + Florence GS CC 20,42-2000,Florence CP ,Florence
+BUCKNER,Beaufort GS,42-2000,Beaufort GS,Beaufort
+BURCH,Hampton CP,42-2000,Hampton CP,Hampton
+CLARY,Spartanburg GS(SGJ),42-2000,Spartanburg GS(SGJ),Spartanburg
+COLE,Spartanburg CP,42-2000,Spartanburg CP,Spartanburg
+COOPER TW,Williamsburg GS + Aiken GS 20,42-2000,Williamsburg GS ,Williamsburg
+DENNIS,Berkeley CP,42-2000,Berkeley CP,Berkeley
+FEW,Greenville CP,42-2000,Greenville CP,Greenville
+FLOYD H,Pickens CP,42-2000,Pickens CP,Pickens
+FLOYD S,X,42-2000,X,na
+GOODE,6th Cir. CPNJ/PCR,42-2000,6th Cir. CPNJ/PCR,na
+GOODSTEIN,Dorchester CP,42-2000,Dorchester CP,Dorchester
+GREGORY,Colleton GS,42-2000,Colleton GS,Colleton
+HALL,Lexington GS,42-2000,Lexington GS,Lexington
+HARWELL,Chesterfield GS,42-2000,Chesterfield GS,Chester
+HAYES,X,42-2000,X,na
+JOHNSON,Laurens GS,42-2000,Laurens GS,Laurens
+KEESLEY,Sick,42-2000,Sick,na
+KINARD,X,42-2000,X,na
+KING,X,42-2000,X,na
+KITTREDGE,Greenville GS,42-2000,Greenville GS,Greenville
+LEE,5th Cir. CPNJ,42-2000,5th Cir. CPNJ,na
+LOCKEMY,Dillon CP,42-2000,Dillon CP,Dillon
+MACAULAY,Oconee CP,42-2000,Oconee CP,Oconee
+MANNING,5th Cir. CPNJ/PCR,42-2000,5th Cir. CPNJ/PCR,na
+MARTIN,X,42-2000,X,na
+MCKELLAR,Richland GS,42-2000,Richland GS,Richland
+MILLING,12th Cir. CPNJ,42-2000,12th Cir. CPNJ,na
+NICHOLSON,Anderson GS,42-2000,Anderson GS,Anderson
+PATTERSON,Greenville CP,42-2000,Greenville CP,Greenville
+PEEPLES,2nd Cir. CPNJ,42-2000,2nd Cir. CPNJ,na
+PIEPER,Charleston CP,42-2000,Charleston CP,Charleston
+RAWL,9th Cir. CPNJ,42-2000,9th Cir. CPNJ,na
+SAUNDERS,Greenwood GS,42-2000,Greenwood GS,Greenwood
+SHORT,Lancaster GS,42-2000,Lancaster GS,Lancaster
+THOMAS,Horry GS,42-2000,Horry GS,Horry
+WATSON,Beaufort CP,42-2000,Beaufort CP,Beaufort
+WESTBROOK,McCormick GS,42-2000,McCormick GS,McCormick
+WILLIAMS,Orangeburg GS,42-2000,Orangeburg GS,Orangeburg
+BROWN,na,42-2000,na,na
+COTTINGHAM,Horry GS,42-2000,Horry GS,Horry
+HUGHSTON,Greenville GS,42-2000,Greenville GS,Greenville
+PYLE,Greenville CP,42-2000,Greenville CP,Greenville
+COUCH,Cherokee CPNJ 16,42-2000,Cherokee CPNJ 16,Cherokee
+SMOAK,Charleston GS,42-2000,Charleston GS,Charleston
+COOPER GT,Richland CP,42-2000,Richland CP,Richland
+NEWMAN,Clarendon GS,42-2000,Clarendon GS,Clarendon
+SIMMONS,na,42-2000,na,na
+GIER,na,42-2000,na,na
+WATTS,"Dorchester CPNJ 16,17,18",42-2000,"Dorchester CPNJ 16,17,18",Dorchester
+ALFORD,York GS,43-2000,York GS,York
+BARBER,Richland GS,43-2000,Richland GS,Richland
+BAXLEY,4th Cir. CPNJ,43-2000,4th Cir. CPNJ,na
+BEATTY,Beaufort CP,43-2000,Beaufort CP,Beaufort
+BREEDEN,Horry GS,43-2000,Horry GS,Horry
+BROGDON,"Florence GS 23,24,25,26 + X 27",43-2000,"Florence GS 23,24,25,26 ",Florence
+BUCKNER,14th Cir. CPNJ,43-2000,14th Cir. CPNJ,na
+BURCH,Dillon GS,43-2000,Dillon GS,Dillon
+CLARY,Spartanburg GS(SGJ),43-2000,Spartanburg GS(SGJ),Spartanburg
+COLE,Spartanburg GS,43-2000,Spartanburg GS,Spartanburg
+COOPER TW,Williamsburg GS,43-2000,Williamsburg GS,Williamsburg
+DENNIS,Berkeley CP,43-2000,Berkeley CP,Berkeley
+FEW,Beaufort GS,43-2000,Beaufort GS,Beaufort
+FLOYD H,Greenville GS,43-2000,Greenville GS,Greenville
+FLOYD S,Georgetown GS,43-2000,Georgetown GS,Georgetown
+GOODE,11th Cir. CPNJ,43-2000,11th Cir. CPNJ,na
+GOODSTEIN,Orangeburg CP,43-2000,Orangeburg CP,Orangeburg
+GREGORY,Dorchester GS(SGJ),43-2000,Dorchester GS(SGJ),Dorchester
+HALL,Lexington CP,43-2000,Lexington CP,Lexington
+HARWELL,Florence CP,43-2000,Florence CP,Florence
+HAYES,York GS,43-2000,York GS,York
+JOHNSON,Greenwood GS CC 27 + Laurens GS,43-2000,Greenwood GS CC 27 ,Greenwood
+KEESLEY,Sick,43-2000,Sick,na
+KINARD,Kershaw CP,43-2000,Kershaw CP,Kershaw
+KING,Sumter CP,43-2000,Sumter CP,Sumter
+KITTREDGE,Greenville GS,43-2000,Greenville GS,Greenville
+LEE,Richland CP,43-2000,Richland CP,Richland
+LOCKEMY,Horry CP + Horry GS CC 26,43-2000,Horry CP ,Horry
+MACAULAY,10th Cir. CPNJ,43-2000,10th Cir. CPNJ,na
+MANNING,Richland GS,43-2000,Richland GS,Richland
+MARTIN,Charleston GS,43-2000,Charleston GS,Charleston
+MCKELLAR,Richland CP,43-2000,Richland CP,Richland
+MILLING,4th Cir. CPNJ/PCR,43-2000,4th Cir. CPNJ/PCR,na
+NICHOLSON,Anderson CP,43-2000,Anderson CP,Anderson
+PATTERSON,Greenville CP,43-2000,Greenville CP,Greenville
+PEEPLES,2nd Cir. CPNJ/PCR,43-2000,2nd Cir. CPNJ/PCR,na
+PIEPER,Charleston CP,43-2000,Charleston CP,Charleston
+RAWL,Colleton GS,43-2000,Colleton GS,Colleton
+SAUNDERS,8th Cir. CPNJ/PCR,43-2000,8th Cir. CPNJ/PCR,na
+SHORT,Fairfield GS,43-2000,Fairfield GS,Fairfield
+THOMAS,15th Cir. CPNJ,43-2000,15th Cir. CPNJ,na
+WATSON,"13th Cir. CPNJ 23,24,25,26",43-2000,"13th Cir. CPNJ 23,24,25,26",na
+WESTBROOK,Lexington GS,43-2000,Lexington GS,Lexington
+WILLIAMS,Saluda CP,43-2000,Saluda CP,Saluda
+BROWN,Charleston GS,43-2000,Charleston GS,Charleston
+COTTINGHAM,Marlboro GS,43-2000,Marlboro GS,Marlboro
+HUGHSTON,Charleston CP,43-2000,Charleston CP,Charleston
+PYLE,na,43-2000,na,na
+COUCH,na,43-2000,na,na
+SMOAK,na,43-2000,na,na
+COOPER GT,5th Cir. CPNJ,43-2000,5th Cir. CPNJ,na
+NEWMAN,Clarendon GS,43-2000,Clarendon GS,Clarendon
+SIMMONS,na,43-2000,na,na
+GIER,York CPNJ 26,43-2000,York CPNJ 26,York
+WATTS,na,43-2000,na,na
+ALFORD,Union CP,44-2000,Union CP,Union
+BARBER,Richland CP,44-2000,Richland CP,Richland
+BAXLEY,Chesterfield CP,44-2000,Chesterfield CP,Chester
+BEATTY,Spartanburg CP,44-2000,Spartanburg CP,Spartanburg
+BREEDEN,"Horry CP 1,2,3 + X 30,31",44-2000,"Horry CP 1,2,3 ",Horry
+BROGDON,X,44-2000,X,na
+BUCKNER,Beaufort CP,44-2000,Beaufort CP,Beaufort
+BURCH,Jasper CP,44-2000,Jasper CP,Jasper
+CLARY,Cherokee GS,44-2000,Cherokee GS,Cherokee
+COLE,Spartanburg CP,44-2000,Spartanburg CP,Spartanburg
+COOPER TW,Sumter GS,44-2000,Sumter GS,Sumter
+DENNIS,9th Cir. CPNJ,44-2000,9th Cir. CPNJ,na
+FEW,X,44-2000,X,na
+FLOYD H,Pickens GS,44-2000,Pickens GS,Pickens
+FLOYD S,Georgetown GS,44-2000,Georgetown GS,Georgetown
+GOODE,Edgefield GS,44-2000,Edgefield GS,Edgefield
+GOODSTEIN,Orangeburg CP,44-2000,Orangeburg CP,Orangeburg
+GREGORY,X,44-2000,X,na
+HALL,Oconee GS,44-2000,Oconee GS,Oconee
+HARWELL,Florence GS,44-2000,Florence GS,Florence
+HAYES,16th Cir. CPNJ/PCR,44-2000,16th Cir. CPNJ/PCR,na
+JOHNSON,Greenwood CP,44-2000,Greenwood CP,Greenwood
+KEESLEY,Sick,44-2000,Sick,na
+KINARD,5th Cir. CPNJ,44-2000,5th Cir. CPNJ,na
+KING,Sumter CP,44-2000,Sumter CP,Sumter
+KITTREDGE,Greenville CP,44-2000,Greenville CP,Greenville
+LEE,X,44-2000,X,na
+LOCKEMY,Darlington GS,44-2000,Darlington GS,Darlington
+MACAULAY,Calhoun GS,44-2000,Calhoun GS,Calhoun
+MANNING,Richland CP,44-2000,Richland CP,Richland
+MARTIN,Charleston CP,44-2000,Charleston CP,Charleston
+MCKELLAR,Lexington GS(SGJ) CP,44-2000,Lexington GS(SGJ) CP,Lexington
+MILLING,Florence GS,44-2000,Florence GS,Florence
+NICHOLSON,"Anderson CP 1,2,3 + Barnwell GS 30,31",44-2000,"Anderson CP 1,2,3 ",Anderson
+PATTERSON,Greenville CP,44-2000,Greenville CP,Greenville
+PEEPLES,Aiken CP,44-2000,Aiken CP,Aiken
+PIEPER,Charleston CP,44-2000,Charleston CP,Charleston
+RAWL,Berkeley GS,44-2000,Berkeley GS,Berkeley
+SAUNDERS,Abbeville GS,44-2000,Abbeville GS,Abbeville
+SHORT,Fairfield GS,44-2000,Fairfield GS,Fairfield
+THOMAS,Horry CP,44-2000,Horry CP,Horry
+WATSON,7th Cir. CPNJ/PCR,44-2000,7th Cir. CPNJ/PCR,na
+WESTBROOK,Lexington CP,44-2000,Lexington CP,Lexington
+WILLIAMS,Richland GS,44-2000,Richland GS,Richland
+BROWN,Dorchester GS,44-2000,Dorchester GS,Dorchester
+COTTINGHAM,na,44-2000,na,na
+HUGHSTON,na,44-2000,na,na
+PYLE,"Anderson CP 30,31",44-2000,"Anderson CP 30,31",Anderson
+COUCH,na,44-2000,na,na
+SMOAK,"Barnwell GS 1,2,3",44-2000,"Barnwell GS 1,2,3",Barnwell
+COOPER GT,Richland GS,44-2000,Richland GS,Richland
+NEWMAN,Lee CP,44-2000,Lee CP,Lee
+SIMMONS,Greenville GS 1,44-2000,Greenville GS 1,Greenville
+GIER,na,44-2000,na,na
+WATTS,na,44-2000,na,na
+BARBER,"in chambers + 2nd Cir. CPNJ/PCR 2 + 5th Cir. CPNJ 3,4 + Richland GS 5",40-2000, 2nd Cir. CPNJ/PCR 2 ,na
+BROGDON,in chambers + 12th Cir. CPNJ + Florence GS 5,40-2000, 12th Cir. CPNJ ,na
+CLARY,"in chambers + 7th Cir. CPNJ 2,3,5",40-2000," 7th Cir. CPNJ 2,3,5",na
+COOPER TW,"in chambers + 3rd Cir. CPNJ 2,3,4,6",40-2000," 3rd Cir. CPNJ 2,3,4,6",na
+DENNIS,in chambers + Sumter GS(SGJ) 3,40-2000, Sumter GS(SGJ) 3,Sumter
+FLOYD S,in chambers + 15th Cir. CPNJ 5,40-2000, 15th Cir. CPNJ 5,na
+GOODSTEIN,in chambers + 14th Cir. CPNJ 5,40-2000, 14th Cir. CPNJ 5,na
+GREGORY,in chambers + 14th Cir. CPNJ 6,40-2000, 14th Cir. CPNJ 6,na
+JOHNSON,in chambers + Richland GS 5,40-2000, Richland GS 5,Richland
+KEESLEY,in chambers + Bamberg GS 2,40-2000, Bamberg GS 2,Bamberg
+KITTREDGE,in chambers + Greenville GS 6,40-2000, Greenville GS 6,Greenville
+MARTIN,"in chambers + 9th Cir. CPNJ 2,6",40-2000," 9th Cir. CPNJ 2,6",na
+PATTERSON,in chambers + 13th Cir. CPNJ 5,40-2000, 13th Cir. CPNJ 5,na
+COTTINGHAM,na,40-2000,na,na
+HUGHSTON,na,40-2000,na,na
+PYLE,na,40-2000,na,na
+COUCH,na,40-2000,na,na
+SMOAK,na,40-2000,na,na
+SIMMONS,Pickens GS 4 + Greenville GS 6,40-2000, Greenville GS 6,Greenville
+GIER,na,40-2000,na,na
+DENNIS,Sumter GS(SGJ) + Aiken GS CC,41-2000, Aiken GS CC,Aiken
+SAUNDERS,"X 10,11,12,13 + 8th Cir. CPNJ 9",41-2000, 8th Cir. CPNJ 9,na
+THOMAS,"X 11,12,13 + 15th Cir. CPNJ 9,10",41-2000," 15th Cir. CPNJ 9,10",na
+BROWN,na,41-2000,na,na
+PYLE,na,41-2000,na,na
+COUCH,na,41-2000,na,na
+SIMMONS,na,41-2000,na,na
+WATTS,na,41-2000,na,na
+BREEDEN,"15th Cir. AW 16,19,20 + Aiken 17,18",42-2000," Aiken 17,18",Aiken
+BROGDON,Florence CP + Florence GS CC 20,42-2000, Florence GS CC 20,Florence
+COOPER TW,Williamsburg GS + Aiken GS 20,42-2000, Aiken GS 20,Aiken
+BROWN,na,42-2000,na,na
+SIMMONS,na,42-2000,na,na
+GIER,na,42-2000,na,na
+BROGDON,"Florence GS 23,24,25,26 + X 27",43-2000, X 27,na
+JOHNSON,Greenwood GS CC 27 + Laurens GS,43-2000, Laurens GS,Laurens
+LOCKEMY,Horry CP + Horry GS CC 26,43-2000, Horry GS CC 26,Horry
+PYLE,na,43-2000,na,na
+COUCH,na,43-2000,na,na
+SMOAK,na,43-2000,na,na
+SIMMONS,na,43-2000,na,na
+WATTS,na,43-2000,na,na
+BREEDEN,"Horry CP 1,2,3 + X 30,31",44-2000," X 30,31",na
+NICHOLSON,"Anderson CP 1,2,3 + Barnwell GS 30,31",44-2000," Barnwell GS 30,31",Barnwell
+COTTINGHAM,na,44-2000,na,na
+HUGHSTON,na,44-2000,na,na
+COUCH,na,44-2000,na,na
+GIER,na,44-2000,na,na
+WATTS,na,44-2000,na,na
+BARBER,"in chambers + 2nd Cir. CPNJ/PCR 2 + 5th Cir. CPNJ 3,4 + Richland GS 5",40-2000," 5th Cir. CPNJ 3,4 ",na
+BROGDON,in chambers + 12th Cir. CPNJ + Florence GS 5,40-2000, Florence GS 5,Florence
+COTTINGHAM,na,40-2000,na,na
+HUGHSTON,na,40-2000,na,na
+PYLE,na,40-2000,na,na
+COUCH,na,40-2000,na,na
+SMOAK,na,40-2000,na,na
+GIER,na,40-2000,na,na
+BROWN,na,41-2000,na,na
+PYLE,na,41-2000,na,na
+COUCH,na,41-2000,na,na
+SIMMONS,na,41-2000,na,na
+WATTS,na,41-2000,na,na
+BROWN,na,42-2000,na,na
+SIMMONS,na,42-2000,na,na
+GIER,na,42-2000,na,na
+PYLE,na,43-2000,na,na
+COUCH,na,43-2000,na,na
+SMOAK,na,43-2000,na,na
+SIMMONS,na,43-2000,na,na
+WATTS,na,43-2000,na,na
+COTTINGHAM,na,44-2000,na,na
+HUGHSTON,na,44-2000,na,na
+COUCH,na,44-2000,na,na
+GIER,na,44-2000,na,na
+WATTS,na,44-2000,na,na
+BARBER,"in chambers + 2nd Cir. CPNJ/PCR 2 + 5th Cir. CPNJ 3,4 + Richland GS 5",40-2000, Richland GS 5,Richland
+COTTINGHAM,na,40-2000,na,na
+HUGHSTON,na,40-2000,na,na
+PYLE,na,40-2000,na,na
+COUCH,na,40-2000,na,na
+SMOAK,na,40-2000,na,na
+GIER,na,40-2000,na,na
+BROWN,na,41-2000,na,na
+PYLE,na,41-2000,na,na
+COUCH,na,41-2000,na,na
+SIMMONS,na,41-2000,na,na
+WATTS,na,41-2000,na,na
+BROWN,na,42-2000,na,na
+SIMMONS,na,42-2000,na,na
+GIER,na,42-2000,na,na
+PYLE,na,43-2000,na,na
+COUCH,na,43-2000,na,na
+SMOAK,na,43-2000,na,na
+SIMMONS,na,43-2000,na,na
+WATTS,na,43-2000,na,na
+COTTINGHAM,na,44-2000,na,na
+HUGHSTON,na,44-2000,na,na
+COUCH,na,44-2000,na,na
+GIER,na,44-2000,na,na
+WATTS,na,44-2000,na,na
+COTTINGHAM,na,40-2000,na,na
+HUGHSTON,na,40-2000,na,na
+PYLE,na,40-2000,na,na
+COUCH,na,40-2000,na,na
+SMOAK,na,40-2000,na,na
+GIER,na,40-2000,na,na
+BROWN,na,41-2000,na,na
+PYLE,na,41-2000,na,na
+COUCH,na,41-2000,na,na
+SIMMONS,na,41-2000,na,na
+WATTS,na,41-2000,na,na
+BROWN,na,42-2000,na,na
+SIMMONS,na,42-2000,na,na
+GIER,na,42-2000,na,na
+PYLE,na,43-2000,na,na
+COUCH,na,43-2000,na,na
+SMOAK,na,43-2000,na,na
+SIMMONS,na,43-2000,na,na
+WATTS,na,43-2000,na,na
+COTTINGHAM,na,44-2000,na,na
+HUGHSTON,na,44-2000,na,na
+COUCH,na,44-2000,na,na
+GIER,na,44-2000,na,na
+WATTS,na,44-2000,na,na
+ALFORD,Chester GS,23-2001,Chester GS,Chester
+BARBER,X,23-2001,X,na
+BAXLEY,Georgetown CP,23-2001,Georgetown CP,Georgetown
+BEATTY,York CP,23-2001,York CP,York
+BREEDEN,Richland GS,23-2001,Richland GS,Richland
+BROGDON,Horry CP,23-2001,Horry CP,Horry
+BUCKNER,Orangeburg GS,23-2001,Orangeburg GS,Orangeburg
+BURCH,12th Cir. CPNJ/PCR,23-2001,12th Cir. CPNJ/PCR,na
+CLARY,8th Cir. CPNJ + Spartanburg GS CC 8,23-2001,8th Cir. CPNJ ,na
+COLE,Spartanburg CP,23-2001,Spartanburg CP,Spartanburg
+COOPER GT,Edgefield GS,23-2001,Edgefield GS,Edgefield
+COOPER TW,Richland GS,23-2001,Richland GS,Richland
+DENNIS,Dorchester CP,23-2001,Dorchester CP,Dorchester
+FEW,Spartanburg CP,23-2001,Spartanburg CP,Spartanburg
+FLOYD H,13th Cir. CPNJ,23-2001,13th Cir. CPNJ,na
+FLOYD S,Chesterfield GS,23-2001,Chesterfield GS,Chester
+GOODE,X,23-2001,X,na
+GOODSTEIN,Hampton CP,23-2001,Hampton CP,Hampton
+GREGORY,Beaufort CP,23-2001,Beaufort CP,Beaufort
+HALL,Greenville GS,23-2001,Greenville GS,Greenville
+HARWELL,15th Cir. CPNJ,23-2001,15th Cir. CPNJ,na
+HAYES,Cherokee GS,23-2001,Cherokee GS,Cherokee
+JOHNSON,10th Cir. CPNJ,23-2001,10th Cir. CPNJ,na
+KEESLEY,Lexington CP,23-2001,Lexington CP,Lexington
+KINARD,Darlington CP,23-2001,Darlington CP,Darlington
+KING,16th Cir. CPNJ + Clarendon GS CC 8,23-2001,16th Cir. CPNJ ,na
+KITTREDGE,Oconee CP,23-2001,Oconee CP,Oconee
+LEE,Richland CP,23-2001,Richland CP,Richland
+LOCKEMY,9th Cir. CPNJ,23-2001,9th Cir. CPNJ,na
+MACAULAY,Richland CP,23-2001,Richland CP,Richland
+MANNING,12th Cir. CPNJ,23-2001,12th Cir. CPNJ,na
+MARTIN,Beaufort CP,23-2001,Beaufort CP,Beaufort
+MCKELLAR,Richland CP,23-2001,Richland CP,Richland
+MILLING,Horry CP,23-2001,Horry CP,Horry
+NEWMAN,Lee GS(SGJ),23-2001,Lee GS(SGJ),Lee
+NICHOLSON,X,23-2001,X,na
+PATTERSON,Greenville CP,23-2001,Greenville CP,Greenville
+PEEPLES,2nd Cir. CPNJ,23-2001,2nd Cir. CPNJ,na
+PIEPER,Charleston CP,23-2001,Charleston CP,Charleston
+RAWL,Charleston CP,23-2001,Charleston CP,Charleston
+SAUNDERS,13th Cir. CPNJ/PCR,23-2001,13th Cir. CPNJ/PCR,na
+SHORT,Union GS,23-2001,Union GS,Union
+THOMAS,Charleston GS,23-2001,Charleston GS,Charleston
+WATSON,Abbeville GS,23-2001,Abbeville GS,Abbeville
+WESTBROOK,5th Cir. CPNJ,23-2001,5th Cir. CPNJ,na
+WILLIAMS,Sumter GS,23-2001,Sumter GS,Sumter
+BROWN,na,23-2001,na,na
+COTTINGHAM,na,23-2001,na,na
+HUGHSTON,Charleston GS,23-2001,Charleston GS,Charleston
+PYLE,Laurens GS,23-2001,Laurens GS,Laurens
+GIER,na,23-2001,na,na
+COUCH,na,23-2001,na,na
+SIMMONS,na,23-2001,na,na
+YOUNG,Charleston CPNJ 8,23-2001,Charleston CPNJ 8,Charleston
+SMOAK,na,23-2001,na,na
+WATTS,na,23-2001,na,na
+ALFORD,6th Cir. CPNJ,24-2001,6th Cir. CPNJ,na
+BARBER,Aiken GS,24-2001,Aiken GS,Aiken
+BAXLEY,X,24-2001,X,na
+BEATTY,Horry GS,24-2001,Horry GS,Horry
+BREEDEN,Horry GS,24-2001,Horry GS,Horry
+BROGDON,Richland GS,24-2001,Richland GS,Richland
+BUCKNER,"X 11,12,13,14 + 14th Cir. CPNJ 15",24-2001,"X 11,12,13,14 ",na
+BURCH,Florence GS,24-2001,Florence GS,Florence
+CLARY,Greenwood CP,24-2001,Greenwood CP,Greenwood
+COLE,Spartanburg GS,24-2001,Spartanburg GS,Spartanburg
+COOPER GT,Edgefield GS,24-2001,Edgefield GS,Edgefield
+COOPER TW,5th Cir. CPNJ,24-2001,5th Cir. CPNJ,na
+DENNIS,1st Cir. CPNJ/PCR,24-2001,1st Cir. CPNJ/PCR,na
+FEW,7th Cir. CPNJ + Spartanburg GS CC,24-2001,7th Cir. CPNJ ,na
+FLOYD H,Greenville CP,24-2001,Greenville CP,Greenville
+FLOYD S,Dillon CP,24-2001,Dillon CP,Dillon
+GOODE,X,24-2001,X,na
+GOODSTEIN,Beaufort CP,24-2001,Beaufort CP,Beaufort
+GREGORY,Beaufort CP,24-2001,Beaufort CP,Beaufort
+HALL,X,24-2001,X,na
+HARWELL,X,24-2001,X,na
+HAYES,Spartanburg GS,24-2001,Spartanburg GS,Spartanburg
+JOHNSON,Anderson CP,24-2001,Anderson CP,Anderson
+KEESLEY,Lexington GS,24-2001,Lexington GS,Lexington
+KINARD,Darlington GS,24-2001,Darlington GS,Darlington
+KING,York GS,24-2001,York GS,York
+KITTREDGE,Anderson GS,24-2001,Anderson GS,Anderson
+LEE,X,24-2001,X,na
+LOCKEMY,9th Cir. CPNJ,24-2001,9th Cir. CPNJ,na
+MACAULAY,Richland CP,24-2001,Richland CP,Richland
+MANNING,Florence CP,24-2001,Florence CP,Florence
+MARTIN,Colleton CP,24-2001,Colleton CP,Colleton
+MCKELLAR,3rd Cir. CPNJ,24-2001,3rd Cir. CPNJ,na
+MILLING,Horry GS,24-2001,Horry GS,Horry
+NEWMAN,Berkeley GS,24-2001,Berkeley GS,Berkeley
+NICHOLSON,11th Cir. CPNJ/PCR,24-2001,11th Cir. CPNJ/PCR,na
+PATTERSON,Greenville GS,24-2001,Greenville GS,Greenville
+PEEPLES,Aiken CP,24-2001,Aiken CP,Aiken
+PIEPER,Charleston CP,24-2001,Charleston CP,Charleston
+RAWL,Jasper GS,24-2001,Jasper GS,Jasper
+SAUNDERS,Greenville GS,24-2001,Greenville GS,Greenville
+SHORT,Chester GS,24-2001,Chester GS,Chester
+THOMAS,Horry GS CP CC,24-2001,Horry GS CP CC,Horry
+WATSON,8th Cir. CPNJ/PCR,24-2001,8th Cir. CPNJ/PCR,na
+WESTBROOK,Richland GS,24-2001,Richland GS,Richland
+WILLIAMS,Sumter GS,24-2001,Sumter GS,Sumter
+BROWN,Orangeburg GS,24-2001,Orangeburg GS,Orangeburg
+COTTINGHAM,na,24-2001,na,na
+HUGHSTON,Charleston CP,24-2001,Charleston CP,Charleston
+PYLE,Georgetown CP,24-2001,Georgetown CP,Georgetown
+GIER,York CPNJ 14,24-2001,York CPNJ 14,York
+COUCH,na,24-2001,na,na
+SIMMONS,13th Cir. CPNJ 14,24-2001,13th Cir. CPNJ 14,na
+YOUNG,"Charleston CPNJ 15,14",24-2001,"Charleston CPNJ 15,14",Charleston
+SMOAK,na,24-2001,na,na
+WATTS,na,24-2001,na,na
+ALFORD,Lancaster CP,25-2001,Lancaster CP,Lancaster
+BARBER,Aiken GS,25-2001,Aiken GS,Aiken
+BAXLEY,Charleston GS,25-2001,Charleston GS,Charleston
+BEATTY,Oconee GS + Anderson GS CC,25-2001,Oconee GS ,Oconee
+BREEDEN,Richland GS,25-2001,Richland GS,Richland
+BROGDON,15th Cir. CPNJ,25-2001,15th Cir. CPNJ,na
+BUCKNER,1st Cir. CPNJ,25-2001,1st Cir. CPNJ,na
+BURCH,Florence GS + Florence CP 21,25-2001,Florence GS ,Florence
+CLARY,Laurens CP,25-2001,Laurens CP,Laurens
+COLE,Spartanburg GS,25-2001,Spartanburg GS,Spartanburg
+COOPER GT,Lexington CP,25-2001,Lexington CP,Lexington
+COOPER TW,Kershaw GS,25-2001,Kershaw GS,Kershaw
+DENNIS,Orangeburg CP,25-2001,Orangeburg CP,Orangeburg
+FEW,X,25-2001,X,na
+FLOYD H,Pickens CP,25-2001,Pickens CP,Pickens
+FLOYD S,Dillon GS,25-2001,Dillon GS,Dillon
+GOODE,Lee GS,25-2001,Lee GS,Lee
+GOODSTEIN,Beaufort CP,25-2001,Beaufort CP,Beaufort
+GREGORY,Charleston CP,25-2001,Charleston CP,Charleston
+HALL,Greenville GS,25-2001,Greenville GS,Greenville
+HARWELL,Florence CP,25-2001,Florence CP,Florence
+HAYES,X,25-2001,X,na
+JOHNSON,Anderson CP,25-2001,Anderson CP,Anderson
+KEESLEY,Lexington GS,25-2001,Lexington GS,Lexington
+KINARD,Marlboro CP,25-2001,Marlboro CP,Marlboro
+KING,Union GS,25-2001,Union GS,Union
+KITTREDGE,X,25-2001,X,na
+LEE,Richland CP,25-2001,Richland CP,Richland
+LOCKEMY,Charleston CP,25-2001,Charleston CP,Charleston
+MACAULAY,Richland GS,25-2001,Richland GS,Richland
+MANNING,Marion CP,25-2001,Marion CP,Marion
+MARTIN,14th Cir. CPNJ/PCR,25-2001,14th Cir. CPNJ/PCR,na
+MCKELLAR,Williamsburg CP,25-2001,Williamsburg CP,Williamsburg
+MILLING,X,25-2001,X,na
+NEWMAN,Berkeley CP,25-2001,Berkeley CP,Berkeley
+NICHOLSON,Saluda CP,25-2001,Saluda CP,Saluda
+PATTERSON,Greenville GS,25-2001,Greenville GS,Greenville
+PEEPLES,Aiken CP,25-2001,Aiken CP,Aiken
+PIEPER,X,25-2001,X,na
+RAWL,Beaufort GS,25-2001,Beaufort GS,Beaufort
+SAUNDERS,13th Cir. CPNJ,25-2001,13th Cir. CPNJ,na
+SHORT,York CP,25-2001,York CP,York
+THOMAS,Horry GS,25-2001,Horry GS,Horry
+WATSON,Greenwood GS,25-2001,Greenwood GS,Greenwood
+WESTBROOK,Richland CP,25-2001,Richland CP,Richland
+WILLIAMS,X,25-2001,X,na
+BROWN,Dorchester GS,25-2001,Dorchester GS,Dorchester
+COTTINGHAM,na,25-2001,na,na
+HUGHSTON,Charleston GS,25-2001,Charleston GS,Charleston
+PYLE,na,25-2001,na,na
+GIER,na,25-2001,na,na
+COUCH,na,25-2001,na,na
+SIMMONS,na,25-2001,na,na
+YOUNG,na,25-2001,na,na
+SMOAK,Clarendon CP,25-2001,Clarendon CP,Clarendon
+WATTS,na,25-2001,na,na
+ALFORD,Fairfield GS,26-2001,Fairfield GS,Fairfield
+BARBER,Barnwell GS,26-2001,Barnwell GS,Barnwell
+BAXLEY,Charleston GS CP CC,26-2001,Charleston GS CP CC,Charleston
+BEATTY,York GS,26-2001,York GS,York
+BREEDEN,5th Cir. CPNJ,26-2001,5th Cir. CPNJ,na
+BROGDON,Horry CP,26-2001,Horry CP,Horry
+BUCKNER,"Calhoun GS 26,27,28,29 + X 25",26-2001,"Calhoun GS 26,27,28,29 ",Calhoun
+BURCH,Florence GS,26-2001,Florence GS,Florence
+CLARY,Newberry GS,26-2001,Newberry GS,Newberry
+COLE,X,26-2001,X,na
+COOPER GT,McCormick GS,26-2001,McCormick GS,McCormick
+COOPER TW,Richland CP,26-2001,Richland CP,Richland
+DENNIS,Orangeburg CP + Lexington GS CC,26-2001,Orangeburg CP ,Orangeburg
+FEW,Spartanburg GS,26-2001,Spartanburg GS,Spartanburg
+FLOYD H,Pickens GS,26-2001,Pickens GS,Pickens
+FLOYD S,Darlington GS,26-2001,Darlington GS,Darlington
+GOODE,York GS,26-2001,York GS,York
+GOODSTEIN,X,26-2001,X,na
+GREGORY,Charleston GS(SGJ),26-2001,Charleston GS(SGJ),Charleston
+HALL,Anderson CP,26-2001,Anderson CP,Anderson
+HARWELL,Horry CP,26-2001,Horry CP,Horry
+HAYES,7th Cir. CPNJ,26-2001,7th Cir. CPNJ,na
+JOHNSON,X,26-2001,X,na
+KEESLEY,Lexington CP,26-2001,Lexington CP,Lexington
+KINARD,4th Cir. CPNJ,26-2001,4th Cir. CPNJ,na
+KING,X,26-2001,X,na
+KITTREDGE,Anderson GS,26-2001,Anderson GS,Anderson
+LEE,Richland CP,26-2001,Richland CP,Richland
+LOCKEMY,7th Cir. CPNJ,26-2001,7th Cir. CPNJ,na
+MACAULAY,Richland GS,26-2001,Richland GS,Richland
+MANNING,Florence GS,26-2001,Florence GS,Florence
+MARTIN,Jasper CP,26-2001,Jasper CP,Jasper
+MCKELLAR,Clarendon CP,26-2001,Clarendon CP,Clarendon
+MILLING,Georgetown GS,26-2001,Georgetown GS,Georgetown
+NEWMAN,Berkeley CP,26-2001,Berkeley CP,Berkeley
+NICHOLSON,Sick,26-2001,Sick,na
+PATTERSON,Greenville CP,26-2001,Greenville CP,Greenville
+PEEPLES,Aiken CP,26-2001,Aiken CP,Aiken
+PIEPER,X,26-2001,X,na
+RAWL,Beaufort GS,26-2001,Beaufort GS,Beaufort
+SAUNDERS,Spartanburg GS,26-2001,Spartanburg GS,Spartanburg
+SHORT,X,26-2001,X,na
+THOMAS,Horry GS,26-2001,Horry GS,Horry
+WATSON,Greenwood GS,26-2001,Greenwood GS,Greenwood
+WESTBROOK,Richland GS,26-2001,Richland GS,Richland
+WILLIAMS,X,26-2001,X,na
+BROWN,Dorchester GS,26-2001,Dorchester GS,Dorchester
+COTTINGHAM,Marlboro GS,26-2001,Marlboro GS,Marlboro
+HUGHSTON,na,26-2001,na,na
+PYLE,na,26-2001,na,na
+GIER,York CPNJ 28,26-2001,York CPNJ 28,York
+COUCH,Cherokee CPNJ 25,26-2001,Cherokee CPNJ 25,Cherokee
+SIMMONS,Greenville GS 29 + 13th Cir. CPNJ 28,26-2001,Greenville GS 29 ,Greenville
+YOUNG,na,26-2001,na,na
+SMOAK,9th Cir. CPNJ,26-2001,9th Cir. CPNJ,na
+WATTS,Dorchester CPNJ,26-2001,Dorchester CPNJ,Dorchester
+CLARY,8th Cir. CPNJ + Spartanburg GS CC 8,23-2001, Spartanburg GS CC 8,Spartanburg
+KING,16th Cir. CPNJ + Clarendon GS CC 8,23-2001, Clarendon GS CC 8,Clarendon
+BROWN,na,23-2001,na,na
+COTTINGHAM,na,23-2001,na,na
+GIER,na,23-2001,na,na
+COUCH,na,23-2001,na,na
+SIMMONS,na,23-2001,na,na
+SMOAK,na,23-2001,na,na
+WATTS,na,23-2001,na,na
+BUCKNER,"X 11,12,13,14 + 14th Cir. CPNJ 15",24-2001, 14th Cir. CPNJ 15,na
+FEW,7th Cir. CPNJ + Spartanburg GS CC,24-2001, Spartanburg GS CC,Spartanburg
+COTTINGHAM,na,24-2001,na,na
+COUCH,na,24-2001,na,na
+SMOAK,na,24-2001,na,na
+WATTS,na,24-2001,na,na
+BEATTY,Oconee GS + Anderson GS CC,25-2001, Anderson GS CC,Anderson
+BURCH,Florence GS + Florence CP 21,25-2001, Florence CP 21,Florence
+COTTINGHAM,na,25-2001,na,na
+PYLE,na,25-2001,na,na
+GIER,na,25-2001,na,na
+COUCH,na,25-2001,na,na
+SIMMONS,na,25-2001,na,na
+YOUNG,na,25-2001,na,na
+WATTS,na,25-2001,na,na
+BUCKNER,"Calhoun GS 26,27,28,29 + X 25",26-2001, X 25,na
+DENNIS,Orangeburg CP + Lexington GS CC,26-2001, Lexington GS CC,Lexington
+HUGHSTON,na,26-2001,na,na
+PYLE,na,26-2001,na,na
+SIMMONS,Greenville GS 29 + 13th Cir. CPNJ 28,26-2001, 13th Cir. CPNJ 28,na
+YOUNG,na,26-2001,na,na
+BROWN,na,23-2001,na,na
+COTTINGHAM,na,23-2001,na,na
+GIER,na,23-2001,na,na
+COUCH,na,23-2001,na,na
+SIMMONS,na,23-2001,na,na
+SMOAK,na,23-2001,na,na
+WATTS,na,23-2001,na,na
+COTTINGHAM,na,24-2001,na,na
+COUCH,na,24-2001,na,na
+SMOAK,na,24-2001,na,na
+WATTS,na,24-2001,na,na
+COTTINGHAM,na,25-2001,na,na
+PYLE,na,25-2001,na,na
+GIER,na,25-2001,na,na
+COUCH,na,25-2001,na,na
+SIMMONS,na,25-2001,na,na
+YOUNG,na,25-2001,na,na
+WATTS,na,25-2001,na,na
+HUGHSTON,na,26-2001,na,na
+PYLE,na,26-2001,na,na
+YOUNG,na,26-2001,na,na
+BROWN,na,23-2001,na,na
+COTTINGHAM,na,23-2001,na,na
+GIER,na,23-2001,na,na
+COUCH,na,23-2001,na,na
+SIMMONS,na,23-2001,na,na
+SMOAK,na,23-2001,na,na
+WATTS,na,23-2001,na,na
+COTTINGHAM,na,24-2001,na,na
+COUCH,na,24-2001,na,na
+SMOAK,na,24-2001,na,na
+WATTS,na,24-2001,na,na
+COTTINGHAM,na,25-2001,na,na
+PYLE,na,25-2001,na,na
+GIER,na,25-2001,na,na
+COUCH,na,25-2001,na,na
+SIMMONS,na,25-2001,na,na
+YOUNG,na,25-2001,na,na
+WATTS,na,25-2001,na,na
+HUGHSTON,na,26-2001,na,na
+PYLE,na,26-2001,na,na
+YOUNG,na,26-2001,na,na
+BROWN,na,23-2001,na,na
+COTTINGHAM,na,23-2001,na,na
+GIER,na,23-2001,na,na
+COUCH,na,23-2001,na,na
+SIMMONS,na,23-2001,na,na
+SMOAK,na,23-2001,na,na
+WATTS,na,23-2001,na,na
+COTTINGHAM,na,24-2001,na,na
+COUCH,na,24-2001,na,na
+SMOAK,na,24-2001,na,na
+WATTS,na,24-2001,na,na
+COTTINGHAM,na,25-2001,na,na
+PYLE,na,25-2001,na,na
+GIER,na,25-2001,na,na
+COUCH,na,25-2001,na,na
+SIMMONS,na,25-2001,na,na
+YOUNG,na,25-2001,na,na
+WATTS,na,25-2001,na,na
+HUGHSTON,na,26-2001,na,na
+PYLE,na,26-2001,na,na
+YOUNG,na,26-2001,na,na
+ALFORD,York CP,36-2000,York CP,York
+BARBER,5th Cir. AW,36-2000,5th Cir. AW,na
+BAXLEY,Charleston GS,36-2000,Charleston GS,Charleston
+BEATTY,Spartanburg CP,36-2000,Spartanburg CP,Spartanburg
+BREEDEN,15th Cir. CPNJ,36-2000,15th Cir. CPNJ,na
+BROGDON,12th Cir. CPNJ,36-2000,12th Cir. CPNJ,na
+BUCKNER,X,36-2000,X,na
+BURCH,Marion GS,36-2000,Marion GS,Marion
+CLARY,"7th Cir. CPNJ 5,6 + Medical 7,8",36-2000,"7th Cir. CPNJ 5,6 ",na
+COLE,Cherokee CP,36-2000,Cherokee CP,Cherokee
+COOPER TW,Williamsburg GS,36-2000,Williamsburg GS,Williamsburg
+DENNIS,Beaufort CP,36-2000,Beaufort CP,Beaufort
+FEW,Beaufort CP,36-2000,Beaufort CP,Beaufort
+FLOYD H,13th Cir. CPNJ,36-2000,13th Cir. CPNJ,na
+FLOYD S,Horry GS,36-2000,Horry GS,Horry
+GOODE,11th Cir. CPNJ,36-2000,11th Cir. CPNJ,na
+GOODSTEIN,Orangeburg CP,36-2000,Orangeburg CP,Orangeburg
+GREGORY,14th Cir. CPNJ,36-2000,14th Cir. CPNJ,na
+HALL,McCormick CP,36-2000,McCormick CP,McCormick
+HARWELL,Lexington GS,36-2000,Lexington GS,Lexington
+HAYES,16th Cir. CPNJ,36-2000,16th Cir. CPNJ,na
+JOHNSON,Laurens GS,36-2000,Laurens GS,Laurens
+KEESLEY,Aiken GS,36-2000,Aiken GS,Aiken
+KINARD,Clarendon GS,36-2000,Clarendon GS,Clarendon
+KING,Clarendon GS,36-2000,Clarendon GS,Clarendon
+KITTREDGE,Greenville GS,36-2000,Greenville GS,Greenville
+LEE,Richland GS,36-2000,Richland GS,Richland
+LOCKEMY,XX,36-2000,XX,na
+MACAULAY,10th Cir. CPNJ,36-2000,10th Cir. CPNJ,na
+MANNING,Charleston CP,36-2000,Charleston CP,Charleston
+MARTIN,9th Cir. AW,36-2000,9th Cir. AW,na
+MCKELLAR,Colleton CP,36-2000,Colleton CP,Colleton
+MILLING,Chesterfield CP,36-2000,Chesterfield CP,Chester
+NICHOLSON,Anderson CP,36-2000,Anderson CP,Anderson
+PATTERSON,X,36-2000,X,na
+PEEPLES,2nd Cir. CPNJ,36-2000,2nd Cir. CPNJ,na
+PIEPER,Charleston GS,36-2000,Charleston GS,Charleston
+RAWL,9th Cir. CPNJ,36-2000,9th Cir. CPNJ,na
+SAUNDERS,Greenwood GS,36-2000,Greenwood GS,Greenwood
+SHORT,6th Cir. CPNJ,36-2000,6th Cir. CPNJ,na
+THOMAS,Horry GS,36-2000,Horry GS,Horry
+WATSON,Greenville GS CP CC,36-2000,Greenville GS CP CC,Greenville
+WESTBROOK,Lexington CP,36-2000,Lexington CP,Lexington
+WILLIAMS,Richland GS,36-2000,Richland GS,Richland
+BROWN,na,36-2000,na,na
+HUGHSTON,Charleston CP,36-2000,Charleston CP,Charleston
+PYLE,na,36-2000,na,na
+SMOAK,na,36-2000,na,na
+COOPER GT,Greenville GS,36-2000,Greenville GS,Greenville
+NEWMAN,Berkeley CP,36-2000,Berkeley CP,Berkeley
+SIMMONS,na,36-2000,na,na
+GIER,na,36-2000,na,na
+BERGDORF,na,36-2000,na,na
+WATTS,na,36-2000,na,na
+ALFORD,York GS,37-2000,York GS,York
+BARBER,Richland GS,37-2000,Richland GS,Richland
+BAXLEY,Charleston CP,37-2000,Charleston CP,Charleston
+BEATTY,Spartanburg CP,37-2000,Spartanburg CP,Spartanburg
+BREEDEN,Georgetown CP + Georgetown GS CC 15,37-2000,Georgetown CP ,Georgetown
+BROGDON,Florence CP,37-2000,Florence CP,Florence
+BUCKNER,Richland GS,37-2000,Richland GS,Richland
+BURCH,Marlboro GS,37-2000,Marlboro GS,Marlboro
+CLARY,Cherokee GS,37-2000,Cherokee GS,Cherokee
+COLE,Spartanburg CP,37-2000,Spartanburg CP,Spartanburg
+COOPER TW,Sumter GS,37-2000,Sumter GS,Sumter
+DENNIS,9th Cir. CPNJ/PCR,37-2000,9th Cir. CPNJ/PCR,na
+FEW,Beaufort CP,37-2000,Beaufort CP,Beaufort
+FLOYD H,Hampton CP,37-2000,Hampton CP,Hampton
+FLOYD S,Horry CP,37-2000,Horry CP,Horry
+GOODE,Lancaster GS(SGJ),37-2000,Lancaster GS(SGJ),Lancaster
+GOODSTEIN,Calhoun CP,37-2000,Calhoun CP,Calhoun
+GREGORY,Beaufort GS,37-2000,Beaufort GS,Beaufort
+HALL,Anderson GS,37-2000,Anderson GS,Anderson
+HARWELL,Florence CP,37-2000,Florence CP,Florence
+HAYES,York GS,37-2000,York GS,York
+JOHNSON,Abbeville CP,37-2000,Abbeville CP,Abbeville
+KEESLEY,Aiken GS,37-2000,Aiken GS,Aiken
+KINARD,XX,37-2000,XX,na
+KING,X,37-2000,X,na
+KITTREDGE,Greenville CP,37-2000,Greenville CP,Greenville
+LEE,Aiken GS,37-2000,Aiken GS,Aiken
+LOCKEMY,Sumter CP,37-2000,Sumter CP,Sumter
+MACAULAY,Anderson GS,37-2000,Anderson GS,Anderson
+MANNING,Kershaw GS,37-2000,Kershaw GS,Kershaw
+MARTIN,Charleston CP,37-2000,Charleston CP,Charleston
+MCKELLAR,Colleton CP,37-2000,Colleton CP,Colleton
+MILLING,Chesterfield CP,37-2000,Chesterfield CP,Chester
+NICHOLSON,X,37-2000,X,na
+PATTERSON,Greenville CP,37-2000,Greenville CP,Greenville
+PEEPLES,11th Cir. CPNJ/PCR,37-2000,11th Cir. CPNJ/PCR,na
+PIEPER,Berkeley CP,37-2000,Berkeley CP,Berkeley
+RAWL,9th Cir. CPNJ,37-2000,9th Cir. CPNJ,na
+SAUNDERS,Greenwood GS,37-2000,Greenwood GS,Greenwood
+SHORT,Chester GS,37-2000,Chester GS,Chester
+THOMAS,Horry GS,37-2000,Horry GS,Horry
+WATSON,13th Cir. CPNJ,37-2000,13th Cir. CPNJ,na
+WESTBROOK,Lexington GS,37-2000,Lexington GS,Lexington
+WILLIAMS,XX,37-2000,XX,na
+BROWN,Orangeburg GS,37-2000,Orangeburg GS,Orangeburg
+HUGHSTON,Greenville GS,37-2000,Greenville GS,Greenville
+PYLE,Greenville CP,37-2000,Greenville CP,Greenville
+SMOAK,Horry GS,37-2000,Horry GS,Horry
+COOPER GT,Greenville GS,37-2000,Greenville GS,Greenville
+NEWMAN,Charleston CP,37-2000,Charleston CP,Charleston
+SIMMONS,na,37-2000,na,na
+GIER,York CPNJ 14,37-2000,York CPNJ 14,York
+BERGDORF,Orangeburg CPNJ 14,37-2000,Orangeburg CPNJ 14,Orangeburg
+WATTS,"Dorchester CPNJ 11,13,14,15",37-2000,"Dorchester CPNJ 11,13,14,15",Dorchester
+ALFORD,Union GS,38-2000,Union GS,Union
+BARBER,Richland CP,38-2000,Richland CP,Richland
+BAXLEY,Charleston GS,38-2000,Charleston GS,Charleston
+BEATTY,Hampton GS,38-2000,Hampton GS,Hampton
+BREEDEN,15th Cir. CPNJ,38-2000,15th Cir. CPNJ,na
+BROGDON,Florence GS,38-2000,Florence GS,Florence
+BUCKNER,Richland GS,38-2000,Richland GS,Richland
+BURCH,Marlboro GS,38-2000,Marlboro GS,Marlboro
+CLARY,Medical,38-2000,Medical,na
+COLE,Cherokee GS,38-2000,Cherokee GS,Cherokee
+COOPER TW,X,38-2000,X,na
+DENNIS,Berkeley GS,38-2000,Berkeley GS,Berkeley
+FEW,Beaufort GS,38-2000,Beaufort GS,Beaufort
+FLOYD H,Greenville CP,38-2000,Greenville CP,Greenville
+FLOYD S,Horry CP,38-2000,Horry CP,Horry
+GOODE,Lexington GS,38-2000,Lexington GS,Lexington
+GOODSTEIN,Aiken CP,38-2000,Aiken CP,Aiken
+GREGORY,X,38-2000,X,na
+HALL,Anderson CP,38-2000,Anderson CP,Anderson
+HARWELL,X,38-2000,X,na
+HAYES,14th Cir. CPNJ,38-2000,14th Cir. CPNJ,na
+JOHNSON,Newberry GS,38-2000,Newberry GS,Newberry
+KEESLEY,Lexington CP,38-2000,Lexington CP,Lexington
+KINARD,Orangeburg CP,38-2000,Orangeburg CP,Orangeburg
+KING,Sumter GS,38-2000,Sumter GS,Sumter
+KITTREDGE,7th Cir. Capital PCR,38-2000,7th Cir. Capital PCR,na
+LEE,Richland GS,38-2000,Richland GS,Richland
+LOCKEMY,Chesterfield GS,38-2000,Chesterfield GS,Chester
+MACAULAY,Laurens CP,38-2000,Laurens CP,Laurens
+MANNING,Kershaw GS,38-2000,Kershaw GS,Kershaw
+MARTIN,Charleston GS,38-2000,Charleston GS,Charleston
+MCKELLAR,14th Cir. CPNJ/PCR,38-2000,14th Cir. CPNJ/PCR,na
+MILLING,Sumter CP,38-2000,Sumter CP,Sumter
+NICHOLSON,Anderson GS,38-2000,Anderson GS,Anderson
+PATTERSON,Greenville CP,38-2000,Greenville CP,Greenville
+PEEPLES,Barnwell CP,38-2000,Barnwell CP,Barnwell
+PIEPER,Charleston CP,38-2000,Charleston CP,Charleston
+RAWL,Charleston CP,38-2000,Charleston CP,Charleston
+SAUNDERS,8th Cir. CPNJ,38-2000,8th Cir. CPNJ,na
+SHORT,Chester GS,38-2000,Chester GS,Chester
+THOMAS,Horry CP ,38-2000,Horry CP ,Horry
+WATSON,York CP,38-2000,York CP,York
+WESTBROOK,Saluda GS,38-2000,Saluda GS,Saluda
+WILLIAMS,Richland CP,38-2000,Richland CP,Richland
+BROWN,Dorchester GS,38-2000,Dorchester GS,Dorchester
+HUGHSTON,na,38-2000,na,na
+PYLE,Pickens GS,38-2000,Pickens GS,Pickens
+SMOAK,na,38-2000,na,na
+COOPER GT,Spartanburg CP,38-2000,Spartanburg CP,Spartanburg
+NEWMAN,X,38-2000,X,na
+SIMMONS,na,38-2000,na,na
+GIER,na,38-2000,na,na
+BERGDORF,na,38-2000,na,na
+WATTS,Dorchester CPNJ 18,38-2000,Dorchester CPNJ 18,Dorchester
+ALFORD,York GS,39-2000,York GS,York
+BARBER,Richland GS,39-2000,Richland GS,Richland
+BAXLEY,Dillon GS,39-2000,Dillon GS,Dillon
+BEATTY,Spartanburg GS,39-2000,Spartanburg GS,Spartanburg
+BREEDEN,X,39-2000,X,na
+BROGDON,Florence GS,39-2000,Florence GS,Florence
+BUCKNER,Richland CP,39-2000,Richland CP,Richland
+BURCH,Charleston GS,39-2000,Charleston GS,Charleston
+CLARY,Spartanburg GS,39-2000,Spartanburg GS,Spartanburg
+COLE,7th Cir. CPNJ,39-2000,7th Cir. CPNJ,na
+COOPER TW,Williamsburg CP,39-2000,Williamsburg CP,Williamsburg
+DENNIS,9th Cir. CPNJ,39-2000,9th Cir. CPNJ,na
+FEW,Beaufort CP,39-2000,Beaufort CP,Beaufort
+FLOYD H,Jasper GS,39-2000,Jasper GS,Jasper
+FLOYD S,Horry CP,39-2000,Horry CP,Horry
+GOODE,Fairfield GS,39-2000,Fairfield GS,Fairfield
+GOODSTEIN,Orangeburg CP,39-2000,Orangeburg CP,Orangeburg
+GREGORY,Allendale CP,39-2000,Allendale CP,Allendale
+HALL,10th Cir. CPNJ/PCR,39-2000,10th Cir. CPNJ/PCR,na
+HARWELL,Florence GS,39-2000,Florence GS,Florence
+HAYES,York GS,39-2000,York GS,York
+JOHNSON,Abbeville GS,39-2000,Abbeville GS,Abbeville
+KEESLEY,"Bamberg GS 25,26,27,28,29",39-2000,"Bamberg GS 25,26,27,28,29",Bamberg
+KINARD,1st Cir. CPNJ/PCR,39-2000,1st Cir. CPNJ/PCR,na
+KING,Sumter GS,39-2000,Sumter GS,Sumter
+KITTREDGE,Greenville GS,39-2000,Greenville GS,Greenville
+LEE,Richland CP,39-2000,Richland CP,Richland
+LOCKEMY,Darlington CP,39-2000,Darlington CP,Darlington
+MACAULAY,X,39-2000,X,na
+MANNING,5th Cir. CPNJ,39-2000,5th Cir. CPNJ,na
+MARTIN,Charleston CP,39-2000,Charleston CP,Charleston
+MCKELLAR,Beaufort CP,39-2000,Beaufort CP,Beaufort
+MILLING,Darlington GS CC 29 + 4th Cir. CPNJ,39-2000,Darlington GS CC 29 ,Darlington
+NICHOLSON,Oconee GS,39-2000,Oconee GS,Oconee
+PATTERSON,Greenville CP,39-2000,Greenville CP,Greenville
+PEEPLES,11th Cir. CPNJ,39-2000,11th Cir. CPNJ,na
+PIEPER,Charleston GS,39-2000,Charleston GS,Charleston
+RAWL,Charleston CP,39-2000,Charleston CP,Charleston
+SAUNDERS,Greenwood CP,39-2000,Greenwood CP,Greenwood
+SHORT,Lancaster CP,39-2000,Lancaster CP,Lancaster
+THOMAS,Georgetown GS,39-2000,Georgetown GS,Georgetown
+WATSON,Greenville CP,39-2000,Greenville CP,Greenville
+WESTBROOK,Saluda GS,39-2000,Saluda GS,Saluda
+WILLIAMS,Richland GS,39-2000,Richland GS,Richland
+BROWN,Dorchester GS,39-2000,Dorchester GS,Dorchester
+HUGHSTON,Lexington GS,39-2000,Lexington GS,Lexington
+PYLE,na,39-2000,na,na
+SMOAK,5th Cir. CPNJ,39-2000,5th Cir. CPNJ,na
+COOPER GT,Greenville GS,39-2000,Greenville GS,Greenville
+NEWMAN,Clarendon CP,39-2000,Clarendon CP,Clarendon
+SIMMONS,Pickens CPNJ 26,39-2000,Pickens CPNJ 26,Pickens
+GIER,York CPNJ 28,39-2000,York CPNJ 28,York
+BERGDORF,na,39-2000,na,na
+WATTS,na,39-2000,na,na
+CLARY,"7th Cir. CPNJ 5,6 + Medical 7,8",36-2000," Medical 7,8",na
+BROWN,na,36-2000,na,na
+PYLE,na,36-2000,na,na
+SMOAK,na,36-2000,na,na
+SIMMONS,na,36-2000,na,na
+GIER,na,36-2000,na,na
+BERGDORF,na,36-2000,na,na
+WATTS,na,36-2000,na,na
+BREEDEN,Georgetown CP + Georgetown GS CC 15,37-2000, Georgetown GS CC 15,Georgetown
+SIMMONS,na,37-2000,na,na
+HUGHSTON,na,38-2000,na,na
+SMOAK,na,38-2000,na,na
+SIMMONS,na,38-2000,na,na
+GIER,na,38-2000,na,na
+BERGDORF,na,38-2000,na,na
+MILLING,Darlington GS CC 29 + 4th Cir. CPNJ,39-2000, 4th Cir. CPNJ,na
+PYLE,na,39-2000,na,na
+BERGDORF,na,39-2000,na,na
+WATTS,na,39-2000,na,na
+BROWN,na,36-2000,na,na
+PYLE,na,36-2000,na,na
+SMOAK,na,36-2000,na,na
+SIMMONS,na,36-2000,na,na
+GIER,na,36-2000,na,na
+BERGDORF,na,36-2000,na,na
+WATTS,na,36-2000,na,na
+SIMMONS,na,37-2000,na,na
+HUGHSTON,na,38-2000,na,na
+SMOAK,na,38-2000,na,na
+SIMMONS,na,38-2000,na,na
+GIER,na,38-2000,na,na
+BERGDORF,na,38-2000,na,na
+PYLE,na,39-2000,na,na
+BERGDORF,na,39-2000,na,na
+WATTS,na,39-2000,na,na
+BROWN,na,36-2000,na,na
+PYLE,na,36-2000,na,na
+SMOAK,na,36-2000,na,na
+SIMMONS,na,36-2000,na,na
+GIER,na,36-2000,na,na
+BERGDORF,na,36-2000,na,na
+WATTS,na,36-2000,na,na
+SIMMONS,na,37-2000,na,na
+HUGHSTON,na,38-2000,na,na
+SMOAK,na,38-2000,na,na
+SIMMONS,na,38-2000,na,na
+GIER,na,38-2000,na,na
+BERGDORF,na,38-2000,na,na
+PYLE,na,39-2000,na,na
+BERGDORF,na,39-2000,na,na
+WATTS,na,39-2000,na,na
+BROWN,na,36-2000,na,na
+PYLE,na,36-2000,na,na
+SMOAK,na,36-2000,na,na
+SIMMONS,na,36-2000,na,na
+GIER,na,36-2000,na,na
+BERGDORF,na,36-2000,na,na
+WATTS,na,36-2000,na,na
+SIMMONS,na,37-2000,na,na
+HUGHSTON,na,38-2000,na,na
+SMOAK,na,38-2000,na,na
+SIMMONS,na,38-2000,na,na
+GIER,na,38-2000,na,na
+BERGDORF,na,38-2000,na,na
+PYLE,na,39-2000,na,na
+BERGDORF,na,39-2000,na,na
+WATTS,na,39-2000,na,na

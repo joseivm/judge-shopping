@@ -1,3 +1,4 @@
 .env
 .Rhistory
 .DS_Store
+.env.R

@@ -10,7 +10,7 @@ load_dotenv(dotenv_path)
 PROJECT_DIR = os.environ.get("PROJECT_DIR")
 
 # Input files/dirs
-schedule_data_file = PROJECT_DIR + '/data/clean/schedule_data.csv'
+schedule_data_file = PROJECT_DIR + '/data/processed/schedule_data.csv'
 hester_data_file = PROJECT_DIR + '/data/raw/Sentencing Data/Hester_Data.csv'
 expected_min_sentece_file = PROJECT_DIR + '/data/raw/Sentencing Data/expected_min_sentence.dta'
 
@@ -44,6 +44,7 @@ def clean_sentencing_data():
     sdf = sdf[cols_to_keep]
     sdf = add_exp_min_sentence(sdf)
     sdf.loc[sdf.Date.notna(),'Week'] = sdf.loc[sdf.Date.notna(),'Date'].apply(get_week)
+    sdf.to_csv('data/processed/temp_sentencing_data.csv',index=False)
     sdf = add_judge_names(sdf)
     return(sdf)
 
@@ -51,7 +52,8 @@ def add_judge_names(sdf):
     cdf = pd.read_csv(schedule_data_file)
     counties = '|'.join(sdf.County.unique())
     cdf['County'] = cdf['Assignment'].apply(find_string,args=(counties,))
-
+    cdf.to_csv('data/processed/temp_schedule_data.csv',index=False)
+    
     merge_cols = ['County','Week']
     overlap = pd.merge(sdf[['JudgeID','County','Week']],cdf[['JudgeName','County','Week']],on=merge_cols)
     counts = overlap.groupby(['JudgeName','JudgeID']).size().reset_index(name='N')
