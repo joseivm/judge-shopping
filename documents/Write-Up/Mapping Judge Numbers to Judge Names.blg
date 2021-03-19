@@ -1,0 +1,68 @@
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Mapping Judge Numbers to Judge Names.aux
+The style file: plainnat.bst
+Database file #1: bibfile.bib
+I was expecting a `,' or a `}'---line 408 of file bibfile.bib
+ :  
+ :  year={2015}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+"{" immediately follows a field name---line 581 of file bibfile.bib
+ :  type
+ :      {Working paper},
+I'm skipping whatever remains of this entry
+You're missing a field name---line 868 of file bibfile.bib
+ :  
+ :  %URL= {http://www.abstractsonline.com/pp8/#!/4701/presentation/7394},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 1033 of file bibfile.bib
+ :  
+ :  month={December}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--entry type for "SCCourts" isn't style-file defined
+--line 2776 of file bibfile.bib
+You've used 3 entries,
+            2773 wiz_defined-function locations,
+            613 strings with 5341 characters,
+and the built_in function-call counts, 1054 in all, are:
+= -- 96
+> -- 41
+< -- 3
++ -- 15
+- -- 12
+* -- 69
+:= -- 172
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 12
+chr.to.int$ -- 3
+cite$ -- 6
+duplicate$ -- 51
+empty$ -- 94
+format.name$ -- 17
+if$ -- 213
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 1
+newline$ -- 23
+num.names$ -- 12
+pop$ -- 26
+preamble$ -- 1
+purify$ -- 10
+quote$ -- 0
+skip$ -- 43
+stack$ -- 0
+substring$ -- 28
+swap$ -- 3
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 33
+warning$ -- 0
+while$ -- 11
+width$ -- 0
+write$ -- 45
+(There were 4 error messages)

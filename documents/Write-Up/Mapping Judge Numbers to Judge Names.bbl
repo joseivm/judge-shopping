@@ -1,0 +1,25 @@
+\begin{thebibliography}{3}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Hester and Hartman(2017)]{Hester_Hartman_2017}
+Rhys Hester and Todd~K Hartman.
+\newblock Conditional race disparities in criminal sentencing: A test of the
+  liberation hypothesis from a non-guidelines state.
+\newblock \emph{Journal of quantitative criminology}, 33\penalty0 (1):\penalty0
+  77--100, 2017.
+
+\bibitem[{South Carolina Judicial Department}(2020)]{SCCourts}
+{South Carolina Judicial Department}.
+\newblock {SCCourts}, 2020.
+\newblock URL \url{https://sccourts.org}.
+
+\bibitem[Wang(2019)]{Can_Disseration}
+Can Wang.
+\newblock \emph{Three Data-driven Model-based Policy Analyses in Criminology}.
+\newblock PhD thesis, Stanford University, 2019.
+
+\end{thebibliography}
