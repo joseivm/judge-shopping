@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import os
 import datetime
+import re
 
 from dotenv import load_dotenv, find_dotenv
 dotenv_path = find_dotenv()
@@ -12,21 +13,180 @@ PROJECT_DIR = os.environ.get("PROJECT_DIR")
 schedule_data_dir = PROJECT_DIR + '/data/raw/Schedule Data/'
 
 # Output files
-processed_schedule_data_file = PROJECT_DIR + '/data/processed/schedule_data.csv'
+processed_weekly_schedule_file = PROJECT_DIR + '/data/processed/weekly_schedule_data.csv'
+processed_daily_schedule_file = PROJECT_DIR + '/data/processed/daily_schedule_data.csv'
+
+class ParserHelper:
+    def __init__(self):
+        self.date_regex = re.compile('([\d]+)')
+        self.plus_regex = re.compile('[+]+')
+        self.numbers_no_letters_regex = re.compile('^[\d\W,]+$')
+        self.circuit_regex = re.compile('([\d]+st|[\d]+nd|[\d]+rd|[\d]+th)')
+
+    def is_single_assignment_nd(self,assignment):
+        plus_match = self.plus_regex.search(assignment)
+        split_str = assignment.split()
+        dates = [substr for substr in split_str if
+                        self.numbers_no_letters_regex.search(substr) is not None]
+        return (plus_match is None and len(dates) == 0)
+
+    def is_single_assignment_wd(self,assignment):
+        plus_match = self.plus_regex.search(assignment)
+        split_str = assignment.split()
+        dates = [substr for substr in split_str if
+                        self.numbers_no_letters_regex.search(substr) is not None]
+        return (plus_match is None and len(dates) > 0)
+
+    def is_multiple_assignment_sd(self,assignment):
+        plus_match = self.plus_regex.search(assignment)
+        split_ass = assignment.split('+')
+        with_dates = [ass for ass in split_ass if self.is_single_assignment_wd(ass)]
+        return (plus_match is not None and len(with_dates) < len(split_ass))
+
+    def is_multiple_assignment_inc(self,assignment):
+        plus_match = self.plus_regex.search(assignment)
+        assignment = re.sub('\+','',assignment)
+        split_str = assignment.split()
+        dates = [substr for substr in split_str if
+                        self.numbers_no_letters_regex.search(substr) is not None]
+        dates = self.date_regex.findall(','.join(dates))
+        return (plus_match is not None and len(dates) < 5)
+
+    def is_multiple_assignment_com(self,assignment):
+        plus_match = self.plus_regex.search(assignment)
+        assignment = re.sub('\+','',assignment)
+        split_str = assignment.split()
+        dates = [substr for substr in split_str if
+                        self.numbers_no_letters_regex.search(substr) is not None]
+        dates = self.date_regex.findall(','.join(dates))
+        return (plus_match is not None and len(dates) == 5)
+
+    def is_multiple_assignment_ad(self,assignment):
+        plus_match = self.plus_regex.search(assignment)
+        split_ass = assignment.split('+')
+        with_dates = [ass for ass in split_ass if self.is_single_assignment_wd(ass)]
+        return (plus_match is not None and len(with_dates) == len(split_ass))
+
+    def process_single_assignment_nd(self,row):
+        year, week, start_day = row['ISOWeek']
+        days = [(year,week,start_day+i) for i in range(5)]
+        dates = [datetime.date.fromisocalendar(year,week,day) for year,week,day in days]
+        new_rows = [{'JudgeName':row['JudgeName'],'FullAssignment':row['FullAssignment'],
+           'Assignment':row['FullAssignment'],'Date':date,'AssignmentType':'Single',
+           'StartDate':dates[0]}
+                    for date in dates]
+        return(new_rows)
+
+    def process_single_assignment_wd(self,row):
+        year, week, start_day = row['ISOWeek']
+        start_date = datetime.date.fromisocalendar(year,week,start_day)
+        year = start_date.year
+        month = start_date.month
+        split_str = row['FullAssignment'].split()
+        days = [substr for substr in split_str if
+                        self.numbers_no_letters_regex.search(substr) is not None][0]
+        days = self.date_regex.findall(days)
+        dates = [datetime.date(year,month,int(day)) for day in days]
+        dates = self.adjust_month(dates,start_date)
+        assignment = self.remove_dates(row['FullAssignment'])
+        new_rows = [{'JudgeName':row['JudgeName'],'FullAssignment':row['FullAssignment'],
+           'Assignment':assignment,'Date':date,'AssignmentType':'SingleWD','StartDate':start_date}
+                    for date in dates]
+        return(new_rows)
+
+    def process_multiple_assignment_sd(self,row):
+        year, week, start_day = row['ISOWeek']
+        start_date = datetime.date.fromisocalendar(year,week,start_day)
+        year = start_date.year
+        month = start_date.month
+        assignments = row['FullAssignment'].split('+')
+        main_assignment = [ass for ass in assignments if self.is_single_assignment_nd(ass)][0]
+        other_assignments = [ass for ass in assignments if self.is_single_assignment_wd(ass)]
+        all_days = [(year,week,start_day+i) for i in range(5)]
+        all_dates = [datetime.date.fromisocalendar(year,week,day) for year,week,day in all_days]
+        assigned_dates = []
+        new_rows = []
+        for assignment in other_assignments:
+            split_str = assignment.split()
+            days = [substr for substr in split_str if
+                            self.numbers_no_letters_regex.search(substr) is not None][0]
+            days = self.date_regex.findall(days)
+            dates = [datetime.date(year,month,int(day)) for day in days]
+            dates = self.adjust_month(dates,start_date)
+            assignment = self.remove_dates(assignment)
+            assignment_rows = [{'JudgeName':row['JudgeName'],'FullAssignment':row['FullAssignment'],
+               'Assignment':assignment,'Date':date,'AssignmentType':'MultipleSD','StartDate':start_date}
+                        for date in dates]
+            new_rows += assignment_rows
+            assigned_dates += dates
+
+        remaining_dates = [date for date in all_dates if date not in assigned_dates]
+        main_assignment = self.remove_dates(main_assignment)
+        remaining_dates = self.adjust_month(remaining_dates,start_date)
+        new_rows += [{'JudgeName':row['JudgeName'],'FullAssignment':row['FullAssignment'],
+           'Assignment':main_assignment,'Date':date,'AssignmentType':'MultipleSD','StartDate':start_date}
+                        for date in remaining_dates]
+        return(new_rows)
+
+    def process_multiple_assignment_ad(self,row):
+        year, week, start_day = row['ISOWeek']
+        start_date = datetime.date.fromisocalendar(year,week,start_day)
+        year = start_date.year
+        month = start_date.month
+        assignments = row['FullAssignment'].split('+')
+        new_rows = []
+        for assignment in assignments:
+            split_str = assignment.split()
+            days = [substr for substr in split_str if
+                            self.numbers_no_letters_regex.search(substr) is not None][0]
+            days = self.date_regex.findall(days)
+            dates = [datetime.date(year,month,int(day)) for day in days]
+            dates = self.adjust_month(dates,start_date)
+            assignment = self.remove_dates(assignment)
+            assignment_rows = [{'JudgeName':row['JudgeName'],'FullAssignment':row['FullAssignment'],
+               'Assignment':assignment,'Date':date,'AssignmentType':'MultipleAD','StartDate':start_date}
+                        for date in dates]
+            new_rows += assignment_rows
+        return(new_rows)
+
+    def adjust_month(self,dates,start_date):
+        threshold = datetime.timedelta(days=-1)
+        time_deltas = [date - start_date for date in dates]
+        in_next_month = [delta < threshold for delta in time_deltas]
+        for i, cond in enumerate(in_next_month):
+            if cond:
+                dates[i] = self.add_month(dates[i])
+        return dates
+
+    def add_month(self,date):
+        new_month = (date.month % 12) + 1
+        if new_month == 1:
+            new_date = datetime.date(date.year+1,new_month,date.day)
+        else:
+            new_date = datetime.date(date.year,new_month,date.day)
+        return new_date
+
+    def remove_dates(self,assignment):
+        split_str = assignment.split()
+        non_dates = [substr for substr in split_str if
+                        self.numbers_no_letters_regex.search(substr) is None]
+        return ' '.join(non_dates)
 
 ##### Cleaning Functions
-def clean_calendar_data():
+def create_calendar_data(daily=False):
     filenames = os.listdir(schedule_data_dir)
     filenames = [schedule_data_dir + name for name in filenames if '.xlsx' in name]
     df = pd.DataFrame()
     for filename in filenames:
         mdf = pd.read_excel(filename)
-        mdf = process_month_df(mdf)
+        if daily:
+            mdf = process_month_df_for_daily(mdf)
+        else:
+            mdf = process_month_df_for_weekly(mdf)
         df = df.append(mdf,ignore_index=True)
-
     return(df)
 
-def process_month_df(tdf):
+def process_month_df_for_weekly(tdf):
     date_year = tdf.columns[0]
     month = date_year.split(' ')[0]
     month_num = datetime.datetime.strptime(month,'%B').month
@@ -59,6 +219,45 @@ def process_month_df(tdf):
     tdf.loc[tdf.JudgeName == 'COOPER', 'JudgeName'] = 'COOPER TW'
     return(tdf)
 
+def process_month_df_for_daily(tdf):
+    date_year = tdf.columns[0]
+    month = date_year.split(' ')[0]
+    month_num = datetime.datetime.strptime(month,'%B').month
+    year = int(date_year.split(' ')[1])
+
+    tdf.rename(columns={tdf.columns[0]:'JudgeName'},inplace=True)
+    tdf = tdf.melt(id_vars='JudgeName',var_name='StartDay',value_name='FullAssignment')
+    tdf['ISOWeek'] =  tdf['StartDay'].apply(lambda x: datetime.date(year,month_num,x).isocalendar())
+    tdf['Week'] = tdf['StartDay'].apply(lambda x: datetime.date(year,month_num,x))
+    tdf['FullAssignment'] = tdf['FullAssignment'].fillna('na')
+    ph = ParserHelper()
+    all_assignments = []
+    for idx,row in tdf.iterrows():
+        full_assignment = row['FullAssignment']
+        if ph.is_single_assignment_nd(full_assignment):
+            daily_assignments = ph.process_single_assignment_nd(row)
+        elif ph.is_single_assignment_wd(full_assignment):
+            daily_assignments = ph.process_single_assignment_wd(row)
+        elif ph.is_multiple_assignment_sd(full_assignment):
+            daily_assignments = ph.process_multiple_assignment_sd(row)
+        elif ph.is_multiple_assignment_ad(full_assignment):
+            daily_assignments = ph.process_multiple_assignment_ad(row)
+        else:
+            print('Error, unidentified row \n')
+            print(row)
+            break
+        all_assignments += daily_assignments
+
+    tdf = pd.DataFrame(all_assignments)
+
+    tdf = tdf.loc[(tdf.FullAssignment == 'na') | (tdf.Assignment != 'na'),:]
+
+    tdf['JudgeName'] = tdf['JudgeName'].str.upper()
+    tdf['JudgeName'] = tdf['JudgeName'].str.replace('[^A-Za-z\s]','')
+    tdf['JudgeName'] = tdf['JudgeName'].str.strip()
+    tdf.loc[tdf.JudgeName == 'COOPER', 'JudgeName'] = 'COOPER TW'
+    return(tdf)
+
 def get_half(assignment):
     split_assignment = assignment.split('+')
     if len(split_assignment) > 1:
@@ -67,7 +266,10 @@ def get_half(assignment):
         return 'na'
 
 def main():
-    df = clean_calendar_data()
-    df.to_csv(processed_schedule_data_file,index=False)
+    df = create_calendar_data(daily=False)
+    df.to_csv(processed_weekly_schedule_file,index=False)
+    ddf = create_calendar_data(daily=True)
+    ddf.to_csv(processed_daily_schedule_file,index=False)
+
 
 main()

@@ -1,14 +1,15 @@
 # Fdb version 3
-["bibtex Mapping Judge Numbers to Judge Names"] 1616129043 "Mapping Judge Numbers to Judge Names.aux" "Mapping Judge Numbers to Judge Names.bbl" "Mapping Judge Numbers to Judge Names" 1616129049
+["bibtex Mapping Judge Numbers to Judge Names"] 1616640251 "Mapping Judge Numbers to Judge Names.aux" "Mapping Judge Numbers to Judge Names.bbl" "Mapping Judge Numbers to Judge Names" 1616641219
   "/usr/local/texlive/2018/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1480098435 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "Mapping Judge Numbers to Judge Names.aux" 1616129048 55416 b99a4bf7f12ce0e3aac847aba51a20f6 ""
+  "Mapping Judge Numbers to Judge Names.aux" 1616641218 55352 f703dd96b3c67da208d805017689f7f8 ""
   "bibfile.bib" 1607711916 74469 4f75be01ca117c96b4e094b35092f04e ""
   (generated)
-  "Mapping Judge Numbers to Judge Names.blg"
   "Mapping Judge Numbers to Judge Names.bbl"
-["pdflatex"] 1616129043 "Mapping Judge Numbers to Judge Names.tex" "Mapping Judge Numbers to Judge Names.pdf" "Mapping Judge Numbers to Judge Names" 1616129049
+  "Mapping Judge Numbers to Judge Names.blg"
+["pdflatex"] 1616641212 "Mapping Judge Numbers to Judge Names.tex" "Mapping Judge Numbers to Judge Names.pdf" "Mapping Judge Numbers to Judge Names" 1616641219
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1480098666 2971 def0b6c1f0b107b3b936def894055589 ""
+  "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1480098666 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm" 1480098689 2160 cd316d9c599fb08dc58cdb63ea33eeb9 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi8r.tfm" 1480098689 3520 74c182562270529cb43f51d7c7d9f1d9 ""
@@ -29,6 +30,7 @@
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecrm1440.tfm" 1480098696 3584 3169d30142b88a27d4ab0e3468e963a2 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecrm1728.tfm" 1480098696 3584 3c76ccb63eda935a68ba65ba9da29f1a ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecti1095.tfm" 1480098696 3072 b73d2778cc3af44970de4de5e032d7f6 ""
+  "/usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1480098696 1536 02c06700a42be0f5a28664c7273f82e7 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm" 1480098698 996 a18840b13b499c08ac2de96a99eda4bc ""
@@ -374,14 +376,14 @@
   "Figures/expmin_Histogram.pdf" 1606870878 37240 703c84ba5a1db4f3f948049d310af8c2 ""
   "Figures/sgc_offcodes_Histogram.pdf" 1606872745 49544 688e9b9dfecdf72f90e89b24ddb5d94a ""
   "Figures/statute_first_Histogram.pdf" 1606872712 39507 227b13cf112151255867749d3142c90d ""
-  "Mapping Judge Numbers to Judge Names.aux" 1616129048 55416 b99a4bf7f12ce0e3aac847aba51a20f6 ""
-  "Mapping Judge Numbers to Judge Names.bbl" 1616129043 940 d6b53a21ace8d30b9ba499cbbe6fc717 "bibtex Mapping Judge Numbers to Judge Names"
-  "Mapping Judge Numbers to Judge Names.out" 1616129048 2955 3081203d8c5475028f85b80a7d8bb508 ""
-  "Mapping Judge Numbers to Judge Names.tex" 1609020016 169561 b79f9bcf8a8774687d08b33f1a9be8e4 ""
-  "Mapping Judge Numbers to Judge Names.toc" 1616129048 5333 c5b42f79b3d90988d8cd917d56a61cfb ""
+  "Mapping Judge Numbers to Judge Names.aux" 1616641218 55352 f703dd96b3c67da208d805017689f7f8 ""
+  "Mapping Judge Numbers to Judge Names.bbl" 1616640251 940 d6b53a21ace8d30b9ba499cbbe6fc717 "bibtex Mapping Judge Numbers to Judge Names"
+  "Mapping Judge Numbers to Judge Names.out" 1616641218 2986 4cde51ff9cb1005c705c4da3f4f20c3a ""
+  "Mapping Judge Numbers to Judge Names.tex" 1616641199 167665 34a622b6356ba4e820f92916f583ef7f ""
+  "Mapping Judge Numbers to Judge Names.toc" 1616641218 5321 07cb4ad4d60164ab54c024375301dea6 ""
   (generated)
+  "Mapping Judge Numbers to Judge Names.toc"
+  "Mapping Judge Numbers to Judge Names.log"
   "Mapping Judge Numbers to Judge Names.pdf"
   "Mapping Judge Numbers to Judge Names.out"
   "Mapping Judge Numbers to Judge Names.aux"
-  "Mapping Judge Numbers to Judge Names.log"
-  "Mapping Judge Numbers to Judge Names.toc"

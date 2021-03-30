@@ -25,24 +25,25 @@
 \contentsline {paragraph}{A Simple Approach To Rank Judges with Respect to Their Harshness.}{36}{section*.38}
 \contentsline {paragraph}{Imputing $l$ and $u$ for Each Judge as a Function of $\theta \tau $.}{36}{section*.39}
 \contentsline {subsection}{\numberline {4.3}Estimation of Trial Cost $c_d$ and Probability of Going to Trial $p_t(h)$}{37}{subsection.4.3}
-\contentsline {paragraph}{Estimating the Probability of Going to Trial.}{38}{section*.41}
+\contentsline {paragraph}{Who Goes to Trial.}{38}{section*.41}
 \contentsline {subsection}{\numberline {4.4}Capacity Estimation}{38}{subsection.4.4}
+\contentsline {paragraph}{To Do:}{39}{section*.43}
 \contentsline {subsubsection}{\numberline {4.4.1}Estimation of $\mu _p$}{40}{subsubsection.4.4.1}
-\contentsline {subsubsection}{\numberline {4.4.2}Estimation of $\mu _t$}{43}{subsubsection.4.4.2}
-\contentsline {subsubsection}{\numberline {4.4.3}Judge Schedules in the Data}{45}{subsubsection.4.4.3}
-\contentsline {subsection}{\numberline {4.5}Choice Model for Judge Shopping}{46}{subsection.4.5}
-\contentsline {paragraph}{Proposal 1.}{46}{section*.48}
-\contentsline {paragraph}{Proposal 2.}{46}{section*.49}
-\contentsline {paragraph}{Proposal 3.}{47}{section*.50}
-\contentsline {paragraph}{Estimation of rationing probabilities $\rho _1,\ldots ,\rho _J$.}{47}{section*.51}
-\contentsline {subsection}{\numberline {4.6}Simulation Study Outline}{47}{subsection.4.6}
-\contentsline {paragraph}{Defendant Arrival Process.}{47}{section*.52}
-\contentsline {paragraph}{State Variable for the Simulation.}{48}{section*.53}
-\contentsline {paragraph}{How Should We Model Trials in the Simulation?}{48}{section*.54}
-\contentsline {paragraph}{Calibration.}{48}{section*.55}
-\contentsline {subsection}{\numberline {4.7}Counterfactual Study}{48}{subsection.4.7}
-\contentsline {paragraph}{What Should We Report?}{49}{section*.56}
-\contentsline {section}{\numberline {5}Additional Questions}{49}{section.5}
+\contentsline {subsubsection}{\numberline {4.4.2}Joint estimation of $\mu _p$ and $\mu _t$}{43}{subsubsection.4.4.2}
+\contentsline {paragraph}{Approach 1:}{43}{section*.47}
+\contentsline {paragraph}{Approach 2:}{44}{section*.48}
+\contentsline {subsubsection}{\numberline {4.4.3}Estimation of $\mu _t$}{45}{subsubsection.4.4.3}
+\contentsline {subsubsection}{\numberline {4.4.4}Judge Schedules in the Data}{47}{subsubsection.4.4.4}
+\contentsline {subsection}{\numberline {4.5}Choice Model for Judge Shopping}{48}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Simulation Study Outline}{48}{subsection.4.6}
+\contentsline {paragraph}{Overview}{48}{section*.51}
+\contentsline {paragraph}{Defendant Arrival Process.}{49}{section*.52}
+\contentsline {paragraph}{State Variable for the Simulation.}{49}{section*.53}
+\contentsline {paragraph}{Calibration.}{49}{section*.54}
+\contentsline {subsection}{\numberline {4.7}Counterfactual Study}{49}{subsection.4.7}
+\contentsline {paragraph}{Different Judge Rotations:}{49}{section*.55}
+\contentsline {paragraph}{Capacity:}{50}{section*.56}
+\contentsline {paragraph}{What Should We Report?}{50}{section*.57}
 \contentsline {section}{\numberline {A}Data Cleaning}{51}{appendix.A}
 \contentsline {section}{\numberline {B}Supplementary Material}{53}{appendix.B}
 \contentsline {subsection}{\numberline {B.1}Tables}{53}{subsection.B.1}
