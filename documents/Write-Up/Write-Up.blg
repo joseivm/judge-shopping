@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2018)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
-The top-level auxiliary file: Mapping Judge Numbers to Judge Names.aux
+The top-level auxiliary file: Write-Up.aux
 The style file: plainnat.bst
 Database file #1: bibfile.bib
 I was expecting a `,' or a `}'---line 408 of file bibfile.bib
@@ -26,7 +26,7 @@ Warning--entry type for "SCCourts" isn't style-file defined
 --line 2776 of file bibfile.bib
 You've used 3 entries,
             2773 wiz_defined-function locations,
-            613 strings with 5341 characters,
+            613 strings with 5285 characters,
 and the built_in function-call counts, 1054 in all, are:
 = -- 96
 > -- 41

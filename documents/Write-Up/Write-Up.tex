@@ -1283,7 +1283,7 @@ We describe 3 approaches below to estimate $\mu_p, \mu_t$. The first one iterate
 
 We model the plea demand for a judge as $D \sim \text{Poisson}(\theta)$, whereas the number of pleas a judge can serve in a day is denoted by $X$, $X \sim \text{Poisson}(\mu_p)$.\\
 
-\textbf{Step 3:} Let $S_i = \min(D_i,X_i)$ denote the number of pleas sentenced for judge-day combination $i=1,...,N$. We have that
+\noindent \textbf{Step 3:} Let $S_i = \min(D_i,X_i)$ denote the number of pleas sentenced for judge-day combination $i=1,...,N$. We have that
 \begin{align*}
 	P(S_i = S) &= P(X_i = S | X_i \leq D_i) P(x_i \leq D_i) + P(D_i = S | X_i > D_i) P(X_i > D_i)
 \end{align*}
@@ -1292,7 +1292,7 @@ We model the plea demand for a judge as $D \sim \text{Poisson}(\theta)$, whereas
 	We should decide what type of days should be considered as judge-days. Also, once we have N, we may want to ignore certain days, e.g. the judge is sentencing on two locations.
 \end{remark} \\
 
-\textbf{Step 4:} Maximize log likelihood $\mathscr{L}(\mu_p) = \sum_{i=1}^N log P(S_i = s_i)$. \\
+\noindent \textbf{Step 4:} Maximize log likelihood $\mathscr{L}(\mu_p) = \sum_{i=1}^N log P(S_i = s_i)$. \\
 Set $\mu_p = \argmax \mathscr{L}(\mu_p)$ and calculate $\mu_t$ as in section 4.4.3. \\
 \\
 We iterate until convergence.
@@ -1300,48 +1300,115 @@ We iterate until convergence.
 \paragraph{Approach 2:} \textbf{EM Algorithm under Poisson Assumption} This analysis will focus on the clean days (for pleas) as mentioned above. Recall that \begin{align*}
 	D &= \text{Number of pleas arriving per judge-day}\\
 	X &= \text{Number of pleas a judge can hear in a day}
-\end{align*}\\
+\end{align*}
 
-We assume $D \sim \text{Poisson}(\theta), X \sim \text{Poisson}(\mu_p)$.
-\textbf{E-Step:} Compute $\mathbb{E}_{X,D}\{ \log P(X_i,D_i,S_i|\theta,\mu_p)|S_i=s,\theta,\mu_p\}$ \\
+We assume $D \sim \text{Poisson}(\theta), X \sim \text{Poisson}(\mu_p)$.\\
+\textbf{E-Step:} Compute $\mathbb{E}_{X,D}[\log P(X_i,D_i,S_i|\theta,\mu_p)|S_i=s,\theta,\mu_p]$ \\
 where $X_i \sim \text{Poisson}(\mu_p), D_i \sim \text{Poisson}(\theta), S_i = \min(X_i,D_i)$\\
 Note that
 \begin{align*}
 P(X_i=x,D_i=d,S_i=s) \,=\, \left \{\!\! \begin{array}{ll}
 P(X_i = x,D_i=d) & \text{if } s= \min(x,d), \\
-0 & otherwise, \\
+0 & \text{otherwise}, \\
 \end{array} \right.
 \end{align*}
 
-where $P(X_i=x,D_i=d) = e^{-\mu_px}\frac{\mu_p^x}{x!} e^{-\theta d} \frac{\theta^d}{d!}$.\\
+where $P(X_i=x,D_i=d) = (e^{-\mu_px})\frac{\mu_p^x}{x!} (e^{-\theta d}) \frac{\theta^d}{d!}$.\\
 For $x,d,s \geq 0$ such that $s=\min(d,x)$ we have that
-\begin{align}
+\begin{align*}
 	\log P(X_i=x,D_i=d,S_i=s) &= x(\log \mu_p - \mu_p) - \sum_{j=1}^x \log j + d(\log\theta - \theta) - \sum_{j=1}^d \log j
-\end{align}
-\textbf{Step 1:} Calculate the total number of judge-days and subtract the expected number of trial judge-days. Let $N$ denote the number of remaining judge-days.\\
-\textbf{Step 2:} Set
-\begin{align*}
-	\theta &= \frac{\text{Total number of pleas in the data}}{N}
 \end{align*}
 
-We model the plea demand for a judge as $D \tilde Poisson(\theta)$, whereas the number of pleas a judge can serve in a day is denoted by $X$, $X \tilde Poisson(\mu_p)$.\\
+To compute the conditional expectation $\mathbb{E}_{X,D}[\cdot | S_i =s]$, consider
+the conditional pmf $P(X_i=x,D_i=d | S_i = s)$, denoted by $p(x,d|s)$, where
 
-\textbf{Step 3:} Let $S_i = \min(D_i,X_i)$ denote the number of pleas sentenced for judge-day combination $i=1,...,N$. We have that
 \begin{align*}
-	P(S_i = S) &= P(X_i = S | X_i \leq D_i) P(x_i \leq D_i) + P(D_i = S | X_i > D_i) P(X_i > D_i)
+	P(x,d|s) &= \frac{P(X_i = x, D_i = d)}{P(S_i = s)} \\
+	&= \frac{P(X_i = x) P(D_i = d)}{P(X_i = s) P(D_i \geq s) + P(X_i > s) P(D_i = s)}
 \end{align*}
+
+Then letting $A(s) = \{(s,d) : d \geq s \} \cup \{(x,s):x>s\}$, we have that
+
+\begin{align*}
+	\mathbb{E}&[\log P(X_i,D_i,S_i) | S_i =s] \\
+	 &= \mathbb{E}_{X,D}[(\log \mu_p -\mu_p)x_i - \sum_{j=1}^{x_i} \log j + (\log \theta - \theta)D_i - \sum_{j=1}^{D_i} \log j | S_i = s]\\
+	 &= \sum_{(x,d)\in A(s)} [(\log \mu_p - \mu_p)x - \sum_{j=1}^x \log j + (\log \theta - \theta)d - \sum_{j=1}^d \log j]P(x,d|s)
+\end{align*}
+
+\noindent \textbf{M-Step:} Optimize over $\mu_p, \theta$, the following:
+\begin{align*}
+	\sum_{i=1}^N \mathbb{E}_{X,D}[\log P(X_i,D_i,S_i)|S_i = s_i]
+\end{align*}
+
+and iterate until $(\mu_p,\theta)$ estimates converge. Once they do, compute $\mu_t$ as in ~\ref{mu_t-estimation}
 
 \begin{remark}
-	We should decide what type of days should be considered as judge-days. Also, once we have N, we may want to ignore certain days, e.g. the judge is sentencing on two locations.
-\end{remark} \\
+	I'm not sure how manageable this computation is because of the various infinite sums. Of course, we should truncate them. Perhaps one way to simplify the above calculation is to approximate $\sum_{j=1}^x\log j$ as follows:
+	\begin{align*}
+		\sum_{j=1}^x \log j \approx \int_1^x \log y dy = (y\log y - y) |_1^x = x\log x - x + 1
+	\end{align*}
+\end{remark}
 
-\textbf{Step 4:} Maximize log likelihood $\mathscr{L}(\mu_p) = \sum_{i=1}^N log P(S_i = s_i)$. \\
-Set $\mu_p = argmax \mathscr{L}(\mu_p)$ and calculate $\mu_t$ as in section 4.4.3. \\
-\\
-We iterate until convergence.
+\paragraph{Approach 3:} \textbf{EM Algorithm under Normal Distribution Assumption} Under the normal distribution assumption, we write
+\begin{align*}
+	f_X(x) &= \frac{1}{\sigma_1 \sqrt{2\pi}} \exp{-\frac{1}{2} (\frac{x-\mu_p}{\sigma_1})^2} = \phi(\frac{x-\mu_p}{\sigma_1})\\
+	f_D(d) &= \frac{1}{\sigma_2 \sqrt{2\pi}} \exp{-\frac{1}{2} (\frac{d - \theta}{\sigma_2})^2} = \phi(\frac{d-\theta}{\sigma_2})
+\end{align*}
 
+Because $S = \min(X,D)$, we write:
+\begin{align*}
+	P(S \leq s) &= P(X \leq s) P(D \leq s) = \Phi(\frac{s-\mu_p}{\sigma_1}) \Phi(\frac{s-\theta}{\sigma_2})
+\end{align*}
+
+Thus, $f_S(s) = \frac{d}{ds} P(S \leq s)$ is given as follows:
+\begin{align*}
+	f_S(s) = \frac{1}{\sigma_1} \phi(\frac{s-\mu_p}{\sigma_1}) \Phi(\frac{s-\theta}{\sigma_1}) + \frac{1}{\sigma_2}\phi(\frac{s-\theta}{\sigma_2}) \Phi(\frac{s-\mu_p}{\sigma_2})
+\end{align*}
+
+For the E-Step, we need to calculate
+\begin{align*}
+	\mathbb{E}_{X,D}[\log f(X,D,S|\theta,\mu) | S,\theta,\mu_p]
+\end{align*}
+
+Note (for $s = \min(X,D)$) that
+
+\begin{align*}
+	\log f(X,D,S) = -\log \sigma_1 - \frac{1}{2}(\frac{x-\mu_p}{\sigma_1})^2 - \log \sigma_2 - \frac{1}{2} (\frac{D-\theta}{\sigma_2})^2
+\end{align*}
+
+Thus, we are interested in computing
+
+\begin{align*}
+	-\log \sigma_1 - \log \sigma_2 - \frac{1}{2} \mathbb{E}[(\frac{X-\mu_p}{\sigma_1})^2 + (\frac{D-\theta}{\sigma_2})^2] | S=s
+\end{align*}
+
+To this end, lets first derive the conditional density $f(X,D|S)$:
+
+\begin{align*}
+f(X,D|S) \,\propto\, \left \{\!\! \begin{array}{ll}
+\frac{f(X,D)}{f(S)} & \text{if } S= \min(X,D), \\
+0 & \text{otherwise}, \\
+\end{array} \right.
+\end{align*}
+
+In the first case, we have that
+
+\begin{align}
+	f(X,D|S) \propto \frac{\phi(\frac{x-\mu_p}{\sigma_1}) \phi(\frac{D-\theta}{\sigma_2})}{\frac{1}{\sigma_1} \phi(\frac{S-\mu_p}{\sigma_1}) \Phi(\frac{S-\theta}{\sigma_2}) + \frac{1}{\sigma_2} \phi(\frac{S-\theta}{\sigma_2}) \Phi(\frac{S-\mu_p}{\sigma_1})}
+\end{align}
+
+Then, we have that
+\begin{align*}
+	\mathbb{E}[\log f(X,D,S) | S] &= -\log \sigma_1 - \log \sigma_2 \\
+	-\frac{1}{2}[\int_S^\infty f(x,S|S)[(\frac{x-\mu_p}{\sigma_1})^2 &+ (\frac{S-\theta}{\sigma_2})^2]dx \\
+	+ \int_S^\infty [(\frac{S-\mu_p}{\sigma_1})^2 + (\frac{d-\theta}{\sigma_2})^2]f(S,d|S) dd]
+\end{align*}
+
+\noindent \textbf{M-Step:} Minimize $\sum_{i=1}^N \mathbb{E}[\log f(X_i,D_i,S_i)|S_i]$ over $\mu_p,\theta,\sigma_1,\sigma_2$. \\
+To do so, we can use Gauss-Hermite integration (see Ken Judd's book) for Normal densities. Then we iterate until the parameters $\mu_p,\theta,\sigma_1,\sigma_2$ converge. Once that happense, we estimate $\mu_t$ as in ~\ref{mu_t-estimation}.
 
 \subsubsection{Estimation of $\mu_t$}
+\label{mu_t-estimation}
 To estimate the trial service rate, we focus on the judge-county combinations that satisfy the following conditions:
 \begin{enumerate}[label=(\roman*)]
 	\vspace{-2mm}

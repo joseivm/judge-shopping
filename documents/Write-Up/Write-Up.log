@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  24 MAR 2021 21:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  1 APR 2021 08:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"Mapping Judge Numbers to Judge Names.tex"
-(./Mapping Judge Numbers to Judge Names.tex
+**Write-Up.tex
+(./Write-Up.tex
 LaTeX2e <2018-04-01> patch level 2
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
@@ -1472,8 +1472,8 @@ Package: xy 2013/10/06 Xy-pic version 3.8.9
 \c@plausible_assignment=\count382
 \dhatheight=\skip81
 LaTeX Info: Redefining \Mbar on input line 111.
- (./Mapping Judge Numbers to Judge Names.aux)
-\openout1 = `"Mapping Judge Numbers to Judge Names.aux"'.
+ (./Write-Up.aux)
+\openout1 = `Write-Up.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 155.
 LaTeX Font Info:    ... okay on input line 155.
@@ -1574,9 +1574,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 155.
 LaTeX Info: Redefining \pageref on input line 155.
 LaTeX Info: Redefining \nameref on input line 155.
- (./Mapping Judge Numbers to Judge Names.out) (./Mapping Judge Numbers to Judge Names.out)
+ (./Write-Up.out) (./Write-Up.out)
 \@outlinefile=\write6
-\openout6 = `"Mapping Judge Numbers to Judge Names.out"'.
+\openout6 = `Write-Up.out'.
 
 LaTeX Font Info:    Try loading font information for U+msa on input line 155.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1591,11 +1591,11 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 155.
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 Package xypdf Info: Line width: 0.43799pt on input line 155.
- (./Mapping Judge Numbers to Judge Names.toc [1
+ (./Write-Up.toc [1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@toc=\write7
-\openout7 = `"Mapping Judge Numbers to Judge Names.toc"'.
+\openout7 = `Write-Up.toc'.
 
  [2] [3]
 <Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf, id=245, 638.1846pt x 278.77196pt>
@@ -1966,7 +1966,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1284--1285
  []
 
 
-./Mapping Judge Numbers to Judge Names.tex:1294: LaTeX Error: There's no line here to end.
+./Write-Up.tex:1294: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -1983,323 +1983,290 @@ Underfull \hbox (badness 10000) in paragraph at lines 1295--1299
 
  []
 
-[43]
-Underfull \hbox (badness 10000) in paragraph at lines 1303--1304
+[43] [44] [45] [46]
 
- []
-
-
-Overfull \hbox (14.97171pt too wide) in paragraph at lines 1305--1309
-[]\T1/cmr/m/n/10.95 We as-sume $\OML/cmm/m/it/10.95 D \OMS/cmsy/m/n/10.95 ^^X []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; X \OMS/cmsy/m/n/10.95 ^^X []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^V[]\OT1/cmr/m/n/10.95 )$\T1/cmr/m/n/10.95 . \T1/cmr/bx/n/10.95 E-Step: \T1/cmr/m/n/10.95 Com-pute $\U/msb/m/n/10.95 E[]\OMS/cmsy/m/n/10.95 f[] \OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[]; D[]; S[]\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 ^^R; ^^V[]\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 S[] \OT1/cmr/m/n/10.95 =
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1327--1328
-
- []
-
-[44]
-
-./Mapping Judge Numbers to Judge Names.tex:1337: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1337 
-       
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1338--1342
-
- []
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1410.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1344.
+(hyperref)                removing `\mu' on input line 1410.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 1344.
+(hyperref)                removing `subscript' on input line 1410.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1344.
+(hyperref)                removing `math shift' on input line 1410.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1344.
-
-[45]
-<Figures/Judge_Capacity_Vs_Number_of_Trials.pdf, id=993, 344.54895pt x 281.60934pt>
+<Figures/Judge_Capacity_Vs_Number_of_Trials.pdf, id=996, 344.54895pt x 281.60934pt>
 File: Figures/Judge_Capacity_Vs_Number_of_Trials.pdf Graphic file (type pdf)
 <use Figures/Judge_Capacity_Vs_Number_of_Trials.pdf>
-Package pdftex.def Info: Figures/Judge_Capacity_Vs_Number_of_Trials.pdf  used on input line 1362.
+Package pdftex.def Info: Figures/Judge_Capacity_Vs_Number_of_Trials.pdf  used on input line 1429.
 (pdftex.def)             Requested size: 258.41107pt x 211.20648pt.
-<Figures/Utilization_Of_Judge_County_Combiations_Included_Histogram.pdf, id=996, 339.04893pt x 267.6424pt>
+[47]
+<Figures/Utilization_Of_Judge_County_Combiations_Included_Histogram.pdf, id=1008, 339.04893pt x 267.6424pt>
 File: Figures/Utilization_Of_Judge_County_Combiations_Included_Histogram.pdf Graphic file (type pdf)
 <use Figures/Utilization_Of_Judge_County_Combiations_Included_Histogram.pdf>
-Package pdftex.def Info: Figures/Utilization_Of_Judge_County_Combiations_Included_Histogram.pdf  used on input line 1378.
+Package pdftex.def Info: Figures/Utilization_Of_Judge_County_Combiations_Included_Histogram.pdf  used on input line 1445.
 (pdftex.def)             Requested size: 254.28607pt x 200.7313pt.
- [46 <./Figures/Judge_Capacity_Vs_Number_of_Trials.pdf>] [47 <./Figures/Utilization_Of_Judge_County_Combiations_Included_Histogram.pdf>] [48] [49] (./Mapping Judge Numbers to Judge Names.bbl) [50]
-Underfull \hbox (badness 1642) in paragraph at lines 1473--1473
+ [48 <./Figures/Judge_Capacity_Vs_Number_of_Trials.pdf>] [49 <./Figures/Utilization_Of_Judge_County_Combiations_Included_Histogram.pdf>] [50] [51] (./Write-Up.bbl) [52]
+Underfull \hbox (badness 1642) in paragraph at lines 1540--1540
 \T1/cmr/m/n/9 web-site. These judges are Thomas W. Cooper, Jr. and G. Thomas Cooper, Jr.; please see []$https :
  []
 
 
-Underfull \hbox (badness 4832) in paragraph at lines 1473--1473
+Underfull \hbox (badness 4832) in paragraph at lines 1540--1540
 \T1/cmr/m/n/9 / / www . sccourts . org / circuitCourt / displaycirjudge . cfm ? judgeid = 2054$[] and []$https : / / www . sccourts . org / circuitCourt /
  []
 
 
-Overfull \hbox (35.85669pt too wide) in paragraph at lines 1482--1533
+Overfull \hbox (35.85669pt too wide) in paragraph at lines 1549--1600
  []|   [] 
  []
 
-[51
+[53
 
-] [52] [53]
-Overfull \hbox (44.39246pt too wide) in paragraph at lines 1673--1736
+] [54] [55]
+Overfull \hbox (44.39246pt too wide) in paragraph at lines 1740--1803
  []|   [] 
  []
 
-[54] [55]
-<Figures/Month_Histogram.pdf, id=1097, 380.34023pt x 331.62108pt>
+[56] [57]
+<Figures/Month_Histogram.pdf, id=1108, 380.34023pt x 331.62108pt>
 File: Figures/Month_Histogram.pdf Graphic file (type pdf)
 <use Figures/Month_Histogram.pdf>
-Package pdftex.def Info: Figures/Month_Histogram.pdf  used on input line 1748.
+Package pdftex.def Info: Figures/Month_Histogram.pdf  used on input line 1815.
 (pdftex.def)             Requested size: 285.25446pt x 248.71518pt.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 1754.
+               Default added (so using `!tbp') on input line 1821.
 
-<Figures/Trial_Judge_Histogram.pdf, id=1098, 587.87721pt x 245.42099pt>
+<Figures/Trial_Judge_Histogram.pdf, id=1109, 587.87721pt x 245.42099pt>
 File: Figures/Trial_Judge_Histogram.pdf Graphic file (type pdf)
 <use Figures/Trial_Judge_Histogram.pdf>
-Package pdftex.def Info: Figures/Trial_Judge_Histogram.pdf  used on input line 1759.
+Package pdftex.def Info: Figures/Trial_Judge_Histogram.pdf  used on input line 1826.
 (pdftex.def)             Requested size: 440.90683pt x 184.06528pt.
-<Figures/Judge_Plea_Histogram.pdf, id=1099, 598.87723pt x 253.24615pt>
+<Figures/Judge_Plea_Histogram.pdf, id=1110, 598.87723pt x 253.24615pt>
 File: Figures/Judge_Plea_Histogram.pdf Graphic file (type pdf)
 <use Figures/Judge_Plea_Histogram.pdf>
-Package pdftex.def Info: Figures/Judge_Plea_Histogram.pdf  used on input line 1766.
+Package pdftex.def Info: Figures/Judge_Plea_Histogram.pdf  used on input line 1833.
 (pdftex.def)             Requested size: 449.15681pt x 189.93414pt.
-<Figures/Missing_Date_Judge_Histogram.pdf, id=1100, 587.87721pt x 256.21005pt>
+<Figures/Missing_Date_Judge_Histogram.pdf, id=1111, 587.87721pt x 256.21005pt>
 File: Figures/Missing_Date_Judge_Histogram.pdf Graphic file (type pdf)
 <use Figures/Missing_Date_Judge_Histogram.pdf>
-Package pdftex.def Info: Figures/Missing_Date_Judge_Histogram.pdf  used on input line 1773.
+Package pdftex.def Info: Figures/Missing_Date_Judge_Histogram.pdf  used on input line 1840.
 (pdftex.def)             Requested size: 440.90683pt x 192.15706pt.
-<Figures/statute_first_Histogram.pdf, id=1101, 755.70313pt x 416.42508pt>
+<Figures/statute_first_Histogram.pdf, id=1112, 755.70313pt x 416.42508pt>
 File: Figures/statute_first_Histogram.pdf Graphic file (type pdf)
 <use Figures/statute_first_Histogram.pdf>
-Package pdftex.def Info: Figures/statute_first_Histogram.pdf  used on input line 1783.
+Package pdftex.def Info: Figures/statute_first_Histogram.pdf  used on input line 1850.
 (pdftex.def)             Requested size: 566.77596pt x 312.31804pt.
 
-Overfull \hbox (48.2276pt too wide) in paragraph at lines 1782--1785
+Overfull \hbox (48.2276pt too wide) in paragraph at lines 1849--1852
  []|  [] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Count_Histogram.pdf, id=1102, 385.84024pt x 281.29524pt>
+<Figures/Count_Histogram.pdf, id=1113, 385.84024pt x 281.29524pt>
 File: Figures/Count_Histogram.pdf Graphic file (type pdf)
 <use Figures/Count_Histogram.pdf>
-Package pdftex.def Info: Figures/Count_Histogram.pdf  used on input line 1791.
+Package pdftex.def Info: Figures/Count_Histogram.pdf  used on input line 1858.
 (pdftex.def)             Requested size: 289.37947pt x 210.9709pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/sgc_offcodes_Histogram.pdf, id=1103, 598.87723pt x 281.98918pt>
+<Figures/sgc_offcodes_Histogram.pdf, id=1114, 598.87723pt x 281.98918pt>
 File: Figures/sgc_offcodes_Histogram.pdf Graphic file (type pdf)
 <use Figures/sgc_offcodes_Histogram.pdf>
-Package pdftex.def Info: Figures/sgc_offcodes_Histogram.pdf  used on input line 1798.
+Package pdftex.def Info: Figures/sgc_offcodes_Histogram.pdf  used on input line 1865.
 (pdftex.def)             Requested size: 449.15681pt x 211.49135pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Crime_Type_Histogram.pdf, id=1104, 313.12914pt x 327.59988pt>
+<Figures/Crime_Type_Histogram.pdf, id=1115, 313.12914pt x 327.59988pt>
 File: Figures/Crime_Type_Histogram.pdf Graphic file (type pdf)
 <use Figures/Crime_Type_Histogram.pdf>
-Package pdftex.def Info: Figures/Crime_Type_Histogram.pdf  used on input line 1809.
+Package pdftex.def Info: Figures/Crime_Type_Histogram.pdf  used on input line 1876.
 (pdftex.def)             Requested size: 234.84627pt x 245.6993pt.
 
-Overfull \hbox (23.45795pt too wide) in paragraph at lines 1808--1812
+Overfull \hbox (23.45795pt too wide) in paragraph at lines 1875--1879
  [] 
  []
 
-<Figures/Categorical_Offense_Type_Histogram.pdf, id=1105, 313.12914pt x 311.68042pt>
+<Figures/Categorical_Offense_Type_Histogram.pdf, id=1116, 313.12914pt x 311.68042pt>
 File: Figures/Categorical_Offense_Type_Histogram.pdf Graphic file (type pdf)
 <use Figures/Categorical_Offense_Type_Histogram.pdf>
-Package pdftex.def Info: Figures/Categorical_Offense_Type_Histogram.pdf  used on input line 1819.
+Package pdftex.def Info: Figures/Categorical_Offense_Type_Histogram.pdf  used on input line 1886.
 (pdftex.def)             Requested size: 234.84627pt x 233.75974pt.
 
-Overfull \hbox (23.45795pt too wide) in paragraph at lines 1818--1822
+Overfull \hbox (23.45795pt too wide) in paragraph at lines 1885--1889
  [] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Drug_Crime_Type_Histogram.pdf, id=1106, 313.12914pt x 327.59988pt>
+<Figures/Drug_Crime_Type_Histogram.pdf, id=1117, 313.12914pt x 327.59988pt>
 File: Figures/Drug_Crime_Type_Histogram.pdf Graphic file (type pdf)
 <use Figures/Drug_Crime_Type_Histogram.pdf>
-Package pdftex.def Info: Figures/Drug_Crime_Type_Histogram.pdf  used on input line 1832.
+Package pdftex.def Info: Figures/Drug_Crime_Type_Histogram.pdf  used on input line 1899.
 (pdftex.def)             Requested size: 234.84627pt x 245.6993pt.
-<Figures/Property_Crime_Type_Histogram.pdf, id=1107, 313.12914pt x 331.113pt>
+<Figures/Property_Crime_Type_Histogram.pdf, id=1118, 313.12914pt x 331.113pt>
 File: Figures/Property_Crime_Type_Histogram.pdf Graphic file (type pdf)
 <use Figures/Property_Crime_Type_Histogram.pdf>
-Package pdftex.def Info: Figures/Property_Crime_Type_Histogram.pdf  used on input line 1834.
+Package pdftex.def Info: Figures/Property_Crime_Type_Histogram.pdf  used on input line 1901.
 (pdftex.def)             Requested size: 234.84627pt x 248.33414pt.
-<Figures/Violent_Crime_Type_Histogram.pdf, id=1108, 313.12914pt x 331.113pt>
+<Figures/Violent_Crime_Type_Histogram.pdf, id=1119, 313.12914pt x 331.113pt>
 File: Figures/Violent_Crime_Type_Histogram.pdf Graphic file (type pdf)
 <use Figures/Violent_Crime_Type_Histogram.pdf>
-Package pdftex.def Info: Figures/Violent_Crime_Type_Histogram.pdf  used on input line 1836.
+Package pdftex.def Info: Figures/Violent_Crime_Type_Histogram.pdf  used on input line 1903.
 (pdftex.def)             Requested size: 234.84627pt x 248.33414pt.
-<Figures/Other_Crime_Type_Histogram.pdf, id=1109, 318.62915pt x 331.113pt>
+<Figures/Other_Crime_Type_Histogram.pdf, id=1120, 318.62915pt x 331.113pt>
 File: Figures/Other_Crime_Type_Histogram.pdf Graphic file (type pdf)
 <use Figures/Other_Crime_Type_Histogram.pdf>
-Package pdftex.def Info: Figures/Other_Crime_Type_Histogram.pdf  used on input line 1838.
+Package pdftex.def Info: Figures/Other_Crime_Type_Histogram.pdf  used on input line 1905.
 (pdftex.def)             Requested size: 238.97127pt x 248.33414pt.
 
-Overfull \hbox (7.72194pt too wide) in paragraph at lines 1830--1840
+Overfull \hbox (7.72194pt too wide) in paragraph at lines 1897--1907
  []|  [] 
  []
 
 
-LaTeX Warning: Float too large for page by 3.4383pt on input line 1842.
+LaTeX Warning: Float too large for page by 3.4383pt on input line 1909.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Offense_Seriousness_Histogram.pdf, id=1116, 380.34023pt x 376.58055pt>
+<Figures/Offense_Seriousness_Histogram.pdf, id=1127, 380.34023pt x 376.58055pt>
 File: Figures/Offense_Seriousness_Histogram.pdf Graphic file (type pdf)
 <use Figures/Offense_Seriousness_Histogram.pdf>
-Package pdftex.def Info: Figures/Offense_Seriousness_Histogram.pdf  used on input line 1846.
+Package pdftex.def Info: Figures/Offense_Seriousness_Histogram.pdf  used on input line 1913.
 (pdftex.def)             Requested size: 285.25446pt x 282.43471pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/ccpnts_Histogram.pdf, id=1117, 318.62915pt x 278.77196pt>
+<Figures/ccpnts_Histogram.pdf, id=1128, 318.62915pt x 278.77196pt>
 File: Figures/ccpnts_Histogram.pdf Graphic file (type pdf)
 <use Figures/ccpnts_Histogram.pdf>
-Package pdftex.def Info: Figures/ccpnts_Histogram.pdf  used on input line 1857.
+Package pdftex.def Info: Figures/ccpnts_Histogram.pdf  used on input line 1924.
 (pdftex.def)             Requested size: 238.97127pt x 209.07843pt.
 
-Overfull \hbox (27.58295pt too wide) in paragraph at lines 1856--1860
+Overfull \hbox (27.58295pt too wide) in paragraph at lines 1923--1927
  [] 
  []
 
-<Figures/ccpts99_Histogram.pdf, id=1118, 318.62915pt x 278.77196pt>
+<Figures/ccpts99_Histogram.pdf, id=1129, 318.62915pt x 278.77196pt>
 File: Figures/ccpts99_Histogram.pdf Graphic file (type pdf)
 <use Figures/ccpts99_Histogram.pdf>
-Package pdftex.def Info: Figures/ccpts99_Histogram.pdf  used on input line 1867.
+Package pdftex.def Info: Figures/ccpts99_Histogram.pdf  used on input line 1934.
 (pdftex.def)             Requested size: 238.97127pt x 209.07843pt.
 
-Overfull \hbox (27.58295pt too wide) in paragraph at lines 1866--1869
+Overfull \hbox (27.58295pt too wide) in paragraph at lines 1933--1936
  [] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/PPoints_Histogram.pdf, id=1119, 313.12914pt x 278.77196pt>
+<Figures/PPoints_Histogram.pdf, id=1130, 313.12914pt x 278.77196pt>
 File: Figures/PPoints_Histogram.pdf Graphic file (type pdf)
 <use Figures/PPoints_Histogram.pdf>
-Package pdftex.def Info: Figures/PPoints_Histogram.pdf  used on input line 1879.
+Package pdftex.def Info: Figures/PPoints_Histogram.pdf  used on input line 1946.
 (pdftex.def)             Requested size: 228.58235pt x 203.50182pt.
 
-Overfull \hbox (17.19403pt too wide) in paragraph at lines 1878--1882
+Overfull \hbox (17.19403pt too wide) in paragraph at lines 1945--1949
  [] 
  []
 
-<Figures/Ages_Histogram.pdf, id=1120, 302.12912pt x 278.77196pt>
+<Figures/Ages_Histogram.pdf, id=1131, 302.12912pt x 278.77196pt>
 File: Figures/Ages_Histogram.pdf Graphic file (type pdf)
 <use Figures/Ages_Histogram.pdf>
-Package pdftex.def Info: Figures/Ages_Histogram.pdf  used on input line 1889.
+Package pdftex.def Info: Figures/Ages_Histogram.pdf  used on input line 1956.
 (pdftex.def)             Requested size: 220.55241pt x 203.50182pt.
 
-Overfull \hbox (9.1641pt too wide) in paragraph at lines 1888--1892
+Overfull \hbox (9.1641pt too wide) in paragraph at lines 1955--1959
  [] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Sentence_STATA_Histogram.pdf, id=1121, 318.62915pt x 279.9942pt>
+<Figures/Sentence_STATA_Histogram.pdf, id=1132, 318.62915pt x 279.9942pt>
 File: Figures/Sentence_STATA_Histogram.pdf Graphic file (type pdf)
 <use Figures/Sentence_STATA_Histogram.pdf>
-Package pdftex.def Info: Figures/Sentence_STATA_Histogram.pdf  used on input line 1901.
+Package pdftex.def Info: Figures/Sentence_STATA_Histogram.pdf  used on input line 1968.
 (pdftex.def)             Requested size: 238.97127pt x 209.99513pt.
-<Figures/expmin_Histogram.pdf, id=1122, 307.62912pt x 281.70804pt>
+<Figures/expmin_Histogram.pdf, id=1133, 307.62912pt x 281.70804pt>
 File: Figures/expmin_Histogram.pdf Graphic file (type pdf)
 <use Figures/expmin_Histogram.pdf>
-Package pdftex.def Info: Figures/expmin_Histogram.pdf  used on input line 1902.
+Package pdftex.def Info: Figures/expmin_Histogram.pdf  used on input line 1969.
 (pdftex.def)             Requested size: 230.72127pt x 211.2805pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Sentence_Given_Trial_CSV_Histogram.pdf, id=1123, 302.12912pt x 282.7007pt>
+<Figures/Sentence_Given_Trial_CSV_Histogram.pdf, id=1134, 302.12912pt x 282.7007pt>
 File: Figures/Sentence_Given_Trial_CSV_Histogram.pdf Graphic file (type pdf)
 <use Figures/Sentence_Given_Trial_CSV_Histogram.pdf>
-Package pdftex.def Info: Figures/Sentence_Given_Trial_CSV_Histogram.pdf  used on input line 1911.
+Package pdftex.def Info: Figures/Sentence_Given_Trial_CSV_Histogram.pdf  used on input line 1978.
 (pdftex.def)             Requested size: 226.59627pt x 212.025pt.
-<Figures/Sentence_Given_Plea_CSV_Histogram.pdf, id=1124, 318.62915pt x 281.89375pt>
+<Figures/Sentence_Given_Plea_CSV_Histogram.pdf, id=1135, 318.62915pt x 281.89375pt>
 File: Figures/Sentence_Given_Plea_CSV_Histogram.pdf Graphic file (type pdf)
 <use Figures/Sentence_Given_Plea_CSV_Histogram.pdf>
-Package pdftex.def Info: Figures/Sentence_Given_Plea_CSV_Histogram.pdf  used on input line 1912.
+Package pdftex.def Info: Figures/Sentence_Given_Plea_CSV_Histogram.pdf  used on input line 1979.
 (pdftex.def)             Requested size: 238.97127pt x 211.4198pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Judge_STATA_Histogram.pdf, id=1125, 598.87723pt x 275.2164pt>
+<Figures/Judge_STATA_Histogram.pdf, id=1136, 598.87723pt x 275.2164pt>
 File: Figures/Judge_STATA_Histogram.pdf Graphic file (type pdf)
 <use Figures/Judge_STATA_Histogram.pdf>
-Package pdftex.def Info: Figures/Judge_STATA_Histogram.pdf  used on input line 1919.
+Package pdftex.def Info: Figures/Judge_STATA_Histogram.pdf  used on input line 1986.
 (pdftex.def)             Requested size: 449.15681pt x 206.41177pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf, id=1126, 337.8255pt x 278.77196pt>
+<Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf, id=1137, 337.8255pt x 278.77196pt>
 File: Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf Graphic file (type pdf)
 <use Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf>
-Package pdftex.def Info: Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf  used on input line 1929.
+Package pdftex.def Info: Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf  used on input line 1996.
 (pdftex.def)             Requested size: 236.47623pt x 195.13902pt.
-<Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf, id=1127, 337.8255pt x 278.77196pt>
+<Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf, id=1138, 337.8255pt x 278.77196pt>
 File: Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf Graphic file (type pdf)
 <use Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf>
-Package pdftex.def Info: Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf  used on input line 1930.
+Package pdftex.def Info: Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf  used on input line 1997.
 (pdftex.def)             Requested size: 236.47623pt x 195.13902pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Mapping_Judge_Numbers_To_Judge_Names_Judge_Distribution.pdf, id=1128, 587.87721pt x 219.56851pt>
+<Figures/Mapping_Judge_Numbers_To_Judge_Names_Judge_Distribution.pdf, id=1139, 587.87721pt x 219.56851pt>
 File: Figures/Mapping_Judge_Numbers_To_Judge_Names_Judge_Distribution.pdf Graphic file (type pdf)
 <use Figures/Mapping_Judge_Numbers_To_Judge_Names_Judge_Distribution.pdf>
-Package pdftex.def Info: Figures/Mapping_Judge_Numbers_To_Judge_Names_Judge_Distribution.pdf  used on input line 1937.
+Package pdftex.def Info: Figures/Mapping_Judge_Numbers_To_Judge_Names_Judge_Distribution.pdf  used on input line 2004.
 (pdftex.def)             Requested size: 440.90683pt x 164.67596pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Mapping_Judge_Numbers_To_Judge_Names_Week_Distribution.pdf, id=1129, 628.63808pt x 238.07309pt>
+<Figures/Mapping_Judge_Numbers_To_Judge_Names_Week_Distribution.pdf, id=1140, 628.63808pt x 238.07309pt>
 File: Figures/Mapping_Judge_Numbers_To_Judge_Names_Week_Distribution.pdf Graphic file (type pdf)
 <use Figures/Mapping_Judge_Numbers_To_Judge_Names_Week_Distribution.pdf>
-Package pdftex.def Info: Figures/Mapping_Judge_Numbers_To_Judge_Names_Week_Distribution.pdf  used on input line 1945.
+Package pdftex.def Info: Figures/Mapping_Judge_Numbers_To_Judge_Names_Week_Distribution.pdf  used on input line 2012.
 (pdftex.def)             Requested size: 471.4774pt x 178.55438pt.
 
-Overfull \hbox (1.72238pt too wide) in paragraph at lines 1945--1947
+Overfull \hbox (1.72238pt too wide) in paragraph at lines 2012--2014
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[56
+[58
 
- <./Figures/Month_Histogram.pdf>] [57 <./Figures/Trial_Judge_Histogram.pdf> <./Figures/Judge_Plea_Histogram.pdf
+ <./Figures/Month_Histogram.pdf>] [59 <./Figures/Trial_Judge_Histogram.pdf> <./Figures/Judge_Plea_Histogram.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/Judge_Plea_Histogram.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./Figures/Missing_Date_Judge_Histogram.pdf
@@ -2307,18 +2274,18 @@ pdfTeX warning: pdflatex (file ./Figures/Judge_Plea_Histogram.pdf): PDF inclusio
 pdfTeX warning: pdflatex (file ./Figures/Missing_Date_Judge_Histogram.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
 
-LaTeX Warning: Text page 58 contains only floats.
+LaTeX Warning: Text page 60 contains only floats.
 
-[58 <./Figures/statute_first_Histogram.pdf> <./Figures/Count_Histogram.pdf
+[60 <./Figures/statute_first_Histogram.pdf> <./Figures/Count_Histogram.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/Count_Histogram.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [59 <./Figures/sgc_offcodes_Histogram.pdf> <./Figures/Crime_Type_Histogram.pdf
+>] [61 <./Figures/sgc_offcodes_Histogram.pdf> <./Figures/Crime_Type_Histogram.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/Crime_Type_Histogram.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./Figures/Categorical_Offense_Type_Histogram.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/Categorical_Offense_Type_Histogram.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [60 <./Figures/Drug_Crime_Type_Histogram.pdf> <./Figures/Property_Crime_Type_Histogram.pdf
+>] [62 <./Figures/Drug_Crime_Type_Histogram.pdf> <./Figures/Property_Crime_Type_Histogram.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/Property_Crime_Type_Histogram.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./Figures/Violent_Crime_Type_Histogram.pdf
@@ -2327,13 +2294,13 @@ pdfTeX warning: pdflatex (file ./Figures/Violent_Crime_Type_Histogram.pdf): PDF 
 > <./Figures/Other_Crime_Type_Histogram.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/Other_Crime_Type_Histogram.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [61 <./Figures/Offense_Seriousness_Histogram.pdf> <./Figures/ccpnts_Histogram.pdf
+>] [63 <./Figures/Offense_Seriousness_Histogram.pdf> <./Figures/ccpnts_Histogram.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/ccpnts_Histogram.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./Figures/ccpts99_Histogram.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/ccpts99_Histogram.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [62 <./Figures/PPoints_Histogram.pdf> <./Figures/Ages_Histogram.pdf
+>] [64 <./Figures/PPoints_Histogram.pdf> <./Figures/Ages_Histogram.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/Ages_Histogram.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./Figures/Sentence_STATA_Histogram.pdf
@@ -2342,44 +2309,44 @@ pdfTeX warning: pdflatex (file ./Figures/Sentence_STATA_Histogram.pdf): PDF incl
 > <./Figures/expmin_Histogram.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/expmin_Histogram.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [63 <./Figures/Sentence_Given_Trial_CSV_Histogram.pdf> <./Figures/Sentence_Given_Plea_CSV_Histogram.pdf
+>] [65 <./Figures/Sentence_Given_Trial_CSV_Histogram.pdf> <./Figures/Sentence_Given_Plea_CSV_Histogram.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/Sentence_Given_Plea_CSV_Histogram.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./Figures/Judge_STATA_Histogram.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/Judge_STATA_Histogram.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [64 <./Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf> <./Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf
+>] [66 <./Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf> <./Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./Figures/Mapping_Judge_Numbers_To_Judge_Names_Judge_Distribution.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/Mapping_Judge_Numbers_To_Judge_Names_Judge_Distribution.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [65 <./Figures/Mapping_Judge_Numbers_To_Judge_Names_Week_Distribution.pdf>] [66
+>] [67 <./Figures/Mapping_Judge_Numbers_To_Judge_Names_Week_Distribution.pdf>] [68
 
-] [67] [68] [69] [70]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2037.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2037.
- (./Mapping Judge Numbers to Judge Names.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2037.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2037.
-Package rerunfilecheck Info: File `"Mapping Judge Numbers to Judge Names".out' has not changed.
+] [69] [70] [71] [72]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2104.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2104.
+ (./Write-Up.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2104.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2104.
+Package rerunfilecheck Info: File `Write-Up.out' has not changed.
 (rerunfilecheck)             Checksum: 4CDE51FF9CB1005C705C4DA3F4F20C3A;2986.
  ) 
 Here is how much of TeX's memory you used:
- 37077 strings out of 492649
- 703506 string characters out of 6129622
- 1102220 words of memory out of 5000000
- 39928 multiletter control sequences out of 15000+600000
+ 37081 strings out of 492649
+ 703070 string characters out of 6129622
+ 1103162 words of memory out of 5000000
+ 39929 multiletter control sequences out of 15000+600000
  558266 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,16n,71p,10452b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,16n,71p,10422b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/l
 ocal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbi1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/lo
 cal/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on "Mapping Judge Numbers to Judge Names.pdf" (70 pages, 4064364 bytes).
+Output written on Write-Up.pdf (72 pages, 4070328 bytes).
 PDF statistics:
- 1541 PDF objects out of 1728 (max. 8388607)
- 1358 compressed objects within 14 object streams
- 299 named destinations out of 1000 (max. 500000)
+ 1553 PDF objects out of 1728 (max. 8388607)
+ 1368 compressed objects within 14 object streams
+ 302 named destinations out of 1000 (max. 500000)
  592 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -32,30 +32,31 @@
 \contentsline {subsubsection}{\numberline {4.4.2}Joint estimation of $\mu _p$ and $\mu _t$}{43}{subsubsection.4.4.2}
 \contentsline {paragraph}{Approach 1:}{43}{section*.47}
 \contentsline {paragraph}{Approach 2:}{44}{section*.48}
-\contentsline {subsubsection}{\numberline {4.4.3}Estimation of $\mu _t$}{45}{subsubsection.4.4.3}
-\contentsline {subsubsection}{\numberline {4.4.4}Judge Schedules in the Data}{47}{subsubsection.4.4.4}
-\contentsline {subsection}{\numberline {4.5}Choice Model for Judge Shopping}{48}{subsection.4.5}
-\contentsline {subsection}{\numberline {4.6}Simulation Study Outline}{48}{subsection.4.6}
-\contentsline {paragraph}{Overview}{48}{section*.51}
-\contentsline {paragraph}{Defendant Arrival Process.}{49}{section*.52}
-\contentsline {paragraph}{State Variable for the Simulation.}{49}{section*.53}
-\contentsline {paragraph}{Calibration.}{49}{section*.54}
-\contentsline {subsection}{\numberline {4.7}Counterfactual Study}{49}{subsection.4.7}
-\contentsline {paragraph}{Different Judge Rotations:}{49}{section*.55}
-\contentsline {paragraph}{Capacity:}{50}{section*.56}
-\contentsline {paragraph}{What Should We Report?}{50}{section*.57}
-\contentsline {section}{\numberline {A}Data Cleaning}{51}{appendix.A}
-\contentsline {section}{\numberline {B}Supplementary Material}{53}{appendix.B}
-\contentsline {subsection}{\numberline {B.1}Tables}{53}{subsection.B.1}
-\contentsline {subsection}{\numberline {B.2}Figures}{56}{subsection.B.2}
-\contentsline {section}{\numberline {C}Further Analysis of the Sentencing Events Missing the \emph {date} Data Field}{66}{appendix.C}
-\contentsline {section}{\numberline {D}Judge Assignments}{67}{appendix.D}
-\contentsline {subsection}{\numberline {D.1}Case i - No Assignments.}{67}{subsection.D.1}
-\contentsline {subsection}{\numberline {D.2}Case ii - A Single Assignment}{67}{subsection.D.2}
-\contentsline {subsubsection}{\numberline {D.2.1}Case ii (a)}{67}{subsubsection.D.2.1}
-\contentsline {subsubsection}{\numberline {D.2.2}Case ii (b)}{68}{subsubsection.D.2.2}
-\contentsline {subsection}{\numberline {D.3}Case iii - Two Assignments}{68}{subsection.D.3}
-\contentsline {subsection}{\numberline {D.4}Case iv - Multiple Assignments.}{69}{subsection.D.4}
-\contentsline {subsubsection}{\numberline {D.4.1}Case iv (a)}{69}{subsubsection.D.4.1}
-\contentsline {subsubsection}{\numberline {D.4.2}Case iv (b)}{69}{subsubsection.D.4.2}
-\contentsline {subsubsection}{\numberline {D.4.3}Case iv (c)}{70}{subsubsection.D.4.3}
+\contentsline {paragraph}{Approach 3:}{45}{section*.49}
+\contentsline {subsubsection}{\numberline {4.4.3}Estimation of $\mu _t$}{47}{subsubsection.4.4.3}
+\contentsline {subsubsection}{\numberline {4.4.4}Judge Schedules in the Data}{49}{subsubsection.4.4.4}
+\contentsline {subsection}{\numberline {4.5}Choice Model for Judge Shopping}{50}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Simulation Study Outline}{50}{subsection.4.6}
+\contentsline {paragraph}{Overview}{50}{section*.52}
+\contentsline {paragraph}{Defendant Arrival Process.}{51}{section*.53}
+\contentsline {paragraph}{State Variable for the Simulation.}{51}{section*.54}
+\contentsline {paragraph}{Calibration.}{51}{section*.55}
+\contentsline {subsection}{\numberline {4.7}Counterfactual Study}{51}{subsection.4.7}
+\contentsline {paragraph}{Different Judge Rotations:}{51}{section*.56}
+\contentsline {paragraph}{Capacity:}{52}{section*.57}
+\contentsline {paragraph}{What Should We Report?}{52}{section*.58}
+\contentsline {section}{\numberline {A}Data Cleaning}{53}{appendix.A}
+\contentsline {section}{\numberline {B}Supplementary Material}{55}{appendix.B}
+\contentsline {subsection}{\numberline {B.1}Tables}{55}{subsection.B.1}
+\contentsline {subsection}{\numberline {B.2}Figures}{58}{subsection.B.2}
+\contentsline {section}{\numberline {C}Further Analysis of the Sentencing Events Missing the \emph {date} Data Field}{68}{appendix.C}
+\contentsline {section}{\numberline {D}Judge Assignments}{69}{appendix.D}
+\contentsline {subsection}{\numberline {D.1}Case i - No Assignments.}{69}{subsection.D.1}
+\contentsline {subsection}{\numberline {D.2}Case ii - A Single Assignment}{69}{subsection.D.2}
+\contentsline {subsubsection}{\numberline {D.2.1}Case ii (a)}{69}{subsubsection.D.2.1}
+\contentsline {subsubsection}{\numberline {D.2.2}Case ii (b)}{70}{subsubsection.D.2.2}
+\contentsline {subsection}{\numberline {D.3}Case iii - Two Assignments}{70}{subsection.D.3}
+\contentsline {subsection}{\numberline {D.4}Case iv - Multiple Assignments.}{71}{subsection.D.4}
+\contentsline {subsubsection}{\numberline {D.4.1}Case iv (a)}{71}{subsubsection.D.4.1}
+\contentsline {subsubsection}{\numberline {D.4.2}Case iv (b)}{71}{subsubsection.D.4.2}
+\contentsline {subsubsection}{\numberline {D.4.3}Case iv (c)}{72}{subsubsection.D.4.3}

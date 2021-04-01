@@ -2,8 +2,8 @@ PWD /Users/joseivelarde/Projects/judge-shopping/documents/Write-Up
 INPUT /usr/local/texlive/2018/texmf.cnf
 INPUT /usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT Mapping Judge Numbers to Judge Names.tex
-OUTPUT Mapping Judge Numbers to Judge Names.log
+INPUT Write-Up.tex
+OUTPUT Write-Up.log
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/size11.clo
@@ -392,9 +392,9 @@ INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xypdf-cu.tex
 INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xypdf-fr.tex
 INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xypdf-li.tex
 INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xypdf-ro.tex
-INPUT Mapping Judge Numbers to Judge Names.aux
-INPUT Mapping Judge Numbers to Judge Names.aux
-OUTPUT Mapping Judge Numbers to Judge Names.aux
+INPUT Write-Up.aux
+INPUT Write-Up.aux
+OUTPUT Write-Up.aux
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 INPUT /usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -409,14 +409,14 @@ INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
-INPUT Mapping Judge Numbers to Judge Names.out
-INPUT Mapping Judge Numbers to Judge Names.out
-INPUT Mapping Judge Numbers to Judge Names.out
-INPUT Mapping Judge Numbers to Judge Names.out
-OUTPUT Mapping Judge Numbers to Judge Names.pdf
-INPUT ./Mapping Judge Numbers to Judge Names.out
-INPUT ./Mapping Judge Numbers to Judge Names.out
-OUTPUT Mapping Judge Numbers to Judge Names.out
+INPUT Write-Up.out
+INPUT Write-Up.out
+INPUT Write-Up.out
+INPUT Write-Up.out
+OUTPUT Write-Up.pdf
+INPUT ./Write-Up.out
+INPUT ./Write-Up.out
+OUTPUT Write-Up.out
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
@@ -450,12 +450,12 @@ INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecrm1440.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm
-INPUT Mapping Judge Numbers to Judge Names.toc
-INPUT Mapping Judge Numbers to Judge Names.toc
+INPUT Write-Up.toc
+INPUT Write-Up.toc
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecbx1095.tfm
 INPUT /usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecbi1095.tfm
-OUTPUT Mapping Judge Numbers to Judge Names.toc
+OUTPUT Write-Up.toc
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecrm0900.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm
@@ -575,8 +575,8 @@ INPUT ./Figures/Judge_Capacity_Vs_Number_of_Trials.pdf
 INPUT Figures/Utilization_Of_Judge_County_Combiations_Included_Histogram.pdf
 INPUT ./Figures/Utilization_Of_Judge_County_Combiations_Included_Histogram.pdf
 INPUT ./Figures/Utilization_Of_Judge_County_Combiations_Included_Histogram.pdf
-INPUT Mapping Judge Numbers to Judge Names.bbl
-INPUT Mapping Judge Numbers to Judge Names.bbl
+INPUT Write-Up.bbl
+INPUT Write-Up.bbl
 INPUT Figures/Month_Histogram.pdf
 INPUT ./Figures/Month_Histogram.pdf
 INPUT ./Figures/Month_Histogram.pdf
@@ -659,9 +659,9 @@ INPUT Figures/Mapping_Judge_Numbers_To_Judge_Names_Week_Distribution.pdf
 INPUT ./Figures/Mapping_Judge_Numbers_To_Judge_Names_Week_Distribution.pdf
 INPUT ./Figures/Mapping_Judge_Numbers_To_Judge_Names_Week_Distribution.pdf
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecbi1440.tfm
-INPUT Mapping Judge Numbers to Judge Names.aux
-INPUT ./Mapping Judge Numbers to Judge Names.out
-INPUT ./Mapping Judge Numbers to Judge Names.out
+INPUT Write-Up.aux
+INPUT ./Write-Up.out
+INPUT ./Write-Up.out
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc

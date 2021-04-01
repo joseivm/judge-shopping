@@ -1,0 +1,81 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Judge Shopping To Do List}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{To Do List}
+  \subsection*{Current Priorities}
+    \begin{itemize}
+      \item Replicate Nasser's discrepancy analysis between the sentencing data and
+      the schedule data. This includes: 1. reading the section in the document detailing the
+      particularities of the schedule data 2. Running some tests to make sure  daily schedule data
+      was parsed correctly.
+      \item Read background material and relevant sections in the document to refine or
+      confirm the criteria for "clean days".
+      \item Implement "clean days" exclusion and service rate estimation procedures.
+    \end{itemize}
+
+  \subsection{Data}
+    \subsubsection{Schedule Data}
+      \begin{itemize}
+        \item Parse the assignment types (e.g. CP, GS, CC)
+      \end{itemize}
+
+  \subsection{Parameter Estimation}
+    \subsubsection{Conviction Probability at Trial - $\theta$}
+      \begin{itemize}
+        \item Look into Hurdle model used by Hester.
+        \item Use more covariates to predict this.
+      \end{itemize}
+
+    \subsubsection{Expected Sentence Length if Convicted - $\tau$}
+      \begin{itemize}
+        \item Look into Hurdle model used by Hester.
+        \item Use more covariates to predict this.
+      \end{itemize}
+
+    \subsubsection{Defendant Cost of Trial - $c_d$}
+      \begin{itemize}
+        \item Figure out how to implement the MLE approach described in Nasser's document
+        that uses information from sentencing events other than those in which $s < u_j$
+      \end{itemize}
+
+    \subsubsection{Judge maximum and minimum plea - $l_j(\theta \tau),u_j(\theta \tau)$}
+      \begin{itemize}
+        \item Look into convex hull approach.
+        \item Remove each defendant from K nearest neighbors.
+      \end{itemize}
+
+    \subsubsection{Service Rates - $\mu_p, \mu_t$}
+      \begin{itemize}
+        \item Study documentation to refine exclusion criteria for "clean days".
+        \item Try approach 1 for estimating plea service rate. Figure out how to enumerate the tuples of interest.
+        \item Try approach 2 for estimating plea service rate.
+        \item Try approach 3 for estimating plea service rate.
+        \item Use updated plea service rate estimate to re-estimate trial service rate.
+      \end{itemize}
+
+  \subsection{Simulation}
+    \begin{itemize}
+      \item Confirm that current way of simulating arrivals works. Current way is to draw the number of arrivals for each period from a Poisson($\lambda_c$) for each county, $c$, and then draw that number of defendants from the county's past defendants, with replacement.
+      \item Fix the processing of backlogged defendants.
+      \item Consider only assigning judges to the counties they are assigned to in the data. Or taking into consideration geography when assigning judges.
+      \item Incorporate defendants' decision to go to trial.
+      \item Incorporate capacity reductions for judges from time spent on trials.
+      \item Consider assigning more than one judge per week for busier counties.
+    \end{itemize}
+
+  \subsection{Analysis}
+    \begin{itemize}
+      \item Think about what other metrics to compute.
+      \item Consider analyzing county level outcomes (eg intra and inter county variance).
+    \end{itemize}
+
+\end{document}
