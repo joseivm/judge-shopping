@@ -16,6 +16,7 @@ expected_min_sentece_file = PROJECT_DIR + '/data/raw/Sentencing Data/expected_mi
 
 # Output files
 processed_sentencing_data_file = PROJECT_DIR + '/data/raw/sentencing_data.csv'
+judge_name_id_mapping_file = PROJECT_DIR + '/data/processed/judge_name_id_mapping.csv'
 
 clean_column_names = {'date':'Date','county':'County','circuit':'Circuit','judge':'JudgeID',
 'statute':'Statute','offdescr':'OffenseDescription','sgc_offcode':'OffenseCode',
@@ -46,6 +47,7 @@ def clean_sentencing_data():
     sdf.loc[sdf.Date.notna(),'Week'] = sdf.loc[sdf.Date.notna(),'Date'].apply(get_week)
     sdf.to_csv('data/processed/temp_sentencing_data.csv',index=False)
     sdf = add_judge_names(sdf)
+    sdf['Plea'] = (sdf['Trial']+1)%2
     return(sdf)
 
 def add_judge_names(sdf):
@@ -60,6 +62,7 @@ def add_judge_names(sdf):
 
     max_indices = counts.groupby('JudgeID')['N'].transform(max) == counts['N']
     mapping = counts.loc[max_indices,['JudgeName','JudgeID']]
+    mapping.to_csv(judge_name_id_mapping_file,index=False)
     sdf = sdf.merge(mapping,on='JudgeID',how='left')
     return(sdf)
 
