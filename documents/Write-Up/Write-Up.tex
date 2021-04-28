@@ -186,872 +186,661 @@ This document describes the two datasets we have on the criminal courts in South
 {\singlespacing \tableofcontents}
 
 \section{Sentencing Data Set}
-\label{Sec:Sentencing_Data_Description}
+  \label{Sec:Sentencing_Data_Description}
 
-This section describes the dataset we have on the criminal case sentences in South Carolina circuit courts (the courts of general jurisdiction). The offenders included in this dataset are convicted of a felony or serious misdemeanour. There are two versions of the sentencing dataset: the CSV file and the STATA file. There are 17671 offender sentencing events (rows) in both files. The CSV file has 33 data fields. This is the first dataset Larry obtained. The STATA file has 21 data fields. This is the second dataset Larry obtained. In what follows, we assume the sentencing dataset is cleaned as described in Appendix \ref{Sec:Appendix:Data_Cleaning}.
+	This section describes the dataset we have on the criminal case sentences in South Carolina circuit courts (the courts of general jurisdiction). The offenders included in this dataset are convicted of a felony or serious misdemeanour. There are two versions of the sentencing dataset: the CSV file and the STATA file. There are 17671 offender sentencing events (rows) in both files. The CSV file has 33 data fields. This is the first dataset Larry obtained. The STATA file has 21 data fields. This is the second dataset Larry obtained. In what follows, we assume the sentencing dataset is cleaned as described in Appendix \ref{Sec:Appendix:Data_Cleaning}.
 
-\begin{table}[H]
-	\centering
-	\vspace{2mm}
-	\caption{Data fields of the CSV and STATA files.}
-	\vspace{-2mm}
-	\setlength\tabcolsep{0pt} % default value: 6pt
-	{\footnotesize
-		\begin{tabular}{C{50mm}C{50mm}C{50mm}}
-			\toprule
-			Only CSV & Both & Only STATA \\
-			\midrule
-			%\rowgroup{Consumer Surplus} \\
-			unnamed & datedisp/data File & expmin \\
-			statute\_first (identical to statute) & circuit & jud\_no \\
-			offdescr\_first & county &  \\
-			offtypeLibHyp & counts &  \\
-			ccpnts & offser &  \\
-			ccpts99 & sgc\_offcode &  \\
-			trial & of\_hom &  \\
-			incarc & of\_rape &  \\
-			crimhist & of\_rob &  \\
-			ppoints & of\_asslt &  \\
-			male & of\_burg &  \\
-			age & of\_dstrb &  \\
-			black & of\_possn &  \\
-			judge & of\_theft &  \\
-			& of\_fraud &  \\
-			& of\_other &  \\
-			& realsent/sentence &  \\
-			& statute (99.95\% match) &  \\
-			& offdescr (99.21\% match) &  \\
-			\bottomrule
-		\end{tabular}
-	}
-	\label{Table_Sentencing_Data_Fields}
-\end{table}
-
-Table \ref{Table_Sentencing_Data_Fields} lists the data fields that are common to the CSV file and the STATA file as well as the data fields that are specific to either the CSV file or the STATA file. As shown in Table \ref{Table_Sentencing_Data_Fields}, the CSV file and the STATA file have 18 data fields in common; see the middle column of Table \ref{Table_Sentencing_Data_Fields}. Of these 18 data fields that are in common across the two files, 16 of them are identical.\footnote{To be specific, after sorting the rows of the two files based on the 16 commons data fields, the entries of these 16 data fields match exactly.} The remaining two common data fields are statute and offdescr. We observe that 99.95\% of the statute entries and 99.21\% of the offdescr entries are identical between the CSV and STATA files. Moreover, the 10 non-identical statute entries and the 141 non-identical offdescr entries seem to refer to the same statutes and offense descriptions, respectively; see Tables \ref{Table_Sentencing_Data_Fields_Statute}-\ref{Table_Sentencing_Data_Fields_Offdescr} in Appendix \ref{Sec:Appendix:Supplementary_Tables} for illustrative examples.
-% Baris added a paragraph break here!
-
-There are 14 data fields that are specific to the CSV file; see the first column of Table \ref{Table_Sentencing_Data_Fields}. Similarly, there are 2 data fields that are specific to the STATA file: expmin and jud\_no. The expmin data field is computed by Rhys; see item 1 in the STATA file description below. The jud\_no data field of the STATA file provides a numeric identifier for the judge that sentenced each offender. Although these numeric identifiers are not identical to the numeric identifiers used in the judge data field of the CSV file, there is a one-to-one mapping between them. Consequently, we use the CSV file in our analysis (in the following sections) but supplement it with the expected minimum sentence data field from the STATA file, which is calculated using Equation (\ref{Equation_Expected_Minimum_Sentence}); see Section \ref{Sec:Data_Description:STATA}. Next, we describe the data fields in the CSV and STATA files in detail.
-
-\vspace{-3mm}
-\subsection{CSV File}
-\label{Sec:Data_Description:CSV}
-This dataset is mostly complete. However, 1551 sentencing events are missing the \emph{date} data field. This corresponds to $8.7\%$ of the events; see Appendix \ref{Sec:Appendix:Missing_Dates} for further analysis of these sentencing events.\footnote{Moreover, 6 sentencing events are missing the statute, offdescr, and statute\_first data fields. This corresponds to $0.03\%$ of the events. 3 of these 6 sentencing events are also missing offdescr\_first data field.}
-
-\begin{remark}
-	Although the date data field is missing for 1551 sentencing events, the judge number and the court location, i.e., the county, information are available for these sentencing events (in the sentencing dataset). By cross checking this information with the master calendar, which has the judges' (county) assignments in each week, we are able to pin down the week during which the sentencing events occurred for 100 of the 1551 sentencing events missing the date data field. Figure \ref{Figure_Missing_Date_Histogram_of_Potential_Week_Histogram} provides a histogram of the "resolution", i.e., the number of weeks in which each sentencing event missing the date data field could have occurred. For example, the first bar indicates that for 100 of the 1551 sentencing events missing the date data field, the judge visited the county in which the sentencing event occurred only in one week. Therefore, these 100 sentencing events must have occurred in that week. Similarly, the second bar indicates that for 79 sentencing events, the judge only visited the county in which the sentencing event occurred in two weeks. Therefore, these 79 sentencing events must have occurred in one of the two weeks. Further description of the analysis of the 1551 sentencing events missing the date data field is provided in Appendix \ref{Sec:Appendix:Missing_Dates}.
-\end{remark}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.75]{Figures/Missing_Date_Histogram_of_Potential_Week_Histogram}
-	\vspace{-2mm}
-	\caption{A histogram of the number of weeks the judge visited the county in which the sentencing events missing the \emph{date} data field occurred.}
-	\label{Figure_Missing_Date_Histogram_of_Potential_Week_Histogram}
-\end{figure}
-
-\noindent The data fields of the CSV file are as follows:
-
-\vspace{-5mm}
-\begin{enumerate}
-	\itemsep-0.3em
-	\item An unnamed numeric identifier for the sentencing events.
-	\item date: Date of the sentence, ranging from 07/07/00 to 06/29/01; see Figure \ref{Figure_Hester_Data_Month_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} for a histogram of the sentencing events across different months.
-	\item county: The county where the sentence was decided. There are 46 counties; see Figure \ref{Figure_Hester_Data_County_Histogram} for a histogram of the sentencing counties.
-	%
-	\begin{figure}[H]
-		\centering
-		\includegraphics[scale=0.75]{Figures/County_Histogram}
-		\vspace{-2mm}
-		\caption{A histogram of the sentencing counties. The counties are grouped into 16 circuit courts. The number underneath each group indicates the corresponding circuit court.}
-		\label{Figure_Hester_Data_County_Histogram}
-	\end{figure}
-	%
-	\item circuit: The circuit court where the sentence was decided. There are 16 circuits: 1 to 16; see Figure \ref{Figure_Hester_Data_County_Histogram} and Table \ref{Table_Circuit_Court_Counties} (in Appendix \ref{Sec:Appendix:Supplementary_Tables}) for a list of the counties that belong to each circuit.
-	\item judge: A numeric (identifier) for the judge who decided the sentence. There are 51 judges: 1 to 51; see Figure \ref{Figure_Hester_Data_Judge_Histogram} below for a histogram of the number of sentencing events observed for each judge.\footnote{Judge number 1 is a fictions judge. It is used for sentencing events for which the judge was not known; see the email from Rhys to Can and Larry on 05/14/2018 (Page 3 of the document Email3.pdf).} Figure \ref{Figure_Hester_Data_Judge_Missing_Date_Histogram} (in Appendix \ref{Sec:Appendix:Supplementary_Figures}) provides a histogram of the sentencing events missing the date data field for each judge. Only 2 of the 1551 sentencing events missing the date data field resulted in trial. Both sentencing events were undertaken by Juge 51.
-	\item trial: Indicator (binary) variable indicating whether the case went to trial. Only $1.46\%$ of the cases went to trial; see Figure \ref{Figure_Hester_Data_Judge_Histogram} for a histogram of the number of cases undertaken by each judge and Figure \ref{Figure_Hester_Data_Judge_Trial_Percentage_Histogram} for the percentage of the sentencing events that resulted in a trial. Figures \ref{Figure_Hester_Data_Trial_Judge_Histogram} and \ref{Figure_Hester_Data_Judge_Plea_Histogram} (in Appendix \ref{Sec:Appendix:Supplementary_Figures}) provide a histogram of the number of trials and pleas undertaken by each judge, respectively. Figures \ref{Figure_Hester_Sentence_Length_Given_Trial_Histogram}-\ref{Figure_Hester_Sentence_Length_Given_Plea_Histogram} (in Appendix \ref{Sec:Appendix:Supplementary_Figures}) provide a histogram of the sentence lengths for the sentencing events that resulted in a trail and the sentencing events that resulted in a plea, respectively.
-	%
-	\begin{figure}[H]
-		\centering
-		\vspace{-2mm}
-		\begin{minipage}{\textwidth}
-			\vspace{-0mm}
-			\centering
-			\includegraphics[scale=0.75]{Figures/Judge_Histogram}
-			\vspace{-4mm}
-			\caption{A histogram of the sentencing judges.}
-			\label{Figure_Hester_Data_Judge_Histogram}
-		\end{minipage}
-		\begin{minipage}{\textwidth}
-			\vspace{-0.5mm}
-			\centering
-			\includegraphics[scale=0.75]{Figures/Judge_Trial_Percentage_Histogram}
-			\vspace{-4mm}
-			\caption{Percentage of sentencing events (for each judge) that resulted in trial.}
-			\label{Figure_Hester_Data_Judge_Trial_Percentage_Histogram}
-		\end{minipage}
-	\end{figure}
-	%
-	\item incarc: Indicator (binary) variable indicating whether the sentence includes incarceration. In aggregate, about $37.41\%$ of the cases resulted in incarceration. To be more specific, about $36.55\%$ of the cases that ended with a plea and about $95.74\%$ of the cases that ended with a trial resulted in incarceration. The remaining sentencing events have a sentence length of zero.
-	\item statute: The (code of) law that the offender broke. For example, 56-05-0750(B)(1). There are 253 distinct entries; see Figure \ref{Figure_Statute_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} for a histogram.\footnote{For a detailed description of South Carolina code of laws, please see \url{https://law.justia.com/codes/south-carolina} (accessed on October 17th, 2020). For example, a detailed description of 56-05-0750 is provided in \url{https://law.justia.com/codes/south-carolina/2019/title-56/chapter-5/section-56-5-750} (accessed on October 17th, 2020).}
-	\label{CSV_File_Statute_Item}
-	\item offdescr: A description of the offense. For example, "Failure to Stop for a Blue Light, No Injury or Death - 1st Offence".
-	\item counts: There are 29 distinct values, ranging between 0 and 60; see Figure \ref{Figure_Hester_Data_Counts_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} for a histogram.
-	\item statute\_first: The description of the first offense of the offender. For example, 56-05-0750(B)(1). This data field is identical to statute data field (numbered \ref{CSV_File_Statute_Item} above).
-	\item offdescr\_first: A description of the first offense. For example, "Pointing and Presenting Firearms at a Person".
-	\item sgc\_offcode: 286 distinct numeric values between 4 and 2878; see Figure \ref{Figure_Hester_Data_sgc_offcode_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} for a histogram. The set of sgc\_offcode values can be partitioned into four subsets: $\mathcal{C}_1$, $\mathcal{C}_2$, $\mathcal{C}_3$, and $\mathcal{C}_4$; see \citet{Hester_Hartman_2017} for the partitions.\footnote{See the code provided on \url{https://tkhartman.netlify.app} (accessed on October 17th, 2020) for \citet{Hester_Hartman_2017}.} Each partition is associated with a unique minimum sentence multiplier, i.e., the fraction of the sentence that has to pass before the defendant is eligible for parole. Let $c$ denote the sgc\_offcode code for a sentencing event. Then, the minimum sentence multiplier (for this sentencing events) is
-		\begin{align*}
-		m(c) \,=\, \left \{\!\! \begin{array}{ll}
-		1.00 & \text{if } c \in \mathcal{C}_1, \\
-		0.85 & \text{if } c \in \mathcal{C}_2, \\
-		0.33 & \text{if } c \in \mathcal{C}_3, \\
-		0.25 & \text{if } c \in \mathcal{C}_4. \\
-		\end{array} \right.
-		\end{align*}
-		Also, define the sets
-		\begin{align*}
-		&\mathcal{A}_1 = \{267, 383, 2362\},\\
-		&\mathcal{A}_2 = \{454, 2360, 2362\},\\
-		&\mathcal{A}_3 = \{79, 90, 113, 114, 139, 217, 280, 283, 312, 368, 387, 388, 389, 392, 395, 402, 457, 2356, 2359\}, \\ &\mathcal{A}_4 = \{116, 148, 281, 284, 349, 370, 452, 456, 2417\},
-		\end{align*}
-		where $\mathcal{A}_i \subset \mathcal{C}_i$ for $i=1,2,3,4$. According to \citet{Hester_Hartman_2017}, a mandatory minimum sentence is imposed if $c \,\in\, \mathcal{A}_1 \cup \mathcal{A}_2 \cup \mathcal{A}_3 \cup \mathcal{A}_4$.
-	\vspace{1mm}
-	\item[-] The next ten data fields indicate the crime type; see Table \ref{Table_Sentencing_Crime_Type_Data_Fields} below for a list of these data fields and Figure \ref{Figure_Hester_Data_Crime_Type_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} for a histogram of the crime types.
-	%
-	\vspace{1mm}
 	\begin{table}[H]
 		\centering
-		\caption{The ten data fields that indicate the crime type and their definition.}
+		\vspace{2mm}
+		\caption{Data fields of the CSV and STATA files.}
 		\vspace{-2mm}
-		\setlength\tabcolsep{8pt} % default value: 6pt
+		\setlength\tabcolsep{0pt} % default value: 6pt
 		{\footnotesize
-			\hspace{10mm}
-			\begin{tabular}{L{20mm}L{115mm}}
+			\begin{tabular}{C{50mm}C{50mm}C{50mm}}
 				\toprule
-				Data Field & Description \\
+				Only CSV & Both & Only STATA \\
 				\midrule
 				%\rowgroup{Consumer Surplus} \\
-				14. of\_hom & Indicator (binary) variable for the offense type being homicide \\
-				15. of\_rape & Indicator (binary) variable for the offense type being rape \\
-				16. of\_rob & Indicator (binary) variable for the offense type being robbery \\
-				17. of\_asslt & Indicator (binary) variable for the offense type being assault \\
-				18. of\_burg & Indicator (binary) variable for the offense type being burglary \\
-				19. of\_dstrb & Indicator (binary) variable for the offense type being drug distribution \\
-				20. of\_possn & Indicator (binary) variable for the offense type being drug possession\\
-				21. of\_theft & Indicator (binary) variable for the offense type being theft \\
-				22. of\_fraud & Indicator (binary) variable for the offense type being fraud \\
-				23. of\_other & Indicator (binary) variable for the offense type belonging to the category "other" \\
+				unnamed & datedisp/data File & expmin \\
+				statute\_first (identical to statute) & circuit & jud\_no \\
+				offdescr\_first & county &  \\
+				offtypeLibHyp & counts &  \\
+				ccpnts & offser &  \\
+				ccpts99 & sgc\_offcode &  \\
+				trial & of\_hom &  \\
+				incarc & of\_rape &  \\
+				crimhist & of\_rob &  \\
+				ppoints & of\_asslt &  \\
+				male & of\_burg &  \\
+				age & of\_dstrb &  \\
+				black & of\_possn &  \\
+				judge & of\_theft &  \\
+				& of\_fraud &  \\
+				& of\_other &  \\
+				& realsent/sentence &  \\
+				& statute (99.95\% match) &  \\
+				& offdescr (99.21\% match) &  \\
 				\bottomrule
 			\end{tabular}
 		}
-		\label{Table_Sentencing_Crime_Type_Data_Fields}
+		\label{Table_Sentencing_Data_Fields}
 	\end{table}
-	\vspace{-2mm}
-	%
-	\skipitems{10}
-	\item offtypeLibHyp: Categorical offense type. The categories: Property, Violent, Other, and Drug. Figure \ref{Figure_Hester_Data_Categorical_Offense_Type_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} provides a histogram of the categorical offense types and Figure \ref{Figure_Hester_Data_offtypeLibHyp} in Appendix \ref{Sec:Appendix:Supplementary_Figures} provides a histogram of the crime types associated with (observed alongside) each categorical offense type.
-	\item offser: Offense seriousness. There are 8 categories: 1 to 8. The categories in the increasing order of seriousness are as follows: 1-Misdemeanours, 2-Class F Felonies, 3- Class E Felonies, 4-Class D Felonies, 5-Class A Felonies, 6-Class B Felonies, 7-Class C Felonies. The unclassified felonies are grouped into category 8. Figure \ref{Figure_Hester_Data_Offense_Seriousness_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} provides a histogram of the offense seriousness.
-	\item ccpnts: Numeric values between 1 and 68; see Figure \ref{Figure_Hester_Data_ccpnts_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} for a histogram.
-	\item ccpts99: Commitment score. Numeric values between 1 and 12 in the increasing order of seriousness. This is an alternative measure of offense seriousness. The mean and standard deviations are 1.9 and 1.8, respectively. Figure \ref{Figure_Hester_Data_ccpts99_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} provides a histogram.
-	\item crimhist: Criminal history of the defendant. The five categories in the increasing order of appearance are as follows: extensive, voluminous, moderate, minimal, and none; see Figure \ref{Figure_Hester_Data_Crime_History_Histogram} for a histogram.
-	%
-	\begin{figure}[h!]
-		\centering
-		\vspace{1mm}
-		\includegraphics[scale=0.75]{Figures/Crime_History_Histogram}
-		\vspace{-2mm}
-		\caption{A histogram of the crime histories.}
-		\label{Figure_Hester_Data_Crime_History_Histogram}
-		\vspace{-2mm}
-	\end{figure}
-	%
-	\item ppoints: Numeric values between 0 and 1014; see Figure \ref{Figure_Hester_Data_PPoints_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} for a histogram of ppoints.
-	\vspace{-2mm}
-	\item male: Indicator (binary) variable indicating whether the defendant is male; $83.42\%$ of the defendants are male.
-	\item age: Age of the defendant at sentencing. There are 65 distinct values between 15 and 81. The mean and the standard deviation are 31.3 and 10.1, respectively; see Figure \ref{Figure_Hester_Data_Age_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} for a histogram.
-	\item black: Indicator (binary) variable indicating whether the defendant is black. About $61.97\%$ of the defendants are black. We do not have any other information on the race of the defendant.
-	\item sentence: The length of the sentence (in months).\footnote{Rhys refers to this as the initial sentence; see the email from Rhys to Can and Larry on 05/08/2018 (Page 2 of the document Email3.pdf).} There are 237 distinct values between 0 and 11988 (corresponds to between 0 and 99 years); see Figure \ref{Figure_Hester_Sentence_Length_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} for a histogram.
-\end{enumerate}
 
-\vspace{-4mm}
-\subsection{Stata File}
-\label{Sec:Data_Description:STATA}
-Next, we describe the data fields of the STATA file. We only describe the two data fields that are specific to the STATA file. The remaining data fields have already been discussed above.
-\vspace{-4mm}
-\begin{enumerate}
-	\itemsep-0.3em
-	\item expmin: The expected minimum sentence. There are 313 distinct values between 0 and 470 (corresponding to between 0 and 39 years); 28 sentencing events are missing this information. This corresponds to 0.15\% of the sentencing events. Figure \ref{Figure_Hester_ExpMin_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} provides a histogram of the expected minimum sentences. The expected minimum sentence (reported in the STATA file) is calculated as follows:\footnote{See the code provided on \url{https://tkhartman.netlify.app} (accessed on October 17th, 2020) for \citet{Hester_Hartman_2017}.} As discussed above, the set of sgc\_offcode values is partitioned into four subsets: $\mathcal{C}_1$, $\mathcal{C}_2$, $\mathcal{C}_3$, and $\mathcal{C}_4$; see \citet{Hester_Hartman_2017} for the partitions. Let $s$ denote the sentence length in months, $c$ denote the sgc\_offcode, and
-		\begin{align*}
+	Table \ref{Table_Sentencing_Data_Fields} lists the data fields that are common to the CSV file and the STATA file as well as the data fields that are specific to either the CSV file or the STATA file. As shown in Table \ref{Table_Sentencing_Data_Fields}, the CSV file and the STATA file have 18 data fields in common; see the middle column of Table \ref{Table_Sentencing_Data_Fields}. Of these 18 data fields that are in common across the two files, 16 of them are identical.\footnote{To be specific, after sorting the rows of the two files based on the 16 commons data fields, the entries of these 16 data fields match exactly.} The remaining two common data fields are statute and offdescr. We observe that 99.95\% of the statute entries and 99.21\% of the offdescr entries are identical between the CSV and STATA files. Moreover, the 10 non-identical statute entries and the 141 non-identical offdescr entries seem to refer to the same statutes and offense descriptions, respectively; see Tables \ref{Table_Sentencing_Data_Fields_Statute}-\ref{Table_Sentencing_Data_Fields_Offdescr} in Appendix \ref{Sec:Appendix:Supplementary_Tables} for illustrative examples.
+	% Baris added a paragraph break here!
+
+	There are 14 data fields that are specific to the CSV file; see the first column of Table \ref{Table_Sentencing_Data_Fields}. Similarly, there are 2 data fields that are specific to the STATA file: expmin and jud\_no. The expmin data field is computed by Rhys; see item 1 in the STATA file description below. The jud\_no data field of the STATA file provides a numeric identifier for the judge that sentenced each offender. Although these numeric identifiers are not identical to the numeric identifiers used in the judge data field of the CSV file, there is a one-to-one mapping between them. Consequently, we use the CSV file in our analysis (in the following sections) but supplement it with the expected minimum sentence data field from the STATA file, which is calculated using Equation (\ref{Equation_Expected_Minimum_Sentence}); see Section \ref{Sec:Data_Description:STATA}. Next, we describe the data fields in the CSV and STATA files in detail.
+
+	\vspace{-3mm}
+	\subsection{CSV File}
+	\label{Sec:Data_Description:CSV}
+	This dataset is mostly complete. However, 1551 sentencing events are missing the \emph{date} data field. This corresponds to $8.7\%$ of the events; see Appendix \ref{Sec:Appendix:Missing_Dates} for further analysis of these sentencing events.\footnote{Moreover, 6 sentencing events are missing the statute, offdescr, and statute\_first data fields. This corresponds to $0.03\%$ of the events. 3 of these 6 sentencing events are also missing offdescr\_first data field.}
+
+	\begin{remark}
+		Although the date data field is missing for 1551 sentencing events, the judge number and the court location, i.e., the county, information are available for these sentencing events (in the sentencing dataset). By cross checking this information with the master calendar, which has the judges' (county) assignments in each week, we are able to pin down the week during which the sentencing events occurred for 100 of the 1551 sentencing events missing the date data field. Figure \ref{Figure_Missing_Date_Histogram_of_Potential_Week_Histogram} provides a histogram of the "resolution", i.e., the number of weeks in which each sentencing event missing the date data field could have occurred. For example, the first bar indicates that for 100 of the 1551 sentencing events missing the date data field, the judge visited the county in which the sentencing event occurred only in one week. Therefore, these 100 sentencing events must have occurred in that week. Similarly, the second bar indicates that for 79 sentencing events, the judge only visited the county in which the sentencing event occurred in two weeks. Therefore, these 79 sentencing events must have occurred in one of the two weeks. Further description of the analysis of the 1551 sentencing events missing the date data field is provided in Appendix \ref{Sec:Appendix:Missing_Dates}.
+	\end{remark}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.75]{Figures/Missing_Date_Histogram_of_Potential_Week_Histogram}
+		\vspace{-2mm}
+		\caption{A histogram of the number of weeks the judge visited the county in which the sentencing events missing the \emph{date} data field occurred.}
+		\label{Figure_Missing_Date_Histogram_of_Potential_Week_Histogram}
+	\end{figure}
+
+	\noindent The data fields of the CSV file are as follows:
+
+	\vspace{-5mm}
+	\begin{enumerate}
+		\itemsep-0.3em
+		\item An unnamed numeric identifier for the sentencing events.
+		\item date: Date of the sentence, ranging from 07/07/00 to 06/29/01; see Figure \ref{Figure_Hester_Data_Month_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} for a histogram of the sentencing events across different months.
+		\item county: The county where the sentence was decided. There are 46 counties; see Figure \ref{Figure_Hester_Data_County_Histogram} for a histogram of the sentencing counties.
+		%
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.75]{Figures/County_Histogram}
+			\vspace{-2mm}
+			\caption{A histogram of the sentencing counties. The counties are grouped into 16 circuit courts. The number underneath each group indicates the corresponding circuit court.}
+			\label{Figure_Hester_Data_County_Histogram}
+		\end{figure}
+		%
+		\item circuit: The circuit court where the sentence was decided. There are 16 circuits: 1 to 16; see Figure \ref{Figure_Hester_Data_County_Histogram} and Table \ref{Table_Circuit_Court_Counties} (in Appendix \ref{Sec:Appendix:Supplementary_Tables}) for a list of the counties that belong to each circuit.
+		\item judge: A numeric (identifier) for the judge who decided the sentence. There are 51 judges: 1 to 51; see Figure \ref{Figure_Hester_Data_Judge_Histogram} below for a histogram of the number of sentencing events observed for each judge.\footnote{Judge number 1 is a fictions judge. It is used for sentencing events for which the judge was not known; see the email from Rhys to Can and Larry on 05/14/2018 (Page 3 of the document Email3.pdf).} Figure \ref{Figure_Hester_Data_Judge_Missing_Date_Histogram} (in Appendix \ref{Sec:Appendix:Supplementary_Figures}) provides a histogram of the sentencing events missing the date data field for each judge. Only 2 of the 1551 sentencing events missing the date data field resulted in trial. Both sentencing events were undertaken by Juge 51.
+		\item trial: Indicator (binary) variable indicating whether the case went to trial. Only $1.46\%$ of the cases went to trial; see Figure \ref{Figure_Hester_Data_Judge_Histogram} for a histogram of the number of cases undertaken by each judge and Figure \ref{Figure_Hester_Data_Judge_Trial_Percentage_Histogram} for the percentage of the sentencing events that resulted in a trial. Figures \ref{Figure_Hester_Data_Trial_Judge_Histogram} and \ref{Figure_Hester_Data_Judge_Plea_Histogram} (in Appendix \ref{Sec:Appendix:Supplementary_Figures}) provide a histogram of the number of trials and pleas undertaken by each judge, respectively. Figures \ref{Figure_Hester_Sentence_Length_Given_Trial_Histogram}-\ref{Figure_Hester_Sentence_Length_Given_Plea_Histogram} (in Appendix \ref{Sec:Appendix:Supplementary_Figures}) provide a histogram of the sentence lengths for the sentencing events that resulted in a trail and the sentencing events that resulted in a plea, respectively.
+		%
+		\begin{figure}[H]
+			\centering
+			\vspace{-2mm}
+			\begin{minipage}{\textwidth}
+				\vspace{-0mm}
+				\centering
+				\includegraphics[scale=0.75]{Figures/Judge_Histogram}
+				\vspace{-4mm}
+				\caption{A histogram of the sentencing judges.}
+				\label{Figure_Hester_Data_Judge_Histogram}
+			\end{minipage}
+			\begin{minipage}{\textwidth}
+				\vspace{-0.5mm}
+				\centering
+				\includegraphics[scale=0.75]{Figures/Judge_Trial_Percentage_Histogram}
+				\vspace{-4mm}
+				\caption{Percentage of sentencing events (for each judge) that resulted in trial.}
+				\label{Figure_Hester_Data_Judge_Trial_Percentage_Histogram}
+			\end{minipage}
+		\end{figure}
+		%
+		\item incarc: Indicator (binary) variable indicating whether the sentence includes incarceration. In aggregate, about $37.41\%$ of the cases resulted in incarceration. To be more specific, about $36.55\%$ of the cases that ended with a plea and about $95.74\%$ of the cases that ended with a trial resulted in incarceration. The remaining sentencing events have a sentence length of zero.
+		\item statute: The (code of) law that the offender broke. For example, 56-05-0750(B)(1). There are 253 distinct entries; see Figure \ref{Figure_Statute_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} for a histogram.\footnote{For a detailed description of South Carolina code of laws, please see \url{https://law.justia.com/codes/south-carolina} (accessed on October 17th, 2020). For example, a detailed description of 56-05-0750 is provided in \url{https://law.justia.com/codes/south-carolina/2019/title-56/chapter-5/section-56-5-750} (accessed on October 17th, 2020).}
+		\label{CSV_File_Statute_Item}
+		\item offdescr: A description of the offense. For example, "Failure to Stop for a Blue Light, No Injury or Death - 1st Offence".
+		\item counts: There are 29 distinct values, ranging between 0 and 60; see Figure \ref{Figure_Hester_Data_Counts_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} for a histogram.
+		\item statute\_first: The description of the first offense of the offender. For example, 56-05-0750(B)(1). This data field is identical to statute data field (numbered \ref{CSV_File_Statute_Item} above).
+		\item offdescr\_first: A description of the first offense. For example, "Pointing and Presenting Firearms at a Person".
+		\item sgc\_offcode: 286 distinct numeric values between 4 and 2878; see Figure \ref{Figure_Hester_Data_sgc_offcode_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} for a histogram. The set of sgc\_offcode values can be partitioned into four subsets: $\mathcal{C}_1$, $\mathcal{C}_2$, $\mathcal{C}_3$, and $\mathcal{C}_4$; see \citet{Hester_Hartman_2017} for the partitions.\footnote{See the code provided on \url{https://tkhartman.netlify.app} (accessed on October 17th, 2020) for \citet{Hester_Hartman_2017}.} Each partition is associated with a unique minimum sentence multiplier, i.e., the fraction of the sentence that has to pass before the defendant is eligible for parole. Let $c$ denote the sgc\_offcode code for a sentencing event. Then, the minimum sentence multiplier (for this sentencing events) is
+			\begin{align*}
 			m(c) \,=\, \left \{\!\! \begin{array}{ll}
 			1.00 & \text{if } c \in \mathcal{C}_1, \\
 			0.85 & \text{if } c \in \mathcal{C}_2, \\
 			0.33 & \text{if } c \in \mathcal{C}_3, \\
-			0.25 & \text{if } c \in \mathcal{C}_4, \\
+			0.25 & \text{if } c \in \mathcal{C}_4. \\
 			\end{array} \right.
-		\end{align*}
-		denote the expected minimum sentence multiplier, i.e., the fraction of the sentence that has to pass before the defendant is eligible for parole. Then,\footnote{A mandatory minimum sentence is imposed for a subset of sgc\_offcode values; See Section \ref{Sec:Data_Description:CSV} for details.}
-		\begin{align}
-		\text{Expected Minimum Sentence}\,(s,c) \,=\, \min \big\{ \big\lceil m(c) s \big\rceil ,720 \big\}.
-		\label{Equation_Expected_Minimum_Sentence}
-		\end{align}
-		%As an aside, according to \citet{Hester_Hartman_2017}, a mandatory minimum sentence is imposed if
-		%\begin{align*}
-		%	c \,\in\, \big\{&79,90,113,116,114,139,148,217,267,280,281,283,284,312,349,368,370,383,\\
-		%	&387,388,389,392,395,402,452,454,456,457,2356,2359,2360,231,2362,2417 \big\}.
-		%\end{align*}
-	\item jud\_no: An identifier for the judges. There are 50 judges: Numbers 1 to 54 excluding 16, 42, 44, and 49.\footnote{According to Rhys, judges 16, 42, 44, and 49 were dropped from the dataset probably either because they had retired (but still hearing some cases) or they had some special appointment or caseload jurisdiction; see the email from Rhys to Can and Larry on 05/14/2018 (Page 3 of the document Email3.pdf).} A small fraction ($0.88\%$) of the sentencing events are missing the jud\_no data field. Consider the following mapping from the numeric identifiers used in the judge data field of the CSV file to the numeric identifiers used in the jud\_no data field of the STATA file: Each non-fictitious judge number (judges 2 to 51) in the CSV file is mapped to the judge number in the STATA file that has the highest number of sentencing events in common with the judge in the CSV file. Under this mapping, the judge identifiers match for 98.79\% of the sentencing events. Of the remaining 1.21\% sentencing events, 1.13\% are cases in which either the judge data field entry is 1 (the fictitious judge) or the jud\_no data field is empty. In the remaining 0.08\% of the sentencing events (15 events), the judge identifiers in the two files do not match. However, this is a small fraction of the sentencing events.
-\end{enumerate}
+			\end{align*}
+			Also, define the sets
+			\begin{align*}
+			&\mathcal{A}_1 = \{267, 383, 2362\},\\
+			&\mathcal{A}_2 = \{454, 2360, 2362\},\\
+			&\mathcal{A}_3 = \{79, 90, 113, 114, 139, 217, 280, 283, 312, 368, 387, 388, 389, 392, 395, 402, 457, 2356, 2359\}, \\ &\mathcal{A}_4 = \{116, 148, 281, 284, 349, 370, 452, 456, 2417\},
+			\end{align*}
+			where $\mathcal{A}_i \subset \mathcal{C}_i$ for $i=1,2,3,4$. According to \citet{Hester_Hartman_2017}, a mandatory minimum sentence is imposed if $c \,\in\, \mathcal{A}_1 \cup \mathcal{A}_2 \cup \mathcal{A}_3 \cup \mathcal{A}_4$.
+		\vspace{1mm}
+		\item[-] The next ten data fields indicate the crime type; see Table \ref{Table_Sentencing_Crime_Type_Data_Fields} below for a list of these data fields and Figure \ref{Figure_Hester_Data_Crime_Type_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} for a histogram of the crime types.
+		%
+		\vspace{1mm}
+		\begin{table}[H]
+			\centering
+			\caption{The ten data fields that indicate the crime type and their definition.}
+			\vspace{-2mm}
+			\setlength\tabcolsep{8pt} % default value: 6pt
+			{\footnotesize
+				\hspace{10mm}
+				\begin{tabular}{L{20mm}L{115mm}}
+					\toprule
+					Data Field & Description \\
+					\midrule
+					%\rowgroup{Consumer Surplus} \\
+					14. of\_hom & Indicator (binary) variable for the offense type being homicide \\
+					15. of\_rape & Indicator (binary) variable for the offense type being rape \\
+					16. of\_rob & Indicator (binary) variable for the offense type being robbery \\
+					17. of\_asslt & Indicator (binary) variable for the offense type being assault \\
+					18. of\_burg & Indicator (binary) variable for the offense type being burglary \\
+					19. of\_dstrb & Indicator (binary) variable for the offense type being drug distribution \\
+					20. of\_possn & Indicator (binary) variable for the offense type being drug possession\\
+					21. of\_theft & Indicator (binary) variable for the offense type being theft \\
+					22. of\_fraud & Indicator (binary) variable for the offense type being fraud \\
+					23. of\_other & Indicator (binary) variable for the offense type belonging to the category "other" \\
+					\bottomrule
+				\end{tabular}
+			}
+			\label{Table_Sentencing_Crime_Type_Data_Fields}
+		\end{table}
+		\vspace{-2mm}
+		%
+		\skipitems{10}
+		\item offtypeLibHyp: Categorical offense type. The categories: Property, Violent, Other, and Drug. Figure \ref{Figure_Hester_Data_Categorical_Offense_Type_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} provides a histogram of the categorical offense types and Figure \ref{Figure_Hester_Data_offtypeLibHyp} in Appendix \ref{Sec:Appendix:Supplementary_Figures} provides a histogram of the crime types associated with (observed alongside) each categorical offense type.
+		\item offser: Offense seriousness. There are 8 categories: 1 to 8. The categories in the increasing order of seriousness are as follows: 1-Misdemeanours, 2-Class F Felonies, 3- Class E Felonies, 4-Class D Felonies, 5-Class A Felonies, 6-Class B Felonies, 7-Class C Felonies. The unclassified felonies are grouped into category 8. Figure \ref{Figure_Hester_Data_Offense_Seriousness_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} provides a histogram of the offense seriousness.
+		\item ccpnts: Numeric values between 1 and 68; see Figure \ref{Figure_Hester_Data_ccpnts_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} for a histogram.
+		\item ccpts99: Commitment score. Numeric values between 1 and 12 in the increasing order of seriousness. This is an alternative measure of offense seriousness. The mean and standard deviations are 1.9 and 1.8, respectively. Figure \ref{Figure_Hester_Data_ccpts99_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} provides a histogram.
+		\item crimhist: Criminal history of the defendant. The five categories in the increasing order of appearance are as follows: extensive, voluminous, moderate, minimal, and none; see Figure \ref{Figure_Hester_Data_Crime_History_Histogram} for a histogram.
+		%
+		\begin{figure}[h!]
+			\centering
+			\vspace{1mm}
+			\includegraphics[scale=0.75]{Figures/Crime_History_Histogram}
+			\vspace{-2mm}
+			\caption{A histogram of the crime histories.}
+			\label{Figure_Hester_Data_Crime_History_Histogram}
+			\vspace{-2mm}
+		\end{figure}
+		%
+		\item ppoints: Numeric values between 0 and 1014; see Figure \ref{Figure_Hester_Data_PPoints_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} for a histogram of ppoints.
+		\vspace{-2mm}
+		\item male: Indicator (binary) variable indicating whether the defendant is male; $83.42\%$ of the defendants are male.
+		\item age: Age of the defendant at sentencing. There are 65 distinct values between 15 and 81. The mean and the standard deviation are 31.3 and 10.1, respectively; see Figure \ref{Figure_Hester_Data_Age_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} for a histogram.
+		\item black: Indicator (binary) variable indicating whether the defendant is black. About $61.97\%$ of the defendants are black. We do not have any other information on the race of the defendant.
+		\item sentence: The length of the sentence (in months).\footnote{Rhys refers to this as the initial sentence; see the email from Rhys to Can and Larry on 05/08/2018 (Page 2 of the document Email3.pdf).} There are 237 distinct values between 0 and 11988 (corresponds to between 0 and 99 years); see Figure \ref{Figure_Hester_Sentence_Length_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} for a histogram.
+	\end{enumerate}
+
+	\vspace{-4mm}
+	\subsection{Stata File}
+	\label{Sec:Data_Description:STATA}
+	Next, we describe the data fields of the STATA file. We only describe the two data fields that are specific to the STATA file. The remaining data fields have already been discussed above.
+	\vspace{-4mm}
+	\begin{enumerate}
+		\itemsep-0.3em
+		\item expmin: The expected minimum sentence. There are 313 distinct values between 0 and 470 (corresponding to between 0 and 39 years); 28 sentencing events are missing this information. This corresponds to 0.15\% of the sentencing events. Figure \ref{Figure_Hester_ExpMin_Histogram} in Appendix \ref{Sec:Appendix:Supplementary_Figures} provides a histogram of the expected minimum sentences. The expected minimum sentence (reported in the STATA file) is calculated as follows:\footnote{See the code provided on \url{https://tkhartman.netlify.app} (accessed on October 17th, 2020) for \citet{Hester_Hartman_2017}.} As discussed above, the set of sgc\_offcode values is partitioned into four subsets: $\mathcal{C}_1$, $\mathcal{C}_2$, $\mathcal{C}_3$, and $\mathcal{C}_4$; see \citet{Hester_Hartman_2017} for the partitions. Let $s$ denote the sentence length in months, $c$ denote the sgc\_offcode, and
+			\begin{align*}
+				m(c) \,=\, \left \{\!\! \begin{array}{ll}
+				1.00 & \text{if } c \in \mathcal{C}_1, \\
+				0.85 & \text{if } c \in \mathcal{C}_2, \\
+				0.33 & \text{if } c \in \mathcal{C}_3, \\
+				0.25 & \text{if } c \in \mathcal{C}_4, \\
+				\end{array} \right.
+			\end{align*}
+			denote the expected minimum sentence multiplier, i.e., the fraction of the sentence that has to pass before the defendant is eligible for parole. Then,\footnote{A mandatory minimum sentence is imposed for a subset of sgc\_offcode values; See Section \ref{Sec:Data_Description:CSV} for details.}
+			\begin{align}
+			\text{Expected Minimum Sentence}\,(s,c) \,=\, \min \big\{ \big\lceil m(c) s \big\rceil ,720 \big\}.
+			\label{Equation_Expected_Minimum_Sentence}
+			\end{align}
+			%As an aside, according to \citet{Hester_Hartman_2017}, a mandatory minimum sentence is imposed if
+			%\begin{align*}
+			%	c \,\in\, \big\{&79,90,113,116,114,139,148,217,267,280,281,283,284,312,349,368,370,383,\\
+			%	&387,388,389,392,395,402,452,454,456,457,2356,2359,2360,231,2362,2417 \big\}.
+			%\end{align*}
+		\item jud\_no: An identifier for the judges. There are 50 judges: Numbers 1 to 54 excluding 16, 42, 44, and 49.\footnote{According to Rhys, judges 16, 42, 44, and 49 were dropped from the dataset probably either because they had retired (but still hearing some cases) or they had some special appointment or caseload jurisdiction; see the email from Rhys to Can and Larry on 05/14/2018 (Page 3 of the document Email3.pdf).} A small fraction ($0.88\%$) of the sentencing events are missing the jud\_no data field. Consider the following mapping from the numeric identifiers used in the judge data field of the CSV file to the numeric identifiers used in the jud\_no data field of the STATA file: Each non-fictitious judge number (judges 2 to 51) in the CSV file is mapped to the judge number in the STATA file that has the highest number of sentencing events in common with the judge in the CSV file. Under this mapping, the judge identifiers match for 98.79\% of the sentencing events. Of the remaining 1.21\% sentencing events, 1.13\% are cases in which either the judge data field entry is 1 (the fictitious judge) or the jud\_no data field is empty. In the remaining 0.08\% of the sentencing events (15 events), the judge identifiers in the two files do not match. However, this is a small fraction of the sentencing events.
+	\end{enumerate}
 
 \section{Master Calendar}
-\label{Sec:Master_Calendar_Description}
+	\label{Sec:Master_Calendar_Description}
 
-The master calendar describes the schedule of the judges between July 2000 and June 2001; see Figure \ref{Figure_Master_Calendar_0} for a snapshot of the master calendar for November. The schedule of each month is described in a table, where the first column indicates the judge names. The remaining columns corresponds to the weeks in that month. We \emph{assume} judges do not work on the weekends. The number written on top of each column indicates the date of the Monday of that week. For example, the first column in Figure \ref{Figure_Master_Calendar_0} corresponds to the week of November 6th. Each row describes the schedule of one judge.
-%
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.4]{Figures/Fig1}
-	\caption{A snapshot of the November Calendar.}
-	\label{Figure_Master_Calendar_0}
-\end{figure}
-
-In what follows, we assume the master calendar is cleaned as described in Appendix \ref{Sec:Appendix:Data_Cleaning}. Figure \ref{Figure_Assignment_Histogram} provides a histogram of the different types of (judge) assignments on the master calendar. In other words, it depicts the number of judge-week combinations that have an assignment that belongs to one of the following ten categories: county, circuit court, in chamber, vacation, official leave, sick, medical, orientation school, family death, and military. For example, the first bar indicates that 1769 judge-week combinations have a county assignment. This need not be the only assignment of this judge-week combination. When there are multiple assignments for a judge-week combination, each of those is separately accounted for in Figure \ref{Figure_Assignment_Histogram}.
-
-Most assignments on the master calendar end with an acronym, e.g., Horry GS. We refer to these acronyms as assignment types. Table \ref{Table_Assignment_Type_Meaning} provides a list of the acronyms and their meanings. Figure \ref{Figure_Assignment_Type_Histogram} provides a histogram of the acronyms. In other words, it depicts the number of judge-week combinations that have an assignment of a specific type. For example, the first bar indicates that 989 judge-week combinations have an assignment that ends with GS.
-
-Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram} depicts the frequency of the assignment types based on the sentencing dataset. Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram} is generated as follows: First, we create a list of the sentencing events undertaken by Judges $2,\ldots,51$ that have a date. Then, for each sentencing event on the list, we proceed as follows:
-\begin{enumerate}
-	\vspace{-3mm}
-	\item We read the judge number, the week, and the county corresponding to each sentencing event (from the sentencing dataset). For example, Judge 2 on the Week of January 8 in Chester.\footnote{The subsequent analysis in this section shows that there are some inconsistencies between the master calendar and the sentencing dataset. If we use the sentence date (to generate Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram}), we will run into a problem for some sentencing events, e.g., the sentencing events in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_i}. Therefore, we make a weaker assumption and use the sentence week (as opposed to sentence date).}
-	\vspace{-2mm}
-	\item We look for the judge's assignment for this week on the master calendar and report the type of the assignment in the figure. We sometimes observe multiple assignments in a week. For example, Judge 2 had the following assignments in the week of January 8: 2nd Cir. CPNJ 8, Chester GS 9,10,11, and Lancaster 12. In this case, the assignment in Chester county is the one we are interested in, because that is where the sentencing event of interest occurred. Thus, we use this assignment (and its type, i.e., GS) to record the sentencing event in the figure. For 4.12\% of the sentencing events (without a date), we cannot find the county assignment we are interested in due to inconsistencies between the master calendar and the sentencing dataset; see Section \ref{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments} for a detailed description of the judge-week combinations in which these sentencing events occurred. Nonetheless, the analysis summarized in Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram} is still useful for our capacity calculations below.
-\end{enumerate}
-\vspace{-3mm}
-We repeat this procedure for all sentencing events and count the number of assignment types. Finally, we plot the histogram in Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram}.
-
-For each judge, the percentage of weeks with a GS (CP) assignment on the master calendar is depicted in Figure \ref{Figure_Judge_Schedule_GS_Percentage_Histogram} (\ref{Figure_Judge_Schedule_CP_Percentage_Histogram}). Figures \ref{Figure_Judge_Schedule_GS_Percentage_Histogram}-\ref{Figure_Judge_Schedule_CP_Percentage_Histogram} jointly show that GS and CP assignments are the most common assignments for the judges. Figure \ref{Figure_Judge_Schedule_GS_CP_Percentage_Histogram} shows the overlap, i.e., the percentage of weeks (with an assignment) in which the judge has at least one assignment of type GS and at least one assignment of type CP. It shows that it is not common for a judge to have both GS and CP assignments in a week.
-
-\begin{figure}[H]
-	\centering
-	\hspace*{-8mm}
-	\begin{minipage}{.45\textwidth}
+	The master calendar describes the schedule of the judges between July 2000 and June 2001; see Figure \ref{Figure_Master_Calendar_0} for a snapshot of the master calendar for November. The schedule of each month is described in a table, where the first column indicates the judge names. The remaining columns corresponds to the weeks in that month. We \emph{assume} judges do not work on the weekends. The number written on top of each column indicates the date of the Monday of that week. For example, the first column in Figure \ref{Figure_Master_Calendar_0} corresponds to the week of November 6th. Each row describes the schedule of one judge.
+	%
+	\begin{figure}[H]
 		\centering
-		\hspace*{-10mm}
-		\includegraphics[scale=0.67]{Figures/Type_of_Assignment_Histogram}
-		\vspace*{-7mm}
-		\caption{A histogram of the assignments observed for a judge-week combination in the master calendar.}
-		\label{Figure_Assignment_Histogram}
-	\end{minipage}
-	\hspace{5mm}
-	\begin{minipage}{0.45\textwidth}
-		\centering
-		\vspace*{0mm}
-		\includegraphics[scale=0.67]{Figures/Type_of_Court_Assignment_Histogram}
-		\vspace*{-1mm}
-		\caption{A histogram of the assignment types observed for a judge-week combination in the master calendar.}
-		\label{Figure_Assignment_Type_Histogram}
-	\end{minipage}
-\end{figure}
+		\includegraphics[scale=0.4]{Figures/Fig1}
+		\caption{A snapshot of the November Calendar.}
+		\label{Figure_Master_Calendar_0}
+	\end{figure}
 
-\begin{table}[H]
-	\centering
-	\caption{Assignment Type Acronyms and their meanings.}
-	\vspace{0mm}
-	\setlength\tabcolsep{8pt} % default value: 6pt
-	{\footnotesize
-		\begin{tabular}{L{20mm}L{50mm}}
-			\toprule
-			Acronym & Meaning  \\
-			\midrule
-			%\rowgroup{Consumer Surplus} \\
-			GS & General Session \\
-			CC & Circuit Court \\
-			SGJ & State Grand Jury \\
-			CP & Common Pleas \\
-			CPNJ & Common Pleas Non-Jury \\
-			PCR & Post Conviction Relief  \\
-			Capital PCR & Capital Post Conviction Relief  \\
-			AW & Administrative Week \\
-			\bottomrule
-		\end{tabular}
-	}
-	\label{Table_Assignment_Type_Meaning}
-\end{table}
+	In what follows, we assume the master calendar is cleaned as described in Appendix \ref{Sec:Appendix:Data_Cleaning}. Figure \ref{Figure_Assignment_Histogram} provides a histogram of the different types of (judge) assignments on the master calendar. In other words, it depicts the number of judge-week combinations that have an assignment that belongs to one of the following ten categories: county, circuit court, in chamber, vacation, official leave, sick, medical, orientation school, family death, and military. For example, the first bar indicates that 1769 judge-week combinations have a county assignment. This need not be the only assignment of this judge-week combination. When there are multiple assignments for a judge-week combination, each of those is separately accounted for in Figure \ref{Figure_Assignment_Histogram}.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.75]{Figures/Type_of_Court_Assignment_Sentencing_Event_Histogram}
-	\caption{A histogram of the type of the assignment (on the master calendar) during which the sentencing events occurred.}
-	\label{Figure_Assignment_Type_Sentencing_Event_Histogram}
-\end{figure}
+	Most assignments on the master calendar end with an acronym, e.g., Horry GS. We refer to these acronyms as assignment types. Table \ref{Table_Assignment_Type_Meaning} provides a list of the acronyms and their meanings. Figure \ref{Figure_Assignment_Type_Histogram} provides a histogram of the acronyms. In other words, it depicts the number of judge-week combinations that have an assignment of a specific type. For example, the first bar indicates that 989 judge-week combinations have an assignment that ends with GS.
 
-\begin{remark}
-	We should probably only keep the following assignments (in the master calendar):
+	Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram} depicts the frequency of the assignment types based on the sentencing dataset. Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram} is generated as follows: First, we create a list of the sentencing events undertaken by Judges $2,\ldots,51$ that have a date. Then, for each sentencing event on the list, we proceed as follows:
 	\begin{enumerate}
+		\vspace{-3mm}
+		\item We read the judge number, the week, and the county corresponding to each sentencing event (from the sentencing dataset). For example, Judge 2 on the Week of January 8 in Chester.\footnote{The subsequent analysis in this section shows that there are some inconsistencies between the master calendar and the sentencing dataset. If we use the sentence date (to generate Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram}), we will run into a problem for some sentencing events, e.g., the sentencing events in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_i}. Therefore, we make a weaker assumption and use the sentence week (as opposed to sentence date).}
 		\vspace{-2mm}
-		\item All county assignments of type GS
-		\item All county assignments of type GS CC, GS CC CP, and GS(SGJ) in which a sentencing event occurred; see Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram}. Note, however, in these weeks the judge may be splitting his time between GS (criminal cases) and other assignment types (e.g., civil cases). Therefore, we do not include these assignments in the estimation of $\mu_p$, the plea service rate.
-		\item The CP county assignments that account for the 245 sentencing events in the CP bar of Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram}. Since the sentencing dataset only includes the criminal cases and a CP session is for civil cases, we believe in these CP county assignments, the GS acronym was omitted. Even then, because the judge may be splitting his capacity between GS and CP, we do not include these assignments in the estimation of $\mu_p$, the plea service rate.
-		\item The one (hand-written) assignment without an acronym in front of it that accounts for the 22 sentencing events in the None bar of Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram}. Since the sentencing dataset only includes the criminal cases, we believe in this assignment, the GS acronym was omitted. Nevertheless, we do not include this assignment in the estimation of $\mu_p$, the plea service rate.
+		\item We look for the judge's assignment for this week on the master calendar and report the type of the assignment in the figure. We sometimes observe multiple assignments in a week. For example, Judge 2 had the following assignments in the week of January 8: 2nd Cir. CPNJ 8, Chester GS 9,10,11, and Lancaster 12. In this case, the assignment in Chester county is the one we are interested in, because that is where the sentencing event of interest occurred. Thus, we use this assignment (and its type, i.e., GS) to record the sentencing event in the figure. For 4.12\% of the sentencing events (without a date), we cannot find the county assignment we are interested in due to inconsistencies between the master calendar and the sentencing dataset; see Section \ref{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments} for a detailed description of the judge-week combinations in which these sentencing events occurred. Nonetheless, the analysis summarized in Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram} is still useful for our capacity calculations below.
 	\end{enumerate}
-\end{remark}
+	\vspace{-3mm}
+	We repeat this procedure for all sentencing events and count the number of assignment types. Finally, we plot the histogram in Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram}.
 
-\begin{figure}[H]
-	\centering
-	\begin{minipage}{\textwidth}
-		\vspace{-16mm}
-		\centering
-		\includegraphics[scale=0.75]{Figures/Judge_Schedule_GS_Percentage_Histogram}
-		\vspace{-3mm}
-		\caption{The percentage of weeks (with an assignment) in which the judge has at least one assignment of type GS.}
-		\label{Figure_Judge_Schedule_GS_Percentage_Histogram}
-	\end{minipage}
-	\begin{minipage}{\textwidth}
-		\centering
-		\includegraphics[scale=0.75]{Figures/Judge_Schedule_CP_Percentage_Histogram}
-		\vspace{-3mm}
-		\caption{The percentage of weeks (with an assignment) in which the judge has at least one assignment of type CP.}
-		\label{Figure_Judge_Schedule_CP_Percentage_Histogram}
-	\end{minipage}
-	\begin{minipage}{\textwidth}
-		\centering
-		\includegraphics[scale=0.75]{Figures/Judge_Schedule_GS_CP_Percentage_Histogram}
-		\vspace{-3mm}
-		\caption{The percentage of weeks (with an assignment) in which the judge has at least one assignment of type GS and at least one assignment of type CP.}
-		\label{Figure_Judge_Schedule_GS_CP_Percentage_Histogram}
-	\end{minipage}
-\end{figure}
+	For each judge, the percentage of weeks with a GS (CP) assignment on the master calendar is depicted in Figure \ref{Figure_Judge_Schedule_GS_Percentage_Histogram} (\ref{Figure_Judge_Schedule_CP_Percentage_Histogram}). Figures \ref{Figure_Judge_Schedule_GS_Percentage_Histogram}-\ref{Figure_Judge_Schedule_CP_Percentage_Histogram} jointly show that GS and CP assignments are the most common assignments for the judges. Figure \ref{Figure_Judge_Schedule_GS_CP_Percentage_Histogram} shows the overlap, i.e., the percentage of weeks (with an assignment) in which the judge has at least one assignment of type GS and at least one assignment of type CP. It shows that it is not common for a judge to have both GS and CP assignments in a week.
 
-\subsection{Interpreting the Master Calendar}
-\label{Sec:Master_Calendar:Interpreting_Master_Calendar}
-
-Consider a judge on a specific week. We group the judge-week combinations into four categories, depending on the number of assignment the judge has during that week, as follows: i) None (blank), ii) a single assignment, iii) two assignments, and (iv) more than two assignments.
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.75]{Figures/Simultaneous_Assignment_Count_Histogram}
-	\caption{A histogram of the assignment categories observed for a judge-week combination in the master calendar.}
-	\label{Figure_Simultaneous_Assignment_Count_Histogram}
-\end{figure}
-
-Figure \ref{Figure_Simultaneous_Assignment_Count_Histogram} provides a histogram of the assignment categories observed for a judge-week combination in the master calendar. We compare these assignments in the master calendar with the sentencing events for the judge recorded in the sentencing dataset. Next, we discuss our interpretation  of each assignment category with examples. We have a total of 2556 judge-week combinations.
-
-\vspace{-3mm}
-\paragraph{i) No Assignments (110 judge-week combinations).}
-\label{Category_i}
-As will be discussed in Section \ref{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments}, we do not observe any sentencing events for 101 of the 110 judge-week combinations in this category. The remaining 9 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_i} in Section \ref{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments:Category_i}.
-
-\begin{figure}[H]
-	\centering
-	\vspace{-0mm}
-	\includegraphics[scale=0.097]{Figures/Fig2}
-	\caption{A snapshot of the March Calendar.}
-	\label{Figure_Master_Calendar_1}
-\end{figure}
-
-\vspace{-3mm}
-\paragraph{ii) A Single Assignment (2196 judge-week combinations).}
-\label{Category_ii}
-A single assignment occurs in two ways as discussed next:
-	\begin{itemize}
-		\vspace{-2mm}
-		\item[(a)] \emph{No date is indicated (2200 judge-week combinations).} For example, Judge Alford's assignment (on the master calendar) for the week of November 6th is York GS; see Figure \ref{Figure_Master_Calendar_0}. As will be discussed in Section \ref{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments}, we only observe sentencing events in the county stated on the master calendar for 1872 of the 2200 ($85.1\%$) judge-week combinations in this category. In other words, there are no inconsistencies between the master calendar and the sentencing dataset for 1872 of the 2200 judge-week combinations. The remaining 328 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iia} and involve contradictory sentencing locations based on the sentencing dataset.
-		\vspace{-2mm}
-		\item[(b)] \emph{Specific dates are indicated (14 judge-week combinations).} For example, Judge Smoak's assignment (on the master calendar) in the week of March 19th is 14th Cir. CPNJ 19,20; see Figure \ref{Figure_Master_Calendar_1}. As will be discussed in Section \ref{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments}, we observe sentencing events only in the county stated on the master calendar and on the days stated on the master calendar for 10 of the 14 ($71.4\%$) judge-week combinations in this category. In other words, there are no inconsistencies between the master calendar and the sentencing dataset for 10 of these 14 judge-week combinations. The remaining 4 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iib} and involve contradictory sentencing locations based on the sentencing dataset.
-	\end{itemize}
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[scale=0.6]{Figures/Fig4}
-	\caption{Another snapshot of the July Calendar.}
-	\label{Figure_Master_Calendar_4}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.42]{Figures/Fig3A}
-	\includegraphics[scale=0.42]{Figures/Fig3B}
-	\caption{Another snapshot of the November Calendar.}
-	\label{Figure_Master_Calendar_3}
-\end{figure}
-
-\vspace{-3mm}
-\paragraph{iii) Two Assignments (226 judge-week combinations).}
-\label{Category_iii}
-This occurs in three ways. We discuss each case separately.
-	\begin{itemize}
-		\item[(a)] \emph{Neither assignment has a date (17 judge-week combinations).} For example, Judge Milling's assignment (on the master calendar) in the week of July 31st is Sumter GS and Malboro GS CC; see Figure \ref{Figure_Master_Calendar_4}. As will be discussed in Section \ref{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments}, we only observe sentencing events in the counties stated on the master calendar for 15 of the 17 ($88.2\%$) judge-week combinations in this category. In other words, there are no inconsistencies between the master calendar and the sentencing dataset for 15 of these 17 judge-week combinations. The remaining 2 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_a}.
-		\item[(b)] \emph{One assignment has no dates while the other assignment has specific dates (163 judge-week combinations).} For example, Judge Breeden's assignment (on the master calendar) in the week on November 20th is Horry GS 20 and in chambers; see Figure \ref{Figure_Master_Calendar_0}. As will be discussed in Section \ref{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments}, we only observe sentencing events in the counties stated on the master calendar and only on the days stated on the master calendar for 138 of the 163 ($84.7\%$) judge-week combinations in this category. In other words, there are no inconsistencies between the master calendar and the sentencing dataset for 138 of these 163 judge-week combinations. The remaining 25 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b}.
-		\item[(c)] \emph{Both assignments have specific dates (54 judge-week combinations).} For example, Judge Goldstein's assignment (on the master calendar) in the week of July 27th is Dorchester GS 27,29,30,1, Medical 28; see Figure \ref{Figure_Master_Calendar_3}. As will be discussed in Section \ref{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments}, we only observe sentencing events in the counties stated on the master calendar and only on the days stated on the master calendar for 45 of the 54 judge-week combinations of this category. In other words, there are no inconsistencies between the master calendar and the sentencing dataset for 45 of these 54 judge-week combinations. The remaining 9 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_c}.
-	\end{itemize}
-
-\vspace{-3mm}
-\paragraph{iv) Multiple Assignments (19 judge-week combinations).}
-\label{Category_iv}
-This assignment category occurs in three ways.
-	\begin{itemize}
-		\item[(a)] \emph{No assignment has a date (2 judge-week combinations).} In both judge-week combinations of this category, we only observe sentencing events in the counties stated on the master calendar. In other words, there are no inconsistencies between the master calendar and the sentencing dataset.
-		\item[(b)] \emph{Some assignments have no dates while other assignments have specific dates (19 judge-week combinations).} We only observe sentencing events in the counties stated on the master calendar and only on the days stated on the master calendar for 18 of the 19 judge-week combinations of this category. In other words, there are no inconsistencies between the master calendar and the sentencing dataset for 18 of these 19 judge-week combinations. The remaining judge-week combination is depicted in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_ivb}.
-		\item[(c)] \emph{All assignments have specific dates (2 judge-week combinations).} We only observe sentencing events in the counties stated on the master calendar and only on the days stated on the master calendar for one of the two judge-week combinations of this category. In other words, there are no inconsistencies between the master calendar and the sentencing dataset for one of the two judge-week combinations. The other judge-week combination is depicted in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_ivc}.
-	\end{itemize}
-
-
-\subsection{Further Analysis of the Master Calendar Assignments using the Sentencing Data Set}
-\label{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments}
-
-This section studies the master calendar in further detail by comparing it to the sentencing dataset. In doing so, we take advantage of the mapping from judge numbers to judge names (to be discussed in Section \ref{Sec:Mapping_Judge_Numbers_To_Judge_Names}). Appendix \ref{Sec:Appendix:Master_Calendar_Interpretations} provides plausible assignments for the judges in the ambiguous cases based on the facts presented in this section.
-
-\subsubsection{No Assignments Case}
-\label{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments:Category_i}
-As illustrated in Figure \ref{Figure_Simultaneous_Assignment_Count_Histogram}, there are 110 judge-week combinations in Category i. We observe no sentencing events (in the sentencing dataset) for 101 out of these 110 ($91.8\%$) judge-week combinations. Recall that the judges in these combinations have no assignments on the master calendar. Therefore, there are no inconsistencies between the master calendar and the sentencing dataset for these 101 judge-week combinations. The remaining 9 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_i}. We observe at least one sentencing event (in the sentencing dataset) for these judge-week combinations. Each judge visits only one county (according to the sentencing dataset) in these 9 judge-week combinations.
-
-\begin{table}[H]
-	\centering
-	\caption{Judge-week combinations in which the judge has sentencing events in a county to which he is not assigned - Category i. The first number in the parenthesis depicts the number of pleas and the second number depicts the number of trials.}
-	\vspace{-2mm}
-	\hspace*{0mm}
-	\setlength\tabcolsep{0pt} % default value: 6pt
-	{\scriptsize
-		\begin{tabular}{>{\quad}L{6mm}C{8mm}C{2mm}L{17mm}C{25mm}C{25mm}C{25mm}C{25mm}C{25mm}cccc}
-			\toprule
-			& & && \multicolumn{5}{c}{Sentencing Data Set} \\
-			\cmidrule(ll){5-9}
-			& Judge && Week & Monday & Tuesday & Wednesday & Thursday & Friday \\
-			\midrule
-			%& \rowgroup{$\nquad$\textbf{No Sentences}} \\
-			1  &  8  &&  January 29  & \textcolor{red}{Dorchester (1,0)}  &  &  &  &  \\
-			2  &  8  &&  June 4 & \textcolor{red}{Orangeburg (5,0)}  &  & \textcolor{red}{Orangeburg (2,1)}  & \textcolor{red}{Orangeburg (4,0)}  &  \\
-			3  &  8  &&  July 3  &  &  &  &  & \textcolor{red}{Dorchester (0,1)}  \\
-			4  &  8  &&  July 24   & & \textcolor{red}{Orangeburg (1,0)}  & \textcolor{red}{Orangeburg (1,0)} &  & \textcolor{red}{Orangeburg (1,0)}  &  \\
-			5  &  26  &&  April 23  & \textcolor{red}{Greenwood (1,0)}  &  &  &  &  \\
-			6  &  26  &&  October 30  &  &  & \textcolor{red}{Greenwood (1,0)}  &  &  \\
-			7  &  43  &&  March 12  &  &  & \textcolor{red}{Greenville (1,0)}  &  &  \\
-			8  &  43  &&  April 16   &  & \textcolor{red}{Greenville (1,0)}  &  &  &  \\
-			9  &  47  &&  October 23  & \textcolor{red}{Charleston (1,0)}  &  &  &  &  \\
-			\bottomrule
-		\end{tabular}
-	}
-	\label{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_i}
-\end{table}
-
-\subsubsection{One Assignment Case}
-\label{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments:Category_ii}
-We start with Category ii (a), i.e., no dates are indicated. As illustrated in Figure \ref{Figure_Simultaneous_Assignment_Count_Histogram}, there are 2200 judge-week combinations in Category ii (a). Although in judge-week combinations of Category ii (a) (according to the master calendar) the judges have an assignment the entire week, they do not necessarily sentence every day of the week; see Figure \ref{Figure_Histogram_of_Number_of_Days_With_Sentences_Category_10} for a histogram of the number of days in the week with a sentencing event and Figure \ref{Figure_Histogram_of_Sentences_This_Week_Category_10} for a histogram of the number of sentencing events observed for the judge-week combinations of Category ii (a). For 1872 of the 2200 ($85.1\%$) judge-week combinations of Category ii (a), we only observe sentencing events in the county to which the judge is assigned, i.e., we do not observe sentencing events in a county other than the county to which the judge is assigned. In other words, there are no inconsistencies between the master calendar and the sentencing dataset for 1872 of these 2200 judge-week combinations. The remaining 328 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_i}. We observe at least one sentencing event (in the sentencing dataset) in a county to which the judge is not assigned in these judge-week combinations. %Figure \ref{Figure_Histogram_of_Number_of_Days_With_Sentences_Category_11Histogram_Maximum_Number_of_Counties_Visited_Category_10} provides a histogram of the highest number of counties visited on a day for the judge-week combinations in Category ii (a).
-%\begin{note}
-%	As depicted in Figure \ref{Figure_Histogram_of_Number_of_Days_With_Sentences_Category_11Histogram_Maximum_Number_of_Counties_Visited_Category_10}, in about 200 of the judge-week combinations of Category ii (a), the judge visited more than one county on a day; e.g., see combination 7 of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iia}. We should decide what to do with these combiations. What type of information on these combinations do you think would help us?
-%\end{note}
-
-\begin{figure}[H]
-	\centering
-	\begin{minipage}{.45\textwidth}
+	\begin{figure}[H]
 		\centering
 		\hspace*{-8mm}
-		\includegraphics[scale=0.75]{Figures/Histogram_of_Number_of_Days_With_Sentences_Category_10}
-		\hspace{4mm}
-		\vspace{-6.0mm}
-		\caption{A histogram of the number of days in the week with a sentencing event for judge-week combinations of Category ii (a).}
-		\label{Figure_Histogram_of_Number_of_Days_With_Sentences_Category_10}
-	\end{minipage}
-	\hspace{5mm}
-	\begin{minipage}{0.45\textwidth}
+		\begin{minipage}{.45\textwidth}
+			\centering
+			\hspace*{-10mm}
+			\includegraphics[scale=0.67]{Figures/Type_of_Assignment_Histogram}
+			\vspace*{-7mm}
+			\caption{A histogram of the assignments observed for a judge-week combination in the master calendar.}
+			\label{Figure_Assignment_Histogram}
+		\end{minipage}
+		\hspace{5mm}
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			\vspace*{0mm}
+			\includegraphics[scale=0.67]{Figures/Type_of_Court_Assignment_Histogram}
+			\vspace*{-1mm}
+			\caption{A histogram of the assignment types observed for a judge-week combination in the master calendar.}
+			\label{Figure_Assignment_Type_Histogram}
+		\end{minipage}
+	\end{figure}
+
+	\begin{table}[H]
 		\centering
-		\hspace*{-3mm}
-		\includegraphics[scale=0.75]{Figures/Histogram_of_Sentences_This_Week_Category_10}
-		\vspace{-6mm}
-		\caption{A histogram of the number of sentencing events for judge-week combinations of Category ii (a).}
-		\label{Figure_Histogram_of_Sentences_This_Week_Category_10}
-	\end{minipage}
-\end{figure}
+		\caption{Assignment Type Acronyms and their meanings.}
+		\vspace{0mm}
+		\setlength\tabcolsep{8pt} % default value: 6pt
+		{\footnotesize
+			\begin{tabular}{L{20mm}L{50mm}}
+				\toprule
+				Acronym & Meaning  \\
+				\midrule
+				%\rowgroup{Consumer Surplus} \\
+				GS & General Session \\
+				CC & Circuit Court \\
+				SGJ & State Grand Jury \\
+				CP & Common Pleas \\
+				CPNJ & Common Pleas Non-Jury \\
+				PCR & Post Conviction Relief  \\
+				Capital PCR & Capital Post Conviction Relief  \\
+				AW & Administrative Week \\
+				\bottomrule
+			\end{tabular}
+		}
+		\label{Table_Assignment_Type_Meaning}
+	\end{table}
 
-%\begin{figure}[H]
-%	\centering
-%	\begin{minipage}{.45\textwidth}
-%		\centering
-%		\hspace*{-8mm}
-%		\includegraphics[scale=0.72]{Figures/Histogram_Maximum_Number_of_Counties_Visited_Category_10}
-%		\hspace{4mm}
-%		\vspace{-6.0mm}
-%		\caption{A histogram of the highest number of counties visited on a day for judge-week combinations of Category ii (a).}
-%		\label{Figure_Histogram_of_Number_of_Days_With_Sentences_Category_11Histogram_Maximum_Number_of_Counties_Visited_Category_10}
-%	\end{minipage}
-%	\hspace{5mm}
-%	\begin{minipage}{0.45\textwidth}
-%		\centering
-%		\hspace*{-3mm}
-%		\includegraphics[scale=0.72]{Figures/Histogram_Maximum_Number_of_Counties_Visited_Category_11}
-%		\vspace{-6mm}
-%		\caption{A histogram of the highest number of counties visited on a day for judge-week combinations of Category ii (b).}
-%		\label{Figure_Histogram_Maximum_Number_of_Counties_Visited_Category_11}
-%	\end{minipage}
-%\end{figure}
-
-\begin{table}[H]
-	\centering
-	\caption{Judge-week combinations in which the judge has sentencing events in a county to which he is not assigned - Category ii (a). The counties written in green font are the counties to which the judge is assigned. The counties written in red font are the counties to which the judge is not assigned. The counties written in blue font are the counties to which the judge is not assigned, however, he is assigned to the circuit court containing these counties. So, the county assignment in the master calendar and this county belong to the same circuit court. The last column presents the percentage of the sentencing events (plea to trial, separately) that occurred in a county to which the judge is not assigned, i.e., it represents the fraction of sentencing events occurred in the counties written in red or blue fonts.}
-	\vspace{-2mm}
-	\hspace*{-26.5mm}
-	\setlength\tabcolsep{2pt} % default value: 6pt
-	{\scriptsize
-		\begin{tabular}{>{\quad}C{8mm}C{8mm}L{20mm}L{31mm}C{24mm}C{22mm}C{24mm}C{25mm}C{23mm}cc}
-			\toprule
-			& & & & \multicolumn{5}{c}{Sentencing Data Set} & \multicolumn{2}{c}{$\,\,\,$Percentage} \\
-			\cmidrule(ll){5-9} \cmidrule(ll){10-11}
-			& Judge & Week & Master Calendar & Monday & Tuesday & Wednesday & Thursday & Friday & $\,\,\,$Plea & Trial \\
-			\midrule
-			1  &  2  &  January 8  & Chester GS  & \textcolor{green}{Chester (2,0)} & \textcolor{red}{York (1,0)} &  &  & \textcolor{green}{Chester (2,0)} & 20\% & 0\%
-			\\
-			& & &  &  &  &  &  & & \\
-			2  &  2  &  February 12  & Chester CP  &  &  &  & \textcolor{red}{Lancaster (1,0)} &  & 100\% & 0\%
-			\\
-			& & &  &  &  &  &  & & \\
-			3  &  2  &  June 4  & Chester GS  &  &  & \textcolor{green}{Chester (0,1)} & \textcolor{red}{Spartanburg (1,0)}, \textcolor{green}{Chester (2,0)} & \textcolor{green}{Chester (3,0)} & 14\% & 0\%
-			\\
-			4  &  2  &  August 7  & York GS  &  & \textcolor{green}{York (2,0)} & \textcolor{green}{York (2,0)} & \textcolor{green}{York (4,0)} & \textcolor{red}{Kershaw (1,0)}, \textcolor{green}{York (7,0)} & 6\% & 0\%
-			\\
-			5  &  2  &  August 21  & York GS  &  & \textcolor{green}{York (1,0)} &  &  & \textcolor{red}{Union (1,0)}, \textcolor{green}{York (2,0)} & 25\% & 0\%
-			\\
-			6  &  2  &  September 11  & York GS  & \textcolor{green}{York (6,0)} & \textcolor{green}{York (2,0)} &  & \textcolor{green}{York (2,0)} & \textcolor{red}{Spartanburg (1,0)}, \textcolor{green}{York (5,0)} & 6\% & 0\%
-			\\
-			7  &  2  &  October 9  & York GS  &  &  & \textcolor{red}{Fairfield (1,0)}, \textcolor{green}{York (1,0)} & \textcolor{green}{York (5,0)} & \textcolor{green}{York (4,0)} & 9\% & 0\%
-			\\
-			8  &  2  &  October 23  & York GS  & \textcolor{green}{York (2,0)} & \textcolor{green}{York (3,0)} & \textcolor{green}{York (9,0)} & \textcolor{green}{York (1,0)} & \textcolor{red}{Kershaw (1,0)}, \textcolor{green}{York (6,0)} & 5\% & 0\%
-			\\
-			9  &  3  &  January 8  & Bamberg GS  & \textcolor{green}{Bamberg (1,0)} & \textcolor{green}{Bamberg (3,0)} & \textcolor{green}{Bamberg (3,0)} &  & \textcolor{red}{Aiken (1,0)} & 12\% & 0\%
-			\\
-			& & &  &  &  &  &  & & \\
-			10  &  3  &  February 12  & Aiken GS  & \textcolor{green}{Aiken (9,0)} & \textcolor{green}{Aiken (3,0)} &  & \textcolor{red}{Edgefield (1,0)}, \textcolor{green}{Aiken (2,1)} & \textcolor{red}{Barnwell (1,0)}, \textcolor{green}{Aiken (2,0)} & 11\% & 0\%
-			\\
-			\\
-			. & . & . & . & . & . & . & . & . & . \\
-			. & . & . & . & . & . & . & . & . & .  \\
-			. & . & . & . & . & . & . & . & . & . \\
-			& & &  &  &  &  &  & & \\
-			318  &  50  &  October 16  & McCormick GS  &  & \textcolor{green}{McCormick (15,0)} & \textcolor{red}{Saluda (1,0)}, \textcolor{green}{McCormick (1,0)} &  &  & 6\% & 0\%
-			\\
-			319  &  50  &  November 6  & 11th Cir. CPNJ  &  &  &  & \textcolor{blue}{Lexington (1,0)} &  & 100\% & 0\%
-			\\
-			& & &  &  &  &  &  & & \\
-			320  &  51  &  January 8  & Orangeburg GS  & \textcolor{red}{Calhoun (2,0)}, \textcolor{green}{Orangeburg (14,0)} & \textcolor{green}{Orangeburg (3,0)} & \textcolor{green}{Orangeburg (4,0)} & \textcolor{green}{Orangeburg (3,0)} & \textcolor{red}{Aiken (1,0)}, \textcolor{green}{Orangeburg (2,0)} & 10\% & 0\%
-			\\
-			321  &  51  &  January 22  & Sumter GS  & \textcolor{red}{York (1,0)}, \textcolor{green}{Sumter (6,0)} & \textcolor{green}{Sumter (2,0)} & \textcolor{green}{Sumter (3,0)} & \textcolor{green}{Sumter (1,0)} & \textcolor{green}{Sumter (3,0)} & 6\% & 0\%
-			\\
-			322  &  51  &  February 5  & Clarendon GS  & \textcolor{green}{Clarendon (3,0)} & \textcolor{green}{Clarendon (2,0)} & \textcolor{green}{Clarendon (1,0)} &  & \textcolor{red}{Sumter (1,0)}, \textcolor{green}{Clarendon (3,0)} & 10\% & 0\%
-			\\
-			323  &  51  &  April 16  & Sumter GS  & \textcolor{red}{Clarendon (0,1)}, \textcolor{green}{Sumter (5,0)} & \textcolor{green}{Sumter (3,0)} & \textcolor{green}{Sumter (2,0)} & \textcolor{green}{Sumter (3,0)} & \textcolor{green}{Sumter (3,0)} & 0\% & 6\%
-			\\
-			324  &  51  &  May 28  & 3rd Cir. CPNJ/PCR  &  &  &  & \textcolor{blue}{Sumter (1,0)} & \textcolor{blue}{Williamsburg (1,0)} & 100\% & 0\%
-			\\
-			325  &  51  &  September 25  & Richland GS  & \textcolor{green}{Richland (7,0)} & \textcolor{red}{Lexington (1,0), Clarendon (1,0)} & \textcolor{green}{Richland (2,1)} & \textcolor{green}{Richland (3,0)} & \textcolor{green}{Richland (1,0)} & 12\% & 0\%
-			\\
-			326  &  51  &  October 2  & in chambers  &  &  &  &  & \textcolor{red}{Richland (1,0)} & 100\% & 0\%
-			\\
-			& & &  &  &  &  &  & & \\
-			327  &  51  &  October 16  & Orangeburg GS  & \textcolor{green}{Orangeburg (14,0)} & \textcolor{green}{Orangeburg (2,0)} & \textcolor{green}{Orangeburg (5,0)} & \textcolor{red}{Charleston (1,0)}, \textcolor{green}{Orangeburg (3,0)} & \textcolor{green}{Orangeburg (1,0)} & 4\% & 0\%
-			\\
-			328  &  51  &  December 18  & in chambers  & \textcolor{red}{Richland (1,0)} & \textcolor{red}{Richland (24,0)} &  &  &  & 100\% & 0\%
-			\\
-			\bottomrule
-		\end{tabular}
-	}
-	\label{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iia}
-\end{table}
-
-As illustrated in Figure \ref{Figure_Simultaneous_Assignment_Count_Histogram}, there are 14 judge-week combinations in Category ii (b), i.e., a single assignment with specific dates. Figure \ref{Figure_Histogram_of_Number_of_Days_With_Sentences_Category_11} provides a histogram of the number of days in the week with a sentencing event for the judge-week combinations of Category ii (b). Figure \ref{Figure_Histogram_of_Sentences_This_Week_Category_11} provides a histogram of the number of sentencing events observed for these 14 judge-week combinations. In 10 of the 14 judge-week combinations, we either observe no sentencing events (8 of them, as shown in Figure \ref{Figure_Histogram_of_Number_of_Days_With_Sentences_Category_11}) or sentencing events only in the same county as listed in the master calendar (2 of them). In other words, there are no inconsistencies between the master calendar and the sentencing dataset for 10 of these 14 ($71.4\%$) judge-week combinations. The remaining 4 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_i}. In these 4 judge-week combinations, exactly one of the following conditions holds:
-\begin{enumerate}
-	\vspace{-3mm}
-	\item At least one sentencing event occurred in a county not stated on the master calendar (3 judge-week combinations); see the last three rows of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iib}.
-	\vspace{-2mm}
-	\item At least one sentencing event occurred in the county stated on the master calendar but on a date not stated on the master calendar (1 judge-week combination); see the first row of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iib}.
-\end{enumerate}
-
-\begin{table}[H]
-	\centering
-	\caption{Judge-week combinations in which the judge has sentencing events in a county to which he is not assigned - Category ii (b). The counties written in green font are the counties to which the judge is assigned. The counties written in red font are the counties to which the judge is not assigned. The last column presents the percentage of the sentencing events (plea or trial, separately) that occurred in a county to which the judge is not assigned, i.e., it represents the fraction of sentencing events occurred in the counties written in red font.}
-	\vspace{-2mm}
-	\hspace*{-21mm}
-	\setlength\tabcolsep{2pt} % default value: 6pt
-	{\scriptsize
-		\begin{tabular}{>{\quad}C{6mm}C{8mm}L{18mm}L{31mm}C{22mm}C{22mm}C{22mm}C{22mm}C{22mm}cc}
-			\toprule
-			& & & & \multicolumn{5}{c}{Sentencing Data Set} & \multicolumn{2}{c}{$\,\,\,$Percentage} \\
-			\cmidrule(ll){5-9} \cmidrule(ll){10-11}
-			& Judge & Week & Master Calendar & Monday & Tuesday & Wednesday & Thursday & Friday & $\,\,\,$Plea & Trial \\
-			\midrule
-			1  &  7  &  March 19  & Horry GS CP CC 21,22,23  &  & \textcolor{red}{Horry (6,0)} &  & \textcolor{green}{Horry (5,0)} &  & 55\% & 0\%
-			\\
-			2  &  28  &  September 25  & Bamberg GS 25,26,27,28,29  & \textcolor{red}{Lee (1,0)}, \textcolor{green}{Bamberg (10,0)} & \textcolor{green}{Bamberg (6,0)} &  &  &  & 6\% & 0\%
-			\\
-			3  &  47  &  October 30  & Barnwell GS 1,2,3  &  &  & \textcolor{green}{Barnwell (1,0)} & \textcolor{red}{Allendale (1,0)}, \textcolor{green}{Barnwell (2,0)} &  & 25\% & 0\%
-			\\
-			4  &  49  &  October 23  & 13th Cir. CPNJ 23,24,25,26  &  &  &  &  & \textcolor{red}{Clarendon (1,0)} & 100\% & 0\%
-			\\
-			\bottomrule
-		\end{tabular}
-	}
-	\label{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iib}
-\end{table}
-
-\begin{figure}[H]
-	\centering
-	\begin{minipage}{.45\textwidth}
+	\begin{figure}[H]
 		\centering
-		\hspace*{-3mm}
-		\includegraphics[scale=0.72]{Figures/Histogram_of_Number_of_Days_With_Sentences_Category_11}
-		\hspace{4mm}
-		\vspace{-6.0mm}
-		\caption{A histogram of the number of days in the week with a sentencing event for judge-week combinations of Category ii (b).}
-		\label{Figure_Histogram_of_Number_of_Days_With_Sentences_Category_11}
-	\end{minipage}
-	\hspace{5mm}
-	\begin{minipage}{0.45\textwidth}
+		\includegraphics[scale=0.75]{Figures/Type_of_Court_Assignment_Sentencing_Event_Histogram}
+		\caption{A histogram of the type of the assignment (on the master calendar) during which the sentencing events occurred.}
+		\label{Figure_Assignment_Type_Sentencing_Event_Histogram}
+	\end{figure}
+
+	\begin{remark}
+		We should probably only keep the following assignments (in the master calendar):
+		\begin{enumerate}
+			\vspace{-2mm}
+			\item All county assignments of type GS
+			\item All county assignments of type GS CC, GS CC CP, and GS(SGJ) in which a sentencing event occurred; see Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram}. Note, however, in these weeks the judge may be splitting his time between GS (criminal cases) and other assignment types (e.g., civil cases). Therefore, we do not include these assignments in the estimation of $\mu_p$, the plea service rate.
+			\item The CP county assignments that account for the 245 sentencing events in the CP bar of Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram}. Since the sentencing dataset only includes the criminal cases and a CP session is for civil cases, we believe in these CP county assignments, the GS acronym was omitted. Even then, because the judge may be splitting his capacity between GS and CP, we do not include these assignments in the estimation of $\mu_p$, the plea service rate.
+			\item The one (hand-written) assignment without an acronym in front of it that accounts for the 22 sentencing events in the None bar of Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram}. Since the sentencing dataset only includes the criminal cases, we believe in this assignment, the GS acronym was omitted. Nevertheless, we do not include this assignment in the estimation of $\mu_p$, the plea service rate.
+		\end{enumerate}
+	\end{remark}
+
+	\begin{figure}[H]
 		\centering
-		\hspace*{-3mm}
-		\includegraphics[scale=0.72]{Figures/Histogram_of_Sentences_This_Week_Category_11}
-		\vspace{-6mm}
-		\caption{A histogram of the number of sentencing events for judge-week combinations of Category ii (b).}
-		\label{Figure_Histogram_of_Sentences_This_Week_Category_11}
-	\end{minipage}
-\end{figure}
+		\begin{minipage}{\textwidth}
+			\vspace{-16mm}
+			\centering
+			\includegraphics[scale=0.75]{Figures/Judge_Schedule_GS_Percentage_Histogram}
+			\vspace{-3mm}
+			\caption{The percentage of weeks (with an assignment) in which the judge has at least one assignment of type GS.}
+			\label{Figure_Judge_Schedule_GS_Percentage_Histogram}
+		\end{minipage}
+		\begin{minipage}{\textwidth}
+			\centering
+			\includegraphics[scale=0.75]{Figures/Judge_Schedule_CP_Percentage_Histogram}
+			\vspace{-3mm}
+			\caption{The percentage of weeks (with an assignment) in which the judge has at least one assignment of type CP.}
+			\label{Figure_Judge_Schedule_CP_Percentage_Histogram}
+		\end{minipage}
+		\begin{minipage}{\textwidth}
+			\centering
+			\includegraphics[scale=0.75]{Figures/Judge_Schedule_GS_CP_Percentage_Histogram}
+			\vspace{-3mm}
+			\caption{The percentage of weeks (with an assignment) in which the judge has at least one assignment of type GS and at least one assignment of type CP.}
+			\label{Figure_Judge_Schedule_GS_CP_Percentage_Histogram}
+		\end{minipage}
+	\end{figure}
 
-\subsubsection{Two Assignments Case}
-\label{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments:Category_iii}
-We start with Category iii (a), i.e., neither assignment has specific dates. As illustrated in Figure \ref{Figure_Simultaneous_Assignment_Count_Histogram}, there are 17 judge-week combinations in Category iii (a). For 15 of the 17 ($88.2\%$) judge-week combinations of Category iii (a), we only observe sentencing events in one of the two counties stated on the master calendar. In other words, there are no inconsistencies between the master calendar and the sentencing dataset for 15 of these 17 judge-week combinations. The remaining 2 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_a}. The judge-week combinations of Category iii(a) that satisfy (at least) one of the following conditions are potentially problematic:
-\begin{enumerate}
-	\vspace{-3mm}
-	\item At least one sentencing event occurred in a county not stated on the master calendar (Both rows of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_a}).
-	\vspace{-2mm}
-	\item The judge sentenced in more than one county on a day (First row of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_a}).
-\end{enumerate}
+	\subsection{Interpreting the Master Calendar}
+		\label{Sec:Master_Calendar:Interpreting_Master_Calendar}
 
-\begin{table}[H]
-	\centering
-	\caption{Judge-week combinations in which the judge has sentencing events in a county to which he is not assigned - Category iii (a). The county written in green font is the county to which the judge is assigned. The counties written in red font are the counties to which the judge is not assigned. The county written in blue font is the county to which the judge is not assigned, however, he is assigned to the circuit court containing this county. So, the county assignment in the master calendar and this county belong to the same circuit court. The last column presents the percentage of the sentencing events (plea or trial, separately) that occurred in a county to which the judge is not assigned, i.e., it represents the fraction of sentencing events occurred in the counties written in red or blue fonts.}
-	\vspace{-2mm}
-	\hspace*{-0mm}
-	\setlength\tabcolsep{2pt} % default value: 6pt
-	{\scriptsize
-		\begin{tabular}{>{\quad}C{6mm}C{8mm}L{13mm}L{25mm}C{15mm}C{15mm}C{20mm}C{17mm}C{17mm}cc}
-			\toprule
-			& & & & \multicolumn{5}{c}{Sentencing Data Set} & \multicolumn{2}{c}{$\,\,\,$Percentage} \\
-			\cmidrule(ll){5-9} \cmidrule(ll){10-11}
-			& Judge & Week & Master Calendar & Monday & Tuesday & Wednesday & Thursday & Friday & $\,\,\,$Plea & Trial \\
-			\midrule
-			1  &  3  &  April 30  & Aiken GS CC, 2nd Cir. CP/PCR  &  &  & \textcolor{blue}{Bamberg (1,0)}, \textcolor{green}{Aiken (5,0)} &  &  & 17\% & 0\%
-			\\
-			2  &  10  &  January 8  & Florence GS, Lee GS  &  &  & \textcolor{red}{Marion (1,0)} & \textcolor{red}{Marion (1,0)} &  & 100\% & 0\%
-			\\
-			\bottomrule
-		\end{tabular}
-	}
-	\label{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_a}
-\end{table}
+		Consider a judge on a specific week. We group the judge-week combinations into three categories, depending on the number of assignment the judge has during that week, as follows: i) None (blank), ii) a single assignment, and iii) multiple assignments.
 
-For the judge-week combination in row 1 of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_a}, the judge (Judge 3) is assigned to Aiken and the 2nd circuit court (according to the master calendar). However, he has a sentencing event in Bamberg and Aiken on Wednesday. Bamberg belongs to the 2nd circuit court.
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[scale=0.75]{Figures/Simultaneous_Assignment_Count_Histogram}
+			\caption{A histogram of the assignment categories observed for a judge-week combination in the master calendar.}
+			\label{Figure_Simultaneous_Assignment_Count_Histogram}
+		\end{figure}
 
-For the judge-week combination in row 2 of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_a}, the judge (Judge 10) is assigned to Florence and Lee (according to the master calendar). However, he has a sentencing event in Marion on Wednesday and another sentencing event in Marion on Thursday.
+		Figure \ref{Figure_Simultaneous_Assignment_Count_Histogram} provides a histogram of the assignment categories observed for a judge-week combination in the master calendar. We compare these assignments in the master calendar with the sentencing events for the judge recorded in the sentencing dataset. Next, we discuss our interpretation  of each assignment category with examples. We have a total of 2582 judge-week combinations.
 
-As illustrated in Figure \ref{Figure_Simultaneous_Assignment_Count_Histogram}, there are 163 judge-week combinations in Category iii (b), i.e., one assignment has no dates whereas the other one has specific dates. For 138 of these 163 ($84.7\%$) judge-week combinations, we only observe sentencing events in one of the two counties stated on the master calendar and only on the days stated on the master calendar. In other words, there are no inconsistencies between the master calendar and the sentencing dataset for 138 of these 163 judge-week combinations. The remaining 25 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b}.
-
-\begin{table}[H]
-	\centering
-	\caption{Judge-week combinations in which the judge has sentencing events in a county to which he is not assigned - Category iii (b). The counties written in green font are the counties to which the judge is assigned. The counties written in red font are the counties to which the judge is not assigned. The counties written in blue font are the counties to which the judge is not assigned, however, he is assigned to the circuit court containing these counties. So, the county assignment in the master calendar and this county belong to the same circuit court. The last column presents the percentage of the sentencing events (plea or trial, separately) that occurred in a county to which the judge is not assigned, i.e., it represents the fraction of sentencing events occurred in the counties written in red or blue fonts.}
-	\vspace{-2mm}
-	\hspace*{-21mm}
-	\setlength\tabcolsep{2pt} % default value: 6pt
-	{\scriptsize
-		\begin{tabular}{>{\quad}C{6mm}C{8mm}L{17mm}L{30mm}C{22mm}C{22mm}C{24mm}C{23mm}C{22mm}cc}
-			\toprule
-			& & & & \multicolumn{5}{c}{Sentencing Data Set} & \multicolumn{2}{c}{$\,\,\,$Percentage} \\
-			\cmidrule(ll){5-9} \cmidrule(ll){10-11}
-			& Judge & Week & Master Calendar & Monday & Tuesday & Wednesday & Thursday & Friday & $\,\,\,$Plea & Trial \\
-			\midrule
-			1  &  7  &  October 16  & Florence CP, Florence GS CC 20  &  &  &  & \textcolor{red}{Horry (1,0)} & \textcolor{green}{Florence (8,0)} & 11\% & 0\%
-			\\
-			2  &  7  &  December 18  & in chambers, 12th Cir. CPNJ 18,19  & \textcolor{blue}{Marion (1,0)} &  &  &  &  & 100\% & 0\%
-			\\
-			3  &  10  &  June 18  & Florence GS, Florence CP 21  & \textcolor{green}{Florence (5,0)} & \textcolor{green}{Florence (3,0)} & \textcolor{red}{Darlington (1,0)}, \textcolor{green}{Florence (17,0)} & \textcolor{green}{Florence (12,0)} & \textcolor{green}{Florence (5,0)} & 2\% & 0\%
-			\\
-			4  &  11  &  June 4  & 8th Cir. CPNJ, Spartanburg GS CC 8  & \textcolor{blue}{Laurens (1,0)} &  &  &  &  & 100\% & 0\%
-			\\
-			5  &  11  &  October 2  & in chambers, 7th Cir. CPNJ 2,3,5  &  &  &  & \textcolor{blue}{Spartanburg (3,0)} &  & 100\% & 0\%
-			\\
-			6  &  13  &  March 5  & McCormick GS, Edgefield GS CC 8  & \textcolor{green}{McCormick (3,0)} &  &  & \textcolor{red}{Saluda (1,0)} &  & 25\% & 0\%
-			\\
-			7  &  14  &  January 8  & Richland GS, Aiken GS CC 12  & \textcolor{green}{Richland (8,0)} & \textcolor{green}{Richland (3,0)} & \textcolor{green}{Richland (1,0)} &  & \textcolor{red}{Richland (0,1)} & 0\% & 8\%
-			\\
-			8  &  14  &  August 28  & Williamsburg GS, Orangeburg GS CC 1  & \textcolor{green}{Williamsburg (3,0)} & \textcolor{green}{Williamsburg (4,0)} & \textcolor{red}{Sumter (1,0)}, \textcolor{green}{Williamsburg (2,0)} & \textcolor{green}{Williamsburg (6,0)} &  & 6\% & 0\%
-			\\
-			9  &  14  &  December 11  & Lee GS, Aiken GS CC 15  & \textcolor{green}{Lee (1,0)} & \textcolor{green}{Lee (1,0)} &  &  & \textcolor{red}{Lee (0,2)} & 0\% & 50\% \\
-			\\
-			10  &  18  &  March 12  & Spartanburg CP, Cherokee GS CC 15  &  &  & \textcolor{red}{Pickens (1,0)} & \textcolor{green}{Cherokee (1,0)} &  & 50\% & 0\%
-			\\
-			11  &  26  &  February 26  & Greenwood GS, 8th Cir. CPNJ CC 26  & \textcolor{blue}{Greenwood (4,0)} & \textcolor{green}{Greenwood (10,0)} & \textcolor{green}{Greenwood (7,0)} & \textcolor{blue}{Abbeville (1,0), Laurens (1,0)} & \textcolor{blue}{Greenville (1,0)}, \textcolor{green}{Greenwood (5,0)} & 24\% & 0\%
-			\\
-			12  &  27  &  November 13  & Greenwood GS, Medical 17  & \textcolor{red}{Anderson (1,0)} &  & \textcolor{green}{Greenwood (9,1)} & \textcolor{green}{Greenwood (5,0)} &  & 6\% & 0\%
-			\\
-			13  &  29  &  March 19  & Darlington GS, Dillon GS CC 23  & \textcolor{green}{Darlington (1,0)} & \textcolor{green}{Darlington (8,0)} & \textcolor{red}{Chesterfield (1,0)}, \textcolor{green}{Darlington (9,0)} & \textcolor{green}{Darlington (3,0)} &  & 5\% & 0\%
-			\\
-			14  &  29  &  July 31  & Richland GS, Lexington GS CC 3  & \textcolor{red}{Lexington (1,0)}, \textcolor{green}{Richland (13,0)} & \textcolor{red}{Marlboro (1,0), Kershaw (1,0)}, \textcolor{green}{Richland (10,0)} & \textcolor{green}{Richland (12,0)} & \textcolor{red}{Richland (4,0)} &  & 17\% & 0\%
-			\\
-			15  &  30  &  June 4  & 16th Cir. CPNJ, Clarendon GS CC 8  &  & \textcolor{red}{Union (1,0)} &  &  & \textcolor{green}{Clarendon (1,0)} & 50\% & 0\%
-			\\
-			16  &  31  &  October 2  & in chambers, Greenville GS 6  &  &  & \textcolor{red}{Anderson (1,0)} &  &  & 100\% & 0\%
-			\\
-			17  &  33  &  April 9  & Charleston CP, Horry GS CC 9   & \textcolor{red}{Charleston (1,0)} &  &  &  &  & 100\% & 0\%
-			\\
-			18  &  33  &  April 30  & Berkeley GS, Richland GS CC 2  & \textcolor{green}{Berkeley (6,0)} & \textcolor{green}{Berkeley (1,0)} & \textcolor{red}{Berkeley (2,0)} & \textcolor{green}{Berkeley (6,0)} &  & 13\% & 0\%
-			\\
-			19  &  35  &  April 16  & Florence GS, 5th Cir. CPNJ CC 20  & \textcolor{green}{Florence (12,0)} & \textcolor{green}{Florence (8,0)} & \textcolor{green}{Florence (16,0)} & \textcolor{green}{Florence (5,0)} & \textcolor{red}{Florence (5,0)} & 11\% & 0\%
-			\\
-			20  &  35  &  May 14  & Marion GS , 5th Cir. CPNJ CC 14  & \textcolor{red}{Marion (7,0)} &  & \textcolor{green}{Marion (1,0)} &  & \textcolor{green}{Marion (8,0)} & 44\% & 0\%
-			\\
-			21  &  38  &  January 15  & Georgetown CP, Georgetown GS CC 19  &  &  &  & \textcolor{red}{Marion (0,2)} &  & 0\% & 100\%
-			\\
-			22  &  40  &  August 28  & Anderson CP, Oconee GS CC 1  &  &  &  &  & \textcolor{red}{Anderson (1,0)} & 100\% & 0\%
-			\\
-			23  &  40  &  November 6  & Anderson GS, 10th Cir. CPNJ CC 8  & \textcolor{red}{Greenville (1,0)}, \textcolor{green}{Anderson (3,0)} &  & \textcolor{red}{Anderson (8,0)} & \textcolor{green}{Anderson (10,0)} &  & 41\% & 0\%
-			\\
-			24  &  44  &  May 7  & in chambers, 9th Cir. CPNJ 8  &  & \textcolor{red}{Colleton (0,1)} &  &  &  & 0\% & 100\%
-			\\
-			25  &  48  &  December 4  & 15th Cir. CPNJ, Horry GS CP CC 5  & \textcolor{blue}{Horry (1,0)} &  &  &  &  & 100\% & 0\%
-			\\
-			\bottomrule
-		\end{tabular}
-	}
-	\label{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b}
-\end{table}
-
-The judge-week combinations listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b} satisfy (at least) one of the following conditions, which are problematic (some satisfy multiple conditions):\footnote{For example, judge-week combination 12 satisfies all four conditions. In judge-week combination 12, the assignment of Judge 29 in the week of July 31 is Richland GS and Lexington GS CC 3. Therefore, we would expect Judge 29 to be in Lexington on Thursday, and to be in Richland on Monday, Tuesday, Wednesday, and Friday. Since we observe sentencing events in Marlboro and Kershaw (alongside Richland) on Tuesday, judge-week combination 12 satisfies Conditions 1 and 4. Since we observe sentencing events in both Lexington and Richland on Monday, judge-week combination 12 satisfies Condition 3. Since we observe sentencing events in Richland on Thursday, judge-week combination 12 satisfies Condition 2, as well.}
-	\begin{enumerate}
 		\vspace{-3mm}
-		\item At least one sentencing event occurred in a county not stated on the master calendar, e.g., judge-week combination 2 of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b} (17 such judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b}).
-		\vspace{-9mm}
-		\item At least one sentencing event occurred in the county stated on the master calendar with specific dates, but on a date other than the dates specified, e.g., judge-week combination 23 of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b} (4 such judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b}.).
-		\vspace{-2mm}
-		\item At least one sentencing event occurred in the county stated on the master calendar without specific dates. However, this sentencing event occurred on a date specified for the other county, e.g., judge-week combination 8 of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b} (8 such judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b}.).
-		\vspace{-2mm}
-		\item The judge sentenced in more than one county on a day, e.g., judge-week combination 3 of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b} (5 such judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b}.).
-\end{enumerate}
-\vspace{-3mm}
+		\paragraph{i) No Assignment (110 judge-week combinations).}
+		\label{Category_i}
+		As will be discussed in Section \ref{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments}, we do not observe any sentencing events for 101 of the 110 judge-week combinations in this category. The remaining 9 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_i} in Section \ref{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments:Category_i}.
 
-As illustrated in Figure \ref{Figure_Simultaneous_Assignment_Count_Histogram}, there are 54 judge-week combinations in Category iii (c), i.e., both assignments have specific dates. For 45 of these 54 ($83.3\%$) judge-week combinations, we only observe sentencing events in one of the two counties stated on the master calendar and only on the days stated on the master calendar. In other words, there are no inconsistencies between the master calendar and the sentencing dataset for 45 of these 54 judge-week combinations. The remaining 9 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_c}.
+		\begin{figure}[H]
+			\centering
+			\vspace{-0mm}
+			\includegraphics[scale=0.097]{Figures/Fig2}
+			\caption{A snapshot of the March Calendar.}
+			\label{Figure_Master_Calendar_1}
+		\end{figure}
 
-\begin{table}[H]
-	\centering
-	\caption{Judge-week combinations in which the judge has sentencing events in a county to which he is not assigned - Category iii (c). The counties written in green font are the counties to which the judge is assigned. The counties written in red font are the counties to which the judge is not assigned. The counties written in blue font are the counties to which the judge is not assigned, however, he is assigned to the circuit court containing these counties. So, the county assignment in the master calendar and this county belong to the same circuit court. The last column presents the percentage of the sentencing events (plea or trial, separately) that occurred in a county to which the judge is not assigned, i.e., it represents the fraction of sentencing events occurred in the counties written in red or blue fonts.}
-	\vspace{-2mm}
-	\hspace*{-20mm}
-	\setlength\tabcolsep{2pt} % default value: 6pt
-	{\scriptsize
-		\begin{tabular}{>{\quad}C{6mm}C{8mm}L{17mm}L{29mm}C{22mm}C{22mm}C{22mm}C{23mm}C{22mm}cc}
-			\toprule
-			& & & & \multicolumn{5}{c}{Sentencing Data Set} & \multicolumn{2}{c}{$\,\,\,$Percentage} \\
-			\cmidrule(ll){5-9} \cmidrule(ll){10-11}
-			& Judge & Week & Master Calendar & Monday & Tuesday & Wednesday & Thursday & Friday & $\,\,\,$Plea & Trial \\
-			\midrule
-			&&\rowgroup{$\nquad\nquad\nquad\nquad$\textbf{Subcategory (c)}} \\
-			1  &  6  &  October 16  & 15th Cir. AW 16,19,20, Aiken 17,18  &  & \textcolor{green}{Aiken (11,0)} & \textcolor{green}{Aiken (11,0)} & \textcolor{blue}{Horry (6,0), Williamsburg (1,0)} & \textcolor{blue}{Horry (1,0)} & 27\% & 0\%
-			\\
-			2  &  10  &  July 10  & Darlington GS 11,12,13,14, XX 10  &  & \textcolor{green}{Darlington (2,0)} & \textcolor{green}{Darlington (5,0)} & \textcolor{red}{Chesterfield (1,0)}, \textcolor{green}{Darlington (9,0)} &  & 6\% & 0\%
-			\\
-			3  &  17  &  November 27  & XX 1, Aiken GS 27,28,29,30  & \textcolor{green}{Aiken (3,0)} &  & \textcolor{green}{Aiken (1,1)} & \textcolor{red}{Spartanburg (1,0)}, \textcolor{green}{Aiken (7,0)} &  & 8\% & 0\%
-			\\
-			4  &  18  &  April 16  & 13th Cir. CPNJ 16, Lexington GS 17,18,19,20  &  &  & \textcolor{green}{Lexington (12,0)} & \textcolor{red}{Richland (1,0)}, \textcolor{green}{Lexington (11,0)} &  & 4\% & 0\%
-			\\
-			5  &  27  &  May 28  & 10th Cir. CPNJ/PCR 28,29,30, Lexington GS 31,1  &  &  & \textcolor{blue}{Anderson (1,0)} & \textcolor{green}{Lexington (15,0)} & \textcolor{green}{Lexington (1,0)} & 6\% & 0\%
-			\\
-			6  &  35  &  January 8  & 12th Cir. CPNJ 8,9,11,12, X 10  & \textcolor{red}{Richland (1,0)} &  &  &  &  & 100\% & 0\%
-			\\
-			7  &  40  &  October 30  & Anderson CP 1,2,3, Barnwell GS 30,31  & \textcolor{green}{Barnwell (3,0)} & \textcolor{red}{Newberry (1,0), Aiken (1,0)}, \textcolor{green}{Barnwell (13,0)} &  &  &  & 11\% & 0\%
-			\\
-			8  &  44  &  May 14  & Colleton GS 14,15,16, X 17,18  & \textcolor{green}{Colleton (4,0)} & \textcolor{green}{Colleton (2,0)} & \textcolor{green}{Colleton (3,0)} &  & \textcolor{red}{Beaufort (1,0)} & 10\% & 0\%
-			\\
-			9  &  50  &  July 17  & Lexington GS 17,18,19,20, X 21  &  &  & \textcolor{green}{Lexington (14,0)} & \textcolor{green}{Lexington (10,0)} & \textcolor{red}{Lexington (2,0)} & 8\% & 0\%
-			\\
-			\bottomrule
-		\end{tabular}
-	}
-	\label{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_c}
-\end{table}
+		\vspace{-3mm}
+		\paragraph{ii) Single Assignment (2214 judge-week combinations).}
+		\label{Category_ii}
+		A single assignment occurs in two ways as discussed next:
+			\begin{itemize}
+				\vspace{-2mm}
+				\item[(a)] \emph{Single assignment, no dates (2200 judge-week combinations).} In these cases, there are no dates indicated. For example, Judge Alford's assignment (on the master calendar) for the week of November 6th is York GS; see Figure \ref{Figure_Master_Calendar_0}. As will be discussed in Section \ref{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments}, we only observe sentencing events in the county stated on the master calendar for 1872 of the 2200 ($85.1\%$) judge-week combinations in this category. In other words, there are no inconsistencies between the master calendar and the sentencing dataset for 1872 of the 2200 judge-week combinations. The remaining 328 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iia} and involve contradictory sentencing locations based on the sentencing dataset.
+				\vspace{-2mm}
+				\item[(b)] \emph{Single assignment, with dates (14 judge-week combinations).} In these cases, there are specific dates listed for the assignment. For example, Judge Smoak's assignment (on the master calendar) in the week of March 19th is 14th Cir. CPNJ 19,20; see Figure \ref{Figure_Master_Calendar_1}. As will be discussed in Section \ref{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments}, we observe sentencing events only in the county stated on the master calendar and on the days stated on the master calendar for 10 of the 14 ($71.4\%$) judge-week combinations in this category. In other words, there are no inconsistencies between the master calendar and the sentencing dataset for 10 of these 14 judge-week combinations. The remaining 4 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iib} and involve contradictory sentencing locations based on the sentencing dataset.
+			\end{itemize}
 
-The judge-week combinations listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_c} satisfy (at least) one of the following conditions, which are problematic (some satisfy multiple conditions):\footnote{For example, judge-week combination 1 satisfies Conditions 1 and 3. In judge-week combination 1, the assignment of Judge 6 in the week of October 16 is 15th circuit court AW 16,19,20 and Aiken 17,18. Therefore, we would expect Judge 6 to be in the 15th circuit court on Monday, Thursday, and Friday, and to be in Aiken on Tuesday and Wednesday. Since we observe sentencing events in Horry and Williamsburg on Thursday, judge-week combination 1 satisfies both Conditions 1 and 3.}
-\begin{enumerate}
-	\vspace{-3mm}
-	\item At least one sentencing event occurred in a county not stated on the master calendar, e.g., judge-week combination 1 of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_c} (8 such judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_c}).
-	\vspace{-2mm}
-	\item At least one sentencing event occurred in the county stated on the master calendar with specific dates, but on a date other than the dates specified (only one such judge-week combination is listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_c}; see the last row of the table).
-	\vspace{-2mm}
-	\item The judge sentenced in more than one county on a day, e.g., judge-week combination 1 of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_c} (5 such judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_c}).
-\end{enumerate}
-\vspace{-3mm}
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[scale=0.6]{Figures/Fig4}
+			\caption{Another snapshot of the July Calendar.}
+			\label{Figure_Master_Calendar_4}
+		\end{figure}
 
-\subsubsection{Multiple Assignments Case}
-\label{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments:Category_iv}
+		\begin{figure}
+			\centering
+			\includegraphics[scale=0.42]{Figures/Fig3A}
+			\includegraphics[scale=0.42]{Figures/Fig3B}
+			\caption{Another snapshot of the November Calendar.}
+			\label{Figure_Master_Calendar_3}
+		\end{figure}
 
-As illustrated in Figure \ref{Figure_Simultaneous_Assignment_Count_Histogram}, there are 2 judge-week combinations in Category iv (a), i.e., no assignments have dates. For both of these judge-week combinations, we only observe sentencing events in the counties stated on the master calendar and only on the days stated on the master calendar. In other words, there are no inconsistencies between the master calendar and the sentencing dataset. However, in one of the judge-week combinations, we observe sentencing events in two counties on a day. This judge-week combination is depicted in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iva}. There were judge-week combinations in Categories ii and iii, in which the judge had sentencing events in multiple counties on a day. However, in those judge-week combinations, the judge was not assigned to at least one of the counties on that date. Those judge-week combinations were covered in Tables \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iia}-\ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_c}.
+		\vspace{-3mm}
+		\paragraph{iii) Multiple Assignments (258 judge-week combinations).}
+		\label{Category_iii}
+		This occurs in four ways. We discuss each case separately.
+			\begin{itemize}
+				\item[(a)] \emph{Multiple assignment, no dates (19 judge-week combinations).} In these cases, none of the assignments have dates. For example, Judge Milling's assignment (on the master calendar) in the week of July 31st is Sumter GS and Malboro GS CC; see Figure \ref{Figure_Master_Calendar_4}. As will be discussed in Section \ref{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments}, we only observe sentencing events in the counties stated on the master calendar for 15 of the 17 ($88.2\%$) judge-week combinations in this category. In other words, there are no inconsistencies between the master calendar and the sentencing dataset for 15 of these 17 judge-week combinations. The remaining 2 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_a}.
+				\item[(b)] \emph{Multiple assignment, some dates (181 judge-week combinations).} In these cases, one assignment has no dates, and the other assignments have specific dates. For example, Judge Breeden's assignment (on the master calendar) in the week on November 20th is Horry GS 20 and in chambers; see Figure \ref{Figure_Master_Calendar_0}. As will be discussed in Section \ref{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments}, we only observe sentencing events in the counties stated on the master calendar and only on the days stated on the master calendar for 138 of the 163 ($84.7\%$) judge-week combinations in this category. In other words, there are no inconsistencies between the master calendar and the sentencing dataset for 138 of these 163 judge-week combinations. The remaining 25 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b}.
+				\item[(c)] \emph{Multiple assignment, some dates ambiguous (1 judge-week combinations).} In these cases, there are multiple assignments without dates, and the other assignments have specific dates. Note that this leads to ambiguity. For example, Judge Brogdon's assignment (on the master calendar) in the week on October 2nd is in chambers, 12th Circuit, and Florence on the 5th; see Figure \ref{Figure_Master_Calendar_0}. As will be discussed in Section \ref{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments}, we don't observe any conflicts in this case.
+				\item[(d)] \emph{Multiple assignment, all dates (54 judge-week combinations).} In these cases, there are multiple assignments and they all have specific dates. For example, Judge Goldstein's assignment (on the master calendar) in the week of July 27th is Dorchester GS 27,29,30,1, Medical 28; see Figure \ref{Figure_Master_Calendar_3}. As will be discussed in Section \ref{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments}, we only observe sentencing events in the counties stated on the master calendar and only on the days stated on the master calendar for 45 of the 54 judge-week combinations of this category. In other words, there are no inconsistencies between the master calendar and the sentencing dataset for 45 of these 54 judge-week combinations. The remaining 9 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_c}.
+			\end{itemize}
 
-\begin{table}[H]
-	\centering
-	\caption{Judge-week combinations in which the judge has multiple sentencing events in two different counties on a day - Category iv (a).}
-	\vspace{-2mm}
-	\hspace*{-10mm}
-	\setlength\tabcolsep{2pt} % default value: 6pt
-	{\scriptsize
-		\begin{tabular}{>{\quad}C{6mm}C{8mm}L{20mm}L{27mm}C{17mm}C{17mm}C{17mm}C{17mm}C{20mm}cc}
-			\toprule
-			& & & & \multicolumn{5}{c}{Sentencing Data Set} & \multicolumn{2}{c}{$\,\,\,$Percentage} \\
-			\cmidrule(ll){5-9} \cmidrule(ll){10-11}
-			& Judge & Week & Master Calendar & Monday & Tuesday & Wednesday & Thursday & Friday & $\,\,\,$Plea & Trial \\
-			\midrule
-			1 & 3 & April 30 & Aiken, Bamberg, Barnwell & & Bam. (11), Barn. (1) & Bam. (2), Barn. (5)& & Aiken (21) & 0\% & 0\% \\
-			\bottomrule
-		\end{tabular}
-	}
-	\label{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iva}
-\end{table}
+	\subsection{Further Analysis of the Master Calendar Assignments using the Sentencing Data Set}
+		\label{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments}
 
-As illustrated in Figure \ref{Figure_Simultaneous_Assignment_Count_Histogram}, there are 19 judge-week combinations in Category iv (b), i.e., some assignments have specific dates, while others do not. For 18 of these 19 judge-week combinations, we only observe sentencing events in the counties stated on the master calendar and only on the days stated on the master calendar. In other words, there are no inconsistencies between the master calendar and the sentencing dataset. The remaining 1 judge-week combination is depicted in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_ivb}, where a sentencing event occurred in a county not stated on the master calendar.
+		This section studies the master calendar in further detail by comparing it to the sentencing dataset. In doing so, we take advantage of the mapping from judge numbers to judge names (to be discussed in Section \ref{Sec:Mapping_Judge_Numbers_To_Judge_Names}). Appendix \ref{Sec:Appendix:Master_Calendar_Interpretations} provides plausible assignments for the judges in the ambiguous cases based on the facts presented in this section.
 
-\begin{table}[H]
-	\centering
-	\caption{Judge-week combinations in which the judge has sentencing events in a county to which he is not assigned - Category iv (b). The county written in red font is the county to which the judge is not assigned. The last column presents the percentage of the sentencing events (plea or trial, separately) that occurred in a county to which the judge is not assigned, i.e., it represents the fraction of sentencing events written in red font.}
-	\vspace{-2mm}
-	\hspace*{-10mm}
-	\setlength\tabcolsep{2pt} % default value: 6pt
-	{\scriptsize
-		\begin{tabular}{>{\quad}C{6mm}C{8mm}L{20mm}L{27mm}C{17mm}C{17mm}C{17mm}C{17mm}C{20mm}cc}
-			\toprule
-			& & & & \multicolumn{5}{c}{Sentencing Data Set} & \multicolumn{2}{c}{$\,\,\,$Percentage} \\
-			\cmidrule(ll){5-9} \cmidrule(ll){10-11}
-			& Judge & Week & Master Calendar & Monday & Tuesday & Wednesday & Thursday & Friday & $\,\,\,$Plea & Trial \\
-			\midrule
-			1  &  41  &  May 7  & in chambers, Greenville GS(SGJ) 7, 13th Cir. CPNJ 8  & \textcolor{red}{Spartanburg (1,0)} &  &  &  &  & 100\% & 0\% \\
-			\bottomrule
-		\end{tabular}
-	}
-	\label{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_ivb}
-\end{table}
+		\subsubsection{No Assignments Case}
+			\label{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments:Category_i}
+			As illustrated in Figure \ref{Figure_Simultaneous_Assignment_Count_Histogram}, there are 110 judge-week combinations in this category. We observe no sentencing events (in the sentencing dataset) for 101 out of these 110 ($91.8\%$) judge-week combinations. Recall that the judges in these combinations have no assignments on the master calendar. Therefore, there are no inconsistencies between the master calendar and the sentencing dataset for these 101 judge-week combinations. The remaining 9 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_i}. We observe at least one sentencing event (in the sentencing dataset) for these judge-week combinations. Each judge visits only one county (according to the sentencing dataset) in these 9 judge-week combinations.
 
-As illustrated in Figure \ref{Figure_Simultaneous_Assignment_Count_Histogram}, there are 3 judge-week combinations in Category iv (c), i.e., all assignments have specific dates. For two of these three judge-week combinations, we only observe sentencing events in the counties stated on the master calendar and only on the days stated on the master calendar. In other words, there are no inconsistencies between the master calendar and the sentencing dataset in two of these three judge-week combinations. The other judge-week combination is depicted in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_ivc}, where a sentencing event occurred in a county not stated on the master calendar.
+			\begin{table}[H]
+				\centering
+				\caption{Judge-week combinations in which the judge has sentencing events in a county to which he is not assigned - "No Assignment" category. The first number in the parenthesis depicts the number of pleas and the second number depicts the number of trials.}
+				\vspace{-2mm}
+				\hspace*{0mm}
+				\setlength\tabcolsep{0pt} % default value: 6pt
+				{\scriptsize
+					\begin{tabular}{>{\quad}L{6mm}C{8mm}C{2mm}L{17mm}C{25mm}C{25mm}C{25mm}C{25mm}C{25mm}cccc}
+						\toprule
+						& & && \multicolumn{5}{c}{Sentencing Data Set} \\
+						\cmidrule(ll){5-9}
+						& Judge && Week & Monday & Tuesday & Wednesday & Thursday & Friday \\
+						\midrule
+						\input{Tables/Missing.tex}
+						% 1  &  8  &&  January 29  & \textcolor{red}{Dorchester (1,0)}  &  &  &  &  \\
+						% 2  &  8  &&  June 4 & \textcolor{red}{Orangeburg (5,0)}  &  & \textcolor{red}{Orangeburg (2,1)}  & \textcolor{red}{Orangeburg (4,0)}  &  \\
+						% 3  &  8  &&  July 3  &  &  &  &  & \textcolor{red}{Dorchester (0,1)}  \\
+						% 4  &  8  &&  July 24   & & \textcolor{red}{Orangeburg (1,0)}  & \textcolor{red}{Orangeburg (1,0)} &  & \textcolor{red}{Orangeburg (1,0)}  &  \\
+						% 5  &  26  &&  April 23  & \textcolor{red}{Greenwood (1,0)}  &  &  &  &  \\
+						% 6  &  26  &&  October 30  &  &  & \textcolor{red}{Greenwood (1,0)}  &  &  \\
+						% 7  &  43  &&  March 12  &  &  & \textcolor{red}{Greenville (1,0)}  &  &  \\
+						% 8  &  43  &&  April 16   &  & \textcolor{red}{Greenville (1,0)}  &  &  &  \\
+						% 9  &  47  &&  October 23  & \textcolor{red}{Charleston (1,0)}  &  &  &  &  \\
+						\bottomrule
+					\end{tabular}
+				}
+				\label{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_i}
+			\end{table}
 
-\begin{table}[H]
-	\centering
-	\caption{Judge-week combinations in which the judge has sentencing events in a county to which he is not assigned - Category iv (c). The county written in blue font is the county to which the judge is not assigned, however, he is assigned to the circuit court containing these counties. So, the county assignment in the master calendar and this county belong to the same circuit court. The last column presents the percentage of the sentencing events (plea or trial, separately) that occurred in a county to which the judge is not assigned, i.e., it represents the fraction of sentencing events occurred in the county written in blue font.}
-	\vspace{-2mm}
-	\hspace*{-18mm}
-	\setlength\tabcolsep{2pt} % default value: 6pt
-	{\scriptsize
-		\begin{tabular}{>{\quad}C{6mm}C{8mm}L{20mm}L{36mm}C{20mm}C{20mm}C{20mm}C{20mm}C{20mm}cc}
-			\toprule
-			& & & & \multicolumn{5}{c}{Sentencing Data Set} & \multicolumn{2}{c}{$\,\,\,$Percentage} \\
-			\cmidrule(ll){5-9} \cmidrule(ll){10-11}
-			& Judge & Week & Master Calendar & Monday & Tuesday & Wednesday & Thursday & Friday & $\,\,\,$Plea & Trial \\
-			\midrule
-			1  &  31  &  February 26  & Anderson CP 26,27,28,1, Cherokee GS 2, 10th Cir. CPNJ/GS 2  &  &  &  &  & \textcolor{blue}{Oconee (6,0)} & 100\% & 0\%
-			\\
-			\bottomrule
-		\end{tabular}
-	}
-	\label{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_ivc}
-\end{table}
+		\subsubsection{Single Assignment Case}
+			\label{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments:Category_ii}
+			We start with the single assignment, no date category. As illustrated in Figure \ref{Figure_Simultaneous_Assignment_Count_Histogram}, there are 2214 judge-week combinations in this category. Although in single assignment, no date judge-week combinations (according to the master calendar) the judges have an assignment the entire week, they do not necessarily sentence every day of the week; see Figure \ref{Figure_Histogram_of_Number_of_Days_With_Sentences_Category_10} for a histogram of the number of days in the week with a sentencing event and Figure \ref{Figure_Histogram_of_Sentences_This_Week_Category_10} for a histogram of the number of sentencing events observed for single assignment, no date judge-week combinations. For 1871 of the 2200 ($85\%$) judge-week combinations, we only observe sentencing events in the county to which the judge is assigned, i.e., we do not observe sentencing events in a county other than the county to which the judge is assigned. In other words, there are no inconsistencies between the master calendar and the sentencing dataset for 1871 of these 2200 judge-week combinations. The remaining 328 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_i}. We observe at least one sentencing event (in the sentencing dataset) in a county to which the judge is not assigned in these judge-week combinations. %Figure \ref{Figure_Histogram_of_Number_of_Days_With_Sentences_Category_11Histogram_Maximum_Number_of_Counties_Visited_Category_10} provides a histogram of the highest number of counties visited on a day for the judge-week combinations in the single assignment, no date category.
+
+			\begin{figure}[H]
+				\centering
+				\begin{minipage}{.45\textwidth}
+					\centering
+					\hspace*{-8mm}
+					\includegraphics[scale=0.75]{Figures/Histogram_of_Number_of_Days_With_Sentences_Category_10}
+					\hspace{4mm}
+					\vspace{-6.0mm}
+					\caption{A histogram of the number of days in the week with a sentencing event for judge-week combinations of Category ii (a).}
+					\label{Figure_Histogram_of_Number_of_Days_With_Sentences_Category_10}
+				\end{minipage}
+				\hspace{5mm}
+				\begin{minipage}{0.45\textwidth}
+					\centering
+					\hspace*{-3mm}
+					\includegraphics[scale=0.75]{Figures/Histogram_of_Sentences_This_Week_Category_10}
+					\vspace{-6mm}
+					\caption{A histogram of the number of sentencing events for judge-week combinations of Category ii (a).}
+					\label{Figure_Histogram_of_Sentences_This_Week_Category_10}
+				\end{minipage}
+			\end{figure}
+
+			%\begin{figure}[H]
+			%	\centering
+			%	\begin{minipage}{.45\textwidth}
+			%		\centering
+			%		\hspace*{-8mm}
+			%		\includegraphics[scale=0.72]{Figures/Histogram_Maximum_Number_of_Counties_Visited_Category_10}
+			%		\hspace{4mm}
+			%		\vspace{-6.0mm}
+			%		\caption{A histogram of the highest number of counties visited on a day for judge-week combinations of Category ii (a).}
+			%		\label{Figure_Histogram_of_Number_of_Days_With_Sentences_Category_11Histogram_Maximum_Number_of_Counties_Visited_Category_10}
+			%	\end{minipage}
+			%	\hspace{5mm}
+			%	\begin{minipage}{0.45\textwidth}
+			%		\centering
+			%		\hspace*{-3mm}
+			%		\includegraphics[scale=0.72]{Figures/Histogram_Maximum_Number_of_Counties_Visited_Category_11}
+			%		\vspace{-6mm}
+			%		\caption{A histogram of the highest number of counties visited on a day for judge-week combinations of Category ii (b).}
+			%		\label{Figure_Histogram_Maximum_Number_of_Counties_Visited_Category_11}
+			%	\end{minipage}
+			%\end{figure}
+
+			\begin{table}[H]
+				\centering
+				\caption{Judge-week combinations in which the judge has sentencing events in a county to which he is not assigned - single assignment, no date category. The counties written in green font are the counties to which the judge is assigned. The counties written in red font are the counties to which the judge is not assigned. The counties written in blue font are the counties to which the judge is not assigned, however, he is assigned to the circuit court containing these counties. So, the county assignment in the master calendar and this county belong to the same circuit court.}
+				\vspace{-2mm}
+				\hspace*{-26.5mm}
+				\setlength\tabcolsep{2pt} % default value: 6pt
+				{\scriptsize
+					\begin{tabular}{>{\quad}C{8mm}C{8mm}L{20mm}L{31mm}C{24mm}C{22mm}C{24mm}C{25mm}C{23mm}}
+						\toprule
+						& & & & \multicolumn{5}{c}{Sentencing Data Set} \\
+						\cmidrule(ll){5-9}
+						& Judge & Week & Master Calendar & Monday & Tuesday & Wednesday & Thursday & Friday \\
+						\midrule
+						\input{Tables/Single}
+						\bottomrule
+					\end{tabular}
+				}
+				\label{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iia}
+			\end{table}
+
+			As illustrated in Figure \ref{Figure_Simultaneous_Assignment_Count_Histogram}, there are 14 judge-week combinations in Category ii (b), i.e., a single assignment with specific dates. Figure \ref{Figure_Histogram_of_Number_of_Days_With_Sentences_Category_11} provides a histogram of the number of days in the week with a sentencing event for the judge-week combinations of Category ii (b). Figure \ref{Figure_Histogram_of_Sentences_This_Week_Category_11} provides a histogram of the number of sentencing events observed for these 14 judge-week combinations. In 10 of the 14 judge-week combinations, we either observe no sentencing events (8 of them, as shown in Figure \ref{Figure_Histogram_of_Number_of_Days_With_Sentences_Category_11}) or sentencing events only in the same county as listed in the master calendar (2 of them). In other words, there are no inconsistencies between the master calendar and the sentencing dataset for 10 of these 14 ($71.4\%$) judge-week combinations. The remaining 4 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_i}. In these 4 judge-week combinations, exactly one of the following conditions holds:
+			\begin{enumerate}
+				\vspace{-3mm}
+				\item At least one sentencing event occurred in a county not stated on the master calendar (3 judge-week combinations); see the last three rows of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iib}.
+				\vspace{-2mm}
+				\item At least one sentencing event occurred in the county stated on the master calendar but on a date not stated on the master calendar (1 judge-week combination); see the first row of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iib}.
+			\end{enumerate}
+
+			\begin{table}[H]
+				\centering
+				\caption{Judge-week combinations in which the judge has sentencing events in a county to which he is not assigned - single assignment, with dates category. The counties written in green font are the counties to which the judge is assigned. The counties written in red font are the counties to which the judge is not assigned.}
+				\vspace{-2mm}
+				\hspace*{-21mm}
+				\setlength\tabcolsep{2pt} % default value: 6pt
+				{\scriptsize
+					\begin{tabular}{>{\quad}C{6mm}C{8mm}L{18mm}L{31mm}C{22mm}C{22mm}C{22mm}C{22mm}C{22mm}}
+						\toprule
+						& & & & \multicolumn{5}{c}{Sentencing Data Set}\\
+						\cmidrule(ll){5-9}
+						& Judge & Week & Master Calendar & Monday & Tuesday & Wednesday & Thursday & Friday\\
+						\midrule
+						\input{Tables/SingleWD}
+						\bottomrule
+					\end{tabular}
+				}
+				\label{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iib}
+			\end{table}
+
+			\begin{figure}[H]
+				\centering
+				\begin{minipage}{.45\textwidth}
+					\centering
+					\hspace*{-3mm}
+					\includegraphics[scale=0.72]{Figures/Histogram_of_Number_of_Days_With_Sentences_Category_11}
+					\hspace{4mm}
+					\vspace{-6.0mm}
+					\caption{A histogram of the number of days in the week with a sentencing event for judge-week combinations of Category ii (b).}
+					\label{Figure_Histogram_of_Number_of_Days_With_Sentences_Category_11}
+				\end{minipage}
+				\hspace{5mm}
+				\begin{minipage}{0.45\textwidth}
+					\centering
+					\hspace*{-3mm}
+					\includegraphics[scale=0.72]{Figures/Histogram_of_Sentences_This_Week_Category_11}
+					\vspace{-6mm}
+					\caption{A histogram of the number of sentencing events for judge-week combinations of Category ii (b).}
+					\label{Figure_Histogram_of_Sentences_This_Week_Category_11}
+				\end{minipage}
+			\end{figure}
+
+		\subsubsection{Multiple Assignments Case}
+			\label{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments:Category_iii}
+			We start with the category multiple assignment, no dates. As illustrated in Figure \ref{Figure_Simultaneous_Assignment_Count_Histogram}, there are 19 judge-week combinations in this category. For 17 of the 19 ($89.4\%$) judge-week combinations in this category, we only observe sentencing events in one of the two counties stated on the master calendar. In other words, there are no inconsistencies between the master calendar and the sentencing dataset for 17 of these 19 judge-week combinations. The remaining 2 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_a}. The judge-week combinations in this category that satisfy (at least) one of the following conditions are potentially problematic:
+			\begin{enumerate}
+				\vspace{-3mm}
+				\item At least one sentencing event occurred in a county not stated on the master calendar (Both rows of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_a}).
+				\vspace{-2mm}
+				\item The judge sentenced in more than one county on a day (First row of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_a}).
+			\end{enumerate}
+
+			\begin{table}[H]
+				\centering
+				\caption{Judge-week combinations in which the judge has sentencing events in a county to which he is not assigned - multiple assignment, no dates cateogry. The county written in green font is the county to which the judge is assigned. The counties written in red font are the counties to which the judge is not assigned. The county written in blue font is the county to which the judge is not assigned, however, he is assigned to the circuit court containing this county. So, the county assignment in the master calendar and this county belong to the same circuit court.}
+				\vspace{-2mm}
+				\hspace*{-0mm}
+				\setlength\tabcolsep{2pt} % default value: 6pt
+				{\scriptsize
+					\begin{tabular}{>{\quad}C{6mm}C{8mm}L{16mm}L{25mm}C{15mm}C{15mm}C{20mm}C{17mm}C{17mm}}
+						\toprule
+						& & & & \multicolumn{5}{c}{Sentencing Data Set} \\
+						\cmidrule(ll){5-9}
+						& Judge & Week & Master Calendar & Monday & Tuesday & Wednesday & Thursday & Friday \\
+						\midrule
+						\input{Tables/MultipleND}
+						\bottomrule
+					\end{tabular}
+				}
+				\label{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_a}
+			\end{table}
+
+			For the judge-week combination in row 1 of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_a}, the judge (Judge 3) is assigned to Aiken and the 2nd circuit court (according to the master calendar). However, he has a sentencing event in Bamberg and Aiken on Wednesday. Bamberg belongs to the 2nd circuit court.
+
+			For the judge-week combination in row 2 of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_a}, the judge (Judge 10) is assigned to Florence and Lee (according to the master calendar). However, he has a sentencing event in Marion on Wednesday and another sentencing event in Marion on Thursday.
+
+			As illustrated in Figure \ref{Figure_Simultaneous_Assignment_Count_Histogram}, there are 181 judge-week combinations in the multiple assignment, some dates category. For 155 of these 181 ($85.6\%$) judge-week combinations, we only observe sentencing events in one of the two counties stated on the master calendar and only on the days stated on the master calendar. In other words, there are no inconsistencies between the master calendar and the sentencing dataset for 155 of these 181 judge-week combinations. The remaining 26 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b}. There is only one judge-week combination in the multiple assignment, some dates ambiguous category, and we do not observe any conflicts in that week.
+
+			\begin{table}[H]
+			  \centering
+			  \caption{Judge-week combinations in which the judge has sentencing events in a county to which he is not assigned - multiple assignment, some dates category. The counties written in green font are the counties to which the judge is assigned. The counties written in red font are the counties to which the judge is not assigned. The counties written in blue font are the counties to which the judge is not assigned, however, he is assigned to the circuit court containing these counties. So, the county assignment in the master calendar and this county belong to the same circuit court.}
+			  \vspace{-2mm}
+			  \hspace*{-21mm}
+			  \setlength\tabcolsep{2pt} % default value: 6pt
+			  {\scriptsize
+			    \begin{tabular}{>{\quad}C{6mm}C{8mm}L{17mm}L{30mm}C{22mm}C{22mm}C{24mm}C{23mm}C{22mm}}
+			      \toprule
+			      & & & & \multicolumn{5}{c}{Sentencing Data Set} \\
+			      \cmidrule(ll){5-9}
+			      & Judge & Week & Master Calendar & Monday & Tuesday & Wednesday & Thursday & Friday \\
+			      \midrule
+			      \input{Tables/MultipleSD}
+			      \bottomrule
+			    \end{tabular}
+			  }
+			  \label{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b}
+			\end{table}
+
+			The judge-week combinations listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b} satisfy (at least) one of the following conditions, which are problematic (some satisfy multiple conditions):\footnote{For example, judge-week combination 12 satisfies all four conditions. In judge-week combination 12, the assignment of Judge 29 in the week of July 31 is Richland GS and Lexington GS CC 3. Therefore, we would expect Judge 29 to be in Lexington on Thursday, and to be in Richland on Monday, Tuesday, Wednesday, and Friday. Since we observe sentencing events in Marlboro and Kershaw (alongside Richland) on Tuesday, judge-week combination 12 satisfies Conditions 1 and 4. Since we observe sentencing events in both Lexington and Richland on Monday, judge-week combination 12 satisfies Condition 3. Since we observe sentencing events in Richland on Thursday, judge-week combination 12 satisfies Condition 2, as well.}
+				\begin{enumerate}
+					\vspace{-3mm}
+					\item At least one sentencing event occurred in a county not stated on the master calendar, e.g., judge-week combination 2 of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b} (17 such judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b}).
+					\vspace{-9mm}
+					\item At least one sentencing event occurred in the county stated on the master calendar with specific dates, but on a date other than the dates specified, e.g., judge-week combination 23 of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b} (4 such judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b}.).
+					\vspace{-2mm}
+					\item At least one sentencing event occurred in the county stated on the master calendar without specific dates. However, this sentencing event occurred on a date specified for the other county, e.g., judge-week combination 8 of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b} (8 such judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b}.).
+					\vspace{-2mm}
+					\item The judge sentenced in more than one county on a day, e.g., judge-week combination 3 of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b} (5 such judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_b}.).
+			\end{enumerate}
+			\vspace{-3mm}
+
+			As illustrated in Figure \ref{Figure_Simultaneous_Assignment_Count_Histogram}, there are 57 judge-week combinations in the multiple assignment, all dates category. For 47 of these 57 ($82.4\%$) judge-week combinations, we only observe sentencing events in one of the two counties stated on the master calendar and only on the days stated on the master calendar. In other words, there are no inconsistencies between the master calendar and the sentencing dataset for 47 of these 57 judge-week combinations. The remaining 9 judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_c}.
+
+			\begin{table}[H]
+				\centering
+				\caption{Judge-week combinations in which the judge has sentencing events in a county to which he is not assigned - multiple assignment, all dates category. The counties written in green font are the counties to which the judge is assigned. The counties written in red font are the counties to which the judge is not assigned. The counties written in blue font are the counties to which the judge is not assigned, however, he is assigned to the circuit court containing these counties. So, the county assignment in the master calendar and this county belong to the same circuit court.}
+				\vspace{-2mm}
+				\hspace*{-20mm}
+				\setlength\tabcolsep{2pt} % default value: 6pt
+				{\scriptsize
+					\begin{tabular}{>{\quad}C{6mm}C{8mm}L{17mm}L{29mm}C{22mm}C{22mm}C{22mm}C{23mm}C{22mm}}
+						\toprule
+						& & & & \multicolumn{5}{c}{Sentencing Data Set}\\
+						\cmidrule(ll){5-9}
+						& Judge & Week & Master Calendar & Monday & Tuesday & Wednesday & Thursday & Friday \\
+						\midrule
+						\input{Tables/MultipleAD}
+						\bottomrule
+					\end{tabular}
+				}
+				\label{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_c}
+			\end{table}
+
+			The judge-week combinations listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_c} satisfy (at least) one of the following conditions, which are problematic (some satisfy multiple conditions):\footnote{For example, judge-week combination 1 satisfies Conditions 1 and 3. In judge-week combination 1, the assignment of Judge 6 in the week of October 16 is 15th circuit court AW 16,19,20 and Aiken 17,18. Therefore, we would expect Judge 6 to be in the 15th circuit court on Monday, Thursday, and Friday, and to be in Aiken on Tuesday and Wednesday. Since we observe sentencing events in Horry and Williamsburg on Thursday, judge-week combination 1 satisfies both Conditions 1 and 3.}
+			\begin{enumerate}
+				\vspace{-3mm}
+				\item At least one sentencing event occurred in a county not stated on the master calendar, e.g., judge-week combination 1 of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_c} (8 such judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_c}).
+				\vspace{-2mm}
+				\item At least one sentencing event occurred in the county stated on the master calendar with specific dates, but on a date other than the dates specified (only one such judge-week combination is listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_c}; see the last row of the table).
+				\vspace{-2mm}
+				\item The judge sentenced in more than one county on a day, e.g., judge-week combination 1 of Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_c} (5 such judge-week combinations are listed in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_iii_c}).
+			\end{enumerate}
+			\vspace{-3mm}
 
 \section{Mapping Judge Numbers to Judge Names}
 \label{Sec:Mapping_Judge_Numbers_To_Judge_Names}

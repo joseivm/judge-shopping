@@ -19,12 +19,7 @@ day_names = {'1':'Monday','2':'Tuesday','3':'Wednesday','4':'Thursday','5':'Frid
 weekdays = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
 
 # Output files
-
-sdf = pd.read_csv(processed_sentencing_data_file)
-cdf = pd.read_csv(processed_daily_schedule_file)
-sdf['Plea'] = (sdf['Trial']+1)%2
-sdf_cols = ['Date','County','Circuit','JudgeID','Trial','Week','JudgeName','Plea','EventID']
-sdf = sdf[sdf_cols]
+table_dir = PROJECT_DIR + '/documents/Write-Up/Tables/'
 
 def discrepancy_table(sdf,cdf,assignment_type):
     scdf = cdf[cdf.AssignmentType == assignment_type]
@@ -49,6 +44,20 @@ def discrepancy_table(sdf,cdf,assignment_type):
 
     df.sort_values(['Judge','StartDate'],inplace=True)
     df = df.merge(conflict_weeks,on=['Judge','StartDate'])
+    df['FullAssignment'] = df['FullAssignment'].str.replace('\s*\+\s*',', ',regex=True)
+    df.index += 1
+
+    if assignment_type == 'Missing':
+        cols = ['Judge','Empty','StartDate']+weekdays[:5]
+        df['Empty'] = np.nan
+    elif assignment_type == 'Single':
+        df['Judge'] = df.Judge.astype(str)
+        empty_data = {col:'.' for col in df.columns}
+        empty_df = pd.DataFrame(empty_data,index=[1])
+        new_idx = [str(i) for i in range(1,11)] + ['.'] + [str(i) for i in df.index[-10:]]
+        df = pd.concat([df.head(10),empty_df,df.tail(10)],ignore_index=True)
+        df.set_index(pd.Series(new_idx),inplace=True)
+
     return df[cols]
 
 def get_weekday(date_str):
@@ -64,8 +73,29 @@ def add_conflict_color(df):
     return df
 
 def add_color(county,color):
-    # return  "\textcolor{{{0}}}{{{1}}}".format(color,county)
-    return  "\{{{0}}}{{{1}}}".format(color,county)
+    return  "\textcolor{{{0}}}{{{1}}}".format(color,county)
 
 def add_sentence_counts(row):
     return '{} ({},{})'.format(row['County_x'],row['Plea'],row['Trial'])
+
+def remove_heading(filename):
+    with open(filename) as f:
+        lines = f.readlines()
+    lines = lines[2:-2]
+    with open(filename,'w') as f:
+        f.writelines(lines)
+
+def main():
+    sdf = pd.read_csv(processed_sentencing_data_file)
+    cdf = pd.read_csv(processed_daily_schedule_file)
+    sdf['Plea'] = (sdf['Trial']+1)%2
+    sdf_cols = ['Date','County','Circuit','JudgeID','Trial','Week','JudgeName','Plea','EventID']
+    sdf = sdf[sdf_cols]
+    assignment_types = ['Missing','Single','SingleWD','MultipleND','MultipleSD','MultipleAD']
+    assignment_types = ['Missing','Single','SingleWD']
+    pd.set_option('display.max_colwidth',None)
+    for assignment_type in assignment_types:
+        df = discrepancy_table(sdf,cdf,assignment_type)
+        filename = table_dir + assignment_type + '.tex'
+        df.to_latex(filename,escape=False,header=False,na_rep='')
+        remove_heading(filename)

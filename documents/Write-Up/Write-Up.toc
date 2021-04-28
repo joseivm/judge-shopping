@@ -3,60 +3,58 @@
 \contentsline {subsection}{\numberline {1.2}Stata File}{10}{subsection.1.2}
 \contentsline {section}{\numberline {2}Master Calendar}{12}{section.2}
 \contentsline {subsection}{\numberline {2.1}Interpreting the Master Calendar}{17}{subsection.2.1}
-\contentsline {paragraph}{i) No Assignments (110 judge-week combinations).}{17}{section*.14}
-\contentsline {paragraph}{ii) A Single Assignment (2196 judge-week combinations).}{18}{section*.16}
-\contentsline {paragraph}{iii) Two Assignments (226 judge-week combinations).}{18}{section*.19}
-\contentsline {paragraph}{iv) Multiple Assignments (19 judge-week combinations).}{20}{section*.20}
-\contentsline {subsection}{\numberline {2.2}Further Analysis of the Master Calendar Assignments using the Sentencing Data Set}{21}{subsection.2.2}
+\contentsline {paragraph}{i) No Assignment (110 judge-week combinations).}{17}{section*.14}
+\contentsline {paragraph}{ii) Single Assignment (2214 judge-week combinations).}{18}{section*.16}
+\contentsline {paragraph}{iii) Multiple Assignments (258 judge-week combinations).}{18}{section*.19}
+\contentsline {subsection}{\numberline {2.2}Further Analysis of the Master Calendar Assignments using the Sentencing Data Set}{20}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}No Assignments Case}{21}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}One Assignment Case}{22}{subsubsection.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.3}Two Assignments Case}{25}{subsubsection.2.2.3}
-\contentsline {subsubsection}{\numberline {2.2.4}Multiple Assignments Case}{30}{subsubsection.2.2.4}
-\contentsline {section}{\numberline {3}Mapping Judge Numbers to Judge Names}{31}{section.3}
-\contentsline {paragraph}{Perfect Componentwise Match.}{32}{section*.32}
-\contentsline {paragraph}{Overlapping Componentwise Match.}{32}{section*.33}
-\contentsline {paragraph}{Algorithm.}{33}{section*.34}
-\contentsline {paragraph}{Step 0.}{33}{section*.35}
-\contentsline {paragraph}{Step 1.}{33}{section*.36}
-\contentsline {paragraph}{Step $n>1$.}{33}{section*.37}
-\contentsline {section}{\numberline {4}An Outline of the Model and its Calibration}{35}{section.4}
-\contentsline {subsection}{\numberline {4.1}Estimation of the Probability of Conviction at Trial $\theta $ and the Expected Sentence length $\tau $ upon Conviction at Trial as a Function of the Defendant Covariates}{36}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Judge Harshness Analysis}{36}{subsection.4.2}
-\contentsline {paragraph}{A Simple Approach To Rank Judges with Respect to Their Harshness.}{36}{section*.38}
-\contentsline {paragraph}{Imputing $l$ and $u$ for Each Judge as a Function of $\theta \tau $.}{36}{section*.39}
-\contentsline {subsection}{\numberline {4.3}Estimation of Trial Cost $c_d$ and Probability of Going to Trial $p_t(h)$}{37}{subsection.4.3}
-\contentsline {paragraph}{Who Goes to Trial.}{38}{section*.41}
-\contentsline {subsection}{\numberline {4.4}Capacity Estimation}{38}{subsection.4.4}
-\contentsline {paragraph}{To Do:}{39}{section*.43}
-\contentsline {subsubsection}{\numberline {4.4.1}Estimation of $\mu _p$}{40}{subsubsection.4.4.1}
-\contentsline {subsubsection}{\numberline {4.4.2}Joint estimation of $\mu _p$ and $\mu _t$}{43}{subsubsection.4.4.2}
-\contentsline {paragraph}{Approach 1:}{43}{section*.47}
-\contentsline {paragraph}{Approach 2:}{44}{section*.48}
-\contentsline {paragraph}{Approach 3:}{45}{section*.49}
-\contentsline {subsubsection}{\numberline {4.4.3}Estimation of $\mu _t$}{47}{subsubsection.4.4.3}
-\contentsline {subsubsection}{\numberline {4.4.4}Judge Schedules in the Data}{49}{subsubsection.4.4.4}
-\contentsline {subsection}{\numberline {4.5}Choice Model for Judge Shopping}{50}{subsection.4.5}
-\contentsline {subsection}{\numberline {4.6}Simulation Study Outline}{50}{subsection.4.6}
-\contentsline {paragraph}{Overview}{50}{section*.52}
-\contentsline {paragraph}{Defendant Arrival Process.}{51}{section*.53}
-\contentsline {paragraph}{State Variable for the Simulation.}{51}{section*.54}
-\contentsline {paragraph}{Calibration.}{51}{section*.55}
-\contentsline {subsection}{\numberline {4.7}Counterfactual Study}{51}{subsection.4.7}
-\contentsline {paragraph}{Different Judge Rotations:}{51}{section*.56}
-\contentsline {paragraph}{Capacity:}{52}{section*.57}
-\contentsline {paragraph}{What Should We Report?}{52}{section*.58}
-\contentsline {section}{\numberline {A}Data Cleaning}{53}{appendix.A}
-\contentsline {section}{\numberline {B}Supplementary Material}{55}{appendix.B}
-\contentsline {subsection}{\numberline {B.1}Tables}{55}{subsection.B.1}
-\contentsline {subsection}{\numberline {B.2}Figures}{58}{subsection.B.2}
-\contentsline {section}{\numberline {C}Further Analysis of the Sentencing Events Missing the \emph {date} Data Field}{68}{appendix.C}
-\contentsline {section}{\numberline {D}Judge Assignments}{69}{appendix.D}
-\contentsline {subsection}{\numberline {D.1}Case i - No Assignments.}{69}{subsection.D.1}
-\contentsline {subsection}{\numberline {D.2}Case ii - A Single Assignment}{69}{subsection.D.2}
-\contentsline {subsubsection}{\numberline {D.2.1}Case ii (a)}{69}{subsubsection.D.2.1}
-\contentsline {subsubsection}{\numberline {D.2.2}Case ii (b)}{70}{subsubsection.D.2.2}
-\contentsline {subsection}{\numberline {D.3}Case iii - Two Assignments}{70}{subsection.D.3}
-\contentsline {subsection}{\numberline {D.4}Case iv - Multiple Assignments.}{71}{subsection.D.4}
-\contentsline {subsubsection}{\numberline {D.4.1}Case iv (a)}{71}{subsubsection.D.4.1}
-\contentsline {subsubsection}{\numberline {D.4.2}Case iv (b)}{71}{subsubsection.D.4.2}
-\contentsline {subsubsection}{\numberline {D.4.3}Case iv (c)}{72}{subsubsection.D.4.3}
+\contentsline {subsubsection}{\numberline {2.2.2}Single Assignment Case}{21}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Multiple Assignments Case}{25}{subsubsection.2.2.3}
+\contentsline {section}{\numberline {3}Mapping Judge Numbers to Judge Names}{30}{section.3}
+\contentsline {paragraph}{Perfect Componentwise Match.}{30}{section*.28}
+\contentsline {paragraph}{Overlapping Componentwise Match.}{31}{section*.29}
+\contentsline {paragraph}{Algorithm.}{31}{section*.30}
+\contentsline {paragraph}{Step 0.}{31}{section*.31}
+\contentsline {paragraph}{Step 1.}{31}{section*.32}
+\contentsline {paragraph}{Step $n>1$.}{31}{section*.33}
+\contentsline {section}{\numberline {4}An Outline of the Model and its Calibration}{33}{section.4}
+\contentsline {subsection}{\numberline {4.1}Estimation of the Probability of Conviction at Trial $\theta $ and the Expected Sentence length $\tau $ upon Conviction at Trial as a Function of the Defendant Covariates}{34}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Judge Harshness Analysis}{34}{subsection.4.2}
+\contentsline {paragraph}{A Simple Approach To Rank Judges with Respect to Their Harshness.}{34}{section*.34}
+\contentsline {paragraph}{Imputing $l$ and $u$ for Each Judge as a Function of $\theta \tau $.}{34}{section*.35}
+\contentsline {subsection}{\numberline {4.3}Estimation of Trial Cost $c_d$ and Probability of Going to Trial $p_t(h)$}{35}{subsection.4.3}
+\contentsline {paragraph}{Who Goes to Trial.}{36}{section*.37}
+\contentsline {subsection}{\numberline {4.4}Capacity Estimation}{36}{subsection.4.4}
+\contentsline {paragraph}{To Do:}{37}{section*.39}
+\contentsline {subsubsection}{\numberline {4.4.1}Estimation of $\mu _p$}{38}{subsubsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}Joint estimation of $\mu _p$ and $\mu _t$}{41}{subsubsection.4.4.2}
+\contentsline {paragraph}{Approach 1:}{41}{section*.43}
+\contentsline {paragraph}{Approach 2:}{42}{section*.44}
+\contentsline {paragraph}{Approach 3:}{43}{section*.45}
+\contentsline {subsubsection}{\numberline {4.4.3}Estimation of $\mu _t$}{45}{subsubsection.4.4.3}
+\contentsline {subsubsection}{\numberline {4.4.4}Judge Schedules in the Data}{47}{subsubsection.4.4.4}
+\contentsline {subsection}{\numberline {4.5}Choice Model for Judge Shopping}{48}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Simulation Study Outline}{48}{subsection.4.6}
+\contentsline {paragraph}{Overview}{48}{section*.48}
+\contentsline {paragraph}{Defendant Arrival Process.}{49}{section*.49}
+\contentsline {paragraph}{State Variable for the Simulation.}{49}{section*.50}
+\contentsline {paragraph}{Calibration.}{49}{section*.51}
+\contentsline {subsection}{\numberline {4.7}Counterfactual Study}{49}{subsection.4.7}
+\contentsline {paragraph}{Different Judge Rotations:}{49}{section*.52}
+\contentsline {paragraph}{Capacity:}{50}{section*.53}
+\contentsline {paragraph}{What Should We Report?}{50}{section*.54}
+\contentsline {section}{\numberline {A}Data Cleaning}{51}{appendix.A}
+\contentsline {section}{\numberline {B}Supplementary Material}{53}{appendix.B}
+\contentsline {subsection}{\numberline {B.1}Tables}{53}{subsection.B.1}
+\contentsline {subsection}{\numberline {B.2}Figures}{56}{subsection.B.2}
+\contentsline {section}{\numberline {C}Further Analysis of the Sentencing Events Missing the \emph {date} Data Field}{66}{appendix.C}
+\contentsline {section}{\numberline {D}Judge Assignments}{67}{appendix.D}
+\contentsline {subsection}{\numberline {D.1}Case i - No Assignments.}{67}{subsection.D.1}
+\contentsline {subsection}{\numberline {D.2}Case ii - A Single Assignment}{67}{subsection.D.2}
+\contentsline {subsubsection}{\numberline {D.2.1}Case ii (a)}{67}{subsubsection.D.2.1}
+\contentsline {subsubsection}{\numberline {D.2.2}Case ii (b)}{68}{subsubsection.D.2.2}
+\contentsline {subsection}{\numberline {D.3}Case iii - Two Assignments}{68}{subsection.D.3}
+\contentsline {subsection}{\numberline {D.4}Case iv - Multiple Assignments.}{69}{subsection.D.4}
+\contentsline {subsubsection}{\numberline {D.4.1}Case iv (a)}{69}{subsubsection.D.4.1}
+\contentsline {subsubsection}{\numberline {D.4.2}Case iv (b)}{69}{subsubsection.D.4.2}
+\contentsline {subsubsection}{\numberline {D.4.3}Case iv (c)}{70}{subsubsection.D.4.3}

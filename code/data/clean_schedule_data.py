@@ -53,24 +53,6 @@ class ParserHelper:
         with_dates = [ass for ass in split_ass if self.is_single_assignment_wd(ass)]
         return (plus_match is not None and len(with_dates) < len(split_ass))
 
-    def is_multiple_assignment_inc(self,assignment):
-        plus_match = self.plus_regex.search(assignment)
-        assignment = re.sub('\+','',assignment)
-        split_str = assignment.split()
-        dates = [substr for substr in split_str if
-                        self.numbers_no_letters_regex.search(substr) is not None]
-        dates = self.date_regex.findall(','.join(dates))
-        return (plus_match is not None and len(dates) < 5)
-
-    def is_multiple_assignment_com(self,assignment):
-        plus_match = self.plus_regex.search(assignment)
-        assignment = re.sub('\+','',assignment)
-        split_str = assignment.split()
-        dates = [substr for substr in split_str if
-                        self.numbers_no_letters_regex.search(substr) is not None]
-        dates = self.date_regex.findall(','.join(dates))
-        return (plus_match is not None and len(dates) == 5)
-
     def is_multiple_assignment_ad(self,assignment):
         plus_match = self.plus_regex.search(assignment)
         split_ass = assignment.split('+')
