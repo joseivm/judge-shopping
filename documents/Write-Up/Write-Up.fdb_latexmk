@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex Write-Up"] 1619629064 "Write-Up.aux" "Write-Up.bbl" "Write-Up" 1619629069
+["bibtex Write-Up"] 1620940613 "Write-Up.aux" "Write-Up.bbl" "Write-Up" 1621961194
   "/usr/local/texlive/2018/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1480098435 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "Write-Up.aux" 1619629068 49656 e9b9899ca5a4eed65db5b9ee7c6b8241 ""
+  "Write-Up.aux" 1621961193 49494 48bb1316eb553cfce9c3d93b5aac1437 ""
   "bibfile.bib" 1607711916 74469 4f75be01ca117c96b4e094b35092f04e ""
   (generated)
-  "Write-Up.blg"
   "Write-Up.bbl"
-["pdflatex"] 1619629064 "Write-Up.tex" "Write-Up.pdf" "Write-Up" 1619629069
+  "Write-Up.blg"
+["pdflatex"] 1621961185 "Write-Up.tex" "Write-Up.pdf" "Write-Up" 1621961194
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1480098666 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1480098666 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -374,20 +374,20 @@
   "Figures/expmin_Histogram.pdf" 1606870878 37240 703c84ba5a1db4f3f948049d310af8c2 ""
   "Figures/sgc_offcodes_Histogram.pdf" 1606872745 49544 688e9b9dfecdf72f90e89b24ddb5d94a ""
   "Figures/statute_first_Histogram.pdf" 1606872712 39507 227b13cf112151255867749d3142c90d ""
+  "Tables/Missing.tex" 1620759265 1935 2ab2f36af3e836325e9a6e5f4794eb46 ""
   "Tables/MultipleAD.tex" 1619587869 3810 a65719a1f8b5cc90c6ca53b2f8dbe064 ""
   "Tables/MultipleND.tex" 1619586887 338 98f447b0717eaad39e45065566ae43d5 ""
   "Tables/MultipleSD.tex" 1619587210 12402 f2dd78bb09f51831eacf2abb600c5141 ""
   "Tables/Single.tex" 1619628879 8463 44888015f514410872161418a5a9a6c5 ""
   "Tables/SingleWD.tex" 1619628879 1200 9fd7d0337164995d164103a12f633574 ""
-  "Write-Up.aux" 1619629068 49656 e9b9899ca5a4eed65db5b9ee7c6b8241 ""
-  "Write-Up.bbl" 1619629064 940 d6b53a21ace8d30b9ba499cbbe6fc717 "bibtex Write-Up"
-  "Write-Up.out" 1619629068 2909 4218790bb70ab2146ef734c8cf05f555 ""
-  "Write-Up.tex" 1619629050 150709 fb93651d41ad1a66f84fa2fa33ce01d6 ""
-  "Write-Up.toc" 1619629068 5187 e82a76e5923c6a4bacbf4f0683f7ac6e ""
-  "tst.tex" 1619554106 1935 669bd923c2d1e39c206af38631c4a77a ""
+  "Write-Up.aux" 1621961193 49494 48bb1316eb553cfce9c3d93b5aac1437 ""
+  "Write-Up.bbl" 1620940613 940 d6b53a21ace8d30b9ba499cbbe6fc717 "bibtex Write-Up"
+  "Write-Up.out" 1621961193 2909 4218790bb70ab2146ef734c8cf05f555 ""
+  "Write-Up.tex" 1621961187 153217 752b139e2687749a0dc289227420f4f1 ""
+  "Write-Up.toc" 1621961193 5187 10e1b089e7935bf72882ea035c234ebc ""
   (generated)
-  "Write-Up.out"
-  "Write-Up.aux"
-  "Write-Up.log"
-  "Write-Up.toc"
   "Write-Up.pdf"
+  "Write-Up.toc"
+  "Write-Up.aux"
+  "Write-Up.out"
+  "Write-Up.log"

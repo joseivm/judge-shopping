@@ -523,8 +523,8 @@ INPUT ./Figures/Fig3A.png
 INPUT Figures/Fig3B.png
 INPUT ./Figures/Fig3B.png
 INPUT ./Figures/Fig3B.png
-INPUT tst.tex
-INPUT tst.tex
+INPUT Tables/Missing.tex
+INPUT Tables/Missing.tex
 INPUT Figures/Histogram_of_Number_of_Days_With_Sentences_Category_10.pdf
 INPUT ./Figures/Histogram_of_Number_of_Days_With_Sentences_Category_10.pdf
 INPUT ./Figures/Histogram_of_Number_of_Days_With_Sentences_Category_10.pdf
