@@ -1,0 +1,83 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage[ruled,vlined]{algorithm2e}
+
+\title{June 3, 2021 Meeting Agenda}
+
+\begin{document}
+\maketitle
+
+\section{Joint estimation of $\mu_p$ and $\mu_t$}
+I finished implementing the ad hoc algorithm. I want to confirm that the exclusion criteria that
+we are currently using is the one we want. Here are the exclusion criteria:
+
+\begin{table}[H]
+  \centering
+  \caption{Plea Capacity Estimation Exclusion Criteria}
+\begin{tabular}{|l|l|l|}
+  \hline
+\textbf{Condition}                                           & \textbf{Old Clean Day} & \textbf{New Clean Day} \\ \hline
+No inconsistencies between sentencing data and calendar & Y & Y \\ \hline
+Judge has at least 10 'clean' days                      & Y & Y \\ \hline
+Judge has at least one sentencing event that day        & Y &   \\ \hline
+Judge has no trials in this county in entire dataset    & Y &   \\ \hline
+Judge is only assigned to one county that day           &   & Y \\ \hline
+Judge only sentences in one county that day             &   & Y \\ \hline
+Judge never has more than x sentencing events in this county &                                 & Y                               \\ \hline
+Judge calendar assignment is of type "GS"               &   & Y \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Trial Capacity Estimation Exclusion Criteria}
+\label{tab:my-table}
+\begin{tabular}{|l|l|l|}
+  \hline
+\textbf{Condition}                                           & \textbf{Old Clean Day} & \textbf{New Clean Day} \\ \hline
+Judge never has more than x sentencing events in this county & Y                               & Y                               \\ \hline
+Judge has at least 1 trial in this county                    & Y                               & Y \\ \hline
+\end{tabular}
+\end{table}
+
+  \subsection{Problems}
+    \begin{itemize}
+      \item Step 4 of the ad-hoc algorithm (the part where we maximize log likelihood) is inexact. The gradient is usually not exactly equal to zero, but it does get smaller over iterations. In the last
+      iteration it is at 0.002.
+      \item I'm not actually using a stopping criteria for Step 4, I just run it for 100 iterations and keep the best value of $\mu_p$. I played around with the number of iterations, and the objective doesn't seem to improve after 100. 
+    \end{itemize}
+
+  \subsection{Next Steps}
+  \begin{itemize}
+    \item Finalize exclusion criteria.
+    \item Do Poisson tail calculations.
+    \item Add information about optimizer to document.
+  \end{itemize}
+
+  \subsection{Pseudocode}
+  \begin{algorithm}[H]
+    \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+    \SetAlgoLined
+    \Input{InitialMuT, InitialMuP, tolerance}
+    \Output{muP,muT}
+    sdf = LoadSentencingData()\;
+    pleas = GetCleanDayPleas()\;
+    judgeDays = GetJudgeDays()\;
+    prevMuT = 0\;
+    prevMuP = 0\;
+    muT = InitialMuT\;
+    muP = InitialMuP\;
+    \While{$(|muT - prevMuT| > tolerance)$ or $(|muP - prevMuP| > tolerance)$}{
+     prevMuP = muP\;
+     prevMuT = muT\;
+     muP = OptimizeMuP(prevMuT,prevMuP,sdf,judgeDays,pleas)\;
+     muT = EstimateMuT(muP)\;
+    }
+    \caption{Ad-hoc Algorithm}
+    \end{algorithm}
+
+\end{document}

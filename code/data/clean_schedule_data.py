@@ -323,7 +323,7 @@ def process_month_df_for_daily(tdf):
 
     tdf = pd.DataFrame(all_assignments)
 
-    # tdf = tdf.loc[(tdf.FullAssignment == 'na') | (tdf.Assignment != 'na'),:]
+    tdf['Assignment'] = tdf['Assignment'].str.strip()
     tdf['Week'] = tdf.StartDate.apply(lambda x: str(x.isocalendar()[1]) + '-' + str(x.isocalendar()[0]))
     tdf['Date'] = tdf.Date.astype(str)
 

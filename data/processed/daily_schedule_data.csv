@@ -49,11 +49,11 @@ COLE,Cherokee CP,Cherokee CP,2000-12-05,Single,2000-12-04,49-2000,Cherokee,7
 COLE,Cherokee CP,Cherokee CP,2000-12-06,Single,2000-12-04,49-2000,Cherokee,7
 COLE,Cherokee CP,Cherokee CP,2000-12-07,Single,2000-12-04,49-2000,Cherokee,7
 COLE,Cherokee CP,Cherokee CP,2000-12-08,Single,2000-12-04,49-2000,Cherokee,7
-COOPER TW,Lee GS ,Lee GS ,2000-12-04,Single,2000-12-04,49-2000,Lee,3
-COOPER TW,Lee GS ,Lee GS ,2000-12-05,Single,2000-12-04,49-2000,Lee,3
-COOPER TW,Lee GS ,Lee GS ,2000-12-06,Single,2000-12-04,49-2000,Lee,3
-COOPER TW,Lee GS ,Lee GS ,2000-12-07,Single,2000-12-04,49-2000,Lee,3
-COOPER TW,Lee GS ,Lee GS ,2000-12-08,Single,2000-12-04,49-2000,Lee,3
+COOPER TW,Lee GS ,Lee GS,2000-12-04,Single,2000-12-04,49-2000,Lee,3
+COOPER TW,Lee GS ,Lee GS,2000-12-05,Single,2000-12-04,49-2000,Lee,3
+COOPER TW,Lee GS ,Lee GS,2000-12-06,Single,2000-12-04,49-2000,Lee,3
+COOPER TW,Lee GS ,Lee GS,2000-12-07,Single,2000-12-04,49-2000,Lee,3
+COOPER TW,Lee GS ,Lee GS,2000-12-08,Single,2000-12-04,49-2000,Lee,3
 DENNIS,Berkeley CP + Charleston GS(SGJ) 8,Charleston GS(SGJ),2000-12-08,MultipleSD,2000-12-04,49-2000,Charleston,9
 DENNIS,Berkeley CP + Charleston GS(SGJ) 8,Berkeley CP,2000-12-04,MultipleSD,2000-12-04,49-2000,Berkeley,9
 DENNIS,Berkeley CP + Charleston GS(SGJ) 8,Berkeley CP,2000-12-05,MultipleSD,2000-12-04,49-2000,Berkeley,9
@@ -304,21 +304,21 @@ COOPER TW,Lee GS + Aiken GS CC 15,Lee GS,2000-12-11,MultipleSD,2000-12-11,50-200
 COOPER TW,Lee GS + Aiken GS CC 15,Lee GS,2000-12-12,MultipleSD,2000-12-11,50-2000,Lee,3
 COOPER TW,Lee GS + Aiken GS CC 15,Lee GS,2000-12-13,MultipleSD,2000-12-11,50-2000,Lee,3
 COOPER TW,Lee GS + Aiken GS CC 15,Lee GS,2000-12-14,MultipleSD,2000-12-11,50-2000,Lee,3
-DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,Berkeley CP ,2000-12-11,MultipleND,2000-12-11,50-2000,Berkeley,9
-DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,Berkeley CP ,2000-12-12,MultipleND,2000-12-11,50-2000,Berkeley,9
-DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,Berkeley CP ,2000-12-13,MultipleND,2000-12-11,50-2000,Berkeley,9
-DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,Berkeley CP ,2000-12-14,MultipleND,2000-12-11,50-2000,Berkeley,9
-DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,Berkeley CP ,2000-12-15,MultipleND,2000-12-11,50-2000,Berkeley,9
-DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC, Sumter GS(SGJ) ,2000-12-11,MultipleND,2000-12-11,50-2000,Sumter,3
-DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC, Sumter GS(SGJ) ,2000-12-12,MultipleND,2000-12-11,50-2000,Sumter,3
-DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC, Sumter GS(SGJ) ,2000-12-13,MultipleND,2000-12-11,50-2000,Sumter,3
-DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC, Sumter GS(SGJ) ,2000-12-14,MultipleND,2000-12-11,50-2000,Sumter,3
-DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC, Sumter GS(SGJ) ,2000-12-15,MultipleND,2000-12-11,50-2000,Sumter,3
-DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC, Charleston CP CC,2000-12-11,MultipleND,2000-12-11,50-2000,Charleston,9
-DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC, Charleston CP CC,2000-12-12,MultipleND,2000-12-11,50-2000,Charleston,9
-DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC, Charleston CP CC,2000-12-13,MultipleND,2000-12-11,50-2000,Charleston,9
-DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC, Charleston CP CC,2000-12-14,MultipleND,2000-12-11,50-2000,Charleston,9
-DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC, Charleston CP CC,2000-12-15,MultipleND,2000-12-11,50-2000,Charleston,9
+DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,Berkeley CP,2000-12-11,MultipleND,2000-12-11,50-2000,Berkeley,9
+DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,Berkeley CP,2000-12-12,MultipleND,2000-12-11,50-2000,Berkeley,9
+DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,Berkeley CP,2000-12-13,MultipleND,2000-12-11,50-2000,Berkeley,9
+DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,Berkeley CP,2000-12-14,MultipleND,2000-12-11,50-2000,Berkeley,9
+DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,Berkeley CP,2000-12-15,MultipleND,2000-12-11,50-2000,Berkeley,9
+DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,Sumter GS(SGJ),2000-12-11,MultipleND,2000-12-11,50-2000,Sumter,3
+DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,Sumter GS(SGJ),2000-12-12,MultipleND,2000-12-11,50-2000,Sumter,3
+DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,Sumter GS(SGJ),2000-12-13,MultipleND,2000-12-11,50-2000,Sumter,3
+DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,Sumter GS(SGJ),2000-12-14,MultipleND,2000-12-11,50-2000,Sumter,3
+DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,Sumter GS(SGJ),2000-12-15,MultipleND,2000-12-11,50-2000,Sumter,3
+DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,Charleston CP CC,2000-12-11,MultipleND,2000-12-11,50-2000,Charleston,9
+DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,Charleston CP CC,2000-12-12,MultipleND,2000-12-11,50-2000,Charleston,9
+DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,Charleston CP CC,2000-12-13,MultipleND,2000-12-11,50-2000,Charleston,9
+DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,Charleston CP CC,2000-12-14,MultipleND,2000-12-11,50-2000,Charleston,9
+DENNIS,Berkeley CP + Sumter GS(SGJ) + Charleston CP CC,Charleston CP CC,2000-12-15,MultipleND,2000-12-11,50-2000,Charleston,9
 FEW,13th Cir. CPNJ,13th Cir. CPNJ,2000-12-11,Single,2000-12-11,50-2000,13th Cir,13
 FEW,13th Cir. CPNJ,13th Cir. CPNJ,2000-12-12,Single,2000-12-11,50-2000,13th Cir,13
 FEW,13th Cir. CPNJ,13th Cir. CPNJ,2000-12-13,Single,2000-12-11,50-2000,13th Cir,13
@@ -494,21 +494,21 @@ PYLE,Pickens GS,Pickens GS,2000-12-12,Single,2000-12-11,50-2000,Pickens,13
 PYLE,Pickens GS,Pickens GS,2000-12-13,Single,2000-12-11,50-2000,Pickens,13
 PYLE,Pickens GS,Pickens GS,2000-12-14,Single,2000-12-11,50-2000,Pickens,13
 PYLE,Pickens GS,Pickens GS,2000-12-15,Single,2000-12-11,50-2000,Pickens,13
-SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,Aiken GS CC ,2000-12-11,MultipleND,2000-12-11,50-2000,Aiken,2
-SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,Aiken GS CC ,2000-12-12,MultipleND,2000-12-11,50-2000,Aiken,2
-SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,Aiken GS CC ,2000-12-13,MultipleND,2000-12-11,50-2000,Aiken,2
-SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,Aiken GS CC ,2000-12-14,MultipleND,2000-12-11,50-2000,Aiken,2
-SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,Aiken GS CC ,2000-12-15,MultipleND,2000-12-11,50-2000,Aiken,2
-SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS, Barnwell GS CC ,2000-12-11,MultipleND,2000-12-11,50-2000,Barnwell,2
-SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS, Barnwell GS CC ,2000-12-12,MultipleND,2000-12-11,50-2000,Barnwell,2
-SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS, Barnwell GS CC ,2000-12-13,MultipleND,2000-12-11,50-2000,Barnwell,2
-SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS, Barnwell GS CC ,2000-12-14,MultipleND,2000-12-11,50-2000,Barnwell,2
-SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS, Barnwell GS CC ,2000-12-15,MultipleND,2000-12-11,50-2000,Barnwell,2
-SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS, Bamberg GS,2000-12-11,MultipleND,2000-12-11,50-2000,Bamberg,2
-SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS, Bamberg GS,2000-12-12,MultipleND,2000-12-11,50-2000,Bamberg,2
-SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS, Bamberg GS,2000-12-13,MultipleND,2000-12-11,50-2000,Bamberg,2
-SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS, Bamberg GS,2000-12-14,MultipleND,2000-12-11,50-2000,Bamberg,2
-SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS, Bamberg GS,2000-12-15,MultipleND,2000-12-11,50-2000,Bamberg,2
+SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,Aiken GS CC,2000-12-11,MultipleND,2000-12-11,50-2000,Aiken,2
+SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,Aiken GS CC,2000-12-12,MultipleND,2000-12-11,50-2000,Aiken,2
+SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,Aiken GS CC,2000-12-13,MultipleND,2000-12-11,50-2000,Aiken,2
+SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,Aiken GS CC,2000-12-14,MultipleND,2000-12-11,50-2000,Aiken,2
+SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,Aiken GS CC,2000-12-15,MultipleND,2000-12-11,50-2000,Aiken,2
+SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,Barnwell GS CC,2000-12-11,MultipleND,2000-12-11,50-2000,Barnwell,2
+SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,Barnwell GS CC,2000-12-12,MultipleND,2000-12-11,50-2000,Barnwell,2
+SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,Barnwell GS CC,2000-12-13,MultipleND,2000-12-11,50-2000,Barnwell,2
+SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,Barnwell GS CC,2000-12-14,MultipleND,2000-12-11,50-2000,Barnwell,2
+SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,Barnwell GS CC,2000-12-15,MultipleND,2000-12-11,50-2000,Barnwell,2
+SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,Bamberg GS,2000-12-11,MultipleND,2000-12-11,50-2000,Bamberg,2
+SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,Bamberg GS,2000-12-12,MultipleND,2000-12-11,50-2000,Bamberg,2
+SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,Bamberg GS,2000-12-13,MultipleND,2000-12-11,50-2000,Bamberg,2
+SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,Bamberg GS,2000-12-14,MultipleND,2000-12-11,50-2000,Bamberg,2
+SMOAK,Aiken GS CC + Barnwell GS CC + Bamberg GS,Bamberg GS,2000-12-15,MultipleND,2000-12-11,50-2000,Bamberg,2
 COOPER GT,X,X,2000-12-11,Single,2000-12-11,50-2000,X,na
 COOPER GT,X,X,2000-12-12,Single,2000-12-11,50-2000,X,na
 COOPER GT,X,X,2000-12-13,Single,2000-12-11,50-2000,X,na
@@ -1230,11 +1230,11 @@ WESTBROOK,Lexington CP,Lexington CP,2000-08-08,Single,2000-08-07,32-2000,Lexingt
 WESTBROOK,Lexington CP,Lexington CP,2000-08-09,Single,2000-08-07,32-2000,Lexington,11
 WESTBROOK,Lexington CP,Lexington CP,2000-08-10,Single,2000-08-07,32-2000,Lexington,11
 WESTBROOK,Lexington CP,Lexington CP,2000-08-11,Single,2000-08-07,32-2000,Lexington,11
-WILLIAMS,Dorchester CP ,Dorchester CP ,2000-08-07,Single,2000-08-07,32-2000,Dorchester,1
-WILLIAMS,Dorchester CP ,Dorchester CP ,2000-08-08,Single,2000-08-07,32-2000,Dorchester,1
-WILLIAMS,Dorchester CP ,Dorchester CP ,2000-08-09,Single,2000-08-07,32-2000,Dorchester,1
-WILLIAMS,Dorchester CP ,Dorchester CP ,2000-08-10,Single,2000-08-07,32-2000,Dorchester,1
-WILLIAMS,Dorchester CP ,Dorchester CP ,2000-08-11,Single,2000-08-07,32-2000,Dorchester,1
+WILLIAMS,Dorchester CP ,Dorchester CP,2000-08-07,Single,2000-08-07,32-2000,Dorchester,1
+WILLIAMS,Dorchester CP ,Dorchester CP,2000-08-08,Single,2000-08-07,32-2000,Dorchester,1
+WILLIAMS,Dorchester CP ,Dorchester CP,2000-08-09,Single,2000-08-07,32-2000,Dorchester,1
+WILLIAMS,Dorchester CP ,Dorchester CP,2000-08-10,Single,2000-08-07,32-2000,Dorchester,1
+WILLIAMS,Dorchester CP ,Dorchester CP,2000-08-11,Single,2000-08-07,32-2000,Dorchester,1
 BROWN,Colleton GS,Colleton GS,2000-08-07,Single,2000-08-07,32-2000,Colleton,14
 BROWN,Colleton GS,Colleton GS,2000-08-08,Single,2000-08-07,32-2000,Colleton,14
 BROWN,Colleton GS,Colleton GS,2000-08-09,Single,2000-08-07,32-2000,Colleton,14
@@ -1355,16 +1355,16 @@ GREGORY,"in chambers + 14th Cir. CPNJ 14,15",14th Cir. CPNJ,2000-08-15,MultipleS
 GREGORY,"in chambers + 14th Cir. CPNJ 14,15",in chambers,2000-08-16,MultipleSD,2000-08-14,33-2000,in chambers,na
 GREGORY,"in chambers + 14th Cir. CPNJ 14,15",in chambers,2000-08-17,MultipleSD,2000-08-14,33-2000,in chambers,na
 GREGORY,"in chambers + 14th Cir. CPNJ 14,15",in chambers,2000-08-18,MultipleSD,2000-08-14,33-2000,in chambers,na
-HALL,in chambers + Horry GS,in chambers ,2000-08-14,MultipleND,2000-08-14,33-2000,in chambers ,na
-HALL,in chambers + Horry GS,in chambers ,2000-08-15,MultipleND,2000-08-14,33-2000,in chambers ,na
-HALL,in chambers + Horry GS,in chambers ,2000-08-16,MultipleND,2000-08-14,33-2000,in chambers ,na
-HALL,in chambers + Horry GS,in chambers ,2000-08-17,MultipleND,2000-08-14,33-2000,in chambers ,na
-HALL,in chambers + Horry GS,in chambers ,2000-08-18,MultipleND,2000-08-14,33-2000,in chambers ,na
-HALL,in chambers + Horry GS, Horry GS,2000-08-14,MultipleND,2000-08-14,33-2000,Horry,15
-HALL,in chambers + Horry GS, Horry GS,2000-08-15,MultipleND,2000-08-14,33-2000,Horry,15
-HALL,in chambers + Horry GS, Horry GS,2000-08-16,MultipleND,2000-08-14,33-2000,Horry,15
-HALL,in chambers + Horry GS, Horry GS,2000-08-17,MultipleND,2000-08-14,33-2000,Horry,15
-HALL,in chambers + Horry GS, Horry GS,2000-08-18,MultipleND,2000-08-14,33-2000,Horry,15
+HALL,in chambers + Horry GS,in chambers,2000-08-14,MultipleND,2000-08-14,33-2000,in chambers,na
+HALL,in chambers + Horry GS,in chambers,2000-08-15,MultipleND,2000-08-14,33-2000,in chambers,na
+HALL,in chambers + Horry GS,in chambers,2000-08-16,MultipleND,2000-08-14,33-2000,in chambers,na
+HALL,in chambers + Horry GS,in chambers,2000-08-17,MultipleND,2000-08-14,33-2000,in chambers,na
+HALL,in chambers + Horry GS,in chambers,2000-08-18,MultipleND,2000-08-14,33-2000,in chambers,na
+HALL,in chambers + Horry GS,Horry GS,2000-08-14,MultipleND,2000-08-14,33-2000,Horry,15
+HALL,in chambers + Horry GS,Horry GS,2000-08-15,MultipleND,2000-08-14,33-2000,Horry,15
+HALL,in chambers + Horry GS,Horry GS,2000-08-16,MultipleND,2000-08-14,33-2000,Horry,15
+HALL,in chambers + Horry GS,Horry GS,2000-08-17,MultipleND,2000-08-14,33-2000,Horry,15
+HALL,in chambers + Horry GS,Horry GS,2000-08-18,MultipleND,2000-08-14,33-2000,Horry,15
 HARWELL,in chambers,in chambers,2000-08-14,Single,2000-08-14,33-2000,in chambers,na
 HARWELL,in chambers,in chambers,2000-08-15,Single,2000-08-14,33-2000,in chambers,na
 HARWELL,in chambers,in chambers,2000-08-16,Single,2000-08-14,33-2000,in chambers,na
@@ -1995,16 +1995,16 @@ SMOAK,na,na,2000-08-29,Missing,2000-08-28,35-2000,na,na
 SMOAK,na,na,2000-08-30,Missing,2000-08-28,35-2000,na,na
 SMOAK,na,na,2000-08-31,Missing,2000-08-28,35-2000,na,na
 SMOAK,na,na,2000-09-01,Missing,2000-08-28,35-2000,na,na
-COOPER GT,Greenville CP + Richland CP CC,Greenville CP ,2000-08-28,MultipleND,2000-08-28,35-2000,Greenville,13
-COOPER GT,Greenville CP + Richland CP CC,Greenville CP ,2000-08-29,MultipleND,2000-08-28,35-2000,Greenville,13
-COOPER GT,Greenville CP + Richland CP CC,Greenville CP ,2000-08-30,MultipleND,2000-08-28,35-2000,Greenville,13
-COOPER GT,Greenville CP + Richland CP CC,Greenville CP ,2000-08-31,MultipleND,2000-08-28,35-2000,Greenville,13
-COOPER GT,Greenville CP + Richland CP CC,Greenville CP ,2000-09-01,MultipleND,2000-08-28,35-2000,Greenville,13
-COOPER GT,Greenville CP + Richland CP CC, Richland CP CC,2000-08-28,MultipleND,2000-08-28,35-2000,Richland,5
-COOPER GT,Greenville CP + Richland CP CC, Richland CP CC,2000-08-29,MultipleND,2000-08-28,35-2000,Richland,5
-COOPER GT,Greenville CP + Richland CP CC, Richland CP CC,2000-08-30,MultipleND,2000-08-28,35-2000,Richland,5
-COOPER GT,Greenville CP + Richland CP CC, Richland CP CC,2000-08-31,MultipleND,2000-08-28,35-2000,Richland,5
-COOPER GT,Greenville CP + Richland CP CC, Richland CP CC,2000-09-01,MultipleND,2000-08-28,35-2000,Richland,5
+COOPER GT,Greenville CP + Richland CP CC,Greenville CP,2000-08-28,MultipleND,2000-08-28,35-2000,Greenville,13
+COOPER GT,Greenville CP + Richland CP CC,Greenville CP,2000-08-29,MultipleND,2000-08-28,35-2000,Greenville,13
+COOPER GT,Greenville CP + Richland CP CC,Greenville CP,2000-08-30,MultipleND,2000-08-28,35-2000,Greenville,13
+COOPER GT,Greenville CP + Richland CP CC,Greenville CP,2000-08-31,MultipleND,2000-08-28,35-2000,Greenville,13
+COOPER GT,Greenville CP + Richland CP CC,Greenville CP,2000-09-01,MultipleND,2000-08-28,35-2000,Greenville,13
+COOPER GT,Greenville CP + Richland CP CC,Richland CP CC,2000-08-28,MultipleND,2000-08-28,35-2000,Richland,5
+COOPER GT,Greenville CP + Richland CP CC,Richland CP CC,2000-08-29,MultipleND,2000-08-28,35-2000,Richland,5
+COOPER GT,Greenville CP + Richland CP CC,Richland CP CC,2000-08-30,MultipleND,2000-08-28,35-2000,Richland,5
+COOPER GT,Greenville CP + Richland CP CC,Richland CP CC,2000-08-31,MultipleND,2000-08-28,35-2000,Richland,5
+COOPER GT,Greenville CP + Richland CP CC,Richland CP CC,2000-09-01,MultipleND,2000-08-28,35-2000,Richland,5
 NEWMAN,Charleston GS,Charleston GS,2000-08-28,Single,2000-08-28,35-2000,Charleston,9
 NEWMAN,Charleston GS,Charleston GS,2000-08-29,Single,2000-08-28,35-2000,Charleston,9
 NEWMAN,Charleston GS,Charleston GS,2000-08-30,Single,2000-08-28,35-2000,Charleston,9
@@ -2350,16 +2350,16 @@ HARWELL,Marion GS,Marion GS,2000-07-11,Single,2000-07-10,28-2000,Marion,12
 HARWELL,Marion GS,Marion GS,2000-07-12,Single,2000-07-10,28-2000,Marion,12
 HARWELL,Marion GS,Marion GS,2000-07-13,Single,2000-07-10,28-2000,Marion,12
 HARWELL,Marion GS,Marion GS,2000-07-14,Single,2000-07-10,28-2000,Marion,12
-HAYES,York GS + 16th Cir. AW,York GS ,2000-07-10,MultipleND,2000-07-10,28-2000,York,16
-HAYES,York GS + 16th Cir. AW,York GS ,2000-07-11,MultipleND,2000-07-10,28-2000,York,16
-HAYES,York GS + 16th Cir. AW,York GS ,2000-07-12,MultipleND,2000-07-10,28-2000,York,16
-HAYES,York GS + 16th Cir. AW,York GS ,2000-07-13,MultipleND,2000-07-10,28-2000,York,16
-HAYES,York GS + 16th Cir. AW,York GS ,2000-07-14,MultipleND,2000-07-10,28-2000,York,16
-HAYES,York GS + 16th Cir. AW, 16th Cir. AW,2000-07-10,MultipleND,2000-07-10,28-2000,16th Cir,16
-HAYES,York GS + 16th Cir. AW, 16th Cir. AW,2000-07-11,MultipleND,2000-07-10,28-2000,16th Cir,16
-HAYES,York GS + 16th Cir. AW, 16th Cir. AW,2000-07-12,MultipleND,2000-07-10,28-2000,16th Cir,16
-HAYES,York GS + 16th Cir. AW, 16th Cir. AW,2000-07-13,MultipleND,2000-07-10,28-2000,16th Cir,16
-HAYES,York GS + 16th Cir. AW, 16th Cir. AW,2000-07-14,MultipleND,2000-07-10,28-2000,16th Cir,16
+HAYES,York GS + 16th Cir. AW,York GS,2000-07-10,MultipleND,2000-07-10,28-2000,York,16
+HAYES,York GS + 16th Cir. AW,York GS,2000-07-11,MultipleND,2000-07-10,28-2000,York,16
+HAYES,York GS + 16th Cir. AW,York GS,2000-07-12,MultipleND,2000-07-10,28-2000,York,16
+HAYES,York GS + 16th Cir. AW,York GS,2000-07-13,MultipleND,2000-07-10,28-2000,York,16
+HAYES,York GS + 16th Cir. AW,York GS,2000-07-14,MultipleND,2000-07-10,28-2000,York,16
+HAYES,York GS + 16th Cir. AW,16th Cir. AW,2000-07-10,MultipleND,2000-07-10,28-2000,16th Cir,16
+HAYES,York GS + 16th Cir. AW,16th Cir. AW,2000-07-11,MultipleND,2000-07-10,28-2000,16th Cir,16
+HAYES,York GS + 16th Cir. AW,16th Cir. AW,2000-07-12,MultipleND,2000-07-10,28-2000,16th Cir,16
+HAYES,York GS + 16th Cir. AW,16th Cir. AW,2000-07-13,MultipleND,2000-07-10,28-2000,16th Cir,16
+HAYES,York GS + 16th Cir. AW,16th Cir. AW,2000-07-14,MultipleND,2000-07-10,28-2000,16th Cir,16
 JOHNSON,Orientation School + 5th Cir. CPNJ 13,5th Cir. CPNJ,2000-07-13,MultipleSD,2000-07-10,28-2000,5th Cir,5
 JOHNSON,Orientation School + 5th Cir. CPNJ 13,Orientation School,2000-07-10,MultipleSD,2000-07-10,28-2000,Orientation School,na
 JOHNSON,Orientation School + 5th Cir. CPNJ 13,Orientation School,2000-07-11,MultipleSD,2000-07-10,28-2000,Orientation School,na
@@ -3012,16 +3012,16 @@ BUCKNER,Richland CP,Richland CP,2000-08-01,Single,2000-07-31,31-2000,Richland,5
 BUCKNER,Richland CP,Richland CP,2000-08-02,Single,2000-07-31,31-2000,Richland,5
 BUCKNER,Richland CP,Richland CP,2000-08-03,Single,2000-07-31,31-2000,Richland,5
 BUCKNER,Richland CP,Richland CP,2000-08-04,Single,2000-07-31,31-2000,Richland,5
-BURCH,Marlboro GS + Sumter GS CC,Marlboro GS ,2000-07-31,MultipleND,2000-07-31,31-2000,Marlboro,4
-BURCH,Marlboro GS + Sumter GS CC,Marlboro GS ,2000-08-01,MultipleND,2000-07-31,31-2000,Marlboro,4
-BURCH,Marlboro GS + Sumter GS CC,Marlboro GS ,2000-08-02,MultipleND,2000-07-31,31-2000,Marlboro,4
-BURCH,Marlboro GS + Sumter GS CC,Marlboro GS ,2000-08-03,MultipleND,2000-07-31,31-2000,Marlboro,4
-BURCH,Marlboro GS + Sumter GS CC,Marlboro GS ,2000-08-04,MultipleND,2000-07-31,31-2000,Marlboro,4
-BURCH,Marlboro GS + Sumter GS CC, Sumter GS CC,2000-07-31,MultipleND,2000-07-31,31-2000,Sumter,3
-BURCH,Marlboro GS + Sumter GS CC, Sumter GS CC,2000-08-01,MultipleND,2000-07-31,31-2000,Sumter,3
-BURCH,Marlboro GS + Sumter GS CC, Sumter GS CC,2000-08-02,MultipleND,2000-07-31,31-2000,Sumter,3
-BURCH,Marlboro GS + Sumter GS CC, Sumter GS CC,2000-08-03,MultipleND,2000-07-31,31-2000,Sumter,3
-BURCH,Marlboro GS + Sumter GS CC, Sumter GS CC,2000-08-04,MultipleND,2000-07-31,31-2000,Sumter,3
+BURCH,Marlboro GS + Sumter GS CC,Marlboro GS,2000-07-31,MultipleND,2000-07-31,31-2000,Marlboro,4
+BURCH,Marlboro GS + Sumter GS CC,Marlboro GS,2000-08-01,MultipleND,2000-07-31,31-2000,Marlboro,4
+BURCH,Marlboro GS + Sumter GS CC,Marlboro GS,2000-08-02,MultipleND,2000-07-31,31-2000,Marlboro,4
+BURCH,Marlboro GS + Sumter GS CC,Marlboro GS,2000-08-03,MultipleND,2000-07-31,31-2000,Marlboro,4
+BURCH,Marlboro GS + Sumter GS CC,Marlboro GS,2000-08-04,MultipleND,2000-07-31,31-2000,Marlboro,4
+BURCH,Marlboro GS + Sumter GS CC,Sumter GS CC,2000-07-31,MultipleND,2000-07-31,31-2000,Sumter,3
+BURCH,Marlboro GS + Sumter GS CC,Sumter GS CC,2000-08-01,MultipleND,2000-07-31,31-2000,Sumter,3
+BURCH,Marlboro GS + Sumter GS CC,Sumter GS CC,2000-08-02,MultipleND,2000-07-31,31-2000,Sumter,3
+BURCH,Marlboro GS + Sumter GS CC,Sumter GS CC,2000-08-03,MultipleND,2000-07-31,31-2000,Sumter,3
+BURCH,Marlboro GS + Sumter GS CC,Sumter GS CC,2000-08-04,MultipleND,2000-07-31,31-2000,Sumter,3
 CLARY,Spartanburg CP,Spartanburg CP,2000-07-31,Single,2000-07-31,31-2000,Spartanburg,7
 CLARY,Spartanburg CP,Spartanburg CP,2000-08-01,Single,2000-07-31,31-2000,Spartanburg,7
 CLARY,Spartanburg CP,Spartanburg CP,2000-08-02,Single,2000-07-31,31-2000,Spartanburg,7
@@ -3142,16 +3142,16 @@ MCKELLAR,Beaufort CP,Beaufort CP,2000-08-01,Single,2000-07-31,31-2000,Beaufort,1
 MCKELLAR,Beaufort CP,Beaufort CP,2000-08-02,Single,2000-07-31,31-2000,Beaufort,14
 MCKELLAR,Beaufort CP,Beaufort CP,2000-08-03,Single,2000-07-31,31-2000,Beaufort,14
 MCKELLAR,Beaufort CP,Beaufort CP,2000-08-04,Single,2000-07-31,31-2000,Beaufort,14
-MILLING,Sumter GS + Marlboro GS CC,Sumter GS ,2000-07-31,MultipleND,2000-07-31,31-2000,Sumter,3
-MILLING,Sumter GS + Marlboro GS CC,Sumter GS ,2000-08-01,MultipleND,2000-07-31,31-2000,Sumter,3
-MILLING,Sumter GS + Marlboro GS CC,Sumter GS ,2000-08-02,MultipleND,2000-07-31,31-2000,Sumter,3
-MILLING,Sumter GS + Marlboro GS CC,Sumter GS ,2000-08-03,MultipleND,2000-07-31,31-2000,Sumter,3
-MILLING,Sumter GS + Marlboro GS CC,Sumter GS ,2000-08-04,MultipleND,2000-07-31,31-2000,Sumter,3
-MILLING,Sumter GS + Marlboro GS CC, Marlboro GS CC,2000-07-31,MultipleND,2000-07-31,31-2000,Marlboro,4
-MILLING,Sumter GS + Marlboro GS CC, Marlboro GS CC,2000-08-01,MultipleND,2000-07-31,31-2000,Marlboro,4
-MILLING,Sumter GS + Marlboro GS CC, Marlboro GS CC,2000-08-02,MultipleND,2000-07-31,31-2000,Marlboro,4
-MILLING,Sumter GS + Marlboro GS CC, Marlboro GS CC,2000-08-03,MultipleND,2000-07-31,31-2000,Marlboro,4
-MILLING,Sumter GS + Marlboro GS CC, Marlboro GS CC,2000-08-04,MultipleND,2000-07-31,31-2000,Marlboro,4
+MILLING,Sumter GS + Marlboro GS CC,Sumter GS,2000-07-31,MultipleND,2000-07-31,31-2000,Sumter,3
+MILLING,Sumter GS + Marlboro GS CC,Sumter GS,2000-08-01,MultipleND,2000-07-31,31-2000,Sumter,3
+MILLING,Sumter GS + Marlboro GS CC,Sumter GS,2000-08-02,MultipleND,2000-07-31,31-2000,Sumter,3
+MILLING,Sumter GS + Marlboro GS CC,Sumter GS,2000-08-03,MultipleND,2000-07-31,31-2000,Sumter,3
+MILLING,Sumter GS + Marlboro GS CC,Sumter GS,2000-08-04,MultipleND,2000-07-31,31-2000,Sumter,3
+MILLING,Sumter GS + Marlboro GS CC,Marlboro GS CC,2000-07-31,MultipleND,2000-07-31,31-2000,Marlboro,4
+MILLING,Sumter GS + Marlboro GS CC,Marlboro GS CC,2000-08-01,MultipleND,2000-07-31,31-2000,Marlboro,4
+MILLING,Sumter GS + Marlboro GS CC,Marlboro GS CC,2000-08-02,MultipleND,2000-07-31,31-2000,Marlboro,4
+MILLING,Sumter GS + Marlboro GS CC,Marlboro GS CC,2000-08-03,MultipleND,2000-07-31,31-2000,Marlboro,4
+MILLING,Sumter GS + Marlboro GS CC,Marlboro GS CC,2000-08-04,MultipleND,2000-07-31,31-2000,Marlboro,4
 NICHOLSON,Anderson CP,Anderson CP,2000-07-31,Single,2000-07-31,31-2000,Anderson,10
 NICHOLSON,Anderson CP,Anderson CP,2000-08-01,Single,2000-07-31,31-2000,Anderson,10
 NICHOLSON,Anderson CP,Anderson CP,2000-08-02,Single,2000-07-31,31-2000,Anderson,10
@@ -4169,16 +4169,16 @@ PIEPER,Charleston CP,Charleston CP,2001-04-24,Single,2001-04-23,17-2001,Charlest
 PIEPER,Charleston CP,Charleston CP,2001-04-25,Single,2001-04-23,17-2001,Charleston,9
 PIEPER,Charleston CP,Charleston CP,2001-04-26,Single,2001-04-23,17-2001,Charleston,9
 PIEPER,Charleston CP,Charleston CP,2001-04-27,Single,2001-04-23,17-2001,Charleston,9
-RAWL,Colleton GS + Charleston GS,Colleton GS ,2001-04-23,MultipleND,2001-04-23,17-2001,Colleton,14
-RAWL,Colleton GS + Charleston GS,Colleton GS ,2001-04-24,MultipleND,2001-04-23,17-2001,Colleton,14
-RAWL,Colleton GS + Charleston GS,Colleton GS ,2001-04-25,MultipleND,2001-04-23,17-2001,Colleton,14
-RAWL,Colleton GS + Charleston GS,Colleton GS ,2001-04-26,MultipleND,2001-04-23,17-2001,Colleton,14
-RAWL,Colleton GS + Charleston GS,Colleton GS ,2001-04-27,MultipleND,2001-04-23,17-2001,Colleton,14
-RAWL,Colleton GS + Charleston GS, Charleston GS,2001-04-23,MultipleND,2001-04-23,17-2001,Charleston,9
-RAWL,Colleton GS + Charleston GS, Charleston GS,2001-04-24,MultipleND,2001-04-23,17-2001,Charleston,9
-RAWL,Colleton GS + Charleston GS, Charleston GS,2001-04-25,MultipleND,2001-04-23,17-2001,Charleston,9
-RAWL,Colleton GS + Charleston GS, Charleston GS,2001-04-26,MultipleND,2001-04-23,17-2001,Charleston,9
-RAWL,Colleton GS + Charleston GS, Charleston GS,2001-04-27,MultipleND,2001-04-23,17-2001,Charleston,9
+RAWL,Colleton GS + Charleston GS,Colleton GS,2001-04-23,MultipleND,2001-04-23,17-2001,Colleton,14
+RAWL,Colleton GS + Charleston GS,Colleton GS,2001-04-24,MultipleND,2001-04-23,17-2001,Colleton,14
+RAWL,Colleton GS + Charleston GS,Colleton GS,2001-04-25,MultipleND,2001-04-23,17-2001,Colleton,14
+RAWL,Colleton GS + Charleston GS,Colleton GS,2001-04-26,MultipleND,2001-04-23,17-2001,Colleton,14
+RAWL,Colleton GS + Charleston GS,Colleton GS,2001-04-27,MultipleND,2001-04-23,17-2001,Colleton,14
+RAWL,Colleton GS + Charleston GS,Charleston GS,2001-04-23,MultipleND,2001-04-23,17-2001,Charleston,9
+RAWL,Colleton GS + Charleston GS,Charleston GS,2001-04-24,MultipleND,2001-04-23,17-2001,Charleston,9
+RAWL,Colleton GS + Charleston GS,Charleston GS,2001-04-25,MultipleND,2001-04-23,17-2001,Charleston,9
+RAWL,Colleton GS + Charleston GS,Charleston GS,2001-04-26,MultipleND,2001-04-23,17-2001,Charleston,9
+RAWL,Colleton GS + Charleston GS,Charleston GS,2001-04-27,MultipleND,2001-04-23,17-2001,Charleston,9
 SAUNDERS,13th Cir. CPNJ,13th Cir. CPNJ,2001-04-23,Single,2001-04-23,17-2001,13th Cir,13
 SAUNDERS,13th Cir. CPNJ,13th Cir. CPNJ,2001-04-24,Single,2001-04-23,17-2001,13th Cir,13
 SAUNDERS,13th Cir. CPNJ,13th Cir. CPNJ,2001-04-25,Single,2001-04-23,17-2001,13th Cir,13
@@ -4239,16 +4239,16 @@ ALFORD,Lancaster GS,Lancaster GS,2001-05-01,Single,2001-04-30,18-2001,Lancaster,
 ALFORD,Lancaster GS,Lancaster GS,2001-05-02,Single,2001-04-30,18-2001,Lancaster,6
 ALFORD,Lancaster GS,Lancaster GS,2001-05-03,Single,2001-04-30,18-2001,Lancaster,6
 ALFORD,Lancaster GS,Lancaster GS,2001-05-04,Single,2001-04-30,18-2001,Lancaster,6
-BARBER,Aiken GS CC + 2nd Cir. CP/PCR,Aiken GS CC ,2001-04-30,MultipleND,2001-04-30,18-2001,Aiken,2
-BARBER,Aiken GS CC + 2nd Cir. CP/PCR,Aiken GS CC ,2001-05-01,MultipleND,2001-04-30,18-2001,Aiken,2
-BARBER,Aiken GS CC + 2nd Cir. CP/PCR,Aiken GS CC ,2001-05-02,MultipleND,2001-04-30,18-2001,Aiken,2
-BARBER,Aiken GS CC + 2nd Cir. CP/PCR,Aiken GS CC ,2001-05-03,MultipleND,2001-04-30,18-2001,Aiken,2
-BARBER,Aiken GS CC + 2nd Cir. CP/PCR,Aiken GS CC ,2001-05-04,MultipleND,2001-04-30,18-2001,Aiken,2
-BARBER,Aiken GS CC + 2nd Cir. CP/PCR, 2nd Cir. CP/PCR,2001-04-30,MultipleND,2001-04-30,18-2001,2nd Cir,2
-BARBER,Aiken GS CC + 2nd Cir. CP/PCR, 2nd Cir. CP/PCR,2001-05-01,MultipleND,2001-04-30,18-2001,2nd Cir,2
-BARBER,Aiken GS CC + 2nd Cir. CP/PCR, 2nd Cir. CP/PCR,2001-05-02,MultipleND,2001-04-30,18-2001,2nd Cir,2
-BARBER,Aiken GS CC + 2nd Cir. CP/PCR, 2nd Cir. CP/PCR,2001-05-03,MultipleND,2001-04-30,18-2001,2nd Cir,2
-BARBER,Aiken GS CC + 2nd Cir. CP/PCR, 2nd Cir. CP/PCR,2001-05-04,MultipleND,2001-04-30,18-2001,2nd Cir,2
+BARBER,Aiken GS CC + 2nd Cir. CP/PCR,Aiken GS CC,2001-04-30,MultipleND,2001-04-30,18-2001,Aiken,2
+BARBER,Aiken GS CC + 2nd Cir. CP/PCR,Aiken GS CC,2001-05-01,MultipleND,2001-04-30,18-2001,Aiken,2
+BARBER,Aiken GS CC + 2nd Cir. CP/PCR,Aiken GS CC,2001-05-02,MultipleND,2001-04-30,18-2001,Aiken,2
+BARBER,Aiken GS CC + 2nd Cir. CP/PCR,Aiken GS CC,2001-05-03,MultipleND,2001-04-30,18-2001,Aiken,2
+BARBER,Aiken GS CC + 2nd Cir. CP/PCR,Aiken GS CC,2001-05-04,MultipleND,2001-04-30,18-2001,Aiken,2
+BARBER,Aiken GS CC + 2nd Cir. CP/PCR,2nd Cir. CP/PCR,2001-04-30,MultipleND,2001-04-30,18-2001,2nd Cir,2
+BARBER,Aiken GS CC + 2nd Cir. CP/PCR,2nd Cir. CP/PCR,2001-05-01,MultipleND,2001-04-30,18-2001,2nd Cir,2
+BARBER,Aiken GS CC + 2nd Cir. CP/PCR,2nd Cir. CP/PCR,2001-05-02,MultipleND,2001-04-30,18-2001,2nd Cir,2
+BARBER,Aiken GS CC + 2nd Cir. CP/PCR,2nd Cir. CP/PCR,2001-05-03,MultipleND,2001-04-30,18-2001,2nd Cir,2
+BARBER,Aiken GS CC + 2nd Cir. CP/PCR,2nd Cir. CP/PCR,2001-05-04,MultipleND,2001-04-30,18-2001,2nd Cir,2
 BAXLEY,Georgetown CP,Georgetown CP,2001-04-30,Single,2001-04-30,18-2001,Georgetown,15
 BAXLEY,Georgetown CP,Georgetown CP,2001-05-01,Single,2001-04-30,18-2001,Georgetown,15
 BAXLEY,Georgetown CP,Georgetown CP,2001-05-02,Single,2001-04-30,18-2001,Georgetown,15
@@ -4259,16 +4259,16 @@ BEATTY,X,X,2001-05-01,Single,2001-04-30,18-2001,X,na
 BEATTY,X,X,2001-05-02,Single,2001-04-30,18-2001,X,na
 BEATTY,X,X,2001-05-03,Single,2001-04-30,18-2001,X,na
 BEATTY,X,X,2001-05-04,Single,2001-04-30,18-2001,X,na
-BREEDEN,Georgetown CP + Horry CP,Georgetown CP ,2001-04-30,MultipleND,2001-04-30,18-2001,Georgetown,15
-BREEDEN,Georgetown CP + Horry CP,Georgetown CP ,2001-05-01,MultipleND,2001-04-30,18-2001,Georgetown,15
-BREEDEN,Georgetown CP + Horry CP,Georgetown CP ,2001-05-02,MultipleND,2001-04-30,18-2001,Georgetown,15
-BREEDEN,Georgetown CP + Horry CP,Georgetown CP ,2001-05-03,MultipleND,2001-04-30,18-2001,Georgetown,15
-BREEDEN,Georgetown CP + Horry CP,Georgetown CP ,2001-05-04,MultipleND,2001-04-30,18-2001,Georgetown,15
-BREEDEN,Georgetown CP + Horry CP, Horry CP,2001-04-30,MultipleND,2001-04-30,18-2001,Horry,15
-BREEDEN,Georgetown CP + Horry CP, Horry CP,2001-05-01,MultipleND,2001-04-30,18-2001,Horry,15
-BREEDEN,Georgetown CP + Horry CP, Horry CP,2001-05-02,MultipleND,2001-04-30,18-2001,Horry,15
-BREEDEN,Georgetown CP + Horry CP, Horry CP,2001-05-03,MultipleND,2001-04-30,18-2001,Horry,15
-BREEDEN,Georgetown CP + Horry CP, Horry CP,2001-05-04,MultipleND,2001-04-30,18-2001,Horry,15
+BREEDEN,Georgetown CP + Horry CP,Georgetown CP,2001-04-30,MultipleND,2001-04-30,18-2001,Georgetown,15
+BREEDEN,Georgetown CP + Horry CP,Georgetown CP,2001-05-01,MultipleND,2001-04-30,18-2001,Georgetown,15
+BREEDEN,Georgetown CP + Horry CP,Georgetown CP,2001-05-02,MultipleND,2001-04-30,18-2001,Georgetown,15
+BREEDEN,Georgetown CP + Horry CP,Georgetown CP,2001-05-03,MultipleND,2001-04-30,18-2001,Georgetown,15
+BREEDEN,Georgetown CP + Horry CP,Georgetown CP,2001-05-04,MultipleND,2001-04-30,18-2001,Georgetown,15
+BREEDEN,Georgetown CP + Horry CP,Horry CP,2001-04-30,MultipleND,2001-04-30,18-2001,Horry,15
+BREEDEN,Georgetown CP + Horry CP,Horry CP,2001-05-01,MultipleND,2001-04-30,18-2001,Horry,15
+BREEDEN,Georgetown CP + Horry CP,Horry CP,2001-05-02,MultipleND,2001-04-30,18-2001,Horry,15
+BREEDEN,Georgetown CP + Horry CP,Horry CP,2001-05-03,MultipleND,2001-04-30,18-2001,Horry,15
+BREEDEN,Georgetown CP + Horry CP,Horry CP,2001-05-04,MultipleND,2001-04-30,18-2001,Horry,15
 BUCKNER,Orangeburg CP,Orangeburg CP,2001-04-30,Single,2001-04-30,18-2001,Orangeburg,1
 BUCKNER,Orangeburg CP,Orangeburg CP,2001-05-01,Single,2001-04-30,18-2001,Orangeburg,1
 BUCKNER,Orangeburg CP,Orangeburg CP,2001-05-02,Single,2001-04-30,18-2001,Orangeburg,1
@@ -4494,16 +4494,16 @@ SMOAK,Lexington CP,Lexington CP,2001-05-01,Single,2001-04-30,18-2001,Lexington,1
 SMOAK,Lexington CP,Lexington CP,2001-05-02,Single,2001-04-30,18-2001,Lexington,11
 SMOAK,Lexington CP,Lexington CP,2001-05-03,Single,2001-04-30,18-2001,Lexington,11
 SMOAK,Lexington CP,Lexington CP,2001-05-04,Single,2001-04-30,18-2001,Lexington,11
-ALFORD,in chambers + 7th Cir. CP/PCR,in chambers ,2001-05-07,MultipleND,2001-05-07,19-2001,in chambers ,na
-ALFORD,in chambers + 7th Cir. CP/PCR,in chambers ,2001-05-08,MultipleND,2001-05-07,19-2001,in chambers ,na
-ALFORD,in chambers + 7th Cir. CP/PCR,in chambers ,2001-05-09,MultipleND,2001-05-07,19-2001,in chambers ,na
-ALFORD,in chambers + 7th Cir. CP/PCR,in chambers ,2001-05-10,MultipleND,2001-05-07,19-2001,in chambers ,na
-ALFORD,in chambers + 7th Cir. CP/PCR,in chambers ,2001-05-11,MultipleND,2001-05-07,19-2001,in chambers ,na
-ALFORD,in chambers + 7th Cir. CP/PCR, 7th Cir. CP/PCR,2001-05-07,MultipleND,2001-05-07,19-2001,7th Cir,7
-ALFORD,in chambers + 7th Cir. CP/PCR, 7th Cir. CP/PCR,2001-05-08,MultipleND,2001-05-07,19-2001,7th Cir,7
-ALFORD,in chambers + 7th Cir. CP/PCR, 7th Cir. CP/PCR,2001-05-09,MultipleND,2001-05-07,19-2001,7th Cir,7
-ALFORD,in chambers + 7th Cir. CP/PCR, 7th Cir. CP/PCR,2001-05-10,MultipleND,2001-05-07,19-2001,7th Cir,7
-ALFORD,in chambers + 7th Cir. CP/PCR, 7th Cir. CP/PCR,2001-05-11,MultipleND,2001-05-07,19-2001,7th Cir,7
+ALFORD,in chambers + 7th Cir. CP/PCR,in chambers,2001-05-07,MultipleND,2001-05-07,19-2001,in chambers,na
+ALFORD,in chambers + 7th Cir. CP/PCR,in chambers,2001-05-08,MultipleND,2001-05-07,19-2001,in chambers,na
+ALFORD,in chambers + 7th Cir. CP/PCR,in chambers,2001-05-09,MultipleND,2001-05-07,19-2001,in chambers,na
+ALFORD,in chambers + 7th Cir. CP/PCR,in chambers,2001-05-10,MultipleND,2001-05-07,19-2001,in chambers,na
+ALFORD,in chambers + 7th Cir. CP/PCR,in chambers,2001-05-11,MultipleND,2001-05-07,19-2001,in chambers,na
+ALFORD,in chambers + 7th Cir. CP/PCR,7th Cir. CP/PCR,2001-05-07,MultipleND,2001-05-07,19-2001,7th Cir,7
+ALFORD,in chambers + 7th Cir. CP/PCR,7th Cir. CP/PCR,2001-05-08,MultipleND,2001-05-07,19-2001,7th Cir,7
+ALFORD,in chambers + 7th Cir. CP/PCR,7th Cir. CP/PCR,2001-05-09,MultipleND,2001-05-07,19-2001,7th Cir,7
+ALFORD,in chambers + 7th Cir. CP/PCR,7th Cir. CP/PCR,2001-05-10,MultipleND,2001-05-07,19-2001,7th Cir,7
+ALFORD,in chambers + 7th Cir. CP/PCR,7th Cir. CP/PCR,2001-05-11,MultipleND,2001-05-07,19-2001,7th Cir,7
 BARBER,in chambers,in chambers,2001-05-07,Single,2001-05-07,19-2001,in chambers,na
 BARBER,in chambers,in chambers,2001-05-08,Single,2001-05-07,19-2001,in chambers,na
 BARBER,in chambers,in chambers,2001-05-09,Single,2001-05-07,19-2001,in chambers,na
@@ -4816,16 +4816,16 @@ DENNIS,Calhoun CP + Kershaw GS CC 17,Calhoun CP,2001-05-14,MultipleSD,2001-05-14
 DENNIS,Calhoun CP + Kershaw GS CC 17,Calhoun CP,2001-05-15,MultipleSD,2001-05-14,20-2001,Calhoun,1
 DENNIS,Calhoun CP + Kershaw GS CC 17,Calhoun CP,2001-05-16,MultipleSD,2001-05-14,20-2001,Calhoun,1
 DENNIS,Calhoun CP + Kershaw GS CC 17,Calhoun CP,2001-05-18,MultipleSD,2001-05-14,20-2001,Calhoun,1
-FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC,7th Cir. CPNJ/PCR ,2001-05-14,MultipleND,2001-05-14,20-2001,7th Cir,7
-FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC,7th Cir. CPNJ/PCR ,2001-05-15,MultipleND,2001-05-14,20-2001,7th Cir,7
-FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC,7th Cir. CPNJ/PCR ,2001-05-16,MultipleND,2001-05-14,20-2001,7th Cir,7
-FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC,7th Cir. CPNJ/PCR ,2001-05-17,MultipleND,2001-05-14,20-2001,7th Cir,7
-FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC,7th Cir. CPNJ/PCR ,2001-05-18,MultipleND,2001-05-14,20-2001,7th Cir,7
-FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC, Spartanburg GS CC,2001-05-14,MultipleND,2001-05-14,20-2001,Spartanburg,7
-FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC, Spartanburg GS CC,2001-05-15,MultipleND,2001-05-14,20-2001,Spartanburg,7
-FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC, Spartanburg GS CC,2001-05-16,MultipleND,2001-05-14,20-2001,Spartanburg,7
-FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC, Spartanburg GS CC,2001-05-17,MultipleND,2001-05-14,20-2001,Spartanburg,7
-FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC, Spartanburg GS CC,2001-05-18,MultipleND,2001-05-14,20-2001,Spartanburg,7
+FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC,7th Cir. CPNJ/PCR,2001-05-14,MultipleND,2001-05-14,20-2001,7th Cir,7
+FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC,7th Cir. CPNJ/PCR,2001-05-15,MultipleND,2001-05-14,20-2001,7th Cir,7
+FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC,7th Cir. CPNJ/PCR,2001-05-16,MultipleND,2001-05-14,20-2001,7th Cir,7
+FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC,7th Cir. CPNJ/PCR,2001-05-17,MultipleND,2001-05-14,20-2001,7th Cir,7
+FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC,7th Cir. CPNJ/PCR,2001-05-18,MultipleND,2001-05-14,20-2001,7th Cir,7
+FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC,Spartanburg GS CC,2001-05-14,MultipleND,2001-05-14,20-2001,Spartanburg,7
+FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC,Spartanburg GS CC,2001-05-15,MultipleND,2001-05-14,20-2001,Spartanburg,7
+FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC,Spartanburg GS CC,2001-05-16,MultipleND,2001-05-14,20-2001,Spartanburg,7
+FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC,Spartanburg GS CC,2001-05-17,MultipleND,2001-05-14,20-2001,Spartanburg,7
+FEW,7th Cir. CPNJ/PCR + Spartanburg GS CC,Spartanburg GS CC,2001-05-18,MultipleND,2001-05-14,20-2001,Spartanburg,7
 FLOYD H,Greenville GS,Greenville GS,2001-05-14,Single,2001-05-14,20-2001,Greenville,13
 FLOYD H,Greenville GS,Greenville GS,2001-05-15,Single,2001-05-14,20-2001,Greenville,13
 FLOYD H,Greenville GS,Greenville GS,2001-05-16,Single,2001-05-14,20-2001,Greenville,13
@@ -7729,16 +7729,16 @@ WESTBROOK,Richland CP,Richland CP,2001-03-06,Single,2001-03-05,10-2001,Richland,
 WESTBROOK,Richland CP,Richland CP,2001-03-07,Single,2001-03-05,10-2001,Richland,5
 WESTBROOK,Richland CP,Richland CP,2001-03-08,Single,2001-03-05,10-2001,Richland,5
 WESTBROOK,Richland CP,Richland CP,2001-03-09,Single,2001-03-05,10-2001,Richland,5
-WILLIAMS,3rd Cir. CPNJ + Sumter GS,3rd Cir. CPNJ ,2001-03-05,MultipleND,2001-03-05,10-2001,3rd Cir,3
-WILLIAMS,3rd Cir. CPNJ + Sumter GS,3rd Cir. CPNJ ,2001-03-06,MultipleND,2001-03-05,10-2001,3rd Cir,3
-WILLIAMS,3rd Cir. CPNJ + Sumter GS,3rd Cir. CPNJ ,2001-03-07,MultipleND,2001-03-05,10-2001,3rd Cir,3
-WILLIAMS,3rd Cir. CPNJ + Sumter GS,3rd Cir. CPNJ ,2001-03-08,MultipleND,2001-03-05,10-2001,3rd Cir,3
-WILLIAMS,3rd Cir. CPNJ + Sumter GS,3rd Cir. CPNJ ,2001-03-09,MultipleND,2001-03-05,10-2001,3rd Cir,3
-WILLIAMS,3rd Cir. CPNJ + Sumter GS, Sumter GS,2001-03-05,MultipleND,2001-03-05,10-2001,Sumter,3
-WILLIAMS,3rd Cir. CPNJ + Sumter GS, Sumter GS,2001-03-06,MultipleND,2001-03-05,10-2001,Sumter,3
-WILLIAMS,3rd Cir. CPNJ + Sumter GS, Sumter GS,2001-03-07,MultipleND,2001-03-05,10-2001,Sumter,3
-WILLIAMS,3rd Cir. CPNJ + Sumter GS, Sumter GS,2001-03-08,MultipleND,2001-03-05,10-2001,Sumter,3
-WILLIAMS,3rd Cir. CPNJ + Sumter GS, Sumter GS,2001-03-09,MultipleND,2001-03-05,10-2001,Sumter,3
+WILLIAMS,3rd Cir. CPNJ + Sumter GS,3rd Cir. CPNJ,2001-03-05,MultipleND,2001-03-05,10-2001,3rd Cir,3
+WILLIAMS,3rd Cir. CPNJ + Sumter GS,3rd Cir. CPNJ,2001-03-06,MultipleND,2001-03-05,10-2001,3rd Cir,3
+WILLIAMS,3rd Cir. CPNJ + Sumter GS,3rd Cir. CPNJ,2001-03-07,MultipleND,2001-03-05,10-2001,3rd Cir,3
+WILLIAMS,3rd Cir. CPNJ + Sumter GS,3rd Cir. CPNJ,2001-03-08,MultipleND,2001-03-05,10-2001,3rd Cir,3
+WILLIAMS,3rd Cir. CPNJ + Sumter GS,3rd Cir. CPNJ,2001-03-09,MultipleND,2001-03-05,10-2001,3rd Cir,3
+WILLIAMS,3rd Cir. CPNJ + Sumter GS,Sumter GS,2001-03-05,MultipleND,2001-03-05,10-2001,Sumter,3
+WILLIAMS,3rd Cir. CPNJ + Sumter GS,Sumter GS,2001-03-06,MultipleND,2001-03-05,10-2001,Sumter,3
+WILLIAMS,3rd Cir. CPNJ + Sumter GS,Sumter GS,2001-03-07,MultipleND,2001-03-05,10-2001,Sumter,3
+WILLIAMS,3rd Cir. CPNJ + Sumter GS,Sumter GS,2001-03-08,MultipleND,2001-03-05,10-2001,Sumter,3
+WILLIAMS,3rd Cir. CPNJ + Sumter GS,Sumter GS,2001-03-09,MultipleND,2001-03-05,10-2001,Sumter,3
 BROWN,Charleston GS,Charleston GS,2001-03-05,Single,2001-03-05,10-2001,Charleston,9
 BROWN,Charleston GS,Charleston GS,2001-03-06,Single,2001-03-05,10-2001,Charleston,9
 BROWN,Charleston GS,Charleston GS,2001-03-07,Single,2001-03-05,10-2001,Charleston,9
@@ -7884,11 +7884,11 @@ KEESLEY,Lexington CP,Lexington CP,2001-03-13,Single,2001-03-12,11-2001,Lexington
 KEESLEY,Lexington CP,Lexington CP,2001-03-14,Single,2001-03-12,11-2001,Lexington,11
 KEESLEY,Lexington CP,Lexington CP,2001-03-15,Single,2001-03-12,11-2001,Lexington,11
 KEESLEY,Lexington CP,Lexington CP,2001-03-16,Single,2001-03-12,11-2001,Lexington,11
-KINARD,Chesterfield GS ,Chesterfield GS ,2001-03-12,Single,2001-03-12,11-2001,Chesterfield,4
-KINARD,Chesterfield GS ,Chesterfield GS ,2001-03-13,Single,2001-03-12,11-2001,Chesterfield,4
-KINARD,Chesterfield GS ,Chesterfield GS ,2001-03-14,Single,2001-03-12,11-2001,Chesterfield,4
-KINARD,Chesterfield GS ,Chesterfield GS ,2001-03-15,Single,2001-03-12,11-2001,Chesterfield,4
-KINARD,Chesterfield GS ,Chesterfield GS ,2001-03-16,Single,2001-03-12,11-2001,Chesterfield,4
+KINARD,Chesterfield GS ,Chesterfield GS,2001-03-12,Single,2001-03-12,11-2001,Chesterfield,4
+KINARD,Chesterfield GS ,Chesterfield GS,2001-03-13,Single,2001-03-12,11-2001,Chesterfield,4
+KINARD,Chesterfield GS ,Chesterfield GS,2001-03-14,Single,2001-03-12,11-2001,Chesterfield,4
+KINARD,Chesterfield GS ,Chesterfield GS,2001-03-15,Single,2001-03-12,11-2001,Chesterfield,4
+KINARD,Chesterfield GS ,Chesterfield GS,2001-03-16,Single,2001-03-12,11-2001,Chesterfield,4
 KING,"York CP 12 + X 13,14,15,16",York CP,2001-03-12,MultipleAD,2001-03-12,11-2001,York,16
 KING,"York CP 12 + X 13,14,15,16",X,2001-03-13,MultipleAD,2001-03-12,11-2001,X,na
 KING,"York CP 12 + X 13,14,15,16",X,2001-03-14,MultipleAD,2001-03-12,11-2001,X,na
@@ -8799,16 +8799,16 @@ BUCKNER,Dorchester CP,Dorchester CP,2001-01-09,Single,2001-01-08,2-2001,Dorchest
 BUCKNER,Dorchester CP,Dorchester CP,2001-01-10,Single,2001-01-08,2-2001,Dorchester,1
 BUCKNER,Dorchester CP,Dorchester CP,2001-01-11,Single,2001-01-08,2-2001,Dorchester,1
 BUCKNER,Dorchester CP,Dorchester CP,2001-01-12,Single,2001-01-08,2-2001,Dorchester,1
-BURCH,Florence GS + Lee GS,Florence GS ,2001-01-08,MultipleND,2001-01-08,2-2001,Florence,12
-BURCH,Florence GS + Lee GS,Florence GS ,2001-01-09,MultipleND,2001-01-08,2-2001,Florence,12
-BURCH,Florence GS + Lee GS,Florence GS ,2001-01-10,MultipleND,2001-01-08,2-2001,Florence,12
-BURCH,Florence GS + Lee GS,Florence GS ,2001-01-11,MultipleND,2001-01-08,2-2001,Florence,12
-BURCH,Florence GS + Lee GS,Florence GS ,2001-01-12,MultipleND,2001-01-08,2-2001,Florence,12
-BURCH,Florence GS + Lee GS, Lee GS,2001-01-08,MultipleND,2001-01-08,2-2001,Lee,3
-BURCH,Florence GS + Lee GS, Lee GS,2001-01-09,MultipleND,2001-01-08,2-2001,Lee,3
-BURCH,Florence GS + Lee GS, Lee GS,2001-01-10,MultipleND,2001-01-08,2-2001,Lee,3
-BURCH,Florence GS + Lee GS, Lee GS,2001-01-11,MultipleND,2001-01-08,2-2001,Lee,3
-BURCH,Florence GS + Lee GS, Lee GS,2001-01-12,MultipleND,2001-01-08,2-2001,Lee,3
+BURCH,Florence GS + Lee GS,Florence GS,2001-01-08,MultipleND,2001-01-08,2-2001,Florence,12
+BURCH,Florence GS + Lee GS,Florence GS,2001-01-09,MultipleND,2001-01-08,2-2001,Florence,12
+BURCH,Florence GS + Lee GS,Florence GS,2001-01-10,MultipleND,2001-01-08,2-2001,Florence,12
+BURCH,Florence GS + Lee GS,Florence GS,2001-01-11,MultipleND,2001-01-08,2-2001,Florence,12
+BURCH,Florence GS + Lee GS,Florence GS,2001-01-12,MultipleND,2001-01-08,2-2001,Florence,12
+BURCH,Florence GS + Lee GS,Lee GS,2001-01-08,MultipleND,2001-01-08,2-2001,Lee,3
+BURCH,Florence GS + Lee GS,Lee GS,2001-01-09,MultipleND,2001-01-08,2-2001,Lee,3
+BURCH,Florence GS + Lee GS,Lee GS,2001-01-10,MultipleND,2001-01-08,2-2001,Lee,3
+BURCH,Florence GS + Lee GS,Lee GS,2001-01-11,MultipleND,2001-01-08,2-2001,Lee,3
+BURCH,Florence GS + Lee GS,Lee GS,2001-01-12,MultipleND,2001-01-08,2-2001,Lee,3
 CLARY,Greenwood CP,Greenwood CP,2001-01-08,Single,2001-01-08,2-2001,Greenwood,8
 CLARY,Greenwood CP,Greenwood CP,2001-01-09,Single,2001-01-08,2-2001,Greenwood,8
 CLARY,Greenwood CP,Greenwood CP,2001-01-10,Single,2001-01-08,2-2001,Greenwood,8
@@ -9114,11 +9114,11 @@ GREGORY,Charleston CP,Charleston CP,2001-01-16,Single,2001-01-15,3-2001,Charlest
 GREGORY,Charleston CP,Charleston CP,2001-01-17,Single,2001-01-15,3-2001,Charleston,9
 GREGORY,Charleston CP,Charleston CP,2001-01-18,Single,2001-01-15,3-2001,Charleston,9
 GREGORY,Charleston CP,Charleston CP,2001-01-19,Single,2001-01-15,3-2001,Charleston,9
-HALL,Greenville GS ,Greenville GS ,2001-01-15,Single,2001-01-15,3-2001,Greenville,13
-HALL,Greenville GS ,Greenville GS ,2001-01-16,Single,2001-01-15,3-2001,Greenville,13
-HALL,Greenville GS ,Greenville GS ,2001-01-17,Single,2001-01-15,3-2001,Greenville,13
-HALL,Greenville GS ,Greenville GS ,2001-01-18,Single,2001-01-15,3-2001,Greenville,13
-HALL,Greenville GS ,Greenville GS ,2001-01-19,Single,2001-01-15,3-2001,Greenville,13
+HALL,Greenville GS ,Greenville GS,2001-01-15,Single,2001-01-15,3-2001,Greenville,13
+HALL,Greenville GS ,Greenville GS,2001-01-16,Single,2001-01-15,3-2001,Greenville,13
+HALL,Greenville GS ,Greenville GS,2001-01-17,Single,2001-01-15,3-2001,Greenville,13
+HALL,Greenville GS ,Greenville GS,2001-01-18,Single,2001-01-15,3-2001,Greenville,13
+HALL,Greenville GS ,Greenville GS,2001-01-19,Single,2001-01-15,3-2001,Greenville,13
 HARWELL,Horry CP,Horry CP,2001-01-15,Single,2001-01-15,3-2001,Horry,15
 HARWELL,Horry CP,Horry CP,2001-01-16,Single,2001-01-15,3-2001,Horry,15
 HARWELL,Horry CP,Horry CP,2001-01-17,Single,2001-01-15,3-2001,Horry,15
@@ -9384,11 +9384,11 @@ JOHNSON,Anderson CP,Anderson CP,2001-01-23,Single,2001-01-22,4-2001,Anderson,10
 JOHNSON,Anderson CP,Anderson CP,2001-01-24,Single,2001-01-22,4-2001,Anderson,10
 JOHNSON,Anderson CP,Anderson CP,2001-01-25,Single,2001-01-22,4-2001,Anderson,10
 JOHNSON,Anderson CP,Anderson CP,2001-01-26,Single,2001-01-22,4-2001,Anderson,10
-KEESLEY,XX ,XX ,2001-01-22,Single,2001-01-22,4-2001,XX ,na
-KEESLEY,XX ,XX ,2001-01-23,Single,2001-01-22,4-2001,XX ,na
-KEESLEY,XX ,XX ,2001-01-24,Single,2001-01-22,4-2001,XX ,na
-KEESLEY,XX ,XX ,2001-01-25,Single,2001-01-22,4-2001,XX ,na
-KEESLEY,XX ,XX ,2001-01-26,Single,2001-01-22,4-2001,XX ,na
+KEESLEY,XX ,XX,2001-01-22,Single,2001-01-22,4-2001,XX,na
+KEESLEY,XX ,XX,2001-01-23,Single,2001-01-22,4-2001,XX,na
+KEESLEY,XX ,XX,2001-01-24,Single,2001-01-22,4-2001,XX,na
+KEESLEY,XX ,XX,2001-01-25,Single,2001-01-22,4-2001,XX,na
+KEESLEY,XX ,XX,2001-01-26,Single,2001-01-22,4-2001,XX,na
 KINARD,Dillon GS,Dillon GS,2001-01-22,Single,2001-01-22,4-2001,Dillon,4
 KINARD,Dillon GS,Dillon GS,2001-01-23,Single,2001-01-22,4-2001,Dillon,4
 KINARD,Dillon GS,Dillon GS,2001-01-24,Single,2001-01-22,4-2001,Dillon,4
@@ -9574,16 +9574,16 @@ COOPER GT,Lexington CP,Lexington CP,2001-01-30,Single,2001-01-29,5-2001,Lexingto
 COOPER GT,Lexington CP,Lexington CP,2001-01-31,Single,2001-01-29,5-2001,Lexington,11
 COOPER GT,Lexington CP,Lexington CP,2001-02-01,Single,2001-01-29,5-2001,Lexington,11
 COOPER GT,Lexington CP,Lexington CP,2001-02-02,Single,2001-01-29,5-2001,Lexington,11
-COOPER TW,Aiken GS + Beaufort GS CC,Aiken GS ,2001-01-29,MultipleND,2001-01-29,5-2001,Aiken,2
-COOPER TW,Aiken GS + Beaufort GS CC,Aiken GS ,2001-01-30,MultipleND,2001-01-29,5-2001,Aiken,2
-COOPER TW,Aiken GS + Beaufort GS CC,Aiken GS ,2001-01-31,MultipleND,2001-01-29,5-2001,Aiken,2
-COOPER TW,Aiken GS + Beaufort GS CC,Aiken GS ,2001-02-01,MultipleND,2001-01-29,5-2001,Aiken,2
-COOPER TW,Aiken GS + Beaufort GS CC,Aiken GS ,2001-02-02,MultipleND,2001-01-29,5-2001,Aiken,2
-COOPER TW,Aiken GS + Beaufort GS CC, Beaufort GS CC,2001-01-29,MultipleND,2001-01-29,5-2001,Beaufort,14
-COOPER TW,Aiken GS + Beaufort GS CC, Beaufort GS CC,2001-01-30,MultipleND,2001-01-29,5-2001,Beaufort,14
-COOPER TW,Aiken GS + Beaufort GS CC, Beaufort GS CC,2001-01-31,MultipleND,2001-01-29,5-2001,Beaufort,14
-COOPER TW,Aiken GS + Beaufort GS CC, Beaufort GS CC,2001-02-01,MultipleND,2001-01-29,5-2001,Beaufort,14
-COOPER TW,Aiken GS + Beaufort GS CC, Beaufort GS CC,2001-02-02,MultipleND,2001-01-29,5-2001,Beaufort,14
+COOPER TW,Aiken GS + Beaufort GS CC,Aiken GS,2001-01-29,MultipleND,2001-01-29,5-2001,Aiken,2
+COOPER TW,Aiken GS + Beaufort GS CC,Aiken GS,2001-01-30,MultipleND,2001-01-29,5-2001,Aiken,2
+COOPER TW,Aiken GS + Beaufort GS CC,Aiken GS,2001-01-31,MultipleND,2001-01-29,5-2001,Aiken,2
+COOPER TW,Aiken GS + Beaufort GS CC,Aiken GS,2001-02-01,MultipleND,2001-01-29,5-2001,Aiken,2
+COOPER TW,Aiken GS + Beaufort GS CC,Aiken GS,2001-02-02,MultipleND,2001-01-29,5-2001,Aiken,2
+COOPER TW,Aiken GS + Beaufort GS CC,Beaufort GS CC,2001-01-29,MultipleND,2001-01-29,5-2001,Beaufort,14
+COOPER TW,Aiken GS + Beaufort GS CC,Beaufort GS CC,2001-01-30,MultipleND,2001-01-29,5-2001,Beaufort,14
+COOPER TW,Aiken GS + Beaufort GS CC,Beaufort GS CC,2001-01-31,MultipleND,2001-01-29,5-2001,Beaufort,14
+COOPER TW,Aiken GS + Beaufort GS CC,Beaufort GS CC,2001-02-01,MultipleND,2001-01-29,5-2001,Beaufort,14
+COOPER TW,Aiken GS + Beaufort GS CC,Beaufort GS CC,2001-02-02,MultipleND,2001-01-29,5-2001,Beaufort,14
 DENNIS,Orangeburg CP,Orangeburg CP,2001-01-29,Single,2001-01-29,5-2001,Orangeburg,1
 DENNIS,Orangeburg CP,Orangeburg CP,2001-01-30,Single,2001-01-29,5-2001,Orangeburg,1
 DENNIS,Orangeburg CP,Orangeburg CP,2001-01-31,Single,2001-01-29,5-2001,Orangeburg,1
@@ -10083,16 +10083,16 @@ COOPER TW,Lee GS,Lee GS,2000-10-10,Single,2000-10-09,41-2000,Lee,3
 COOPER TW,Lee GS,Lee GS,2000-10-11,Single,2000-10-09,41-2000,Lee,3
 COOPER TW,Lee GS,Lee GS,2000-10-12,Single,2000-10-09,41-2000,Lee,3
 COOPER TW,Lee GS,Lee GS,2000-10-13,Single,2000-10-09,41-2000,Lee,3
-DENNIS,Sumter GS(SGJ) + Aiken GS CC,Sumter GS(SGJ) ,2000-10-09,MultipleND,2000-10-09,41-2000,Sumter,3
-DENNIS,Sumter GS(SGJ) + Aiken GS CC,Sumter GS(SGJ) ,2000-10-10,MultipleND,2000-10-09,41-2000,Sumter,3
-DENNIS,Sumter GS(SGJ) + Aiken GS CC,Sumter GS(SGJ) ,2000-10-11,MultipleND,2000-10-09,41-2000,Sumter,3
-DENNIS,Sumter GS(SGJ) + Aiken GS CC,Sumter GS(SGJ) ,2000-10-12,MultipleND,2000-10-09,41-2000,Sumter,3
-DENNIS,Sumter GS(SGJ) + Aiken GS CC,Sumter GS(SGJ) ,2000-10-13,MultipleND,2000-10-09,41-2000,Sumter,3
-DENNIS,Sumter GS(SGJ) + Aiken GS CC, Aiken GS CC,2000-10-09,MultipleND,2000-10-09,41-2000,Aiken,2
-DENNIS,Sumter GS(SGJ) + Aiken GS CC, Aiken GS CC,2000-10-10,MultipleND,2000-10-09,41-2000,Aiken,2
-DENNIS,Sumter GS(SGJ) + Aiken GS CC, Aiken GS CC,2000-10-11,MultipleND,2000-10-09,41-2000,Aiken,2
-DENNIS,Sumter GS(SGJ) + Aiken GS CC, Aiken GS CC,2000-10-12,MultipleND,2000-10-09,41-2000,Aiken,2
-DENNIS,Sumter GS(SGJ) + Aiken GS CC, Aiken GS CC,2000-10-13,MultipleND,2000-10-09,41-2000,Aiken,2
+DENNIS,Sumter GS(SGJ) + Aiken GS CC,Sumter GS(SGJ),2000-10-09,MultipleND,2000-10-09,41-2000,Sumter,3
+DENNIS,Sumter GS(SGJ) + Aiken GS CC,Sumter GS(SGJ),2000-10-10,MultipleND,2000-10-09,41-2000,Sumter,3
+DENNIS,Sumter GS(SGJ) + Aiken GS CC,Sumter GS(SGJ),2000-10-11,MultipleND,2000-10-09,41-2000,Sumter,3
+DENNIS,Sumter GS(SGJ) + Aiken GS CC,Sumter GS(SGJ),2000-10-12,MultipleND,2000-10-09,41-2000,Sumter,3
+DENNIS,Sumter GS(SGJ) + Aiken GS CC,Sumter GS(SGJ),2000-10-13,MultipleND,2000-10-09,41-2000,Sumter,3
+DENNIS,Sumter GS(SGJ) + Aiken GS CC,Aiken GS CC,2000-10-09,MultipleND,2000-10-09,41-2000,Aiken,2
+DENNIS,Sumter GS(SGJ) + Aiken GS CC,Aiken GS CC,2000-10-10,MultipleND,2000-10-09,41-2000,Aiken,2
+DENNIS,Sumter GS(SGJ) + Aiken GS CC,Aiken GS CC,2000-10-11,MultipleND,2000-10-09,41-2000,Aiken,2
+DENNIS,Sumter GS(SGJ) + Aiken GS CC,Aiken GS CC,2000-10-12,MultipleND,2000-10-09,41-2000,Aiken,2
+DENNIS,Sumter GS(SGJ) + Aiken GS CC,Aiken GS CC,2000-10-13,MultipleND,2000-10-09,41-2000,Aiken,2
 FEW,X,X,2000-10-09,Single,2000-10-09,41-2000,X,na
 FEW,X,X,2000-10-10,Single,2000-10-09,41-2000,X,na
 FEW,X,X,2000-10-11,Single,2000-10-09,41-2000,X,na
@@ -11348,16 +11348,16 @@ DENNIS,1st Cir. CPNJ/PCR,1st Cir. CPNJ/PCR,2001-06-12,Single,2001-06-11,24-2001,
 DENNIS,1st Cir. CPNJ/PCR,1st Cir. CPNJ/PCR,2001-06-13,Single,2001-06-11,24-2001,1st Cir,1
 DENNIS,1st Cir. CPNJ/PCR,1st Cir. CPNJ/PCR,2001-06-14,Single,2001-06-11,24-2001,1st Cir,1
 DENNIS,1st Cir. CPNJ/PCR,1st Cir. CPNJ/PCR,2001-06-15,Single,2001-06-11,24-2001,1st Cir,1
-FEW,7th Cir. CPNJ + Spartanburg GS CC,7th Cir. CPNJ ,2001-06-11,MultipleND,2001-06-11,24-2001,7th Cir,7
-FEW,7th Cir. CPNJ + Spartanburg GS CC,7th Cir. CPNJ ,2001-06-12,MultipleND,2001-06-11,24-2001,7th Cir,7
-FEW,7th Cir. CPNJ + Spartanburg GS CC,7th Cir. CPNJ ,2001-06-13,MultipleND,2001-06-11,24-2001,7th Cir,7
-FEW,7th Cir. CPNJ + Spartanburg GS CC,7th Cir. CPNJ ,2001-06-14,MultipleND,2001-06-11,24-2001,7th Cir,7
-FEW,7th Cir. CPNJ + Spartanburg GS CC,7th Cir. CPNJ ,2001-06-15,MultipleND,2001-06-11,24-2001,7th Cir,7
-FEW,7th Cir. CPNJ + Spartanburg GS CC, Spartanburg GS CC,2001-06-11,MultipleND,2001-06-11,24-2001,Spartanburg,7
-FEW,7th Cir. CPNJ + Spartanburg GS CC, Spartanburg GS CC,2001-06-12,MultipleND,2001-06-11,24-2001,Spartanburg,7
-FEW,7th Cir. CPNJ + Spartanburg GS CC, Spartanburg GS CC,2001-06-13,MultipleND,2001-06-11,24-2001,Spartanburg,7
-FEW,7th Cir. CPNJ + Spartanburg GS CC, Spartanburg GS CC,2001-06-14,MultipleND,2001-06-11,24-2001,Spartanburg,7
-FEW,7th Cir. CPNJ + Spartanburg GS CC, Spartanburg GS CC,2001-06-15,MultipleND,2001-06-11,24-2001,Spartanburg,7
+FEW,7th Cir. CPNJ + Spartanburg GS CC,7th Cir. CPNJ,2001-06-11,MultipleND,2001-06-11,24-2001,7th Cir,7
+FEW,7th Cir. CPNJ + Spartanburg GS CC,7th Cir. CPNJ,2001-06-12,MultipleND,2001-06-11,24-2001,7th Cir,7
+FEW,7th Cir. CPNJ + Spartanburg GS CC,7th Cir. CPNJ,2001-06-13,MultipleND,2001-06-11,24-2001,7th Cir,7
+FEW,7th Cir. CPNJ + Spartanburg GS CC,7th Cir. CPNJ,2001-06-14,MultipleND,2001-06-11,24-2001,7th Cir,7
+FEW,7th Cir. CPNJ + Spartanburg GS CC,7th Cir. CPNJ,2001-06-15,MultipleND,2001-06-11,24-2001,7th Cir,7
+FEW,7th Cir. CPNJ + Spartanburg GS CC,Spartanburg GS CC,2001-06-11,MultipleND,2001-06-11,24-2001,Spartanburg,7
+FEW,7th Cir. CPNJ + Spartanburg GS CC,Spartanburg GS CC,2001-06-12,MultipleND,2001-06-11,24-2001,Spartanburg,7
+FEW,7th Cir. CPNJ + Spartanburg GS CC,Spartanburg GS CC,2001-06-13,MultipleND,2001-06-11,24-2001,Spartanburg,7
+FEW,7th Cir. CPNJ + Spartanburg GS CC,Spartanburg GS CC,2001-06-14,MultipleND,2001-06-11,24-2001,Spartanburg,7
+FEW,7th Cir. CPNJ + Spartanburg GS CC,Spartanburg GS CC,2001-06-15,MultipleND,2001-06-11,24-2001,Spartanburg,7
 FLOYD H,Greenville CP,Greenville CP,2001-06-11,Single,2001-06-11,24-2001,Greenville,13
 FLOYD H,Greenville CP,Greenville CP,2001-06-12,Single,2001-06-11,24-2001,Greenville,13
 FLOYD H,Greenville CP,Greenville CP,2001-06-13,Single,2001-06-11,24-2001,Greenville,13
@@ -11553,16 +11553,16 @@ BAXLEY,Charleston GS,Charleston GS,2001-06-19,Single,2001-06-18,25-2001,Charlest
 BAXLEY,Charleston GS,Charleston GS,2001-06-20,Single,2001-06-18,25-2001,Charleston,9
 BAXLEY,Charleston GS,Charleston GS,2001-06-21,Single,2001-06-18,25-2001,Charleston,9
 BAXLEY,Charleston GS,Charleston GS,2001-06-22,Single,2001-06-18,25-2001,Charleston,9
-BEATTY,Oconee GS + Anderson GS CC,Oconee GS ,2001-06-18,MultipleND,2001-06-18,25-2001,Oconee,10
-BEATTY,Oconee GS + Anderson GS CC,Oconee GS ,2001-06-19,MultipleND,2001-06-18,25-2001,Oconee,10
-BEATTY,Oconee GS + Anderson GS CC,Oconee GS ,2001-06-20,MultipleND,2001-06-18,25-2001,Oconee,10
-BEATTY,Oconee GS + Anderson GS CC,Oconee GS ,2001-06-21,MultipleND,2001-06-18,25-2001,Oconee,10
-BEATTY,Oconee GS + Anderson GS CC,Oconee GS ,2001-06-22,MultipleND,2001-06-18,25-2001,Oconee,10
-BEATTY,Oconee GS + Anderson GS CC, Anderson GS CC,2001-06-18,MultipleND,2001-06-18,25-2001,Anderson,10
-BEATTY,Oconee GS + Anderson GS CC, Anderson GS CC,2001-06-19,MultipleND,2001-06-18,25-2001,Anderson,10
-BEATTY,Oconee GS + Anderson GS CC, Anderson GS CC,2001-06-20,MultipleND,2001-06-18,25-2001,Anderson,10
-BEATTY,Oconee GS + Anderson GS CC, Anderson GS CC,2001-06-21,MultipleND,2001-06-18,25-2001,Anderson,10
-BEATTY,Oconee GS + Anderson GS CC, Anderson GS CC,2001-06-22,MultipleND,2001-06-18,25-2001,Anderson,10
+BEATTY,Oconee GS + Anderson GS CC,Oconee GS,2001-06-18,MultipleND,2001-06-18,25-2001,Oconee,10
+BEATTY,Oconee GS + Anderson GS CC,Oconee GS,2001-06-19,MultipleND,2001-06-18,25-2001,Oconee,10
+BEATTY,Oconee GS + Anderson GS CC,Oconee GS,2001-06-20,MultipleND,2001-06-18,25-2001,Oconee,10
+BEATTY,Oconee GS + Anderson GS CC,Oconee GS,2001-06-21,MultipleND,2001-06-18,25-2001,Oconee,10
+BEATTY,Oconee GS + Anderson GS CC,Oconee GS,2001-06-22,MultipleND,2001-06-18,25-2001,Oconee,10
+BEATTY,Oconee GS + Anderson GS CC,Anderson GS CC,2001-06-18,MultipleND,2001-06-18,25-2001,Anderson,10
+BEATTY,Oconee GS + Anderson GS CC,Anderson GS CC,2001-06-19,MultipleND,2001-06-18,25-2001,Anderson,10
+BEATTY,Oconee GS + Anderson GS CC,Anderson GS CC,2001-06-20,MultipleND,2001-06-18,25-2001,Anderson,10
+BEATTY,Oconee GS + Anderson GS CC,Anderson GS CC,2001-06-21,MultipleND,2001-06-18,25-2001,Anderson,10
+BEATTY,Oconee GS + Anderson GS CC,Anderson GS CC,2001-06-22,MultipleND,2001-06-18,25-2001,Anderson,10
 BREEDEN,Richland GS,Richland GS,2001-06-18,Single,2001-06-18,25-2001,Richland,5
 BREEDEN,Richland GS,Richland GS,2001-06-19,Single,2001-06-18,25-2001,Richland,5
 BREEDEN,Richland GS,Richland GS,2001-06-20,Single,2001-06-18,25-2001,Richland,5
@@ -11853,16 +11853,16 @@ COOPER TW,Richland CP,Richland CP,2001-06-26,Single,2001-06-25,26-2001,Richland,
 COOPER TW,Richland CP,Richland CP,2001-06-27,Single,2001-06-25,26-2001,Richland,5
 COOPER TW,Richland CP,Richland CP,2001-06-28,Single,2001-06-25,26-2001,Richland,5
 COOPER TW,Richland CP,Richland CP,2001-06-29,Single,2001-06-25,26-2001,Richland,5
-DENNIS,Orangeburg CP + Lexington GS CC,Orangeburg CP ,2001-06-25,MultipleND,2001-06-25,26-2001,Orangeburg,1
-DENNIS,Orangeburg CP + Lexington GS CC,Orangeburg CP ,2001-06-26,MultipleND,2001-06-25,26-2001,Orangeburg,1
-DENNIS,Orangeburg CP + Lexington GS CC,Orangeburg CP ,2001-06-27,MultipleND,2001-06-25,26-2001,Orangeburg,1
-DENNIS,Orangeburg CP + Lexington GS CC,Orangeburg CP ,2001-06-28,MultipleND,2001-06-25,26-2001,Orangeburg,1
-DENNIS,Orangeburg CP + Lexington GS CC,Orangeburg CP ,2001-06-29,MultipleND,2001-06-25,26-2001,Orangeburg,1
-DENNIS,Orangeburg CP + Lexington GS CC, Lexington GS CC,2001-06-25,MultipleND,2001-06-25,26-2001,Lexington,11
-DENNIS,Orangeburg CP + Lexington GS CC, Lexington GS CC,2001-06-26,MultipleND,2001-06-25,26-2001,Lexington,11
-DENNIS,Orangeburg CP + Lexington GS CC, Lexington GS CC,2001-06-27,MultipleND,2001-06-25,26-2001,Lexington,11
-DENNIS,Orangeburg CP + Lexington GS CC, Lexington GS CC,2001-06-28,MultipleND,2001-06-25,26-2001,Lexington,11
-DENNIS,Orangeburg CP + Lexington GS CC, Lexington GS CC,2001-06-29,MultipleND,2001-06-25,26-2001,Lexington,11
+DENNIS,Orangeburg CP + Lexington GS CC,Orangeburg CP,2001-06-25,MultipleND,2001-06-25,26-2001,Orangeburg,1
+DENNIS,Orangeburg CP + Lexington GS CC,Orangeburg CP,2001-06-26,MultipleND,2001-06-25,26-2001,Orangeburg,1
+DENNIS,Orangeburg CP + Lexington GS CC,Orangeburg CP,2001-06-27,MultipleND,2001-06-25,26-2001,Orangeburg,1
+DENNIS,Orangeburg CP + Lexington GS CC,Orangeburg CP,2001-06-28,MultipleND,2001-06-25,26-2001,Orangeburg,1
+DENNIS,Orangeburg CP + Lexington GS CC,Orangeburg CP,2001-06-29,MultipleND,2001-06-25,26-2001,Orangeburg,1
+DENNIS,Orangeburg CP + Lexington GS CC,Lexington GS CC,2001-06-25,MultipleND,2001-06-25,26-2001,Lexington,11
+DENNIS,Orangeburg CP + Lexington GS CC,Lexington GS CC,2001-06-26,MultipleND,2001-06-25,26-2001,Lexington,11
+DENNIS,Orangeburg CP + Lexington GS CC,Lexington GS CC,2001-06-27,MultipleND,2001-06-25,26-2001,Lexington,11
+DENNIS,Orangeburg CP + Lexington GS CC,Lexington GS CC,2001-06-28,MultipleND,2001-06-25,26-2001,Lexington,11
+DENNIS,Orangeburg CP + Lexington GS CC,Lexington GS CC,2001-06-29,MultipleND,2001-06-25,26-2001,Lexington,11
 FEW,Spartanburg GS,Spartanburg GS,2001-06-25,Single,2001-06-25,26-2001,Spartanburg,7
 FEW,Spartanburg GS,Spartanburg GS,2001-06-26,Single,2001-06-25,26-2001,Spartanburg,7
 FEW,Spartanburg GS,Spartanburg GS,2001-06-27,Single,2001-06-25,26-2001,Spartanburg,7
@@ -12733,11 +12733,11 @@ SHORT,Chester GS,Chester GS,2000-09-19,Single,2000-09-18,38-2000,Chester,6
 SHORT,Chester GS,Chester GS,2000-09-20,Single,2000-09-18,38-2000,Chester,6
 SHORT,Chester GS,Chester GS,2000-09-21,Single,2000-09-18,38-2000,Chester,6
 SHORT,Chester GS,Chester GS,2000-09-22,Single,2000-09-18,38-2000,Chester,6
-THOMAS,Horry CP ,Horry CP ,2000-09-18,Single,2000-09-18,38-2000,Horry,15
-THOMAS,Horry CP ,Horry CP ,2000-09-19,Single,2000-09-18,38-2000,Horry,15
-THOMAS,Horry CP ,Horry CP ,2000-09-20,Single,2000-09-18,38-2000,Horry,15
-THOMAS,Horry CP ,Horry CP ,2000-09-21,Single,2000-09-18,38-2000,Horry,15
-THOMAS,Horry CP ,Horry CP ,2000-09-22,Single,2000-09-18,38-2000,Horry,15
+THOMAS,Horry CP ,Horry CP,2000-09-18,Single,2000-09-18,38-2000,Horry,15
+THOMAS,Horry CP ,Horry CP,2000-09-19,Single,2000-09-18,38-2000,Horry,15
+THOMAS,Horry CP ,Horry CP,2000-09-20,Single,2000-09-18,38-2000,Horry,15
+THOMAS,Horry CP ,Horry CP,2000-09-21,Single,2000-09-18,38-2000,Horry,15
+THOMAS,Horry CP ,Horry CP,2000-09-22,Single,2000-09-18,38-2000,Horry,15
 WATSON,York CP,York CP,2000-09-18,Single,2000-09-18,38-2000,York,16
 WATSON,York CP,York CP,2000-09-19,Single,2000-09-18,38-2000,York,16
 WATSON,York CP,York CP,2000-09-20,Single,2000-09-18,38-2000,York,16
