@@ -12,6 +12,7 @@ dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
 PROJECT_DIR = os.environ.get("PROJECT_DIR")
 
+# TODO: fix mu_t estimation
 
 # Input files/dirs
 processed_daily_schedule_file = PROJECT_DIR + '/data/processed/daily_schedule_data.csv'
@@ -20,6 +21,7 @@ judge_name_id_mapping_file = PROJECT_DIR + '/data/processed/judge_name_id_mappin
 
 # Output files
 processed_sentencing_data_file = PROJECT_DIR + '/data/processed/sentencing_data.csv'
+optimization_data_folder = PROJECT_DIR + '/data/optimization/'
 
 holidays = ['2000-09-04','2000-10-09','2000-11-10','2000-11-23','2000-12-24',
 '2000-12-25','2000-12-26','2001-01-01','2001-01-15','2001-02-19','2001-05-10',
@@ -98,6 +100,39 @@ def get_judge_days():
     judge_days = cdf['Days'].sum()
     return judge_days
 
+def calculate_NLL(pleas,theta,mu_p):
+    NLL = 0
+    for s in pleas:
+        theta_term = (theta**s)*(1/math.factorial(s))
+        theta_sum = 1
+        for i in range(1,s):
+            theta_sum -= math.pow(mu_p,i)*math.exp(-mu_p)/math.factorial(i)
+
+        mu_term = math.pow(mu_p,s)*math.exp(-mu_p)/math.factorial(s)
+        mu_sum = 1
+        for j in range(1,s+1):
+            mu_sum -= (theta**j)*math.exp(-theta)/math.factorial(j)
+
+        NLL += -math.log(theta_term*theta_sum+mu_term*mu_sum)
+    return NLL
+
+def make_NLL_data(mu_t,opt_mu_p):
+    sdf = load_sentencing_data()
+    pleas = get_clean_day_pleas()
+    judge_days = get_judge_days()
+    num_trials = sdf['Trial'].sum()
+    trial_days = num_trials/mu_t
+    plea_days = judge_days - trial_days
+    theta = sdf['Plea'].sum()/plea_days
+    NLLS = []
+    mu_ps = np.linspace(7,15,num=200)
+    for mu_p in mu_ps:
+        NLL = calculate_NLL(pleas,theta,mu_p)
+        NLLS.append(NLL)
+
+    data = pd.DataFrame({'MuP':mu_ps,'NLL':NLLS,'MuT':mu_t,'OptMuP':opt_mu_p})
+    return data
+
 def optimize_mu_p(mu_t,mu_p,sdf,judge_days,pleas,iters=100,lr=0.02):
     num_trials = sdf['Trial'].sum()
     trial_days = num_trials/mu_t
@@ -145,10 +180,19 @@ def estimate_mu_t(mu_p):
     mu_t = df.Trial.sum()/(df.Days.sum()-df.PleaDays.sum())
     return mu_t
 
+def make_mu_t_data(mu_p):
+    counts = get_judge_county_event_counts()
+    assigned_days = get_day_assignments()
+    df = counts.merge(assigned_days,on=['JudgeName','County'])
+    df['PleaDays'] = df['Plea']/mu_p
+    df['TrialDays'] = df['Days']-df['PleaDays']
+    df['MuT'] = df['Trial']/df['TrialDays']
+    return df
+
 def get_judge_county_event_counts():
     sdf = load_sentencing_data()
     sdf = trial_capacity_sample(sdf)
-    counts = sdf.groupby(['JudgeName','JudgeID','County','Date'])[['Plea','Trial']].sum().reset_index()
+    counts = sdf.groupby(['JudgeName','JudgeID','County'])[['Plea','Trial']].sum().reset_index()
     return counts
 
 def trial_capacity_sample(sdf):
@@ -171,7 +215,7 @@ def get_day_assignments():
     assigned_days = cdf.groupby(['JudgeName','County'])['Days'].sum().reset_index()
     return assigned_days
 
-def ad_hoc_algorithm(init_mu_t,init_mu_p,tolerance=0.05,max_iter=100):
+def ad_hoc_algorithm(init_mu_t,init_mu_p,tolerance=0.05,opt_iter=100):
     sdf = load_sentencing_data()
     pleas = get_clean_day_pleas()
     judge_days = get_judge_days()
@@ -183,10 +227,17 @@ def ad_hoc_algorithm(init_mu_t,init_mu_p,tolerance=0.05,max_iter=100):
     while (abs(mu_t - prev_mu_t) > tolerance) or (abs(mu_p - prev_mu_p) > tolerance):
         prev_mu_p = mu_p
         prev_mu_t = mu_t
-        mu_p = optimize_mu_p(prev_mu_t,prev_mu_p,sdf,judge_days,pleas,100,0.02)
+        mu_p = optimize_mu_p(prev_mu_t,prev_mu_p,sdf,judge_days,pleas,opt_iter,0.02)
         mu_t = estimate_mu_t(mu_p)
+
+        NLL_data = make_NLL_data(prev_mu_t,mu_p)
+        NLL_filename = optimization_data_folder + 'opt_data_{}.csv'.format(iters)
+        NLL_data.to_csv(NLL_filename,index=False)
+
+        mu_t_data = make_mu_t_data(mu_p)
+        mu_t_filename = optimization_data_folder + 'mut_data_{}.csv'.format(iters)
+        mu_t_data.to_csv(mu_t_filename,index=False)
+
         iters += 1
-        if iters > max_iter:
-            break
         print('mu_p: {}, mu_t: {}\n'.format(mu_p,mu_t))
     return({'mu_p':mu_p,'mu_t':mu_t})
