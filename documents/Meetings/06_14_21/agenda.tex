@@ -1,0 +1,114 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage[ruled,vlined]{algorithm2e}
+
+\title{June 3, 2021 Meeting Agenda}
+
+\begin{document}
+\maketitle
+
+\section{Gaussian EM Algorithm}
+I finished implementing the Gaussian EM algorithm, but I think I might have made a mistake because our estimates for all of the parameters seem to just go to infinity. The section below contains the pseudocode of how I implemented it.
+
+
+  \subsection{Pseudocode}
+  \begin{algorithm}[H]
+    \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+    \SetAlgoLined
+    \Input{InitialMuX, InitialSigmaX, InitialMuD, InitialSigmaD, tolerance}
+    \Output{MuX,SigmaX,MuD,SigmaD}
+    pleas = GetCleanDayPleas()\;\\
+
+    prevMuX, prevSigmaX = (0,0)\;
+    prevMuD, prevSigmaD = (0,0)\;\\
+
+    MuX, SigmaX = (InitialMuX, InitialSigmaX)\;
+    MuD, SigmaD = (InitialMuD, InitialSigmaD)\;
+    prevTheta = [InitialMuX, InitialSigmaX, InitialMuD, InitialSigmaD]\;
+    theta = [MuX, SigmaX, MuD, SigmaD]\;
+    \While{$(|theta - prevTheta|_{\infty} > tolerance)$}{
+     prevMuX, prevSigmaX = MuX, SigmaX\;
+     prevMuD, prevSigmaD = MuD, SigmaD\;
+     prevTheta = [prevMuX, prevSigmaX, prevMuD, prevSigmaD]\;\\
+
+     MuX = UpdateMu(prevMuX,prevSigmaX,pleas)\;
+     SigmaX = UpdateSigma(prevMuX,prevSigmaX,pleas)\;\\
+
+     MuD = UpdateMu(prevMuD,prevSigmaD,pleas)\;
+     SigmaD = UpdateSigma(prevMuD,prevSigmaD,pleas)\;
+     theta = [MuX, SigmaX, MuD, SigmaD]\;
+
+    }
+    \caption{Ad-hoc Algorithm}
+    \end{algorithm}
+
+    \begin{algorithm}[H]
+      \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+      \SetAlgoLined
+      \Input{Mu, Sigma, Pleas}
+      \Output{NewMu}
+      n = length(Pleas)\;
+      x1 = []\;
+      \For{s in Pleas}{
+        tempX1 = CalculateX1(Mu,Sigma,s)\;
+        x1.append(tempX1)\;
+      }
+      Summation = sum(x1 + pleas)\;
+      NewMu = Summation/(2n)\;
+
+      \caption{UpdateMu}
+      \end{algorithm}
+
+    \begin{algorithm}[H]
+      \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+      \SetAlgoLined
+      \Input{Mu, Sigma, Pleas}
+      \Output{NewSigma}
+      n = length(Pleas)\;
+      x1 = []\;
+      \For{s in Pleas}{
+        tempX1 = CalculateX1(Mu,Sigma,s)\;
+        x1.append(tempX1)\;
+      }
+      x2 = []\;
+      \For{s in Pleas}{
+        tempX2 = CalculateX2(Mu,Sigma,s)\;
+        x2.append(tempX2)\;
+      }
+      FirstTerm = sum(x1 + pleas^2)/(2n)\;
+      SecondTerm = (sum(x1 + pleas)/(2n))^2\;
+      NewSigma = SquareRoot(FirstTerm - SecondTerm)\;
+
+      \caption{UpdateSigma}
+      \end{algorithm}
+
+    \begin{algorithm}[H]
+      \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+      \SetAlgoLined
+      \Input{Mu, Sigma, s}
+      \Output{x1}
+      y = (s-Mu)/Sigma\;
+      FirstTerm = Sigma/(1-NormalCDF(y))\;
+      SecondTerm = NormalPDF(y)\;
+      x1 = Mu + FirstTerm*SecondTerm\;
+
+      \caption{CalculateX1}
+      \end{algorithm}
+
+    \begin{algorithm}[H]
+      \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+      \SetAlgoLined
+      \Input{Mu, Sigma, s}
+      \Output{x2}
+      y = (s-Mu)/Sigma\;
+      FirstTerm = ((Mu*Sigma)/(1-NormalCDF(y)))*NormalPDF(y)\;
+      SecondTerm = ((Sigma*Sigma)/(1-NormalCDF(y)))*NormalPDF(y)*s\;
+      x2 = $\text{Mu}^2$ + $\text{Sigma}^2$ + FirstTerm + SecondTerm\;
+      \caption{CalculateX2}
+      \end{algorithm}
+
+\end{document}

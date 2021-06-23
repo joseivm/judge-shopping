@@ -6,6 +6,8 @@ import datetime
 import re
 import pickle
 import math
+from numpy import linalg as LA
+from scipy.stats import norm
 
 from dotenv import load_dotenv, find_dotenv
 dotenv_path = find_dotenv()
@@ -25,6 +27,7 @@ holidays = ['2000-09-04','2000-10-09','2000-11-10','2000-11-23','2000-12-24',
 '2000-12-25','2000-12-26','2001-01-01','2001-01-15','2001-02-19','2001-05-10',
 '2001-05-28','2001-07-04','2000-07-04']
 
+##### Data loading/cleaning #####
 def load_sentencing_data():
     sdf = pd.read_csv(processed_sentencing_data_file)
     sdf = sdf.loc[sdf.Date.notna(),:]
@@ -98,76 +101,61 @@ def get_judge_days():
     judge_days = cdf['Days'].sum()
     return judge_days
 
-def calculate_NLL(pleas,theta,mu_p):
-    NLL = 0
-    for s in pleas:
-        theta_term = (theta**s)*(1/math.factorial(s))
-        theta_sum = 1
-        for i in range(1,s):
-            theta_sum -= math.pow(mu_p,i)*math.exp(-mu_p)/math.factorial(i)
-
-        mu_term = math.pow(mu_p,s)*math.exp(-mu_p)/math.factorial(s)
-        mu_sum = 1
-        for j in range(1,s+1):
-            mu_sum -= (theta**j)*math.exp(-theta)/math.factorial(j)
-
-        NLL += -math.log(theta_term*theta_sum+mu_term*mu_sum)
-    return NLL
-
-def make_NLL_data(mu_t,opt_mu_p):
-    sdf = load_sentencing_data()
+##### Estimation/Optimization #####
+def gaussian_em(init_mu_x,init_sigma_x,init_mu_d,init_sigma_d,tolerance=0.05):
     pleas = get_clean_day_pleas()
-    judge_days = get_judge_days()
-    num_trials = sdf['Trial'].sum()
-    trial_days = num_trials/mu_t
-    plea_days = judge_days - trial_days
-    theta = sdf['Plea'].sum()/plea_days
-    NLLS = []
-    mu_ps = np.linspace(9,14,num=200)
-    for mu_p in mu_ps:
-        NLL = calculate_NLL(pleas,theta,mu_p)
-        NLLS.append(NLL)
 
-    data = pd.DataFrame({'MuP':mu_ps,'NLL':NLLS,'MuT':mu_t,'OptMuP':opt_mu_p})
-    return data
+    prev_mu_x, prev_sigma_x = (0,0)
+    prev_mu_d, prev_sigma_d = (0,0)
 
-def optimize_mu_p(mu_t,mu_p,sdf,judge_days,pleas,iters=100,lr=0.02):
-    num_trials = sdf['Trial'].sum()
-    trial_days = num_trials/mu_t
-    plea_days = judge_days - trial_days
-    theta = sdf['Plea'].sum()/plea_days
-    mu_p = torch.tensor([mu_p],requires_grad=True)
-    optimizer = torch.optim.AdamW([mu_p],lr=lr)
-    # scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer,20,0.01)
-    min_grad = math.inf
-    min_NLL = math.inf
-    best_mu = 0
-    for k in range(iters):
-        optimizer.zero_grad()
-        NLL = 0
-        for s in pleas:
-            theta_term = (theta**s)*(1/math.factorial(s))
-            theta_sum = 1
-            for i in range(1,s):
-                theta_sum -= torch.pow(mu_p,i)*torch.exp(-mu_p)/math.factorial(i)
+    mu_x, sigma_x = (init_mu_x, init_sigma_x)
+    mu_d, sigma_d = (init_mu_d, init_sigma_d)
+    prev_theta = np.array([prev_mu_x,prev_sigma_x,prev_mu_d,prev_sigma_d])
+    theta = np.array([mu_x,sigma_x,mu_d,sigma_d])
 
-            mu_term = torch.pow(mu_p,s)*torch.exp(-mu_p)/math.factorial(s)
-            mu_sum = 1
-            for j in range(1,s+1):
-                mu_sum -= (theta**j)*math.exp(-theta)/math.factorial(j)
+    while (LA.norm(theta-prev_theta,np.inf) > tolerance):
+        prev_mu_x, prev_sigma_x = (mu_x, sigma_x)
+        prev_mu_d, prev_sigma_d = (mu_d, sigma_d)
+        prev_theta = np.array([prev_mu_x,prev_sigma_x,prev_mu_d,prev_sigma_d])
 
-            NLL += -torch.log(theta_term*theta_sum+mu_term*mu_sum)
-        NLL.backward()
-        optimizer.step()
-        # scheduler.step()
-        if NLL <= min_NLL:
-            best_mu = mu_p.detach().clone()
-            min_NLL = NLL
-            min_grad = mu_p.grad.abs()
+        mu_x = update_mu(prev_mu_x, prev_sigma_x, pleas)
+        sigma_x = update_sigma(prev_mu_x, prev_sigma_x, pleas)
 
-    # return {'mu_p':best_mu.item(),'grad':min_grad,'k':k}
-    print(min_grad)
-    return best_mu.item()
+        mu_d = update_mu(prev_mu_d, prev_sigma_d, pleas)
+        sigma_d = update_sigma(prev_mu_d, prev_sigma_d, pleas)
+
+        theta = np.array([mu_x,sigma_x,mu_d,sigma_d])
+        print(theta)
+
+    return theta
+
+def update_mu(mu,sigma,pleas):
+    n = len(pleas)
+    x_1 = [calculate_x_1(mu, sigma, s) for s in pleas]
+    summation = (x_1 + pleas).sum()
+    new_mu = summation/(2*n)
+    return new_mu
+
+def update_sigma(mu,sigma,pleas):
+    n = len(pleas)
+    x_2 = [calculate_x_2(mu, sigma, s) for s in pleas]
+    x_1 = [calculate_x_1(mu, sigma, s) for s in pleas]
+    first_term = (x_2 + pleas**2).sum()/(2*n)
+    second_term = ((x_1 + pleas).sum()/(2*n))**2
+    new_sigma = np.sqrt(first_term-second_term)
+    return new_sigma
+
+def calculate_x_1(mu,sigma,s):
+    y = (s-mu)/sigma
+    first_term = sigma/(1-norm.cdf(y))
+    second_term = norm.pdf(y)
+    return mu + first_term*second_term
+
+def calculate_x_2(mu,sigma,s):
+    y = (s-mu)/sigma
+    first_term = ((mu*sigma)/(1-norm.cdf(y)))*norm.pdf(y)
+    second_term = ((sigma**2)/(1-norm.cdf(y)))*norm.pdf(y)*s
+    return mu**2 + sigma**2 + first_term + second_term
 
 def estimate_mu_t(mu_p):
     counts = get_judge_county_event_counts()
