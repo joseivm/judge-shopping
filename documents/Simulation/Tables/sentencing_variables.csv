@@ -1,0 +1,24 @@
+﻿Variable,Description
+date,date of sentence
+county,county where the sentence was decided
+circuit,circuit court where sentence was decided
+judge,numerical identifier for the judge who head the case
+trial,binary variable indicating whether the case went to trial
+incarc,binary variable indicating whether the sentence includes incarceration
+statute,the code of law that the offender broke (e.g. 56-05-0750(B)(1))
+offdescr,a description of the offense (e.g. driving under the influence)
+counts,numerical variable
+statute_first,"the code of law that the offender broke, identical to 'statute' variable"
+offdescr_first,"a description of the first offense, similar to offdescr"
+offtyped,"detailed categorical offense type, there are 10 values (rape, assault, theft, etc). "
+sgc_offcode,a numerical code that is used to determine the minimum sentence multiplier
+offtypeLibHyp,"categorical offense type (property, violent, drug, other)"
+offser,"offense seriousness, ranges from 1-8"
+ccpnts,numeric values between 1 and 68
+ccpts99,"commitment score, an alternative measure of offense seriousness. "
+crimhist,"defendant criminal history, takes 5 categorical values"
+ppoints,numerical values between 0-1014
+male ,binary variable indicating sex
+age,"age of defendant at sentencing, ranges 15-81"
+black,binary variable indicating whether defendant is black
+sentence,"length of sentence in months, ranges 0-11988"

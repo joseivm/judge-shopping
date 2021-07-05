@@ -113,6 +113,8 @@ def gaussian_em(init_mu_x,init_sigma_x,init_mu_d,init_sigma_d,tolerance=0.05):
     prev_theta = np.array([prev_mu_x,prev_sigma_x,prev_mu_d,prev_sigma_d])
     theta = np.array([mu_x,sigma_x,mu_d,sigma_d])
 
+    iters = 1
+    vals = []
     while (LA.norm(theta-prev_theta,np.inf) > tolerance):
         prev_mu_x, prev_sigma_x = (mu_x, sigma_x)
         prev_mu_d, prev_sigma_d = (mu_d, sigma_d)
@@ -125,8 +127,20 @@ def gaussian_em(init_mu_x,init_sigma_x,init_mu_d,init_sigma_d,tolerance=0.05):
         sigma_d = update_sigma(prev_mu_d, prev_sigma_d, pleas)
 
         theta = np.array([mu_x,sigma_x,mu_d,sigma_d])
-        print(theta)
 
+        x_1 = [calculate_x_1(prev_mu_x, prev_sigma_x, s) for s in pleas]
+        x_2 = [calculate_x_2(prev_mu_x, prev_sigma_x, s) for s in pleas]
+        d_1 = [calculate_x_1(prev_mu_d, prev_sigma_d, s) for s in pleas]
+        d_2 = [calculate_x_2(prev_mu_d, prev_sigma_d, s) for s in pleas]
+        vals.append({'X1':np.mean(x_1),'X2':np.mean(x_2),'D1':np.mean(d_1),
+                    'D2':np.mean(d_2),'Iteration':iters})
+        iters += 1
+        print(theta)
+        if iters == 20:
+            break
+    data = pd.DataFrame(vals)
+    filename = optimization_data_folder + 'gaussian_em_data.csv'
+    data.to_csv(filename,index=False)
     return theta
 
 def update_mu(mu,sigma,pleas):

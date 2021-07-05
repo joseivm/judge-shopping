@@ -28,6 +28,9 @@ class Judge:
         self.past_pleas = judge_df[['ExpectedTrialSentence','Sentence']].to_numpy()
         self.capacity = np.ones(50)*11
         self.current_week = 0
+        self.convex_hull = ConvexHull(self.past_pleas)
+        self.convex_hull_boundary = []
+        self.make_convex_hull_boundary()
 
     def get_min_plea(self,expected_trial_sentence):
         prior_expected_sentences = self.past_pleas[:,0]
@@ -44,6 +47,20 @@ class Judge:
         closest_points = self.past_pleas[closest_indices,:]
         min_plea = max(closest_points[:,1])
         return(min_plea)
+
+    def make_convex_hull_boundary(self):
+        simplices = self.convex_hull.simplices
+        points = self.convex_hull.points
+        boundary_x = np.array([])
+        boundary_y = np.array([])
+        for simplex in simplices:
+            xs = points[simplex,0]
+            ys = points[simplex,1]
+            x_vals = np.linspace(xs[0],xs[1],100)
+            y_vals = np.interp(x_range,xs,ys)
+            boundary_x = np.concatenate((boundary_x,x_range))
+            boundary_y = np.concatenate((boundary_y,y_vals))
+        self.convex_hull_boundary = np.stack((boundary_x,boundary_y),axis=-1)
 
     def hear_case(self,weeks_from_now):
         case_week = self.current_week + weeks_from_now

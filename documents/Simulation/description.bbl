@@ -1,0 +1,91 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{hester2017conditional}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=6aab85dee4a1aa98f3ebecd0042dce05}{%
+           family={Hester},
+           familyi={H\bibinitperiod},
+           given={Rhys},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=97118f73d78037463c586aa6b5827872}{%
+           family={Hartman},
+           familyi={H\bibinitperiod},
+           given={Todd\bibnamedelima K},
+           giveni={T\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{078e7ede7ef30285f5dbf2466125df59}
+      \strng{fullhash}{078e7ede7ef30285f5dbf2466125df59}
+      \strng{bibnamehash}{078e7ede7ef30285f5dbf2466125df59}
+      \strng{authorbibnamehash}{078e7ede7ef30285f5dbf2466125df59}
+      \strng{authornamehash}{078e7ede7ef30285f5dbf2466125df59}
+      \strng{authorfullhash}{078e7ede7ef30285f5dbf2466125df59}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of quantitative criminology}
+      \field{number}{1}
+      \field{title}{Conditional race disparities in criminal sentencing: A test of the liberation hypothesis from a non-guidelines state}
+      \field{volume}{33}
+      \field{year}{2017}
+      \field{pages}{77\bibrangedash 100}
+      \range{pages}{24}
+    \endentry
+    \entry{wang2019}{thesis}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=d5f56bfc55382e05b825ce7f7e60e9dc}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Can},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Stanford University}%
+      }
+      \strng{namehash}{d5f56bfc55382e05b825ce7f7e60e9dc}
+      \strng{fullhash}{d5f56bfc55382e05b825ce7f7e60e9dc}
+      \strng{bibnamehash}{d5f56bfc55382e05b825ce7f7e60e9dc}
+      \strng{authorbibnamehash}{d5f56bfc55382e05b825ce7f7e60e9dc}
+      \strng{authornamehash}{d5f56bfc55382e05b825ce7f7e60e9dc}
+      \strng{authorfullhash}{d5f56bfc55382e05b825ce7f7e60e9dc}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Three Data-driven Model-based Policy Analyses in Criminology}
+      \field{type}{phdthesis}
+      \field{year}{2019}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

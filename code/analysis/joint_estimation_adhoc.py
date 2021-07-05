@@ -103,12 +103,12 @@ def calculate_NLL(pleas,theta,mu_p):
     for s in pleas:
         theta_term = (theta**s)*(1/math.factorial(s))
         theta_sum = 1
-        for i in range(1,s):
+        for i in range(0,s):
             theta_sum -= math.pow(mu_p,i)*math.exp(-mu_p)/math.factorial(i)
 
         mu_term = math.pow(mu_p,s)*math.exp(-mu_p)/math.factorial(s)
         mu_sum = 1
-        for j in range(1,s+1):
+        for j in range(0,s+1):
             mu_sum -= (theta**j)*math.exp(-theta)/math.factorial(j)
 
         NLL += -math.log(theta_term*theta_sum+mu_term*mu_sum)
@@ -128,7 +128,8 @@ def make_NLL_data(mu_t,opt_mu_p):
         NLL = calculate_NLL(pleas,theta,mu_p)
         NLLS.append(NLL)
 
-    data = pd.DataFrame({'MuP':mu_ps,'NLL':NLLS,'MuT':mu_t,'OptMuP':opt_mu_p})
+    brute_force_min = mu_ps[np.argmin(NLLS)]
+    data = pd.DataFrame({'MuP':mu_ps,'NLL':NLLS,'MuT':mu_t,'OptMuP':opt_mu_p,'BFMuP':brute_force_min})
     return data
 
 def optimize_mu_p(mu_t,mu_p,sdf,judge_days,pleas,iters=100,lr=0.02):
@@ -221,21 +222,27 @@ def ad_hoc_algorithm(init_mu_t,init_mu_p,tolerance=0.05,opt_iter=100):
     prev_mu_p = 0
     mu_t = init_mu_t
     mu_p = init_mu_p
-    iters = 0
+    iters = 1
+    param_values = [{'MuP':mu_p,'MuT':mu_t,'Iteration':0}]
     while (abs(mu_t - prev_mu_t) > tolerance) or (abs(mu_p - prev_mu_p) > tolerance):
         prev_mu_p = mu_p
         prev_mu_t = mu_t
         mu_p = optimize_mu_p(prev_mu_t,prev_mu_p,sdf,judge_days,pleas,opt_iter,0.02)
         mu_t = estimate_mu_t(mu_p)
 
-        NLL_data = make_NLL_data(prev_mu_t,mu_p)
+        NLL_data = make_NLL_data(prev_mu_t,prev_mu_p)
         NLL_filename = optimization_data_folder + 'opt_data_{}.csv'.format(iters)
         NLL_data.to_csv(NLL_filename,index=False)
 
-        mu_t_data = make_mu_t_data(mu_p)
+        mu_t_data = make_mu_t_data(prev_mu_p)
         mu_t_filename = optimization_data_folder + 'mut_data_{}.csv'.format(iters)
         mu_t_data.to_csv(mu_t_filename,index=False)
 
+        param_values.append({'MuP':mu_p,'MuT':mu_t,'Iteration':iters})
         iters += 1
+
         print('mu_p: {}, mu_t: {}\n'.format(mu_p,mu_t))
-    return({'mu_p':mu_p,'mu_t':mu_t})
+    param_df = pd.DataFrame(param_values)
+    pdf_filename = optimization_data_folder + 'ad_hoc_param_data.csv'
+    param_df.to_csv(pdf_filename,index=False,float_format='%.3f')
+    return(param_df)
