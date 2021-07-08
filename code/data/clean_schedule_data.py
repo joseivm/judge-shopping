@@ -22,10 +22,10 @@ class ParserHelper:
         self.date_regex = re.compile('([\d]+)')
         self.plus_regex = re.compile('[+]+')
         self.numbers_no_letters_regex = re.compile('^[\d\W,]+$')
-        self.circuit_regex = re.compile('([\d]+st|[\d]+nd|[\d]+rd|[\d]+th) Cir')
+        self.circuit_regex = re.compile('([\d]+st|[\d]+nd|[\d]+rd|[\d]+th) Cir\.?')
         cdf = pd.read_csv(county_file)
         self.assignments = '|'.join(cdf.County.unique()[::-1]) #flipping order so that Chesterfield is before Chester
-        self.assignments += '|([\d]+st|[\d]+nd|[\d]+rd|[\d]+th) Cir'
+        self.assignments += '|([\d]+st|[\d]+nd|[\d]+rd|[\d]+th) Cir\.?'
 
     def is_single_assignment_nd(self,assignment):
         plus_match = self.plus_regex.search(assignment)
@@ -247,7 +247,7 @@ def process_month_df_minimal(tdf):
     tdf['FullAssignment'] = tdf['FullAssignment'].fillna('na')
 
     tdf['JudgeName'] = tdf['JudgeName'].str.upper()
-    tdf['JudgeName'] = tdf['JudgeName'].str.replace('[^A-Za-z\s]','')
+    tdf['JudgeName'] = tdf['JudgeName'].str.replace('[^A-Za-z\s]','',regex=True)
     tdf['JudgeName'] = tdf['JudgeName'].str.strip()
     tdf.loc[tdf.JudgeName == 'COOPER', 'JudgeName'] = 'COOPER TW'
     judges_to_drop = ['BERGDORF','COUCH','DREW','GIER','PEEPLES','SIMMONS','WATTS','YOUNG']
@@ -282,7 +282,7 @@ def process_month_df_for_weekly(tdf):
     tdf = tdf.loc[(tdf.FullAssignment == 'na') | (tdf.Assignment != 'na'),:].drop(columns=['variable'])
 
     tdf['JudgeName'] = tdf['JudgeName'].str.upper()
-    tdf['JudgeName'] = tdf['JudgeName'].str.replace('[^A-Za-z\s]','')
+    tdf['JudgeName'] = tdf['JudgeName'].str.replace('[^A-Za-z\s]','',regex=True)
     tdf['JudgeName'] = tdf['JudgeName'].str.strip()
     tdf.loc[tdf.JudgeName == 'COOPER', 'JudgeName'] = 'COOPER TW'
     judges_to_drop = ['BERGDORF','COUCH','DREW','GIER','PEEPLES','SIMMONS','WATTS','YOUNG']
@@ -324,11 +324,15 @@ def process_month_df_for_daily(tdf):
     tdf = pd.DataFrame(all_assignments)
 
     tdf['Assignment'] = tdf['Assignment'].str.strip()
+    tdf['WorkType'] = tdf.Assignment.str.replace(ph.assignments,'',regex=True)
+    tdf['WorkType'] = tdf.WorkType.str.replace('\(Sitting .*$','',regex=True)
+    tdf['WorkType'] = tdf.WorkType.str.strip()
+    tdf.loc[tdf.WorkType == 'Cap.PCR','WorkType'] = 'Capital PCR'
     tdf['Week'] = tdf.StartDate.apply(lambda x: str(x.isocalendar()[1]) + '-' + str(x.isocalendar()[0]))
     tdf['Date'] = tdf.Date.astype(str)
 
     tdf['JudgeName'] = tdf['JudgeName'].str.upper()
-    tdf['JudgeName'] = tdf['JudgeName'].str.replace('[^A-Za-z\s]','')
+    tdf['JudgeName'] = tdf['JudgeName'].str.replace('[^A-Za-z\s]','',regex=True)
     tdf['JudgeName'] = tdf['JudgeName'].str.strip()
     tdf.loc[tdf.JudgeName == 'COOPER', 'JudgeName'] = 'COOPER TW'
     judges_to_drop = ['BERGDORF','COUCH','DREW','GIER','PEEPLES','SIMMONS','WATTS','YOUNG']

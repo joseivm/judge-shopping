@@ -7,6 +7,8 @@ import patsy as pt
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 from sklearn.linear_model import LogisticRegression
+from scipy.spatial import ConvexHull
+import matplotlib.pyplot as plt
 
 from dotenv import load_dotenv, find_dotenv
 dotenv_path = find_dotenv()
@@ -26,13 +28,11 @@ class Judge:
     def __init__(self,ID,judge_df):
         self.ID = ID
         self.past_pleas = judge_df[['ExpectedTrialSentence','Sentence']].to_numpy()
-        self.capacity = np.ones(50)*11
+        self.capacity = np.ones(50)*77
         self.current_week = 0
         self.convex_hull = ConvexHull(self.past_pleas)
-        self.convex_hull_boundary = []
-        self.make_convex_hull_boundary()
 
-    def get_min_plea(self,expected_trial_sentence):
+    def get_min_plea_knn(self,expected_trial_sentence):
         prior_expected_sentences = self.past_pleas[:,0]
         distances = abs(prior_expected_sentences - expected_trial_sentence)
         closest_indices = np.argsort(distances)[:6]
@@ -40,7 +40,7 @@ class Judge:
         min_plea = min(closest_points[:,1])
         return(min_plea)
 
-    def get_max_plea(self,expected_trial_sentence):
+    def get_max_plea_knn(self,expected_trial_sentence):
         prior_expected_sentences = self.past_pleas[:,0]
         distances = abs(prior_expected_sentences - expected_trial_sentence)
         closest_indices = np.argsort(distances)[:6]
@@ -48,19 +48,55 @@ class Judge:
         min_plea = max(closest_points[:,1])
         return(min_plea)
 
-    def make_convex_hull_boundary(self):
+    def get_min_plea_ch(self,expected_trial_sentence):
         simplices = self.convex_hull.simplices
         points = self.convex_hull.points
-        boundary_x = np.array([])
-        boundary_y = np.array([])
+        containing_simplices = []
+        y_vals = []
+        plt.figure()
         for simplex in simplices:
+            plt.plot(points[simplex,0],points[simplex,1],'b-')
+            x_vals = np.sort(points[simplex,0])
+            if expected_trial_sentence >= x_vals[0] and expected_trial_sentence <= x_vals[1]:
+                containing_simplices.append(simplex)
+
+        for simplex in containing_simplices:
+            plt.plot(points[simplex,0],points[simplex,1],'r-')
             xs = points[simplex,0]
             ys = points[simplex,1]
-            x_vals = np.linspace(xs[0],xs[1],100)
-            y_vals = np.interp(x_range,xs,ys)
-            boundary_x = np.concatenate((boundary_x,x_range))
-            boundary_y = np.concatenate((boundary_y,y_vals))
-        self.convex_hull_boundary = np.stack((boundary_x,boundary_y),axis=-1)
+            y_value = np.interp(expected_trial_sentence,xs,ys)
+            y_vals.append(y_value)
+
+        min_plea = np.min(y_vals)
+        plt.axvline(x=expected_trial_sentence,color='g')
+        plt.plot(expected_trial_sentence,min_plea,'ko')
+        plt.show()
+        # return min_plea
+
+    def get_max_plea_ch(self,expected_trial_sentence):
+        simplices = self.convex_hull.simplices
+        points = self.convex_hull.points
+        containing_simplices = []
+        y_vals = []
+        plt.figure()
+        for simplex in simplices:
+            plt.plot(points[simplex,0],points[simplex,1],'b-')
+            x_vals = np.sort(points[simplex,0])
+            if expected_trial_sentence >= x_vals[0] and expected_trial_sentence <= x_vals[1]:
+                containing_simplices.append(simplex)
+
+        for simplex in containing_simplices:
+            plt.plot(points[simplex,0],points[simplex,1],'r-')
+            xs = points[simplex,0]
+            ys = points[simplex,1]
+            y_value = np.interp(expected_trial_sentence,xs,ys)
+            y_vals.append(y_value)
+
+        max_plea = np.max(y_vals)
+        plt.axvline(x=expected_trial_sentence,color='g')
+        plt.plot(expected_trial_sentence,max_plea,'ko')
+        plt.show()
+        # return max_plea
 
     def hear_case(self,weeks_from_now):
         case_week = self.current_week + weeks_from_now

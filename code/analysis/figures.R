@@ -5,7 +5,8 @@ library(ggthemes)
 source('.env.R')
 
 # Input files/dirs
-sentencing_data_file <- paste0(PROJECT_DIR,'/data/processed/temp_sentencing_data.csv')
+temp_sentencing_data_file <- paste0(PROJECT_DIR,'/data/processed/temp_sentencing_data.csv')
+sentencing_data_file <- paste0(PROJECT_DIR,'/data/raw/sentencing_data.csv')
 schedule_data_file <- paste0(PROJECT_DIR,'/data/processed/temp_schedule_data.csv')
 calendar_data_file <- paste0(PROJECT_DIR,'/data/processed/daily_schedule_data.csv')
 
@@ -13,8 +14,9 @@ calendar_data_file <- paste0(PROJECT_DIR,'/data/processed/daily_schedule_data.cs
 FIGURES_DIR <- paste0(PROJECT_DIR,'/output/figures/Validation/')
 assignment_levels <- c('Missing','Single','SingleWD','MultipleND','MultipleSD','MultipleSDA','MultipleAD')
 assignment_labels <- c('Missing','Single','Single, with dates','Multiple, no dates','Multiple, some dates','Multiple, some dates amb.','Multiple, all dates')
+
 figure_46 <- function(){
-  sdf <- fread(sentencing_data_file)
+  sdf <- fread(temp_sentencing_data_file)
   cdf <- fread(schedule_data_file)
 
   merge_cols <- c('County','Week')
@@ -46,7 +48,12 @@ assignment_type_plot <- function(){
     labs(x="")+
     scale_x_discrete(breaks=assignment_levels,labels=assignment_labels)+
     theme(axis.text.x = element_text(angle=-45,vjust=-0.2))
-    
+
 }
 
-figure_46()
+fraction_missing_plot <- function(){
+  sdf <- fread(temp_sentencing_data_file)
+  pct_missing <- sdf[,.(FractionMissing=sum(Date=='')/.N),by=JudgeID]
+  pct_missing[, JudgeID := gsub('Judge ','',JudgeID)]
+  mplot <- ggplot(pct_missing,aes(JudgeID,FractionMissing))+geom_col()+theme_bw()
+}

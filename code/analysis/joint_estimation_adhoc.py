@@ -18,7 +18,6 @@ processed_sentencing_data_file = PROJECT_DIR + '/data/raw/sentencing_data.csv'
 judge_name_id_mapping_file = PROJECT_DIR + '/data/processed/judge_name_id_mapping.csv'
 
 # Output files
-processed_sentencing_data_file = PROJECT_DIR + '/data/processed/sentencing_data.csv'
 optimization_data_folder = PROJECT_DIR + '/data/optimization/'
 
 holidays = ['2000-09-04','2000-10-09','2000-11-10','2000-11-23','2000-12-24',
@@ -28,7 +27,6 @@ holidays = ['2000-09-04','2000-10-09','2000-11-10','2000-11-23','2000-12-24',
 def load_sentencing_data():
     sdf = pd.read_csv(processed_sentencing_data_file)
     sdf = sdf.loc[sdf.Date.notna(),:]
-    sdf['Plea'] = (sdf['Trial']+1)%2
     return sdf
 
 def load_calendar_data():
@@ -48,6 +46,12 @@ def get_clean_day_pleas():
     counts = sdf.groupby(['JudgeID','County','Date'])[['Plea']].sum().reset_index()
     counts.loc[counts.Plea > 17,'Plea'] = 17
     return counts['Plea'].to_numpy()
+
+def remove_non_missing_judges(sdf):
+    all_judges = sdf.JudgeID.unique()
+    missing_judges = sdf.loc[sdf.Date.isna(),'JudgeID'].unique()
+    sdf = sdf.loc[~sdf.JudgeID.isin(missing_judges),:]
+    return sdf
 
 def remove_conflicting_days(sdf):
     cdf = load_calendar_data()
