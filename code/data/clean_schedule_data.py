@@ -230,6 +230,7 @@ def create_calendar_data(daily=False):
         else:
             mdf = process_month_df_for_weekly(mdf)
         df = df.append(mdf,ignore_index=True)
+    df = add_day_weights(df)
     return(df)
 
 def process_month_df_minimal(tdf):
@@ -357,6 +358,17 @@ def get_monday(day,month,year):
     year, week, day = iso_date
     monday_date = datetime.date.fromisocalendar(year,week,1)
     return(monday_date.day)
+
+def add_day_weights(cdf):
+    day_weights = cdf.groupby(['JudgeName','Date']).size().reset_index(name='N')
+    day_weights['Days'] = 1/day_weights['N']
+    cdf = cdf.merge(day_weights,on=['JudgeName','Date'])
+    return cdf
+
+def get_home_county(cdf):
+    cdf = cdf.loc[cdf.County != 'na']
+    counts = cdf.groupby(['JudgeID','County','Circuit']).size().reset_index(name='N')
+    home = counts.sort_values(['JudgeID','N'],ascending=False).groupby('JudgeID').head(1)
 
 def main():
     # df = create_calendar_data(daily=False)

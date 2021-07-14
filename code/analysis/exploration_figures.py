@@ -16,6 +16,7 @@ PROJECT_DIR = os.environ.get("PROJECT_DIR")
 processed_daily_schedule_file = PROJECT_DIR + '/data/processed/daily_schedule_data.csv'
 processed_sentencing_data_file = PROJECT_DIR + '/data/raw/sentencing_data.csv'
 judge_name_id_mapping_file = PROJECT_DIR + '/data/processed/judge_name_id_mapping.csv'
+county_file = PROJECT_DIR + '/data/raw/county_list.csv'
 
 # Output files
 optimization_data_folder = PROJECT_DIR + '/data/optimization/'
@@ -169,13 +170,74 @@ def average_pleas_by_work_type_cond():
     plt.savefig(filename)
 
 def daily_plea_hist_by_work_type():
-    pass
+    sdf = load_sentencing_data()
+    sdf = sdf.loc[sdf.Date.notna(),:]
+    cdf = load_calendar_data()
+
+    fdf = sdf.merge(cdf,on=['Date','JudgeID'])
+    fdf['Circuit_y'] = fdf.Circuit_y.replace({'na':np.nan})
+    fdf['Circuit_y'] = fdf.Circuit_y.astype('float').astype('Int64')
+    fdf.loc[fdf.County_x != fdf.County_y,'MatchType'] = 'Disagree'
+    fdf.loc[fdf.Circuit_x == fdf.Circuit_y,'MatchType'] = 'Circuit'
+    fdf.loc[fdf.County_x == fdf.County_y,'MatchType'] = 'Agree'
+    fdf.sort_values('MatchType',inplace=True)
+    fdf = fdf.drop_duplicates('EventID',keep='first')
+
+    fdf.loc[fdf.MatchType == 'Disagree','WorkType'] = 'Disagree'
+    counts = fdf.groupby(['JudgeID','Date','WorkType'])[['Plea','Trial']].sum().reset_index()
+    work_types = counts.WorkType.unique()
+
+    fig, axes = plt.subplots(4,3,figsize=(10,10))
+    for work_type, ax in zip(work_types,axes.ravel()):
+        work_type_counts = counts.loc[counts.WorkType == work_type,:]
+        ax.hist(work_type_counts.Plea,bins=30)
+        ax.set_title(work_type)
+
+    plt.tight_layout()
+    filename = PROJECT_DIR + '/output/figures/Exploration/daily_plea_hist_by_work_type.png'
+    plt.savefig(filename)
+
+def county_trial_histograms():
+    sdf = load_sentencing_data()
+    cdf = load_calendar_data()
+    home_circuits = sdf.groupby(['JudgeID','HomeCircuit']).size().reset_index(name='N')
+    home_circuits['HomeCircuit'] = home_circuits.HomeCircuit.astype('Int64').astype(str)
+
+    cdf = cdf.merge(home_circuits[['JudgeID','HomeCircuit']],on='JudgeID',how='left')
+    counties = pd.read_csv(county_file)
+
+    home_counties = cdf.loc[(cdf.HomeCircuit == cdf.Circuit)&
+                            (cdf.County.isin(counties.County)),:].groupby(['JudgeID','County']).size(
+                            ).reset_index(name='N').sort_values('N',ascending=False).groupby('JudgeID').head(1)
+    home_counties.rename(columns={'County':'HomeCounty'},inplace=True)
+    home_counties.drop(columns=['N'],inplace=True)
+    sdf = sdf.merge(home_counties,on='JudgeID',how='left')
+    sdf['HomeJudge'] = 'Non-Resident'
+    sdf.loc[sdf.HomeCounty == sdf.County,'HomeJudge'] = 'Resident'
+    trial_counts = sdf.loc[sdf.Trial == 1,:].groupby(['County','HomeJudge']).size().reset_index(name='N')
+
+    counties = counties.County.unique()
+    county_groups = np.array_split(counties,np.arange(12,len(counties),12))
+    i = 0
+    for group in county_groups:
+        fig, axes = plt.subplots(6,2,figsize=(8,8))
+        for county, ax in zip(group,axes.ravel()):
+            county_trials = trial_counts.loc[trial_counts.County == county,:]
+            ax.bar(county_trials.HomeJudge,county_trials.N,color=['b','r'])
+            ax.set_title(county)
+            ax.grid(axis='y')
+
+        plt.tight_layout()
+        filename = PROJECT_DIR + '/output/figures/Exploration/county_trial_hist_{}.png'.format(i)
+        plt.savefig(filename)
+        i += 1
 
 def main():
     average_pleas_by_work_type()
     average_pleas_by_work_type_cond()
     fraction_gs_by_judge_hist()
     recovered_dates_by_month_hist()
+    county_trial_histograms()
     for group in ['County','JudgeID']:
         fraction_missing_by_group_hist(group)
         count_missing_by_group_hist(group)

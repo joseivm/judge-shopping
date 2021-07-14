@@ -13,6 +13,7 @@ PROJECT_DIR = os.environ.get("PROJECT_DIR")
 schedule_data_file = PROJECT_DIR + '/data/processed/weekly_schedule_data.csv'
 hester_data_file = PROJECT_DIR + '/data/raw/Sentencing Data/Hester_Data.csv'
 expected_min_sentece_file = PROJECT_DIR + '/data/raw/Sentencing Data/expected_min_sentence.dta'
+home_circuit_file = PROJECT_DIR + '/data/raw/JudgeNumber_ResidentCircuit.xlsx'
 
 # Output files
 processed_sentencing_data_file = PROJECT_DIR + '/data/raw/sentencing_data.csv'
@@ -44,6 +45,7 @@ def clean_sentencing_data():
     'Black','EventID','CriminalHistory']
     sdf = sdf[cols_to_keep]
     sdf = add_exp_min_sentence(sdf)
+    sdf = add_home_circuit(sdf)
     sdf.loc[sdf.Date.notna(),'Week'] = sdf.loc[sdf.Date.notna(),'Date'].apply(get_week)
     sdf.to_csv('data/processed/temp_sentencing_data.csv',index=False)
     sdf = add_judge_names(sdf)
@@ -82,6 +84,7 @@ def add_exp_min_sentence(df):
     merge_cols = ['Date','County','Circuit','Counts','OffenseSeriousness','OffenseCode',
     'OffenseType','Sentence','Statute']
     edf = clean_exp_min_data()
+    edf.drop(columns=['jud_no'],inplace=True)
     df = pd.merge(df,edf,on=merge_cols,how='left')
     df.drop_duplicates(inplace=True)
     return(df)
@@ -93,9 +96,23 @@ def clean_exp_min_data():
     edf['Sentence'] = edf['Sentence'].round(1).astype('float32')
     edf.loc[edf.Statute == '','Statute'] = np.nan
     cols = ['Date','County','Circuit','Counts','OffenseSeriousness','OffenseCode',
-    'OffenseType','Sentence','Statute','ExpMinSentence']
+    'OffenseType','Sentence','Statute','ExpMinSentence','jud_no']
     edf.drop_duplicates(inplace=True)
     return(edf[cols])
+
+def add_home_circuit(df):
+    merge_cols = ['Date','County','Circuit','Counts','OffenseSeriousness','OffenseCode',
+    'OffenseType','Sentence','Statute']
+    edf = clean_exp_min_data()
+    mdf = pd.merge(df,edf,on=merge_cols,how='left')
+    mapping = mdf.groupby(['JudgeID','jud_no']).size().reset_index(name='N').sort_values('N',ascending=False).groupby('JudgeID').head(1)
+    df = df.merge(mapping[['JudgeID','jud_no']],on='JudgeID')
+
+    home_circuits = pd.read_excel(home_circuit_file)
+    home_circuits.rename(columns={'JudgeID':'jud_no'},inplace=True)
+    df = df.merge(home_circuits[['jud_no','HomeCircuit']],on='jud_no')
+    df.drop(columns=['jud_no'],inplace=True)
+    return df
 
 def add_offense_type(df):
     df['OffenseType'] = "Other"

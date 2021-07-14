@@ -25,12 +25,12 @@ sentencing_data_file = PROJECT_DIR + '/data/processed/sentencing_data.csv'
 simulation_results_dir = PROJECT_DIR + '/data/simulation/'
 
 class Judge:
-    def __init__(self,ID,judge_df):
+    def __init__(self,ID,judge_df,sentence='Sentence'):
         self.ID = ID
-        self.past_pleas = judge_df[['ExpectedTrialSentence','Sentence']].to_numpy()
+        self.past_pleas = judge_df[['ExpectedTrialSentence',sentence]].to_numpy()
         self.capacity = np.ones(50)*77
         self.current_week = 0
-        self.convex_hull = ConvexHull(self.past_pleas)
+        self.convex_hull = ConvexHull(np.concatenate((self.past_pleas,[[0,0]])))
 
     def get_min_plea_knn(self,expected_trial_sentence):
         prior_expected_sentences = self.past_pleas[:,0]
@@ -47,6 +47,13 @@ class Judge:
         closest_points = self.past_pleas[closest_indices,:]
         min_plea = max(closest_points[:,1])
         return(min_plea)
+
+    def plot_convex_hull(self,ax):
+        simplices = self.convex_hull.simplices
+        points = self.convex_hull.points
+        ax.plot(points[:,0], points[:,1], 'o')
+        for simplex in simplices:
+            ax.plot(points[simplex,0],points[simplex,1],'b-')
 
     def get_min_plea_ch(self,expected_trial_sentence):
         simplices = self.convex_hull.simplices
@@ -202,6 +209,32 @@ def make_calendar(judges,counties,time_periods):
         schedule = {county: active_judges[i] for (i,county) in enumerate(counties)}
         calendar = calendar.append(schedule,ignore_index=True)
     return(calendar)
+
+def plot_convex_hulls():
+    df = pd.read_csv(sentencing_data_file)
+    df.loc[df.ExpMinSentence.isna(),'ExpMinSentence'] = 0
+    judge_ids = ['Judge '+str(i) for i in range(1,51)]
+    judges = {id:Judge(id,df.loc[df.JudgeID == id]) for id in judge_ids}
+    exp_min_judges = {id:Judge(id,df.loc[df.JudgeID == id],'ExpMinSentence') for id in judge_ids}
+
+    judge_groups = np.array_split(judge_ids,np.arange(4,len(judge_ids),4))
+    i = 0
+    for group in judge_groups:
+        fig, axes = plt.subplots(4,2,figsize=(10,10))
+        for judge, ax_row in zip(group,axes):
+            ax1, ax2 = ax_row
+            normal_judge = judges[judge]
+            exp_min_judge = exp_min_judges[judge]
+            normal_judge.plot_convex_hull(ax1)
+            exp_min_judge.plot_convex_hull(ax2)
+            ax1.set_title('{}: Sentence'.format(judge))
+            ax2.set_title('Expected Minimum Sentence')
+
+        plt.tight_layout()
+        filename = PROJECT_DIR + '/output/figures/Exploration/judge_convex_hulls_{}.png'.format(i)
+        plt.savefig(filename)
+        i += 1
+
 
 def main():
     df = pd.read_csv(sentencing_data_file)
