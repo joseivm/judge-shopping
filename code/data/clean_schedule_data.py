@@ -225,6 +225,8 @@ def create_calendar_data(daily=False):
     df = pd.DataFrame()
     for filename in filenames:
         mdf = pd.read_excel(filename)
+        cols = [col for col in mdf.columns if 'Unnamed' not in str(col)]
+        mdf = mdf.loc[:,cols]
         if daily:
             mdf = process_month_df_for_daily(mdf)
         else:
@@ -362,6 +364,7 @@ def get_monday(day,month,year):
 def add_day_weights(cdf):
     day_weights = cdf.groupby(['JudgeName','Date']).size().reset_index(name='N')
     day_weights['Days'] = 1/day_weights['N']
+    day_weights.drop(columns=['N'],inplace=True)
     cdf = cdf.merge(day_weights,on=['JudgeName','Date'])
     return cdf
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  30 JUN 2021 09:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  23 JUL 2021 23:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -489,7 +489,9 @@ LaTeX Warning: No \author given.
 \tf@toc=\write5
 \openout5 = `description.toc'.
 
- (./Tables/sentencing_variables.tex)
+ [1
+
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./Tables/sentencing_variables.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 1--53
 [][]
  []
@@ -499,18 +501,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--53
 
  []
 
-[1
-
-{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 <Figures/Fig4.png, id=13, 581.17125pt x 269.005pt>
 File: Figures/Fig4.png Graphic file (type png)
 <use Figures/Fig4.png>
 Package pdftex.def Info: Figures/Fig4.png  used on input line 64.
 (pdftex.def)             Requested size: 352.31625pt x 163.07895pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 [2] (./Tables/assignments.tex) (./Tables/calendar_example.tex) [3 <./Figures/Fig4.png>] (./Tables/assignment_meanings.tex
 
 ./Tables/assignment_meanings.tex:1: LaTeX Error: Illegal character in array arg.
@@ -633,42 +628,109 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 240--241
+[6]
+<../../output/figures/Exploration/convex_hull_max.png, id=38, 462.528pt x 346.896pt>
+File: ../../output/figures/Exploration/convex_hull_max.png Graphic file (type png)
+<use ../../output/figures/Exploration/convex_hull_max.png>
+Package pdftex.def Info: ../../output/figures/Exploration/convex_hull_max.png  used on input line 187.
+(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
+ [7 <../../output/figures/Exploration/convex_hull_max.png>] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
 
  []
 
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--254
 
  []
 
 [9]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 269.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 280.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 269.
- [10] (./description.aux)
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 280.
+ [10] (./Tables/assignment_meanings.tex
+
+./Tables/assignment_meanings.tex:1: LaTeX Error: Illegal character in array arg.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \begin{tabular}{L{20mm}L{50mm}}
+                                   
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Tables/assignment_meanings.tex:1: LaTeX Error: Illegal character in array arg.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \begin{tabular}{L{20mm}L{50mm}}
+                                   
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Tables/assignment_meanings.tex:1: LaTeX Error: Illegal character in array arg.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \begin{tabular}{L{20mm}L{50mm}}
+                                   
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Tables/assignment_meanings.tex:1: LaTeX Error: Illegal character in array arg.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \begin{tabular}{L{20mm}L{50mm}}
+                                   
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+)
+<../../output/figures/Exploration/avg_pleas_by_worktype_cond.png, id=57, 578.16pt x 505.89pt>
+File: ../../output/figures/Exploration/avg_pleas_by_worktype_cond.png Graphic file (type png)
+<use ../../output/figures/Exploration/avg_pleas_by_worktype_cond.png>
+Package pdftex.def Info: ../../output/figures/Exploration/avg_pleas_by_worktype_cond.png  used on input line 304.
+(pdftex.def)             Requested size: 352.31625pt x 308.27596pt.
+ [11]
+<../../output/figures/Exploration/avg_pleas_by_worktype.png, id=62, 650.43pt x 505.89pt>
+File: ../../output/figures/Exploration/avg_pleas_by_worktype.png Graphic file (type png)
+<use ../../output/figures/Exploration/avg_pleas_by_worktype.png>
+Package pdftex.def Info: ../../output/figures/Exploration/avg_pleas_by_worktype.png  used on input line 316.
+(pdftex.def)             Requested size: 352.31625pt x 274.02563pt.
+ [12 <../../output/figures/Exploration/avg_pleas_by_worktype_cond.png>] [13 <../../output/figures/Exploration/avg_pleas_by_worktype.png>] [14] (./description.aux)
 Package logreq Info: Writing requests to 'description.run.xml'.
 \openout1 = `description.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 9725 strings out of 492649
- 165053 string characters out of 6129622
- 596985 words of memory out of 5000000
- 13474 multiletter control sequences out of 15000+600000
+ 9747 strings out of 492649
+ 166022 string characters out of 6129622
+ 595011 words of memory out of 5000000
+ 13490 multiletter control sequences out of 15000+600000
  13888 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,12n,47p,1408b,1151s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,12n,47p,1653b,1151s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on description.pdf (10 pages, 562237 bytes).
+Output written on description.pdf (14 pages, 668521 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 82 compressed objects within 1 object stream
+ 135 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

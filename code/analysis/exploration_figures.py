@@ -119,9 +119,6 @@ def average_pleas_by_work_type():
     counts = sdf.groupby(['JudgeID','Date'])['Plea'].sum().reset_index()
     counts = counts.reset_index().rename(columns={'index':'DayCountyID'})
     cdf = load_calendar_data()
-    day_weights = cdf.groupby(['JudgeName','Date']).size().reset_index(name='N')
-    day_weights['Days'] = 1/day_weights['N']
-    cdf = cdf.merge(day_weights,on=['JudgeName','Date'])
 
     fdf = pd.merge(counts,cdf,on=['Date','JudgeID'],how='right')
     fdf.loc[fdf.Plea.isna(),'Plea'] = 0
@@ -169,6 +166,48 @@ def average_pleas_by_work_type_cond():
     filename = PROJECT_DIR + '/output/figures/Exploration/avg_pleas_by_worktype_cond.png'
     plt.savefig(filename)
 
+def work_type_summary_stats():
+    sdf = load_sentencing_data()
+    sdf = sdf.loc[sdf.Date.notna(),:]
+    counts = sdf.groupby(['JudgeID','Date'])[['Plea','Trial']].any().reset_index()
+    counts = counts.reset_index().rename(columns={'index':'DayCountyID'})
+    cdf = load_calendar_data()
+
+    fdf = pd.merge(counts,cdf,on=['JudgeID','Date'],how='right')
+    fdf.loc[fdf.Plea.isna(),'Plea'] = 0
+    fdf.loc[fdf.Trial.isna(),'Trial'] = 0
+    fdf['Plea'] = fdf.Plea.astype(int)
+    fdf['Trial'] = fdf.Trial.astype(int)
+    fdf['WeightedPlea'] = fdf['Plea']*fdf['Days']
+    fdf['WeightedTrial'] = fdf['Trial']*fdf['Days']
+    fdf['Empty'] = (fdf['Plea'] + fdf['Trial'] == 0).astype(int)
+    fdf['WeightedEmpty'] = fdf['Empty']*fdf['Days']
+
+    bad_worktypes = ['Orientation School','Medical','Family Death','Sick','Military']
+    counts = fdf.groupby('WorkType')[['WeightedPlea','WeightedTrial','WeightedEmpty','Days']].sum().reset_index()
+    counts['SharePlea'] = counts['WeightedPlea']/counts['Days']
+    counts['ShareTrial'] = counts['WeightedTrial']/counts['Days']
+    counts['ShareEmpty'] = counts['WeightedEmpty']/counts['Days']
+    counts['Share'] = counts['Days']/counts.Days.sum()
+    counts = counts.loc[~counts.WorkType.isin(bad_worktypes),['WorkType','Days','Share','SharePlea','ShareTrial','ShareEmpty']]
+
+    filename = PROJECT_DIR + '/output/tables/Exploration/work_type_summary_stats.csv'
+    counts.to_csv(filename,float_format="{:,.2f}".format,index=False)
+
+def work_type_distribution():
+    cdf = load_calendar_data()
+    day_counts = cdf.groupby('WorkType')['Days'].sum().reset_index()
+    day_counts['Share'] = day_counts['Days']/day_counts.Days.sum()
+    day_counts.sort_values('Share',ascending=False,inplace=True)
+
+    # plt.figure()
+    # plt.bar(day_counts.WorkType,day_counts.Share)
+    # plt.grid(axis='y')
+    # plt.xticks(rotation=90)
+    # plt.show()
+    filename = PROJECT_DIR + '/output/tables/Exploration/work_type_dist.csv'
+    counts.to_csv(filename,float_format="{:,.2f}".format,index=False)
+
 def daily_plea_hist_by_work_type():
     sdf = load_sentencing_data()
     sdf = sdf.loc[sdf.Date.notna(),:]
@@ -211,26 +250,139 @@ def county_trial_histograms():
                             ).reset_index(name='N').sort_values('N',ascending=False).groupby('JudgeID').head(1)
     home_counties.rename(columns={'County':'HomeCounty'},inplace=True)
     home_counties.drop(columns=['N'],inplace=True)
+
+    cdf = cdf.merge(home_counties,on='JudgeID',how='left')
     sdf = sdf.merge(home_counties,on='JudgeID',how='left')
-    sdf['HomeJudge'] = 'Non-Resident'
-    sdf.loc[sdf.HomeCounty == sdf.County,'HomeJudge'] = 'Resident'
-    trial_counts = sdf.loc[sdf.Trial == 1,:].groupby(['County','HomeJudge']).size().reset_index(name='N')
+    sdf['Residence'] = 'Non-Resident'
+    sdf.loc[sdf.HomeCircuit == sdf.Circuit,'Residence'] = 'Circuit'
+    sdf.loc[sdf.HomeCounty == sdf.County,'Residence'] = 'County'
+    trial_counts = sdf.loc[sdf.Trial == 1,:].groupby(['County','Residence']).size().reset_index(name='N')
 
     counties = counties.County.unique()
     county_groups = np.array_split(counties,np.arange(12,len(counties),12))
+    sns.set_style('whitegrid')
     i = 0
     for group in county_groups:
         fig, axes = plt.subplots(6,2,figsize=(8,8))
         for county, ax in zip(group,axes.ravel()):
             county_trials = trial_counts.loc[trial_counts.County == county,:]
-            ax.bar(county_trials.HomeJudge,county_trials.N,color=['b','r'])
+            if county_trials.empty: continue
+            g = sns.barplot(ax=ax,x='Residence',y='N',hue='Residence',
+                palette={'Non-Resident':'g','Circuit':'b','County':'r'},
+                data=county_trials,dodge=False)
+            g.legend_.remove()
             ax.set_title(county)
-            ax.grid(axis='y')
 
         plt.tight_layout()
         filename = PROJECT_DIR + '/output/figures/Exploration/county_trial_hist_{}.png'.format(i)
         plt.savefig(filename)
         i += 1
+
+def travel_probability_table():
+    sdf = load_sentencing_data()
+    cdf = load_calendar_data()
+    home_circuits = sdf.groupby(['JudgeID','HomeCircuit']).size().reset_index(name='N')
+    home_circuits['HomeCircuit'] = home_circuits.HomeCircuit.astype('Int64').astype(str)
+
+    cdf = cdf.merge(home_circuits[['JudgeID','HomeCircuit']],on='JudgeID',how='left')
+    counties = pd.read_csv(county_file)
+
+    home_counties = cdf.loc[(cdf.HomeCircuit == cdf.Circuit)&
+                            (cdf.County.isin(counties.County)),:].groupby(['JudgeID','County']).size(
+                            ).reset_index(name='N').sort_values('N',ascending=False).groupby('JudgeID').head(1)
+    home_counties.rename(columns={'County':'HomeCounty'},inplace=True)
+    home_counties.drop(columns=['N'],inplace=True)
+
+    cdf = cdf.merge(home_counties,on='JudgeID',how='left')
+    cdf['Travel'] = 'Non-Circuit'
+    cdf.loc[cdf.Circuit == cdf.HomeCircuit, 'Travel'] = 'Circuit'
+    cdf.loc[cdf.County == cdf.HomeCounty, 'Travel'] = 'County'
+    cdf.loc[cdf.WorkType == 'in chambers', 'Travel'] = 'County'
+
+    counts = cdf.groupby(['JudgeID','Travel']).size().reset_index(name='N')
+    counts['Share'] = counts.groupby('JudgeID')['N'].apply(lambda x: x/x.sum())
+
+    counts = counts.pivot(index='JudgeID',columns='Travel',values='Share')
+    counts = pd.DataFrame(counts.to_records())
+    counts = counts.loc[:,['JudgeID','County','Circuit','Non-Circuit']]
+
+    filename = PROJECT_DIR + '/output/tables/Exploration/travel_probability.csv'
+    counts.to_csv(filename,float_format="{:,.2f}".format,index=False)
+
+def lead_up_investigation(nonGS=False,window=2):
+    sdf = load_sentencing_data()
+    sdf = sdf.loc[sdf.Date.notna(),:]
+    counts = sdf.groupby(['JudgeID','Date'])[['Plea','Trial']].sum().reset_index()
+    cdf = load_calendar_data()
+
+    fdf = pd.merge(counts,cdf,on=['JudgeID','Date'],how='right')
+    fdf.loc[fdf.Plea.isna(),'Plea'] = 0
+    fdf.loc[fdf.Trial.isna(),'Trial'] = 0
+    fdf['Plea'] = fdf.Plea.astype(int)
+    fdf['Trial'] = fdf.Trial.astype(int)
+    fdf['Empty'] = (fdf['Plea'] + fdf['Trial'] == 0).astype(int)
+
+    if nonGS:
+        trials = fdf.loc[(fdf.Trial == 1) & (fdf.WorkType != 'GS'),['JudgeID','County','Week']]
+        kind = 'NonGS'
+    else:
+        trials = fdf.loc[fdf.Trial == 1,['JudgeID','County','Week']]
+        kind = 'All'
+    trials = trials.reset_index().rename(columns={'index':'TrialID'})
+    preceding_dates = []
+    weeks = [str(i) for i in range(1,53)]
+    for index, row in trials.iterrows():
+        week_num, week_year = row['Week'].split('-')
+        week_idx = int(week_num)-1
+        preceding_week_idx = [week_idx - i for i in range(1,window+1)]
+        year_adjustments = [idx < 0 for idx in preceding_week_idx]
+        years = [int(week_year)- 1*adj for adj in year_adjustments]
+        week_nums = [weeks[i] for i in preceding_week_idx]
+        new_weeks = [week_num+'-'+str(year) for week_num, year in zip(week_nums,years)]
+        new_dates = [{'JudgeID':row['JudgeID'],'Week':week,'Preceding':True,
+        'TrialID':row['TrialID'],'County':row['County']} for week in new_weeks]
+        preceding_dates += new_dates
+
+    pdf = pd.DataFrame(preceding_dates)
+
+    fdf = fdf.merge(pdf,on=['JudgeID','Week','County'],how='left')
+    empty_days = fdf.loc[(fdf.Empty == True) & (fdf.Preceding == True),:]
+    plt.figure()
+    empty_days.groupby('TrialID').size().plot(kind='hist')
+    filename = PROJECT_DIR + '/output/figures/Exploration/empty_days_hist_{}_{}.png'.format(kind,window)
+    plt.savefig(filename)
+
+    plt.figure()
+    empty_days.groupby('WorkType').size().reset_index(name='N').sort_values('N',ascending=False).plot(kind='bar',x='WorkType',y='N')
+    plt.xticks(rotation=45)
+    filename = PROJECT_DIR + '/output/figures/Exploration/empty_days_work_type_{}_{}.png'.format(kind,window)
+    plt.savefig(filename)
+    plt.close('all')
+
+def sentencing_events_by_work_type():
+    sdf = load_sentencing_data()
+    sdf = sdf.loc[sdf.Date.notna(),:]
+    cdf = load_calendar_data()
+
+    fdf = sdf.merge(cdf,on=['Date','JudgeID'])
+    fdf['Circuit_y'] = fdf.Circuit_y.replace({'na':np.nan})
+    fdf['Circuit_y'] = fdf.Circuit_y.astype('float').astype('Int64')
+    fdf.loc[fdf.County_x != fdf.County_y,'MatchType'] = 'Disagree'
+    fdf.loc[fdf.Circuit_x == fdf.Circuit_y,'MatchType'] = 'Circuit'
+    fdf.loc[fdf.County_x == fdf.County_y,'MatchType'] = 'Agree'
+    fdf.sort_values('MatchType',inplace=True)
+    fdf = fdf.drop_duplicates('EventID',keep='first')
+
+    fdf.loc[fdf.MatchType == 'Disagree','WorkType'] = 'Disagree'
+    counts = fdf.groupby(['WorkType'])[['Plea','Trial']].sum().reset_index()
+    counts['Plea Share'] = counts['Plea']/counts.Plea.sum()
+    counts['Trial Share'] = counts['Trial']/counts.Trial.sum()
+
+    counts = counts.loc[:,['WorkType','Plea Share','Trial Share']]
+
+    filename = PROJECT_DIR + '/output/tables/Exploration/events_by_work_type.csv'
+    counts.to_csv(filename,float_format="{:,.2f}".format,index=False)
+
 
 def main():
     average_pleas_by_work_type()

@@ -1,12 +1,12 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1}Data}{1}
+\contentsline {section}{\numberline {1}Data}{2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.1}Sentencing Data}{2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {1.1.1}Sample}{2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2}Judge Schedule Data}{2}
+\contentsline {subsection}{\numberline {1.2}Judge Schedule Data}{3}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {1.2.1}Parsing}{3}
 \defcounter {refsection}{0}\relax 
@@ -14,7 +14,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2}Model}{4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Estimation}{4}
+\contentsline {section}{\numberline {3}Estimation}{5}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1}Probability of Conviction at Trial - $\theta $}{5}
 \defcounter {refsection}{0}\relax 
@@ -28,42 +28,58 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.2.2}Proposed Changes}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}Defendant Cost of Trial - $c_d$}{5}
+\contentsline {subsection}{\numberline {3.3}Defendant Cost of Trial - $c_d$}{6}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.3.1}Proposed Changes}{6}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.4}Judge maximum and minimum plea - $l_j(\theta \tau ),u_j(\theta \tau )$}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.4.1}Sample}{6}
+\contentsline {paragraph}{Mathematical Description}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.4.2}Convex Hull Approach}{7}
+\contentsline {paragraph}{Implementation}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.4.1}Sample}{7}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.5}County Arrival Rates - $\lambda _c$}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6}Service Rates - $\mu _p,\mu _t$}{7}
+\contentsline {subsection}{\numberline {3.6}Service Rates - $\mu _p,\mu _t$}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.6.1}Samples}{7}
+\contentsline {subsubsection}{\numberline {3.6.1}Samples}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Plea MLE Sample}{7}
+\contentsline {paragraph}{Plea MLE Sample}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Plea Arrival Rate Sample}{7}
+\contentsline {paragraph}{Plea Arrival Rate Sample}{8}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Trial Rate Sample}{8}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.6.2}Estimation of $\mu _t$}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.6.3}Ad-hoc Algorithm for Joint Estimation of $\mu _t,\mu _p$}{8}
+\contentsline {subsubsection}{\numberline {3.6.3}Ad-hoc Algorithm for Joint Estimation of $\mu _t,\mu _p$}{9}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4}Simulation Plan}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{State Variables}{9}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Judge Assignments}{9}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Defendant Arrivals}{9}
+\contentsline {paragraph}{State Variables}{10}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Trial Scheduling}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Assigning judges to counties}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Defendant Arrivals}{10}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Defendant Choice}{10}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5}Next Steps}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A}Sample Selection for Service Rate Estimation}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.1}Sample Selection for estimation of $\theta $}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Days in which we observe sentencing events}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Days in which we don't observe sentencing events}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Decision}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Sentencing events with missing dates}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.2}Sample Selection for estimation of $\mu _t$}{14}

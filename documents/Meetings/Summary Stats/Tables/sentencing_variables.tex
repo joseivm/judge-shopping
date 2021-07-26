@@ -1,0 +1,28 @@
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Variable} & \textbf{Description}                                             \\ \hline
+date              & date of sentence                                                 \\ \hline
+county            & county where the sentence was decided                            \\ \hline
+circuit           & circuit court where sentence was decided                         \\ \hline
+judge             & numerical identifier for the judge who head the case             \\ \hline
+trial             & binary variable indicating whether the case went to trial        \\ \hline
+incarc         & binary variable indicating whether the sentence includes incarceration                \\ \hline
+statute           & the code of law that the offender broke (e.g. 56-05-0750(B)(1))  \\ \hline
+offdescr          & a description of the offense (e.g. driving under the influence)  \\ \hline
+counts            & numerical variable                                               \\ \hline
+statute\_first & the code of law that the offender broke, identical to 'statute' variable              \\ \hline
+offdescr\_first   & a description of the first offense, similar to offdescr          \\ \hline
+offtyped       & detailed categorical offense type, there are 10 values (rape, assault,   theft, etc). \\ \hline
+sgc\_offcode   & a numerical code that is used to determine the minimum sentence   multiplier          \\ \hline
+offtypeLibHyp     & categorical offense type (property, violent, drug, other)        \\ \hline
+offser            & offense seriousness, ranges from 1-8                             \\ \hline
+ccpnts            & numeric values between 1 and 68                                  \\ \hline
+ccpts99           & commitment score, an alternative measure of offense seriousness. \\ \hline
+crimhist          & defendant criminal history, takes 5 categorical values           \\ \hline
+ppoints           & numerical values between 0-1014                                  \\ \hline
+male              & binary variable indicating sex                                   \\ \hline
+age               & age of defendant at sentencing, ranges 15-81                     \\ \hline
+black             & binary variable indicating whether defendant is black            \\ \hline
+sentence          & length of sentence in months, ranges 0-11988                     \\ \hline
+expmin            & expected minimum sentence                                        \\ \hline
+\end{tabular}

@@ -53,7 +53,7 @@
     \end{table}
 
     \subsubsection{Sample}
-      In the raw data, there are 51 distinct judge ID's. However, according to \cite{hester2017conditional}, judge 1 is a combination of several judges that had few sentencing events. As a result, we exclude judge 1 from our sample. 1,551 observations are missing the date variable, so we exclued these from our sample as well. After these two exclusions, we are left with 16,034 observations.
+      In the raw data, there are 51 distinct judge ID's. However, according to \cite{hester2017conditional}, judge 1 is a combination of several judges that had few sentencing events. As a result, we exclude judge 1 from our sample, which leaves us with 17,516 observations.
 
   \subsection{Judge Schedule Data}
     This dataset contains information about each judge's assignment for each week of the fiscal year 2001. A snapshot of the calendar can be seen in figure \ref{fig-calendar}. Each assignment generally contains the county each judge was assigned to and the assignment type. The assignment type refers to the kind of cases a judge is scheduled to hear (civil or criminal).
@@ -173,20 +173,31 @@
   		\end{remark}
 
   \subsection{Judge maximum and minimum plea - $l_j(\theta \tau),u_j(\theta \tau)$}
-    We currently estimate this using a K-nearest neighbors approach, with $K=5$. Given a defendant's $\theta \tau$, we find the $K$ defendants in the judge's past pleas with the most similar values of $\theta \tau$. We then pick the minimum and maximum of these pleas to determine $l_j(\theta \tau),u_j(\theta \tau)$.
+    \paragraph{Mathematical Description} Recall that a key quantity for us is $\theta\tau$. Fix a judge, say judge $j$, and focus only on the pleas he sentenced. For each such case, we can calculate $\hat{\theta}\hat{\tau}$ using the estimates from the hurdle model described in Section (tbd). Suppose judge $j$ handled $I_j$ such cases, indexed by $i=1,\ldots,I_j$. Let $\mathcal{A}_j$ denote the convex hull of the origin $(0,0)$ and the points $(\hat{\theta}_i\hat{\tau}_i,s_i)$ for $i=1,\ldots,I_j$. Given the set $\mathcal{A}_j$, we impute $l_j(\cdot)$ and $u_j(\cdot)$ as functions of $\theta\tau$ as follows:
+		\begin{align*}
+			&l_j(\theta\tau) \,=\, \min\{y:(\theta\tau,y)\in\mathcal{A}_j \} \\
+			&u_j(\theta\tau) \,=\, \max\{y:(\theta\tau,y)\in\mathcal{A}_j \}
+		\end{align*}
+
+     \paragraph{Implementation}
+     Suppose we have the simplices of the convex hull for a specific judge, and that they are given as tuples of two points $((x_1,y_1),(x_2,y_2))$. Given a specific $\theta \tau$ we implement the convex hull approach by iterating over the simplices of the convex hull, and finding the two simplices on which $\theta \tau$ lies. In other words, we find the two line segments on the boundary of the convex hull whose domain includes $\theta \tau$. We then find the value of the convex hull boundary at $\theta \tau$ in each of these two line segments using linear interpolation. The largest (smallest) of these two values is $u_j (l_j)$. \textbf{Note:} we should think about what to do in cases where $\theta_1 \tau_1$ is not in the convex hull. Figure \ref{fig-convex-hull} contains an illustration:
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.65\textwidth]{../../output/figures/Exploration/convex_hull_max.png}
+      \caption{Example of convex hull approach. The convex hull is in blue, the two line segments containing $\theta \tau$ are in red, and the green line intercepts the x-axis at $\theta \tau$. The black dot would be the maximum plea.}
+      \label{fig-convex-hull}
+    \end{figure}
 
     \subsubsection{Sample}
-      Here, to estimate $l_j(\theta \tau),u_j(\theta \tau)$ for a specific judge, $j$, we use all of pleas judge $j$ heard. In other words, we exclude all of $j$'s trials.
-
-    \subsubsection{Convex Hull Approach}
-      I found a function that calculates the convex hull of a finite set of points. It calculates the extreme points and the simplices of the convex hull. The simplices are given as tuples of two points $((x_1,y_1),(x_2,y_2))$. One way to implement the convex hull approach could be to iterate over the simplices of the convex hull, and for each simplex get the points that lie on the line between the simplex's two points. We could then add these points to a list that contains all the points on the boundary of the convex hull. Then, given a specific $\theta_1 \tau_1$, we could find the 4 points on the boundary of the convex hull that have values of $\theta \tau$ closest to $\theta_1 \tau_1$. We could then take the average of the largest (in terms of y value) two points for $u_j$ and the average of the smallest (in terms of y value) two points for $l_j$. \textbf{Note:} we should think about what to do in cases where $\theta_1 \tau_1$ is not in the convex hull.
+      Here, to estimate $l_j(\theta \tau),u_j(\theta \tau)$ for a specific judge, $j$, we use all of pleas judge $j$ heard. In other words, we exclude all of $j$'s trials. We also add the point $(0,0)$ to the convex hull of every judge.
 
   \subsection{County Arrival Rates - $\lambda_c$}
     We set each county's arrival rate to be equal to the average number of sentencing events per week in that county, as observed in the data. Let $N_{cw}$ denote the number of sentencing events in county $c$ in week $w$, county $c$'s arrival rate is defined as: $\lambda_c = \frac{\sum_w N_{cw}}{\sum_w 1}$. We are currently using all pleas and all weeks in our data to calculate this.
 
   \subsection{Service Rates - $\mu_p,\mu_t$}
     \subsubsection{Samples}
-      \paragraph{Plea MLE Sample} This is the sample we use for the maximum likelihood estimation part of the ad-hoc algorithm. For this, we only consider pleas that happened on days which satisfy the following conditions:
+      \paragraph{Plea MLE Sample} This is the sample we use for the maximum likelihood estimation part of the ad-hoc algorithm. We also refer to this sample as "clean days". For this, we only consider pleas that happened on days which satisfy the following conditions:
         \begin{table}[H]
           \centering
           \caption{MLE Plea Sample Exclusion Criteria}
@@ -202,11 +213,11 @@
           Judge calendar assignment is of type "GS"           \\ \hline
           \end{tabular}
         \end{table}
-      \textbf{Sensitivity Analysis:} Add these one by one, similar to how controls are presented in Econ papers, and see how the quantity of interest changes as they are added. We could also add them in groups. Some of these correspond to outlier control and others to day cleanliness. We can run it with and without each group.
+      % \textbf{Sensitivity Analysis:} Add these one by one, similar to how controls are presented in Econ papers, and see how the quantity of interest changes as they are added. We could also add them in groups. Some of these correspond to outlier control and others to day cleanliness. We can run it with and without each group.
 
-      \paragraph{Plea Arrival Rate Sample} This is the sample we use to estimate the plea arrival rate, $\theta$ in the ad-hoc algorithm. The calculation of $\theta$ involves two quantities: the total number of pleas in the data, $N_p$, and $d$, the total number of judge days. $N_p$ currently includes all pleas in our data, and $d$ currently includes all days a judge has an assignment in the master calendar, except for holidays. \textbf{Proposed Changes:} None
+      \paragraph{Plea Arrival Rate Sample} This is the sample we use to estimate the plea arrival rate, $\theta$ in the ad-hoc algorithm. The calculation of $\theta$ involves two quantities: the total number of pleas in the data, $N_p$, and $d$, the total number of judge days. $d$ is meant to represent the number of days in which a judge could have been working on pleas. As a result, for $d$ we include all days of type "GS", and we include days of other work types in which we observe sentencing events. $N_p$ currently includes all pleas in our data.
 
-      \paragraph{Trial Rate Sample} This is the sample we use to estimate the trial service rate, $\mu_t$. When calculating the total number of days a judge was assigned to a county, we include all days he was assigned to that county in the master calendar (except for public holidays). We include all pleas and all trials when calculating the total number of pleas and trials the judge heard in that county. We focus on the judge-county combinations that satisfy the following conditions:
+      \paragraph{Trial Rate Sample} This is the sample we use to estimate the trial service rate, $\mu_t$. When calculating the total number of days a judge was assigned to a county, we include all days he had a "GS" assignment to that county in the master calendar, and all days of type non-GS in which we observe a sentencing event. Note, this is the same criteria as used above for the plea arrival rate sample. We include all pleas and all trials when calculating the total number of pleas and trials the judge heard in that county. We focus on the judge-county combinations that satisfy the following conditions:
 
         \begin{table}[H]
         \centering
@@ -219,7 +230,7 @@
         \end{tabular}
         \end{table}
 
-        \textbf{Proposed Changes:} Since our explicit assumption is that judges only spend time on pleas or trials when calculating the expected trial days and expected plea days, I think it might make sense to exclude days where it is unlikely that the judge was working on either of those two tasks, like when they are hearing civil cases. \textbf{Sensitivity Analysis:} We can think of our conditions as corresponding to day cleanliness and outlier control, and group them based on those criteria. We can then add them by group and see how our estimate evolves. If any criteria significantly changes the estimate, we should argue why it is a good criteria to have.
+        % \textbf{Proposed Changes:} Since our explicit assumption is that judges only spend time on pleas or trials when calculating the expected trial days and expected plea days, I think it might make sense to exclude days where it is unlikely that the judge was working on either of those two tasks, like when they are hearing civil cases. \textbf{Sensitivity Analysis:} We can think of our conditions as corresponding to day cleanliness and outlier control, and group them based on those criteria. We can then add them by group and see how our estimate evolves. If any criteria significantly changes the estimate, we should argue why it is a good criteria to have.
 
     \subsubsection{Estimation of $\mu_t$}
       \label{mu_t-estimation}
@@ -230,7 +241,7 @@
 				\hat{\mu}_t(k) \,=\, \frac{n_t(k)}{T(k) - n_p(k) / \hat{\mu}_p}.
 			\end{align*}
 
-      We observe that as the number of trials in a judge-county combination decreases, the variance of the $\hat{\mu}_t(k)$ estimates increase. Moreover, the $\hat{\mu}_t(k)$ estimates skew to the left as the number of trials decreases. This suggests that the judges in judge-county combinations with few trials spent some time idling. Therefore, to estimate the trail service rate, we focus on judge-county combinations for which we observe at least two trials, i.e., $k \in \tilde{\mathcal{K}} = \{k:k\in\mathcal{K},n_t(k)\geq 2\}$. These judge-county combinations account for $72\%$ of the trials in the dataset. The trial service rate estimate is
+      Therefore, to estimate the trail service rate, we focus on judge-county combinations for which we observe at least two trials, i.e., $k \in \tilde{\mathcal{K}} = \{k:k\in\mathcal{K},n_t(k)\geq 2\}$. These judge-county combinations account for $72\%$ of the trials in the dataset. The trial service rate estimate is
 			%
 			\begin{align*}
 				\hat{\mu}_t \,=\, \frac{ \sum\limits_{k\in\tilde{\mathcal{K}}} n_t(k) }{\sum\limits_{k\in\tilde{\mathcal{K}}} T(k) - \sum\limits_{k\in\tilde{\mathcal{K}}} n_p(k) / \hat{\mu}_p }.
@@ -244,7 +255,7 @@
       \noindent \textbf{Step 3:} Let $S_i = \min(D_i,X_i)$ denote the number of pleas sentenced for judge-day combination $i=1,...,N$. Here, we only include the judge-day combinations that satisfy our Plea MLE conditions. We have that
 			\begin{align*}
 				P(S_i = S) &= P(X_i = S | X_i \leq D_i) P(X_i \leq D_i) + P(D_i = S | X_i > D_i) P(X_i > D_i) \\
-          &= \frac{\theta^s e^{-\theta}}{s!}[1-\sum_{k=1}^{s-1}\frac{\mu_p^k e^{-\mu_p}}{k!}] + \frac{\mu_p^s e^{-\mu_p}}{s!}[1-\sum_{k=1}^s \frac{\theta^k e^{-\theta}}{k!}]
+          &= \frac{\theta^s e^{-\theta}}{s!}[1-\sum_{k=0}^{s-1}\frac{\mu_p^k e^{-\mu_p}}{k!}] + \frac{\mu_p^s e^{-\mu_p}}{s!}[1-\sum_{k=0}^s \frac{\theta^k e^{-\theta}}{k!}]
 			\end{align*}
 
       Let $L(\mu_p) = -\sum_{i=1}^N \log P(S_i = s)$. We then set
@@ -255,14 +266,14 @@
 
   \paragraph{State Variables} For each judge, we keep track of their capacity in each period, including future periods, as well as their current and future schedules. For each county, we keep track of the judges that are scheduled to appear in every time period (including future time periods), the county's backlogged defendants, and the number of defendants that choose to go to trial.
 
-  \paragraph{Judge Assignments} We first assign each county one judge for each time period. The time periods here are discrete and we think of them as weeks. There are 50 judges and 46 counties. Each week, will stay in his "home" county with probability $\eta$ and with probability $1-\eta$ he will be assigned to another county. We refer to judges that don't stay in their home county in a specific week as "rotating judges", and we refer to counties whose home judge will be rotating as "rotating counties". We assign rotating judges to rotating counties as follows: we randomly shuffle the rotating judges and the rotating counties are sorted alphabetically. So the rotating judge in the first position after shuffling would be assigned to county A, the second to County B, and so on.
+  \paragraph{Trial Scheduling} We would schedule trials in the following way. First, for each county, we would randomly select the trial dates. Then, in each time period, we would randomly assign judges to counties as described below, if a judge is assigned to county on a day in which a trial is scheduled in that county, then the judge would stay there for 2 weeks (or however long trials take). As a result, when assigning judges and counties for the next period, the county and the judge would be removed from the list of available counties/judges. In other words, the assignment for that judge and county would already be determined for the next week as well. We could then assign the remaining judges/counties using the method described below.
 
-  \paragraph{Defendant Arrivals} In each time period, $t$, we iterate over the different counties. We simulate defendant arrivals for a given county, $c$, as follows: first, we determine the number of arrivals, $n_{ct}$ by drawing from a Poisson distribution with mean $\lambda_c$. We then draw $n_{ct}$ defendants from county $c$'s past defendants. If the county has any backlogged defendants in that week, the backlogged defendants are added to that week's list of defendants, and are served first.
+  \paragraph{Assigning judges to counties} Here, we describe a method to assign a set of judges to a set of counties for T time periods. The time periods here are discrete and we think of them as weeks. We describe how the assignment would work for each individual week, but in practice all the assignments would be determined before running the rest of the simulation. Since there are 50 judges and 46 counties, in each period we would randomly draw, without replacement, 46 judges from the list of 50. Then, each of the selected judges will stay in his "home" county with probability $\eta$ and with probability $1-\eta$ he will be assigned to another county. We refer to judges that don't stay in their home county in a specific week as "rotating judges", and we refer to counties whose home judge will be rotating as "rotating counties". We assign rotating judges to rotating counties as follows: we randomly shuffle the rotating judges and the rotating counties are sorted alphabetically. So the rotating judge in the first position after shuffling would be assigned to county A, the second to County B, and so on.
 
-  \paragraph{Trial Scheduling} One potential difficulty in scheduling trials in the simulation is that trials are likely to require more than 5 days of processing time and they might need to be uninterrupted (this is something we can decide). Since our assignment of judges to counties is on a weekly schedule, we have to make sure that if a judge is scheduled to hear a trial in a county, he is there for at least as long as it will take to process the trial. We might have to decide whether to give priority to the process assigning judges to counties or to give priority to the process assigning judge trial dates. \textbf{Option 1:} One way we could assign trial dates is to first assign judges to counties as described above and only consider judges that are scheduled to be in a county for the necessary amount of time to process a trial. We could then just block the judge's capacity for these weeks in advance to represent trial times. We would have to double check that judges are assigned 'trial-length' stints sufficiently often to meet the trial demand we observe in the data. \textbf{Option 2:} Another option would be to first schedule the trials for the judges, and in those weeks deterministically assign judges to sit in a particular county (we could make this their home county). The remaining weeks in the schedule would be assigned as described above.
+  \paragraph{Defendant Arrivals} In each time period, $t$, we iterate over the different counties. We simulate defendant arrivals for a given county, $c$, as follows: first, we determine the number of arrivals, $n_{ct}$ by drawing from a Poisson distribution with mean $\lambda_c$. We then draw $n_{ct}$ defendants from county $c$'s past defendants as observed in the sentencing data. If the county has any backlogged defendants in that week, the backlogged defendants are added to that week's list of defendants, and are served first.
 
   \paragraph{Defendant Choice} Each defendant then chooses from the available judges that will be in
-  county $c$ in the next $r$ weeks. The defendant chooses the judge, $j$ that minimizes his expected cost, $\min(\theta \tau + c_d,u_j(\theta \tau)) + k(j)d$, where $c_d$ is the defendant's cost of going to trial, $k(j)$ is the number of time periods until judge $j$ will be in county $c$, and $d$ is the cost of delay. Once a defendant chooses a judge, we reduce that judge's capacity for the week in which he will sentence that defendant. If there are no judges available in the next $r$ weeks, the defendant is added to the county's list of backlogged defendants and processed again next week.
+  county $c$ in the next $r$ weeks. The defendant chooses the judge, $j$ that minimizes his expected cost, $\min(\theta \tau + c_d,u_j(\theta \tau)) + k(j)d$, where $c_d$ is the defendant's cost of going to trial, $k(j)$ is the number of time periods until judge $j$ will be in county $c$, and $d$ is the cost of delay. Once a defendant chooses a judge, we reduce that judge's capacity for the week in which he will sentence that defendant. If there are no judges available in the next $r$ weeks, the defendant is added to the county's list of backlogged defendants and processed again next week. If a defendant chooses to go to trial, that defendant disappears from the simulation.
 
 \section{Next Steps}
   \begin{itemize}
@@ -272,5 +283,49 @@
   \end{itemize}
 
  \printbibliography
+
+\appendix
+\section{Sample Selection for Service Rate Estimation}
+  \subsection{Sample Selection for estimation of $\theta$}
+    Our estimation procedure for $\mu_t$ relies on the assumption that judges only work on pleas or trials, and that they never idle. This is likely not true in general, so in order to estimate $\mu_t$, we have to identify the days in which it was likely that this held. We shall refer to these days as 'criminal days'. As mentioned in the data section, the calendar data includes information regarding the type of work the judge is expected to do in each assignment. We use this information to determine the days in which it is likely that a judge worked only on pleas or trials.
+    There are many different work types, and they are summarized below:
+    \begin{table}[H]
+      \centering
+      \caption{Assignment Type Acronyms}
+      \input{Tables/assignment_meanings.tex}
+    \end{table}
+
+    \paragraph{Days in which we observe sentencing events}
+      In theory, the only work type in which a judge can be reasonably expected to work exclusively on pleas and trials is GS. Furthermore, there are certain work types in which a judge shouldn't work on criminal cases, but we nevertheless observe criminal sentencing events. For example, the work type CP (common pleas) is for civil cases, but there are many sentencing events on CP days. This could be due to last minute changes that were not reflected in the calendar, or because the additional 'GS' acronym was omitted. To have a better sense of what days to include, we looked at the average number of pleas processed per day by each work type, conditional on observing a sentencing event on that day (see Figure \ref{fig-cond-avg}).
+      \begin{figure}[H]
+          \centering
+          \caption{Snapshot of Judge Calendar}
+          \label{fig-cond-avg}
+          \includegraphics[width=0.75\textwidth, keepaspectratio=true]{../../output/figures/Exploration/avg_pleas_by_worktype_cond.png}
+        \end{figure}
+
+      Note that some work types (e.g. GS CC) are fairly uncommon, and are more influenced by outliers. As can be seen from the figure, if we condition on observing a sentencing event, then most of the different work types have roughly similar numbers of pleas processed per day (between 4 and 6). The exceptions to this are CPNJ, CPNJ/PCR, and times where there is a conflict between the sentencing data and the calendar data.
+
+    \paragraph{Days in which we don't observe sentencing events}
+      For each assignment type, there are many days in which we don't observe any sentencing events. The next question we had to resolve was which of these days to include. To get a better sense of this, we looked at the average number of pleas processed per day for each work type. Note that this differs from the quantities computed in the previous section because these are not conditional on observing a sentencing event. In other words, this calculation includes days in which we don't observe any sentencing events.
+
+      \begin{figure}[H]
+          \centering
+          \caption{Snapshot of Judge Calendar}
+          \label{fig-cond}
+          \includegraphics[width=0.75\textwidth, keepaspectratio=true]{../../output/figures/Exploration/avg_pleas_by_worktype.png}
+        \end{figure}
+
+      As can be seen from the figure, the average pleas processed per day drops considerably for many work types, especially those that do not include the GS work type. This suggests that for a majority of these days, the judges do not work on criminal cases, and that the days seen in the sentencing data are rare exceptions.
+
+      \paragraph{Decision}
+        As previously mentioned, our institutional knowledge suggests that we should count all GS days as criminal days. In addition to this, and following from the previous discussion, we decided to count any day in which we observe a sentencing event as a criminal day as well. For example, if there are 200 GS CC days and we observe sentencing events on 50 of them, we would count those 50 days as 'criminal days'. \textbf{Note/Proposal:} We could include non-GS, but weigh them by their productivity relative to GS days. So for example, if a day of type 'GS CC' sees half the pleas as a GS day, each 'GS CC' day would be counted as half a criminal day.
+
+    \paragraph{Sentencing events with missing dates}
+      As previously mentioned, some sentencing events have missing dates. However, they still have information regarding the county and the judge. As a result, we can use the calendar data to narrow down the set of dates in which the sentencing event could have happened. Here, we are assuming that we would only observe a sentencing event for judge $j$ in county $c$ on day $d$ if $j$ was scheduled to be in $c$ on $d$ according to the master calendar. So, for example, if judge 1 has 1 event with a missing date in Aiken county, and he was only assigned to Aiken county on two days according to the master calendar, then the sentencing event must have happened on one of those two days.
+
+      We will deal with trials with missing dates by assigning them as evenly as possible over the days in which the judge was assigned to that county. Suppose judge $j$ has $m$ sentencing events with missing dates in county $c$. We first use the calendar data to determine what days judge $j$ was scheduled to be in county $c$. Let $n_{jc}$ be the number of days that judge $j$ was scheduled to be in county $c$ and let $D_{jc}$ be the set of all days in which judge $j$ was scheduled to be in county $c$. We would assign the missing events to days as evenly as possible, and then assign the remaining days randomly. So, for example, if judge $j$ has 5 events with missing dates in county $c$ and was only scheduled to be in $c$ on two days, then both of those days would get 2 events, and the remaining event would be assigned randomly to one of those two days. \textbf{Question:} Will the set of possible days be those where we already observed sentencing events? Or will it be any day in which the judge was scheduled to be in the county? \textbf{Note:} I think it might be a good idea to restrict $D_{jc}$ and $n_{jc}$ to be the set/number of days in which the judge processed at least one sentencing event, otherwise, we will probably end up with a lot of days with just $1/n_{jc}$ pleas sentenced, which would be excluded from our capacity calculations because we currently exclude days with less than 1 sentencing event. However, this would assume that if a plea is processed at all, it is more likely that it was processed on a day in which other pleas were also processed. We should probably try both ways.
+
+  \subsection{Sample Selection for estimation of $\mu_t$}
 
 \end{document}
