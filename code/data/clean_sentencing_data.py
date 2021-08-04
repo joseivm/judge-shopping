@@ -10,13 +10,14 @@ load_dotenv(dotenv_path)
 PROJECT_DIR = os.environ.get("PROJECT_DIR")
 
 # Input files/dirs
+processed_daily_schedule_file = PROJECT_DIR + '/data/processed/daily_schedule_data.csv'
 schedule_data_file = PROJECT_DIR + '/data/processed/weekly_schedule_data.csv'
 hester_data_file = PROJECT_DIR + '/data/raw/Sentencing Data/Hester_Data.csv'
 expected_min_sentece_file = PROJECT_DIR + '/data/raw/Sentencing Data/expected_min_sentence.dta'
 home_circuit_file = PROJECT_DIR + '/data/raw/JudgeNumber_ResidentCircuit.xlsx'
 
 # Output files
-processed_sentencing_data_file = PROJECT_DIR + '/data/raw/sentencing_data.csv'
+processed_sentencing_data_file = PROJECT_DIR + '/data/processed/sentencing_data.csv'
 judge_name_id_mapping_file = PROJECT_DIR + '/data/processed/judge_name_id_mapping.csv'
 
 clean_column_names = {'date':'Date','county':'County','circuit':'Circuit','judge':'JudgeID',
@@ -25,7 +26,9 @@ clean_column_names = {'date':'Date','county':'County','circuit':'Circuit','judge
 'realsent':'Sentence','trial':'Trial','incarc':'Incarceration','age':'Age','black':'Black',
 'crimhist':'CriminalHistory','expmin':'ExpMinSentence'
 }
-
+holidays = ['2000-09-04','2000-10-09','2000-11-10','2000-11-23','2000-12-24',
+'2000-12-25','2000-12-26','2001-01-01','2001-01-15','2001-02-19','2001-05-10',
+'2001-05-28','2001-07-04','2000-07-04']
 ##### Cleaning Functions #####
 def clean_sentencing_data():
     sdf = pd.read_csv(hester_data_file)
@@ -46,6 +49,7 @@ def clean_sentencing_data():
     sdf = sdf[cols_to_keep]
     sdf = add_exp_min_sentence(sdf)
     sdf = add_home_circuit(sdf)
+    sdf['Circuit'] = sdf.Circuit.astype(str)
     sdf.loc[sdf.Date.notna(),'Week'] = sdf.loc[sdf.Date.notna(),'Date'].apply(get_week)
     sdf.to_csv('data/processed/temp_sentencing_data.csv',index=False)
     sdf = add_judge_names(sdf)
@@ -138,6 +142,167 @@ def add_sex(df):
     df.loc[df.male == 1, 'Sex'] = 'Male'
     df.loc[df.male == 0, 'Sex'] = 'Female'
     return(df)
+
+def impute_missing_dates(sdf):
+    sdf = impute_missing_dates_county_GS(sdf)
+    sdf = impute_missing_dates_county_nonGS(sdf)
+    sdf = impute_missing_dates_circuit_GS(sdf)
+    sdf = impute_missing_dates_circuit_nonGS(sdf)
+    sdf = impute_missing_dates_non_matching(sdf)
+    return sdf
+
+def impute_missing_dates_county_GS(sdf):
+    cdf = load_calendar_data()
+    cdf['Date'] = pd.to_datetime(cdf['Date'])
+
+    pdf = cdf.merge(sdf[['EventID','JudgeID','County','Date']],on=['JudgeID','County','Date'],how='left')
+    pdf = pdf.loc[(pdf.EventID.notna()) | (pdf.WorkType == 'GS'),:]
+
+    mdf = sdf.loc[sdf.Date.isna(),['JudgeID','County','EventID']]
+    mdf = mdf.merge(pdf[['JudgeID','County']],on=['JudgeID','County'])
+    mdf = mdf.drop_duplicates('EventID')
+
+    groups = mdf.groupby(['JudgeID','County'])
+    imputed_observations = []
+    for name, group in groups:
+        judge_id, county = name
+        event_ids = group['EventID'].to_numpy()
+        possible_dates = pdf.loc[(pdf.JudgeID == judge_id) & (pdf.County == county),'Date'].unique()
+        assignments = np.array_split(event_ids,len(possible_dates))
+        for event_ids, date in zip(assignments,possible_dates):
+            obs = [{'EventID':event_id,'ImputedDate':date,'Imputation':'CountyGS'} for event_id in event_ids]
+            imputed_observations += obs
+
+    idf = pd.DataFrame(imputed_observations)
+    sdf = sdf.merge(idf,on=['EventID'],how='left')
+    sdf.loc[sdf.Date.notna(),'Imputation'] = 'None'
+    sdf.loc[sdf.Imputation == 'CountyGS','Date'] = sdf.loc[sdf.Imputation == 'CountyGS','ImputedDate']
+    return sdf
+
+def impute_missing_dates_county_nonGS(sdf):
+    cdf = load_calendar_data()
+    cdf['Date'] = pd.to_datetime(cdf['Date'])
+
+    pdf = cdf.merge(sdf[['EventID','JudgeID','County','Date']],on=['JudgeID','County','Date'],how='left')
+
+    mdf = sdf.loc[sdf.Date.isna(),['JudgeID','County','EventID']]
+    mdf = mdf.merge(pdf[['JudgeID','County']],on=['JudgeID','County'])
+    mdf = mdf.drop_duplicates('EventID')
+
+    groups = mdf.groupby(['JudgeID','County'])
+    imputed_observations = []
+    for name, group in groups:
+        judge_id, county = name
+        event_ids = group['EventID'].to_numpy()
+        possible_dates = pdf.loc[(pdf.JudgeID == judge_id) & (pdf.County == county),'Date'].unique()
+        assignments = np.array_split(event_ids,len(possible_dates))
+        for event_ids, date in zip(assignments,possible_dates):
+            obs = [{'EventID':event_id,'ImputedDateNonGS':date} for event_id in event_ids]
+            imputed_observations += obs
+
+    idf = pd.DataFrame(imputed_observations)
+    sdf = sdf.merge(idf,on=['EventID'],how='left')
+    sdf.loc[sdf.ImputedDateNonGS.notna(), 'Imputation'] = 'CountyNonGS'
+    sdf.loc[sdf.Imputation == 'CountyNonGS','Date'] = sdf.loc[sdf.Imputation == 'CountyNonGS','ImputedDateNonGS']
+    sdf.loc[sdf.Imputation == 'CountyNonGS','ImputedDate'] = sdf.loc[sdf.Imputation == 'CountyNonGS','ImputedDateNonGS']
+    sdf.drop(columns=['ImputedDateNonGS'],inplace=True)
+    return sdf
+
+def impute_missing_dates_circuit_GS(sdf):
+    cdf = load_calendar_data()
+    cdf['Date'] = pd.to_datetime(cdf['Date'])
+
+    pdf = cdf.merge(sdf[['EventID','JudgeID','Circuit','Date']],on=['JudgeID','Circuit','Date'],how='left')
+    pdf = pdf.loc[((pdf.EventID.notna()) | (pdf.WorkType == 'GS')) |
+                   (pdf.Assignment.str.contains('Cir',na=False) & pdf.WorkType.str.contains('GS',na=False)),:]
+
+    mdf = sdf.loc[sdf.Date.isna(),['JudgeID','Circuit','EventID']]
+    mdf = mdf.merge(pdf[['JudgeID','Circuit']],on=['JudgeID','Circuit'])
+    mdf = mdf.drop_duplicates('EventID')
+
+    groups = mdf.groupby(['JudgeID','Circuit'])
+    imputed_observations = []
+    for name, group in groups:
+        judge_id, circuit = name
+        event_ids = group['EventID']
+        possible_dates = pdf.loc[(pdf.JudgeID == judge_id) & (pdf.Circuit == circuit),'Date'].unique()
+        assignments = np.array_split(event_ids,len(possible_dates))
+        for event_ids, date in zip(assignments,possible_dates):
+            events = [{'EventID':event_id,'TempImputedDate':date} for event_id in event_ids]
+            imputed_observations += events
+
+    idf = pd.DataFrame(imputed_observations)
+    sdf = sdf.merge(idf,on=['EventID'],how='left')
+    sdf.loc[sdf.TempImputedDate.notna(), 'Imputation'] = 'CircuitGS'
+    sdf.loc[sdf.Imputation == 'CircuitGS','Date'] = sdf.loc[sdf.Imputation == 'CircuitGS','TempImputedDate']
+    sdf.loc[sdf.Imputation == 'CircuitGS','ImputedDate'] = sdf.loc[sdf.Imputation == 'CircuitGS','TempImputedDate']
+    sdf.drop(columns=['TempImputedDate'],inplace=True)
+    return sdf
+
+def impute_missing_dates_circuit_nonGS(sdf):
+    cdf = load_calendar_data()
+    cdf['Date'] = pd.to_datetime(cdf['Date'])
+
+    pdf = cdf.merge(sdf[['EventID','JudgeID','Circuit','Date']],on=['JudgeID','Circuit','Date'],how='left')
+
+    mdf = sdf.loc[sdf.Date.isna(),['JudgeID','Circuit','EventID']]
+    mdf = mdf.merge(pdf[['JudgeID','Circuit']],on=['JudgeID','Circuit'])
+    mdf = mdf.drop_duplicates('EventID')
+
+    groups = mdf.groupby(['JudgeID','Circuit'])
+    imputed_observations = []
+    for name, group in groups:
+        judge_id, circuit = name
+        event_ids = group['EventID']
+        possible_dates = pdf.loc[(pdf.JudgeID == judge_id) & (pdf.Circuit == circuit),'Date'].unique()
+        assignments = np.array_split(event_ids,len(possible_dates))
+        for event_ids, date in zip(assignments,possible_dates):
+            events = [{'EventID':event_id,'TempImputedDate':date} for event_id in event_ids]
+            imputed_observations += events
+
+    idf = pd.DataFrame(imputed_observations)
+    sdf = sdf.merge(idf,on=['EventID'],how='left')
+    sdf.loc[sdf.TempImputedDate.notna(), 'Imputation'] = 'CircuitNonGS'
+    sdf.loc[sdf.Imputation == 'CircuitNonGS','Date'] = sdf.loc[sdf.Imputation == 'CircuitNonGS','TempImputedDate']
+    sdf.loc[sdf.Imputation == 'CircuitNonGS','ImputedDate'] = sdf.loc[sdf.Imputation == 'CircuitNonGS','TempImputedDate']
+    sdf.drop(columns=['TempImputedDate'],inplace=True)
+    return sdf
+
+def impute_missing_dates_non_matching(sdf):
+    cdf = load_calendar_data()
+    cdf['Date'] = pd.to_datetime(cdf['Date'])
+
+    pdf = cdf.merge(sdf[['EventID','JudgeID','County','Date']],on=['JudgeID','County','Date'],how='left')
+    pdf = pdf.loc[(pdf.EventID.notna()) | (pdf.WorkType == 'GS'),:]
+
+    mdf = sdf.loc[sdf.Date.isna(),['JudgeID','EventID']]
+    mdf = mdf.merge(pdf[['JudgeID']],on=['JudgeID'])
+    mdf = mdf.drop_duplicates('EventID')
+
+    groups = mdf.groupby(['JudgeID'])
+    imputed_observations = []
+    for judge_id, group in groups:
+        event_ids = group['EventID'].to_numpy()
+        possible_dates = pdf.loc[(pdf.JudgeID == judge_id),'Date'].unique()
+        assignments = np.array_split(event_ids,len(possible_dates))
+        for event_ids, date in zip(assignments,possible_dates):
+            obs = [{'EventID':event_id,'TempImputedDate':date} for event_id in event_ids]
+            imputed_observations += obs
+
+    idf = pd.DataFrame(imputed_observations)
+    sdf = sdf.merge(idf,on=['EventID'],how='left')
+    sdf.loc[sdf.TempImputedDate.notna(),'Imputation'] = 'NonMatching'
+    sdf.loc[sdf.Imputation == 'NonMatching','Date'] = sdf.loc[sdf.Imputation == 'NonMatching','TempImputedDate']
+    sdf.loc[sdf.Imputation == 'NonMatching','ImputedDate'] = sdf.loc[sdf.Imputation == 'NonMatching','TempImputedDate']
+    sdf.drop(columns=['TempImputedDate'],inplace=True)
+    return sdf
+
+def load_calendar_data():
+    cdf = pd.read_csv(processed_daily_schedule_file)
+    mapping = pd.read_csv(judge_name_id_mapping_file)
+    cdf = cdf.merge(mapping,on='JudgeName')
+    cdf = cdf.loc[~cdf.Date.isin(holidays),:]
+    return cdf
 
 def main():
     sdf = clean_sentencing_data()

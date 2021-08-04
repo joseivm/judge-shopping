@@ -65,6 +65,6 @@ x_2_plots <- function(){
 }
 
 NLL_plots()
-# mu_t_plots()
-x_1_plots()
-x_2_plots()
+mu_t_plots()
+# x_1_plots()
+# x_2_plots()

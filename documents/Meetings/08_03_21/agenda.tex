@@ -1,0 +1,137 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+
+\title{August 3, 2021 Meeting Agenda}
+
+\begin{document}
+\maketitle
+
+\section{Imputation of Missing Dates}
+  Recall that the judge name and county are still available for sentencing events with missing dates. In general, when imputing the dates for sentencing events with missing dates, we first use the master calendar to determine a set of possible dates in which the sentencing event could have occurred, and then we assign the events with missing dates as evenly as possible across these possible dates. So, for example, if there are 5 sentencing events with missing dates and 4 potential dates, then each of the potential dates would get assigned a sentencing event, and one of the potential dates would get the remaining one.
+  Suppose that judge $j$ has $m$ sentencing events with missing dates in county $c$ (which is in circuit $k$). The set of potential dates we would assign these sentencing events to would evolve in the following way.
+
+  \begin{enumerate}
+    \item \textbf{Matching county, GS:} Days in the master calendar in which judge $j$ had a "GS" assignment to county $c$.
+    \item \textbf{Matching county, non-GS:} Days in the master calendar in which judge $j$ had a non-"GS" assignment to county $c$.
+    \item \textbf{Matching circuit, GS:} Days in the master calendar in which judge $j$ had a "GS" assignment to a county in circuit $k$.
+    \item \textbf{Matching circuit, non-GS:} Days in the master calendar in which judge $j$ had a non-"GS" assignment to a county in circuit $k$.
+    \item \textbf{Any day, GS:} Days in the master calendar in which judge $j$ had a "GS" assignment to any county.
+  \end{enumerate}
+
+  So, first, we would try to assign the sentencing events to days in the first set, if that set is empty, we would move on to the next set until we found a non-empty set. Using this method, we are able to impute the missing dates for all sentencing events with missing dates. Table \ref{tab:imp} contains the distribution of the imputation method used for pleas with missing dates.
+
+  \begin{table}[H]
+      \centering
+      \caption{Distribution of missing events}
+      \label{tab:imp}
+      \begin{tabular}{|l|l|}
+      \hline
+      \textbf{Imputation Group}   & \textbf{Share of Pleas} \\ \hline
+      1. Matching county, GS      & 0.825                   \\ \hline
+      2. Matching county, non-GS  & 0.024                   \\ \hline
+      3. Matching circuit, GS     & 0.02                    \\ \hline
+      4. Matching circuit, non-GS & 0.007                   \\ \hline
+      5. Any day, GS              & 0.12                    \\ \hline
+      \end{tabular}
+  \end{table}
+
+\section{Ad-hoc algorithm}
+  I incorporated the changes we discussed into the ad-hoc algorithm. In general, the changes consisted of
+  restricting our attention to days of type 'GS' and sentencing events that occurred on 'GS' days. This ended up drastically changing our estimates for $\mu_p$ and $\mu_t$. Our new estimates are $\mu_p: 56.5, \mu_t: 0.114$. I think what is driving this result is our estimation of $\theta$. Recall that $\theta$ is the average number of pleas per day. We previously calculated it by dividing the total number of pleas in the data by the total number of days judges worked, according to the calendar data. Now, we are calculating it by dividing the total number of pleas in the data which occurred on GS days by the total number of GS days. Since $\sim 90\%$ of pleas happen on GS days, our numerator doesn't change much, however, our denominator is reduced by about two thirds. Our previous estimate of $\theta$ was 1.9, our current estimate of $\theta$ is 6.95. I checked, and our changes didn't really affect our sample of "clean days" used for the MLE estimation of $\mu_p$. The following is the section from our document describing the ad-hoc algorithm, I have highlighted the changes in red. Table \ref{tab:sample} contains some of the ways in which our sample changed. 
+
+  \begin{table}[H]
+    \centering
+    \caption{Some of the sample changes}
+    \label{tab:sample}
+    \begin{tabular}{|l|l|l|}
+    \hline
+    \textbf{Quantity}          & \textbf{Old Sample} & \textbf{New Sample} \\ \hline
+    Total number of judge days & 12,313              & 4,160               \\ \hline
+    Total number of pleas      & 17,258              & 15,295              \\ \hline
+    Total number of trials     & 258                 & 225                 \\ \hline
+    \end{tabular}
+  \end{table}
+
+  \subsection{Service Rates - $\mu_p,\mu_t$}
+    \subsubsection{Samples}
+      \paragraph{Plea MLE Sample} \textcolor{red}{The only change to this sample was the addition of sentencing events with imputed dates, however, the shape and summary statistics of the distribution don't appear to have been changed at all.} This is the sample we use for the maximum likelihood estimation part of the ad-hoc algorithm. We also refer to this sample as "clean days". For this, we only consider pleas that happened on days which satisfy the following conditions:
+        \begin{table}[H]
+          \centering
+          \caption{MLE Plea Sample Exclusion Criteria}
+          \begin{tabular}{|l|}
+          \hline
+          \textbf{Condition}                                                  \\ \hline
+          No inconsistencies between sentencing data and calendar \\ \hline
+          Judge has at least 10 'clean' days                      \\ \hline
+          Judge has at least one sentencing event that day         \\ \hline
+          Judge is only assigned to one county that day          \\ \hline
+          Judge only sentences in one county that day             \\ \hline
+          Judge never has more than 35 sentencing events in this county \\ \hline
+          Judge calendar assignment is of type "GS"           \\ \hline
+          \end{tabular}
+        \end{table}
+      % \textbf{Sensitivity Analysis:} Add these one by one, similar to how controls are presented in Econ papers, and see how the quantity of interest changes as they are added. We could also add them in groups. Some of these correspond to outlier control and others to day cleanliness. We can run it with and without each group.
+
+      \paragraph{Plea Arrival Rate Sample} This is the sample we use to estimate the plea arrival rate, $\theta$ in the ad-hoc algorithm. The calculation of $\theta$ involves two quantities: the total number of pleas in the data which happened on GS days, $N_p$, and $d$, the total number of judge days of type "GS". $d$ is meant to represent the number of days in which a judge could have been working on pleas. As a result, for $d$ we only include days of type "GS". $N_p$ currently includes all pleas in our data which happened on 'GS' days. \textcolor{red}{This changed to only include GS days and pleas that happened on GS days}.
+
+      \paragraph{Trial Rate Sample} This is the sample we use to estimate the trial service rate, $\mu_t$. When calculating the total number of days a judge was assigned to a county, we include all days he had a "GS" assignment to that county in the master calendar. Note, this is the same criteria as used above for the plea arrival rate sample. We include all pleas and all trials that happened on GS days when calculating the total number of pleas and trials the judge heard in that county. \textcolor{red}{This changed to only include GS days and sentencing events that happened on GS days}. We focus on the judge-county combinations that satisfy the following conditions:
+
+        \begin{table}[H]
+        \centering
+        \caption{Trial Service Rate Exclusion Criteria}
+        \begin{tabular}{|l|}
+        \hline
+        \textbf{Condition}                                                       \\ \hline
+        Judge never has more than 35 sentencing events in one day in this county \\
+        Judge has at least 2 trial in this county                                \\ \hline
+        \end{tabular}
+        \end{table}
+
+        % \textbf{Proposed Changes:} Since our explicit assumption is that judges only spend time on pleas or trials when calculating the expected trial days and expected plea days, I think it might make sense to exclude days where it is unlikely that the judge was working on either of those two tasks, like when they are hearing civil cases. \textbf{Sensitivity Analysis:} We can think of our conditions as corresponding to day cleanliness and outlier control, and group them based on those criteria. We can then add them by group and see how our estimate evolves. If any criteria significantly changes the estimate, we should argue why it is a good criteria to have.
+
+    \subsubsection{Estimation of $\mu_t$}
+      \label{mu_t-estimation}
+      \textcolor{red}{The only change to this was the change in the sample used to calculate this. We now only use GS days, and sentencing events that happened on GS days to calculate this.}
+      To estimate the trial service rate, we focus on the judge-county combinations that satisfy the conditions described in the Trial Rate Sample paragraph. Let $K$ denote the number judge-county combinations satisfying these two conditions. We number these judge-county combinations $1,\ldots,K$ and define $\mathcal{K} = \{1,\ldots,K\}$. For judge-county $k \in \mathcal{K}$, we let $n_p(k)$ and $n_t(k)$ denote the total number of pleas and the total number of trials undertaken by this judge in this county on GS days. Similarly, for judge-county $k \in \mathcal{K}$, we let $T(k)$ denote the number of "GS" days this judge was assigned to this county.\footnote{In calculating $T(k)$ for $k\in\mathcal{K}$, we assume the judge divides his time equally among the county assignments to which he is assigned if he is assigned to multiple counties on a day.}
+
+			First, we assume the judges in judge-county combinations $k\in\mathcal{K}$ never idle. If this assumption was correct, the trial service rate of judge-county $k\in\mathcal{K}$ would be
+			\begin{align*}
+				\hat{\mu}_t(k) \,=\, \frac{n_t(k)}{T(k) - n_p(k) / \hat{\mu}_p}.
+			\end{align*}
+
+      Therefore, to estimate the trail service rate, we focus on judge-county combinations for which we observe at least two trials, i.e., $k \in \tilde{\mathcal{K}} = \{k:k\in\mathcal{K},n_t(k)\geq 2\}$. These judge-county combinations account for $72\%$ of the trials in the dataset. The trial service rate estimate is
+			%
+			\begin{align*}
+				\hat{\mu}_t \,=\, \frac{ \sum\limits_{k\in\tilde{\mathcal{K}}} n_t(k) }{\sum\limits_{k\in\tilde{\mathcal{K}}} T(k) - \sum\limits_{k\in\tilde{\mathcal{K}}} n_p(k) / \hat{\mu}_p }.
+			\end{align*}
+
+    \subsubsection{Ad-hoc Algorithm for Joint Estimation of $\mu_t,\mu_p$}
+      \textbf{Step 1:} \textcolor{red}{Here, our sample of total judge days changed to only include GS days. Our sample of trials also changed to only include trials that happened on GS days.} Let $\mu_p,\mu_t$ be the current values for the plea and trial service rate. As in the estimation of $\mu_t$, we are assuming judges only work on pleas and trials and do not idle. As a result, given the total number of trials heard on GS days, $N_{t}$, and the trial service rate, $\mu_t$, we can calculate the expected number of days judges spent working on trials (on GS days). The number of days judges spent on trials, $d_{t} = \frac{N_{t}}{\mu_t}$. We calculate the total number of GS days judges worked, $d$ using the assignments from the master calendar and removing public holidays. The expected number of days judges worked on pleas is then $d_{p} = d - d_{t}$. \\
+
+      \noindent \textbf{Step 2:} \textcolor{red}{Here, our sample changed to only include pleas that occurred on GS days and to only include GS days.} Let $N_p$ denote the total number of pleas in the data which occurred on GS days. We only include pleas that happened on GS days in our sample to calculate $N_p$. We set $\theta = \frac{N_p}{d_p}$. We model the plea demand for a judge as $D \sim \text{Poisson}(\theta)$, whereas the number of pleas a judge can serve in a day is denoted by $X$, $X \sim \text{Poisson}(\mu_p)$. \\
+
+      \noindent \textbf{Step 3:} \textcolor{red}{Here, the size of our sample of clean days increased slightly because of the imputation.} Let $S_i = \min(D_i,X_i)$ denote the number of pleas sentenced for judge-day combination $i=1,...,N$. Here, we only include the judge-day combinations that satisfy our Plea MLE conditions. We have that
+			\begin{align*}
+				P(S_i = S) &= P(X_i = S | X_i \leq D_i) P(X_i \leq D_i) + P(D_i = S | X_i > D_i) P(X_i > D_i) \\
+          &= \frac{\theta^s e^{-\theta}}{s!}[1-\sum_{k=0}^{s-1}\frac{\mu_p^k e^{-\mu_p}}{k!}] + \frac{\mu_p^s e^{-\mu_p}}{s!}[1-\sum_{k=0}^s \frac{\theta^k e^{-\theta}}{k!}]
+			\end{align*}
+
+      Let $L(\mu_p) = -\sum_{i=1}^N \log P(S_i = s)$. We then set
+			 $\mu_p = \argmin L(\mu_p)$ and calculate $\mu_t$ as described in \ref{mu_t-estimation}. Again, the judge-day combinations for which we are minimizing the negative log likelihood are those that satisfy our Plea MLE conditions. We use a gradient descent algorithm with the Adam Optimizer to find the value of $\mu_p$ that minimizes the NLL. This new value of $\mu_p$ will imply a new value of $\mu_t$, and so we repeat Steps 1-3 until we converge.
+
+\section{Remaining to-do's}
+  \begin{itemize}
+    \item Estimation of $c_d$, defendant cost of going to trial
+    \item Hurdle model estimation
+    \item Implementation of changes to simulation
+  \end{itemize}
+
+\end{document}

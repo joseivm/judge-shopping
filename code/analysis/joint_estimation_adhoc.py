@@ -24,9 +24,15 @@ holidays = ['2000-09-04','2000-10-09','2000-11-10','2000-11-23','2000-12-24',
 '2000-12-25','2000-12-26','2001-01-01','2001-01-15','2001-02-19','2001-05-10',
 '2001-05-28','2001-07-04','2000-07-04']
 
-def load_sentencing_data():
+##### Data Loading/Cleaning #####
+def load_sentencing_data(impute=False):
     sdf = pd.read_csv(processed_sentencing_data_file)
-    sdf = sdf.loc[sdf.Date.notna(),:]
+    sdf['Circuit'] = sdf.Circuit.astype(str)
+    if impute:
+        sdf = impute_missing_dates(sdf)
+        sdf = add_work_type(sdf)
+    else:
+        sdf = sdf.loc[sdf.Date.notna(),:]
     return sdf
 
 def load_calendar_data():
@@ -36,8 +42,170 @@ def load_calendar_data():
     cdf = cdf.loc[~cdf.Date.isin(holidays),:]
     return cdf
 
-def get_clean_day_pleas():
-    sdf = load_sentencing_data()
+def impute_missing_dates(sdf):
+    sdf = impute_missing_dates_county_GS(sdf)
+    sdf = impute_missing_dates_county_nonGS(sdf)
+    sdf = impute_missing_dates_circuit_GS(sdf)
+    sdf = impute_missing_dates_circuit_nonGS(sdf)
+    sdf = impute_missing_dates_non_matching(sdf)
+    return sdf
+
+def impute_missing_dates_county_GS(sdf):
+    cdf = load_calendar_data()
+    # cdf['Date'] = pd.to_datetime(cdf['Date'])
+
+    pdf = cdf.merge(sdf[['EventID','JudgeID','County','Date']],on=['JudgeID','County','Date'],how='left')
+    pdf = pdf.loc[(pdf.EventID.notna()) | (pdf.WorkType == 'GS'),:]
+
+    mdf = sdf.loc[sdf.Date.isna(),['JudgeID','County','EventID']]
+    mdf = mdf.merge(pdf[['JudgeID','County']],on=['JudgeID','County'])
+    mdf = mdf.drop_duplicates('EventID')
+
+    groups = mdf.groupby(['JudgeID','County'])
+    imputed_observations = []
+    for name, group in groups:
+        judge_id, county = name
+        event_ids = group['EventID'].to_numpy()
+        possible_dates = pdf.loc[(pdf.JudgeID == judge_id) & (pdf.County == county),'Date'].unique()
+        assignments = np.array_split(event_ids,len(possible_dates))
+        for event_ids, date in zip(assignments,possible_dates):
+            obs = [{'EventID':event_id,'ImputedDate':date,'Imputation':'CountyGS'} for event_id in event_ids]
+            imputed_observations += obs
+
+    idf = pd.DataFrame(imputed_observations)
+    sdf = sdf.merge(idf,on=['EventID'],how='left')
+    sdf.loc[sdf.Date.notna(),'Imputation'] = 'None'
+    sdf.loc[sdf.Imputation == 'CountyGS','Date'] = sdf.loc[sdf.Imputation == 'CountyGS','ImputedDate']
+    return sdf
+
+def impute_missing_dates_county_nonGS(sdf):
+    cdf = load_calendar_data()
+    # cdf['Date'] = pd.to_datetime(cdf['Date'])
+
+    pdf = cdf.merge(sdf[['EventID','JudgeID','County','Date']],on=['JudgeID','County','Date'],how='left')
+
+    mdf = sdf.loc[sdf.Date.isna(),['JudgeID','County','EventID']]
+    mdf = mdf.merge(pdf[['JudgeID','County']],on=['JudgeID','County'])
+    mdf = mdf.drop_duplicates('EventID')
+
+    groups = mdf.groupby(['JudgeID','County'])
+    imputed_observations = []
+    for name, group in groups:
+        judge_id, county = name
+        event_ids = group['EventID'].to_numpy()
+        possible_dates = pdf.loc[(pdf.JudgeID == judge_id) & (pdf.County == county),'Date'].unique()
+        assignments = np.array_split(event_ids,len(possible_dates))
+        for event_ids, date in zip(assignments,possible_dates):
+            obs = [{'EventID':event_id,'ImputedDateNonGS':date} for event_id in event_ids]
+            imputed_observations += obs
+
+    idf = pd.DataFrame(imputed_observations)
+    sdf = sdf.merge(idf,on=['EventID'],how='left')
+    sdf.loc[sdf.ImputedDateNonGS.notna(), 'Imputation'] = 'CountyNonGS'
+    sdf.loc[sdf.Imputation == 'CountyNonGS','Date'] = sdf.loc[sdf.Imputation == 'CountyNonGS','ImputedDateNonGS']
+    sdf.loc[sdf.Imputation == 'CountyNonGS','ImputedDate'] = sdf.loc[sdf.Imputation == 'CountyNonGS','ImputedDateNonGS']
+    sdf.drop(columns=['ImputedDateNonGS'],inplace=True)
+    return sdf
+
+def impute_missing_dates_circuit_GS(sdf):
+    cdf = load_calendar_data()
+    # cdf['Date'] = pd.to_datetime(cdf['Date'])
+
+    pdf = cdf.merge(sdf[['EventID','JudgeID','Circuit','Date']],on=['JudgeID','Circuit','Date'],how='left')
+    pdf = pdf.loc[((pdf.EventID.notna()) | (pdf.WorkType == 'GS')) |
+                   (pdf.Assignment.str.contains('Cir',na=False) & pdf.WorkType.str.contains('GS',na=False)),:]
+
+    mdf = sdf.loc[sdf.Date.isna(),['JudgeID','Circuit','EventID']]
+    mdf = mdf.merge(pdf[['JudgeID','Circuit']],on=['JudgeID','Circuit'])
+    mdf = mdf.drop_duplicates('EventID')
+
+    groups = mdf.groupby(['JudgeID','Circuit'])
+    imputed_observations = []
+    for name, group in groups:
+        judge_id, circuit = name
+        event_ids = group['EventID']
+        possible_dates = pdf.loc[(pdf.JudgeID == judge_id) & (pdf.Circuit == circuit),'Date'].unique()
+        assignments = np.array_split(event_ids,len(possible_dates))
+        for event_ids, date in zip(assignments,possible_dates):
+            events = [{'EventID':event_id,'TempImputedDate':date} for event_id in event_ids]
+            imputed_observations += events
+
+    idf = pd.DataFrame(imputed_observations)
+    sdf = sdf.merge(idf,on=['EventID'],how='left')
+    sdf.loc[sdf.TempImputedDate.notna(), 'Imputation'] = 'CircuitGS'
+    sdf.loc[sdf.Imputation == 'CircuitGS','Date'] = sdf.loc[sdf.Imputation == 'CircuitGS','TempImputedDate']
+    sdf.loc[sdf.Imputation == 'CircuitGS','ImputedDate'] = sdf.loc[sdf.Imputation == 'CircuitGS','TempImputedDate']
+    sdf.drop(columns=['TempImputedDate'],inplace=True)
+    return sdf
+
+def impute_missing_dates_circuit_nonGS(sdf):
+    cdf = load_calendar_data()
+    # cdf['Date'] = pd.to_datetime(cdf['Date'])
+
+    pdf = cdf.merge(sdf[['EventID','JudgeID','Circuit','Date']],on=['JudgeID','Circuit','Date'],how='left')
+
+    mdf = sdf.loc[sdf.Date.isna(),['JudgeID','Circuit','EventID']]
+    mdf = mdf.merge(pdf[['JudgeID','Circuit']],on=['JudgeID','Circuit'])
+    mdf = mdf.drop_duplicates('EventID')
+
+    groups = mdf.groupby(['JudgeID','Circuit'])
+    imputed_observations = []
+    for name, group in groups:
+        judge_id, circuit = name
+        event_ids = group['EventID']
+        possible_dates = pdf.loc[(pdf.JudgeID == judge_id) & (pdf.Circuit == circuit),'Date'].unique()
+        assignments = np.array_split(event_ids,len(possible_dates))
+        for event_ids, date in zip(assignments,possible_dates):
+            events = [{'EventID':event_id,'TempImputedDate':date} for event_id in event_ids]
+            imputed_observations += events
+
+    idf = pd.DataFrame(imputed_observations)
+    sdf = sdf.merge(idf,on=['EventID'],how='left')
+    sdf.loc[sdf.TempImputedDate.notna(), 'Imputation'] = 'CircuitNonGS'
+    sdf.loc[sdf.Imputation == 'CircuitNonGS','Date'] = sdf.loc[sdf.Imputation == 'CircuitNonGS','TempImputedDate']
+    sdf.loc[sdf.Imputation == 'CircuitNonGS','ImputedDate'] = sdf.loc[sdf.Imputation == 'CircuitNonGS','TempImputedDate']
+    sdf.drop(columns=['TempImputedDate'],inplace=True)
+    return sdf
+
+def impute_missing_dates_non_matching(sdf):
+    cdf = load_calendar_data()
+    # cdf['Date'] = pd.to_datetime(cdf['Date'])
+
+    pdf = cdf.merge(sdf[['EventID','JudgeID','County','Date']],on=['JudgeID','County','Date'],how='left')
+    pdf = pdf.loc[(pdf.EventID.notna()) | (pdf.WorkType == 'GS'),:]
+
+    mdf = sdf.loc[sdf.Date.isna(),['JudgeID','EventID']]
+    mdf = mdf.merge(pdf[['JudgeID']],on=['JudgeID'])
+    mdf = mdf.drop_duplicates('EventID')
+
+    groups = mdf.groupby(['JudgeID'])
+    imputed_observations = []
+    for judge_id, group in groups:
+        event_ids = group['EventID'].to_numpy()
+        possible_dates = pdf.loc[(pdf.JudgeID == judge_id),'Date'].unique()
+        assignments = np.array_split(event_ids,len(possible_dates))
+        for event_ids, date in zip(assignments,possible_dates):
+            obs = [{'EventID':event_id,'TempImputedDate':date} for event_id in event_ids]
+            imputed_observations += obs
+
+    idf = pd.DataFrame(imputed_observations)
+    sdf = sdf.merge(idf,on=['EventID'],how='left')
+    sdf.loc[sdf.TempImputedDate.notna(),'Imputation'] = 'NonMatching'
+    sdf.loc[sdf.Imputation == 'NonMatching','Date'] = sdf.loc[sdf.Imputation == 'NonMatching','TempImputedDate']
+    sdf.loc[sdf.Imputation == 'NonMatching','ImputedDate'] = sdf.loc[sdf.Imputation == 'NonMatching','TempImputedDate']
+    sdf.drop(columns=['TempImputedDate'],inplace=True)
+    return sdf
+
+def add_work_type(sdf):
+    cdf = load_calendar_data()
+    cdf_cols = ['JudgeID','Date','County','WorkType']
+    sdf = sdf.merge(cdf[cdf_cols],on=['JudgeID','Date','County'],how='left')
+    sdf.loc[sdf.WorkType.isna(),'WorkType'] = 'Disagree'
+    return sdf
+
+##### Clean Day Filtering #####
+def get_clean_day_pleas(impute=False):
+    sdf = load_sentencing_data(impute)
     sdf = remove_conflicting_days(sdf)
     sdf = remove_non_GS_days(sdf)
     sdf = remove_multi_county_days(sdf)
@@ -45,7 +213,7 @@ def get_clean_day_pleas():
     sdf = remove_judges_with_few_clean_days(sdf)
     counts = sdf.groupby(['JudgeID','County','Date'])[['Plea']].sum().reset_index()
     counts.loc[counts.Plea > 17,'Plea'] = 17
-    return counts['Plea'].to_numpy()
+    return counts['Plea']
 
 def remove_non_missing_judges(sdf):
     all_judges = sdf.JudgeID.unique()
@@ -70,7 +238,7 @@ def remove_conflicting_days(sdf):
 
 def remove_non_GS_days(sdf):
     cdf = load_calendar_data()
-    gs_days = cdf.loc[cdf.Assignment.str.contains('GS$',regex=True),['JudgeName','Date']]
+    gs_days = cdf.loc[cdf.WorkType == 'GS',['JudgeName','Date']]
     sdf = sdf.merge(gs_days,on=['JudgeName','Date'])
     return sdf
 
@@ -94,14 +262,42 @@ def remove_judges_with_few_clean_days(sdf,threshold=10):
     sdf = sdf.merge(good_judges,on=['JudgeName','Date'])
     return sdf
 
-def get_judge_days():
+##### Samples #####
+def get_judge_days(GS=False):
     cdf = load_calendar_data()
-    day_weights = cdf.groupby(['JudgeName','Date']).size().reset_index(name='N')
-    day_weights['Days'] = 1/day_weights['N']
-    cdf = cdf.merge(day_weights,on=['JudgeName','Date'])
+    if GS:
+        cdf = cdf.loc[cdf.WorkType == 'GS',:]
     judge_days = cdf['Days'].sum()
     return judge_days
 
+def get_judge_county_event_counts(GS=False):
+    sdf = load_sentencing_data()
+    sdf = trial_capacity_sample(sdf)
+    if GS:
+        sdf = sdf.loc[sdf.WorkType == 'GS',:]
+    counts = sdf.groupby(['JudgeName','JudgeID','County'])[['Plea','Trial']].sum().reset_index()
+    return counts
+
+def trial_capacity_sample(sdf):
+    daily_sentences = sdf.groupby(['Date','JudgeName','County']).size().reset_index(name="N")
+    outlier_jcs = daily_sentences.loc[daily_sentences['N'] >= 35,['JudgeName','County']].drop_duplicates()
+    outlier_jcs['Outlier'] = True
+    trial_jcs = sdf.loc[sdf.Trial == 1,['JudgeName','County']].drop_duplicates()
+
+    sample = trial_jcs.merge(outlier_jcs,on=['JudgeName','County'],how='left')
+    sample = sample.loc[~(sample.Outlier == True),['JudgeName','County']].drop_duplicates()
+
+    sdf = sdf.merge(sample,on=['JudgeName','County'])
+    return sdf
+
+def get_day_assignments(GS=False):
+    cdf = load_calendar_data()
+    if GS:
+        cdf = cdf.loc[cdf.WorkType == 'GS',:]
+    assigned_days = cdf.groupby(['JudgeName','County'])['Days'].sum().reset_index()
+    return assigned_days
+
+##### Estimation/Optimization Functions #####
 def calculate_NLL(pleas,theta,mu_p):
     NLL = 0
     for s in pleas:
@@ -136,12 +332,15 @@ def make_NLL_data(mu_t,opt_mu_p):
     data = pd.DataFrame({'MuP':mu_ps,'NLL':NLLS,'MuT':mu_t,'OptMuP':opt_mu_p,'BFMuP':brute_force_min})
     return data
 
-def optimize_mu_p(mu_t,mu_p,sdf,judge_days,pleas,iters=100,lr=0.02):
+def optimize_mu_p(mu_t,mu_p,sdf,judge_days,pleas,iters=100,lr=0.02,GS=False):
+    if GS:
+        sdf = sdf.loc[sdf.WorkType == 'GS']
     num_trials = sdf['Trial'].sum()
     trial_days = num_trials/mu_t
     plea_days = judge_days - trial_days
     theta = sdf['Plea'].sum()/plea_days
     mu_p = torch.tensor([mu_p],requires_grad=True)
+    print("Trials: {}, Trial Days: {}, Pleas: {}, Plea Days: {}, Theta: {}".format(num_trials,trial_days,sdf.Plea.sum(),plea_days,theta))
     optimizer = torch.optim.AdamW([mu_p],lr=lr)
     # scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer,20,0.01)
     min_grad = math.inf
@@ -174,9 +373,9 @@ def optimize_mu_p(mu_t,mu_p,sdf,judge_days,pleas,iters=100,lr=0.02):
     print(min_grad)
     return best_mu.item()
 
-def estimate_mu_t(mu_p):
-    counts = get_judge_county_event_counts()
-    assigned_days = get_day_assignments()
+def estimate_mu_t(mu_p,GS=False):
+    counts = get_judge_county_event_counts(GS)
+    assigned_days = get_day_assignments(GS)
     df = counts.merge(assigned_days,on=['JudgeName','County'])
     df['PleaDays'] = df['Plea']/mu_p
     df = df[df.Trial >=2]
@@ -192,36 +391,13 @@ def make_mu_t_data(mu_p):
     df['MuT'] = df['Trial']/df['TrialDays']
     return df
 
-def get_judge_county_event_counts():
-    sdf = load_sentencing_data()
-    sdf = trial_capacity_sample(sdf)
-    counts = sdf.groupby(['JudgeName','JudgeID','County'])[['Plea','Trial']].sum().reset_index()
-    return counts
+##### Debugging Functions #####
 
-def trial_capacity_sample(sdf):
-    daily_sentences = sdf.groupby(['Date','JudgeName','County']).size().reset_index(name="N")
-    outlier_jcs = daily_sentences.loc[daily_sentences['N'] >= 35,['JudgeName','County']].drop_duplicates()
-    outlier_jcs['Outlier'] = True
-    trial_jcs = sdf.loc[sdf.Trial == 1,['JudgeName','County']].drop_duplicates()
-
-    sample = trial_jcs.merge(outlier_jcs,on=['JudgeName','County'],how='left')
-    sample = sample.loc[~(sample.Outlier == True),['JudgeName','County']].drop_duplicates()
-
-    sdf = sdf.merge(sample,on=['JudgeName','County'])
-    return sdf
-
-def get_day_assignments():
-    cdf = load_calendar_data()
-    day_weights = cdf.groupby(['JudgeName','Date']).size().reset_index(name='N')
-    day_weights['Days'] = 1/day_weights['N']
-    cdf = cdf.merge(day_weights,on=['JudgeName','Date'])
-    assigned_days = cdf.groupby(['JudgeName','County'])['Days'].sum().reset_index()
-    return assigned_days
-
-def ad_hoc_algorithm(init_mu_t,init_mu_p,tolerance=0.05,opt_iter=100):
+##### Main Function #####
+def ad_hoc_algorithm(init_mu_t,init_mu_p,tolerance=0.05,opt_iter=100,GS=False):
     sdf = load_sentencing_data()
     pleas = get_clean_day_pleas()
-    judge_days = get_judge_days()
+    judge_days = get_judge_days(GS)
     prev_mu_t = 0
     prev_mu_p = 0
     mu_t = init_mu_t
@@ -231,16 +407,16 @@ def ad_hoc_algorithm(init_mu_t,init_mu_p,tolerance=0.05,opt_iter=100):
     while (abs(mu_t - prev_mu_t) > tolerance) or (abs(mu_p - prev_mu_p) > tolerance):
         prev_mu_p = mu_p
         prev_mu_t = mu_t
-        mu_p = optimize_mu_p(prev_mu_t,prev_mu_p,sdf,judge_days,pleas,opt_iter,0.02)
-        mu_t = estimate_mu_t(mu_p)
+        mu_p = optimize_mu_p(prev_mu_t,prev_mu_p,sdf,judge_days,pleas,opt_iter,0.02,GS)
+        mu_t = estimate_mu_t(mu_p,GS)
 
-        NLL_data = make_NLL_data(prev_mu_t,prev_mu_p)
-        NLL_filename = optimization_data_folder + 'opt_data_{}.csv'.format(iters)
-        NLL_data.to_csv(NLL_filename,index=False)
-
-        mu_t_data = make_mu_t_data(prev_mu_p)
-        mu_t_filename = optimization_data_folder + 'mut_data_{}.csv'.format(iters)
-        mu_t_data.to_csv(mu_t_filename,index=False)
+        # NLL_data = make_NLL_data(prev_mu_t,prev_mu_p)
+        # NLL_filename = optimization_data_folder + 'opt_data_{}.csv'.format(iters)
+        # NLL_data.to_csv(NLL_filename,index=False)
+        #
+        # mu_t_data = make_mu_t_data(prev_mu_p)
+        # mu_t_filename = optimization_data_folder + 'mut_data_{}.csv'.format(iters)
+        # mu_t_data.to_csv(mu_t_filename,index=False)
 
         param_values.append({'MuP':mu_p,'MuT':mu_t,'Iteration':iters})
         iters += 1
