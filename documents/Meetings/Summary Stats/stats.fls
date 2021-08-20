@@ -129,6 +129,12 @@ INPUT ../../../output/figures/Exploration/avg_pleas_by_worktype_cond.png
 INPUT ../../../output/figures/Exploration/avg_pleas_by_worktype.png
 INPUT ../../../output/figures/Exploration/avg_pleas_by_worktype.png
 INPUT ../../../output/figures/Exploration/avg_pleas_by_worktype.png
+INPUT ../../../output/figures/Exploration/fraction_gs_clean.png
+INPUT ../../../output/figures/Exploration/fraction_gs_clean.png
+INPUT ../../../output/figures/Exploration/fraction_gs_clean.png
+INPUT ../../../output/figures/Exploration/daily_plea_hist_by_broad_work_type.png
+INPUT ../../../output/figures/Exploration/daily_plea_hist_by_broad_work_type.png
+INPUT ../../../output/figures/Exploration/daily_plea_hist_by_broad_work_type.png
 INPUT stats.aux
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb

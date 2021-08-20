@@ -1,17 +1,17 @@
 [0] Config.pm:302> INFO - This is Biber 2.11
 [0] Config.pm:305> INFO - Logfile is 'description.blg'
-[42] biber-darwin:313> INFO - === Wed Jun 30, 2021, 09:42:44
-[88] Biber.pm:371> INFO - Reading 'description.bcf'
-[206] Biber.pm:857> INFO - Found 2 citekeys in bib section 0
-[219] Biber.pm:3976> INFO - Processing section 0
-[234] Biber.pm:4136> INFO - Looking for bibtex format file 'main.bib' for section 0
-[236] bibtex.pm:1500> INFO - LaTeX decoding ...
-[247] bibtex.pm:1316> INFO - Found BibTeX data source 'main.bib'
-[248] Utils.pm:193> WARN - Duplicate entry key: 'hester2017judicial' in file 'main.bib', skipping ...
-[279] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[279] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[280] Biber.pm:3804> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[280] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
-[283] bbl.pm:617> INFO - Writing 'description.bbl' with encoding 'UTF-8'
-[285] bbl.pm:720> INFO - Output to description.bbl
-[285] Biber.pm:110> INFO - WARNINGS: 1
+[72] biber-darwin:313> INFO - === Tue Aug 17, 2021, 22:37:24
+[154] Biber.pm:371> INFO - Reading 'description.bcf'
+[279] Biber.pm:857> INFO - Found 2 citekeys in bib section 0
+[293] Biber.pm:3976> INFO - Processing section 0
+[307] Biber.pm:4136> INFO - Looking for bibtex format file 'main.bib' for section 0
+[308] bibtex.pm:1500> INFO - LaTeX decoding ...
+[320] bibtex.pm:1316> INFO - Found BibTeX data source 'main.bib'
+[322] Utils.pm:193> WARN - Duplicate entry key: 'hester2017judicial' in file 'main.bib', skipping ...
+[362] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[362] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[362] Biber.pm:3804> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[362] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[369] bbl.pm:617> INFO - Writing 'description.bbl' with encoding 'UTF-8'
+[373] bbl.pm:720> INFO - Output to description.bbl
+[373] Biber.pm:110> INFO - WARNINGS: 1

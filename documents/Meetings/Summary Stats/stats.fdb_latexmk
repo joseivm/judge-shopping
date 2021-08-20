@@ -1,7 +1,9 @@
 # Fdb version 3
-["pdflatex"] 1627109101 "stats.tex" "stats.pdf" "stats" 1627109102
+["pdflatex"] 1629356856 "stats.tex" "stats.pdf" "stats" 1629356858
   "../../../output/figures/Exploration/avg_pleas_by_worktype.png" 1626287582 39577 a7ec6b492fb4ace01afb771c8c2921ae ""
   "../../../output/figures/Exploration/avg_pleas_by_worktype_cond.png" 1626287583 33415 59a52fb451fdc099087f64f1470edfc0 ""
+  "../../../output/figures/Exploration/daily_plea_hist_by_broad_work_type.png" 1629356851 38838 98f72c5376b8ad064d6eff1fd54c798c ""
+  "../../../output/figures/Exploration/fraction_gs_clean.png" 1629356617 38365 757f6018bf32c6186268d3b22982aa7d ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -75,9 +77,9 @@
   "/usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt" 1523934516 4220280 10cab8fbd7c5a7c52aba9917e190d018 ""
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
   "Tables/assignment_meanings.tex" 1627108963 382 07655cbce98f07a7910b1738cf0cbf69 ""
-  "stats.aux" 1627109102 1411 10c0006de2e99bbc0641359f9745f76b ""
-  "stats.tex" 1627109099 7161 5e18b38d8256a4d661aa91fd667b786e ""
+  "stats.aux" 1629356857 1949 24a178287912abb3072aecf4b9fb9666 ""
+  "stats.tex" 1629355788 7784 7d5adbe8c8a020b46bf904837491ab48 ""
   (generated)
-  "stats.pdf"
   "stats.aux"
+  "stats.pdf"
   "stats.log"

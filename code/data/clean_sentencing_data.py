@@ -29,6 +29,7 @@ clean_column_names = {'date':'Date','county':'County','circuit':'Circuit','judge
 holidays = ['2000-09-04','2000-10-09','2000-11-10','2000-11-23','2000-12-24',
 '2000-12-25','2000-12-26','2001-01-01','2001-01-15','2001-02-19','2001-05-10',
 '2001-05-28','2001-07-04','2000-07-04']
+
 ##### Cleaning Functions #####
 def clean_sentencing_data():
     sdf = pd.read_csv(hester_data_file)
@@ -45,7 +46,7 @@ def clean_sentencing_data():
 
     cols_to_keep = ['Date','County','Circuit','Counts','OffenseSeriousness','OffenseCode',
     'OffenseType','Sentence','Statute','JudgeID','Trial','Incarceration','Age',
-    'Black','EventID','CriminalHistory']
+    'Black','EventID','CriminalHistory','Sex']
     sdf = sdf[cols_to_keep]
     sdf = add_exp_min_sentence(sdf)
     sdf = add_home_circuit(sdf)

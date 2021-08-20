@@ -12,7 +12,7 @@
 \maketitle
 
 \section{Work Type Overview}
-Judge calendar assignments generally have an acronym indicating the type of the assignment (e.g. Marion GS). There are eight different assignment types, each with a corresponding acronym. Assignments can have more than one type (e.g. Marion GS CC). Our study focuses on criminal cases, which are heard in general sessions (GS). Some assignment types, like CP (common pleas), are for civil cases. A full list of the assignment type acronyms and their meanings can be found in table \ref{tab-assignment-types}.
+  Judge calendar assignments generally have an acronym indicating the type of the assignment (e.g. Marion GS). There are eight different assignment types, each with a corresponding acronym. Assignments can have more than one type (e.g. Marion GS CC). Our study focuses on criminal cases, which are heard in general sessions (GS). Some assignment types, like CP (common pleas), are for civil cases. A full list of the assignment type acronyms and their meanings can be found in table \ref{tab-assignment-types}.
 
   \begin{table}[H]
     \centering
@@ -105,6 +105,20 @@ Judge calendar assignments generally have an acronym indicating the type of the 
     \includegraphics[width=0.75\textwidth]{../../../output/figures/Exploration/avg_pleas_by_worktype.png}
     \caption{Average Pleas Processed per Day by Work Type}
     \label{fig-avg-plea}
+  \end{figure}
+
+\section{Fraction GS and Fraction Clean Days by Judge}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{../../../output/figures/Exploration/fraction_gs_clean.png}
+    \caption{Fraction of GS days and Clean days by Judge}
+  \end{figure}
+
+\section{Distribution of Pleas Per Day by Broad Work Type}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{../../../output/figures/Exploration/daily_plea_hist_by_broad_work_type.png}
+    \caption{Distribution of the number of pleas processed per day, conditional on observing a sentencing event on that day.}
   \end{figure}
 
 \end{document}
