@@ -25,16 +25,12 @@ holidays = ['2000-09-04','2000-10-09','2000-11-10','2000-11-23','2000-12-24',
 '2000-12-25','2000-12-26','2001-01-01','2001-01-15','2001-02-19','2001-05-10',
 '2001-05-28','2001-07-04','2000-07-04']
 
+##### Data loading/imputation #####
 def load_sentencing_data():
     sdf = pd.read_csv(processed_sentencing_data_file)
-    # sdf = add_work_type(sdf)
-    return sdf
-
-def add_work_type(sdf):
-    cdf = load_calendar_data()
-    cdf_cols = ['JudgeID','Date','County','WorkType']
-    sdf = sdf.merge(cdf[cdf_cols],on=['JudgeID','Date','County'],how='left')
-    sdf.loc[sdf.WorkType.isna(),'WorkType'] = 'Disagree'
+    sdf['Circuit'] = sdf.Circuit.astype(str)
+    sdf = impute_missing_dates(sdf)
+    sdf = add_work_type(sdf)
     return sdf
 
 def load_calendar_data():
@@ -44,18 +40,25 @@ def load_calendar_data():
     cdf = cdf.loc[~cdf.Date.isin(holidays),:]
     return cdf
 
-def get_clean_day_counts():
-    sdf = load_sentencing_data()
+##### Clean day filtering #####
+def get_clean_day_sentencing_data(sdf):
     sdf = remove_conflicting_days(sdf)
-    sdf = remove_non_GS_days(sdf)
+    sdf = sdf.loc[sdf.WorkType == 'GS',:]
     sdf = remove_multi_county_days(sdf)
     sdf = remove_multi_assignment_days(sdf)
-    sdf = remove_judges_with_few_clean_days(sdf)
-    counts = sdf.groupby(['JudgeID','County','Date'])[['Plea']].sum().reset_index()
-    return counts
+    sdf = remove_days_with_few_sentencing_events(sdf)
+    return sdf
 
-def remove_conflicting_days(sdf):
+def get_clean_day_calendar_data(cdf):
+    cdf = remove_conflicting_days(cdf)
+    cdf = remove_multi_county_days(cdf)
+    cdf = remove_multi_assignment_days(cdf)
+    cdf = remove_judges_with_few_clean_days_from_calendar(cdf)
+    return cdf
+
+def remove_conflicting_days(df):
     cdf = load_calendar_data()
+    sdf = load_sentencing_data()
     fdf = sdf.merge(cdf,on=['Date','JudgeName'])
     fdf['Circuit_y'] = fdf.Circuit_y.replace({'na':np.nan})
     fdf['Circuit_y'] = fdf.Circuit_y.astype('float').astype('Int64')
@@ -64,36 +67,56 @@ def remove_conflicting_days(sdf):
     fdf.loc[fdf.County_x == fdf.County_y,'MatchType'] = 'Agree'
     fdf.sort_values('MatchType',inplace=True)
     fdf = fdf.drop_duplicates('EventID',keep='first')
-    fdf = fdf.loc[fdf.MatchType == 'Disagree',['Date','JudgeName','MatchType']].drop_duplicates(['Date','JudgeName'])
-    sdf = sdf.merge(fdf,on=['Date','JudgeName'],how='left')
-    sdf = sdf.loc[sdf.MatchType.isna(),:]
-    return sdf
+    conflicting_days = fdf.loc[fdf.MatchType == 'Disagree',['Date','JudgeName','MatchType']].drop_duplicates(['Date','JudgeName'])
+    df = df.merge(conflicting_days,on=['Date','JudgeName'],how='left')
+    df = df.loc[df.MatchType.isna(),:]
+    df.drop(columns=['MatchType'],inplace=True)
+    return df
 
 def remove_non_GS_days(sdf):
-    cdf = load_calendar_data()
-    gs_days = cdf.loc[cdf.WorkType == 'GS',['JudgeName','Date']]
-    sdf = sdf.merge(gs_days,on=['JudgeName','Date'])
+    sdf = sdf.loc[sdf.WorkType == 'GS',:]
+    # cdf = load_calendar_data()
+    # gs_days = cdf.loc[cdf.WorkType == 'GS',['JudgeName','Date']]
+    # sdf = sdf.merge(gs_days,on=['JudgeName','Date'])
     return sdf
 
-def remove_multi_county_days(sdf):
+def remove_multi_county_days(df):
+    sdf = load_sentencing_data()
     judge_events = sdf.groupby(['JudgeID','Date','County']).size().reset_index(name='N')
     counties_by_day = judge_events.groupby(['JudgeID','Date']).size().reset_index(name='N')
-    single_county_days = counties_by_day.loc[counties_by_day.N == 1,['JudgeID','Date']]
-    sdf = sdf.merge(single_county_days,on=['JudgeID','Date'])
-    return sdf
+    multi_county_days = counties_by_day.loc[counties_by_day.N > 1,['JudgeID','Date','N']]
+    df = df.merge(multi_county_days,on=['JudgeID','Date'],how='left')
+    df = df.loc[df.N.isna(),:]
+    df.drop(columns=['N'],inplace=True)
+    return df
 
-def remove_multi_assignment_days(sdf):
+def remove_multi_assignment_days(df):
     cdf = load_calendar_data()
     day_assignments = cdf.groupby(['JudgeName','Date']).size().reset_index(name='N')
     single_assignment_days = day_assignments.loc[day_assignments.N == 1,['JudgeName','Date']]
-    sdf = sdf.merge(single_assignment_days,on=['JudgeName','Date'])
+    df = df.merge(single_assignment_days,on=['JudgeName','Date'])
+    return df
+
+def remove_trial_judge_county_combinations(df):
+    sdf = load_sentencing_data()
+    trial_jcs = sdf.loc[sdf.Trial == 1,['JudgeID','County']].drop_duplicates()
+    trial_jcs['TrialJudgeCounty'] = True
+    df = df.merge(trial_jcs,on=['JudgeID','County'],how='left')
+    df = df.loc[df.TrialJudgeCounty.isna(),df.columns != 'TrialJudgeCounty']
+    return df
+
+def remove_days_with_few_sentencing_events(sdf,threshold=10):
+    judge_clean_days = sdf.groupby(['JudgeID','Date']).size().reset_index(name='N')
+    good_judges = judge_clean_days.loc[judge_clean_days.N >= threshold,'JudgeID'].unique()
+    sdf = sdf.loc[sdf.JudgeID.isin(good_judges),:]
     return sdf
 
-def remove_judges_with_few_clean_days(sdf,threshold=10):
-    judge_clean_days = sdf.groupby(['JudgeName','Date']).size().reset_index(name='N')
-    good_judges = judge_clean_days.loc[judge_clean_days.N >= threshold,['JudgeName','Date']]
-    sdf = sdf.merge(good_judges,on=['JudgeName','Date'])
-    return sdf
+def remove_judges_with_few_clean_days_from_calendar(cdf):
+    sdf = load_sentencing_data()
+    clean_days = get_clean_day_sentencing_data(sdf)
+    clean_judges = clean_days.JudgeID.unique()
+    cdf = cdf.loc[cdf.JudgeID.isin(clean_judges),:]
+    return cdf
 
 ##### GS Exploration #####
 def fraction_gs_by_group_hist(group):
@@ -244,23 +267,12 @@ def work_type_distribution():
     filename = PROJECT_DIR + '/output/tables/Exploration/work_type_dist.csv'
     counts.to_csv(filename,float_format="{:,.2f}".format,index=False)
 
-def daily_plea_hist_by_broad_work_type(sdf,county):
-    # sdf = load_sentencing_data()
-    # sdf = sdf.loc[sdf.Date.notna(),:]
+def daily_plea_hist_by_broad_work_type():
+    sdf = load_sentencing_data()
     cdf = load_calendar_data()
 
-    fdf = sdf.merge(cdf,on=['Date','JudgeID'])
-    fdf['Circuit_y'] = fdf.Circuit_y.replace({'na':np.nan})
-    fdf['Circuit_y'] = fdf.Circuit_y.astype('float').astype('Int64')
-    fdf.loc[fdf.County_x != fdf.County_y,'MatchType'] = 'Disagree'
-    fdf.loc[fdf.Circuit_x == fdf.Circuit_y,'MatchType'] = 'Circuit'
-    fdf.loc[fdf.County_x == fdf.County_y,'MatchType'] = 'Agree'
-    fdf.sort_values('MatchType',inplace=True)
-    fdf = fdf.drop_duplicates('EventID',keep='first')
-
-    fdf.loc[fdf.MatchType != 'Agree','WorkType'] = 'Disagree'
     fig, axes = plt.subplots(3,1,figsize=(8,10))
-    gs_counts = fdf.loc[(fdf.WorkType == 'GS') & (fdf.County_x == county),:].groupby(['JudgeID','Date'])['Plea'].sum().reset_index()
+    gs_counts = sdf.loc[(sdf.WorkType == 'GS'),:].groupby(['JudgeID','Date'])['Plea'].sum().reset_index()
     plea_mean = gs_counts.Plea.mean()
     axes[1].hist(gs_counts.Plea,bins=50)
     if not np.isnan(plea_mean):
@@ -270,8 +282,8 @@ def daily_plea_hist_by_broad_work_type(sdf,county):
     axes[1].set_title('GS Days')
     axes[1].tick_params(labelrotation=90)
 
-    clean_counts = get_clean_day_counts()
-    clean_counts = clean_counts.loc[clean_counts.County == county,:]
+    clean_counts = get_clean_day_sentencing_data(sdf)
+    clean_counts = clean_counts.groupby(['JudgeID','Date'])['Plea'].sum().reset_index()
     plea_mean = clean_counts.Plea.mean()
     axes[2].hist(clean_counts.Plea,bins=50)
     if not np.isnan(plea_mean):
@@ -281,7 +293,7 @@ def daily_plea_hist_by_broad_work_type(sdf,county):
     axes[2].set_title('Clean Days')
     axes[2].tick_params(labelrotation=90)
 
-    non_gs_counts = fdf.loc[(fdf.WorkType != 'GS')& (fdf.County_x == county),:].groupby(['JudgeID','Date'])['Plea'].sum().reset_index()
+    non_gs_counts = sdf.loc[(sdf.WorkType != 'GS'),:].groupby(['JudgeID','Date'])['Plea'].sum().reset_index()
     plea_mean = non_gs_counts.Plea.mean()
     axes[0].hist(non_gs_counts.Plea,bins=50)
     if not np.isnan(plea_mean):
@@ -292,9 +304,13 @@ def daily_plea_hist_by_broad_work_type(sdf,county):
     axes[0].tick_params(labelrotation=90)
 
     plt.tight_layout()
-    filename = PROJECT_DIR + '/output/figures/Exploration/County/daily_plea_hist_by_broad_work_type_{}.png'.format(county)
+    filename = PROJECT_DIR + '/output/figures/Exploration/County/daily_plea_hist_by_broad_work_type.png'
     plt.savefig(filename)
     plt.close('all')
+
+def avg_daily_pleas(sdf):
+    counts = sdf.groupby(['JudgeID','Date'])['Plea'].sum().reset_index()
+    return counts.Plea.mean()
 
 ##### Other Stuff #####
 def fraction_missing_by_group_hist(group):

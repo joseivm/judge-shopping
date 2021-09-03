@@ -1,0 +1,226 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{booktabs}
+
+\title{Busyness Analysis}
+
+\begin{document}
+\maketitle
+
+\section{Key Takeaways}
+  \begin{itemize}
+    \item \textbf{Baseline Service Rate Estimates:} I used a simple linear regression model
+    to estimate $\mu_p$ and $\mu_t$. The model seems to fit the data well ($R^2$=0.97) and
+    yields estimates of 4.88 days per trial, and 6.25 pleas per day.
+
+    \item \textbf{County-level Analysis:} I created a simple measure of a county's business
+    that incorporates the number of pleas, trials, and assigned GS days. I ranked the counties
+    according to this measure, and it appears that roughly $90\%$ of the action (pleas, trials, GS days)
+    happens in the top 28 (out of 46) counties. I also find that above median busy counties
+    have 6.4 average pleas per day, while below median busy counties have less than 3 average pleas per day.
+
+    \item \textbf{Clean Day Analysis:} I studied what was driving the difference in average number of pleas
+    between GS days and clean days. It seems to be entirely driven by our restriction that Judges hear more than
+    10 pleas on clean days. The other restrictions don't seem to affect the average number of pleas processed per day very much,
+    which I think could support an argument for dropping the restrictions. I also looked at the
+    distribution of clean days across judges and counties, and the clean days seem to be
+    more equally distributed amongst judges than amongst counties.
+  \end{itemize}
+
+\section{Baseline Service Rate Estimates}
+  I thought it might be useful to establish some very simple baseline estimates for
+  $\mu_t$ and $\mu_p$. These could help us when we are trying to ballpark different quantities.
+  For each county, I counted the total number of GS days that judges were assigned to that county.
+  I also counted the number of pleas and trials that were sentenced in that county on GS days.
+  Having constructed this dataset, I then regressed the number of assigned days on the number of pleas
+  and trials. The model specification is: $\text{Days}_c = \beta_1 \text{Pleas}_c + \beta_2 \text{Trials}_c + \epsilon_c$. I also estimated a similar model, but where the unit of observation is the judge. The model specification is: $\text{Days}_j = \beta_1 \text{Pleas}_j + \beta_2 \text{Trials}_j + \epsilon_j$. Note that given an estimate of the trial service, we can calculate a group's $\lambda$, that is the group's plea demand per day. To do this, we calculate the expected number of trial days by multiplying the number of trials by the trial service rate, and subtracting this quantity from the total number of days to get the expected number of plea days. We can then divide the number of pleas by the expected number of plea days for each group. This is the Lambda that appears in the tables. I estimated the models using two samples. The first one included all judges/counties. The second sample excluded judges/counties with no trials. The second one seems to fit the data slightly better, so it is what I use in the rest of the analysis. However, present the results from both for completeness.
+
+  \begin{table}[H]
+    \centering
+    \caption{Regression results, using all judges/counties}
+    \label{reg-results-full}
+    \input{../../../output/tables/Exploration/regression_results_full}
+  \end{table}
+
+  \begin{table}[H]
+    \centering
+    \caption{Regression results, excluding judges/counties with no trials. }
+    \label{reg-results}
+    \input{../../../output/tables/Exploration/regression_results}
+  \end{table}
+
+  \subsection{County Model}
+    \begin{figure}[H]
+      \centering
+        \begin{subfigure}[b]{0.45\textwidth}
+          \includegraphics[width=\textwidth]{../../../output/figures/Exploration/resid_plot_County.png}
+          \caption{Plot of the residuals for each county, here, the counties are ordered by the number of pleas processed, with the county with the most pleas being first. }
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.45\textwidth}
+          \includegraphics[width=\textwidth]{../../../output/figures/Exploration/true_vs_fitted_County.png}
+          \caption{True vs Fitted values for the county model}
+
+        \end{subfigure}
+        \label{county-figs}
+    \end{figure}
+
+    \begin{table}[H]
+      \centering
+      \small
+      \caption{Lambda Estimates, County Model}
+      \label{county-lambda}
+      \input{../../../output/tables/Exploration/lambda_table_County}
+    \end{table}
+
+  \subsection{Judge Model}
+    \begin{figure}[H]
+      \centering
+        \begin{subfigure}[b]{0.45\textwidth}
+          \includegraphics[width=\textwidth]{../../../output/figures/Exploration/resid_plot_JudgeID.png}
+          \caption{Plot of the residuals for each Judge, here, the judges are ordered by the number of pleas processed, with the judge with the most pleas being first. }
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.45\textwidth}
+          \includegraphics[width=\textwidth]{../../../output/figures/Exploration/true_vs_fitted_JudgeID.png}
+          \caption{True vs Fitted values for the Judge model}
+
+        \end{subfigure}
+        \label{judge-figs}
+    \end{figure}
+
+    \begin{table}[H]
+      \centering
+      \small
+      \caption{Lambda Estimates, Judge Model}
+      \label{judge-lambda}
+      \input{../../../output/tables/Exploration/lambda_table_JudgeID}
+    \end{table}
+
+\section{County-level Analysis}
+  The goal of this exercise was to get a better idea of which are the busiest counties.
+  I focused only on GS days. So when I say the number of pleas and number of trials, I mean those that
+  happened on GS days.
+  We have at least three measures of business: the number of pleas, the number of trials, and
+  the number of GS days assigned to a county. I ranked the counties according to a measure
+  that combined the three measures. To create this measure, I ranked all of the counties according
+  to each measure. I then multiplied each county's score in each measure to create an overall measure.
+  So, for example, if Richland had the most pleas, then its ranking according to pleas would be 1. If Richland had the second most trials, then its ranking according to trials would be 2. If it had the sixth most GS days, then its ranking according to GS days would be 6. Richland's overall measure would be $1 \cdot 2 \cdot 6 = 12$. This ranking can be seen in table \ref{overall-ranking}. I also created bar charts of the number of pleas, trials, GS days, and the utilization for each county. I calculate the utilization by using the service rate estimates from the county model to calculate the expected number of days it took to process each county's pleas and trials. I then divide the expected number of days by the actual number of assigned days to get the utilization.
+
+  \begin{table}[H]
+    \centering
+    \small
+    \caption{Ranking of Counties by Busyness}
+    \label{overall-ranking}
+    \input{../../../output/tables/Exploration/county_rankings}
+  \end{table}
+
+  \subsection{Overall Figures}
+   In figure \ref{fig-county}, the counties are ordered according to the overall ranking described in the previous section.
+
+    \begin{figure}[H]
+      \centering
+        \begin{subfigure}[b]{0.45\textwidth}
+          \includegraphics[width=\textwidth]{../../../output/figures/Exploration/county_pleas.png}
+          \caption{Pleas}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.45\textwidth}
+          \includegraphics[width=\textwidth]{../../../output/figures/Exploration/county_trials.png}
+          \caption{Trials}
+
+        \end{subfigure}
+        %\hfill
+        \begin{subfigure}[b]{0.45\textwidth}
+
+          \includegraphics[width=\textwidth]{../../../output/figures/Exploration/county_days.png}
+          \caption{GS Days}
+
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.45\textwidth}
+
+          \includegraphics[width=\textwidth]{../../../output/figures/Exploration/county_utilization.png}
+          \caption{Utilization}
+
+        \end{subfigure}
+        \caption{Number of Pleas, Trials, GS days, and utilization for each county.}
+        \label{fig-county}
+    \end{figure}
+
+  \subsection{CDF table}
+    The purpose of this section is to get a better sense of what share of the overall action happens
+    in the 'busy' counties. In table \ref{cdf-table}, the columns PleaShare, TrialShare, and GSShare
+    contain the cumulative share of all pleas, trials, and GS days accounted for by the counties up to that row. So, for example, in the 10th row, if the value of PleaShare is 0.5, that means that the top
+    10 counties account for $50\%$ of all pleas. Similarly, if in the 15th row the value of Trial share is 0.9, that means that the top 15 counties account for $90\%$ of all trials. GS share refers to the share of all GS days assigned. The counties in table \ref{cdf-table} are ranked using the measure described in the beginning of the section.
+
+    \begin{table}[H]
+      \centering
+      \small
+      \caption{CDF table}
+      \label{cdf-table}
+      \input{../../../output/tables/Exploration/county_CDF_table}
+    \end{table}
+
+  \subsection{Comparing Busy and Idle Counties}
+    The purpose of this section is to further investigate how 'busy' counties are different from 'idle'
+    counties. To do this, I split the counties into above median and below median in terms of business.
+    Here, business is measured according to the measure described in the beginning of the section.
+
+    \begin{figure}[H]
+      \includegraphics[width=0.9\textwidth]{../../../output/figures/Exploration/busy_vs_idle_plea_hists.png}
+      \caption{Histogram of pleas processed per day}
+      \label{plea-hist}
+    \end{figure}
+
+    \begin{figure}[H]
+      \includegraphics[width=0.9\textwidth]{../../../output/figures/Exploration/lambda_hists.png}
+      \caption{Histogram of estimated lambda}
+      \label{lambda-hist}
+    \end{figure}
+
+\section{Clean Day Analysis}
+  The purpose of this section is to better understand clean days.
+  In our previous meeting, we wanted to know what exactly was driving the large difference in average number of pleas between clean days and GS days. As a reminder, the average number of pleas for GS days was around 5, and the average number of pleas for clean days was 14. It turns out that this
+  was driven by our restriction that clean days have more than 10 pleas.
+
+  To better understand clean days, we first
+  list our clean day restrictions and study how each of them affects the average number of
+  pleas processed per day. Then, we examine how the clean days are distributed across
+  judges and counties.
+
+  \subsection{Clean Day Restrictions}
+    \begin{itemize}
+      \item Exclude all days in which there is a conflict between the sentencing data and the calendar data.
+      \item Exclude all non-GS days.
+      \item Exclude all days in which a judge sentenced in more than one county.
+      \item Exclude all days in which a judge was assigned to more than one county.
+      \item Exclude all days in which a judge sentenced fewer than 10 events.
+    \end{itemize}
+
+    \begin{table}[H]
+      \centering
+      \small
+      \caption{Clean Day Restrictions. This table describes how the average number of pleas processed per day evolves as restrictions are added.}
+      \label{clean-day-rest}
+      \input{../../../output/tables/Exploration/restriction_table}
+    \end{table}
+
+  \subsection{Distribution of Clean Days Across Counties}
+    \begin{figure}[H]
+      \includegraphics[width=0.9\textwidth]{../../../output/figures/Exploration/clean_day_dist_County.png}
+      \caption{Distribution of clean days across counties}
+    \end{figure}
+
+  \subsection{Distribution of Clean Days Across Judges}
+    \begin{figure}[H]
+      \includegraphics[width=0.9\textwidth]{../../../output/figures/Exploration/clean_day_dist_JudgeID.png}
+      \caption{Distribution of clean days across counties}
+    \end{figure}
+
+\end{document}

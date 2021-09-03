@@ -52,9 +52,10 @@ def clean_sentencing_data():
     sdf = add_home_circuit(sdf)
     sdf['Circuit'] = sdf.Circuit.astype(str)
     sdf.loc[sdf.Date.notna(),'Week'] = sdf.loc[sdf.Date.notna(),'Date'].apply(get_week)
-    sdf.to_csv('data/processed/temp_sentencing_data.csv',index=False)
     sdf = add_judge_names(sdf)
     sdf['Plea'] = (sdf['Trial']+1)%2
+    sdf = impute_missing_dates(sdf)
+    sdf = add_work_type(sdf)
     return(sdf)
 
 def add_judge_names(sdf):
@@ -144,17 +145,18 @@ def add_sex(df):
     df.loc[df.male == 0, 'Sex'] = 'Female'
     return(df)
 
+###### Imputation #####
 def impute_missing_dates(sdf):
     sdf = impute_missing_dates_county_GS(sdf)
     sdf = impute_missing_dates_county_nonGS(sdf)
     sdf = impute_missing_dates_circuit_GS(sdf)
     sdf = impute_missing_dates_circuit_nonGS(sdf)
+    sdf = impute_missing_dates_based_on_sentencing(sdf)
     sdf = impute_missing_dates_non_matching(sdf)
     return sdf
 
 def impute_missing_dates_county_GS(sdf):
     cdf = load_calendar_data()
-    cdf['Date'] = pd.to_datetime(cdf['Date'])
 
     pdf = cdf.merge(sdf[['EventID','JudgeID','County','Date']],on=['JudgeID','County','Date'],how='left')
     pdf = pdf.loc[(pdf.EventID.notna()) | (pdf.WorkType == 'GS'),:]
@@ -182,7 +184,6 @@ def impute_missing_dates_county_GS(sdf):
 
 def impute_missing_dates_county_nonGS(sdf):
     cdf = load_calendar_data()
-    cdf['Date'] = pd.to_datetime(cdf['Date'])
 
     pdf = cdf.merge(sdf[['EventID','JudgeID','County','Date']],on=['JudgeID','County','Date'],how='left')
 
@@ -211,7 +212,6 @@ def impute_missing_dates_county_nonGS(sdf):
 
 def impute_missing_dates_circuit_GS(sdf):
     cdf = load_calendar_data()
-    cdf['Date'] = pd.to_datetime(cdf['Date'])
 
     pdf = cdf.merge(sdf[['EventID','JudgeID','Circuit','Date']],on=['JudgeID','Circuit','Date'],how='left')
     pdf = pdf.loc[((pdf.EventID.notna()) | (pdf.WorkType == 'GS')) |
@@ -242,7 +242,6 @@ def impute_missing_dates_circuit_GS(sdf):
 
 def impute_missing_dates_circuit_nonGS(sdf):
     cdf = load_calendar_data()
-    cdf['Date'] = pd.to_datetime(cdf['Date'])
 
     pdf = cdf.merge(sdf[['EventID','JudgeID','Circuit','Date']],on=['JudgeID','Circuit','Date'],how='left')
 
@@ -269,9 +268,36 @@ def impute_missing_dates_circuit_nonGS(sdf):
     sdf.drop(columns=['TempImputedDate'],inplace=True)
     return sdf
 
+def impute_missing_dates_based_on_sentencing(sdf):
+    cdf = load_calendar_data()
+
+    pdf = sdf.loc[sdf.Imputation == 'None',['JudgeID','County','Date']].drop_duplicates()
+
+    mdf = sdf.loc[sdf.Date.isna(),['JudgeID','County','EventID']]
+    mdf = mdf.merge(pdf[['JudgeID','County']],on=['JudgeID','County'])
+    mdf = mdf.drop_duplicates('EventID')
+
+    groups = mdf.groupby(['JudgeID','County'])
+    imputed_observations = []
+    for name, group in groups:
+        judge_id, county = name
+        event_ids = group['EventID'].to_numpy()
+        possible_dates = pdf.loc[(pdf.JudgeID == judge_id) & (pdf.County == county),'Date'].unique()
+        assignments = np.array_split(event_ids,len(possible_dates))
+        for event_ids, date in zip(assignments,possible_dates):
+            obs = [{'EventID':event_id,'TempImputedDate':date} for event_id in event_ids]
+            imputed_observations += obs
+
+    idf = pd.DataFrame(imputed_observations)
+    sdf = sdf.merge(idf,on=['EventID'],how='left')
+    sdf.loc[sdf.TempImputedDate.notna(), 'Imputation'] = 'SentencingData'
+    sdf.loc[sdf.Imputation == 'SentencingData','Date'] = sdf.loc[sdf.Imputation == 'SentencingData','TempImputedDate']
+    sdf.loc[sdf.Imputation == 'SentencingData','ImputedDate'] = sdf.loc[sdf.Imputation == 'SentencingData','TempImputedDate']
+    sdf.drop(columns=['TempImputedDate'],inplace=True)
+    return sdf
+
 def impute_missing_dates_non_matching(sdf):
     cdf = load_calendar_data()
-    cdf['Date'] = pd.to_datetime(cdf['Date'])
 
     pdf = cdf.merge(sdf[['EventID','JudgeID','County','Date']],on=['JudgeID','County','Date'],how='left')
     pdf = pdf.loc[(pdf.EventID.notna()) | (pdf.WorkType == 'GS'),:]
@@ -298,11 +324,19 @@ def impute_missing_dates_non_matching(sdf):
     sdf.drop(columns=['TempImputedDate'],inplace=True)
     return sdf
 
+def add_work_type(sdf):
+    cdf = load_calendar_data()
+    cdf_cols = ['JudgeID','Date','County','WorkType']
+    sdf = sdf.merge(cdf[cdf_cols],on=['JudgeID','Date','County'],how='left')
+    sdf.loc[sdf.WorkType.isna(),'WorkType'] = 'Disagree'
+    return sdf
+
 def load_calendar_data():
     cdf = pd.read_csv(processed_daily_schedule_file)
     mapping = pd.read_csv(judge_name_id_mapping_file)
     cdf = cdf.merge(mapping,on='JudgeName')
     cdf = cdf.loc[~cdf.Date.isin(holidays),:]
+    cdf['Date'] = pd.to_datetime(cdf['Date'])
     return cdf
 
 def main():
