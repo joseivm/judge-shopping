@@ -1,0 +1,85 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{booktabs}
+
+\title{Regression Based Service Rate Estimation}
+
+\begin{document}
+\maketitle
+
+\section{Overview}
+  This week I worked on extending the regression model for service rate estimation to account for idleness.
+  The main problem that we are trying to tackle is that the simple model, $\text{Days}_j = \beta_t \text{Trial}_j + \beta_p\text{Plea}_j +\epsilon_j$, doesn't account for idling judges. Hester's qualitative interviews with the judges indicates that harsher judges idle more often than more lenient judges.
+  An overview of the results are below. 
+
+  \begin{itemize}
+    \item \textbf{Iterative Idleness Estimation Using Expected Utilization:} This yields estimates of 3 days per trial, and about 14 pleas per day.
+
+    \item \textbf{Iterative Idleness Estimation Taking Mins:} This yields estimates of 6.2 days per trial and 9.7 pleas per day.
+
+    \item \textbf{Fixed Effects Model:} This yields estimates of 3.7 days per trial, and 10 pleas per day.
+  \end{itemize}
+
+\section{Iterative Idleness Estimation Using Expected Utilization}
+  \textbf{Step 0:} We estimate the model, $\text{Days}_j = \beta_t\text{Trial}_j + \beta_p\text{Plea}_j +\epsilon_j$. \\
+
+  \noindent \textbf{Steps 1-n:} We then use the estimates of $\beta^{(1)}_t$ and $\beta^{(1)}_p$ to estimate the expected number
+  of days it would take each judge to complete their work. Mathematically: $\text{Expected Days}^{(1)}_j = \beta^{(1)}_p \cdot \text{Plea}_j + \beta^{(1)}_t \cdot \text{Trial}_j$. Then, the utilization for each judge would be: $\text{Utilization}^{(1)}_j = \frac{\text{Expected Days}^{(1)}_j}{\text{Days}_j}$. Let $\gamma^1 = \max_j \text{Utilization}^{(1)}_j$, be the maximum utilization amongst all judges. Each judges idleness will be: $\text{Idleness}^{(1)}_j = \frac{\text{Utilization}^{(1)}_j}{\gamma^{(1)}}$. We then set $\text{Days}^{(1)}_j = \text{Days}_j \cdot \text{Idleness}^{(1)}_j$. We then estimate the model $\text{Days}^{(1)}_j = \beta_t\text{Trial}_j + \beta_p\text{Plea}_j +\epsilon_j$ and repeat until convergence.
+
+  \begin{table}[H]
+    \centering
+    % \small
+    \caption{Regression model, utilization method}
+    \input{../../../output/tables/Exploration/utilization_model}
+  \end{table}
+
+\section{Iterative Idleness Estimation Taking Mins}
+  \textbf{Step 0:} We estimate the model, $\text{Days}_j = \beta_t\text{Trial}_j + \beta_p\text{Plea}_j +\epsilon_j$. \\
+
+  \noindent \textbf{Steps 1-n:} We then use the estimates of $\beta^{(1)}_t$ and $\beta^{(1)}_p$ to estimate the expected number
+  of days it would take each judge to complete their work. Mathematically: $\text{Expected Days}^{(1)}_j = \beta^{(1)}_p \cdot \text{Plea}_j + \beta^{(1)}_t \cdot \text{Trial}_j$.
+  We would then set $\text{Days}^{(1)}_j = \min(\text{Days}_j,\text{Expected Days}^{(1)}_j)$ We then estimate the model $\text{Days}^{(1)}_j = \beta_t\text{Trial}_j + \beta_p\text{Plea}_j +\epsilon_j$ and repeat until convergence.
+
+      \begin{table}[H]
+        \centering
+        % \small
+        \caption{Regression model, min method}
+        \input{../../../output/tables/Exploration/min_model}
+      \end{table}
+
+\section{Fixed Effects Model}
+  We know from our exploratory analysis that there is large heterogeneity in activity amongst counties. Therefore, it is likely that the county that a judge happens to be in also significantly affects the number of pleas he is able to process. One way we could try to incorporate both judge and county idleness, would be to use
+  a fixed effects model.  Here, the unit of observation would be a judge-county combination. For each judge county combination, $i$ with judge $j$ and county $c$, we could run the regression $\text{Days}_i = \alpha_j + \delta_c + \beta_p \text{Plea}_i + \beta_t \text{Trial}_i + \epsilon_i$. \textbf{Pros:} this would flexibly control for both judge and county fixed effects. \textbf{Cons:} We only have 248 observations of judge county combinations, and we would be trying to estimate around 96 parameters.
+
+  \begin{table}[!htbp] \centering
+    \caption{Fixed Effects Model}
+  \begin{tabular}{@{\extracolsep{5pt}}lc}
+  \\[-1.8ex]\hline
+  \hline \\[-1.8ex]
+   & \multicolumn{1}{c}{\textit{Dependent variable:}} \\
+  \cline{2-2}
+  \\[-1.8ex] & Days \\
+  \hline \\[-1.8ex]
+   Plea & 0.099$^{***}$ \\
+    & (0.009) \\
+    & \\
+   Trial & 3.714$^{***}$ \\
+    & (0.399) \\
+    & \\
+  \hline \\[-1.8ex]
+  Observations & 278 \\
+  R$^{2}$ & 0.801 \\
+  Adjusted R$^{2}$ & 0.696 \\
+  Residual Std. Error & 7.380 (df = 181) \\
+  \hline
+  \hline \\[-1.8ex]
+  \textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\
+  \end{tabular}
+  \end{table}
+
+\end{document}
