@@ -15,7 +15,7 @@
 \section{Overview}
   This week I worked on extending the regression model for service rate estimation to account for idleness.
   The main problem that we are trying to tackle is that the simple model, $\text{Days}_j = \beta_t \text{Trial}_j + \beta_p\text{Plea}_j +\epsilon_j$, doesn't account for idling judges. Hester's qualitative interviews with the judges indicates that harsher judges idle more often than more lenient judges.
-  An overview of the results are below. 
+  An overview of the results are below.
 
   \begin{itemize}
     \item \textbf{Iterative Idleness Estimation Using Expected Utilization:} This yields estimates of 3 days per trial, and about 14 pleas per day.
@@ -25,18 +25,105 @@
     \item \textbf{Fixed Effects Model:} This yields estimates of 3.7 days per trial, and 10 pleas per day.
   \end{itemize}
 
+  \begin{table}[H]
+    \centering
+    % \small
+    \caption{Summary of Results}
+    \input{../../../output/tables/Exploration/regression_summary}
+  \end{table}
+
 \section{Iterative Idleness Estimation Using Expected Utilization}
   \textbf{Step 0:} We estimate the model, $\text{Days}_j = \beta_t\text{Trial}_j + \beta_p\text{Plea}_j +\epsilon_j$. \\
 
   \noindent \textbf{Steps 1-n:} We then use the estimates of $\beta^{(1)}_t$ and $\beta^{(1)}_p$ to estimate the expected number
   of days it would take each judge to complete their work. Mathematically: $\text{Expected Days}^{(1)}_j = \beta^{(1)}_p \cdot \text{Plea}_j + \beta^{(1)}_t \cdot \text{Trial}_j$. Then, the utilization for each judge would be: $\text{Utilization}^{(1)}_j = \frac{\text{Expected Days}^{(1)}_j}{\text{Days}_j}$. Let $\gamma^1 = \max_j \text{Utilization}^{(1)}_j$, be the maximum utilization amongst all judges. Each judges idleness will be: $\text{Idleness}^{(1)}_j = \frac{\text{Utilization}^{(1)}_j}{\gamma^{(1)}}$. We then set $\text{Days}^{(1)}_j = \text{Days}_j \cdot \text{Idleness}^{(1)}_j$. We then estimate the model $\text{Days}^{(1)}_j = \beta_t\text{Trial}_j + \beta_p\text{Plea}_j +\epsilon_j$ and repeat until convergence.
 
-  \begin{table}[H]
-    \centering
-    % \small
-    \caption{Regression model, utilization method}
-    \input{../../../output/tables/Exploration/utilization_model}
-  \end{table}
+  \subsection{Judge Model}
+
+    \begin{table}[H]
+      \centering
+      % \small
+      \caption{Judge Model}
+      \input{../../../output/tables/Exploration/utilization_model_JudgeID}
+    \end{table}
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.65\textwidth]{../../../output/figures/Exploration/fit_utilization_JudgeID}
+      \caption{True vs Fitted Values, Judge Model}
+    \end{figure}
+
+    \begin{table}[H]
+      \centering
+      % \small
+      \caption{Judge Model}
+      \input{../../../output/tables/Exploration/utilization_model_iters_JudgeID}
+    \end{table}
+
+    \begin{table}[H]
+      \centering
+      \small
+      \caption{Utilization at convergence, judge model}
+      \input{../../../output/tables/Exploration/utilization_model_convergence_JudgeID}
+    \end{table}
+
+  \subsection{County Model}
+
+    \begin{table}[H]
+      \centering
+      % \small
+      \caption{County Model}
+      \input{../../../output/tables/Exploration/utilization_model_County}
+    \end{table}
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.65\textwidth]{../../../output/figures/Exploration/fit_utilization_County}
+      \caption{True vs Fitted Values, Judge-County Model}
+    \end{figure}
+
+    \begin{table}[H]
+      \centering
+      % \small
+      \caption{Judge Model}
+      \input{../../../output/tables/Exploration/utilization_model_iters_County}
+    \end{table}
+
+    \begin{table}[H]
+      \centering
+      \small
+      \caption{Utilization at convergence, county model}
+      \input{../../../output/tables/Exploration/utilization_model_convergence_County}
+    \end{table}
+
+  \subsection{Judge-County Model}
+
+    \begin{table}[H]
+      \centering
+      % \small
+      \caption{County Model}
+      \input{../../../output/tables/Exploration/utilization_model_JudgeIDCounty}
+    \end{table}
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.65\textwidth]{../../../output/figures/Exploration/fit_utilization_JudgeIDCounty}
+      \caption{True vs Fitted Values, Judge-County Model}
+    \end{figure}
+
+    \begin{table}[H]
+      \centering
+      % \small
+      \caption{Judge-County Model}
+      \input{../../../output/tables/Exploration/utilization_model_iters_JudgeIDCounty}
+    \end{table}
+
+    \begin{table}[H]
+      \centering
+      \small
+      \caption{Utilization at convergence, judge-county model}
+      \input{../../../output/tables/Exploration/utilization_model_convergence_JudgeIDCounty}
+    \end{table}
 
 \section{Iterative Idleness Estimation Taking Mins}
   \textbf{Step 0:} We estimate the model, $\text{Days}_j = \beta_t\text{Trial}_j + \beta_p\text{Plea}_j +\epsilon_j$. \\
@@ -45,41 +132,264 @@
   of days it would take each judge to complete their work. Mathematically: $\text{Expected Days}^{(1)}_j = \beta^{(1)}_p \cdot \text{Plea}_j + \beta^{(1)}_t \cdot \text{Trial}_j$.
   We would then set $\text{Days}^{(1)}_j = \min(\text{Days}_j,\text{Expected Days}^{(1)}_j)$ We then estimate the model $\text{Days}^{(1)}_j = \beta_t\text{Trial}_j + \beta_p\text{Plea}_j +\epsilon_j$ and repeat until convergence.
 
-      \begin{table}[H]
-        \centering
-        % \small
-        \caption{Regression model, min method}
-        \input{../../../output/tables/Exploration/min_model}
-      \end{table}
+  \subsection{Judge Model}
+
+    \begin{table}[H]
+      \centering
+      % \small
+      \caption{Judge Model}
+      \input{../../../output/tables/Exploration/utilization_model_JudgeID}
+    \end{table}
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.65\textwidth]{../../../output/figures/Exploration/fit_utilization_JudgeID}
+      \caption{True vs Fitted Values, Judge Model}
+    \end{figure}
+
+    \begin{table}[H]
+      \centering
+      % \small
+      \caption{Judge Model}
+      \input{../../../output/tables/Exploration/utilization_model_iters_JudgeID}
+    \end{table}
+
+  \subsection{County Model}
+
+    \begin{table}[H]
+      \centering
+      % \small
+      \caption{County Model}
+      \input{../../../output/tables/Exploration/min_model_County}
+    \end{table}
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.65\textwidth]{../../../output/figures/Exploration/fit_min_County}
+      \caption{True vs Fitted Values, Judge-County Model}
+    \end{figure}
+
+    \begin{table}[H]
+      \centering
+      % \small
+      \caption{Judge Model}
+      \input{../../../output/tables/Exploration/min_model_iters_County}
+    \end{table}
+
+  \subsection{Judge-County Model}
+
+    \begin{table}[H]
+      \centering
+      % \small
+      \caption{County Model}
+      \input{../../../output/tables/Exploration/min_model_JudgeIDCounty}
+    \end{table}
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.65\textwidth]{../../../output/figures/Exploration/fit_min_JudgeIDCounty}
+      \caption{True vs Fitted Values, Judge-County Model}
+    \end{figure}
+
+    \begin{table}[H]
+      \centering
+      % \small
+      \caption{Judge-County Model}
+      \input{../../../output/tables/Exploration/min_model_iters_JudgeIDCounty}
+    \end{table}
 
 \section{Fixed Effects Model}
   We know from our exploratory analysis that there is large heterogeneity in activity amongst counties. Therefore, it is likely that the county that a judge happens to be in also significantly affects the number of pleas he is able to process. One way we could try to incorporate both judge and county idleness, would be to use
   a fixed effects model.  Here, the unit of observation would be a judge-county combination. For each judge county combination, $i$ with judge $j$ and county $c$, we could run the regression $\text{Days}_i = \alpha_j + \delta_c + \beta_p \text{Plea}_i + \beta_t \text{Trial}_i + \epsilon_i$. \textbf{Pros:} this would flexibly control for both judge and county fixed effects. \textbf{Cons:} We only have 248 observations of judge county combinations, and we would be trying to estimate around 96 parameters.
 
-  \begin{table}[!htbp] \centering
-    \caption{Fixed Effects Model}
-  \begin{tabular}{@{\extracolsep{5pt}}lc}
-  \\[-1.8ex]\hline
-  \hline \\[-1.8ex]
-   & \multicolumn{1}{c}{\textit{Dependent variable:}} \\
-  \cline{2-2}
-  \\[-1.8ex] & Days \\
-  \hline \\[-1.8ex]
-   Plea & 0.099$^{***}$ \\
-    & (0.009) \\
-    & \\
-   Trial & 3.714$^{***}$ \\
-    & (0.399) \\
-    & \\
-  \hline \\[-1.8ex]
-  Observations & 278 \\
-  R$^{2}$ & 0.801 \\
-  Adjusted R$^{2}$ & 0.696 \\
-  Residual Std. Error & 7.380 (df = 181) \\
-  \hline
-  \hline \\[-1.8ex]
-  \textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\
-  \end{tabular}
-  \end{table}
+  \subsection{Model with Judge and County Fixed Effects}
+    \begin{table}[H] \centering
+      \caption{Fixed Effects Model}
+    \begin{tabular}{@{\extracolsep{5pt}}lc}
+    \\[-1.8ex]\hline
+    \hline \\[-1.8ex]
+     & \multicolumn{1}{c}{\textit{Dependent variable:}} \\
+    \cline{2-2}
+    \\[-1.8ex] & Days \\
+    \hline \\[-1.8ex]
+     Plea & 0.099$^{***}$ \\
+      & (0.009) \\
+      & \\
+     Trial & 3.714$^{***}$ \\
+      & (0.399) \\
+      & \\
+    \hline \\[-1.8ex]
+    Observations & 278 \\
+    R$^{2}$ & 0.801 \\
+    Adjusted R$^{2}$ & 0.696 \\
+    Residual Std. Error & 7.380 (df = 181) \\
+    \hline
+    \hline \\[-1.8ex]
+    \textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\
+    \end{tabular}
+    \end{table}
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.65\textwidth]{../../../output/figures/Exploration/true_vs_fitted_fixed}
+      \caption{True vs Fitted Values, fixed effects model}
+    \end{figure}
+
+  \subsection{Model with Judge Fixed Effects}
+    Note, the unit of observation here, $i$, is the judge-county combination. The regression we are running here is:  $\text{Days}_i = \alpha_j + \beta_p \text{Plea}_i + \beta_t \text{Trial}_i + \epsilon_i$
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.65\textwidth]{../../../output/figures/Exploration/fit_fixed_JudgeID}
+      \caption{True vs Fitted Values, fixed effects model}
+    \end{figure}
+
+    \begin{table}[H] \centering
+      \caption{Model with Judge Fixed effects, table continues on next page}
+      \small
+      \begin{tabular}{@{\extracolsep{5pt}}lc}
+      \\[-1.8ex]\hline
+      \hline \\[-1.8ex]
+       & \multicolumn{1}{c}{\textit{Dependent variable:}} \\
+      \cline{2-2}
+      \\[-1.8ex] & Days \\
+      \hline \\[-1.8ex]
+       Plea & 0.105$^{***}$ \\
+        & (0.007) \\
+        Trial & 3.861$^{***}$ \\
+        & (0.349) \\
+        Judge 1 & 15.166$^{***}$ \\
+        & (3.192) \\
+        Judge 10 & 5.090$^{**}$ \\
+        & (2.532) \\
+        Judge 11 & 10.027$^{**}$ \\
+        & (4.280) \\
+        Judge 12 & 7.506$^{**}$ \\
+        & (2.907) \\
+        Judge 13 & 7.795$^{***}$ \\
+        & (2.697) \\
+        Judge 14 & 6.221$^{**}$ \\
+        & (2.901) \\
+        Judge 15 & 4.168 \\
+        & (2.681) \\
+        Judge 16 & $-$5.497$^{*}$ \\
+        & (2.857) \\
+        Judge 17 & 7.804$^{**}$ \\
+        & (3.573) \\
+        Judge 18 & 9.869$^{***}$ \\
+        & (3.243) \\
+        Judge 19 & 4.191$^{*}$ \\
+        & (2.256) \\
+        Judge 2 & 9.071$^{***}$ \\
+        & (3.232) \\
+        Judge 20 & 3.862 \\
+        & (3.544) \\
+        Judge 21 & 5.074$^{**}$ \\
+        & (2.509) \\
+        Judge 22 & 6.544$^{**}$ \\
+        & (3.230) \\
+        Judge 23 & 8.460$^{**}$ \\
+        & (3.552) \\
+        Judge 24 & 2.276 \\
+        & (3.787) \\
+        Judge 25 & 4.645 \\
+        & (2.956) \\
+        Judge 26 & 5.215$^{*}$ \\
+        & (2.711) \\
+        Judge 27 & 5.405$^{*}$ \\
+        & (3.180) \\
+       \hline \\[-1.8ex]
+      Observations & 278 \\
+      R$^{2}$ & 0.897 \\
+      Adjusted R$^{2}$ & 0.873 \\
+      Residual Std. Error & 7.083 (df = 226) \\
+      F Statistic & 37.788$^{***}$ (df = 52; 226) \\
+      \hline
+      \hline \\[-1.8ex]
+      \textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\
+      \end{tabular}
+    \end{table}
+
+    \begin{table}[H] \centering
+      \caption{Model with Judge Fixed effects, continued}
+      \small
+      \begin{tabular}{@{\extracolsep{5pt}}lc}
+      \\[-1.8ex]\hline
+      \hline \\[-1.8ex]
+       & \multicolumn{1}{c}{\textit{Dependent variable:}} \\
+      \cline{2-2}
+      \\[-1.8ex] & Days \\
+      \hline \\[-1.8ex]
+        Judge 28 & 6.515$^{**}$ \\
+        & (2.523) \\
+        Judge 29 & 8.555$^{***}$ \\
+        & (2.910) \\
+        Judge 3 & 4.491 \\
+        & (3.186) \\
+        Judge 30 & 8.495$^{***}$ \\
+        & (3.231) \\
+        Judge 31 & 10.782$^{***}$ \\
+        & (4.107) \\
+        Judge 32 & 4.786 \\
+        & (2.903) \\
+        Judge 33 & 5.387$^{*}$ \\
+        & (2.939) \\
+        Judge 34 & 7.227$^{**}$ \\
+        & (3.594) \\
+        Judge 35 & 7.920$^{**}$ \\
+        & (3.553) \\
+        Judge 36 & 5.340$^{*}$ \\
+        & (3.173) \\
+        Judge 37 & 3.862 \\
+        & (2.896) \\
+        Judge 38 & 3.776 \\
+        & (2.906) \\
+        Judge 39 & 2.007 \\
+        & (2.926) \\
+        Judge 4 & 6.081$^{**}$ \\
+        & (2.915) \\
+        Judge 40 & 8.950 \\
+        & (7.257) \\
+        Judge 41 & 12.298$^{**}$ \\
+        & (5.017) \\
+        Judge 42 & 0.685 \\
+        & (3.572) \\
+        Judge 43 & 7.053$^{**}$ \\
+        & (2.912) \\
+        Judge 44 & 3.976 \\
+        & (2.925) \\
+        Judge 45 & 10.256$^{***}$ \\
+        & (2.898) \\
+        Judge 46 & 0.315 \\
+        & (2.716) \\
+        Judge 47 & 10.001$^{***}$ \\
+        & (3.601) \\
+        Judge 48 & 6.506$^{**}$ \\
+        & (2.913) \\
+        Judge 49 & 16.034$^{***}$ \\
+        & (3.203) \\
+        Judge 5 & 2.240 \\
+        & (3.632) \\
+        Judge 50 & 6.510$^{**}$ \\
+        & (2.724) \\
+        Judge 6 & 3.219 \\
+        & (3.640) \\
+        Judge 7 & 5.911$^{**}$ \\
+        & (2.794) \\
+        Judge 8 & 2.905 \\
+        & (2.369) \\
+        Judge 9 & 6.692$^{***}$ \\
+        & (2.526) \\
+       \hline \\[-1.8ex]
+      Observations & 278 \\
+      R$^{2}$ & 0.897 \\
+      Adjusted R$^{2}$ & 0.873 \\
+      Residual Std. Error & 7.083 (df = 226) \\
+      F Statistic & 37.788$^{***}$ (df = 52; 226) \\
+      \hline
+      \hline \\[-1.8ex]
+      \textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\
+      \end{tabular}
+    \end{table}
 
 \end{document}

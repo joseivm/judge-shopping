@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  8 SEP 2021 13:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  14 SEP 2021 14:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**regressions.tex
-(./regressions.tex
+**meeting.tex
+(./meeting.tex
 LaTeX2e <2018-04-01> patch level 2
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
@@ -171,8 +171,8 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 \@thisruleclass=\count109
 \@lastruleclass=\count110
 \@thisrulewidth=\dimen141
-) (./regressions.aux)
-\openout1 = `regressions.aux'.
+) (./meeting.aux)
+\openout1 = `meeting.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
@@ -285,94 +285,85 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 LaTeX Warning: No \author given.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 21.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 21.
- (../../../output/tables/Exploration/regression_summary.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 36--37
+(../../../output/tables/Exploration/regression_summary.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
 
-[1
+(../../../output/tables/Exploration/all_time_min_model_JudgeID.tex) [1
 
-{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (../../../output/tables/Exploration/utilization_model_JudgeID.tex)
-<../../../output/figures/Exploration/fit_utilization_JudgeID.png, id=17, 462.528pt x 346.896pt>
-File: ../../../output/figures/Exploration/fit_utilization_JudgeID.png Graphic file (type png)
-<use ../../../output/figures/Exploration/fit_utilization_JudgeID.png>
-Package pdftex.def Info: ../../../output/figures/Exploration/fit_utilization_JudgeID.png  used on input line 52.
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<../../../output/figures/Exploration/fit_min_JudgeID.png, id=16, 462.528pt x 346.896pt>
+File: ../../../output/figures/Exploration/fit_min_JudgeID.png Graphic file (type png)
+<use ../../../output/figures/Exploration/fit_min_JudgeID.png>
+Package pdftex.def Info: ../../../output/figures/Exploration/fit_min_JudgeID.png  used on input line 44.
 (pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
- (../../../output/tables/Exploration/utilization_model_iters_JudgeID.tex) [2 <../../../output/figures/Exploration/fit_utilization_JudgeID.png>] (../../../output/tables/Exploration/utilization_model_convergence_JudgeID.tex) [3] (../../../output/tables/Exploration/utilization_model_County.tex) [4]
-<../../../output/figures/Exploration/fit_utilization_County.png, id=29, 462.528pt x 346.896pt>
-File: ../../../output/figures/Exploration/fit_utilization_County.png Graphic file (type png)
-<use ../../../output/figures/Exploration/fit_utilization_County.png>
-Package pdftex.def Info: ../../../output/figures/Exploration/fit_utilization_County.png  used on input line 81.
-(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
- (../../../output/tables/Exploration/utilization_model_iters_County.tex) [5 <../../../output/figures/Exploration/fit_utilization_County.png>] (../../../output/tables/Exploration/utilization_model_convergence_County.tex) [6] (../../../output/tables/Exploration/utilization_model_JudgeIDCounty.tex) [7]
-<../../../output/figures/Exploration/fit_utilization_JudgeIDCounty.png, id=41, 462.528pt x 346.896pt>
-File: ../../../output/figures/Exploration/fit_utilization_JudgeIDCounty.png Graphic file (type png)
-<use ../../../output/figures/Exploration/fit_utilization_JudgeIDCounty.png>
-Package pdftex.def Info: ../../../output/figures/Exploration/fit_utilization_JudgeIDCounty.png  used on input line 110.
-(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
- (../../../output/tables/Exploration/utilization_model_iters_JudgeIDCounty.tex) [8 <../../../output/figures/Exploration/fit_utilization_JudgeIDCounty.png>] (../../../output/tables/Exploration/utilization_model_convergence_JudgeIDCounty.tex) [9]
-Overfull \vbox (2733.36998pt too high) has occurred while \output is active []
-
- [10]
-Underfull \hbox (badness 10000) in paragraph at lines 129--130
-
- []
-
-(../../../output/tables/Exploration/utilization_model_JudgeID.tex)
-File: ../../../output/figures/Exploration/fit_utilization_JudgeID.png Graphic file (type png)
-<use ../../../output/figures/Exploration/fit_utilization_JudgeID.png>
-Package pdftex.def Info: ../../../output/figures/Exploration/fit_utilization_JudgeID.png  used on input line 146.
-(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
- [11] (../../../output/tables/Exploration/utilization_model_iters_JudgeID.tex) (../../../output/tables/Exploration/min_model_County.tex) [12]
-<../../../output/figures/Exploration/fit_min_County.png, id=58, 462.528pt x 346.896pt>
+ (../../../output/tables/Exploration/min_model_iters_JudgeID.tex) [2 <../../../output/figures/Exploration/fit_min_JudgeID.png>] (../../../output/tables/Exploration/all_time_min_model_County.tex)
+<../../../output/figures/Exploration/fit_min_County.png, id=22, 462.528pt x 346.896pt>
 File: ../../../output/figures/Exploration/fit_min_County.png Graphic file (type png)
 <use ../../../output/figures/Exploration/fit_min_County.png>
-Package pdftex.def Info: ../../../output/figures/Exploration/fit_min_County.png  used on input line 168.
+Package pdftex.def Info: ../../../output/figures/Exploration/fit_min_County.png  used on input line 66.
 (pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
- (../../../output/tables/Exploration/min_model_iters_County.tex) [13 <../../../output/figures/Exploration/fit_min_County.png>] (../../../output/tables/Exploration/min_model_JudgeIDCounty.tex)
-<../../../output/figures/Exploration/fit_min_JudgeIDCounty.png, id=64, 462.528pt x 346.896pt>
+ [3] (../../../output/tables/Exploration/min_model_iters_County.tex) (../../../output/tables/Exploration/all_time_min_model_JudgeIDCounty.tex) [4 <../../../output/figures/Exploration/fit_min_County.png>]
+<../../../output/figures/Exploration/fit_min_JudgeIDCounty.png, id=30, 462.528pt x 346.896pt>
 File: ../../../output/figures/Exploration/fit_min_JudgeIDCounty.png Graphic file (type png)
 <use ../../../output/figures/Exploration/fit_min_JudgeIDCounty.png>
-Package pdftex.def Info: ../../../output/figures/Exploration/fit_min_JudgeIDCounty.png  used on input line 190.
+Package pdftex.def Info: ../../../output/figures/Exploration/fit_min_JudgeIDCounty.png  used on input line 88.
 (pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
- [14] (../../../output/tables/Exploration/min_model_iters_JudgeIDCounty.tex) [15 <../../../output/figures/Exploration/fit_min_JudgeIDCounty.png>]
-<../../../output/figures/Exploration/true_vs_fitted_fixed.png, id=72, 706.64pt x 411.5375pt>
-File: ../../../output/figures/Exploration/true_vs_fitted_fixed.png Graphic file (type png)
-<use ../../../output/figures/Exploration/true_vs_fitted_fixed.png>
-Package pdftex.def Info: ../../../output/figures/Exploration/true_vs_fitted_fixed.png  used on input line 234.
-(pdftex.def)             Requested size: 305.33789pt x 177.82425pt.
-<../../../output/figures/Exploration/fit_fixed_JudgeID.png, id=73, 706.64pt x 411.5375pt>
-File: ../../../output/figures/Exploration/fit_fixed_JudgeID.png Graphic file (type png)
-<use ../../../output/figures/Exploration/fit_fixed_JudgeID.png>
-Package pdftex.def Info: ../../../output/figures/Exploration/fit_fixed_JudgeID.png  used on input line 243.
-(pdftex.def)             Requested size: 305.33789pt x 177.82425pt.
- [16 <../../../output/figures/Exploration/true_vs_fitted_fixed.png>] [17 <../../../output/figures/Exploration/fit_fixed_JudgeID.png>]
-Overfull \vbox (28.27005pt too high) has occurred while \output is active []
+ (../../../output/tables/Exploration/min_model_iters_JudgeIDCounty.tex) [5 <../../../output/figures/Exploration/fit_min_JudgeIDCounty.png>] (../../../output/tables/Exploration/judge_CDF_table.tex) [6]
+<../../../output/figures/Exploration/judge_pleas.png, id=38, 462.528pt x 346.896pt>
+File: ../../../output/figures/Exploration/judge_pleas.png Graphic file (type png)
+<use ../../../output/figures/Exploration/judge_pleas.png>
+Package pdftex.def Info: ../../../output/figures/Exploration/judge_pleas.png  used on input line 128.
+(pdftex.def)             Requested size: 211.38832pt x 158.54192pt.
+<../../../output/figures/Exploration/judge_trials.png, id=39, 462.528pt x 346.896pt>
+File: ../../../output/figures/Exploration/judge_trials.png Graphic file (type png)
+<use ../../../output/figures/Exploration/judge_trials.png>
+Package pdftex.def Info: ../../../output/figures/Exploration/judge_trials.png  used on input line 133.
+(pdftex.def)             Requested size: 211.38832pt x 158.54192pt.
+<../../../output/figures/Exploration/judge_days.png, id=40, 462.528pt x 346.896pt>
+File: ../../../output/figures/Exploration/judge_days.png Graphic file (type png)
+<use ../../../output/figures/Exploration/judge_days.png>
+Package pdftex.def Info: ../../../output/figures/Exploration/judge_days.png  used on input line 140.
+(pdftex.def)             Requested size: 211.38832pt x 158.54192pt.
+<../../../output/figures/Exploration/judge_utilization.png, id=41, 462.528pt x 346.896pt>
+File: ../../../output/figures/Exploration/judge_utilization.png Graphic file (type png)
+<use ../../../output/figures/Exploration/judge_utilization.png>
+Package pdftex.def Info: ../../../output/figures/Exploration/judge_utilization.png  used on input line 147.
+(pdftex.def)             Requested size: 211.38832pt x 158.54192pt.
+ [7]
+<../../../output/figures/Exploration/busy_vs_idle_judge_plea_hists.png, id=46, 578.16pt x 361.35pt>
+File: ../../../output/figures/Exploration/busy_vs_idle_judge_plea_hists.png Graphic file (type png)
+<use ../../../output/figures/Exploration/busy_vs_idle_judge_plea_hists.png>
+Package pdftex.def Info: ../../../output/figures/Exploration/busy_vs_idle_judge_plea_hists.png  used on input line 161.
+(pdftex.def)             Requested size: 422.77664pt x 264.23543pt.
+ [8 <../../../output/figures/Exploration/judge_pleas.png> <../../../output/figures/Exploration/judge_trials.png> <../../../output/figures/Exploration/judge_days.png> <../../../output/figures/Exploration/judge_utilization.png>]
+<../../../output/figures/Exploration/fit_fixed_County.png, id=54, 845.1575pt x 411.5375pt>
+File: ../../../output/figures/Exploration/fit_fixed_County.png Graphic file (type png)
+<use ../../../output/figures/Exploration/fit_fixed_County.png>
+Package pdftex.def Info: ../../../output/figures/Exploration/fit_fixed_County.png  used on input line 171.
+(pdftex.def)             Requested size: 305.33789pt x 148.68086pt.
+ [9 <../../../output/figures/Exploration/busy_vs_idle_judge_plea_hists.png> <../../../output/figures/Exploration/fit_fixed_County.png>]
+Overfull \vbox (148.27005pt too high) has occurred while \output is active []
 
- [18]
-Overfull \vbox (220.27005pt too high) has occurred while \output is active []
+ [10]
+Overfull \vbox (4.27005pt too high) has occurred while \output is active []
 
- [19] (./regressions.aux) ) 
+ [11] [12] (./meeting.aux) ) 
 Here is how much of TeX's memory you used:
- 4157 strings out of 492649
- 64935 string characters out of 6129622
- 241565 words of memory out of 5000000
- 7925 multiletter control sequences out of 15000+600000
- 13743 words of font info for 53 fonts, out of 8000000 for 9000
+ 4136 strings out of 492649
+ 63720 string characters out of 6129622
+ 152584 words of memory out of 5000000
+ 7927 multiletter control sequences out of 15000+600000
+ 13397 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,9n,40p,770b,289s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on regressions.pdf (19 pages, 288720 bytes).
+ 42i,9n,40p,793b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmti10.pfb>
+Output written on meeting.pdf (12 pages, 287257 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
+ 114 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

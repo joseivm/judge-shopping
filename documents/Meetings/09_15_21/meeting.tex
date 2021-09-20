@@ -1,0 +1,327 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{booktabs}
+
+\title{September 15, 2021 Meeting Document}
+
+\begin{document}
+\maketitle
+
+\section{Overview}
+  This week I tried a couple more models to estimate the service rate. I tried the all-time min iterative model we discussed as well as a county fixed effects model, I have updated our results table to include them.
+  An overview of the results are below.
+
+  \begin{table}[H]
+    \centering
+    % \small
+    \caption{Summary of Results}
+    \input{../../../output/tables/Exploration/regression_summary}
+  \end{table}
+
+\section{Iterative Idleness Estimation Taking All Time Mins}
+  \textbf{Step 0:} We estimate the model, $\text{Days}_j = \beta_t\text{Trial}_j + \beta_p\text{Plea}_j +\epsilon_j$. \\
+
+  \noindent \textbf{Steps 1-n:} We then use the estimates of $\beta^{(1)}_t$ and $\beta^{(1)}_p$ to estimate the expected number
+  of days it would take each judge to complete their work. Mathematically: $\text{Expected Days}^{(1)}_j = \beta^{(1)}_p \cdot \text{Plea}_j + \beta^{(1)}_t \cdot \text{Trial}_j$.
+  We would then set $\text{Days}^{(n)}_j = \min(\text{Days}_j,\text{Expected Days}^{(n-11)}_j,...,\text{Expected Days}^{(1)}_j)$ We then estimate the model $\text{Days}^{(1)}_j = \beta_t\text{Trial}_j + \beta_p\text{Plea}_j +\epsilon_j$ and repeat until convergence.
+
+  \subsection{Judge Model}
+
+    \begin{table}[H]
+      \centering
+      % \small
+      \caption{Judge Model}
+      \input{../../../output/tables/Exploration/all_time_min_model_JudgeID}
+    \end{table}
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.65\textwidth]{../../../output/figures/Exploration/fit_min_JudgeID}
+      \caption{True vs Fitted Values, Judge Model}
+    \end{figure}
+
+    \begin{table}[H]
+      \centering
+      % \small
+      \caption{Judge Model}
+      \input{../../../output/tables/Exploration/min_model_iters_JudgeID}
+    \end{table}
+
+  \subsection{County Model}
+
+    \begin{table}[H]
+      \centering
+      % \small
+      \caption{County Model}
+      \input{../../../output/tables/Exploration/all_time_min_model_County}
+    \end{table}
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.65\textwidth]{../../../output/figures/Exploration/fit_min_County}
+      \caption{True vs Fitted Values, Judge-County Model}
+    \end{figure}
+
+    \begin{table}[H]
+      \centering
+      % \small
+      \caption{Judge Model}
+      \input{../../../output/tables/Exploration/min_model_iters_County}
+    \end{table}
+
+  \subsection{Judge-County Model}
+
+    \begin{table}[H]
+      \centering
+      % \small
+      \caption{County Model}
+      \input{../../../output/tables/Exploration/all_time_min_model_JudgeIDCounty}
+    \end{table}
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.65\textwidth]{../../../output/figures/Exploration/fit_min_JudgeIDCounty}
+      \caption{True vs Fitted Values, Judge-County Model}
+    \end{figure}
+
+    \begin{table}[H]
+      \centering
+      % \small
+      \caption{Judge-County Model}
+      \input{../../../output/tables/Exploration/min_model_iters_JudgeIDCounty}
+    \end{table}
+
+\section{Judge-level Busyness Analysis}
+  The goal of this exercise was to get a better idea of which are the busiest judges.
+  I focused only on GS days. So when I say the number of pleas and number of trials, I mean those that
+  happened on GS days.
+  We have at least three measures of business: the number of pleas, the number of trials, and
+  the number of GS days assigned to a county. I ranked the judges according to a measure
+  that combined the three measures. To create this measure, I ranked all of the judges according
+  to each measure. I then multiplied each county's score in each measure to create an overall measure.
+  So, for example, if Judge 1 had the most pleas, then its ranking according to pleas would be 1. If Judge 1 had the second most trials, then its ranking according to trials would be 2. If it had the sixth most GS days, then its ranking according to GS days would be 6. Judge 1's overall measure would be $1 \cdot 2 \cdot 6 = 12$. This ranking can be seen in table \ref{cdf-table}. I also created bar charts of the number of pleas, trials, GS days, and the utilization for each county. I calculate the utilization by using the service rate estimates from the county model to calculate the expected number of days it took to process each county's pleas and trials. I then divide the expected number of days by the actual number of assigned days to get the utilization.
+
+  In table \ref{cdf-table}, the columns PleaShare, TrialShare, and GSShare
+  contain the cumulative share of all pleas, trials, and GS days accounted for by the counties up to that row. So, for example, in the 10th row, if the value of PleaShare is 0.5, that means that the top
+  10 counties account for $50\%$ of all pleas. Similarly, if in the 15th row the value of Trial share is 0.9, that means that the top 15 counties account for $90\%$ of all trials. GS share refers to the share of all GS days assigned. The counties in table \ref{cdf-table} are ranked using the measure described in the beginning of the section.
+
+  \begin{table}[H]
+    \centering
+    \small
+    \caption{CDF table}
+    \label{cdf-table}
+    \input{../../../output/tables/Exploration/judge_CDF_table}
+  \end{table}
+
+
+  \subsection{Overall Figures}
+   In figure \ref{fig-county}, the counties are ordered according to the overall ranking described in the previous section.
+
+    \begin{figure}[H]
+      \centering
+        \begin{subfigure}[b]{0.45\textwidth}
+          \includegraphics[width=\textwidth]{../../../output/figures/Exploration/judge_pleas.png}
+          \caption{Pleas}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.45\textwidth}
+          \includegraphics[width=\textwidth]{../../../output/figures/Exploration/judge_trials.png}
+          \caption{Trials}
+
+        \end{subfigure}
+        %\hfill
+        \begin{subfigure}[b]{0.45\textwidth}
+
+          \includegraphics[width=\textwidth]{../../../output/figures/Exploration/judge_days.png}
+          \caption{GS Days}
+
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.45\textwidth}
+
+          \includegraphics[width=\textwidth]{../../../output/figures/Exploration/judge_utilization.png}
+          \caption{Utilization}
+
+        \end{subfigure}
+        \caption{Number of Pleas, Trials, GS days, and utilization for each county.}
+        \label{fig-county}
+    \end{figure}
+
+  \subsection{Comparing Busy and Idle Judges}
+    The purpose of this section is to further investigate how 'busy' counties are different from 'idle'
+    counties. To do this, I split the counties into above median and below median in terms of business.
+    Here, business is measured according to the measure described in the beginning of the section.
+
+    \begin{figure}[H]
+      \includegraphics[width=0.9\textwidth]{../../../output/figures/Exploration/busy_vs_idle_judge_plea_hists.png}
+      \caption{Histogram of pleas processed per day}
+      \label{plea-hist}
+    \end{figure}
+
+\section{Model with County Fixed Effects}
+  Note, the unit of observation here, $i$, is the judge-county combination. The regression we are running here is:  $\text{Days}_i = \alpha_c + \beta_p \text{Plea}_i + \beta_t \text{Trial}_i + \epsilon_i$
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{../../../output/figures/Exploration/fit_fixed_County}
+    \caption{True vs Fitted Values, fixed effects model}
+  \end{figure}
+
+  \begin{table}[H] \centering
+    \caption{Model with County Fixed effects, table continues on next page}
+    \small
+    \begin{tabular}{@{\extracolsep{5pt}}lc}
+    \\[-1.8ex]\hline
+    \hline \\[-1.8ex]
+     & \multicolumn{1}{c}{\textit{Dependent variable:}} \\
+    \cline{2-2}
+    \\[-1.8ex] & Days \\
+    \hline \\[-1.8ex]
+    Plea & 0.091$^{***}$ \\
+     & (0.008) \\
+     Trial & 4.336$^{***}$ \\
+     & (0.339) \\
+     CountyAbbeville & 6.411$^{*}$ \\
+     & (3.784) \\
+     CountyAiken & 3.107 \\
+     & (2.909) \\
+     CountyAllendale & 4.425 \\
+     & (4.360) \\
+     CountyAnderson & 5.237$^{*}$ \\
+     & (2.985) \\
+     CountyBamberg & 5.443 \\
+     & (4.364) \\
+     CountyBarnwell & 2.608 \\
+     & (3.782) \\
+     CountyBeaufort & 8.232$^{***}$ \\
+     & (2.524) \\
+     CountyBerkeley & 3.724 \\
+     & (2.885) \\
+     CountyCalhoun & 3.852 \\
+     & (4.361) \\
+     CountyCharleston & 9.165$^{***}$ \\
+     & (2.237) \\
+     CountyCherokee & 3.112 \\
+     & (3.408) \\
+     CountyChester & 14.170$^{***}$ \\
+     & (4.365) \\
+     CountyChesterfield & 4.966 \\
+     & (3.093) \\
+     CountyClarendon & 7.305$^{**}$ \\
+     & (3.387) \\
+     CountyColleton & 4.991$^{*}$ \\
+     & (2.858) \\
+     CountyDarlington & 7.293$^{**}$ \\
+     & (3.091) \\
+     CountyDillon & 7.260$^{**}$ \\
+     & (3.380) \\
+     CountyDorchester & 2.073 \\
+     & (3.876) \\
+     CountyEdgefield & 7.832$^{*}$ \\
+     & (4.371) \\
+     CountyFairfield & 5.677 \\
+     & (3.798) \\
+     CountyFlorence & 9.426$^{***}$ \\
+     & (3.229) \\
+     CountyGeorgetown & 5.565 \\
+     & (3.415) \\
+     CountyGreenville & 6.571$^{**}$ \\
+     & (2.687) \\
+     CountyGreenwood & 5.803$^{*}$ \\
+     & (3.122) \\
+     CountyHampton & 4.003 \\
+     & (3.777) \\
+
+     \hline \\[-1.8ex]
+     Observations & 278 \\
+     R$^{2}$ & 0.881 \\
+     Adjusted R$^{2}$ & 0.856 \\
+     Residual Std. Error & 7.552 (df = 230) \\
+     F Statistic & 35.355$^{***}$ (df = 48; 230) \\
+    \hline
+    \hline \\[-1.8ex]
+    \textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\
+    \end{tabular}
+  \end{table}
+
+  \begin{table}[H] \centering
+    \caption{Model with County Fixed effects, continued}
+    \small
+    \begin{tabular}{@{\extracolsep{5pt}}lc}
+    \\[-1.8ex]\hline
+    \hline \\[-1.8ex]
+     & \multicolumn{1}{c}{\textit{Dependent variable:}} \\
+    \cline{2-2}
+    \\[-1.8ex] & Days \\
+    \hline \\[-1.8ex]
+    CountyHorry & 5.715$^{**}$ \\
+    & (2.482) \\
+    CountyJasper & 3.514 \\
+    & (3.779) \\
+    CountyKershaw & 6.248$^{**}$ \\
+    & (2.871) \\
+    CountyLancaster & 11.090$^{***}$ \\
+    & (3.788) \\
+    CountyLaurens & 7.800$^{**}$ \\
+    & (3.106) \\
+    CountyLee & 4.218 \\
+    & (3.382) \\
+    CountyLexington & 4.390$^{**}$ \\
+    & (2.219) \\
+    CountyMarion & 5.295 \\
+    & (3.790) \\
+    CountyMarlboro & 10.937$^{***}$ \\
+    & (3.792) \\
+    CountyMcCormick & 6.248 \\
+    & (4.362) \\
+    CountyNewberry & 6.035$^{*}$ \\
+    & (3.385) \\
+    CountyOconee & 2.834 \\
+    & (3.097) \\
+    CountyOrangeburg & 6.506$^{**}$ \\
+    & (2.689) \\
+    CountyPickens & 6.166$^{**}$ \\
+    & (3.101) \\
+    CountyRichland & 10.717$^{***}$ \\
+    & (2.141) \\
+    CountySaluda & 4.655 \\
+    & (4.365) \\
+    CountySpartanburg & 2.984 \\
+    & (2.897) \\
+    CountySumter & 6.194$^{**}$ \\
+    & (2.883) \\
+    CountyUnion & 6.537$^{*}$ \\
+    & (3.388) \\
+    CountyWilliamsburg & 5.859$^{**}$ \\
+    & (2.675) \\
+    CountyYork & 7.085$^{***}$ \\
+    & (2.651) \\
+   \hline \\[-1.8ex]
+  Observations & 278 \\
+  R$^{2}$ & 0.881 \\
+  Adjusted R$^{2}$ & 0.856 \\
+  Residual Std. Error & 7.552 (df = 230) \\
+  F Statistic & 35.355$^{***}$ (df = 48; 230) \\
+    \hline
+    \hline \\[-1.8ex]
+    \textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\
+    \end{tabular}
+  \end{table}
+
+\section{Non-linear Approach}
+  I looked into using a log-linear model, however, none of the approaches I found
+  would yield simple to interpret service rates. I think we might be trading off
+  more interpretable fixed effects for more interpretable service rate estimates.
+  For example, we could estimate a Poisson regression with the specification
+  $\text{Days}_i \sim P(\mu_i)$ and $\mu_i = \exp(\beta_p \text{Plea}_i + \beta_t\text{Trial}_i + \alpha_j)$.
+  This would yield nice interpretations for the $\alpha_j$'s. The judge fixed effects would have a mutliplicative
+  effect on the days, and we could interpret this as sort of proportional idleness. However, we would lose
+  the simplicity of the model $\text{Days}_i = \beta_p \text{Trials}_i + \beta_p \text{Pleas}_i + \epsilon_i$. Since we are
+  ultimately most interested in $\beta_p$ and $\beta_t$, I don't think this tradeoff is worth it.
+
+\end{document}

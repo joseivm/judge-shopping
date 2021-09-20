@@ -252,6 +252,153 @@ def busy_vs_idle_lambda_hists():
     plt.savefig(filename)
     plt.close('all')
 
+##### Busy Judge Analysis ####
+def make_judge_data():
+    sdf = load_sentencing_data()
+    group = 'JudgeID'
+    sdf = sdf.loc[sdf.WorkType == 'GS',:]
+    counts = sdf.groupby(group)[['Plea','Trial']].sum().reset_index()
+
+    cdf = load_calendar_data()
+    cdf = cdf.loc[cdf.WorkType == 'GS',:]
+    days = cdf.groupby(group)['Days'].sum().reset_index()
+    counts = counts.merge(days,on=group)
+
+    cols = ['Plea','Trial','Days']
+    for col in cols:
+        rank_col = col+'Ranking'
+        col_ranking = counts[[col,'JudgeID']].sort_values(col,ascending=False)
+        col_ranking[rank_col] = range(1,counts.shape[0]+1)
+        counts = counts.merge(col_ranking[[rank_col,'JudgeID']],on='JudgeID')
+
+    counts['OverallScore'] = counts['PleaRanking']*counts['TrialRanking']*counts['DaysRanking']
+    counts.sort_values('OverallScore',inplace=True)
+    counts.index = range(1,counts.shape[0]+1)
+    cols = ['JudgeID','Plea','Trial','Days','OverallScore']
+    counts = counts[cols]
+    # filename = TABLE_DIR + 'judge_rankings.tex'
+    # counts.to_latex(filename,float_format='%.2f')
+    return(counts)
+
+def judge_bar_charts():
+    df = make_judge_data()
+    plea_service_rate = 0.17
+    trial_service_rate = 4.23
+    df['WorkDays'] = df['Plea']*0.17 + df['Trial']*4.23
+    df['Utilization'] = df['WorkDays']/df['Days']
+
+    plt.figure()
+    plt.bar(df.JudgeID,df.Plea)
+    plt.ylabel('Pleas')
+    plt.xticks(rotation=90)
+    filename = FIGURE_DIR + 'judge_pleas.png'
+    plt.savefig(filename)
+
+    plt.figure()
+    plt.bar(df.JudgeID,df.Trial)
+    plt.ylabel('Trials')
+    plt.xticks(rotation=90)
+    filename = FIGURE_DIR + 'judge_trials.png'
+    plt.savefig(filename)
+
+    plt.figure()
+    plt.bar(df.JudgeID,df.Days)
+    plt.ylabel('GS Days')
+    plt.xticks(rotation=90)
+    filename = FIGURE_DIR + 'judge_days.png'
+    plt.savefig(filename)
+
+    plt.figure()
+    plt.bar(df.JudgeID,df.Utilization)
+    plt.ylabel('Utilization')
+    plt.xticks(rotation=90)
+    filename = FIGURE_DIR + 'judge_utilization.png'
+    plt.savefig(filename)
+
+    plt.close('all')
+
+def cdf_table_judge():
+    df = make_judge_data()
+    df['PleaShare'] = df.Plea.cumsum()/df.Plea.sum()
+    df['TrialShare'] = df.Trial.cumsum()/df.Trial.sum()
+    df['GSDayShare'] = df.Days.cumsum()/df.Days.sum()
+    df.index = range(1,df.shape[0]+1)
+
+    filename = TABLE_DIR + 'judge_CDF_table.tex'
+    df.to_latex(filename,float_format='%.2f')
+
+def busy_vs_idle_plea_hists_judge():
+    df = make_judge_data()
+    sdf = load_sentencing_data()
+    busy = df.loc[1:23,'JudgeID']
+    idle = df.loc[24:,'JudgeID']
+
+    daily_counts = sdf.groupby(['JudgeID','Date'])['Plea'].sum().reset_index()
+    bdf = daily_counts.loc[daily_counts.JudgeID.isin(busy),:]
+    idf = daily_counts.loc[daily_counts.JudgeID.isin(idle),:]
+
+    fig, axes = plt.subplots(1,2,figsize=(8,5))
+
+    axes[0].hist(bdf.Plea,bins=50)
+    plea_mean = bdf.Plea.mean()
+    axes[0].axvline(x=plea_mean,color='r')
+    x_ticks = np.append(axes[0].get_xticks(),plea_mean)
+    axes[0].set_xticks(x_ticks)
+    axes[0].set_title('Daily Pleas for Busy Judge')
+    axes[0].tick_params(labelrotation=90)
+
+    axes[1].hist(idf.Plea,bins=50)
+    plea_mean = idf.Plea.mean()
+    axes[1].axvline(x=plea_mean,color='r')
+    x_ticks = np.append(axes[1].get_xticks(),plea_mean)
+    axes[1].set_xticks(x_ticks)
+    axes[1].set_title('Daily Pleas for Non Busy Judge')
+    axes[1].tick_params(labelrotation=90)
+    plt.tight_layout()
+    filename = FIGURE_DIR + 'busy_vs_idle_judge_plea_hists.png'
+    plt.savefig(filename)
+    plt.close('all')
+
+def busy_vs_idle_lambda_hists():
+    df = make_regression_data('JudgeID')
+    odf = make_judge_data()
+
+    df = df.merge(odf[['JudgeID','OverallScore']],right_on='JudgeID',left_index=True)
+    df.sort_values('OverallScore',inplace=True)
+    df.index = range(1,df.shape[0]+1)
+
+    y, X = dmatrices('Days ~ Plea + Trial',data=df,return_type='dataframe')
+    model = OLS(y,X).fit()
+
+    df['TrialDays'] = df['Trial']*model.params['Trial']
+    df['PleaDays'] = df['Days']-df['TrialDays']
+    df['Lambda'] = df['Plea']/df['PleaDays']
+
+    bdf = df.loc[1:23,:]
+    idf = df.loc[24:,:]
+
+    fig, axes = plt.subplots(1,2,figsize=(8,5))
+
+    axes[0].hist(bdf.Lambda)
+    plea_mean = bdf.Lambda.mean()
+    axes[0].axvline(x=plea_mean,color='r')
+    x_ticks = np.append(axes[0].get_xticks(),plea_mean)
+    axes[0].set_xticks(x_ticks)
+    axes[0].set_title('Lambdas for Busy Counties')
+    axes[0].tick_params(labelrotation=90)
+
+    axes[1].hist(idf.Lambda)
+    plea_mean = idf.Lambda.mean()
+    axes[1].axvline(x=plea_mean,color='r')
+    x_ticks = np.append(axes[1].get_xticks(),plea_mean)
+    axes[1].set_xticks(x_ticks)
+    axes[1].set_title('Lambdas for Non Busy Counties')
+    axes[1].tick_params(labelrotation=90)
+    plt.tight_layout()
+    filename = FIGURE_DIR + 'lambda_hists.png'
+    plt.savefig(filename)
+    plt.close('all')
+
 ##### Clean Day Analysis #####
 def clean_day_analysis():
     for group in ['JudgeID','County']:
@@ -372,12 +519,8 @@ def remove_days_with_few_sentencing_events(sdf,threshold=10):
     return sdf
 
 def main():
-    regression_analysis()
-    county_bar_charts()
-    cdf_table()
-    busy_vs_idle_plea_hists()
-    busy_vs_idle_lambda_hists()
-    clean_day_analysis()
-    restriction_analysis()
+    judge_bar_charts()
+    cdf_table_judge()
+    busy_vs_idle_plea_hists_judge()
 
 main()

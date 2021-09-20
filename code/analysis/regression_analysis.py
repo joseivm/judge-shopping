@@ -124,6 +124,8 @@ def utilization_model(group):
 
     mu_p = model.params['Plea']
     mu_t = model.params['Trial']
+    param_values  = [{'Iteration':0,'Beta P':mu_p, 'Beta T':mu_t}]
+    iter = 1
     while (abs(mu_t - prev_mu_t) > tolerance) or (abs(mu_p - prev_mu_p) > tolerance):
         prev_mu_p = mu_p
         prev_mu_t = mu_t
@@ -141,13 +143,33 @@ def utilization_model(group):
 
         mu_p = model.params['Plea']
         mu_t = model.params['Trial']
+        param_values.append({'Iteration':iter,'Beta P':mu_p, 'Beta T':mu_t})
+        iter += 1
 
     print(model.summary())
-    latex_string = model.summary().as_latex()
-    filename = TABLE_DIR + 'utilization_model.tex'
-    with open(filename,'w') as f:
-        f.write(latex_string)
-    return model
+    if isinstance(group,list):
+        group = ''.join(group)
+    # True vs fitted
+    plt.figure()
+    plt.plot(model.fittedvalues,y,'o')
+    plt.ylabel('True values')
+    plt.xlabel('Fitted values')
+    filename = FIGURE_DIR + 'fit_utilization_{}.png'.format(group)
+    plt.savefig(filename)
+
+    filename = TABLE_DIR + 'utilization_model_convergence_{}.tex'.format(group)
+    df.sort_values('Utilization',ascending=False,inplace=True)
+    df.to_latex(filename,index=False,float_format="%.2f")
+
+    iters = pd.DataFrame(param_values)
+    filename = TABLE_DIR + 'utilization_model_iters_{}.tex'.format(group)
+    iters.to_latex(filename,index=False,float_format="%.2f")
+
+    # latex_string = model.summary().as_latex()
+    # filename = TABLE_DIR + 'utilization_model_{}.tex'.format(group)
+    # with open(filename,'w') as f:
+    #     f.write(latex_string)
+    return {'Model':'Utilization','Group':group,'Pleas per Day':1/mu_p,'Days per Trial':mu_t}
 
 def min_model(group):
     df = make_regression_data(group)
@@ -163,6 +185,9 @@ def min_model(group):
 
     mu_p = model.params['Plea']
     mu_t = model.params['Trial']
+
+    param_values  = [{'Iteration':0,'Beta P':mu_p, 'Beta T':mu_t}]
+    iter = 1
     while (abs(mu_t - prev_mu_t) > tolerance) or (abs(mu_p - prev_mu_p) > tolerance):
         prev_mu_p = mu_p
         prev_mu_t = mu_t
@@ -178,18 +203,100 @@ def min_model(group):
         mu_p = model.params['Plea']
         mu_t = model.params['Trial']
 
+        param_values.append({'Iteration':iter,'Beta P':mu_p, 'Beta T':mu_t})
+        iter += 1
+
     print(model.summary())
+    if isinstance(group,list):
+        group = ''.join(group)
+    # True vs fitted
+    plt.figure()
+    plt.plot(model.fittedvalues,y,'o')
+    plt.ylabel('True values')
+    plt.xlabel('Fitted values')
+    filename = FIGURE_DIR + 'fit_min_{}.png'.format(group)
+    plt.savefig(filename)
+
+    iters = pd.DataFrame(param_values)
+    filename = TABLE_DIR + 'min_model_iters_{}.tex'.format(group)
+    iters.to_latex(filename,index=False,float_format="%.2f")
+
+    # latex_string = model.summary().as_latex()
+    # filename = TABLE_DIR + 'min_model_{}.tex'.format(group)
+    # with open(filename,'w') as f:
+    #     f.write(latex_string)
+    return {'Model':'Min','Group':group,'Pleas per Day':1/mu_p,'Days per Trial':mu_t}
+
+def all_time_min_model(group):
+    df = make_regression_data(group)
+    y, X = dmatrices('Days ~ Plea + Trial',data=df,return_type='dataframe')
+    model = OLS(y,X).fit()
+    df['TrialDays'] = df['Trial']*model.params['Trial']
+    df['PleaDays'] = df['Plea']*model.params['Plea']
+    df['ExpectedDays0'] = df.TrialDays + df.PleaDays
+
+    tolerance = 0.05
+    prev_mu_p = 0
+    prev_mu_t = 0
+
+    mu_p = model.params['Plea']
+    mu_t = model.params['Trial']
+
+    param_values  = [{'Iteration':0,'Beta P':mu_p, 'Beta T':mu_t}]
+    day_cols = ['Days','ExpectedDays0']
+    iter = 1
+    while (abs(mu_t - prev_mu_t) > tolerance) or (abs(mu_p - prev_mu_p) > tolerance):
+        prev_mu_p = mu_p
+        prev_mu_t = mu_t
+        print('mu_p: {}, mu_t: {}'.format(mu_p,mu_t))
+        new_day_col = 'ExpectedDays{}'.format(iter)
+
+        y = df[day_cols].min(axis=1)
+        model = OLS(y,X).fit()
+
+        df['TrialDays'] = df['Trial']*model.params['Trial']
+        df['PleaDays'] = df['Plea']*model.params['Plea']
+        df[new_day_col] = df.TrialDays + df.PleaDays
+
+        mu_p = model.params['Plea']
+        mu_t = model.params['Trial']
+
+        param_values.append({'Iteration':iter,'Beta P':mu_p, 'Beta T':mu_t})
+        iter += 1
+        day_cols.append(new_day_col)
+
+    print(model.summary())
+    if isinstance(group,list):
+        group = ''.join(group)
+    # True vs fitted
+    plt.figure()
+    plt.plot(model.fittedvalues,y,'o')
+    plt.ylabel('True values')
+    plt.xlabel('Fitted values')
+    filename = FIGURE_DIR + 'fit_all_time_min_{}.png'.format(group)
+    plt.savefig(filename)
+
+    iters = pd.DataFrame(param_values)
+    filename = TABLE_DIR + 'all_time_min_model_iters_{}.tex'.format(group)
+    iters.to_latex(filename,index=False,float_format="%.2f")
+
     latex_string = model.summary().as_latex()
-    filename = TABLE_DIR + 'min_model.tex'
+    filename = TABLE_DIR + 'all_time_min_model_{}.tex'.format(group)
     with open(filename,'w') as f:
         f.write(latex_string)
-    return model
+    return {'Model':'Min','Group':group,'Pleas per Day':1/mu_p,'Days per Trial':mu_t}
 
 def main():
-    regression_analysis()
-    county_bar_charts()
-    cdf_table()
-    busy_vs_idle_plea_hists()
-    busy_vs_idle_lambda_hists()
-    clean_day_analysis()
-    restriction_analysis()
+    overall_results = []
+    for group in ['JudgeID','County',['JudgeID','County']]:
+        util_results = utilization_model(group)
+        min_results = min_model(group)
+        overall_results.append(util_results)
+        overall_results.append(min_results)
+
+    results = pd.DataFrame(overall_results)
+    filename = TABLE_DIR + 'regression_summary.tex'
+    results.sort_values(['Model','Group'],inplace=True)
+    results.to_latex(filename,index=False,float_format="%.2f")
+
+main()
