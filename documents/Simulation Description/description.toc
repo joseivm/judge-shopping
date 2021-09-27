@@ -8,7 +8,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {1.1.2}Imputation of Missing Dates}{iii}{subsubsection.1.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2}Calendar Data}{iv}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.2}Master Calendar Data}{iv}{subsection.1.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.3}Assignments}{iv}{subsection.1.3}
 \defcounter {refsection}{0}\relax 
@@ -16,21 +16,21 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {1.3.2}Parsing}{vi}{subsubsection.1.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4}Merging the Sentencing Data and the Calendar Data}{vi}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.4}Merging the Sentencing Data and the Calendar Data}{vii}{subsection.1.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2}Model}{vii}{section.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Estimation}{vii}{section.3}
+\contentsline {section}{\numberline {3}Estimation}{viii}{section.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1}Assumptions/Restrictions}{viii}{subsection.3.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2}Probability of Conviction at Trial - $\theta $}{viii}{subsection.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.1}Sample}{viii}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.1}Sample}{ix}{subsubsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.2}Proposed Changes}{viii}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2}Proposed Changes}{ix}{subsubsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}Expected Sentence Length if Convicted - $\tau $}{viii}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.3}Expected Sentence Length if Convicted - $\tau $}{ix}{subsection.3.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.3.1}Sample}{ix}{subsubsection.3.3.1}
 \defcounter {refsection}{0}\relax 
@@ -56,27 +56,27 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Plea MLE Sample}{xi}{section*.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Plea Arrival Rate Sample}{xi}{section*.16}
+\contentsline {paragraph}{Plea Arrival Rate Sample}{xii}{section*.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Trial Rate Sample}{xi}{section*.17}
+\contentsline {paragraph}{Trial Rate Sample}{xii}{section*.17}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.7.2}Estimation of $\mu _t$}{xii}{subsubsection.3.7.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.7.3}Ad-hoc Algorithm for Joint Estimation of $\mu _t,\mu _p$}{xiii}{subsubsection.3.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Simulation Plan}{xiii}{section.4}
+\contentsline {section}{\numberline {4}Simulation Plan}{xiv}{section.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{State Variables}{xiii}{section*.20}
+\contentsline {paragraph}{State Variables}{xiv}{section*.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Trial Scheduling}{xiii}{section*.21}
+\contentsline {paragraph}{Trial Scheduling}{xiv}{section*.21}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Assigning judges to counties}{xiv}{section*.22}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Defendant Arrivals}{xiv}{section*.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Defendant Choice}{xiv}{section*.24}
+\contentsline {paragraph}{Defendant Choice}{xv}{section*.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Next Steps}{xiv}{section.5}
+\contentsline {section}{\numberline {5}Next Steps}{xv}{section.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {A}Sentencing Data Set}{xv}{appendix.A}
 \defcounter {refsection}{0}\relax 
@@ -102,7 +102,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {B.1}Data Cleaning}{xix}{subsection.B.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C}Discrepancies between the Sentencing Data and the Calendar Data}{xxii}{appendix.C}
+\contentsline {section}{\numberline {C}Discrepancies between the Sentencing Data and the Master Calendar Data}{xxii}{appendix.C}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {C.1}No Assignments Case}{xxii}{subsection.C.1}
 \defcounter {refsection}{0}\relax 

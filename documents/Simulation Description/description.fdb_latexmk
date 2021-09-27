@@ -1,11 +1,11 @@
 # Fdb version 3
-["biber description"] 1629265041 "description.bcf" "description.bbl" "description" 1629309391
-  "description.bcf" 1629309390 90938 f65e93a2288c03e8739bc6d12de1a3c4 ""
+["biber description"] 1629265041 "description.bcf" "description.bbl" "description" 1632422876
+  "description.bcf" 1632422875 90938 f65e93a2288c03e8739bc6d12de1a3c4 ""
   "main.bib" 1624652855 1332 09a88c7fb70fbbe9baa22eeb895d7aec ""
   (generated)
   "description.blg"
   "description.bbl"
-["pdflatex"] 1629309388 "description.tex" "description.pdf" "description" 1629309391
+["pdflatex"] 1632422873 "description.tex" "description.pdf" "description" 1632422876
   "../../output/figures/Exploration/convex_hull_max.png" 1625758428 50124 42abff2d818c720f918fa387f40fe5e3 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1480098666 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1480098666 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -246,21 +246,21 @@
   "Tables/MultipleSD.tex" 1619587210 12402 f2dd78bb09f51831eacf2abb600c5141 ""
   "Tables/Single.tex" 1619628879 8463 44888015f514410872161418a5a9a6c5 ""
   "Tables/SingleWD.tex" 1619628879 1200 9fd7d0337164995d164103a12f633574 ""
-  "Tables/assignment_meanings.tex" 1624653752 382 07655cbce98f07a7910b1738cf0cbf69 ""
+  "Tables/assignment_meanings.tex" 1632174503 444 2a792ca2537d507a44d54e894512794d ""
   "Tables/assignments.tex" 1624651235 428 5dda0c928f3fd5ea31d438b5bf4cc028 ""
   "Tables/calendar_example.tex" 1624651816 279 04df7df97a27230155904316713936ee ""
   "Tables/sentencing_variables.tex" 1625064148 2491 862ce640b5edd705b6c917187c7c0f68 ""
-  "description.aux" 1629309390 31491 93a58de84b1208c6189d35b997ee02f3 ""
+  "description.aux" 1632422875 31812 502ce49eeee764afd08a98037449a6ef ""
   "description.bbl" 1629265044 3284 341502ae61dff507aa9bf814300eacda "biber description"
-  "description.out" 1629309390 3917 db9db80ea61ca1d6900600e798cbcb3a ""
-  "description.run.xml" 1629309390 2354 2f0b33618f2f84b7706331d1c5df562d ""
-  "description.tex" 1629309387 98873 fb7550811d0a547c7e028a3d413ddb77 ""
-  "description.toc" 1629309390 8535 42e568dd96ed1de7d4c9b989cebc7be9 ""
+  "description.out" 1632422875 3931 f90d971ad0dbb170c728ab6c482e68a2 ""
+  "description.run.xml" 1632422875 2354 2f0b33618f2f84b7706331d1c5df562d ""
+  "description.tex" 1632422864 99937 3ecb1e5e95090fe469acd6d6ef79b55d ""
+  "description.toc" 1632422875 8542 e0b5ec1f15e84402d7a6591bd2ce9171 ""
   (generated)
   "description.pdf"
-  "description.out"
-  "description.run.xml"
-  "description.toc"
+  "description.aux"
   "description.log"
   "description.bcf"
-  "description.aux"
+  "description.run.xml"
+  "description.out"
+  "description.toc"

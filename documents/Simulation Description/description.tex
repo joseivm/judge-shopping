@@ -90,6 +90,8 @@
 
 \addbibresource{main.bib}
 
+\pagenumbering{arabic}
+
 \title{Simulation Study Overview}
 \author{}
 
@@ -109,7 +111,7 @@
   We have two main data sources: sentencing data and judge schedules, both of them are for the 2001 fiscal year. We obtained the data from the authors of \cite{hester2017conditional}. We briefly describe both datasets below.
 
   \subsection{Sentencing Data}
-    The sentencing data contains information about 17,671 sentencing events in South Carolina from August 2000-July 2001. Each sentencing event contains an identifier for the judge who heard the case, the county the case was heard in, categorical variables describing the offense, and some defendant characteristics (e.g. race, age, and criminal history). There are 50 judges and 46 counties in the dataset. A full list of the variables we use can be found in table \ref{sent-vars}.
+    The sentencing data contains information about 17,671 sentencing events in South Carolina from August 2000-July 2001. Each sentencing event contains an identifier for the judge who heard the case, the county the case was heard in, categorical variables describing the offense, and some defendant characteristics (e.g. race, age, and criminal history). There are 50 judges and 46 counties in the dataset. A full list of the variables we use can be found in Table \ref{sent-vars}.
 
     \begin{table}[H]
       \caption{Sentencing Data Variables}
@@ -121,8 +123,8 @@
       In the raw data, there are 51 distinct judge ID's. However, according to \cite{hester2017conditional}, judge 1 is a combination of several judges that had few sentencing events. As a result, we exclude judge 1 from our sample, which leaves us with 17,516 observations.
 
     \subsubsection{Imputation of Missing Dates}
-      After removing the sentencing events heard by Judge 1, there are 1,482 sentencing events with the \textit{date} field missing. This is the only variable with missing values in the entire dataset. We impute the dates for these events in the following way. Recall that the judge name and county are still available for sentencing events with missing dates. In general, when imputing the dates for sentencing events with missing dates, we first use the master calendar to determine a set of possible dates in which the sentencing event could have occurred, and then we assign the events with missing dates as evenly as possible across these possible dates. So, for example, if there are 5 sentencing events with missing dates and 4 potential dates, then each of the potential dates would get assigned a sentencing event, and one of the potential dates would get the remaining one.
-      Suppose that judge $j$ has $m$ sentencing events with missing dates in county $c$ (which is in circuit $k$). The set of potential dates we would assign these sentencing events to would evolve in the following way.
+      After removing the sentencing events heard by Judge 1, there are 1,482 sentencing events with the \textit{date} field missing. This is the only variable with missing values in the entire dataset. We impute the dates for these events in the following way. Recall that the judge name and county are still available for sentencing events with missing dates. In general, when imputing the dates for sentencing events with missing dates, we first use the master calendar to determine a set of possible dates in which the sentencing event could have occurred, and then we assign the events with missing dates as evenly as possible across these possible dates. So, for example, if there are 5 sentencing events with missing dates and 4 potential dates, then each of the potential dates would get assigned a sentencing event, and the first of the potential dates would get the remaining one.
+      Suppose that judge $j$ has $m$ sentencing events with missing dates in county $c$ (which is in circuit $k$). The set of potential dates we would assign these sentencing events to would evolve in the following way. In each category, the days are ordered from earliest to latest.
 
       \begin{enumerate}
         \item \textbf{Matching county, GS:} Days in the master calendar in which judge $j$ had a "GS" assignment to county $c$.
@@ -151,7 +153,7 @@
           \end{tabular}
       \end{table}
 
-  \subsection{Calendar Data}
+  \subsection{Master Calendar Data}
     This dataset contains information about each judge's assignment for each week of the fiscal year 2001. A snapshot of the calendar can be seen in figure \ref{fig-calendar}. Each assignment generally contains the county each judge was assigned to and the assignment type. The assignment type refers to the kind of cases a judge is scheduled to hear (civil or criminal).
     \begin{figure}[h]
         \centering
@@ -161,7 +163,7 @@
       \end{figure}
 
     \subsection{Assignments}
-      The judges were generally assigned to either specific counties or to circuit courts. $75\%$ of all judge assignments were to either a specific county or to a circuit court. The remaining assignments were to one of the categories in Table \ref{tab-special-assignments}. As can be seen, outside of "in chambers" they generally pertain to special circumstances.
+      The judges were generally assigned to either specific counties or to circuit courts. In the master calendar data, $75\%$ of all judge assignments were to either a specific county or to a circuit court. The remaining assignments were to one of the categories in Table \ref{tab-special-assignments}. As can be seen, outside of "in chambers" they generally pertain to special circumstances.
 
       \begin{table}[H]
         \centering
@@ -181,19 +183,21 @@
       \end{table}
 
     \subsubsection{Assignment Types}
-      Judge calendar assignments generally have an acronym indicating the type of the assignment (e.g. Marion GS). There are eight different assignment types, each with a corresponding acronym. Assignments can have more than one type (e.g. Marion GS CC). Our study focuses on criminal cases, which are heard in general sessions (GS). Some assignment types, like CP (common pleas), are for civil cases. A full list of the assignment type acronyms and their meanings can be found in table \ref{tab-assignment-types}.
+      Judge calendar assignments generally have an acronym indicating the type of the assignment (e.g. Marion GS). There are eight different assignment types, each with a corresponding acronym. Assignments can have more than one type (e.g. Marion GS CC). Our study focuses on criminal cases, which are heard in general sessions (GS). Some assignment types, like CP (common pleas), are for civil cases. A full list of the assignment type acronyms and their meanings can be found in Table \ref{tab-assignment-types}.
 
       \begin{table}[H]
         \centering
-        \caption{Assignment Type Acronyms}
+        \caption{Assignment Type Acronyms. The share column specifies the share of all assignments that include that assignment type.}
         \label{tab-assignment-types}
         \input{Tables/assignment_meanings.tex}
       \end{table}
 
-    \subsubsection{Parsing}
-      As can be seen from figure \ref{fig-calendar}, the assignments in the raw calendar data are on a weekly basis. However, several parts of our analysis stood to benefit from having the daily assignments for each judge, as opposed to only the weekly assignment. For example, this allowed us to more accurately count the total number of days a judge was assigned to a county, or to more accurately determine if there was discrepancy between the sentencing data and the calendar data. The goal of the parsing was to turn the weekly assignemnts in the calendar data into daily assignments. In other words, we wanted to determine where each judge \textit{should have been} each day of the year (according to the calendar data). The end goal of the parsing is to create a dataset that contains at least one observation for each judge's location in each day of the year. This dataset will represent where the judge should have been according to the calendar data.
+			% Assignments of type GS are exclusively for criminal cases. Common pleas refers to civil cases. TODO: Elaborate on the description of each of these categories. Especially GS.
 
-      A judge can be assigned to one or multiple counties in a week, and we observe 5 different kinds of assignments: single assignment, single assignment with dates, multiple assignment, multiple assignment with some dates, and multiple assignment with all dates. We parse the calendar data to determine each judge's schedule for every day of the year. In the resulting data, the unit of observation is judge, day, county. Note that the only potentially ambiguous assignment types are multiple assignment and multiple assignment with some dates. By ambiguous, we mean that the calendar data does not specify a unique location for a judge. For example, in the single assignment case the judge is only supposed to be in one county (according to the calendar data). However, in the multiple assignment case, it is not clear in which county the judge should be (according to the calendar data). For these ambiguous assignment types, we set the judge to be in all counties that he is scheduled to be in. For example, if judge 2 is scheduled for both Marion and Horry in the week of March 19-March 23, for each day of that week our data would include an observation for judge 2 in Horry and an observation for judge 2 in Marion. An example of what our parsed data looks like can be seen in table \ref{tab-calendar-example}.
+    \subsubsection{Parsing}
+      As can be seen from Figure \ref{fig-calendar}, the assignments in the raw calendar data are on a weekly basis. However, several parts of our analysis stood to benefit from having the daily assignments for each judge, as opposed to only the weekly assignment. For example, this allowed us to more accurately count the total number of days a judge was assigned to a county, or to more accurately determine if there was discrepancy between the sentencing data and the calendar data. The goal of the parsing was to turn the weekly assignemnts in the calendar data into daily assignments. In other words, we wanted to determine where each judge \textit{should have been} each day of the year (according to the calendar data). The end goal of the parsing is to create a dataset that contains at least one observation for each judge's location in each day of the year. This dataset will represent where the judge should have been according to the calendar data.
+
+      A judge can be assigned to one or multiple counties in a week, and we observe 5 different kinds of assignments: single assignment, single assignment with dates, multiple assignment, multiple assignment with some dates, and multiple assignment with all dates. We parse the calendar data to determine each judge's schedule for every day of the year. In the resulting data, the unit of observation is judge, day, county. Note that the only potentially ambiguous assignment types are multiple assignment and multiple assignment with some dates. By ambiguous, we mean that the calendar data does not specify a unique location for a judge. For example, in the single assignment case the judge is only supposed to be in one county (according to the calendar data). However, in the multiple assignment case, it is not clear in which county the judge should be (according to the calendar data). For these ambiguous assignment types, we set the judge to be in all counties that he is scheduled to be in. One portion of our analysis involves counting the number of days that a judge was assigned to a specific county. For days in which a judge is assigned to multiple counties, we normalize the number of days he/she is assigned to each county so that the sum of the assignments for each day is equal to one. For example, if judge 2 is scheduled for both Marion and Horry in the week of March 19-March 23, for each day of that week our data would include an observation for judge 2 in Horry and an observation for judge 2 in Marion. Furthermore, for each of these days we would say that judge 2 was assigned to 0.5 days in Horry and 0.5 days in Marion. An example of what our parsed data looks like can be seen in table \ref{tab-calendar-example}.
 
       \begin{table}[H]
         \centering
@@ -210,11 +214,12 @@
       \end{table}
 
   \subsection{Merging the Sentencing Data and the Calendar Data}
+	  \label{mapping-judge-names}
     The main challenge in using the two datasets is that they don't share a common identifier for judges. The sentencing data uses numerical IDs to
-    identify judges, while the calendar data uses judge names to identify them. There is no mapping from judge numbers to judge names in the raw data. To map judge ID's to judge names, we assign each Judge ID to the judge name in the schedule data whose schedule overlaps the most with that Judge ID. We consider the sentencing data and schedule data to overlap for a Judge ID and a Judge name in a specific week if the Judge ID in consideration has a sentencing event in a county that that judge name is assigned to in that week. So, if in Week 12 judge 'John Doe' is assigned to 'Aitken' county, and we see a sentencing event for Judge ID $n$ in 'Aitken' county on Week 12, we would consider their schedules to be overlapping in that week. This procedure yields a unique mapping (i.e. there are never any ties). We also tried two other methods, and they yielded the same results. The two other methods as well as the final mapping can be found in Appendix \ref{app-map}.
+    identify judges, while the calendar data uses judge names to identify them. There is no mapping from judge numbers to judge names in the raw data. To map judge ID's to judge names, we assign each Judge ID to the judge name in the schedule data whose schedule overlaps the most with that Judge ID. We consider the sentencing data and schedule data to overlap for a Judge ID and a Judge name in a specific week if the Judge ID in consideration has a sentencing event in a county that that judge name is assigned to in that week. So, if in Week 12 judge 'John Doe' is assigned to 'Aitken' county, and we see a sentencing event for Judge ID $n$ in 'Aitken' county on Week 12, we would consider their schedules to be overlapping in that week. Assigning each judge ID to the judge name with the most overlap yields a unique mapping (i.e. there are never any ties). We also tried two other methods, and they yielded the same results. The two other methods as well as the final mapping can be found in Appendix \ref{app-map}.
 
 \section{Model}
-  We use the model developed by \cite{wang2019}. There are three agents: the judge, the defendant, and the prosecutor. The prosecutor proposes a plea offer, and the judge and the defendant choose whether to accept. The game evolves in the following steps:
+  We build on the model developed by \cite{wang2019}. There are three agents: the judge, the defendant, and the prosecutor. The prosecutor proposes a plea offer, and the judge and the defendant choose whether to accept. The game evolves in the following steps:
 
   \begin{enumerate}
     \item The defendant chooses the judge/decides when to go to court
@@ -222,11 +227,11 @@
     \item The defendant decides whether to accept the plea offer or go to trial
   \end{enumerate}
 
-  Each defendant is characterized by the following quantities: $\theta$ - the probability of conviction at trial, and $\tau$ - the expected sentence length if convicted in trial. Each defendant additionally has an idiosyncratic cost of going to trial, $c_d >0$. A defendant will accept a plea offer, $s$, if $s \leq \theta \tau + c_d$.\\
+  Each defendant is characterized by the following quantities: $\theta$ - the probability of conviction at trial, and $\tau$ - the expected sentence length if convicted in trial. Each defendant additionally has an idiosyncratic cost of going to trial, $c_d >0$ (we relax this assumption later). A defendant will accept a plea offer, $s$, if $s \leq \theta \tau + c_d$.\\
 
   Judges are modeled by their harshness, $h$. Given a defendant, $\theta \tau$ and a plea offer, $s$, the lowest plea offer the judge will accept is denoted by $l_j(\theta \tau)$ and the maximum plea offer the judge will accept is denoted by $u_j(\theta \tau)$.\\
 
-  As a result, given a specific judge $j$, the optimal sentence for the prosecutor to offer is $s^* = \min(\theta \tau + c_d,u_j(\theta \tau))$. This quantity is also the defendant's cost.
+  As a result, given a specific judge $j$, the optimal sentence for the prosecutor to offer is $s^* = \min(\theta \tau + c_d,u_j(\theta \tau))$. This quantity is also the defendant's cost. Finally, the case goes to trial if $\theta \tau + c_d < l_j(\theta \tau)$.
 
 \section{Estimation}
   For the simulation, we have to estimate several of the model's parameters. In this section, we provide a detailed description of how we estimate each parameter, including the sample used.
@@ -243,10 +248,7 @@
       We only use the trial sentencing events to estimate $\tau$   & \ref{tau-estimation}         \\
       We currently only use a subset of the data to estimate $c_d$ & \ref{c_d-estimation}         \\
       We add the point $(0,0)$ to the convex hull of every judge   & \ref{convex_hull-estimation} \\
-      $u_j, l_j$ are undefined for values of $\theta \tau$ outside the domain of the convex hull of $j$         & \ref{convex_hull-estimation}  \\
-      We assume that on "GS" days, judges work on either pleas or trials and never idle.                        & \ref{service_rate-estimation} \\
-      We exclude judges that sentenced less than 2 trials when estimating $\mu_t$ & \ref{service_rate-estimation} \\
-      We exclude (TBD) when estimating $\mu_p$ & \ref{service_rate-estimation}} \\ \hline
+      We assume (TBD) when using regression model & \ref{service_rate-estimation}} \\ \hline
       \end{tabular}
     \end{table}
 
@@ -268,7 +270,7 @@
     \end{table}
 
     \subsubsection{Sample}
-      We only use the observations in the data that are trials and that have non missing values for the predictor variables. There are only 256 observations in the data meeting this criteria.
+      We only use the observations in the data that are trials and that have non missing values for the predictor variables. There are only 256 observations in the data meeting this criteria. Of these 256 observations, 247 resulted in a conviction.
 
     \subsubsection{Proposed Changes}
       We should consider jointly estimating $\theta$ and $\tau$ using a Hurdle Regression model as in Hester and Hartman 2017.
@@ -323,8 +325,10 @@
 			&u_j(\theta\tau) \,=\, \max\{y:(\theta\tau,y)\in\mathcal{A}_j \}
 		\end{align*}
 
-     \paragraph{Implementation}
-     Suppose we have the simplices of the convex hull for a specific judge, and that they are given as tuples of two points $((x_1,y_1),(x_2,y_2))$. Given a specific $\theta \tau$ we implement the convex hull approach by iterating over the simplices of the convex hull, and finding the two simplices on which $\theta \tau$ lies. In other words, we find the two line segments on the boundary of the convex hull whose domain includes $\theta \tau$. We then find the value of the convex hull boundary at $\theta \tau$ in each of these two line segments using linear interpolation. The largest (smallest) of these two values is $u_j (l_j)$. \textbf{Note:} we should think about what to do in cases where $\theta_1 \tau_1$ is not in the convex hull. Figure \ref{fig-convex-hull} contains an illustration:
+   \paragraph{Implementation}
+   Suppose we have the simplices of the convex hull for a specific judge, and that they are given as tuples of two points $((x_1,y_1),(x_2,y_2))$. Given a specific $\theta \tau$ we implement the convex hull approach by iterating over the simplices of the convex hull, and finding the two simplices on which $\theta \tau$ lies. In other words, we find the two line segments on the boundary of the convex hull whose domain includes $\theta \tau$. We then find the value of the convex hull boundary at $\theta \tau$ in each of these two line segments using linear interpolation. The largest (smallest) of these two values is $u_j (l_j)$. In cases where $\theta_1 \tau_1$ is not in the domain of the convex hull because it is too large, we use the largest value in the convex hull to find $u_j (l_j)$. $\theta_1 \tau_1$ will never be too small because all convex hulls include $(0,0)$ and $\theta_1 \tau_1 \geq 0$. Figure \ref{fig-convex-hull} contains an illustration:
+
+	 \textbf{Note:} we should think about what to do in cases where $\theta_1 \tau_1$ is not in the convex hull. Figure \ref{fig-convex-hull} contains an illustration:
 
     \begin{figure}[H]
       \centering
@@ -415,7 +419,7 @@
 			\end{align*}
 
       Let $L(\mu_p) = -\sum_{i=1}^N \log P(S_i = s)$. We then set
-			 $\mu_p = \argmin L(\mu_p)$ and calculate $\mu_t$ as described in \ref{mu_t-estimation}. Again, the judge-day combinations for which we are minimizing the negative log likelihood are those that satisfy our Plea MLE conditions. We use a gradient descent algorithm with the Adam Optimizer to find the value of $\mu_p$ that minimizes the NLL. This new value of $\mu_p$ will imply a new value of $\mu_t$, and so we repeat Steps 1-3 until we converge.
+			 $\mu_p = \argmin L(\mu_p)$ and calculate $\mu_t$ as described in \ref{mu_t-estimation}. Again, the judge-day combinations for which we are minimizing the negative log likelihood are those that satisfy our Plea MLE conditions. We use a gradient descent algorithm with the Adam Optimizer to find the value of $\mu_p$ that minimizes the NLL. This new value of $\mu_p$ will imply a new value of $\mu_t$ as in Section \ref{mu_t-estimation}, and so we repeat Steps 1-3 until we converge.
 
 \section{Simulation Plan}
   We simulate the system using the discrete choice model described in Section 3. Our simulation is as follows:
@@ -429,7 +433,7 @@
   \paragraph{Defendant Arrivals} In each time period, $t$, we iterate over the different counties. We simulate defendant arrivals for a given county, $c$, as follows: first, we determine the number of arrivals, $n_{ct}$ by drawing from a Poisson distribution with mean $\lambda_c$. We then draw $n_{ct}$ defendants from county $c$'s past defendants as observed in the sentencing data. If the county has any backlogged defendants in that week, the backlogged defendants are added to that week's list of defendants, and are served first.
 
   \paragraph{Defendant Choice} Each defendant then chooses from the available judges that will be in
-  county $c$ in the next $r$ weeks. The defendant chooses the judge, $j$ that minimizes his expected cost, $\min(\theta \tau + c_d,u_j(\theta \tau)) + k(j)d$, where $c_d$ is the defendant's cost of going to trial, $k(j)$ is the number of time periods until judge $j$ will be in county $c$, and $d$ is the cost of delay. Once a defendant chooses a judge, we reduce that judge's capacity for the week in which he will sentence that defendant. If there are no judges available in the next $r$ weeks, the defendant is added to the county's list of backlogged defendants and processed again next week. If a defendant chooses to go to trial, that defendant disappears from the simulation.
+  county $c$ in the next $r$ weeks. The defendant chooses the judge, $j$ that minimizes his expected cost, $\min(\theta \tau + c_d,u_j(\theta \tau)) + k(j)d$, where $c_d$ is the defendant's cost of going to trial, $k(j)$ is the number of time periods until judge $j$ will be in county $c$, and $d$ is the cost of delay. Once a defendant chooses a judge, we reduce that judge's capacity for the week in which he will sentence that defendant. If there are no judges available in the next $r$ weeks, the defendant is added to the county's list of backlogged defendants and processed again next week. If a defendant chooses to go to trial, that defendant disappears from the simulation, and all judges' capacity remains unchanged.
 
 \section{Next Steps}
   \begin{itemize}
@@ -602,7 +606,7 @@
       \end{figure}
 
   \subsection{Summary Statistics}
-
+Master
 \section{Calendar Data}
   \subsection{Data Cleaning}
     We do two things to clean the calendar data:
@@ -671,10 +675,10 @@
     	\vspace{-2mm}
     \end{table}
 
-\section{Discrepancies between the Sentencing Data and the Calendar Data}
+\section{Discrepancies between the Sentencing Data and the Master Calendar Data}
   \label{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments}
 
-  This section studies the discrepancies between the sentencing data and the calendar data. In doing so, we take advantage of the mapping from judge numbers to judge names (to be discussed in Section \ref{Sec:Mapping_Judge_Numbers_To_Judge_Names}).
+  This section studies the discrepancies between the sentencing data and the calendar data. In doing so, we take advantage of the mapping from judge numbers to judge names (discussed in Section \ref{mapping-judge-names}).
 
   \subsection{No Assignments Case}
     \label{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments:Category_i}

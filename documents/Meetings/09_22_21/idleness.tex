@@ -1,0 +1,309 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{booktabs}
+
+\title{Alternative Idleness Models}
+
+\begin{document}
+\maketitle
+
+\section{Overview}
+  This week I worked on implementing the non-linear model we discussed last time. Let $g$ be whatever group we decide to calculate idleness for (Judge or County) and let $i$ be our current observation, which is a judge-county combination. The non-linear model is:
+
+  \begin{align*}
+    \mu_g \text{Days}_i &= \beta_P \text{Plea}_i + \beta_T \text{Trial}_i + \epsilon_i\\
+    \log(\text{Days}_i) &= \log(\frac{1}{\mu_g}) + \log(\beta_P \text{Plea}_i + \beta_T \text{Trial}_i + \epsilon_i)
+  \end{align*}
+
+  \subsection{Basic Linear Model}
+    I asked another student for help with the implementation, and they pointed out that the model we specified is a linear mixed effects model:
+
+    \begin{align*}
+      \mu_g \text{Days}_i &= \beta_P \text{Plea}_i + \beta_T \text{Trial}_i + \epsilon_i\\
+      \text{Days}_i &= \frac{\beta_P}{\mu_g} \text{Plea}_i + \frac{\beta_T}{\mu_g} \text{Trial}_i + \frac{\epsilon_i}{\mu_g}\\
+      \text{Days}_i &= \beta_{P,g} \text{Plea}_i + \beta_{T,g} \text{Trial}_i + u_i
+    \end{align*}
+
+    In other words, we specified a model which could be interpreted as fitting a different trial and plea processing rate for each judge or county.
+
+  \subsection{Intercept Model}
+    Alternatively, we could also add "fixed costs" or "startup costs" for working by using the model:
+
+    \begin{align}
+      \mu_g \text{Days}_i &= \beta_0 + \beta_P \text{Plea}_i + \beta_T \text{Trial}_i + \epsilon_i\\
+      \text{Days}_i &= \beta_{0,g} + \beta_{P,g} \text{Plea}_i + \beta_{T,g} \text{Trial}_i + u_i
+    \end{align}
+
+    Here, $\beta_0$ is the fixed cost of working, and by setting $\beta_{0,g} = \frac{\beta_0}{\mu_g}$ we allow this fixed cost of working to vary by judge/county. The advantage of this model is that it more explicitly accounts for idleness through the $\beta_{0,g}$ term and that it allows that idleness to vary by judge/county. The disadvantage is that it would be estimating about 150 parameters. Another disadvantage is that it would take us back to using a fixed intercept.
+
+  \subsection{Pros and Cons}
+    \textbf{Pros:} these models are more well studied and easier to estimate. They are commonly used in biostatistics and other social sciences. I think this model would require less justification than our non-linear model. We could use this approach to construct measures of idleness for each judge/county by comparing their $\beta_{P,g}$ to that of the most productive judge/county \textbf{Cons:} It increases the number of parameters we are estimating, the basic model would have roughly 100 parameters and the intercept model would have around 150. I don't think the overall $\beta_T/\beta_P$ would be identified. The intercept model would bring us back to an intercept model, which is what we were trying to avoid. The biggest con from this approach is that the estimates we got were wonky: several judges and counties end up with negative service rates. 
+
+\section{County Models}
+  Here, we estimate both the basic linear model and the intercept model described above using the county as the grouping variable. In other words, we estimate a different trial/plea service rate for each county.
+
+  \subsection{Basic Linear Model}
+    The model we estimate here is $\text{Days}_i &= \beta_{P,c} \text{Plea}_i + \beta_{T,c} \text{Trial}_i + u_i$.
+
+    \begin{table}[H]
+      \centering
+      \small
+      \caption{County Basic Model}
+      \begin{tabular}{@{\extracolsep{5pt}} ccc}
+        \\[-1.8ex]\hline
+        \hline \\[-1.8ex]
+         & Plea & Trial \\
+        \hline \\[-1.8ex]
+        Abbeville & $0.299$ & $2.205$ \\
+        Aiken & $0.150$ & $4.105$ \\
+        Allendale & $0.072$ & $0$ \\
+        Anderson & $0.095$ & $5.098$ \\
+        Bamberg & $0.261$ & $0$ \\
+        Barnwell & $0.188$ & $1.035$ \\
+        Beaufort & $0.495$ & $2.303$ \\
+        Berkeley & $0.163$ & $1.891$ \\
+        Calhoun & $0.163$ & $0$ \\
+        Charleston & $0.173$ & $3.612$ \\
+        Cherokee & $0.213$ & $3.675$ \\
+        Chester & $0.509$ & $3.952$ \\
+        Chesterfield & $0.311$ & $3.395$ \\
+        Clarendon & $0.332$ & $0.621$ \\
+        Colleton & $0.320$ & $$-$0.043$ \\
+        Darlington & $0.287$ & $1.402$ \\
+        Dillon & $0.304$ & $0$ \\
+        Dorchester & $0.270$ & $$-$0.585$ \\
+        Edgefield & $0.265$ & $0$ \\
+        Fairfield & $0.339$ & $3.583$ \\
+        Florence & $0.128$ & $8.542$ \\
+        Georgetown & $0.317$ & $$-$0.224$ \\
+        Greenville & $0.093$ & $7.562$ \\
+        Greenwood & $0.223$ & $0.987$ \\
+        Hampton & $0.181$ & $0$ \\
+        Horry & $0.141$ & $3.975$ \\
+        Jasper & $0.230$ & $1.565$ \\
+        Kershaw & $0.217$ & $0$ \\
+        Lancaster & $0.363$ & $1.117$ \\
+        Laurens & $0.284$ & $$-$3.115$ \\
+        Lee & $0.247$ & $3.792$ \\
+        Lexington & $0.177$ & $2.559$ \\
+        Marion & $0.184$ & $2.507$ \\
+        Marlboro & $0.261$ & $0$ \\
+        McCormick & $0.295$ & $0$ \\
+        Newberry & $0.284$ & $0.002$ \\
+        Oconee & $0.171$ & $0.733$ \\
+        Orangeburg & $0.220$ & $3.689$ \\
+        Pickens & $0.249$ & $4.422$ \\
+        Richland & $0.149$ & $5.787$ \\
+        Saluda & $0.229$ & $0.378$ \\
+        Spartanburg & $0.020$ & $8.094$ \\
+        Sumter & $0.205$ & $2.139$ \\
+        Union & $0.324$ & $0.916$ \\
+        Williamsburg & $0.351$ & $0$ \\
+        York & $0.198$ & $2.122$ \\
+        \hline \\[-1.8ex]
+        \end{tabular}
+    \end{table}
+
+  \subsection{Intercept Model}
+    The model we estimate here is: $\text{Days}_i &= \beta_{0,c} + \beta_{P,c} \text{Plea}_i + \beta_{T,c} \text{Trial}_i + u_i$
+
+    \begin{table}[H]
+      \centering
+      \small
+      \caption{County Intercept Model}
+        \begin{tabular}{@{\extracolsep{5pt}} cccc}
+          \\[-1.8ex]\hline
+          \hline \\[-1.8ex]
+           & (Intercept) & Plea & Trial \\
+          \hline \\[-1.8ex]
+          Abbeville & $4.698$ & $0.183$ & $3.103$ \\
+          Aiken & $3.664$ & $0.143$ & $3.232$ \\
+          Allendale & $2.737$ & $0.107$ & $1.647$ \\
+          Anderson & $2.086$ & $0.081$ & $4.699$ \\
+          Bamberg & $4.248$ & $0.166$ & $0.855$ \\
+          Barnwell & $3.292$ & $0.128$ & $1.292$ \\
+          Beaufort & $8.502$ & $0.332$ & $1.321$ \\
+          Berkeley & $3.607$ & $0.141$ & $1.266$ \\
+          Calhoun & $2.826$ & $0.110$ & $1.236$ \\
+          Charleston & $3.820$ & $0.149$ & $3.107$ \\
+          Cherokee & $3.836$ & $0.150$ & $3.025$ \\
+          Chester & $7.635$ & $0.298$ & $4.426$ \\
+          Chesterfield & $4.358$ & $0.170$ & $3.155$ \\
+          Clarendon & $6.382$ & $0.249$ & $0.198$ \\
+          Colleton & $4.933$ & $0.192$ & $0.732$ \\
+          Darlington & $5.338$ & $0.208$ & $1.384$ \\
+          Dillon & $5.161$ & $0.201$ & $2.280$ \\
+          Dorchester & $4.945$ & $0.193$ & $0.674$ \\
+          Edgefield & $4.941$ & $0.193$ & $0.771$ \\
+          Fairfield & $5.371$ & $0.210$ & $2.757$ \\
+          Florence & $2.752$ & $0.107$ & $6.996$ \\
+          Georgetown & $5.666$ & $0.221$ & $0.806$ \\
+          Greenville & $1.899$ & $0.074$ & $6.825$ \\
+          Greenwood & $4.941$ & $0.193$ & $0.494$ \\
+          Hampton & $3.015$ & $0.118$ & $1.496$ \\
+          Horry & $2.959$ & $0.115$ & $3.820$ \\
+          Jasper & $3.099$ & $0.121$ & $1.985$ \\
+          Kershaw & $4.346$ & $0.170$ & $0.938$ \\
+          Lancaster & $7.155$ & $0.279$ & $0.636$ \\
+          Laurens & $6.451$ & $0.252$ & $-2.108$ \\
+          Lee & $2.890$ & $0.113$ & $3.425$ \\
+          Lexington & $3.576$ & $0.139$ & $2.203$ \\
+          Marion & $3.388$ & $0.132$ & $2.230$ \\
+          Marlboro & $5.546$ & $0.216$ & $1.772$ \\
+          McCormick & $4.605$ & $0.180$ & $1.393$ \\
+          Newberry & $5.169$ & $0.202$ & $0.962$ \\
+          Oconee & $3.587$ & $0.140$ & $0.305$ \\
+          Orangeburg & $5.296$ & $0.207$ & $1.919$ \\
+          Pickens & $4.605$ & $0.180$ & $3.924$ \\
+          Richland & $3.272$ & $0.128$ & $5.446$ \\
+          Saluda & $3.936$ & $0.154$ & $1.220$ \\
+          Spartanburg & $0.370$ & $0.014$ & $7.518$ \\
+          Sumter & $4.634$ & $0.181$ & $1.341$ \\
+          Union & $5.233$ & $0.204$ & $1.972$ \\
+          Williamsburg & $5.665$ & $0.221$ & $0.459$ \\
+          York & $4.405$ & $0.172$ & $2.257$ \\
+          \hline \\[-1.8ex]
+        \end{tabular}
+    \end{table}
+
+\section{Judge Models}
+  Here, we estimate both the basic linear model and the intercept model described above using the judge as the grouping variable. In other words, we estimate a different trial/plea service rate for each judge.
+
+  \subsection{Basic Linear Model}
+    The model we estimate here is $\text{Days}_i &= \beta_0 + \beta_{P,j} \text{Plea}_i + \beta_{T,j} \text{Trial}_i + u_i$. We add the $\beta_0$ term because the model without the intercept term failed to converge.
+
+    \begin{table}[H]
+      \centering
+      \small
+      \caption{Judge Basic Model}
+      \begin{tabular}{@{\extracolsep{5pt}} cccc}
+      \\[-1.8ex]\hline
+      \hline \\[-1.8ex]
+       & Trial & Plea & (Intercept) \\
+      \hline \\[-1.8ex]
+      Judge 1 & $4.836$ & $0.230$ & $5.155$ \\
+      Judge 10 & $0.807$ & $0.173$ & $5.155$ \\
+      Judge 11 & $5.855$ & $0.080$ & $5.155$ \\
+      Judge 12 & $6.593$ & $0.139$ & $5.155$ \\
+      Judge 13 & $3.623$ & $0.157$ & $5.155$ \\
+      Judge 14 & $0.515$ & $0.179$ & $5.155$ \\
+      Judge 15 & $-0.802$ & $0.131$ & $5.155$ \\
+      Judge 16 & $-0.691$ & $0.051$ & $5.155$ \\
+      Judge 17 & $13.078$ & $0.048$ & $5.155$ \\
+      Judge 18 & $-0.197$ & $0.329$ & $5.155$ \\
+      Judge 19 & $1.424$ & $0.069$ & $5.155$ \\
+      Judge 2 & $3.198$ & $0.166$ & $5.155$ \\
+      Judge 20 & $0$ & $0.031$ & $5.155$ \\
+      Judge 21 & $4.899$ & $0.117$ & $5.155$ \\
+      Judge 22 & $4.693$ & $0.112$ & $5.155$ \\
+      Judge 23 & $6.595$ & $0.132$ & $5.155$ \\
+      Judge 24 & $2.905$ & $0.111$ & $5.155$ \\
+      Judge 25 & $-1.568$ & $0.115$ & $5.155$ \\
+      Judge 26 & $-5.423$ & $0.226$ & $5.155$ \\
+      Judge 27 & $3.004$ & $0.149$ & $5.155$ \\
+      Judge 28 & $-2.644$ & $0.133$ & $5.155$ \\
+      Judge 29 & $3.840$ & $0.171$ & $5.155$ \\
+      Judge 3 & $2.783$ & $0.117$ & $5.155$ \\
+      Judge 30 & $6.012$ & $0.039$ & $5.155$ \\
+      Judge 31 & $8.579$ & $0.185$ & $5.155$ \\
+      Judge 32 & $2.318$ & $0.118$ & $5.155$ \\
+      Judge 33 & $3.090$ & $0.136$ & $5.155$ \\
+      Judge 34 & $5.987$ & $0.122$ & $5.155$ \\
+      Judge 35 & $-2.043$ & $0.218$ & $5.155$ \\
+      Judge 36 & $3.338$ & $0.094$ & $5.155$ \\
+      Judge 37 & $3.043$ & $0.051$ & $5.155$ \\
+      Judge 38 & $-0.623$ & $0.161$ & $5.155$ \\
+      Judge 39 & $0.963$ & $0.120$ & $5.155$ \\
+      Judge 4 & $2.913$ & $0.236$ & $5.155$ \\
+      Judge 40 & $4.536$ & $0.102$ & $5.155$ \\
+      Judge 41 & $-1.436$ & $0.300$ & $5.155$ \\
+      Judge 42 & $-1.599$ & $0.108$ & $5.155$ \\
+      Judge 43 & $0$ & $0.117$ & $5.155$ \\
+      Judge 44 & $3.804$ & $0.091$ & $5.155$ \\
+      Judge 45 & $3.064$ & $0.285$ & $5.155$ \\
+      Judge 46 & $0$ & $0.054$ & $5.155$ \\
+      Judge 47 & $0.491$ & $0.186$ & $5.155$ \\
+      Judge 48 & $4.237$ & $0.157$ & $5.155$ \\
+      Judge 49 & $11.850$ & $0.119$ & $5.155$ \\
+      Judge 5 & $4.278$ & $0.078$ & $5.155$ \\
+      Judge 50 & $2.308$ & $0.161$ & $5.155$ \\
+      Judge 6 & $4.598$ & $0.083$ & $5.155$ \\
+      Judge 7 & $0.668$ & $0.212$ & $5.155$ \\
+      Judge 8 & $0.805$ & $0.087$ & $5.155$ \\
+      Judge 9 & $1.428$ & $0.155$ & $5.155$ \\
+      \hline \\[-1.8ex]
+      \end{tabular}
+    \end{table}
+
+  \subsection{Intercept Model}
+    The model we estimate here is: $\text{Days}_i &= \beta_{0,j} + \beta_{P,j} \text{Plea}_i + \beta_{T,j} \text{Trial}_i + u_i$
+
+    \begin{table}[H]
+      \centering
+      \small
+      \caption{Judge Intercept Model}
+      \begin{tabular}{@{\extracolsep{5pt}} cccc}
+      \\[-1.8ex]\hline
+      \hline \\[-1.8ex]
+       & Plea & Trial & (Intercept) \\
+      \hline \\[-1.8ex]
+      Judge 1 & $0.234$ & $6.033$ & $-0.239$ \\
+      Judge 10 & $0.166$ & $1.225$ & $2.071$ \\
+      Judge 11 & $0.119$ & $5.153$ & $3.652$ \\
+      Judge 12 & $0.150$ & $6.316$ & $2.611$ \\
+      Judge 13 & $0.142$ & $4.039$ & $2.862$ \\
+      Judge 14 & $0.193$ & $0.830$ & $1.141$ \\
+      Judge 15 & $0.141$ & $-0.784$ & $2.904$ \\
+      Judge 16 & $0.049$ & $-1.021$ & $6.010$ \\
+      Judge 17 & $0.050$ & $12.809$ & $5.966$ \\
+      Judge 18 & $0.181$ & $2.203$ & $1.556$ \\
+      Judge 19 & $0.048$ & $0.601$ & $6.039$ \\
+      Judge 2 & $0.175$ & $3.053$ & $1.760$ \\
+      Judge 20 & $0.021$ & $1.072$ & $6.962$ \\
+      Judge 21 & $0.176$ & $4.072$ & $1.730$ \\
+      Judge 22 & $0.112$ & $4.583$ & $3.875$ \\
+      Judge 23 & $0.141$ & $6.572$ & $2.883$ \\
+      Judge 24 & $0.079$ & $3.384$ & $4.984$ \\
+      Judge 25 & $0.111$ & $-1.552$ & $3.908$ \\
+      Judge 26 & $0.237$ & $-5.830$ & $-0.357$ \\
+      Judge 27 & $0.168$ & $2.833$ & $1.997$ \\
+      Judge 28 & $0.116$ & $-2.566$ & $3.728$ \\
+      Judge 29 & $0.183$ & $3.578$ & $1.479$ \\
+      Judge 3 & $0.122$ & $2.569$ & $3.549$ \\
+      Judge 30 & $0.020$ & $5.904$ & $6.977$ \\
+      Judge 31 & $0.238$ & $6.917$ & $-0.391$ \\
+      Judge 32 & $0.118$ & $2.113$ & $3.659$ \\
+      Judge 33 & $0.138$ & $3.301$ & $3.008$ \\
+      Judge 34 & $0.126$ & $5.810$ & $3.407$ \\
+      Judge 35 & $0.227$ & $-1.413$ & $-0.002$ \\
+      Judge 36 & $0.064$ & $2.895$ & $5.502$ \\
+      Judge 37 & $0.020$ & $2.366$ & $6.968$ \\
+      Judge 38 & $0.166$ & $-0.582$ & $2.070$ \\
+      Judge 39 & $0.127$ & $0.501$ & $3.379$ \\
+      Judge 4 & $0.261$ & $3.414$ & $-1.158$ \\
+      Judge 40 & $0.100$ & $4.518$ & $4.271$ \\
+      Judge 41 & $0.328$ & $-0.134$ & $-3.427$ \\
+      Judge 42 & $0.107$ & $-2.087$ & $4.050$ \\
+      Judge 43 & $0.104$ & $-0.957$ & $4.143$ \\
+      Judge 44 & $0.089$ & $3.747$ & $4.660$ \\
+      Judge 45 & $0.322$ & $4.019$ & $-3.206$ \\
+      Judge 46 & $0.050$ & $2.791$ & $5.975$ \\
+      Judge 47 & $0.190$ & $0.622$ & $1.252$ \\
+      Judge 48 & $0.178$ & $4.338$ & $1.659$ \\
+      Judge 49 & $0.136$ & $11.575$ & $3.053$ \\
+      Judge 5 & $0.074$ & $4.350$ & $5.151$ \\
+      Judge 50 & $0.168$ & $2.223$ & $1.977$ \\
+      Judge 6 & $0.081$ & $4.553$ & $4.914$ \\
+      Judge 7 & $0.218$ & $0.706$ & $0.292$ \\
+      Judge 8 & $0.083$ & $0.481$ & $4.845$ \\
+      Judge 9 & $0.157$ & $1.507$ & $2.362$ \\
+      \hline \\[-1.8ex]
+      \end{tabular}
+    \end{table}
+
+\end{document}

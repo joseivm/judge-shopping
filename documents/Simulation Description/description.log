@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  18 AUG 2021 10:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  23 SEP 2021 13:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1448,13 +1448,13 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 File: biblatex.cfg 
 ))
 
-./description.tex:96: Package biblatex Error: Incompatible package 'natbib'.
+./description.tex:98: Package biblatex Error: Incompatible package 'natbib'.
 
 See the biblatex package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.96 \begin{document}
+l.98 \begin{document}
                      
 The 'natbib' package and biblatex are incompatible.
 
@@ -1468,26 +1468,26 @@ File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
  (./description.aux)
 \openout1 = `description.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 96.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 96.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 98.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 98.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1555,7 +1555,7 @@ Package caption Info: rotating package is loaded.
 Package caption Info: threeparttable package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box72
-Package hyperref Info: Link coloring OFF on input line 96.
+Package hyperref Info: Link coloring OFF on input line 98.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -1563,26 +1563,26 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count476
 )
-LaTeX Info: Redefining \ref on input line 96.
-LaTeX Info: Redefining \pageref on input line 96.
-LaTeX Info: Redefining \nameref on input line 96.
+LaTeX Info: Redefining \ref on input line 98.
+LaTeX Info: Redefining \pageref on input line 98.
+LaTeX Info: Redefining \nameref on input line 98.
  (./description.out) (./description.out)
 \@outlinefile=\write7
 \openout7 = `description.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 96.
+LaTeX Font Info:    Try loading font information for U+msa on input line 98.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 96.
+LaTeX Font Info:    Try loading font information for U+msb on input line 98.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 96.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 98.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Package xypdf Info: Line width: 0.43799pt on input line 96.
+Package xypdf Info: Line width: 0.43799pt on input line 98.
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -1591,8 +1591,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'description.bbl' found.
  (./description.bbl)
-Package biblatex Info: Reference section=0 on input line 96.
-Package biblatex Info: Reference segment=0 on input line 96.
+Package biblatex Info: Reference section=0 on input line 98.
+Package biblatex Info: Reference segment=0 on input line 98.
  (./description.toc [1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
@@ -1683,24 +1683,106 @@ Overfull \hbox (3.38832pt too wide) detected at line 141
 <Figures/Fig4.png, id=306, 581.17125pt x 269.005pt>
 File: Figures/Fig4.png Graphic file (type png)
 <use Figures/Fig4.png>
-Package pdftex.def Info: Figures/Fig4.png  used on input line 160.
+Package pdftex.def Info: Figures/Fig4.png  used on input line 162.
 (pdftex.def)             Requested size: 352.31625pt x 163.07895pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4] (./Tables/assignment_meanings.tex) [5 <./Figures/Fig4.png>] (./Tables/assignments.tex) (./Tables/calendar_example.tex) [6]
-Underfull \hbox (badness 10000) in paragraph at lines 225--226
+[4] (./Tables/assignment_meanings.tex
+./Tables/assignment_meanings.tex:3: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.3   Acronym & Meaning &
+                          Share \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+./Tables/assignment_meanings.tex:6: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.6   GS & General Session &
+                             0.36 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+./Tables/assignment_meanings.tex:7: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.7   CC & Circuit Court &
+                           0.02\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+./Tables/assignment_meanings.tex:8: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.8   SGJ & State Grand Jury &
+                               0.01\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+./Tables/assignment_meanings.tex:9: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.9   CP & Common Pleas &
+                          0.26 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+./Tables/assignment_meanings.tex:10: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.10   CPNJ & Common Pleas Non-Jury &
+                                      0.13 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+./Tables/assignment_meanings.tex:11: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.11   PCR & Post Conviction Relief &
+                                      0.03  \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+./Tables/assignment_meanings.tex:12: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.12 ...tal PCR & Capital Post Conviction Relief &
+                                                   < 0.01 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+./Tables/assignment_meanings.tex:13: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.13   AW & Administrative Week &
+                                  0.01 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+) [5 <./Figures/Fig4.png>] [6] (./Tables/assignments.tex) (./Tables/calendar_example.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 227--228
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
 
  []
 
-./description.tex:249: Extra }, or forgotten \endgroup.
-l.249 ... $\mu_p$ & \ref{service_rate-estimation}}
+./description.tex:251: Extra }, or forgotten \endgroup.
+l.251 ...on model & \ref{service_rate-estimation}}
                                                    \\ \hline
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1709,118 +1791,88 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 
-Overfull \hbox (22.37111pt too wide) in paragraph at lines 239--251
- [][] 
- []
-
-[7]
-
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 253.
+(hyperref)                removing `math shift' on input line 255.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\theta' on input line 253.
+(hyperref)                removing `\theta' on input line 255.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 253.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 276.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\tau' on input line 276.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 276.
+(hyperref)                removing `math shift' on input line 255.
 
 [8]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 286.
+(hyperref)                removing `math shift' on input line 278.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 286.
+(hyperref)                removing `\tau' on input line 278.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 286.
+(hyperref)                removing `math shift' on input line 278.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 288.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 288.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 288.
 
 [9]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 319.
+(hyperref)                removing `math shift' on input line 321.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 319.
+(hyperref)                removing `subscript' on input line 321.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\theta' on input line 319.
+(hyperref)                removing `\theta' on input line 321.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\tau' on input line 319.
+(hyperref)                removing `\tau' on input line 321.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 319.
+(hyperref)                removing `subscript' on input line 321.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\theta' on input line 319.
+(hyperref)                removing `\theta' on input line 321.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\tau' on input line 319.
+(hyperref)                removing `\tau' on input line 321.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 319.
+(hyperref)                removing `math shift' on input line 321.
 
-<../../output/figures/Exploration/convex_hull_max.png, id=379, 462.528pt x 346.896pt>
+<../../output/figures/Exploration/convex_hull_max.png, id=371, 462.528pt x 346.896pt>
 File: ../../output/figures/Exploration/convex_hull_max.png Graphic file (type png)
 <use ../../output/figures/Exploration/convex_hull_max.png>
-Package pdftex.def Info: ../../output/figures/Exploration/convex_hull_max.png  used on input line 331.
+Package pdftex.def Info: ../../output/figures/Exploration/convex_hull_max.png  used on input line 335.
 (pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
-[10 <../../output/figures/Exploration/convex_hull_max.png>]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 339.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\lambda' on input line 339.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 339.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 339.
-
+[10]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 343.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 343.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 343.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 343.
+(hyperref)                removing `\lambda' on input line 343.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -1830,199 +1882,219 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 343.
 
-[11]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 381.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 381.
+(hyperref)                removing `math shift' on input line 347.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 381.
+(hyperref)                removing `\mu' on input line 347.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 381.
+(hyperref)                removing `subscript' on input line 347.
 
-<Figures/Judge_Capacity_Vs_Number_of_Trials.pdf, id=400, 344.54895pt x 281.60934pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mu' on input line 347.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 347.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 347.
+
+[11 <../../output/figures/Exploration/convex_hull_max.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 385.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mu' on input line 385.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 385.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 385.
+
+<Figures/Judge_Capacity_Vs_Number_of_Trials.pdf, id=395, 344.54895pt x 281.60934pt>
 File: Figures/Judge_Capacity_Vs_Number_of_Trials.pdf Graphic file (type pdf)
 <use Figures/Judge_Capacity_Vs_Number_of_Trials.pdf>
-Package pdftex.def Info: Figures/Judge_Capacity_Vs_Number_of_Trials.pdf  used on input line 394.
+Package pdftex.def Info: Figures/Judge_Capacity_Vs_Number_of_Trials.pdf  used on input line 398.
 (pdftex.def)             Requested size: 258.41107pt x 211.20648pt.
-[12 <./Figures/Judge_Capacity_Vs_Number_of_Trials.pdf>]
+[12]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 406.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 406.
+(hyperref)                removing `math shift' on input line 410.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 406.
+(hyperref)                removing `\mu' on input line 410.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 406.
+(hyperref)                removing `subscript' on input line 410.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 406.
+(hyperref)                removing `\mu' on input line 410.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 406.
+(hyperref)                removing `subscript' on input line 410.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 407--408
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 410.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 411--412
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--410
+Underfull \hbox (badness 10000) in paragraph at lines 413--414
 
  []
 
-[13] [14]
+[13 <./Figures/Judge_Capacity_Vs_Number_of_Trials.pdf>] [14] [15]
 
-LaTeX Warning: Reference `Table_Sentencing_Data_Fields_Statute' on page xv undefined on input line 492.
-
-
-LaTeX Warning: Reference `Table_Sentencing_Data_Fields_Offdescr' on page xv undefined on input line 492.
+LaTeX Warning: Reference `Table_Sentencing_Data_Fields_Statute' on page xvi undefined on input line 496.
 
 
-LaTeX Warning: Reference `Sec:Appendix:Supplementary_Tables' on page xv undefined on input line 492.
+LaTeX Warning: Reference `Table_Sentencing_Data_Fields_Offdescr' on page xvi undefined on input line 496.
 
-[15]
-Overfull \hbox (60.14037pt too wide) in paragraph at lines 505--541
+
+LaTeX Warning: Reference `Sec:Appendix:Supplementary_Tables' on page xvi undefined on input line 496.
+
+
+Overfull \hbox (60.14037pt too wide) in paragraph at lines 509--545
  [][] 
  []
 
 [16]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 560.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 564.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ) [17]
 
-LaTeX Warning: Reference `Sec:Mapping_Judge_Numbers_To_Judge_Names' on page xviii undefined on input line 593.
+LaTeX Warning: Reference `Sec:Mapping_Judge_Numbers_To_Judge_Names' on page xviii undefined on input line 597.
 
 
-LaTeX Warning: Reference `Sec:Mapping_Judge_Numbers_To_Judge_Names' on page xviii undefined on input line 593.
+LaTeX Warning: Reference `Sec:Mapping_Judge_Numbers_To_Judge_Names' on page xviii undefined on input line 597.
 
 [18]
-<Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf, id=486, 638.1846pt x 278.77196pt>
+<Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf, id=485, 638.1846pt x 278.77196pt>
 File: Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf Graphic file (type pdf)
 <use Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf>
-Package pdftex.def Info: Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf  used on input line 599.
+Package pdftex.def Info: Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf  used on input line 603.
 (pdftex.def)             Requested size: 478.63727pt x 209.07843pt.
 
-Overfull \hbox (8.88225pt too wide) in paragraph at lines 599--600
+Overfull \hbox (8.88225pt too wide) in paragraph at lines 603--604
  [][] 
  []
 
 
-LaTeX Warning: Reference `Sec:Mapping_Judge_Numbers_To_Judge_Names' on page xix undefined on input line 612.
+LaTeX Warning: Reference `Sec:Mapping_Judge_Numbers_To_Judge_Names' on page xix undefined on input line 616.
 
 
-Underfull \hbox (badness 3375) in paragraph at lines 612--612
+Underfull \hbox (badness 3375) in paragraph at lines 616--616
 [][][]\T1/cmr/m/n/9 Incidentally, only two judges with last name Cooper are listed on the South Car-olina Ju-di-cial
  []
 
 
-Underfull \hbox (badness 1077) in paragraph at lines 612--612
+Underfull \hbox (badness 1077) in paragraph at lines 616--616
 \T1/cmr/m/n/9 branch's web-site. These judges are Thomas W. Cooper, Jr. and G. Thomas Cooper, Jr.; please see
  []
 
 [19 <./Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf>]
-Overfull \hbox (35.85669pt too wide) in paragraph at lines 618--669
+Overfull \hbox (35.85669pt too wide) in paragraph at lines 622--673
  []|   [] 
  []
 
-[20]
-
-LaTeX Warning: Reference `Sec:Mapping_Judge_Numbers_To_Judge_Names' on page xxi undefined on input line 677.
-
-[21] (./Tables/Missing.tex) (./Tables/Single.tex)
-Overfull \hbox (22.06432pt too wide) in paragraph at lines 712--726
+[20] [21] (./Tables/Missing.tex) (./Tables/Single.tex)
+Overfull \hbox (22.06432pt too wide) in paragraph at lines 716--730
  []|   [] 
  []
 
 [22] [23] (./Tables/SingleWD.tex)
-Overfull \hbox (3.57002pt too wide) in paragraph at lines 739--753
+Overfull \hbox (3.57002pt too wide) in paragraph at lines 743--757
  []|   [] 
  []
 
 (./Tables/MultipleND.tex) [24] (./Tables/MultipleSD.tex)
-Overfull \hbox (6.4153pt too wide) in paragraph at lines 791--805
+Overfull \hbox (6.4153pt too wide) in paragraph at lines 795--809
  []|   [] 
  []
 
 [25] [26] (./Tables/MultipleAD.tex)
-Overfull \hbox (0.72475pt too wide) in paragraph at lines 823--837
+Overfull \hbox (0.72475pt too wide) in paragraph at lines 827--841
  []|   [] 
  []
 
 [27] [28] [29]
 
-LaTeX Warning: Reference `Sec:Appendix:Supplementary_Figures' on page xxx undefined on input line 879.
+LaTeX Warning: Reference `Sec:Appendix:Supplementary_Figures' on page xxx undefined on input line 883.
 
 <Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf, id=605, 337.8255pt x 278.77196pt>
 File: Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf Graphic file (type pdf)
 <use Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf>
-Package pdftex.def Info: Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf  used on input line 926.
+Package pdftex.def Info: Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf  used on input line 930.
 (pdftex.def)             Requested size: 236.47623pt x 195.13902pt.
 <Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf, id=606, 337.8255pt x 278.77196pt>
 File: Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf Graphic file (type pdf)
 <use Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf>
-Package pdftex.def Info: Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf  used on input line 927.
+Package pdftex.def Info: Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf  used on input line 931.
 (pdftex.def)             Requested size: 236.47623pt x 195.13902pt.
 [30]
 
-LaTeX Warning: Reference `Figure_Mapping_Problematic_Sentencing_Events_Judge_Distribution' on page xxxi undefined on input line 933.
+LaTeX Warning: Reference `Figure_Mapping_Problematic_Sentencing_Events_Judge_Distribution' on page xxxi undefined on input line 937.
 
 
-LaTeX Warning: Reference `Figure_Mapping_Problematic_Sentencing_Events_Week_Distribution' on page xxxi undefined on input line 933.
+LaTeX Warning: Reference `Figure_Mapping_Problematic_Sentencing_Events_Week_Distribution' on page xxxi undefined on input line 937.
 
 
-LaTeX Warning: Reference `Sec:Appendix:Supplementary_Figures' on page xxxi undefined on input line 933.
+LaTeX Warning: Reference `Sec:Appendix:Supplementary_Figures' on page xxxi undefined on input line 937.
 
 
-LaTeX Warning: Reference `Figure_Mapping_Problematic_Sentencing_Events_Judge_Distribution' on page xxxi undefined on input line 933.
+LaTeX Warning: Reference `Figure_Mapping_Problematic_Sentencing_Events_Judge_Distribution' on page xxxi undefined on input line 937.
 
 
-LaTeX Warning: Reference `Figure_Mapping_Problematic_Sentencing_Events_Week_Distribution' on page xxxi undefined on input line 933.
+LaTeX Warning: Reference `Figure_Mapping_Problematic_Sentencing_Events_Week_Distribution' on page xxxi undefined on input line 937.
 
 
-LaTeX Warning: Reference `Figure_Assignment_Histogram' on page xxxi undefined on input line 936.
+LaTeX Warning: Reference `Figure_Assignment_Histogram' on page xxxi undefined on input line 940.
 
 
-LaTeX Warning: Reference `Figure_Assignment_Type_Histogram' on page xxxi undefined on input line 938.
+LaTeX Warning: Reference `Figure_Assignment_Type_Histogram' on page xxxi undefined on input line 942.
 
 [31 <./Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf> <./Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
 
-LaTeX Warning: Reference `Table_Schedule_Of_Unmapped_Judge_Names' on page xxxii undefined on input line 940.
+LaTeX Warning: Reference `Table_Schedule_Of_Unmapped_Judge_Names' on page xxxii undefined on input line 944.
 
 
-LaTeX Warning: Reference `Sec:Appendix:Supplementary_Figures' on page xxxii undefined on input line 940.
+LaTeX Warning: Reference `Sec:Appendix:Supplementary_Figures' on page xxxii undefined on input line 944.
 
 
-LaTeX Warning: Reference `Table_Schedule_Of_Unmapped_Judge_Names' on page xxxii undefined on input line 940.
+LaTeX Warning: Reference `Table_Schedule_Of_Unmapped_Judge_Names' on page xxxii undefined on input line 944.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 985.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 989.
 [32]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 985.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 989.
  (./description.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 985.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 985.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 989.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 989.
 Package rerunfilecheck Info: File `description.out' has not changed.
-(rerunfilecheck)             Checksum: DB9DB80EA61CA1D6900600E798CBCB3A;3917.
+(rerunfilecheck)             Checksum: F90D971AD0DBB170C728AB6C482E68A2;3931.
 
 
 LaTeX Warning: There were undefined references.
@@ -2032,19 +2104,19 @@ Package logreq Info: Writing requests to 'description.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30519 strings out of 492649
- 521572 string characters out of 6129622
- 1232158 words of memory out of 5000000
- 33758 multiletter control sequences out of 15000+600000
+ 30520 strings out of 492649
+ 521593 string characters out of 6129622
+ 1232342 words of memory out of 5000000
+ 33759 multiletter control sequences out of 15000+600000
  550896 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,16n,49p,10419b,1202s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,16n,49p,10419b,1128s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1095.p
 fb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb>
-Output written on description.pdf (32 pages, 929066 bytes).
+Output written on description.pdf (32 pages, 930219 bytes).
 PDF statistics:
  765 PDF objects out of 1000 (max. 8388607)
  688 compressed objects within 7 object streams
