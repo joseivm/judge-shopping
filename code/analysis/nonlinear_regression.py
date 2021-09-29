@@ -69,29 +69,31 @@ def obj(x,A):
     result = A.dot(x)
     return np.square(result).sum()
 
-def nl_reg(group,lb):
+def nl_reg(group):
     data, encoder = make_nlopt_data(group)
     ncols = data.shape[1]
-    bounds = [(lb,1) for i in range(ncols-2)]
-    bounds += [(0,None),(0,None)]
 
-    x0 = np.ones(ncols)*0.85
+    if group == 'JudgeID':
+        top_idx, = np.where(encoder.categories_[0] == 'Judge 41')
+    else:
+        top_idx, = np.where(encoder.categories_[0] == 'Aiken')
+
+    cons_array = np.zeros(ncols)
+    cons_array[top_idx[0]] = 1
+    cons_matrix = np.diag(cons_array)
+
+    x0 = np.random.rand(ncols)
+    x0[top_idx[0]] = 1
     x0[-2] = 0.1
     x0[-1] = 5
 
-    res = minimize(obj,x0,args=(data),bounds=bounds)
+    cons = {'type':'eq','fun': lambda x: cons_matrix.dot(x).dot(np.ones(ncols)) - 1}
+    res = minimize(obj,x0,args=(data),constraints=cons)
     param_names = np.append(encoder.categories_[0],['BetaP','BetaT'])
-    df = pd.DataFrame({str(lb):res.x,'Parameter':param_names})
+    df = pd.DataFrame({'Estimate':res.x,'Parameter':param_names})
     return df
 
 for group in ['JudgeID','County']:
-    dfs = []
-    lbs = [0,0.5,0.6,0.65,0.7,0.75]
-    for lb in lbs:
-        tdf = nl_reg(group,lb)
-        dfs.append(tdf)
-
-    rdf = reduce(lambda x,y: pd.merge(x,y,on='Parameter'),dfs)
-    cols = ['Parameter'] + [str(lb) for lb in lbs]
-    filename = TABLE_DIR + 'nlreg_{}.tex'.format(group)
-    rdf[cols].to_latex(filename,index=False,float_format='%.2f')
+    df = nl_reg(group)
+    filename = TABLE_DIR + 'nlreg_rand_{}.tex'.format(group)
+    df[['Parameter','Estimate']].to_latex(filename,index=False,float_format='%.2f')

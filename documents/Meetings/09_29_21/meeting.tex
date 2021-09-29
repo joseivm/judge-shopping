@@ -19,29 +19,29 @@
     \mu_g \text{Days}_i &= \beta_P \text{Plea}_i + \beta_T \text{Trial}_i + \epsilon_i
   \end{align*}
 
-  Where we interpret $\mu_g$ to be the utilization of group $g$. I was having a hard time implementing this, so I asked Walter for advice, and he suggested that I define the function $f(\mu_g,\beta_P,\beta_T) = (\mu_g \text{Days}_i - \beta_P \text{Pleas}_i - \beta_T \text{Trials}_i)^2$ and that I use a standard nonlinear optimizer to minimize it. Walter mentioned that I might have convergence problems since the model is not identified (i.e. multiplying all of the coefficients by any constants would still make the equation hold). Given that we want to interpret the $\mu_g$ as utilizations, I decided to add the constraints that $c \leq \mu_g \leq 1$ and that $\beta_T, \beta_P \geq 0$. I also hoped that this would help with identification.
+  Where we interpret $\mu_g$ to be the utilization of group $g$. I was having a hard time implementing this, so I asked Walter for advice, and he suggested that I define the function $f(\mu_g,\beta_P,\beta_T) = (\mu_g \text{Days}_i - \beta_P \text{Pleas}_i - \beta_T \text{Trials}_i)^2$ and that I use a standard nonlinear optimizer to minimize it. Walter mentioned that I might have convergence problems since the model is not identified (i.e. multiplying all of the coefficients by any constants would still make the equation hold). Following your advice, I set $\mu_g=1$ for a judge/county that is not the most productive one. I just picked a one randomly, the baseline judge was Judge 41, and the baseline county was Aiken.
 
 \section{Results}
-  The model seems very sensitive to the lower bound, $c$ that we impose. If we let $c=0$, then the optimizer sets all of the coefficients equal to 0. For other values of the lower bound (e.g. 0.6 or 0.7), the $\mu_g$ for most counties/judges ends up being set to the lower bound. I also tried $c=(0.5,0.6,0.65,0.7,0.75)$. I ran this calculating the utilizations for both judges and counties.
+  The model runs and yields estimates of $\mu_g$ between 0 and 1 for all judges and counties, however, the estimates of $\beta_T$ and $\beta_P$ it gives seem unreasonable. The $\beta_T$ estimates seem too low and the $\beta_P$ estimates seem too high.
 
   \subsection{County Model}
-    The results in this subsection correspond to the model: $\mu_c \text{Days}_i = \beta_P \text{Plea}_i + \beta_T \text{Trial}_i + \epsilon_i$. Where $i$ is a judge-county combination and $c$ is a county. In the table below, the numerical column names correspond to the lower bound used when computing those estimates. For example the column 0.5 contains the estimates of the nonlinear estimation with the constraint that $0.5 \leq \mu_c \leq 1$.
+    The results in this subsection correspond to the model: $\mu_c \text{Days}_i = \beta_P \text{Plea}_i + \beta_T \text{Trial}_i + \epsilon_i$. Where $i$ is a judge-county combination and $c$ is a county. The county model yields $\beta_T=1.58$, which would imply that it takes a little over a day and a half to process a trial. The county model also yields $\beta_P=0.02$, which would imply judges can process 50 pleas per day.
 
     \begin{table}[H]
       \centering
       % \small
       \caption{County Model}
-      \input{../../../output/tables/Exploration/nlreg_County}
+      \input{../../../output/tables/Exploration/nlreg_rand_County}
     \end{table}
 
     \subsection{Judge Model}
-      The results in this subsection correspond to the model: $\mu_j \text{Days}_i = \beta_P \text{Plea}_i + \beta_T \text{Trial}_i + \epsilon_i$. Where $i$ is a judge-county combination and $j$ is a judge. In the table below, the numerical column names correspond to the lower bound used when computing those estimates. For example the column 0.5 contains the estimates of the nonlinear estimation with the constraint that $0.5 \leq \mu_j \leq 1$.
+      The results in this subsection correspond to the model: $\mu_j \text{Days}_i = \beta_P \text{Plea}_i + \beta_T \text{Trial}_i + \epsilon_i$. Where $i$ is a judge-county combination and $j$ is a judge. The judge model yields $\beta_T=0.06$. The judge model also yields $\beta_P=0.01$, which would imply judges can process 100 pleas per day.
 
       \begin{table}[H]
         \centering
         \small
         \caption{Judge Model}
-        \input{../../../output/tables/Exploration/nlreg_JudgeID}
+        \input{../../../output/tables/Exploration/nlreg_rand_JudgeID}
       \end{table}
 
 

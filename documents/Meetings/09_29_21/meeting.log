@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  27 SEP 2021 12:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  28 SEP 2021 23:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -285,25 +285,25 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 LaTeX Warning: No \author given.
 
-(../../../output/tables/Exploration/nlreg_County.tex) [1
+(../../../output/tables/Exploration/nlreg_rand_County.tex) [1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Overfull \vbox (51.76953pt too high) has occurred while \output is active []
 
- [2] (../../../output/tables/Exploration/nlreg_JudgeID.tex) [3]
+ [2] (../../../output/tables/Exploration/nlreg_rand_JudgeID.tex) [3]
 Overfull \vbox (21.36998pt too high) has occurred while \output is active []
 
  [4] (./meeting.aux) ) 
 Here is how much of TeX's memory you used:
  4056 strings out of 492649
- 60117 string characters out of 6129622
- 148551 words of memory out of 5000000
+ 60147 string characters out of 6129622
+ 137551 words of memory out of 5000000
  7878 multiletter control sequences out of 15000+600000
  12743 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,10n,40p,778b,283s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,10n,40p,759b,283s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on meeting.pdf (4 pages, 91109 bytes).
+Output written on meeting.pdf (4 pages, 90101 bytes).
 PDF statistics:
  49 PDF objects out of 1000 (max. 8388607)
  34 compressed objects within 1 object stream
