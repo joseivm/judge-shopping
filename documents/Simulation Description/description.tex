@@ -1,25 +1,56 @@
-\documentclass[11pt]{article}
-\usepackage[margin=1in]{geometry}
-\usepackage{graphicx}
-\usepackage{color}
-\usepackage{float}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{array}
-% Import
-\usepackage{amsmath,amsthm,graphicx,amssymb,enumerate,longtable,cases,color,natbib,bbm,makecell,accents,subfig,mathtools,endnotes,blkarray,rotating,indentfirst,diagbox,textcomp,authblk,romannum,mathrsfs,tabu,caption,booktabs,array,kantlipsum,xpatch,enumitem,multirow,float}
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{amsmath,amsthm,graphicx,amssymb,enumerate,longtable,cases,color,natbib,bbm,makecell,accents,subfig,mathtools,endnotes,blkarray,rotating,indentfirst,diagbox,textcomp,tikz,authblk,romannum,mathrsfs,tabu,caption,booktabs,array,kantlipsum,xpatch,enumitem,multirow,float}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
 \geometry{letterpaper} % ... or a4paper or a5paper or ...
+\usetikzlibrary{chains,shapes.multipart,shapes,calc,fit,arrows.meta,bending,matrix,positioning}
 \usepackage[percent]{overpic}
+\usetikzlibrary{automata,positioning}
 \usepackage[singlespacing]{setspace}
 \usepackage[bottom]{footmisc}
 \usepackage[hidelinks=true]{hyperref}
-% \usepackage{setspace}\doublespacing
+\usepackage{setspace}\doublespacing
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[para,online,flushleft]{threeparttable}
 \usepackage[all]{xy}
+\setcitestyle{round}
+\urlstyle{same}
+\setlength{\parskip}{0.5em}
+\addtolength{\skip\footins}{0.3pc plus 0pt}
+
 \newcommand{\rowgroup}[1]{\hspace{-1em}#1}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\renewcommand{\baselinestretch}{1.3}
+\newtheoremstyle{ModifiedStyle}
+{\topsep} % Space above
+{3pt} % Space below
+{} % Body font
+{} % Indent amount
+{\bfseries} % Theorem head font
+{.} % Punctuation after theorem head
+{.5em} % Space after theorem head
+{} % Theorem head spec (can be left empty, meaning 'normal')
+\theoremstyle{ModifiedStyle}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\newtheorem{problem}{Problem}
+\newtheorem{question}{Question}
+\newtheorem{claim}{Claim}
+\newtheorem{assumption}{Assumption}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{notation}{Notation}
+\newtheorem{example}{Example}
+\newtheorem{algorithm}{Algorithm}
+\newtheorem{to-do}{To-Do}
+\newtheorem{note}{Note}
+\newtheorem{fact}{Fact}
+\newtheorem{response}{Response}
+\newtheorem{plausible_assignment}{Plausible Assignment}
+
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\halfspace}{\hspace{0.2mm}}
 \newcommand{\AM}{{\tiny\hspace{-0.7mm} AM \hspace{0.7mm}}}
@@ -34,6 +65,10 @@
 \newcommand{\Plus}{\raisebox{.4\height}{\scalebox{.6}{+}}}
 \newcommand{\Minus}{\raisebox{.4\height}{\scalebox{.8}{-}}}
 \def\minus{\texttt{-}}
+\DeclareMathOperator*{\maximize}{maximize}
+\DeclareMathOperator*{\minimize}{minimize}
+\DeclareMathOperator*{\supremum}{supremum}
+\DeclareMathOperator*{\infimum}{infimum}
 \newcommand*\rot{\rotatebox{90}}
 \newcommand{\nquad}{\kern-1em}
 \DeclareRobustCommand{\rchi}{{\mathpalette\irchi\relax}}
@@ -43,46 +78,36 @@
 	\settoheight{\dhatheight}{\ensuremath{\hat{#1}}}%
 	\addtolength{\dhatheight}{-0.35ex}\hat{\vphantom{\rule{1pt}{\dhatheight}}\smash{\hat{#1}}}}
 
-% \makeatletter
-% \newcommand{\Rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
-% \newcommand{\Biggg}{\bBigg@{2.5}}
-% \newcommand{\vast}{\bBigg@{3}}
-% \newcommand{\Vast}{\bBigg@{3.5}}
-% \newcommand{\massive}{\bBigg@{4.5}}
-% \newcommand{\Massive}{\bBigg@{6}}
-% \renewcommand\subparagraph{%
-% 	\@startsection {subparagraph}{5}{\z@ }{3.25ex \@plus 1ex
-% 		\@minus .2ex}{-1em}{\normalfont \normalsize \bfseries }}%
-% \newcommand\notsotiny{\@setfontsize\notsotiny\@vipt\@viipt}
-% \newcommand{\thickhline}{%
-% 	\noalign {\ifnum 0=`}\fi \hrule height 1pt
-% 	\futurelet \reserved@a \@xhline}
-% \newcolumntype{"}{@{\hskip\tabcolsep\vrule width 1pt\hskip\tabcolsep}}
-% \newcommand{\Blue}[1]{\textcolor{blue}{#1}}
-% \newcommand{\Red}[1]{\textcolor{red}{#1}}
-% \newcommand{\Purple}[1]{\textcolor{purple}{#1}}
-% \newcommand{\Grey}[1]{\textcolor{gray}{#1}}
-% \newcommand{\Orange}[1]{\textcolor{orange}{#1}}
+\makeatletter
+\newcommand{\Rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\newcommand{\Biggg}{\bBigg@{2.5}}
+\newcommand{\vast}{\bBigg@{3}}
+\newcommand{\Vast}{\bBigg@{3.5}}
+\newcommand{\massive}{\bBigg@{4.5}}
+\newcommand{\Massive}{\bBigg@{6}}
+\renewcommand\subparagraph{%
+	\@startsection {subparagraph}{5}{\z@ }{3.25ex \@plus 1ex
+		\@minus .2ex}{-1em}{\normalfont \normalsize \bfseries }}%
+\newcommand\notsotiny{\@setfontsize\notsotiny\@vipt\@viipt}
+\newcommand{\thickhline}{%
+	\noalign {\ifnum 0=`}\fi \hrule height 1pt
+	\futurelet \reserved@a \@xhline}
+\newcolumntype{"}{@{\hskip\tabcolsep\vrule width 1pt\hskip\tabcolsep}}
+\newcommand{\Blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\Red}[1]{\textcolor{red}{#1}}
+\newcommand{\Purple}[1]{\textcolor{purple}{#1}}
+\newcommand{\Grey}[1]{\textcolor{gray}{#1}}
+\newcommand{\Orange}[1]{\textcolor{orange}{#1}}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
 \newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 \newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
 \newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
 \newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
 \newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
-% End Import
-\DeclareMathOperator*{\argmin}{argmin}
-\DeclareMathOperator*{\argmax}{argmax}
-\newtheoremstyle{ModifiedStyle}
-{\topsep} % Space above
-{3pt} % Space below
-{} % Body font
-{} % Indent amount
-{\bfseries} % Theorem head font
-{.} % Punctuation after theorem head
-{.5em} % Space after theorem head
-{} % Theorem head spec (can be left empty, meaning 'normal')
-\theoremstyle{ModifiedStyle}
-\newtheorem{remark}{Remark}
-\newtheorem{assumption}{Assumption}
+\newcommand{\skipitems}[1]{\addtocounter{\@enumctr}{#1}}
+%%%% MBar Definition
+\newcommand*{\Mbar}{}%
 \usepackage[
     backend=biber,
     style=authoryear,
@@ -90,14 +115,17 @@
 
 \addbibresource{main.bib}
 
-\pagenumbering{arabic}
+
 
 \title{Simulation Study Overview}
 \author{}
 
 \begin{document}
+\pagenumbering{arabic}
+\doublespacing
 \maketitle
-\tableofcontents
+{\singlespacing \tableofcontents}
+\newpage
 
 % \section{Introduction}
 %   One of the chief criticisms of the US criminal justice system is that many states in the US exhibit large regional variation in sentencing. This means that given the same crime, the probability of incarceration and the length of sentence vary considerably from county to county. To reduce variability in sentencing, many states (e.g. Florida, Minnesota, Washington) have introduced sentencing guidelines. These guidelines generally reduce the amount of discretion a judge has when deciding the length of a sentence. \cite{hester2012criminal} found that South Carolina has less county-level variation in sentencing than many states with sentencing guidelines.
@@ -111,7 +139,36 @@
   We have two main data sources: sentencing data and judge schedules, both of them are for the 2001 fiscal year. We obtained the data from the authors of \cite{hester2017conditional}. We briefly describe both datasets below.
 
   \subsection{Sentencing Data}
-    The sentencing data contains information about 17,671 sentencing events in South Carolina from August 2000-July 2001. Each sentencing event contains an identifier for the judge who heard the case, the county the case was heard in, categorical variables describing the offense, and some defendant characteristics (e.g. race, age, and criminal history). There are 50 judges and 46 counties in the dataset. A full list of the variables we use can be found in Table \ref{sent-vars}.
+    The sentencing data contains information about 17,671 sentencing events in South Carolina from August 2000-July 2001. Each sentencing event contains an identifier for the judge who heard the case, the county the case was heard in, categorical variables describing the offense, and some defendant characteristics (e.g. race, age, and criminal history). There are 50 judges and 46 counties in the dataset. A full list of the variables \footnote{The original dataset we received also has eight additional fields that correspond to binary variables indicating whether the offense is of a certain type. They are created from the \textit{offtyped} field in the data. We omit them, but include the \textit{offtyped} field.} we use can be found in Table \ref{sent-vars}.  Figure \ref{Figure_Hester_Data_County_Histogram} contains a histogram of the number of cases sentenced each county. Figure \ref{Figure_Hester_Data_Judge_Histogram} contains a histogram of the number of cases sentenced by each judge. Figure \ref{Figure_Hester_Data_Judge_Trial_Percentage_Histogram} contains a histogram of the share of cases that went to trial for each judge. A more detailed description of the original sentencing data, can be found in Appendix \ref{Appendix:Sentencing_Data}. There, we describe the original data files, the data cleaning, and how some of the variables were created.
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.75]{Figures/County_Histogram}
+			\vspace{-2mm}
+			\caption{A histogram of the sentencing events by county. The counties are grouped into 16 circuit courts. The number underneath each group indicates the corresponding circuit court.}
+			\label{Figure_Hester_Data_County_Histogram}
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\vspace{-2mm}
+			\begin{minipage}{\textwidth}
+				\vspace{-0mm}
+				\centering
+				\includegraphics[scale=0.75]{Figures/Judge_Histogram}
+				\vspace{-4mm}
+				\caption{A histogram of sentencing events by judge.}
+				\label{Figure_Hester_Data_Judge_Histogram}
+			\end{minipage}
+			\begin{minipage}{\textwidth}
+				\vspace{-0.5mm}
+				\centering
+				\includegraphics[scale=0.75]{Figures/Judge_Trial_Percentage_Histogram}
+				\vspace{-4mm}
+				\caption{Percentage of sentencing events for each judge that resulted in trial.}
+				\label{Figure_Hester_Data_Judge_Trial_Percentage_Histogram}
+			\end{minipage}
+		\end{figure}
 
     \begin{table}[H]
       \caption{Sentencing Data Variables}
@@ -123,8 +180,17 @@
       In the raw data, there are 51 distinct judge ID's. However, according to \cite{hester2017conditional}, judge 1 is a combination of several judges that had few sentencing events. As a result, we exclude judge 1 from our sample, which leaves us with 17,516 observations.
 
     \subsubsection{Imputation of Missing Dates}
-      After removing the sentencing events heard by Judge 1, there are 1,482 sentencing events with the \textit{date} field missing. This is the only variable with missing values in the entire dataset. We impute the dates for these events in the following way. Recall that the judge name and county are still available for sentencing events with missing dates. In general, when imputing the dates for sentencing events with missing dates, we first use the master calendar to determine a set of possible dates in which the sentencing event could have occurred, and then we assign the events with missing dates as evenly as possible across these possible dates. So, for example, if there are 5 sentencing events with missing dates and 4 potential dates, then each of the potential dates would get assigned a sentencing event, and the first of the potential dates would get the remaining one.
-      Suppose that judge $j$ has $m$ sentencing events with missing dates in county $c$ (which is in circuit $k$). The set of potential dates we would assign these sentencing events to would evolve in the following way. In each category, the days are ordered from earliest to latest.
+      After removing the sentencing events heard by Judge 1, there are 1,482 sentencing events with the \textit{date} field missing. We impute the dates for these events in the following way. Recall that the judge name and county are still available for sentencing events with missing dates. As a result, we can use the calendar data to see what dates the judge was assigned to be in that county. For example, say that Judge 1 has a sentencing event with a missing date in Aiken county. If according to the calendar data Judge 1 was only assigned to Aiken county on January 25, 2001, then it is highly likely that the sentencing event happened on that date. Similarly, if Judge 1 was only assigned to Aiken county on two days, then the event must have happened in one of those two days. In general, when imputing the dates for sentencing events with missing dates, we first use the master calendar to determine a set of possible dates in which the sentencing event could have occurred. The set of possible dates in which the event could have occurred are those days in which the judge in question was assigned to the county in question (or to the same circuit). Figure \ref{Figure_Missing_Date_Histogram_of_Potential_Week_Histogram} provides the histogram of the number of possible weeks during which a sentencing event (with a missing date) might have occured. Once we have the set of possible dates, we assign the events with missing dates as evenly as possible across these possible dates. Let $n$ be the number of events with missing dates, and let $m$ be the number of possible days in which these events could have happened. First, we sort the possible days by date, earliest to latest. Suppose $n/m = l$ with remainder $k$. In this case, each of the $m$ possible days would be assigned $l$ events with missing dates, and the $k$ remaining events with missing dates would be assigned to the first $k$ possible days.  So, for example, if there are 5 sentencing events with missing dates and 4 potential dates, then each of the potential dates would get assigned a sentencing event, and the earliest of the potential dates would get the remaining one.
+
+      To elaborate further, suppose that judge $j$ has $m$ sentencing events with missing dates in county $c$ (which is in circuit $k$). The set of potential dates we would assign these sentencing events to would evolve in the following way. In each category, the days are ordered from earliest to latest.
+
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.75]{Figures/Missing_Date_Histogram_of_Potential_Week_Histogram}
+				\vspace{-2mm}
+				\caption{A histogram of the number of weeks the judge visited the county in which the sentencing events missing the \emph{date} data field occurred.}
+				\label{Figure_Missing_Date_Histogram_of_Potential_Week_Histogram}
+			\end{figure}
 
       \begin{enumerate}
         \item \textbf{Matching county, GS:} Days in the master calendar in which judge $j$ had a "GS" assignment to county $c$.
@@ -154,10 +220,11 @@
       \end{table}
 
   \subsection{Master Calendar Data}
-    This dataset contains information about each judge's assignment for each week of the fiscal year 2001. A snapshot of the calendar can be seen in figure \ref{fig-calendar}. Each assignment generally contains the county each judge was assigned to and the assignment type. The assignment type refers to the kind of cases a judge is scheduled to hear (civil or criminal).
+    This dataset contains information about each judge's assignment for each week of the fiscal year 2001. A snapshot of the calendar can be seen in Figure \ref{fig-calendar}. The first column indicates the judge names. The remaining columns correspond to the weeks in that month. The number written on top of each column is the date of the Monday of that week. Each row gives the schedule of a judge in that week. The master calendar data is cleaned as described in Appendix \ref{Appendix:Master_Calendar}. Each assignment generally contains the county each judge was assigned to and the assignment type. The assignment type refers to the kind of cases a judge is scheduled to hear (civil or criminal).
+
     \begin{figure}[h]
         \centering
-        \caption{Snapshot of Judge Calendar}
+        \caption{Snapshot of Judge Calendar for November 2000}
         \label{fig-calendar}
         \includegraphics[width=0.75\textwidth, keepaspectratio=true]{Figures/Fig4.png}
       \end{figure}
@@ -167,7 +234,7 @@
 
       \begin{table}[H]
         \centering
-        \caption{Non county or circuit court assignments}
+        \caption{Assignments that are not to a specific county or circuit court}
         \label{tab-special-assignments}
         \begin{tabular}{l}
         \hline
@@ -183,7 +250,29 @@
       \end{table}
 
     \subsubsection{Assignment Types}
-      Judge calendar assignments generally have an acronym indicating the type of the assignment (e.g. Marion GS). There are eight different assignment types, each with a corresponding acronym. Assignments can have more than one type (e.g. Marion GS CC). Our study focuses on criminal cases, which are heard in general sessions (GS). Some assignment types, like CP (common pleas), are for civil cases. A full list of the assignment type acronyms and their meanings can be found in Table \ref{tab-assignment-types}.
+      Judge calendar assignments generally have an acronym indicating the type of the assignment (e.g. Marion GS). There are eight different assignment types, each with a corresponding acronym. Assignments can have more than one type (e.g. Marion GS CC). Our study focuses on criminal cases, which are heard in general sessions (GS). As a result, much of our analysis focuses on days in which judges only had GS assignments. In other words, in much of our analysis we exclude all assignments that are not exclusively of type GS (for example GS CC would be excluded). Some assignment types, like CP (common pleas), are exclusively for civil cases. A full list of the assignment type acronyms and their meanings can be found in Table \ref{tab-assignment-types}. Figures \ref{Figure_Assignment_Histogram} and  \ref{Figure_Assignment_Type_Histogram} contain histograms of assignments and their types. Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram} contains a histogram of the assignment type (according to the master calendar) during which sentencing events occurred. A description of how Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram} was created can be found in Appendix \ref{Appendix:Master_Calendar}.
+
+			\begin{figure}[H]
+				\centering
+				\hspace*{-8mm}
+				\begin{minipage}{.45\textwidth}
+					\centering
+					\hspace*{-10mm}
+					\includegraphics[scale=0.67]{Figures/Type_of_Assignment_Histogram}
+					\vspace*{-7mm}
+					\caption{A histogram of the assignments observed for a judge-week combination in the master calendar.}
+					\label{Figure_Assignment_Histogram}
+				\end{minipage}
+				\hspace{5mm}
+				\begin{minipage}{0.45\textwidth}
+					\centering
+					\vspace*{0mm}
+					\includegraphics[scale=0.67]{Figures/Type_of_Court_Assignment_Histogram}
+					\vspace*{-1mm}
+					\caption{A histogram of the assignment types observed for a judge-week combination in the master calendar.}
+					\label{Figure_Assignment_Type_Histogram}
+				\end{minipage}
+			\end{figure}
 
       \begin{table}[H]
         \centering
@@ -192,12 +281,19 @@
         \input{Tables/assignment_meanings.tex}
       \end{table}
 
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.75]{Figures/Type_of_Court_Assignment_Sentencing_Event_Histogram}
+				\caption{A histogram of the assignment type (on the master calendar) during which the sentencing events occurred. A description of how this figure was created can be found in Appendix \ref{Appendix:Master_Calendar}.}
+				\label{Figure_Assignment_Type_Sentencing_Event_Histogram}
+			\end{figure}
+
 			% Assignments of type GS are exclusively for criminal cases. Common pleas refers to civil cases. TODO: Elaborate on the description of each of these categories. Especially GS.
 
     \subsubsection{Parsing}
       As can be seen from Figure \ref{fig-calendar}, the assignments in the raw calendar data are on a weekly basis. However, several parts of our analysis stood to benefit from having the daily assignments for each judge, as opposed to only the weekly assignment. For example, this allowed us to more accurately count the total number of days a judge was assigned to a county, or to more accurately determine if there was discrepancy between the sentencing data and the calendar data. The goal of the parsing was to turn the weekly assignemnts in the calendar data into daily assignments. In other words, we wanted to determine where each judge \textit{should have been} each day of the year (according to the calendar data). The end goal of the parsing is to create a dataset that contains at least one observation for each judge's location in each day of the year. This dataset will represent where the judge should have been according to the calendar data.
 
-      A judge can be assigned to one or multiple counties in a week, and we observe 5 different kinds of assignments: single assignment, single assignment with dates, multiple assignment, multiple assignment with some dates, and multiple assignment with all dates. We parse the calendar data to determine each judge's schedule for every day of the year. In the resulting data, the unit of observation is judge, day, county. Note that the only potentially ambiguous assignment types are multiple assignment and multiple assignment with some dates. By ambiguous, we mean that the calendar data does not specify a unique location for a judge. For example, in the single assignment case the judge is only supposed to be in one county (according to the calendar data). However, in the multiple assignment case, it is not clear in which county the judge should be (according to the calendar data). For these ambiguous assignment types, we set the judge to be in all counties that he is scheduled to be in. One portion of our analysis involves counting the number of days that a judge was assigned to a specific county. For days in which a judge is assigned to multiple counties, we normalize the number of days he/she is assigned to each county so that the sum of the assignments for each day is equal to one. For example, if judge 2 is scheduled for both Marion and Horry in the week of March 19-March 23, for each day of that week our data would include an observation for judge 2 in Horry and an observation for judge 2 in Marion. Furthermore, for each of these days we would say that judge 2 was assigned to 0.5 days in Horry and 0.5 days in Marion. An example of what our parsed data looks like can be seen in table \ref{tab-calendar-example}.
+      A judge can be assigned to one or multiple counties in a week, and we observe 5 different kinds of assignments: single assignment, single assignment with dates, multiple assignment, multiple assignment with some dates, and multiple assignment with all dates. We parse the calendar data to determine each judge's schedule for every day of the year. In the resulting data, the unit of observation is judge, day, county. Note that the only potentially ambiguous assignment types are multiple assignment and multiple assignment with some dates. By ambiguous, we mean that the calendar data does not specify a unique location for a judge. For example, in the single assignment case the judge is only supposed to be in one county (according to the calendar data). However, in the multiple assignment case, it is not clear in which county the judge should be (according to the calendar data). For these ambiguous assignment types, we set the judge to be in all counties that he is scheduled to be in. Figure \ref{assignment_type_hist} contains the relative frequencies of the different assignment types, and shows that ambiguous assignments are rare. Our analysis involves counting the number of days that a judge was assigned to a specific county. For days in which a judge is assigned to multiple counties, we normalize the number of days he/she is assigned to each county so that the sum of the assignments for each day is equal to one. For example, if judge 2 is scheduled for both Marion and Horry in the week of March 19-March 23, for each day of that week our data would include an observation for judge 2 in Horry and an observation for judge 2 in Marion. Furthermore, for each of these days we would say that judge 2 was assigned to 0.5 days in Horry and 0.5 days in Marion. An example of what our parsed data looks like can be seen in table \ref{tab-calendar-example}.
 
       \begin{table}[H]
         \centering
@@ -205,6 +301,13 @@
         \label{tab-assignments}
         \input{Tables/assignments.tex}
       \end{table}
+
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.65]{../../output/figures/Description/assignment_type_hist.png}
+				\caption{A histogram of the relative frequency of the different assignment types}
+				\label{assignment_type_hist}
+			\end{figure}
 
       \begin{table}[H]
         \centering
@@ -216,7 +319,7 @@
   \subsection{Merging the Sentencing Data and the Calendar Data}
 	  \label{mapping-judge-names}
     The main challenge in using the two datasets is that they don't share a common identifier for judges. The sentencing data uses numerical IDs to
-    identify judges, while the calendar data uses judge names to identify them. There is no mapping from judge numbers to judge names in the raw data. To map judge ID's to judge names, we assign each Judge ID to the judge name in the schedule data whose schedule overlaps the most with that Judge ID. We consider the sentencing data and schedule data to overlap for a Judge ID and a Judge name in a specific week if the Judge ID in consideration has a sentencing event in a county that that judge name is assigned to in that week. So, if in Week 12 judge 'John Doe' is assigned to 'Aitken' county, and we see a sentencing event for Judge ID $n$ in 'Aitken' county on Week 12, we would consider their schedules to be overlapping in that week. Assigning each judge ID to the judge name with the most overlap yields a unique mapping (i.e. there are never any ties). We also tried two other methods, and they yielded the same results. The two other methods as well as the final mapping can be found in Appendix \ref{app-map}.
+    identify judges, while the calendar data uses judge names to identify them. There is no mapping from judge numbers to judge names in the raw data. To map judge ID's to judge names, we assign each Judge ID to the judge name in the schedule data whose schedule overlaps the most with that Judge ID. We consider the sentencing data and schedule data to overlap for a Judge ID and a Judge name in a specific week if the Judge ID in consideration has a sentencing event in a county that that judge name is assigned to in that week. So, if in Week 12 judge 'John Doe' is assigned to 'Aitken' county, and we see a sentencing event for Judge ID $n$ in 'Aitken' county on Week 12, we would consider their schedules to be overlapping in that week. Assigning each judge ID to the judge name with the most overlap yields a unique mapping (i.e. there are never any ties). We also tried two other methods, and they yielded the same results. The two other methods as well as the final mapping can be found in Appendix \ref{app-map}. After merging the two data sources, we noticed that there are certain cases in which they conflict. For example, sometimes the sentencing data will indicate that a judge sentenced a case in a county he was not scheduled to be in according to the master calendar data. However, less than $3\%$ of the events in the sentencing data conflict with the master calendar data. A more thorough analysis of the discrepancies between the two data sets can be found in Appendix \ref{Appendix:Discrepancies}.
 
 \section{Model}
   We build on the model developed by \cite{wang2019}. There are three agents: the judge, the defendant, and the prosecutor. The prosecutor proposes a plea offer, and the judge and the defendant choose whether to accept. The game evolves in the following steps:
@@ -248,42 +351,45 @@
       We only use the trial sentencing events to estimate $\tau$   & \ref{tau-estimation}         \\
       We currently only use a subset of the data to estimate $c_d$ & \ref{c_d-estimation}         \\
       We add the point $(0,0)$ to the convex hull of every judge   & \ref{convex_hull-estimation} \\
-      We assume (TBD) when using regression model & \ref{service_rate-estimation}} \\ \hline
+      We assume (TBD) when using regression model & \ref{service_rate-estimation} \\ \hline
       \end{tabular}
     \end{table}
 
-  \subsection{Probability of Conviction at Trial - $\theta$}
-    \label{theta-estimation}
-    We currently estimate this using $l_2$ regularized logistic regression with a penalty parameter of 1. We use the following variables to predict this quantity: Black, Offense Type, and Offense Seriousness. We represent all variables as binary variables. We split our sample into train and test sets using a 75/25 split to evaluate the performance of our classifier. Our classifier's performance can be seen in table \ref{classifier-performance}. The classifier outputs prediction probabilities, which is what we use for $\theta$. The classifier's prediction probability can be interpreted as the probability that the observation will have a value of 1 for the incarceration variable. The final classifier we use to predict $\theta$ for all observations in our dataset is trained on the full training set.
+	\subsection{Conviction Probability and Expected Sentence Length - $\theta \tau$}
+	  \label{theta-tau-estimation}
 
-    \begin{table}[H]
-      \centering
-      \caption{Evaluation Metrics for Classifier}
-      \label{classifier-performance}
-      \begin{tabular}{|l|l|}
-      \hline
-      \textbf{Metric} & \textbf{Score} \\ \hline
-      AUC             & 0.93           \\ \hline
-      F1              & 0.94           \\ \hline
-      Accuracy        & 0.89           \\ \hline
-      \end{tabular}
-    \end{table}
+		Following the example of \cite{hester2017conditional}, we estimate these two quantities using a hurdle model. In a hurdle model, the probability of a random variable, $y$, is modeled using two separate models: one model is for modeling probability that $y=0$ and a separate model is for modeling $f(y|y>0)$. We estimate our hurdle model using an $l_2$ regularized logistic regression with a penalty parameter of 1 for estimating the probability that $y=0$. We use a negative binomial model to estimate $f(y|y>0,x)$.
 
-    \subsubsection{Sample}
-      We only use the observations in the data that are trials and that have non missing values for the predictor variables. There are only 256 observations in the data meeting this criteria. Of these 256 observations, 247 resulted in a conviction.
+		\begin{align*}
+		  \text{Pr}(y=0|x) &= \frac{1}{1+\exp(-\beta^Tx)} = \pi_i\\
+			\text{Pr}(y|x) &= (1-\pi) f_{NB}(y|x) \text{ for y > 0}
+		\end{align*}
 
-    \subsubsection{Proposed Changes}
-      We should consider jointly estimating $\theta$ and $\tau$ using a Hurdle Regression model as in Hester and Hartman 2017.
+		where $f_{NB}(y|x)$ is the conditional probability of $y$ given $x$ under the negative binomial model.
 
-  \subsection{Expected Sentence Length if Convicted - $\tau$}
-    \label{tau-estimation}
-    We currently estimate this using Negative Binomial Regression. We use the Cameron-Trivedi test for overdispersion to choose the overdispersion parameter. As in Hester and Hartman 2017, our dependent variable is the expected minimum sentence. We use the following variables to predict this quantity: Black, Age, Offense Type, and Offense Seriousness.
+		\subsubsection{Sample}
+			We only use the observations in the data that are trials and that have non missing values for the predictor variables. There are only 256 observations in the data meeting this criteria. Of these 256 observations, 247 resulted in a conviction.
 
-    \subsubsection{Sample}
-      We only use the observations in the data that are trials and that have non missing values for the predictor variables. There are only 256 observations in the data meeting this criteria.
+	  \subsubsection{Probability of Conviction at Trial - $\theta$}
+	    \label{theta-estimation}
+	    We currently estimate this using $l_2$ regularized logistic regression with a penalty parameter of 1. We use the following variables to predict this quantity: Black, Offense Type, and Offense Seriousness. We represent all variables as binary variables. We split our sample into train and test sets using a 75/25 split to evaluate the performance of our classifier. Our classifier's performance can be seen in table \ref{classifier-performance}. The classifier outputs prediction probabilities, which is what we use for $\theta$. The classifier's prediction probability can be interpreted as the probability that the observation will have a value of 1 for the incarceration variable. The final classifier we use to predict $\theta$ for all observations in our dataset is trained on the full training set.
 
-    \subsubsection{Proposed Changes}
-      We should consider jointly estimating $\theta$ and $\tau$ using a Hurdle Regression model as in Hester and Hartman 2017.
+	    \begin{table}[H]
+	      \centering
+	      \caption{Evaluation Metrics for Classifier}
+	      \label{classifier-performance}
+	      \begin{tabular}{|l|l|}
+	      \hline
+	      \textbf{Metric} & \textbf{Score} \\ \hline
+	      AUC             & 0.93           \\ \hline
+	      F1              & 0.94           \\ \hline
+	      Accuracy        & 0.89           \\ \hline
+	      \end{tabular}
+	    \end{table}
+
+		\subsection{Expected Sentence Length if Convicted - $\tau$}
+	    \label{tau-estimation}
+	    We currently estimate this using Negative Binomial Regression. We use the Cameron-Trivedi test for overdispersion to choose the overdispersion parameter. As in Hester and Hartman 2017, our dependent variable is the expected minimum sentence. We use the following variables to predict this quantity: Black, Age, Offense Type, and Offense Seriousness.
 
   \subsection{Defendant Cost of Trial - $c_d$}
     \label{c_d-estimation}
@@ -328,8 +434,6 @@
    \paragraph{Implementation}
    Suppose we have the simplices of the convex hull for a specific judge, and that they are given as tuples of two points $((x_1,y_1),(x_2,y_2))$. Given a specific $\theta \tau$ we implement the convex hull approach by iterating over the simplices of the convex hull, and finding the two simplices on which $\theta \tau$ lies. In other words, we find the two line segments on the boundary of the convex hull whose domain includes $\theta \tau$. We then find the value of the convex hull boundary at $\theta \tau$ in each of these two line segments using linear interpolation. The largest (smallest) of these two values is $u_j (l_j)$. In cases where $\theta_1 \tau_1$ is not in the domain of the convex hull because it is too large, we use the largest value in the convex hull to find $u_j (l_j)$. $\theta_1 \tau_1$ will never be too small because all convex hulls include $(0,0)$ and $\theta_1 \tau_1 \geq 0$. Figure \ref{fig-convex-hull} contains an illustration:
 
-	 \textbf{Note:} we should think about what to do in cases where $\theta_1 \tau_1$ is not in the convex hull. Figure \ref{fig-convex-hull} contains an illustration:
-
     \begin{figure}[H]
       \centering
       \includegraphics[width=0.65\textwidth]{../../output/figures/Exploration/convex_hull_max.png}
@@ -346,80 +450,101 @@
 
   \subsection{Service Rates - $\mu_p,\mu_t$}
     \label{service_rate-estimation}
-    \subsubsection{Samples}
-      \paragraph{Plea MLE Sample} This is the sample we use for the maximum likelihood estimation part of the ad-hoc algorithm. We also refer to this sample as "clean days". For this, we only consider pleas that happened on days which satisfy the following conditions:
-        \begin{table}[H]
-          \centering
-          \caption{MLE Plea Sample Exclusion Criteria}
-          \begin{tabular}{|l|}
-          \hline
-          \textbf{Condition}                                                  \\ \hline
-          No inconsistencies between sentencing data and calendar \\ \hline
-          Judge has at least 10 'clean' days                      \\ \hline
-          Judge has at least one sentencing event that day         \\ \hline
-          Judge is only assigned to one county that day          \\ \hline
-          Judge only sentences in one county that day             \\ \hline
-          Judge never has more than 35 sentencing events in this county \\ \hline
-          Judge calendar assignment is of type "GS"           \\ \hline
-          \end{tabular}
-        \end{table}
-      % \textbf{Sensitivity Analysis:} Add these one by one, similar to how controls are presented in Econ papers, and see how the quantity of interest changes as they are added. We could also add them in groups. Some of these correspond to outlier control and others to day cleanliness. We can run it with and without each group.
+		\subsubsection{Background/Motivation}
+	    Estimating the plea and trial service rates turned out to be one of the most challenging
+			aspects of this project. The difficulty in this problem lies in the fact that judges
+			work on a variety of different tasks (e.g. administrative work, hearing civil cases, hearing criminal cases).
+			This prevents us from taking a simple average of number of pleas/trials per day, because doing so would
+			introduce the implicit assumption that judges only work on pleas/trials. In the ideal world,
+			we would be able to lock judges in a room, have them work exclusively on pleas and trials, and
+			then simply measure their service rates. This is impossible, but it illustrates what we were aiming for.
+			To get as close as possible to the ideal scenario, we restricted our attention to days in our data in which
+			judges plausibly spent most of their time working on either pleas or trials. We use the master calendar data
+			to determine which were these days. More specifically, we restrict our attention to days that are of type "GS" in
+			the master calendar data. The "GS" acronym stands for "General Session", which are dedicated exclusively to criminal
+			cases (both pleas and trials). As a result, it is likely that on these "GS" days, judges mostly spent their time working on either pleas or trials.
 
-      \paragraph{Plea Arrival Rate Sample} This is the sample we use to estimate the plea arrival rate, $\theta$ in the ad-hoc algorithm. The calculation of $\theta$ involves two quantities: the total number of pleas in the data, $N_p$, and $d$, the total number of judge days. $d$ is meant to represent the number of days in which a judge could have been working on pleas. As a result, for $d$ we include all days of type "GS", and we include days of other work types in which we observe sentencing events. $N_p$ currently includes all pleas in our data.
-
-      \paragraph{Trial Rate Sample} This is the sample we use to estimate the trial service rate, $\mu_t$. When calculating the total number of days a judge was assigned to a county, we include all days he had a "GS" assignment to that county in the master calendar, and all days of type non-GS in which we observe a sentencing event. Note, this is the same criteria as used above for the plea arrival rate sample. We include all pleas and all trials when calculating the total number of pleas and trials the judge heard in that county. We focus on the judge-county combinations that satisfy the following conditions:
-
-        \begin{table}[H]
-        \centering
-        \caption{Trial Service Rate Exclusion Criteria}
-        \begin{tabular}{|l|}
-        \hline
-        \textbf{Condition}                                                       \\ \hline
-        Judge never has more than 35 sentencing events in one day in this county \\
-        Judge has at least 2 trial in this county                                \\ \hline
-        \end{tabular}
-        \end{table}
-
-        % \textbf{Proposed Changes:} Since our explicit assumption is that judges only spend time on pleas or trials when calculating the expected trial days and expected plea days, I think it might make sense to exclude days where it is unlikely that the judge was working on either of those two tasks, like when they are hearing civil cases. \textbf{Sensitivity Analysis:} We can think of our conditions as corresponding to day cleanliness and outlier control, and group them based on those criteria. We can then add them by group and see how our estimate evolves. If any criteria significantly changes the estimate, we should argue why it is a good criteria to have.
-
-    \subsubsection{Estimation of $\mu_t$}
-      \label{mu_t-estimation}
-      To estimate the trial service rate, we focus on the judge-county combinations that satisfy the conditions described in the Trial Rate Sample paragraph. Let $K$ denote the number judge-county combinations satisfying these two conditions. We number these judge-county combinations $1,\ldots,K$ and define $\mathcal{K} = \{1,\ldots,K\}$. For judge-county $k \in \mathcal{K}$, we let $n_p(k)$ and $n_t(k)$ denote the total number of pleas and the total number of trials undertaken by this judge in this county. Similarly, for judge-county $k \in \mathcal{K}$, we let $T(k)$ denote the number of days this judge was assigned to this county.\footnote{In calculating $T(k)$ for $k\in\mathcal{K}$, we assume the judge divides his time equally among the county assignments to which he is assigned if he is assigned to multiple counties on a day.}
-
-			First, we assume the judges in judge-county combinations $k\in\mathcal{K}$ never idle. If this assumption was correct, the trial service rate of judge-county $k\in\mathcal{K}$ would be
+			We use the sentencing data to construct a dataset where the unit of observation is a judge-county combination. For each judge-county combination , $v$, with judge $j$ and county $c$, we count the number of days of type "GS" that judge $j$ was assigned to be in county $c$. We also count the number of pleas and trials judge $j$ processed on "GS" days in county $c$. So, we obtain a dataset where for each judge-county combination we have the total amount of work completed (that is the number of pleas and trials), and the total time it took to complete. We use this data to fit the following linear model to estimate the service rates:
 			\begin{align*}
-				\hat{\mu}_t(k) \,=\, \frac{n_t(k)}{T(k) - n_p(k) / \hat{\mu}_p}.
+				\text{Days}_v &= \beta_0 + \beta_T \text{Trials}_v + \beta_P \text{Pleas}_v + \epsilon_v
 			\end{align*}
+			In this model, $\beta_T,\beta_P$ are the trial and plea service rates, and $\beta_0$ can be interpreted as the "fixed costs" for working. This could include time to get set up or administrative tasks.
 
-      The tuples $(n_t(k),{\hat{\mu}_t(k)})$ for $k\in\mathcal{K}$ are depicted in Figure \ref{Figure_Trial_Sercice_Rate_Vs_Trial_Per_County}.
-			%
-			\begin{figure}[H]
-				\centering
-				\includegraphics[scale=0.75]{Figures/Judge_Capacity_Vs_Number_of_Trials}
-				\vspace{-2mm}
-				\caption{A graphical representation of the tuples $(n_t(k),{\hat{\mu}_t(k)})$ for $k\in\mathcal{K}$.}
-				\label{Figure_Trial_Sercice_Rate_Vs_Trial_Per_County}
-			\end{figure}
-			%
-			We observe that as the number of trials in a judge-county combination decreases, the variance of the $\hat{\mu}_t(k)$ estimates increase. Moreover, the $\hat{\mu}_t(k)$ estimates skew to the left as the number of trials decreases. This suggests that the judges in judge-county combinations with few trials spent some time idling. Therefore, to estimate the trail service rate, we focus on judge-county combinations for which we observe at least two trials, i.e., $k \in \tilde{\mathcal{K}} = \{k:k\in\mathcal{K},n_t(k)\geq 2\}$. These judge-county combinations account for $72\%$ of the trials in the dataset. The trial service rate estimate is
-			%
+		\subsubsection{County Fixed Effects}
+		  In our exploratory analysis of the sentencing data, we noticed that there exists considerable heterogeneity across counties
+			in the number of pleas and trials sentenced in each county. For example, we observe 1,633 pleas in Richmond county in the data, but only 62 in Fairfield county. This suggests that some of the variation in judge idleness can be explained by the county the judge is in. For example, a judge assigned to Fairfield is more likely to be idle because there is less work to be done there than in Richmond. To account for these differences in demand for pleas in trials across counties, we decided to augment our model by adding county fixed effects. The county fixed effects model is as follows:
 			\begin{align*}
-				\hat{\mu}_t \,=\, \frac{ \sum\limits_{k\in\tilde{\mathcal{K}}} n_t(k) }{\sum\limits_{k\in\tilde{\mathcal{K}}} T(k) - \sum\limits_{k\in\tilde{\mathcal{K}}} n_p(k) / \hat{\mu}_p }.
+				\text{Days}_v &= \alpha_c + \beta_T \text{Trials}_v + \beta_P \text{Pleas}_v + \epsilon_v
 			\end{align*}
+			The estimates from this model can be seen in Table \ref{county_fixed_effects}. The model estimates that
+			judges can process about 10 pleas per day, and that it takes about 4 days for judges to hear each trial.
 
-    \subsubsection{Ad-hoc Algorithm for Joint Estimation of $\mu_t,\mu_p$}
-      \textbf{Step 1:} Let $\mu_p,\mu_t$ be the current values for the plea and trial service rate. As in the estimation of $\mu_t$, we are assuming judges only work on pleas and trials and do not idle. As a result, given the total number of trials heard, $N_{t}$, and the trial service rate, $\mu_t$, we can calculate the expected number of days judges spent working on trials. The number of days judges spent on trials, $d_{t} = \frac{N_{t}}{\mu_t}$. We calculate the total number of days judges worked, $d$ using the assignments from the master calendar and removing public holidays. The expected number of days judges worked on pleas is then $d_{p} = d - d_{t}$. \\
+			\begin{table}[H] \centering
+				  \caption{County Fixed Effects Model}
+				  \label{county_fixed_effects}
+				\begin{tabular}{@{\extracolsep{5pt}}lc}
+				\\[-1.8ex]\hline
+				\hline \\[-1.8ex]
+				 & \multicolumn{1}{c}{\textit{Dependent variable:}} \\
+				\cline{2-2}
+				\\[-1.8ex] & Days \\
+				\hline \\[-1.8ex]
+				 Plea & 0.091$^{***}$ \\
+				  & (0.008) \\
+				  & \\
+				 Trial & 4.336$^{***}$ \\
+				  & (0.339) \\
+				  & \\
+				\hline \\[-1.8ex]
+				Observations & 278 \\
+				R$^{2}$ & 0.735 \\
+				Adjusted R$^{2}$ & 0.681 \\
+				Residual Std. Error & 7.552 (df = 230) \\
+				\hline
+				\hline \\[-1.8ex]
+				\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\
+				\end{tabular}
+		  \end{table}
 
-      \noindent \textbf{Step 2:} Let $N_p$ denote the total number of pleas in the data. Again, we include all pleas in our sample to calculate $N_p$. We set $\theta = \frac{N_p}{d_p}$. We model the plea demand for a judge as $D \sim \text{Poisson}(\theta)$, whereas the number of pleas a judge can serve in a day is denoted by $X$, $X \sim \text{Poisson}(\mu_p)$. \\
-
-      \noindent \textbf{Step 3:} Let $S_i = \min(D_i,X_i)$ denote the number of pleas sentenced for judge-day combination $i=1,...,N$. Here, we only include the judge-day combinations that satisfy our Plea MLE conditions. We have that
+	  \subsubsection{Judge Fixed Effects}
+		  A qualitative review of the system (\cite{hester2017conditional}) suggests that there could also be
+			considerable heterogeneity in the plea processing rate across judges. According to \cite{hester2017conditional},
+			this is because some judges develop a reputation for harshness or leniency, and since defendants have
+			some choice with regards to the judge that hears their case, harsher judges often hear fewer cases than lenient judges.
+			Guided by this knowledge, we decided to also fit a model with judge fixed effects. The judge fixed effects model is as follows:
 			\begin{align*}
-				P(S_i = S) &= P(X_i = S | X_i \leq D_i) P(X_i \leq D_i) + P(D_i = S | X_i > D_i) P(X_i > D_i) \\
-          &= \frac{\theta^s e^{-\theta}}{s!}[1-\sum_{k=0}^{s-1}\frac{\mu_p^k e^{-\mu_p}}{k!}] + \frac{\mu_p^s e^{-\mu_p}}{s!}[1-\sum_{k=0}^s \frac{\theta^k e^{-\theta}}{k!}]
+				\text{Days}_v &= \alpha_j + \beta_T \text{Trials}_v + \beta_P \text{Pleas}_v + \epsilon_v
 			\end{align*}
+			The estimates from this model can be seen in Table \ref{judge_fixed_effects}. The model estimates are similar to the
+			county fixed effects model. The model estimates that
+			judges can process about 10 pleas per day, and that it takes about 4 days for judges to hear each trial.
 
-      Let $L(\mu_p) = -\sum_{i=1}^N \log P(S_i = s)$. We then set
-			 $\mu_p = \argmin L(\mu_p)$ and calculate $\mu_t$ as described in \ref{mu_t-estimation}. Again, the judge-day combinations for which we are minimizing the negative log likelihood are those that satisfy our Plea MLE conditions. We use a gradient descent algorithm with the Adam Optimizer to find the value of $\mu_p$ that minimizes the NLL. This new value of $\mu_p$ will imply a new value of $\mu_t$ as in Section \ref{mu_t-estimation}, and so we repeat Steps 1-3 until we converge.
+			\begin{table}[H] \centering
+				  \caption{Judge Fixed Effects Model}
+				  \label{judge_fixed_effects}
+				\begin{tabular}{@{\extracolsep{5pt}}lc}
+				\\[-1.8ex]\hline
+				\hline \\[-1.8ex]
+				 & \multicolumn{1}{c}{\textit{Dependent variable:}} \\
+				\cline{2-2}
+				\\[-1.8ex] & Days \\
+				\hline \\[-1.8ex]
+				 Plea & 0.105$^{***}$ \\
+				  & (0.007) \\
+				  & \\
+				 Trial & 3.861$^{***}$ \\
+				  & (0.349) \\
+				  & \\
+				\hline \\[-1.8ex]
+				Observations & 278 \\
+				R$^{2}$ & 0.771 \\
+				Adjusted R$^{2}$ & 0.720 \\
+				Residual Std. Error & 7.083 (df = 226) \\
+				\hline
+				\hline \\[-1.8ex]
+				\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\
+				\end{tabular}
+			\end{table}
 
 \section{Simulation Plan}
   We simulate the system using the discrete choice model described in Section 3. Our simulation is as follows:
@@ -445,13 +570,14 @@
  \printbibliography
 
 \appendix
+\pagenumbering{arabic}
 \section{Sentencing Data Set}
-  \label{Sec:Sentencing_Data_Description}
+  \label{Appendix:Sentencing_Data}
   This section provides a more in-depth description of the sentencing data we used. All of the sentencing events in the data correspond to felonies or serious misdemeanors.
 
-  \subsection{Data Cleaning}
-    \label{Sec:Appendix:Data_Cleaning}
-    We discard all sentencing events in the sentencing dataset associated with Judge 1 because Judge 1 is a fictitious judge.\footnote{See the email from Rhys to Can and Larry on 05/14/2018 (Page 3 of the document Email3.pdf). In this email, Rhys states that "Judge 1 is actually a fictitious aggregate of the 155 cases that were missing a judge ID".}
+  % \subsection{Data Cleaning}
+  %   \label{Sec:Appendix:Data_Cleaning}
+  %   We discard all sentencing events in the sentencing dataset associated with Judge 1 because Judge 1 is a fictitious judge.\footnote{See the email from Rhys to Can and Larry on 05/14/2018 (Page 3 of the document Email3.pdf). In this email, Rhys states that "Judge 1 is actually a fictitious aggregate of the 155 cases that were missing a judge ID".}
 
   \subsection{Variables}
   	There are two versions of the sentencing dataset: the CSV file and the STATA file. There are 17,671 sentencing events (rows) in both files. The CSV file has 33 data fields. This is the first dataset Larry obtained. The STATA file has 21 data fields. This is the second dataset Larry obtained. In what follows, we assume the sentencing dataset is cleaned as described in Appendix \ref{Sec:Appendix:Data_Cleaning}.
@@ -590,24 +716,23 @@
     \subsubsection{Variables with missing data}
       After excluding all of the sentencing events heard by Judge 1, the fictitious judge, there are 17,516 sentencing events. Amongst these sentencing events, the only data field with missing values are the \emph{date} data field and the \emph{expmin} data field. 1482 sentencing events are missing the \emph{date} data field and 28 sentencing events are missing the \emph{expmin} data field.
 
-    \subsection{Events with missing dates}
-      \label{Sec:Appendix:Missing_Dates}
-      About $8.7\%$ of the sentencing events (1551 sentencing events) are missing the \emph{date} data field. This section further analyzes these sentencing events to infer the missing date from the available judge and county information.
+    % \subsection{Events with missing dates}
+    %   \label{Sec:Appendix:Missing_Dates}
+    %   About $8.7\%$ of the sentencing events (1551 sentencing events) are missing the \emph{date} data field. This section further analyzes these sentencing events to infer the missing date from the available judge and county information.
+		%
+    %   We start by cleaning the sentencing dataset as described in Appendix \ref{Sec:Appendix:Data_Cleaning}. Then, we fix a sentencing event that is missing the \emph{date} data field. We record the judge number and the county associated with this sentencing event. Next, we use the master calendar (and the mapping from judge numbers to judge names described in Section \ref{Sec:Mapping_Judge_Numbers_To_Judge_Names}) to find the set of weeks on which this judge visited this county. Let us illustrate this through an example: One of the sentencing event missing the \emph{date} date field is undertaken by Judge 4 in Newberry. According to Section \ref{Sec:Mapping_Judge_Numbers_To_Judge_Names}, Judge 4 is Judge Baxley. Judge Baxley visited only Newberry in the week of November 6th 2000. Therefore, the set associated with this sentencing event is \{November 6th 2000\}. We continue this procedure for all sentencing events missing the \emph{data} data field.
+		%
+    %   Focusing on the sentencing events who are missing the \emph{date} data field, Figure \ref{Figure_Missing_Date_Histogram_of_Potential_Week_Histogram2} displays a histogram of the number of visits to the sentencing county by the sentencing judge using his schedule from the master calendar. For example, the first bar indicates that there are 222 sentencing events (missing the \emph{date} data field) that occurred in a county to which the judge was never assigned (according to the master calendar). For 34 out of these 222 sentencing events, the judge visited the circuit court associated with the sentencing event in least one week. For 100 sentencing events, the judge visited the county (associated with this sentencing event) only once. We \emph{assume} these sentencing events occurred during this week. For example, we assume the sentencing event discussed in the previous paragraph occurred in the Week of November 6th 2000.
+		%
+    %   \begin{figure}[H]
+    %     \centering
+    %     \includegraphics[scale=0.75]{Figures/Missing_Date_Histogram_of_Potential_Week_Histogram}
+    %     \caption{A histogram of the number of weeks the judge visited the county in which the sentencing events missing the \emph{date} data field occurred.}
+    %     \label{Figure_Missing_Date_Histogram_of_Potential_Week_Histogram2}
+    %   \end{figure}
 
-      We start by cleaning the sentencing dataset as described in Appendix \ref{Sec:Appendix:Data_Cleaning}. Then, we fix a sentencing event that is missing the \emph{date} data field. We record the judge number and the county associated with this sentencing event. Next, we use the master calendar (and the mapping from judge numbers to judge names described in Section \ref{Sec:Mapping_Judge_Numbers_To_Judge_Names}) to find the set of weeks on which this judge visited this county. Let us illustrate this through an example: One of the sentencing event missing the \emph{date} date field is undertaken by Judge 4 in Newberry. According to Section \ref{Sec:Mapping_Judge_Numbers_To_Judge_Names}, Judge 4 is Judge Baxley. Judge Baxley visited only Newberry in the week of November 6th 2000. Therefore, the set associated with this sentencing event is \{November 6th 2000\}. We continue this procedure for all sentencing events missing the \emph{data} data field.
-
-      Focusing on the sentencing events who are missing the \emph{date} data field, Figure \ref{Figure_Missing_Date_Histogram_of_Potential_Week_Histogram} displays a histogram of the number of visits to the sentencing county by the sentencing judge using his schedule from the master calendar. For example, the first bar indicates that there are 222 sentencing events (missing the \emph{date} data field) that occurred in a county to which the judge was never assigned (according to the master calendar). For 34 out of these 222 sentencing events, the judge visited the circuit court associated with the sentencing event in least one week. For 100 sentencing events, the judge visited the county (associated with this sentencing event) only once. We \emph{assume} these sentencing events occurred during this week. For example, we assume the sentencing event discussed in the previous paragraph occurred in the Week of November 6th 2000.
-
-      \begin{figure}[H]
-        \centering
-        \includegraphics[scale=0.75]{Figures/Missing_Date_Histogram_of_Potential_Week_Histogram}
-        \caption{A histogram of the number of weeks the judge visited the county in which the sentencing events missing the \emph{date} data field occurred.}
-        \label{Figure_Missing_Date_Histogram_of_Potential_Week_Histogram}
-      \end{figure}
-
-  \subsection{Summary Statistics}
-Master
-\section{Calendar Data}
+\section{Master Calendar Data}
+  \label{Appendix:Master_Calendar}
   \subsection{Data Cleaning}
     We do two things to clean the calendar data:
 
@@ -675,8 +800,47 @@ Master
     	\vspace{-2mm}
     \end{table}
 
+	\subsection{Descriptive Statistics}
+	  For each judge, the percentage of weeks with a GS (CP) assignment on the master calendar is depicted in Figure \ref{Figure_Judge_Schedule_GS_Percentage_Histogram} (\ref{Figure_Judge_Schedule_CP_Percentage_Histogram}). Figures \ref{Figure_Judge_Schedule_GS_Percentage_Histogram}-\ref{Figure_Judge_Schedule_CP_Percentage_Histogram} jointly show that GS and CP assignments are the most common assignments for the judges. Figure \ref{Figure_Judge_Schedule_GS_CP_Percentage_Histogram} shows the overlap, i.e., the percentage of weeks (with an assignment) in which the judge has at least one assignment of type GS and at least one assignment of type CP. It shows that it is not common for a judge to have both GS and CP assignments in a week.
+		\begin{figure}[H]
+			\centering
+			\begin{minipage}{\textwidth}
+				\vspace{-16mm}
+				\centering
+				\includegraphics[scale=0.75]{Figures/Judge_Schedule_GS_Percentage_Histogram}
+				\vspace{-3mm}
+				\caption{The percentage of weeks (with an assignment) in which the judge has at least one assignment of type GS.}
+				\label{Figure_Judge_Schedule_GS_Percentage_Histogram}
+			\end{minipage}
+			\begin{minipage}{\textwidth}
+				\centering
+				\includegraphics[scale=0.75]{Figures/Judge_Schedule_CP_Percentage_Histogram}
+				\vspace{-3mm}
+				\caption{The percentage of weeks (with an assignment) in which the judge has at least one assignment of type CP.}
+				\label{Figure_Judge_Schedule_CP_Percentage_Histogram}
+			\end{minipage}
+			\begin{minipage}{\textwidth}
+				\centering
+				\includegraphics[scale=0.75]{Figures/Judge_Schedule_GS_CP_Percentage_Histogram}
+				\vspace{-3mm}
+				\caption{The percentage of weeks (with an assignment) in which the judge has at least one assignment of type GS and at least one assignment of type CP.}
+				\label{Figure_Judge_Schedule_GS_CP_Percentage_Histogram}
+			\end{minipage}
+		\end{figure}
+
+	\subsection{Creation of Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram}}
+		Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram} depicts the frequency of the assignment types based on the sentencing dataset. Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram} is generated as follows: First, we create a list of the sentencing events undertaken by Judges $2,\ldots,51$ that have a date. Then, for each sentencing event on the list, we proceed as follows:
+		\begin{enumerate}
+			\vspace{-3mm}
+			\item We read the judge number, the week, and the county corresponding to each sentencing event (from the sentencing dataset). For example, Judge 2 on the Week of January 8 in Chester.\footnote{The subsequent analysis in this section shows that there are some inconsistencies between the master calendar and the sentencing dataset. If we use the sentence date (to generate Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram}), we will run into a problem for some sentencing events, e.g., the sentencing events in Table \ref{Table_Mater_Calendar_Problematic_Cases_Detailed_Category_i}. Therefore, we make a weaker assumption and use the sentence week (as opposed to sentence date).}
+			\vspace{-2mm}
+			\item We look for the judge's assignment for this week on the master calendar and report the type of the assignment in the figure. We sometimes observe multiple assignments in a week. For example, Judge 2 had the following assignments in the week of January 8: 2nd Cir. CPNJ 8, Chester GS 9,10,11, and Lancaster 12. In this case, the assignment in Chester county is the one we are interested in, because that is where the sentencing event of interest occurred. Thus, we use this assignment (and its type, i.e., GS) to record the sentencing event in the figure. For 4.12\% of the sentencing events (without a date), we cannot find the county assignment we are interested in due to inconsistencies between the master calendar and the sentencing dataset; see Section \ref{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments} for a detailed description of the judge-week combinations in which these sentencing events occurred. Nonetheless, the analysis summarized in Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram} is still useful for our capacity calculations below.
+		\end{enumerate}
+		\vspace{-3mm}
+		We repeat this procedure for all sentencing events and count the number of assignment types. Finally, we plot the histogram in Figure \ref{Figure_Assignment_Type_Sentencing_Event_Histogram}.
+
 \section{Discrepancies between the Sentencing Data and the Master Calendar Data}
-  \label{Sec:Master_Calendar:Further_Analysis_of_Some_Assignments}
+  \label{Appendix:Discrepancies}
 
   This section studies the discrepancies between the sentencing data and the calendar data. In doing so, we take advantage of the mapping from judge numbers to judge names (discussed in Section \ref{mapping-judge-names}).
 
@@ -942,6 +1106,446 @@ Master
   	In addition, we focus only on the county names as opposed to the county name and the type of the assignment, which may also be listed; see Figure \ref{Figure_Assignment_Type_Histogram}. For example, Georgetown GS and Georgetown CP are both taken as Georgetown. There are several reasons for this: First, the type of the assignment is not always available. More importantly, all sentencing events should happen only in the general sessions (GS); and the common plea (CP) designation could be an error if a sentencing event appears in the sentencing dataset for the corresponding judge-week-county triple. Moreover, if no sentencing event occurs, then it is harmless to omit the CP designation. Consequently, focusing on the county name only makes the match easier.
 
   	Table \ref{Table_Schedule_Of_Unmapped_Judge_Names} (in Appendix \ref{Sec:Appendix:Supplementary_Figures}) depicts the list of counties visited by the fictitious judge (Juge 1) alongside the list of counties to which the unmapped judge names were assigned. Table \ref{Table_Schedule_Of_Unmapped_Judge_Names} shows that judge 1 is not a combination of the unmapped judge names.
+
+\section{Service Rate Estimation: Other Attempts}
+
+  \subsection{Ad-hoc Algorithm}
+		\subsubsection{Samples}
+			\paragraph{Plea MLE Sample} This is the sample we use for the maximum likelihood estimation part of the ad-hoc algorithm. We also refer to this sample as "clean days". For this, we only consider pleas that happened on days which satisfy the following conditions:
+				\begin{table}[H]
+					\centering
+					\caption{MLE Plea Sample Exclusion Criteria}
+					\begin{tabular}{|l|}
+					\hline
+					\textbf{Condition}                                                  \\ \hline
+					No inconsistencies between sentencing data and calendar \\ \hline
+					Judge has at least one sentencing event that day         \\ \hline
+					Judge is only assigned to one county that day          \\ \hline
+					Judge only sentences in one county that day             \\ \hline
+					Judge never has more than 35 sentencing events in this county \\ \hline
+					Judge calendar assignment is of type "GS"           \\ \hline
+					\end{tabular}
+				\end{table}
+
+			\paragraph{Plea Arrival Rate Sample} This is the sample we use to estimate the plea arrival rate, $\theta$ in the ad-hoc algorithm. The calculation of $\theta$ involves two quantities: the total number of pleas in the data, $N_p$, and $d$, the total number of judge days. $d$ is meant to represent the number of days in which a judge could have been working on pleas. As a result, for $d$ we include all days of type "GS", and we include days of other work types in which we observe sentencing events. $N_p$ currently includes all pleas in our data.
+
+			\paragraph{Trial Rate Sample} This is the sample we use to estimate the trial service rate, $\mu_t$. When calculating the total number of days a judge was assigned to a county, we include all days he had a "GS" assignment to that county in the master calendar, and all days of type non-GS in which we observe a sentencing event. Note, this is the same criteria as used above for the plea arrival rate sample. We include all pleas and all trials when calculating the total number of pleas and trials the judge heard in that county. We focus on the judge-county combinations that satisfy the following conditions:
+
+				\begin{table}[H]
+				\centering
+				\caption{Trial Service Rate Exclusion Criteria}
+				\begin{tabular}{|l|}
+				\hline
+				\textbf{Condition}                                                       \\ \hline
+				Judge never has more than 35 sentencing events in one day in this county \\
+				Judge has at least 2 trial in this county                                \\ \hline
+				\end{tabular}
+				\end{table}
+
+		\subsubsection{Estimation of $\mu_t$}
+			\label{mu_t-estimation}
+			To estimate the trial service rate, we focus on the judge-county combinations that satisfy the conditions described in the Trial Rate Sample paragraph. Let $K$ denote the number judge-county combinations satisfying these two conditions. We number these judge-county combinations $1,\ldots,K$ and define $\mathcal{K} = \{1,\ldots,K\}$. For judge-county $k \in \mathcal{K}$, we let $n_p(k)$ and $n_t(k)$ denote the total number of pleas and the total number of trials undertaken by this judge in this county. Similarly, for judge-county $k \in \mathcal{K}$, we let $T(k)$ denote the number of days this judge was assigned to this county.\footnote{In calculating $T(k)$ for $k\in\mathcal{K}$, we assume the judge divides his time equally among the county assignments to which he is assigned if he is assigned to multiple counties on a day.}
+
+			First, we assume the judges in judge-county combinations $k\in\mathcal{K}$ never idle. If this assumption was correct, the trial service rate of judge-county $k\in\mathcal{K}$ would be
+			\begin{align*}
+				\hat{\mu}_t(k) \,=\, \frac{n_t(k)}{T(k) - n_p(k) / \hat{\mu}_p}.
+			\end{align*}
+
+			The tuples $(n_t(k),{\hat{\mu}_t(k)})$ for $k\in\mathcal{K}$ are depicted in Figure \ref{Figure_Trial_Sercice_Rate_Vs_Trial_Per_County}.
+			%
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.75]{Figures/Judge_Capacity_Vs_Number_of_Trials}
+				\vspace{-2mm}
+				\caption{A graphical representation of the tuples $(n_t(k),{\hat{\mu}_t(k)})$ for $k\in\mathcal{K}$.}
+				\label{Figure_Trial_Sercice_Rate_Vs_Trial_Per_County}
+			\end{figure}
+			%
+			We observe that as the number of trials in a judge-county combination decreases, the variance of the $\hat{\mu}_t(k)$ estimates increase. Moreover, the $\hat{\mu}_t(k)$ estimates skew to the left as the number of trials decreases. This suggests that the judges in judge-county combinations with few trials spent some time idling. Therefore, to estimate the trail service rate, we focus on judge-county combinations for which we observe at least two trials, i.e., $k \in \tilde{\mathcal{K}} = \{k:k\in\mathcal{K},n_t(k)\geq 2\}$. These judge-county combinations account for $72\%$ of the trials in the dataset. The trial service rate estimate is
+			%
+			\begin{align*}
+				\hat{\mu}_t \,=\, \frac{ \sum\limits_{k\in\tilde{\mathcal{K}}} n_t(k) }{\sum\limits_{k\in\tilde{\mathcal{K}}} T(k) - \sum\limits_{k\in\tilde{\mathcal{K}}} n_p(k) / \hat{\mu}_p }.
+			\end{align*}
+
+		\subsubsection{Ad-hoc Algorithm for Joint Estimation of $\mu_t,\mu_p$}
+			\textbf{Step 1:} Let $\mu_p,\mu_t$ be the current values for the plea and trial service rate. As in the estimation of $\mu_t$, we are assuming judges only work on pleas and trials and do not idle. As a result, given the total number of trials heard, $N_{t}$, and the trial service rate, $\mu_t$, we can calculate the expected number of days judges spent working on trials. The number of days judges spent on trials, $d_{t} = \frac{N_{t}}{\mu_t}$. We calculate the total number of days judges worked, $d$ using the assignments from the master calendar and removing public holidays. The expected number of days judges worked on pleas is then $d_{p} = d - d_{t}$. \\
+
+			\noindent \textbf{Step 2:} Let $N_p$ denote the total number of pleas in the data. Again, we include all pleas in our sample to calculate $N_p$. We set $\theta = \frac{N_p}{d_p}$. We model the plea demand for a judge as $D \sim \text{Poisson}(\theta)$, whereas the number of pleas a judge can serve in a day is denoted by $X$, $X \sim \text{Poisson}(\mu_p)$. \\
+
+			\noindent \textbf{Step 3:} Let $S_i = \min(D_i,X_i)$ denote the number of pleas sentenced for judge-day combination $i=1,...,N$. Here, we only include the judge-day combinations that satisfy our Plea MLE conditions. We have that
+			\begin{align*}
+				P(S_i = S) &= P(X_i = S | X_i \leq D_i) P(X_i \leq D_i) + P(D_i = S | X_i > D_i) P(X_i > D_i) \\
+					&= \frac{\theta^s e^{-\theta}}{s!}[1-\sum_{k=0}^{s-1}\frac{\mu_p^k e^{-\mu_p}}{k!}] + \frac{\mu_p^s e^{-\mu_p}}{s!}[1-\sum_{k=0}^s \frac{\theta^k e^{-\theta}}{k!}]
+			\end{align*}
+
+			Let $L(\mu_p) = -\sum_{i=1}^N \log P(S_i = s)$. We then set
+			 $\mu_p = \argmin L(\mu_p)$ and calculate $\mu_t$ as described in \ref{mu_t-estimation}. Again, the judge-day combinations for which we are minimizing the negative log likelihood are those that satisfy our Plea MLE conditions. We use a gradient descent algorithm with the Adam Optimizer to find the value of $\mu_p$ that minimizes the NLL. This new value of $\mu_p$ will imply a new value of $\mu_t$ as in Section \ref{mu_t-estimation}, and so we repeat Steps 1-3 until we converge.
+
+		\subsubsection{Results}
+		  This approach yielded estimates of 56.5 pleas per day and about 9 days per trial. We think that the large estimate for the plea service rate is due to demand censoring. Since the amount of pleas processed can be limited by the demand, the likelihood function can always be increased by increasing the plea processing rate. An analogy we came up with was the case of a coffee shop barista claiming that if there was enough demand, they could make 100 cappuchinos a day. Since we never observe that much demand, it is impossible to test the validity of the statement. In a similar sense, suppose you know that average plea demand per day is about 6 pleas per day and there is one day in which you observe that 6 pleas were processed. In this case, it is slightly more likely that a judge that can process an average of 8 pleas per day processed the 6 pleas than a judge who can process an average of 7 pleas per day. We believe these dynamics are what increases the plea processing rate.
+
+	\subsection{EM Algorithm}
+		\paragraph{EM Algorithm Sample} This is the sample we use for the EM Algorithm. For this, we only consider pleas that happened on days which satisfy the following conditions:
+			\begin{table}[H]
+				\centering
+				\caption{EM Algorithm Sample Exclusion Criteria}
+				\begin{tabular}{|l|}
+				\hline
+				\textbf{Condition}                                                  \\ \hline
+				No inconsistencies between sentencing data and calendar \\ \hline
+				Judge has at least one sentencing event that day         \\ \hline
+				Judge is only assigned to one county that day          \\ \hline
+				Judge only sentences in one county that day             \\ \hline
+				Judge never has more than 35 sentencing events in this county \\ \hline
+				Judge calendar assignment is of type "GS"           \\ \hline
+				\end{tabular}
+			\end{table}
+
+	  \subsubsection{EM Algorithm under Normal Distribution Assumption}
+	    Under the normal distribution assumption, we write
+			\begin{align*}
+				f_X(x) &= \frac{1}{\sigma_1 \sqrt{2\pi}} \exp{-\frac{1}{2} (\frac{x-\mu_p}{\sigma_1})^2} = \phi(\frac{x-\mu_p}{\sigma_1})\\
+				f_D(d) &= \frac{1}{\sigma_2 \sqrt{2\pi}} \exp{-\frac{1}{2} (\frac{d - \theta}{\sigma_2})^2} = \phi(\frac{d-\theta}{\sigma_2})
+			\end{align*}
+
+			Because $S = \min(X,D)$, we write:
+			\begin{align*}
+				P(S \leq s) &= P(X \leq s) P(D \leq s) = \Phi(\frac{s-\mu_p}{\sigma_1}) \Phi(\frac{s-\theta}{\sigma_2})
+			\end{align*}
+
+			Thus, $f_S(s) = \frac{d}{ds} P(S \leq s)$ is given as follows:
+			\begin{align*}
+				f_S(s) = \frac{1}{\sigma_1} \phi(\frac{s-\mu_p}{\sigma_1}) \Phi(\frac{s-\theta}{\sigma_1}) + \frac{1}{\sigma_2}\phi(\frac{s-\theta}{\sigma_2}) \Phi(\frac{s-\mu_p}{\sigma_2})
+			\end{align*}
+
+			For the E-Step, we need to calculate
+			\begin{align*}
+				\mathbb{E}_{X,D}[\log f(X,D,S|\theta,\mu) | S,\theta,\mu_p]
+			\end{align*}
+
+			Note (for $s = \min(X,D)$) that
+
+			\begin{align*}
+				\log f(X,D,S) = -\log \sigma_1 - \frac{1}{2}(\frac{x-\mu_p}{\sigma_1})^2 - \log \sigma_2 - \frac{1}{2} (\frac{D-\theta}{\sigma_2})^2
+			\end{align*}
+
+			Thus, we are interested in computing
+
+			\begin{align*}
+				-\log \sigma_1 - \log \sigma_2 - \frac{1}{2} \mathbb{E}[(\frac{X-\mu_p}{\sigma_1})^2 + (\frac{D-\theta}{\sigma_2})^2] | S=s
+			\end{align*}
+
+			To this end, lets first derive the conditional density $f(X,D|S)$:
+
+			\begin{align*}
+			f(X,D|S) \,\propto\, \left \{\!\! \begin{array}{ll}
+			\frac{f(X,D)}{f(S)} & \text{if } S= \min(X,D), \\
+			0 & \text{otherwise}, \\
+			\end{array} \right.
+			\end{align*}
+
+			In the first case, we have that
+
+			\begin{align}
+				f(X,D|S) \propto \frac{\phi(\frac{x-\mu_p}{\sigma_1}) \phi(\frac{D-\theta}{\sigma_2})}{\frac{1}{\sigma_1} \phi(\frac{S-\mu_p}{\sigma_1}) \Phi(\frac{S-\theta}{\sigma_2}) + \frac{1}{\sigma_2} \phi(\frac{S-\theta}{\sigma_2}) \Phi(\frac{S-\mu_p}{\sigma_1})}
+			\end{align}
+
+			Then, we have that
+			\begin{align*}
+				\mathbb{E}[\log f(X,D,S) | S] &= -\log \sigma_1 - \log \sigma_2 \\
+				-\frac{1}{2}[\int_S^\infty f(x,S|S)[(\frac{x-\mu_p}{\sigma_1})^2 &+ (\frac{S-\theta}{\sigma_2})^2]dx \\
+				+ \int_S^\infty [(\frac{S-\mu_p}{\sigma_1})^2 + (\frac{d-\theta}{\sigma_2})^2]f(S,d|S) dd]
+			\end{align*}
+
+			\noindent \textbf{M-Step:} Minimize $\sum_{i=1}^N \mathbb{E}[\log f(X_i,D_i,S_i)|S_i]$ over $\mu_p,\theta,\sigma_1,\sigma_2$. \\
+			To do so, we can use Gauss-Hermite integration (see Ken Judd's book) for Normal densities. Then we iterate until the parameters $\mu_p,\theta,\sigma_1,\sigma_2$ converge. Once that happens, we estimate $\mu_t$ as in Section \ref{mu_t-estimation}.
+
+		\subsubsection{Results}
+		  The estimates from this algorithm quickly diverged to infinity. This could be because the model is not well identified.
+
+	\subsection{Iterative Algorithms}
+	  In this section, we present iterative algorithms for estimating the service rates in a
+		way that would also take into account judge idleness.
+	  The main problem that we are trying to tackle is that the simple model, $\text{Days}_j = \beta_t \text{Trial}_j + \beta_p\text{Plea}_j +\epsilon_j$, doesn't account for idling judges. Hester's qualitative interviews with the judges indicates that harsher judges idle more often than more lenient judges. In Table \ref{iterative-results}, the column 'Group' refers to the unit of observation in the dataset used to estimate the model.
+
+		\begin{table}[H]
+	    \centering
+	    % \small
+	    \caption{Summary of Results}
+			\label{iterative-results}
+	    \input{../../output/tables/Exploration/regression_summary}
+	  \end{table}
+
+	  \subsubsection{Iterative Idleness Estimation Using Expected Utilization}
+			\textbf{Step 0:} We estimate the model, $\text{Days}_j = \beta_t\text{Trial}_j + \beta_p\text{Plea}_j +\epsilon_j$. \\
+
+			\noindent \textbf{Steps 1-n:} We then use the estimates of $\beta^{(1)}_t$ and $\beta^{(1)}_p$ to estimate the expected number
+			of days it would take each judge to complete their work. Mathematically: $\text{Expected Days}^{(1)}_j = \beta^{(1)}_p \cdot \text{Plea}_j + \beta^{(1)}_t \cdot \text{Trial}_j$. Then, the utilization for each judge would be: $\text{Utilization}^{(1)}_j = \frac{\text{Expected Days}^{(1)}_j}{\text{Days}_j}$. Let $\gamma^1 = \max_j \text{Utilization}^{(1)}_j$, be the maximum utilization amongst all judges. Each judges idleness will be: $\text{Idleness}^{(1)}_j = \frac{\text{Utilization}^{(1)}_j}{\gamma^{(1)}}$. We then set $\text{Days}^{(1)}_j = \text{Days}_j \cdot \text{Idleness}^{(1)}_j$. We then estimate the model $\text{Days}^{(1)}_j = \beta_t\text{Trial}_j + \beta_p\text{Plea}_j +\epsilon_j$ and repeat until convergence.
+
+			\paragraph{Judge Model}
+
+				\begin{table}[H]
+					\centering
+					% \small
+					\caption{Judge Model}
+					\input{../../output/tables/Exploration/utilization_model_JudgeID}
+				\end{table}
+
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=0.65\textwidth]{../../output/figures/Exploration/fit_utilization_JudgeID}
+					\caption{True vs Fitted Values, Judge Model}
+				\end{figure}
+
+				\begin{table}[H]
+					\centering
+					% \small
+					\caption{Judge Model}
+					\input{../../output/tables/Exploration/utilization_model_iters_JudgeID}
+				\end{table}
+
+				\begin{table}[H]
+					\centering
+					\small
+					\caption{Utilization at convergence, judge model}
+					\input{../../output/tables/Exploration/utilization_model_convergence_JudgeID}
+				\end{table}
+
+			\paragraph{County Model}
+
+				\begin{table}[H]
+					\centering
+					% \small
+					\caption{County Model}
+					\input{../../output/tables/Exploration/utilization_model_County}
+				\end{table}
+
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=0.65\textwidth]{../../output/figures/Exploration/fit_utilization_County}
+					\caption{True vs Fitted Values, Judge-County Model}
+				\end{figure}
+
+				\begin{table}[H]
+					\centering
+					% \small
+					\caption{Judge Model}
+					\input{../../output/tables/Exploration/utilization_model_iters_County}
+				\end{table}
+
+				\begin{table}[H]
+					\centering
+					\small
+					\caption{Utilization at convergence, county model}
+					\input{../../output/tables/Exploration/utilization_model_convergence_County}
+				\end{table}
+
+			\paragraph{Judge-County Model}
+
+				\begin{table}[H]
+					\centering
+					% \small
+					\caption{County Model}
+					\input{../../output/tables/Exploration/utilization_model_JudgeIDCounty}
+				\end{table}
+
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=0.65\textwidth]{../../output/figures/Exploration/fit_utilization_JudgeIDCounty}
+					\caption{True vs Fitted Values, Judge-County Model}
+				\end{figure}
+
+				\begin{table}[H]
+					\centering
+					% \small
+					\caption{Judge-County Model}
+					\input{../../output/tables/Exploration/utilization_model_iters_JudgeIDCounty}
+				\end{table}
+
+				\begin{table}[H]
+					\centering
+					\small
+					\caption{Utilization at convergence, judge-county model}
+					\input{../../output/tables/Exploration/utilization_model_convergence_JudgeIDCounty}
+				\end{table}
+
+	  \subsubsection{Iterative Idleness Estimation Taking Mins}
+			\textbf{Step 0:} We estimate the model, $\text{Days}_j = \beta_t\text{Trial}_j + \beta_p\text{Plea}_j +\epsilon_j$. \\
+
+		  \noindent \textbf{Steps 1-n:} We then use the estimates of $\beta^{(1)}_t$ and $\beta^{(1)}_p$ to estimate the expected number
+		  of days it would take each judge to complete their work. Mathematically: $\text{Expected Days}^{(1)}_j = \beta^{(1)}_p \cdot \text{Plea}_j + \beta^{(1)}_t \cdot \text{Trial}_j$.
+		  We would then set $\text{Days}^{(1)}_j = \min(\text{Days}_j,\text{Expected Days}^{(1)}_j)$ We then estimate the model $\text{Days}^{(1)}_j = \beta_t\text{Trial}_j + \beta_p\text{Plea}_j +\epsilon_j$ and repeat until convergence.
+
+		  \subsection{Judge Model}
+
+		    \begin{table}[H]
+		      \centering
+		      % \small
+		      \caption{Judge Model}
+		      \input{../../output/tables/Exploration/utilization_model_JudgeID}
+		    \end{table}
+
+		    \begin{figure}[H]
+		      \centering
+		      \includegraphics[width=0.65\textwidth]{../../output/figures/Exploration/fit_utilization_JudgeID}
+		      \caption{True vs Fitted Values, Judge Model}
+		    \end{figure}
+
+		    \begin{table}[H]
+		      \centering
+		      % \small
+		      \caption{Judge Model}
+		      \input{../../output/tables/Exploration/utilization_model_iters_JudgeID}
+		    \end{table}
+
+		  \subsection{County Model}
+
+		    \begin{table}[H]
+		      \centering
+		      % \small
+		      \caption{County Model}
+		      \input{../../output/tables/Exploration/min_model_County}
+		    \end{table}
+
+		    \begin{figure}[H]
+		      \centering
+		      \includegraphics[width=0.65\textwidth]{../../output/figures/Exploration/fit_min_County}
+		      \caption{True vs Fitted Values, Judge-County Model}
+		    \end{figure}
+
+		    \begin{table}[H]
+		      \centering
+		      % \small
+		      \caption{Judge Model}
+		      \input{../../output/tables/Exploration/min_model_iters_County}
+		    \end{table}
+
+		  \subsection{Judge-County Model}
+
+		    \begin{table}[H]
+		      \centering
+		      % \small
+		      \caption{County Model}
+		      \input{../../output/tables/Exploration/min_model_JudgeIDCounty}
+		    \end{table}
+
+		    \begin{figure}[H]
+		      \centering
+		      \includegraphics[width=0.65\textwidth]{../../output/figures/Exploration/fit_min_JudgeIDCounty}
+		      \caption{True vs Fitted Values, Judge-County Model}
+		    \end{figure}
+
+		    \begin{table}[H]
+		      \centering
+		      % \small
+		      \caption{Judge-County Model}
+		      \input{../../output/tables/Exploration/min_model_iters_JudgeIDCounty}
+		    \end{table}
+
+		\subsubsection{Iterative Idleness Estimation Taking All-time Mins}
+			\textbf{Step 0:} We estimate the model, $\text{Days}_j = \beta_t\text{Trial}_j + \beta_p\text{Plea}_j +\epsilon_j$. \\
+
+		  \noindent \textbf{Steps 1-n:} We then use the estimates of $\beta^{(1)}_t$ and $\beta^{(1)}_p$ to estimate the expected number
+		  of days it would take each judge to complete their work. Mathematically: $\text{Expected Days}^{(1)}_j = \beta^{(1)}_p \cdot \text{Plea}_j + \beta^{(1)}_t \cdot \text{Trial}_j$.
+		  We would then set $\text{Days}^{(n)}_j = \min(\text{Days}_j,\text{Expected Days}^{(n-11)}_j,...,\text{Expected Days}^{(1)}_j)$ We then estimate the model $\text{Days}^{(1)}_j = \beta_t\text{Trial}_j + \beta_p\text{Plea}_j +\epsilon_j$ and repeat until convergence.
+
+		  \subsection{Judge Model}
+
+		    \begin{table}[H]
+		      \centering
+		      % \small
+		      \caption{Judge Model}
+		      \input{../../output/tables/Exploration/all_time_min_model_JudgeID}
+		    \end{table}
+
+		    \begin{figure}[H]
+		      \centering
+		      \includegraphics[width=0.65\textwidth]{../../output/figures/Exploration/fit_min_JudgeID}
+		      \caption{True vs Fitted Values, Judge Model}
+		    \end{figure}
+
+		    \begin{table}[H]
+		      \centering
+		      % \small
+		      \caption{Judge Model}
+		      \input{../../output/tables/Exploration/min_model_iters_JudgeID}
+		    \end{table}
+
+		  \subsection{County Model}
+
+		    \begin{table}[H]
+		      \centering
+		      % \small
+		      \caption{County Model}
+		      \input{../../output/tables/Exploration/all_time_min_model_County}
+		    \end{table}
+
+		    \begin{figure}[H]
+		      \centering
+		      \includegraphics[width=0.65\textwidth]{../../output/figures/Exploration/fit_min_County}
+		      \caption{True vs Fitted Values, Judge-County Model}
+		    \end{figure}
+
+		    \begin{table}[H]
+		      \centering
+		      % \small
+		      \caption{Judge Model}
+		      \input{../../output/tables/Exploration/min_model_iters_County}
+		    \end{table}
+
+		  \subsection{Judge-County Model}
+
+		    \begin{table}[H]
+		      \centering
+		      % \small
+		      \caption{County Model}
+		      \input{../../output/tables/Exploration/all_time_min_model_JudgeIDCounty}
+		    \end{table}
+
+		    \begin{figure}[H]
+		      \centering
+		      \includegraphics[width=0.65\textwidth]{../../output/figures/Exploration/fit_min_JudgeIDCounty}
+		      \caption{True vs Fitted Values, Judge-County Model}
+		    \end{figure}
+
+		    \begin{table}[H]
+		      \centering
+		      % \small
+		      \caption{Judge-County Model}
+		      \input{../../output/tables/Exploration/min_model_iters_JudgeIDCounty}
+		    \end{table}
+
+	\subsection{Nonlinear Model}
+		Let $g$ be whatever group we decide to calculate idleness for (Judge or County) and let $i$ be our current observation, which is a judge-county combination. The non-linear model is:
+
+		\begin{align*}
+			\mu_g \text{Days}_i &= \beta_P \text{Plea}_i + \beta_T \text{Trial}_i + \epsilon_i
+		\end{align*}
+
+		Where we interpret $\mu_g$ to be the utilization of group $g$. To implement this, we define the function $f(\mu_g,\beta_P,\beta_T) = (\mu_g \text{Days}_i - \beta_P \text{Pleas}_i - \beta_T \text{Trials}_i)^2$ and we use a standard nonlinear optimizer to minimize it. To ensure the model is identified, we set $\mu_g=1$ for a random judge/county. The baseline judge was Judge 41, and the baseline county was Aiken.
+
+		\subsubsection{Results}
+		  The model runs and yields estimates of $\mu_g$ between 0 and 1 for all judges and counties, however, the estimates of $\beta_T$ and $\beta_P$ it gives seem unreasonable. The $\beta_T$ estimates seem too low and the $\beta_P$ estimates seem too high.
+
+		  \paragraph{County Model}
+		    The results in this subsection correspond to the model: $\mu_c \text{Days}_i = \beta_P \text{Plea}_i + \beta_T \text{Trial}_i + \epsilon_i$. Where $i$ is a judge-county combination and $c$ is a county. The county model yields $\beta_T=1.58$, which would imply that it takes a little over a day and a half to process a trial. The county model also yields $\beta_P=0.02$, which would imply judges can process 50 pleas per day.
+
+		    \begin{table}[H]
+		      \centering
+		      % \small
+		      \caption{County Model}
+		      \input{../../output/tables/Exploration/nlreg_rand_County}
+		    \end{table}
+
+		  \paragraph{Judge Model}
+		    The results in this subsection correspond to the model: $\mu_j \text{Days}_i = \beta_P \text{Plea}_i + \beta_T \text{Trial}_i + \epsilon_i$. Where $i$ is a judge-county combination and $j$ is a judge. The judge model yields $\beta_T=0.06$. The judge model also yields $\beta_P=0.01$, which would imply judges can process 100 pleas per day.
+
+		    \begin{table}[H]
+		      \centering
+		      \small
+		      \caption{Judge Model}
+		      \input{../../output/tables/Exploration/nlreg_rand_JudgeID}
+		    \end{table}
 
 % \section{Sample Selection for Service Rate Estimation}
 %   \subsection{Sample Selection for estimation of $\theta$}

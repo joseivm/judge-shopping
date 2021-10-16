@@ -10,45 +10,63 @@
 \BOOKMARK [1][-]{section.2}{Model}{}% 10
 \BOOKMARK [1][-]{section.3}{Estimation}{}% 11
 \BOOKMARK [2][-]{subsection.3.1}{Assumptions/Restrictions}{section.3}% 12
-\BOOKMARK [2][-]{subsection.3.2}{Probability of Conviction at Trial - }{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.2}{Conviction Probability and Expected Sentence Length - }{section.3}% 13
 \BOOKMARK [3][-]{subsubsection.3.2.1}{Sample}{subsection.3.2}% 14
-\BOOKMARK [3][-]{subsubsection.3.2.2}{Proposed Changes}{subsection.3.2}% 15
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Probability of Conviction at Trial - }{subsection.3.2}% 15
 \BOOKMARK [2][-]{subsection.3.3}{Expected Sentence Length if Convicted - }{section.3}% 16
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Sample}{subsection.3.3}% 17
-\BOOKMARK [3][-]{subsubsection.3.3.2}{Proposed Changes}{subsection.3.3}% 18
-\BOOKMARK [2][-]{subsection.3.4}{Defendant Cost of Trial - cd}{section.3}% 19
-\BOOKMARK [3][-]{subsubsection.3.4.1}{Proposed Changes}{subsection.3.4}% 20
-\BOOKMARK [2][-]{subsection.3.5}{Judge maximum and minimum plea - lj\(\),uj\(\)}{section.3}% 21
-\BOOKMARK [3][-]{subsubsection.3.5.1}{Sample}{subsection.3.5}% 22
-\BOOKMARK [2][-]{subsection.3.6}{County Arrival Rates - c}{section.3}% 23
-\BOOKMARK [2][-]{subsection.3.7}{Service Rates - p,t}{section.3}% 24
-\BOOKMARK [3][-]{subsubsection.3.7.1}{Samples}{subsection.3.7}% 25
-\BOOKMARK [3][-]{subsubsection.3.7.2}{Estimation of t}{subsection.3.7}% 26
-\BOOKMARK [3][-]{subsubsection.3.7.3}{Ad-hoc Algorithm for Joint Estimation of t,p}{subsection.3.7}% 27
-\BOOKMARK [1][-]{section.4}{Simulation Plan}{}% 28
-\BOOKMARK [1][-]{section.5}{Next Steps}{}% 29
-\BOOKMARK [1][-]{appendix.A}{Sentencing Data Set}{}% 30
-\BOOKMARK [2][-]{subsection.A.1}{Data Cleaning}{appendix.A}% 31
-\BOOKMARK [2][-]{subsection.A.2}{Variables}{appendix.A}% 32
-\BOOKMARK [3][-]{subsubsection.A.2.1}{CSV File}{subsection.A.2}% 33
-\BOOKMARK [3][-]{subsubsection.A.2.2}{Stata File}{subsection.A.2}% 34
-\BOOKMARK [3][-]{subsubsection.A.2.3}{Expected Minimum Sentence}{subsection.A.2}% 35
-\BOOKMARK [2][-]{subsection.A.3}{Missing Data}{appendix.A}% 36
-\BOOKMARK [3][-]{subsubsection.A.3.1}{Variables with missing data}{subsection.A.3}% 37
-\BOOKMARK [2][-]{subsection.A.4}{Events with missing dates}{appendix.A}% 38
-\BOOKMARK [2][-]{subsection.A.5}{Summary Statistics}{appendix.A}% 39
-\BOOKMARK [1][-]{appendix.B}{Calendar Data}{}% 40
-\BOOKMARK [2][-]{subsection.B.1}{Data Cleaning}{appendix.B}% 41
-\BOOKMARK [1][-]{appendix.C}{Discrepancies between the Sentencing Data and the Master Calendar Data}{}% 42
-\BOOKMARK [2][-]{subsection.C.1}{No Assignments Case}{appendix.C}% 43
-\BOOKMARK [2][-]{subsection.C.2}{Single Assignment Case}{appendix.C}% 44
-\BOOKMARK [3][-]{subsubsection.C.2.1}{Single assignment, no dates}{subsection.C.2}% 45
-\BOOKMARK [3][-]{subsubsection.C.2.2}{Single assignment with dates}{subsection.C.2}% 46
-\BOOKMARK [2][-]{subsection.C.3}{Multiple Assignments Case}{appendix.C}% 47
-\BOOKMARK [3][-]{subsubsection.C.3.1}{Multiple assignments, no dates}{subsection.C.3}% 48
-\BOOKMARK [3][-]{subsubsection.C.3.2}{Multiple assignments, some dates}{subsection.C.3}% 49
-\BOOKMARK [3][-]{subsubsection.C.3.3}{Multiple assignments, all dates}{subsection.C.3}% 50
-\BOOKMARK [1][-]{appendix.D}{Merging the Sentencing Data and the Calendar Data}{}% 51
-\BOOKMARK [2][-]{subsection.D.1}{Alternative mapping methods}{appendix.D}% 52
-\BOOKMARK [2][-]{subsection.D.2}{Evaluating the mapping}{appendix.D}% 53
-\BOOKMARK [2][-]{subsection.D.3}{Limitations}{appendix.D}% 54
+\BOOKMARK [2][-]{subsection.3.4}{Defendant Cost of Trial - cd}{section.3}% 17
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Proposed Changes}{subsection.3.4}% 18
+\BOOKMARK [2][-]{subsection.3.5}{Judge maximum and minimum plea - lj\(\),uj\(\)}{section.3}% 19
+\BOOKMARK [3][-]{subsubsection.3.5.1}{Sample}{subsection.3.5}% 20
+\BOOKMARK [2][-]{subsection.3.6}{County Arrival Rates - c}{section.3}% 21
+\BOOKMARK [2][-]{subsection.3.7}{Service Rates - p,t}{section.3}% 22
+\BOOKMARK [3][-]{subsubsection.3.7.1}{Background/Motivation}{subsection.3.7}% 23
+\BOOKMARK [3][-]{subsubsection.3.7.2}{County Fixed Effects}{subsection.3.7}% 24
+\BOOKMARK [3][-]{subsubsection.3.7.3}{Judge Fixed Effects}{subsection.3.7}% 25
+\BOOKMARK [1][-]{section.4}{Simulation Plan}{}% 26
+\BOOKMARK [1][-]{section.5}{Next Steps}{}% 27
+\BOOKMARK [1][-]{appendix.A}{Sentencing Data Set}{}% 28
+\BOOKMARK [2][-]{subsection.A.1}{Variables}{appendix.A}% 29
+\BOOKMARK [3][-]{subsubsection.A.1.1}{CSV File}{subsection.A.1}% 30
+\BOOKMARK [3][-]{subsubsection.A.1.2}{Stata File}{subsection.A.1}% 31
+\BOOKMARK [3][-]{subsubsection.A.1.3}{Expected Minimum Sentence}{subsection.A.1}% 32
+\BOOKMARK [2][-]{subsection.A.2}{Missing Data}{appendix.A}% 33
+\BOOKMARK [3][-]{subsubsection.A.2.1}{Variables with missing data}{subsection.A.2}% 34
+\BOOKMARK [1][-]{appendix.B}{Master Calendar Data}{}% 35
+\BOOKMARK [2][-]{subsection.B.1}{Data Cleaning}{appendix.B}% 36
+\BOOKMARK [2][-]{subsection.B.2}{Descriptive Statistics}{appendix.B}% 37
+\BOOKMARK [2][-]{subsection.B.3}{Creation of Figure 8}{appendix.B}% 38
+\BOOKMARK [1][-]{appendix.C}{Discrepancies between the Sentencing Data and the Master Calendar Data}{}% 39
+\BOOKMARK [2][-]{subsection.C.1}{No Assignments Case}{appendix.C}% 40
+\BOOKMARK [2][-]{subsection.C.2}{Single Assignment Case}{appendix.C}% 41
+\BOOKMARK [3][-]{subsubsection.C.2.1}{Single assignment, no dates}{subsection.C.2}% 42
+\BOOKMARK [3][-]{subsubsection.C.2.2}{Single assignment with dates}{subsection.C.2}% 43
+\BOOKMARK [2][-]{subsection.C.3}{Multiple Assignments Case}{appendix.C}% 44
+\BOOKMARK [3][-]{subsubsection.C.3.1}{Multiple assignments, no dates}{subsection.C.3}% 45
+\BOOKMARK [3][-]{subsubsection.C.3.2}{Multiple assignments, some dates}{subsection.C.3}% 46
+\BOOKMARK [3][-]{subsubsection.C.3.3}{Multiple assignments, all dates}{subsection.C.3}% 47
+\BOOKMARK [1][-]{appendix.D}{Merging the Sentencing Data and the Calendar Data}{}% 48
+\BOOKMARK [2][-]{subsection.D.1}{Alternative mapping methods}{appendix.D}% 49
+\BOOKMARK [2][-]{subsection.D.2}{Evaluating the mapping}{appendix.D}% 50
+\BOOKMARK [2][-]{subsection.D.3}{Limitations}{appendix.D}% 51
+\BOOKMARK [1][-]{appendix.E}{Service Rate Estimation: Other Attempts}{}% 52
+\BOOKMARK [2][-]{subsection.E.1}{Ad-hoc Algorithm}{appendix.E}% 53
+\BOOKMARK [3][-]{subsubsection.E.1.1}{Samples}{subsection.E.1}% 54
+\BOOKMARK [3][-]{subsubsection.E.1.2}{Estimation of t}{subsection.E.1}% 55
+\BOOKMARK [3][-]{subsubsection.E.1.3}{Ad-hoc Algorithm for Joint Estimation of t,p}{subsection.E.1}% 56
+\BOOKMARK [3][-]{subsubsection.E.1.4}{Results}{subsection.E.1}% 57
+\BOOKMARK [2][-]{subsection.E.2}{EM Algorithm}{appendix.E}% 58
+\BOOKMARK [3][-]{subsubsection.E.2.1}{EM Algorithm under Normal Distribution Assumption}{subsection.E.2}% 59
+\BOOKMARK [3][-]{subsubsection.E.2.2}{Results}{subsection.E.2}% 60
+\BOOKMARK [2][-]{subsection.E.3}{Iterative Algorithms}{appendix.E}% 61
+\BOOKMARK [3][-]{subsubsection.E.3.1}{Iterative Idleness Estimation Using Expected Utilization}{subsection.E.3}% 62
+\BOOKMARK [3][-]{subsubsection.E.3.2}{Iterative Idleness Estimation Taking Mins}{subsection.E.3}% 63
+\BOOKMARK [2][-]{subsection.E.4}{Judge Model}{appendix.E}% 64
+\BOOKMARK [2][-]{subsection.E.5}{County Model}{appendix.E}% 65
+\BOOKMARK [2][-]{subsection.E.6}{Judge-County Model}{appendix.E}% 66
+\BOOKMARK [3][-]{subsubsection.E.6.1}{Iterative Idleness Estimation Taking All-time Mins}{subsection.E.6}% 67
+\BOOKMARK [2][-]{subsection.E.7}{Judge Model}{appendix.E}% 68
+\BOOKMARK [2][-]{subsection.E.8}{County Model}{appendix.E}% 69
+\BOOKMARK [2][-]{subsection.E.9}{Judge-County Model}{appendix.E}% 70
+\BOOKMARK [2][-]{subsection.E.10}{Nonlinear Model}{appendix.E}% 71
+\BOOKMARK [3][-]{subsubsection.E.10.1}{Results}{subsection.E.10}% 72
