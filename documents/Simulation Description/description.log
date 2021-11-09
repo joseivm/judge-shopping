@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  12 OCT 2021 16:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  9 NOV 2021 00:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1471,324 +1471,41 @@ Package: xy 2013/10/06 Xy-pic version 3.8.9
 \c@response=\count381
 \c@plausible_assignment=\count382
 \dhatheight=\skip81
- (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.sty
-Package: biblatex 2018/03/04 v3.11 programmable bibliographies (PK/MW)
- (/usr/local/texlive/2018/texmf-dist/tex/latex/logreq/logreq.sty
-Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count383
- (/usr/local/texlive/2018/texmf-dist/tex/latex/logreq/logreq.def
-File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-)) (/usr/local/texlive/2018/texmf-dist/tex/generic/xstring/xstring.sty (/usr/local/texlive/2018/texmf-dist/tex/generic/xstring/xstring.tex
-\@xs@message=\write6
-\integerpart=\count384
-\decimalpart=\count385
-)
-Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
-)
-\c@tabx@nest=\count386
-\c@listtotal=\count387
-\c@listcount=\count388
-\c@liststart=\count389
-\c@liststop=\count390
-\c@citecount=\count391
-\c@citetotal=\count392
-\c@multicitecount=\count393
-\c@multicitetotal=\count394
-\c@instcount=\count395
-\c@maxnames=\count396
-\c@minnames=\count397
-\c@maxitems=\count398
-\c@minitems=\count399
-\c@citecounter=\count400
-\c@savedcitecounter=\count401
-\c@uniquelist=\count402
-\c@uniquename=\count403
-\c@refsection=\count404
-\c@refsegment=\count405
-\c@maxextratitle=\count406
-\c@maxextratitleyear=\count407
-\c@maxextradate=\count408
-\c@maxextraalpha=\count409
-\c@abbrvpenalty=\count410
-\c@highnamepenalty=\count411
-\c@lownamepenalty=\count412
-\c@maxparens=\count413
-\c@parenlevel=\count414
-\blx@tempcnta=\count415
-\blx@tempcntb=\count416
-\blx@tempcntc=\count417
-\blx@maxsection=\count418
-\blx@maxsegment@0=\count419
-\blx@notetype=\count420
-\blx@parenlevel@text=\count421
-\blx@parenlevel@foot=\count422
-\blx@sectionciteorder@0=\count423
-\labelnumberwidth=\skip82
-\labelalphawidth=\skip83
-\biblabelsep=\skip84
-\bibitemsep=\skip85
-\bibnamesep=\skip86
-\bibinitsep=\skip87
-\bibparsep=\skip88
-
-
-/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.sty:554: LaTeX Error: Command \bibhang already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.554 \newlength{\bibhang}
-                          
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-\blx@bcfin=\read4
-\blx@bcfout=\write7
-\c@mincomprange=\count424
-\c@maxcomprange=\count425
-\c@mincompwidth=\count426
-Package biblatex Info: Trying to load biblatex default data model...
-Package biblatex Info: ... file 'blx-dm.def' found.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/blx-dm.def
-File: blx-dm.def 2018/03/04 v3.11 biblatex localization (PK/MW)
-)
-Package biblatex Info: Trying to load biblatex style data model...
-Package biblatex Info: ... file 'authoryear.dbx' not found.
-Package biblatex Info: Trying to load biblatex custom data model...
-Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count427
-\c@savedafterword=\count428
-\c@annotator=\count429
-\c@savedannotator=\count430
-\c@author=\count431
-\c@savedauthor=\count432
-\c@bookauthor=\count433
-\c@savedbookauthor=\count434
-\c@commentator=\count435
-\c@savedcommentator=\count436
-\c@editor=\count437
-\c@savededitor=\count438
-\c@editora=\count439
-\c@savededitora=\count440
-\c@editorb=\count441
-\c@savededitorb=\count442
-\c@editorc=\count443
-\c@savededitorc=\count444
-\c@foreword=\count445
-\c@savedforeword=\count446
-\c@holder=\count447
-\c@savedholder=\count448
-\c@introduction=\count449
-\c@savedintroduction=\count450
-\c@namea=\count451
-\c@savednamea=\count452
-\c@nameb=\count453
-\c@savednameb=\count454
-\c@namec=\count455
-\c@savednamec=\count456
-\c@translator=\count457
-\c@savedtranslator=\count458
-\c@shortauthor=\count459
-\c@savedshortauthor=\count460
-\c@shorteditor=\count461
-\c@savedshorteditor=\count462
-\c@labelname=\count463
-\c@savedlabelname=\count464
-\c@institution=\count465
-\c@savedinstitution=\count466
-\c@lista=\count467
-\c@savedlista=\count468
-\c@listb=\count469
-\c@savedlistb=\count470
-\c@listc=\count471
-\c@savedlistc=\count472
-\c@listd=\count473
-\c@savedlistd=\count474
-\c@liste=\count475
-\c@savedliste=\count476
-\c@listf=\count477
-\c@savedlistf=\count478
-\c@location=\count479
-\c@savedlocation=\count480
-\c@organization=\count481
-\c@savedorganization=\count482
-\c@origlocation=\count483
-\c@savedoriglocation=\count484
-\c@origpublisher=\count485
-\c@savedorigpublisher=\count486
-\c@publisher=\count487
-\c@savedpublisher=\count488
-\c@language=\count489
-\c@savedlanguage=\count490
-\c@origlanguage=\count491
-\c@savedoriglanguage=\count492
-\c@pageref=\count493
-\c@savedpageref=\count494
-\shorthandwidth=\skip89
-\shortjournalwidth=\skip90
-\shortserieswidth=\skip91
-\shorttitlewidth=\skip92
-\shortauthorwidth=\skip93
-\shorteditorwidth=\skip94
-\locallabelnumberwidth=\skip95
-\locallabelalphawidth=\skip96
-\localshorthandwidth=\skip97
-\localshortjournalwidth=\skip98
-\localshortserieswidth=\skip99
-\localshorttitlewidth=\skip100
-\localshortauthorwidth=\skip101
-\localshorteditorwidth=\skip102
-
-
-/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.sty:10472: LaTeX Error: Command \citename already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.10472 ...*{\citename}{\blx@citexpunct{citename}}
-                                                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-Package biblatex Info: Trying to load compatibility code...
-Package biblatex Info: ... file 'blx-compat.def' found.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/blx-compat.def
-File: blx-compat.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
-)
-Package biblatex Info: Trying to load generic definitions...
-Package biblatex Info: ... file 'biblatex.def' found.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.def
-File: biblatex.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
-\c@textcitecount=\count495
-\c@textcitetotal=\count496
-\c@textcitemaxnames=\count497
-\c@biburlnumpenalty=\count498
-\c@biburlucpenalty=\count499
-\c@biburllcpenalty=\count500
-
-
-/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.def:284: LaTeX Error: Command \bibfont already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.284 ...ommand*{\bibfont}{\normalfont\normalsize}
-                                                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-\c@smartand=\count501
-
-Package biblatex Warning: Redefining '\citeauthor'.
-
-
-Package biblatex Warning: Redefining '\citeyear'.
-
-
-/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.def:2176: LaTeX Error: Command \Citeauthor already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2176 ...e\citeauthor*}{\bibsentence\citeauthor}}
-                                                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-)
-Package biblatex Info: Trying to load bibliography style 'authoryear'...
-Package biblatex Info: ... file 'authoryear.bbx' found.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/bbx/authoryear.bbx
-File: authoryear.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
-Package biblatex Info: Trying to load bibliography style 'standard'...
-Package biblatex Info: ... file 'standard.bbx' found.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
-File: standard.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count502
-\c@bbx:relatedtotal=\count503
-))
-Package biblatex Info: Trying to load citation style 'authoryear'...
-Package biblatex Info: ... file 'authoryear.cbx' found.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/cbx/authoryear.cbx
-File: authoryear.cbx 2018/03/04 v3.11 biblatex citation style (PK/MW)
-Package biblatex Info: Redefining '\cite'.
-Package biblatex Info: Redefining '\parencite'.
-Package biblatex Info: Redefining '\footcite'.
-Package biblatex Info: Redefining '\footcitetext'.
-Package biblatex Info: Redefining '\smartcite'.
-Package biblatex Info: Redefining '\textcite'.
-Package biblatex Info: Redefining '\textcites'.
-)
-Package biblatex Info: Trying to load configuration file...
-Package biblatex Info: ... file 'biblatex.cfg' found.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.cfg
-File: biblatex.cfg 
-))
-
-./description.tex:123: Package biblatex Error: Incompatible package 'natbib'.
-
-See the biblatex package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.123 \begin{document}
-                      
-The 'natbib' package and biblatex are incompatible.
-
-Package biblatex Info: Trying to load language 'english'...
-Package biblatex Info: ... file 'english.lbx' found.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
-File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
-)
-\@quotelevel=\count504
-\@quotereset=\count505
  (./description.aux)
 \openout1 = `description.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 123.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 123.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 120.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 120.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
  (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count506
+\scratchcounter=\count383
 \scratchdimen=\dimen376
 \scratchbox=\box102
-\nofMPsegments=\count507
-\nofMParguments=\count508
+\nofMPsegments=\count384
+\nofMParguments=\count385
 \everyMPshowfont=\toks61
-\MPscratchCnt=\count509
+\MPscratchCnt=\count386
 \MPscratchDim=\dimen377
-\MPnumerator=\count510
-\makeMPintoPDFobject=\count511
+\MPnumerator=\count387
+\makeMPintoPDFobject=\count388
 \everyMPtoPDFconversion=\toks62
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1845,671 +1562,554 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box103
-Package hyperref Info: Link coloring OFF on input line 123.
+Package hyperref Info: Link coloring OFF on input line 120.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count512
+\c@section@level=\count389
 )
-LaTeX Info: Redefining \ref on input line 123.
-LaTeX Info: Redefining \pageref on input line 123.
-LaTeX Info: Redefining \nameref on input line 123.
+LaTeX Info: Redefining \ref on input line 120.
+LaTeX Info: Redefining \pageref on input line 120.
+LaTeX Info: Redefining \nameref on input line 120.
  (./description.out) (./description.out)
-\@outlinefile=\write8
-\openout8 = `description.out'.
+\@outlinefile=\write6
+\openout6 = `description.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 123.
+LaTeX Font Info:    Try loading font information for U+msa on input line 120.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 123.
+LaTeX Font Info:    Try loading font information for U+msb on input line 120.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 123.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 120.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Package xypdf Info: Line width: 0.43799pt on input line 123.
-Package biblatex Info: Input encoding 'utf8' detected.
-Package biblatex Info: Automatic encoding selection.
-(biblatex)             Assuming data encoding 'utf8'.
-\openout7 = `description.bcf'.
-
-Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'description.bbl' found.
- (./description.bbl)
-Package biblatex Info: Reference section=0 on input line 123.
-Package biblatex Info: Reference segment=0 on input line 123.
+Package xypdf Info: Line width: 0.43799pt on input line 120.
  (./description.toc [1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2])
-\tf@toc=\write9
-\openout9 = `description.toc'.
+\tf@toc=\write7
+\openout7 = `description.toc'.
 
  [3]
-<Figures/County_Histogram.pdf, id=400, 604.37721pt x 337.344pt>
+<Figures/County_Histogram.pdf, id=411, 604.37721pt x 337.344pt>
 File: Figures/County_Histogram.pdf Graphic file (type pdf)
 <use Figures/County_Histogram.pdf>
-Package pdftex.def Info: Figures/County_Histogram.pdf  used on input line 146.
-(pdftex.def)             Requested size: 453.2818pt x 253.00735pt.
+Package pdftex.def Info: Figures/County_Histogram.pdf  used on input line 143.
+(pdftex.def)             Requested size: 392.84053pt x 219.27098pt.
  [4]
-<Figures/Judge_Histogram.pdf, id=415, 598.87723pt x 219.79933pt>
+<Figures/Judge_Histogram.pdf, id=426, 598.87723pt x 219.79933pt>
 File: Figures/Judge_Histogram.pdf Graphic file (type pdf)
 <use Figures/Judge_Histogram.pdf>
-Package pdftex.def Info: Figures/Judge_Histogram.pdf  used on input line 158.
-(pdftex.def)             Requested size: 449.15681pt x 164.84908pt.
-<Figures/Judge_Trial_Percentage_Histogram.pdf, id=416, 556.05814pt x 219.56851pt>
+Package pdftex.def Info: Figures/Judge_Histogram.pdf  used on input line 155.
+(pdftex.def)             Requested size: 389.26558pt x 142.86786pt.
+<Figures/Judge_Trial_Percentage_Histogram.pdf, id=427, 556.05814pt x 219.56851pt>
 File: Figures/Judge_Trial_Percentage_Histogram.pdf Graphic file (type pdf)
 <use Figures/Judge_Trial_Percentage_Histogram.pdf>
-Package pdftex.def Info: Figures/Judge_Trial_Percentage_Histogram.pdf  used on input line 166.
-(pdftex.def)             Requested size: 417.04257pt x 164.67596pt.
- [5 <./Figures/County_Histogram.pdf>] (./Tables/sentencing_variables.tex) [6 <./Figures/Judge_Histogram.pdf> <./Figures/Judge_Trial_Percentage_Histogram.pdf
+Package pdftex.def Info: Figures/Judge_Trial_Percentage_Histogram.pdf  used on input line 163.
+(pdftex.def)             Requested size: 361.43349pt x 142.71783pt.
+ (./Tables/sentencing_variables.tex) [5 <./Figures/County_Histogram.pdf> <./Figures/Judge_Histogram.pdf
+
+pdfTeX warning: pdflatex (file ./Figures/Judge_Histogram.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./Figures/Judge_Trial_Percentage_Histogram.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/Judge_Trial_Percentage_Histogram.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [7]
-<Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf, id=462, 638.1846pt x 278.77196pt>
-File: Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf Graphic file (type pdf)
-<use Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf>
-Package pdftex.def Info: Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf  used on input line 189.
-(pdftex.def)             Requested size: 478.63727pt x 209.07843pt.
-
-Overfull \hbox (8.88225pt too wide) in paragraph at lines 189--191
- [][] 
- []
-
-[8] [9 <./Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf>]
-<Figures/Fig4.png, id=486, 581.17125pt x 269.005pt>
+>] [6]
+<Figures/Fig4.png, id=473, 581.17125pt x 269.005pt>
 File: Figures/Fig4.png Graphic file (type png)
 <use Figures/Fig4.png>
-Package pdftex.def Info: Figures/Fig4.png  used on input line 229.
+Package pdftex.def Info: Figures/Fig4.png  used on input line 185.
 (pdftex.def)             Requested size: 352.31625pt x 163.07895pt.
- [10 <./Figures/Fig4.png>]
-<Figures/Type_of_Assignment_Histogram.pdf, id=503, 380.34023pt x 361.8195pt>
+ [7 <./Figures/Fig4.png>]
+<Figures/Type_of_Assignment_Histogram.pdf, id=488, 380.34023pt x 361.8195pt>
 File: Figures/Type_of_Assignment_Histogram.pdf Graphic file (type pdf)
 <use Figures/Type_of_Assignment_Histogram.pdf>
-Package pdftex.def Info: Figures/Type_of_Assignment_Histogram.pdf  used on input line 261.
-(pdftex.def)             Requested size: 254.82661pt x 242.4178pt.
-
-Overfull \hbox (17.40717pt too wide) in paragraph at lines 260--263
- []|  [] 
- []
-
-<Figures/Type_of_Court_Assignment_Histogram.pdf, id=504, 380.34023pt x 335.1746pt>
-File: Figures/Type_of_Court_Assignment_Histogram.pdf Graphic file (type pdf)
-<use Figures/Type_of_Court_Assignment_Histogram.pdf>
-Package pdftex.def Info: Figures/Type_of_Court_Assignment_Histogram.pdf  used on input line 270.
-(pdftex.def)             Requested size: 254.82661pt x 224.56581pt.
-
-Overfull \hbox (43.4383pt too wide) in paragraph at lines 270--272
- [][] 
- []
-
-[11] (./Tables/assignment_meanings.tex)
-<Figures/Type_of_Court_Assignment_Sentencing_Event_Histogram.pdf, id=512, 385.84024pt x 326.27089pt>
-File: Figures/Type_of_Court_Assignment_Sentencing_Event_Histogram.pdf Graphic file (type pdf)
-<use Figures/Type_of_Court_Assignment_Sentencing_Event_Histogram.pdf>
-Package pdftex.def Info: Figures/Type_of_Court_Assignment_Sentencing_Event_Histogram.pdf  used on input line 286.
-(pdftex.def)             Requested size: 289.37947pt x 244.70256pt.
- [12 <./Figures/Type_of_Assignment_Histogram.pdf> <./Figures/Type_of_Court_Assignment_Histogram.pdf
-
-pdfTeX warning: pdflatex (file ./Figures/Type_of_Court_Assignment_Histogram.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [13 <./Figures/Type_of_Court_Assignment_Sentencing_Event_Histogram.pdf>] (./Tables/assignments.tex)
-<../../output/figures/Description/assignment_type_hist.png, id=557, 631.6398pt x 522.5121pt>
+Package pdftex.def Info: Figures/Type_of_Assignment_Histogram.pdf  used on input line 213.
+(pdftex.def)             Requested size: 247.2182pt x 235.17989pt.
+ (./Tables/assignment_meanings.tex) [8 <./Figures/Type_of_Assignment_Histogram.pdf>]
+<../../output/figures/Description/sentencing_work_type_hist.png, id=506, 523.9575pt x 495.0495pt>
+File: ../../output/figures/Description/sentencing_work_type_hist.png Graphic file (type png)
+<use ../../output/figures/Description/sentencing_work_type_hist.png>
+Package pdftex.def Info: ../../output/figures/Description/sentencing_work_type_hist.png  used on input line 249.
+(pdftex.def)             Requested size: 340.56834pt x 321.77835pt.
+ [9 <../../output/figures/Description/sentencing_work_type_hist.png>] (./Tables/assignments.tex) [10] (./Tables/calendar_example.tex)
+<../../output/figures/Description/assignment_type_hist.png, id=528, 516.7305pt x 557.9244pt>
 File: ../../output/figures/Description/assignment_type_hist.png Graphic file (type png)
 <use ../../output/figures/Description/assignment_type_hist.png>
-Package pdftex.def Info: ../../output/figures/Description/assignment_type_hist.png  used on input line 307.
-(pdftex.def)             Requested size: 410.561pt x 339.62883pt.
- [14] (./Tables/calendar_example.tex) [15 <../../output/figures/Description/assignment_type_hist.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 333--334
+Package pdftex.def Info: ../../output/figures/Description/assignment_type_hist.png  used on input line 281.
+(pdftex.def)             Requested size: 284.20265pt x 306.85936pt.
+ [11 <../../output/figures/Description/assignment_type_hist.png>] [12]
 
+LaTeX Warning: Reference `service_rate-estimation' on page 13 undefined on input line 326.
+
+[13]
+Underfull \hbox (badness 2837) in paragraph at lines 336--336
+[][][]\T1/cmr/m/n/9 We get the list of South Car-olina's hol-i-days from: []$https : / / www . public-[]holidays . us / US _ EN _ 2001 _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 335--336
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 341.
 
- []
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\theta' on input line 341.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\tau' on input line 341.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 341.
+
+[14]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 354.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\theta' on input line 354.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 354.
+
+[15]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 375.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 375.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 375.
 
 [16]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 358.
+(hyperref)                removing `math shift' on input line 392.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\theta' on input line 358.
+(hyperref)                removing `subscript' on input line 392.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\tau' on input line 358.
+(hyperref)                removing `\theta' on input line 392.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 358.
-
-[17]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 373.
+(hyperref)                removing `\tau' on input line 392.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\theta' on input line 373.
+(hyperref)                removing `subscript' on input line 392.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 373.
+(hyperref)                removing `\theta' on input line 392.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 390.
+(hyperref)                removing `\tau' on input line 392.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\tau' on input line 390.
+(hyperref)                removing `math shift' on input line 392.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 390.
-
-[18]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 394.
+(hyperref)                removing `math shift' on input line 412.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 394.
+(hyperref)                removing `\lambda' on input line 412.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 394.
-
-[19]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 427.
+(hyperref)                removing `subscript' on input line 412.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 427.
+(hyperref)                removing `math shift' on input line 412.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\theta' on input line 427.
+(hyperref)                removing `math shift' on input line 416.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\tau' on input line 427.
+(hyperref)                removing `\mu' on input line 416.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 427.
+(hyperref)                removing `subscript' on input line 416.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\theta' on input line 427.
+(hyperref)                removing `\mu' on input line 416.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\tau' on input line 427.
+(hyperref)                removing `subscript' on input line 416.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 427.
+(hyperref)                removing `math shift' on input line 416.
 
-[20]
-<../../output/figures/Exploration/convex_hull_max.png, id=621, 462.528pt x 346.896pt>
-File: ../../output/figures/Exploration/convex_hull_max.png Graphic file (type png)
-<use ../../output/figures/Exploration/convex_hull_max.png>
-Package pdftex.def Info: ../../output/figures/Exploration/convex_hull_max.png  used on input line 439.
-(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 447.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\lambda' on input line 447.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 447.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 447.
-
-[21 <../../output/figures/Exploration/convex_hull_max.png>]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 451.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 451.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 451.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 451.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 451.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 451.
-
-[22] [23] [24] [25] [26]
-
-LaTeX Warning: Reference `Sec:Appendix:Data_Cleaning' on page 1 undefined on input line 583.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.621 
-       [1]
-
-LaTeX Warning: Reference `Table_Sentencing_Data_Fields_Statute' on page 2 undefined on input line 622.
-
-
-LaTeX Warning: Reference `Table_Sentencing_Data_Fields_Offdescr' on page 2 undefined on input line 622.
-
-
-LaTeX Warning: Reference `Sec:Appendix:Supplementary_Tables' on page 2 undefined on input line 622.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.626 
-       [2]
-Overfull \hbox (60.14037pt too wide) in paragraph at lines 635--671
+[17] [18] [19] [20] [21] (./description.bbl) [22] [23]
+Overfull \hbox (60.14037pt too wide) in paragraph at lines 587--623
  [][] 
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.687       \end{table}
-                        [3]pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.712         \end{align*}
-                           [4]
+[24] [25] [26] [27]
+<Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf, id=687, 638.1846pt x 278.77196pt>
+File: Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf Graphic file (type pdf)
+<use Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf>
+Package pdftex.def Info: Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf  used on input line 676.
+(pdftex.def)             Requested size: 478.63727pt x 209.07843pt.
 
-LaTeX Warning: Reference `Sec:Mapping_Judge_Numbers_To_Judge_Names' on page 5 undefined on input line 741.
+Overfull \hbox (8.88225pt too wide) in paragraph at lines 676--678
+ [][] 
+ []
 
-
-Underfull \hbox (badness 1642) in paragraph at lines 741--741
+[28 <./Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf>]
+Underfull \hbox (badness 1642) in paragraph at lines 716--716
 \T1/cmr/m/n/9 web-site. These judges are Thomas W. Cooper, Jr. and G. Thomas Cooper, Jr.; please see []$https :
  []
 
 
-Underfull \hbox (badness 4832) in paragraph at lines 741--741
+Underfull \hbox (badness 4832) in paragraph at lines 716--716
 \T1/cmr/m/n/9 / / www . sccourts . org / circuitCourt / displaycirjudge . cfm ? judgeid = 2054$[] and []$https : / / www . sccourts . org / circuitCourt /
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.742     \end{enumerate}
-                          [5]
-Overfull \hbox (35.85669pt too wide) in paragraph at lines 747--798
+[29]
+Overfull \hbox (35.85669pt too wide) in paragraph at lines 722--773
  []|   [] 
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.802 
-       [6]
-<Figures/Judge_Schedule_GS_Percentage_Histogram.pdf, id=721, 567.05817pt x 272.17535pt>
+[30]
+<Figures/Judge_Schedule_GS_Percentage_Histogram.pdf, id=733, 567.05817pt x 272.17535pt>
 File: Figures/Judge_Schedule_GS_Percentage_Histogram.pdf Graphic file (type pdf)
 <use Figures/Judge_Schedule_GS_Percentage_Histogram.pdf>
-Package pdftex.def Info: Figures/Judge_Schedule_GS_Percentage_Histogram.pdf  used on input line 810.
+Package pdftex.def Info: Figures/Judge_Schedule_GS_Percentage_Histogram.pdf  used on input line 785.
 (pdftex.def)             Requested size: 425.29257pt x 204.13101pt.
-<Figures/Judge_Schedule_CP_Percentage_Histogram.pdf, id=722, 561.55818pt x 272.86285pt>
+<Figures/Judge_Schedule_CP_Percentage_Histogram.pdf, id=734, 561.55818pt x 272.86285pt>
 File: Figures/Judge_Schedule_CP_Percentage_Histogram.pdf Graphic file (type pdf)
 <use Figures/Judge_Schedule_CP_Percentage_Histogram.pdf>
-Package pdftex.def Info: Figures/Judge_Schedule_CP_Percentage_Histogram.pdf  used on input line 817.
+Package pdftex.def Info: Figures/Judge_Schedule_CP_Percentage_Histogram.pdf  used on input line 792.
 (pdftex.def)             Requested size: 421.1676pt x 204.64664pt.
-<Figures/Judge_Schedule_GS_CP_Percentage_Histogram.pdf, id=723, 561.55818pt x 292.55594pt>
+<Figures/Judge_Schedule_GS_CP_Percentage_Histogram.pdf, id=735, 561.55818pt x 292.55594pt>
 File: Figures/Judge_Schedule_GS_CP_Percentage_Histogram.pdf Graphic file (type pdf)
 <use Figures/Judge_Schedule_GS_CP_Percentage_Histogram.pdf>
-Package pdftex.def Info: Figures/Judge_Schedule_GS_CP_Percentage_Histogram.pdf  used on input line 824.
+Package pdftex.def Info: Figures/Judge_Schedule_GS_CP_Percentage_Histogram.pdf  used on input line 799.
 (pdftex.def)             Requested size: 421.1676pt x 219.4164pt.
-pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.829 		\end{figure}
-                     [7]pdfTeX warning (ext4): destination with the same identifier (name{page.8}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.830 
-       [8]
+ [31] [32]
 Overfull \vbox (20.2322pt too high) has occurred while \output is active []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.830 
-       [9 <./Figures/Judge_Schedule_GS_Percentage_Histogram.pdf> <./Figures/Judge_Schedule_CP_Percentage_Histogram.pdf
+ [33 <./Figures/Judge_Schedule_GS_Percentage_Histogram.pdf> <./Figures/Judge_Schedule_CP_Percentage_Histogram.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/Judge_Schedule_CP_Percentage_Histogram.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./Figures/Judge_Schedule_GS_CP_Percentage_Histogram.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/Judge_Schedule_GS_CP_Percentage_Histogram.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-
-LaTeX Warning: Reference `Sec:Master_Calendar:Further_Analysis_of_Some_Assignments' on page 10 undefined on input line 837.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.850 
-       [10] (./Tables/Missing.tex) (./Tables/Single.tex)
-Overfull \hbox (22.06432pt too wide) in paragraph at lines 880--894
+>] [34] (./Tables/Missing.tex) [35] (./Tables/Single.tex)
+Overfull \hbox (22.06432pt too wide) in paragraph at lines 855--869
  []|   [] 
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.894       \end{table}
-                        [11]pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.899         \item
-                    At least one sentencing event occurred in a county not s... [12] (./Tables/SingleWD.tex)
-Overfull \hbox (3.57002pt too wide) in paragraph at lines 907--921
+[36] (./Tables/SingleWD.tex)
+Overfull \hbox (3.57002pt too wide) in paragraph at lines 882--896
  []|   [] 
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.13}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.930       \end{enumerate}
-                            [13] (./Tables/MultipleND.tex) (./Tables/MultipleSD.tex)
-Overfull \hbox (6.4153pt too wide) in paragraph at lines 959--973
+[37] (./Tables/MultipleND.tex) (./Tables/MultipleSD.tex)
+Overfull \hbox (6.4153pt too wide) in paragraph at lines 934--948
  []|   [] 
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.14}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.974 
-       [14]pdfTeX warning (ext4): destination with the same identifier (name{page.15}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.976 
-       [15] (./Tables/MultipleAD.tex)
-Overfull \hbox (0.72475pt too wide) in paragraph at lines 991--1005
+[38] [39] (./Tables/MultipleAD.tex)
+Overfull \hbox (0.72475pt too wide) in paragraph at lines 966--980
  []|   [] 
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.16}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1006 
-        [16]pdfTeX warning (ext4): destination with the same identifier (name{page.17}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1012         \item T
-                      he judge sentenced in more than one county on a day, e... [17]pdfTeX warning (ext4): destination with the same identifier (name{page.18}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1031   	\paragraph
-                    {Overlapping Componentwise Match.} If the intersection o... [18]pdfTeX warning (ext4): destination with the same identifier (name{page.19}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1046 
-        [19]
-
-LaTeX Warning: Reference `Sec:Appendix:Supplementary_Figures' on page 20 undefined on input line 1047.
-
-<Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf, id=856, 337.8255pt x 278.77196pt>
+[40] [41] [42] [43]
+<Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf, id=882, 337.8255pt x 278.77196pt>
 File: Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf Graphic file (type pdf)
 <use Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf>
-Package pdftex.def Info: Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf  used on input line 1094.
+Package pdftex.def Info: Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf  used on input line 1069.
 (pdftex.def)             Requested size: 236.47623pt x 195.13902pt.
-<Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf, id=857, 337.8255pt x 278.77196pt>
+<Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf, id=883, 337.8255pt x 278.77196pt>
 File: Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf Graphic file (type pdf)
 <use Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf>
-Package pdftex.def Info: Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf  used on input line 1095.
+Package pdftex.def Info: Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf  used on input line 1070.
 (pdftex.def)             Requested size: 236.47623pt x 195.13902pt.
-pdfTeX warning (ext4): destination with the same identifier (name{page.20}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1099 
-        [20]
+ [44]
+./description.tex:1077: Too many }'s.
+l.1077 ...in Section \ref{Appendix:Discrepancies}}
+                                                  .
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
 
-LaTeX Warning: Reference `Figure_Mapping_Problematic_Sentencing_Events_Judge_Distribution' on page 21 undefined on input line 1101.
-
-
-LaTeX Warning: Reference `Figure_Mapping_Problematic_Sentencing_Events_Week_Distribution' on page 21 undefined on input line 1101.
-
-
-LaTeX Warning: Reference `Sec:Appendix:Supplementary_Figures' on page 21 undefined on input line 1101.
-
-
-LaTeX Warning: Reference `Figure_Mapping_Problematic_Sentencing_Events_Judge_Distribution' on page 21 undefined on input line 1101.
-
-
-LaTeX Warning: Reference `Figure_Mapping_Problematic_Sentencing_Events_Week_Distribution' on page 21 undefined on input line 1101.
-
-
-LaTeX Warning: Reference `Sec:Master_Calendar:Further_Analysis_of_Some_Assignments' on page 21 undefined on input line 1101.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.21}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1105 
-        [21 <./Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf> <./Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf
+[45 <./Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf> <./Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
 
-LaTeX Warning: Reference `Table_Schedule_Of_Unmapped_Judge_Names' on page 22 undefined on input line 1108.
+LaTeX Warning: Reference `Figure_Assignment_Type_Histogram' on page 46 undefined on input line 1082.
 
-
-LaTeX Warning: Reference `Sec:Appendix:Supplementary_Figures' on page 22 undefined on input line 1108.
-
-
-LaTeX Warning: Reference `Table_Schedule_Of_Unmapped_Judge_Names' on page 22 undefined on input line 1108.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.22}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1128 				\end{table}
-                       [22]pdfTeX warning (ext4): destination with the same identifier (name{page.23}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1144 
-        [23]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1145.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 1145.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1145.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1145.
-
-<Figures/Judge_Capacity_Vs_Number_of_Trials.pdf, id=895, 344.54895pt x 281.60934pt>
-File: Figures/Judge_Capacity_Vs_Number_of_Trials.pdf Graphic file (type pdf)
-<use Figures/Judge_Capacity_Vs_Number_of_Trials.pdf>
-Package pdftex.def Info: Figures/Judge_Capacity_Vs_Number_of_Trials.pdf  used on input line 1158.
-(pdftex.def)             Requested size: 258.41107pt x 211.20648pt.
-pdfTeX warning (ext4): destination with the same identifier (name{page.24}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1164 			W
-           e observe that as the number of trials in a judge-county combinat... [24]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1170.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 1170.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1170.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 1170.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1170.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1170.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1171--1172
-
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.25}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1173 			\noindent
-                    \textbf{Step 2:} Let $N_p$ denote the total number of pl... [25 <./Figures/Judge_Capacity_Vs_Number_of_Trials.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1173--1174
-
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.26}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1186 
-        [26] [27] [28] (../../output/tables/Exploration/regression_summary.tex) [29]
-Underfull \hbox (badness 10000) in paragraph at lines 1280--1281
-
- []
-
-(../../output/tables/Exploration/utilization_model_JudgeID.tex) [30]
-<../../output/figures/Exploration/fit_utilization_JudgeID.png, id=948, 462.528pt x 346.896pt>
-File: ../../output/figures/Exploration/fit_utilization_JudgeID.png Graphic file (type png)
-<use ../../output/figures/Exploration/fit_utilization_JudgeID.png>
-Package pdftex.def Info: ../../output/figures/Exploration/fit_utilization_JudgeID.png  used on input line 1296.
-(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
- (../../output/tables/Exploration/utilization_model_iters_JudgeID.tex) [31 <../../output/figures/Exploration/fit_utilization_JudgeID.png>] (../../output/tables/Exploration/utilization_model_convergence_JudgeID.tex) [32] [33] (../../output/tables/Exploration/utilization_model_County.tex)
-<../../output/figures/Exploration/fit_utilization_County.png, id=966, 462.528pt x 346.896pt>
-File: ../../output/figures/Exploration/fit_utilization_County.png Graphic file (type png)
-<use ../../output/figures/Exploration/fit_utilization_County.png>
-Package pdftex.def Info: ../../output/figures/Exploration/fit_utilization_County.png  used on input line 1325.
-(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
- (../../output/tables/Exploration/utilization_model_iters_County.tex) [34 <../../output/figures/Exploration/fit_utilization_County.png>] (../../output/tables/Exploration/utilization_model_convergence_County.tex) [35] (../../output/tables/Exploration/utilization_model_JudgeIDCounty.tex) [36]
-<../../output/figures/Exploration/fit_utilization_JudgeIDCounty.png, id=987, 462.528pt x 346.896pt>
-File: ../../output/figures/Exploration/fit_utilization_JudgeIDCounty.png Graphic file (type png)
-<use ../../output/figures/Exploration/fit_utilization_JudgeIDCounty.png>
-Package pdftex.def Info: ../../output/figures/Exploration/fit_utilization_JudgeIDCounty.png  used on input line 1354.
-(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
- (../../output/tables/Exploration/utilization_model_iters_JudgeIDCounty.tex) [37 <../../output/figures/Exploration/fit_utilization_JudgeIDCounty.png>] (../../output/tables/Exploration/utilization_model_convergence_JudgeIDCounty.tex) [38]
-Overfull \vbox (2733.36998pt too high) has occurred while \output is active []
-
- [39]
-Underfull \hbox (badness 10000) in paragraph at lines 1373--1374
-
- []
-
-(../../output/tables/Exploration/utilization_model_JudgeID.tex)
-File: ../../output/figures/Exploration/fit_utilization_JudgeID.png Graphic file (type png)
-<use ../../output/figures/Exploration/fit_utilization_JudgeID.png>
-Package pdftex.def Info: ../../output/figures/Exploration/fit_utilization_JudgeID.png  used on input line 1390.
-(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
- [40] (../../output/tables/Exploration/utilization_model_iters_JudgeID.tex) (../../output/tables/Exploration/min_model_County.tex) [41]
-<../../output/figures/Exploration/fit_min_County.png, id=1018, 462.528pt x 346.896pt>
-File: ../../output/figures/Exploration/fit_min_County.png Graphic file (type png)
-<use ../../output/figures/Exploration/fit_min_County.png>
-Package pdftex.def Info: ../../output/figures/Exploration/fit_min_County.png  used on input line 1412.
-(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
- (../../output/tables/Exploration/min_model_iters_County.tex) [42 <../../output/figures/Exploration/fit_min_County.png>] (../../output/tables/Exploration/min_model_JudgeIDCounty.tex)
-<../../output/figures/Exploration/fit_min_JudgeIDCounty.png, id=1026, 462.528pt x 346.896pt>
-File: ../../output/figures/Exploration/fit_min_JudgeIDCounty.png Graphic file (type png)
-<use ../../output/figures/Exploration/fit_min_JudgeIDCounty.png>
-Package pdftex.def Info: ../../output/figures/Exploration/fit_min_JudgeIDCounty.png  used on input line 1434.
-(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
- [43] (../../output/tables/Exploration/min_model_iters_JudgeIDCounty.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 1446--1447
-
- []
-
-(../../output/tables/Exploration/all_time_min_model_JudgeID.tex) [44 <../../output/figures/Exploration/fit_min_JudgeIDCounty.png>]
-<../../output/figures/Exploration/fit_min_JudgeID.png, id=1040, 462.528pt x 346.896pt>
-File: ../../output/figures/Exploration/fit_min_JudgeID.png Graphic file (type png)
-<use ../../output/figures/Exploration/fit_min_JudgeID.png>
-Package pdftex.def Info: ../../output/figures/Exploration/fit_min_JudgeID.png  used on input line 1463.
-(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
- (../../output/tables/Exploration/min_model_iters_JudgeID.tex) [45 <../../output/figures/Exploration/fit_min_JudgeID.png>] (../../output/tables/Exploration/all_time_min_model_County.tex)
-File: ../../output/figures/Exploration/fit_min_County.png Graphic file (type png)
-<use ../../output/figures/Exploration/fit_min_County.png>
-Package pdftex.def Info: ../../output/figures/Exploration/fit_min_County.png  used on input line 1485.
-(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
- [46] (../../output/tables/Exploration/min_model_iters_County.tex) (../../output/tables/Exploration/all_time_min_model_JudgeIDCounty.tex) [47]
-File: ../../output/figures/Exploration/fit_min_JudgeIDCounty.png Graphic file (type png)
-<use ../../output/figures/Exploration/fit_min_JudgeIDCounty.png>
-Package pdftex.def Info: ../../output/figures/Exploration/fit_min_JudgeIDCounty.png  used on input line 1507.
-(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
- (../../output/tables/Exploration/min_model_iters_JudgeIDCounty.tex) [48] (../../output/tables/Exploration/nlreg_rand_County.tex) [49]
+<../../output/figures/Exploration/judge_convex_hulls_0.png, id=912, 722.7pt x 722.7pt>
+File: ../../output/figures/Exploration/judge_convex_hulls_0.png Graphic file (type png)
+<use ../../output/figures/Exploration/judge_convex_hulls_0.png>
+Package pdftex.def Info: ../../output/figures/Exploration/judge_convex_hulls_0.png  used on input line 1091.
+(pdftex.def)             Requested size: 422.77664pt x 422.77228pt.
+[46]
+<../../output/figures/Exploration/judge_convex_hulls_1.png, id=918, 722.7pt x 722.7pt>
+File: ../../output/figures/Exploration/judge_convex_hulls_1.png Graphic file (type png)
+<use ../../output/figures/Exploration/judge_convex_hulls_1.png>
+Package pdftex.def Info: ../../output/figures/Exploration/judge_convex_hulls_1.png  used on input line 1096.
+(pdftex.def)             Requested size: 422.77664pt x 422.77228pt.
+ [47 <../../output/figures/Exploration/judge_convex_hulls_0.png>]
+<../../output/figures/Exploration/judge_convex_hulls_2.png, id=925, 722.7pt x 722.7pt>
+File: ../../output/figures/Exploration/judge_convex_hulls_2.png Graphic file (type png)
+<use ../../output/figures/Exploration/judge_convex_hulls_2.png>
+Package pdftex.def Info: ../../output/figures/Exploration/judge_convex_hulls_2.png  used on input line 1101.
+(pdftex.def)             Requested size: 422.77664pt x 422.77228pt.
+ [48 <../../output/figures/Exploration/judge_convex_hulls_1.png>]
+<../../output/figures/Exploration/judge_convex_hulls_3.png, id=932, 722.7pt x 722.7pt>
+File: ../../output/figures/Exploration/judge_convex_hulls_3.png Graphic file (type png)
+<use ../../output/figures/Exploration/judge_convex_hulls_3.png>
+Package pdftex.def Info: ../../output/figures/Exploration/judge_convex_hulls_3.png  used on input line 1106.
+(pdftex.def)             Requested size: 422.77664pt x 422.77228pt.
+ [49 <../../output/figures/Exploration/judge_convex_hulls_2.png>]
+<../../output/figures/Exploration/judge_convex_hulls_4.png, id=940, 722.7pt x 722.7pt>
+File: ../../output/figures/Exploration/judge_convex_hulls_4.png Graphic file (type png)
+<use ../../output/figures/Exploration/judge_convex_hulls_4.png>
+Package pdftex.def Info: ../../output/figures/Exploration/judge_convex_hulls_4.png  used on input line 1111.
+(pdftex.def)             Requested size: 422.77664pt x 422.77228pt.
+ [50 <../../output/figures/Exploration/judge_convex_hulls_3.png>]
+<../../output/figures/Exploration/judge_convex_hulls_5.png, id=947, 722.7pt x 722.7pt>
+File: ../../output/figures/Exploration/judge_convex_hulls_5.png Graphic file (type png)
+<use ../../output/figures/Exploration/judge_convex_hulls_5.png>
+Package pdftex.def Info: ../../output/figures/Exploration/judge_convex_hulls_5.png  used on input line 1116.
+(pdftex.def)             Requested size: 422.77664pt x 422.77228pt.
+ [51 <../../output/figures/Exploration/judge_convex_hulls_4.png>]
+<../../output/figures/Exploration/judge_convex_hulls_6.png, id=954, 722.7pt x 722.7pt>
+File: ../../output/figures/Exploration/judge_convex_hulls_6.png Graphic file (type png)
+<use ../../output/figures/Exploration/judge_convex_hulls_6.png>
+Package pdftex.def Info: ../../output/figures/Exploration/judge_convex_hulls_6.png  used on input line 1121.
+(pdftex.def)             Requested size: 422.77664pt x 422.77228pt.
+ [52 <../../output/figures/Exploration/judge_convex_hulls_5.png>]
+<../../output/figures/Exploration/judge_convex_hulls_7.png, id=961, 722.7pt x 722.7pt>
+File: ../../output/figures/Exploration/judge_convex_hulls_7.png Graphic file (type png)
+<use ../../output/figures/Exploration/judge_convex_hulls_7.png>
+Package pdftex.def Info: ../../output/figures/Exploration/judge_convex_hulls_7.png  used on input line 1126.
+(pdftex.def)             Requested size: 422.77664pt x 422.77228pt.
+ [53 <../../output/figures/Exploration/judge_convex_hulls_6.png>]
+<../../output/figures/Exploration/judge_convex_hulls_8.png, id=968, 722.7pt x 722.7pt>
+File: ../../output/figures/Exploration/judge_convex_hulls_8.png Graphic file (type png)
+<use ../../output/figures/Exploration/judge_convex_hulls_8.png>
+Package pdftex.def Info: ../../output/figures/Exploration/judge_convex_hulls_8.png  used on input line 1131.
+(pdftex.def)             Requested size: 422.77664pt x 422.77228pt.
+ [54 <../../output/figures/Exploration/judge_convex_hulls_7.png>]
+<../../output/figures/Exploration/judge_convex_hulls_9.png, id=975, 722.7pt x 722.7pt>
+File: ../../output/figures/Exploration/judge_convex_hulls_9.png Graphic file (type png)
+<use ../../output/figures/Exploration/judge_convex_hulls_9.png>
+Package pdftex.def Info: ../../output/figures/Exploration/judge_convex_hulls_9.png  used on input line 1136.
+(pdftex.def)             Requested size: 422.77664pt x 422.77228pt.
+ [55 <../../output/figures/Exploration/judge_convex_hulls_8.png>]
+<../../output/figures/Exploration/judge_convex_hulls_10.png, id=983, 722.7pt x 722.7pt>
+File: ../../output/figures/Exploration/judge_convex_hulls_10.png Graphic file (type png)
+<use ../../output/figures/Exploration/judge_convex_hulls_10.png>
+Package pdftex.def Info: ../../output/figures/Exploration/judge_convex_hulls_10.png  used on input line 1141.
+(pdftex.def)             Requested size: 422.77664pt x 422.77228pt.
+ [56 <../../output/figures/Exploration/judge_convex_hulls_9.png>]
+<../../output/figures/Exploration/judge_convex_hulls_11.png, id=990, 722.7pt x 722.7pt>
+File: ../../output/figures/Exploration/judge_convex_hulls_11.png Graphic file (type png)
+<use ../../output/figures/Exploration/judge_convex_hulls_11.png>
+Package pdftex.def Info: ../../output/figures/Exploration/judge_convex_hulls_11.png  used on input line 1146.
+(pdftex.def)             Requested size: 422.77664pt x 422.77228pt.
+ [57 <../../output/figures/Exploration/judge_convex_hulls_10.png>]
+<../../output/figures/Exploration/judge_convex_hulls_12.png, id=997, 716.9184pt x 372.9132pt>
+File: ../../output/figures/Exploration/judge_convex_hulls_12.png Graphic file (type png)
+<use ../../output/figures/Exploration/judge_convex_hulls_12.png>
+Package pdftex.def Info: ../../output/figures/Exploration/judge_convex_hulls_12.png  used on input line 1151.
+(pdftex.def)             Requested size: 422.77664pt x 219.91444pt.
+ [58 <../../output/figures/Exploration/judge_convex_hulls_11.png>] [59 <../../output/figures/Exploration/judge_convex_hulls_12.png>] [60] [61] (../../output/tables/Exploration/nlreg_rand_County.tex) [62]
 Overfull \vbox (51.76953pt too high) has occurred while \output is active []
 
- [50] (../../output/tables/Exploration/nlreg_rand_JudgeID.tex) [51]
+ [63] (../../output/tables/Exploration/nlreg_rand_JudgeID.tex) [64]
 Overfull \vbox (21.36998pt too high) has occurred while \output is active []
 
- [52]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1593.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1593.
+ [65] (../../output/tables/Exploration/regression_summary.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 1258--1259
+
+ []
+
+(../../output/tables/Exploration/utilization_model_JudgeID.tex) [66]
+<../../output/figures/Exploration/fit_utilization_JudgeID.png, id=1059, 462.528pt x 346.896pt>
+File: ../../output/figures/Exploration/fit_utilization_JudgeID.png Graphic file (type png)
+<use ../../output/figures/Exploration/fit_utilization_JudgeID.png>
+Package pdftex.def Info: ../../output/figures/Exploration/fit_utilization_JudgeID.png  used on input line 1274.
+(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
+ (../../output/tables/Exploration/utilization_model_iters_JudgeID.tex) [67 <../../output/figures/Exploration/fit_utilization_JudgeID.png>] (../../output/tables/Exploration/utilization_model_convergence_JudgeID.tex) [68] [69] (../../output/tables/Exploration/utilization_model_County.tex)
+<../../output/figures/Exploration/fit_utilization_County.png, id=1078, 462.528pt x 346.896pt>
+File: ../../output/figures/Exploration/fit_utilization_County.png Graphic file (type png)
+<use ../../output/figures/Exploration/fit_utilization_County.png>
+Package pdftex.def Info: ../../output/figures/Exploration/fit_utilization_County.png  used on input line 1303.
+(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
+ (../../output/tables/Exploration/utilization_model_iters_County.tex) [70 <../../output/figures/Exploration/fit_utilization_County.png>] (../../output/tables/Exploration/utilization_model_convergence_County.tex) [71] (../../output/tables/Exploration/utilization_model_JudgeIDCounty.tex) [72]
+<../../output/figures/Exploration/fit_utilization_JudgeIDCounty.png, id=1098, 462.528pt x 346.896pt>
+File: ../../output/figures/Exploration/fit_utilization_JudgeIDCounty.png Graphic file (type png)
+<use ../../output/figures/Exploration/fit_utilization_JudgeIDCounty.png>
+Package pdftex.def Info: ../../output/figures/Exploration/fit_utilization_JudgeIDCounty.png  used on input line 1332.
+(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
+ (../../output/tables/Exploration/utilization_model_iters_JudgeIDCounty.tex) [73 <../../output/figures/Exploration/fit_utilization_JudgeIDCounty.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1351--1352
+
+ []
+
+(../../output/tables/Exploration/utilization_model_JudgeID.tex) [74]
+File: ../../output/figures/Exploration/fit_utilization_JudgeID.png Graphic file (type png)
+<use ../../output/figures/Exploration/fit_utilization_JudgeID.png>
+Package pdftex.def Info: ../../output/figures/Exploration/fit_utilization_JudgeID.png  used on input line 1368.
+(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
+ (../../output/tables/Exploration/utilization_model_iters_JudgeID.tex) [75] (../../output/tables/Exploration/min_model_County.tex)
+<../../output/figures/Exploration/fit_min_County.png, id=1119, 462.528pt x 346.896pt>
+File: ../../output/figures/Exploration/fit_min_County.png Graphic file (type png)
+<use ../../output/figures/Exploration/fit_min_County.png>
+Package pdftex.def Info: ../../output/figures/Exploration/fit_min_County.png  used on input line 1390.
+(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
+ [76] (../../output/tables/Exploration/min_model_iters_County.tex) (../../output/tables/Exploration/min_model_JudgeIDCounty.tex) [77 <../../output/figures/Exploration/fit_min_County.png>]
+<../../output/figures/Exploration/fit_min_JudgeIDCounty.png, id=1133, 462.528pt x 346.896pt>
+File: ../../output/figures/Exploration/fit_min_JudgeIDCounty.png Graphic file (type png)
+<use ../../output/figures/Exploration/fit_min_JudgeIDCounty.png>
+Package pdftex.def Info: ../../output/figures/Exploration/fit_min_JudgeIDCounty.png  used on input line 1412.
+(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
+ (../../output/tables/Exploration/min_model_iters_JudgeIDCounty.tex) [78 <../../output/figures/Exploration/fit_min_JudgeIDCounty.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1424--1425
+
+ []
+
+(../../output/tables/Exploration/all_time_min_model_JudgeID.tex)
+<../../output/figures/Exploration/fit_min_JudgeID.png, id=1141, 462.528pt x 346.896pt>
+File: ../../output/figures/Exploration/fit_min_JudgeID.png Graphic file (type png)
+<use ../../output/figures/Exploration/fit_min_JudgeID.png>
+Package pdftex.def Info: ../../output/figures/Exploration/fit_min_JudgeID.png  used on input line 1441.
+(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
+ [79] (../../output/tables/Exploration/min_model_iters_JudgeID.tex) (../../output/tables/Exploration/all_time_min_model_County.tex) [80 <../../output/figures/Exploration/fit_min_JudgeID.png>]
+File: ../../output/figures/Exploration/fit_min_County.png Graphic file (type png)
+<use ../../output/figures/Exploration/fit_min_County.png>
+Package pdftex.def Info: ../../output/figures/Exploration/fit_min_County.png  used on input line 1463.
+(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
+ (../../output/tables/Exploration/min_model_iters_County.tex) [81] (../../output/tables/Exploration/all_time_min_model_JudgeIDCounty.tex)
+File: ../../output/figures/Exploration/fit_min_JudgeIDCounty.png Graphic file (type png)
+<use ../../output/figures/Exploration/fit_min_JudgeIDCounty.png>
+Package pdftex.def Info: ../../output/figures/Exploration/fit_min_JudgeIDCounty.png  used on input line 1485.
+(pdftex.def)             Requested size: 305.33789pt x 229.01558pt.
+ [82] (../../output/tables/Exploration/min_model_iters_JudgeIDCounty.tex) [83] [84]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1531.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mu' on input line 1531.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 1531.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1531.
+
+<Figures/Judge_Capacity_Vs_Number_of_Trials.pdf, id=1186, 344.54895pt x 281.60934pt>
+File: Figures/Judge_Capacity_Vs_Number_of_Trials.pdf Graphic file (type pdf)
+<use Figures/Judge_Capacity_Vs_Number_of_Trials.pdf>
+Package pdftex.def Info: Figures/Judge_Capacity_Vs_Number_of_Trials.pdf  used on input line 1544.
+(pdftex.def)             Requested size: 258.41107pt x 211.20648pt.
+[85]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1556.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mu' on input line 1556.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 1556.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mu' on input line 1556.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 1556.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1556.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1557--1558
+
+ []
+
+[86 <./Figures/Judge_Capacity_Vs_Number_of_Trials.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 1559--1560
+
+ []
+
+[87] [88] [89]
+Overfull \vbox (149.0813pt too high) has occurred while \output is active []
+
+ [90]
+Overfull \vbox (5.0813pt too high) has occurred while \output is active []
+
+ [91]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1835.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1835.
  (./description.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1593.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1593.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1835.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1835.
 Package rerunfilecheck Info: File `description.out' has not changed.
-(rerunfilecheck)             Checksum: 348655A76635ED81D3EF8D83C3EBA39C;5380.
+(rerunfilecheck)             Checksum: B30F32C2690A2D08C7A053CF17DD7754;5479.
 
 
 LaTeX Warning: There were undefined references.
 
-Package logreq Info: Writing requests to 'description.run.xml'.
-\openout1 = `description.run.xml'.
-
  ) 
 Here is how much of TeX's memory you used:
- 43256 strings out of 492649
- 817840 string characters out of 6129622
- 1600816 words of memory out of 5000000
- 46040 multiletter control sequences out of 15000+600000
- 552654 words of font info for 91 fonts, out of 8000000 for 9000
+ 37050 strings out of 492649
+ 701053 string characters out of 6129622
+ 1055769 words of memory out of 5000000
+ 39805 multiletter control sequences out of 15000+600000
+ 553340 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,16n,71p,10425b,1128s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist, replaced by a fixed one
+ 55i,16n,71p,10425b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm0
-900.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on description.pdf (78 pages, 1242867 bytes).
+mr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm0
+800.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
+Output written on description.pdf (91 pages, 2547901 bytes).
 PDF statistics:
- 1240 PDF objects out of 1440 (max. 8388607)
- 1087 compressed objects within 11 object streams
- 259 named destinations out of 1000 (max. 500000)
- 699 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1419 PDF objects out of 1440 (max. 8388607)
+ 1225 compressed objects within 13 object streams
+ 326 named destinations out of 1000 (max. 500000)
+ 770 words of extra memory for PDF output out of 10000 (max. 10000000)
 

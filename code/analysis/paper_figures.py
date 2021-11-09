@@ -6,6 +6,7 @@ import re
 import pickle
 import math
 import matplotlib.pyplot as plt
+import textwrap
 
 from dotenv import load_dotenv, find_dotenv
 dotenv_path = find_dotenv()
@@ -14,7 +15,7 @@ PROJECT_DIR = os.environ.get("PROJECT_DIR")
 
 # Input files/dirs
 processed_daily_schedule_file = PROJECT_DIR + '/data/processed/daily_schedule_data.csv'
-processed_sentencing_data_file = PROJECT_DIR + '/data/raw/sentencing_data.csv'
+processed_sentencing_data_file = PROJECT_DIR + '/data/processed/sentencing_data.csv'
 judge_name_id_mapping_file = PROJECT_DIR + '/data/processed/judge_name_id_mapping.csv'
 county_file = PROJECT_DIR + '/data/raw/county_list.csv'
 
@@ -24,6 +25,8 @@ optimization_data_folder = PROJECT_DIR + '/data/optimization/'
 holidays = ['2000-09-04','2000-10-09','2000-11-10','2000-11-23','2000-12-24',
 '2000-12-25','2000-12-26','2001-01-01','2001-01-15','2001-02-19','2001-05-10',
 '2001-05-28','2001-07-04','2000-07-04']
+
+plt.rcParams['font.family'] = 'serif'
 
 ##### Data loading/imputation #####
 def load_sentencing_data():
@@ -39,17 +42,35 @@ def load_calendar_data():
     return cdf
 
 ##### Figures #####
+def assignment_type_histogram_sentencing_events():
+    sdf = load_sentencing_data()
+    sdf = sdf.loc[sdf.WorkType != 'Disagree',:]
+    adf = sdf.groupby('WorkType').size().reset_index(name='N')
+
+    adf.sort_values('N',ascending=False,inplace=True)
+    adf['Share'] = adf.N/adf.N.sum()
+
+    plt.figure()
+    plt.bar(adf.WorkType,adf.Share,align='center',color='grey')
+    plt.ylabel('Share')
+    # plt.grid(axis='y')
+    plt.xticks(rotation=45)
+    plt.show()
+
 def assignment_type_histogram():
     cdf = load_calendar_data()
     adf = cdf.groupby('AssignmentType').size().reset_index(name='N')
 
     adf.sort_values('N',ascending=False,inplace=True)
     adf['Share'] = adf.N/adf.N.sum()
+    replacement_dict = {'SingleWD':'Single, with dates','MultipleSD':'Multiple, some dates','Missing':'None',
+    'MultipleND':'Multiple, no dates','MultipleAD':'Multiple, all dates','MultipleSDA':'Multiple, some dates'}
+    adf['AssignmentType'] = adf['AssignmentType'].replace(replacement_dict)
+    adf['AssignmentType'] = adf.AssignmentType.apply(lambda x: textwrap.fill(x,12))
 
     plt.figure()
-    plt.bar(adf.AssignmentType,adf.Share)
+    plt.bar(adf.AssignmentType,adf.Share,align='center',color='grey')
     plt.ylabel('Share')
-    plt.grid(axis='y')
     plt.xticks(rotation=45)
     plt.show()
 

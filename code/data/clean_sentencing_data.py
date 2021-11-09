@@ -51,10 +51,10 @@ def clean_sentencing_data():
     sdf = add_exp_min_sentence(sdf)
     sdf = add_home_circuit(sdf)
     sdf['Circuit'] = sdf.Circuit.astype(str)
-    sdf.loc[sdf.Date.notna(),'Week'] = sdf.loc[sdf.Date.notna(),'Date'].apply(get_week)
     sdf = add_judge_names(sdf)
     sdf['Plea'] = (sdf['Trial']+1)%2
     sdf = impute_missing_dates(sdf)
+    sdf.loc[sdf.Date.notna(),'Week'] = sdf.loc[sdf.Date.notna(),'Date'].apply(get_week)
     sdf = add_work_type(sdf)
     return(sdf)
 

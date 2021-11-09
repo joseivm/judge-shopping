@@ -27,7 +27,7 @@ simulation_results_dir = PROJECT_DIR + '/data/simulation/'
 class Judge:
     def __init__(self,ID,judge_df,sentence='Sentence'):
         self.ID = ID
-        self.past_pleas = judge_df[['ExpectedTrialSentence',sentence]].to_numpy()
+        self.past_pleas = judge_df.loc[judge_df[sentence].notna(),['ExpectedTrialSentence',sentence]].to_numpy()
         self.capacity = np.ones(50)*77
         self.current_week = 0
         self.convex_hull = ConvexHull(np.concatenate((self.past_pleas,[[0,0]])))
@@ -60,50 +60,54 @@ class Judge:
         points = self.convex_hull.points
         containing_simplices = []
         y_vals = []
-        plt.figure()
+        max_x = np.max(points[:,0])
+        expected_trial_sentence = max_x if expected_trial_sentence > max_x else expected_trial_sentence
+        # plt.figure()
         for simplex in simplices:
-            plt.plot(points[simplex,0],points[simplex,1],'b-')
+            # plt.plot(points[simplex,0],points[simplex,1],'b-')
             x_vals = np.sort(points[simplex,0])
             if expected_trial_sentence >= x_vals[0] and expected_trial_sentence <= x_vals[1]:
                 containing_simplices.append(simplex)
 
         for simplex in containing_simplices:
-            plt.plot(points[simplex,0],points[simplex,1],'r-')
+            # plt.plot(points[simplex,0],points[simplex,1],'r-')
             xs = points[simplex,0]
             ys = points[simplex,1]
             y_value = np.interp(expected_trial_sentence,xs,ys)
             y_vals.append(y_value)
 
         min_plea = np.min(y_vals)
-        plt.axvline(x=expected_trial_sentence,color='g')
-        plt.plot(expected_trial_sentence,min_plea,'ko')
-        plt.show()
-        # return min_plea
+        # plt.axvline(x=expected_trial_sentence,color='g')
+        # plt.plot(expected_trial_sentence,min_plea,'ko')
+        # plt.show()
+        return min_plea
 
     def get_max_plea_ch(self,expected_trial_sentence):
         simplices = self.convex_hull.simplices
         points = self.convex_hull.points
         containing_simplices = []
         y_vals = []
-        plt.figure()
+        max_x = np.max(points[:,0])
+        expected_trial_sentence = max_x if expected_trial_sentence > max_x else expected_trial_sentence
+        # plt.figure()
         for simplex in simplices:
-            plt.plot(points[simplex,0],points[simplex,1],'b-')
+            # plt.plot(points[simplex,0],points[simplex,1],'b-')
             x_vals = np.sort(points[simplex,0])
             if expected_trial_sentence >= x_vals[0] and expected_trial_sentence <= x_vals[1]:
                 containing_simplices.append(simplex)
 
         for simplex in containing_simplices:
-            plt.plot(points[simplex,0],points[simplex,1],'r-')
+            # plt.plot(points[simplex,0],points[simplex,1],'r-')
             xs = points[simplex,0]
             ys = points[simplex,1]
             y_value = np.interp(expected_trial_sentence,xs,ys)
             y_vals.append(y_value)
 
         max_plea = np.max(y_vals)
-        plt.axvline(x=expected_trial_sentence,color='g')
-        plt.plot(expected_trial_sentence,max_plea,'ko')
-        plt.show()
-        # return max_plea
+        # plt.axvline(x=expected_trial_sentence,color='g')
+        # plt.plot(expected_trial_sentence,max_plea,'ko')
+        # plt.show()
+        return max_plea
 
     def hear_case(self,weeks_from_now):
         case_week = self.current_week + weeks_from_now
