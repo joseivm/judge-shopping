@@ -33,6 +33,7 @@ processed_sentencing_data_file = PROJECT_DIR + '/data/processed/sentencing_data.
 
 def make_covariate_matrix():
     df = pd.read_csv(sentencing_data_file)
+    df.loc[df.Sentence > 720,'Sentence'] = 720
     # df = add_predicted_sentence(df)
     df = add_conviction_probability(df)
     df['ExpectedTrialSentence'] = df['ConvictionProb']*df['PredictedSentence']
@@ -41,11 +42,11 @@ def make_covariate_matrix():
     return(df)
 
 def estimate_defendant_cost_of_trial(df):
-    df.loc[(df.ExpMinSentence < df.MaxPlea) & (df.Plea == 1), 'DefendantType'] = 'SubMax'
+    df.loc[(df.Sentence < df.MaxPlea) & (df.Plea == 1), 'DefendantType'] = 'SubMax'
     df.loc[(df.DefendantType != 'SubMax') & (df.Plea == 1),'DefendantType'] = 'Max'
     df.loc[df.Trial == 1,'DefendantType'] = 'Trial'
 
-    df['ExtraSentence'] = df['ExpMinSentence'] - df['ExpectedTrialSentence']
+    df['ExtraSentence'] = df['Sentence'] - df['ExpectedTrialSentence']
     df['Leniency'] = df['MaxPlea'] - df['ExpectedTrialSentence']
     df['Harshness'] = df['MinPlea'] - df['ExpectedTrialSentence']
 
@@ -53,8 +54,8 @@ def estimate_defendant_cost_of_trial(df):
     max_data = df.loc[df.DefendantType == 'Max','Leniency'].to_numpy()
     trial_data = df.loc[df.DefendantType == 'Trial','Harshness'].to_numpy()
 
-    x_0 = [10,10]
-    res = minimize(NLL,x_0,args=(submax_data,max_data,trial_data,))
+    x_0 = [8,8]
+    res = minimize(NLL,x_0,args=(submax_data,max_data,trial_data,0.00001))
 
 def NLL(x,submax_data,max_data,trial_data,eps=0.001):
     mu = x[0]
@@ -124,7 +125,7 @@ def ct_response(row):
 
 def add_min_and_max_pleas(df):
     judge_ids = ['Judge '+str(i) for i in range(1,51)]
-    judge_dict = {id:Judge(id,df.loc[df.JudgeID == id],sentence='ExpMinSentence') for id in judge_ids}
+    judge_dict = {id:Judge(id,df.loc[df.JudgeID == id],sentence='Sentence') for id in judge_ids}
     df['MinPlea'] = df.apply(get_min_plea,axis=1,args=(judge_dict,))
     df['MaxPlea'] = df.apply(get_max_plea,axis=1,args=(judge_dict,))
     return(df)

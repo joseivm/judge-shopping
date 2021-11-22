@@ -42,6 +42,90 @@ def load_calendar_data():
     return cdf
 
 ##### Figures #####
+def weekly_judge_days_hist(group):
+    cdf = load_calendar_data()
+    county_list = pd.read_csv(county_file)
+    cdf = cdf.loc[cdf.County.isin(county_list.County),:]
+    cdf = cdf.loc[cdf.WorkType == 'GS',:]
+
+    group_df = pd.DataFrame({group: cdf[group].unique()})
+    weeks = pd.DataFrame({'Week':cdf.Week.unique()})
+    group_df = group_df.merge(weeks,how='cross')
+
+    wdf = cdf.groupby([group,'Week'])['Days'].sum().reset_index()
+    wdf = wdf.merge(group_df,on=[group,'Week'],how='outer')
+    wdf.loc[wdf.Days.isna(),'Days'] = 0
+    wdf['WeekNum'] = wdf.Week.apply(get_week_num)
+    wdf = wdf.sort_values([group,'WeekNum'])
+
+    plot_groups = np.array_split(cdf[group].unique(),np.arange(10,cdf[group].nunique(),10))
+    i = 0
+    for plot_group in plot_groups:
+        fig, axes = plt.subplots(10,1,figsize=(10,10))
+        for group_element, ax in zip(plot_group,axes):
+            gwdf = wdf.loc[wdf[group] == group_element,:]
+            ax.bar(gwdf['WeekNum'],gwdf['Days'])
+            ax.set_title(group_element)
+
+        plt.tight_layout()
+        filename = PROJECT_DIR + '/output/figures/Exploration/{}_weekly_judge_days_{}.png'.format(group,i)
+        plt.savefig(filename)
+        i += 1
+
+def county_weekly_judge_days():
+    cdf = load_calendar_data()
+    county_list = pd.read_csv(county_file)
+    cdf = cdf.loc[cdf.County.isin(county_list.County),:]
+
+    judges = pd.DataFrame({'JudgeID':cdf.JudgeID.unique()})
+    counties = pd.DataFrame({'County':cdf.County.unique()})
+    weeks = pd.DataFrame({'Week':cdf.Week.unique()})
+    judge_weeks = judges.merge(weeks,how='cross')
+    county_weeks = counties.merge(weeks,how='cross')
+
+    jwdf = cdf.groupby(['JudgeID','Week'])['Days'].sum().reset_index()
+    cwdf = cdf.groupby(['County','Week'])['Days'].sum().reset_index()
+
+    jwdf = jwdf.merge(judge_weeks,on=['JudgeID','Week'],how='outer')
+    jwdf.loc[jwdf.Days.isna(),'Days'] = 0
+    jwdf['WeekNum'] = jwdf.Week.apply(get_week_num)
+    jwdf = jwdf.sort_values(['JudgeID','WeekNum'])
+
+    cwdf = cwdf.merge(county_weeks,on=['County','Week'],how='outer')
+    cwdf.loc[cwdf.Days.isna(),'Days'] = 0
+    cwdf['WeekNum'] = cwdf.Week.apply(get_week_num)
+    cwdf = cwdf.sort_values(['County','Week'])
+
+def plot_convex_hulls():
+    df = pd.read_csv(sentencing_data_file)
+    df.loc[df.ExpMinSentence.isna(),'ExpMinSentence'] = 0
+    judge_ids = ['Judge '+str(i) for i in range(1,51)]
+    judges = {id:Judge(id,df.loc[df.JudgeID == id]) for id in judge_ids}
+    exp_min_judges = {id:Judge(id,df.loc[df.JudgeID == id],'ExpMinSentence') for id in judge_ids}
+
+    judge_groups = np.array_split(judge_ids,np.arange(10,len(judge_ids),10))
+    i = 0
+    for group in judge_groups:
+        fig, axes = plt.subplots(10,1,figsize=(10,10))
+        for judge, ax in zip(group,axes):
+            ax.bar(jwdf.loc[jwdf.JudgeID == judge,'WeekNum'],jwdf.loc[jwdf.JudgeID == judge,'Days'])
+            normal_judge = judges[judge]
+            exp_min_judge = exp_min_judges[judge]
+            normal_judge.plot_convex_hull(ax1)
+            exp_min_judge.plot_convex_hull(ax2)
+            ax.set_title(judge)
+
+        plt.tight_layout()
+        filename = PROJECT_DIR + '/output/figures/Exploration/judge_weekly_days_{}.png'.format(i)
+        plt.savefig(filename)
+        i += 1
+
+def get_week_num(week):
+    week_num, week_year = week.split('-')
+    week_num = int(week_num)
+    week_num = week_num - 26 if week_num > 26 else week_num+26
+    return week_num
+
 def assignment_type_histogram_sentencing_events():
     sdf = load_sentencing_data()
     sdf = sdf.loc[sdf.WorkType != 'Disagree',:]

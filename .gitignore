@@ -2,3 +2,5 @@
 .Rhistory
 .DS_Store
 .env.R
+.vscode
+launch.json

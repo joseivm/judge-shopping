@@ -12,7 +12,8 @@ augmented_sentencing_data_file <- paste0(PROJECT_DIR,'/data/processed/augmented_
 ##### Data Loading #####
 load_sentencing_data <- function(){
   df <- fread(sentencing_data_file)
-  df[, ExpMinSentence := as.integer(ExpMinSentence)]
+  df[Sentence > 720, Sentence := 720]
+  df[, Sentence := as.integer(Sentence)]
   df[OffenseSeriousness == 1, ModifiedOffenseSeriousness := TRUE]
   df[ModifiedOffenseSeriousness == TRUE, OffenseSeriousness := 2]
   df[, OffenseSeriousness := as.factor(OffenseSeriousness)]
@@ -25,8 +26,8 @@ create_augmented_data <- function(){
   defendant_covars <- c('OffenseType','OffenseSeriousness','Black','CriminalHistory',
   'Sex')
 
-  nb_model <- vglm(ExpMinSentence ~ OffenseType + OffenseSeriousness + Black + CriminalHistory + Sex,
-    family = posnegbinomial(),data=df[(ExpMinSentence > 0) & (Trial == 1)])
+  nb_model <- vglm(Sentence ~ OffenseType + OffenseSeriousness + Black + CriminalHistory + Sex,
+    family = posnegbinomial(),data=df[(Sentence > 0) & (Trial == 1)])
 
   predicted_sentence <- predict(nb_model,df[,..defendant_covars],type='response')
   df[, PredictedSentence := predicted_sentence]
