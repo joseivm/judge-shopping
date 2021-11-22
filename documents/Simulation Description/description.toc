@@ -22,18 +22,18 @@
 \contentsline {subsubsection}{\numberline {3.7.1}Model}{17}{subsubsection.3.7.1}
 \contentsline {section}{\numberline {4}Simulation Plan}{19}{section.4}
 \contentsline {subsection}{\numberline {4.1}State Variables}{19}{subsection.4.1}
-\contentsline {paragraph}{Judges.}{20}{section*.18}
+\contentsline {paragraph}{Judges.}{19}{section*.18}
 \contentsline {paragraph}{Counties.}{20}{section*.19}
 \contentsline {subsection}{\numberline {4.2}Dynamics}{20}{subsection.4.2}
 \contentsline {subsubsection}{\numberline {4.2.1}Judge Schedules}{20}{subsubsection.4.2.1}
 \contentsline {paragraph}{Trials}{20}{section*.20}
-\contentsline {paragraph}{Assigning Judges to Counties}{21}{section*.21}
+\contentsline {paragraph}{Assigning Judges to Counties}{20}{section*.21}
 \contentsline {subsubsection}{\numberline {4.2.2}Iteration/Simulation Step/Action}{21}{subsubsection.4.2.2}
 \contentsline {paragraph}{Defendant Arrivals.}{21}{section*.22}
 \contentsline {paragraph}{Defendant Choice.}{21}{section*.23}
 \contentsline {subsubsection}{\numberline {4.2.3}Calibration}{22}{subsubsection.4.2.3}
 \contentsline {section}{\numberline {5}Next Steps}{22}{section.5}
-\contentsline {section}{\numberline {A}Sentencing Data Set}{23}{appendix.A}
+\contentsline {section}{\numberline {A}Sentencing Data Set}{22}{appendix.A}
 \contentsline {subsection}{\numberline {A.1}Variables}{23}{subsection.A.1}
 \contentsline {subsubsection}{\numberline {A.1.1}CSV File}{24}{subsubsection.A.1.1}
 \contentsline {subsubsection}{\numberline {A.1.2}Stata File}{25}{subsubsection.A.1.2}
@@ -65,41 +65,41 @@
 \contentsline {subsection}{\numberline {D.2}Evaluating the mapping}{45}{subsection.D.2}
 \contentsline {subsection}{\numberline {D.3}Limitations}{45}{subsection.D.3}
 \contentsline {section}{\numberline {E}Judge Convex Hulls}{46}{appendix.E}
-\contentsline {section}{\numberline {F}Service Rate Estimation: Other Attempts}{59}{appendix.F}
-\contentsline {subsection}{\numberline {F.1}Judge Fixed Effects}{60}{subsection.F.1}
-\contentsline {paragraph}{Overview of Results.}{60}{section*.59}
-\contentsline {paragraph}{Motivation.}{60}{section*.60}
-\contentsline {subsection}{\numberline {F.2}Nonlinear Model}{61}{subsection.F.2}
-\contentsline {paragraph}{Overview of Results.}{61}{section*.62}
-\contentsline {paragraph}{Description.}{61}{section*.63}
-\contentsline {subsubsection}{\numberline {F.2.1}Results}{62}{subsubsection.F.2.1}
-\contentsline {paragraph}{County Model}{62}{section*.64}
-\contentsline {paragraph}{Judge Model}{64}{section*.66}
-\contentsline {subsection}{\numberline {F.3}Iterative Algorithms}{66}{subsection.F.3}
-\contentsline {paragraph}{Overview of Results.}{66}{section*.68}
-\contentsline {paragraph}{Description.}{66}{section*.70}
-\contentsline {subsubsection}{\numberline {F.3.1}Iterative Idleness Estimation Using Expected Utilization}{66}{subsubsection.F.3.1}
-\contentsline {paragraph}{Judge Model}{70}{table.caption.75}
-\contentsline {paragraph}{County Model}{72}{table.caption.80}
-\contentsline {paragraph}{Judge-County Model}{74}{table.caption.84}
-\contentsline {subsubsection}{\numberline {F.3.2}Iterative Idleness Estimation Taking Mins}{74}{subsubsection.F.3.2}
-\contentsline {subsection}{\numberline {F.4}Judge Model}{75}{subsection.F.4}
-\contentsline {subsection}{\numberline {F.5}County Model}{76}{subsection.F.5}
-\contentsline {subsection}{\numberline {F.6}Judge-County Model}{78}{subsection.F.6}
-\contentsline {subsubsection}{\numberline {F.6.1}Iterative Idleness Estimation Taking All-time Mins}{79}{subsubsection.F.6.1}
-\contentsline {subsection}{\numberline {F.7}Judge Model}{79}{subsection.F.7}
-\contentsline {subsection}{\numberline {F.8}County Model}{81}{subsection.F.8}
-\contentsline {subsection}{\numberline {F.9}Judge-County Model}{82}{subsection.F.9}
-\contentsline {subsection}{\numberline {F.10}Ad-hoc Algorithm}{83}{subsection.F.10}
-\contentsline {paragraph}{Overview of Results.}{83}{section*.103}
-\contentsline {subsubsection}{\numberline {F.10.1}Samples}{84}{subsubsection.F.10.1}
-\contentsline {paragraph}{Plea MLE Sample}{84}{section*.104}
-\contentsline {paragraph}{Plea Arrival Rate Sample}{84}{section*.106}
-\contentsline {paragraph}{Trial Rate Sample}{84}{section*.107}
-\contentsline {subsubsection}{\numberline {F.10.2}Estimation of $\mu _t$}{85}{subsubsection.F.10.2}
-\contentsline {subsubsection}{\numberline {F.10.3}Ad-hoc Algorithm for Joint Estimation of $\mu _t,\mu _p$}{86}{subsubsection.F.10.3}
-\contentsline {subsection}{\numberline {F.11}EM Algorithm}{87}{subsection.F.11}
-\contentsline {paragraph}{Overview of Results.}{87}{section*.110}
-\contentsline {paragraph}{EM Algorithm Sample}{87}{section*.111}
-\contentsline {subsubsection}{\numberline {F.11.1}EM Algorithm under Normal Distribution Assumption}{88}{subsubsection.F.11.1}
-\contentsline {subsection}{\numberline {F.12}County Fixed Effects}{89}{subsection.F.12}
+\contentsline {section}{\numberline {F}Service Rate Estimation: Other Attempts}{51}{appendix.F}
+\contentsline {subsection}{\numberline {F.1}Judge Fixed Effects}{52}{subsection.F.1}
+\contentsline {paragraph}{Overview of Results.}{52}{section*.51}
+\contentsline {paragraph}{Motivation.}{52}{section*.52}
+\contentsline {subsection}{\numberline {F.2}Nonlinear Model}{53}{subsection.F.2}
+\contentsline {paragraph}{Overview of Results.}{53}{section*.54}
+\contentsline {paragraph}{Description.}{53}{section*.55}
+\contentsline {subsubsection}{\numberline {F.2.1}Results}{54}{subsubsection.F.2.1}
+\contentsline {paragraph}{County Model}{54}{section*.56}
+\contentsline {paragraph}{Judge Model}{56}{section*.58}
+\contentsline {subsection}{\numberline {F.3}Iterative Algorithms}{58}{subsection.F.3}
+\contentsline {paragraph}{Overview of Results.}{58}{section*.60}
+\contentsline {paragraph}{Description.}{58}{section*.62}
+\contentsline {subsubsection}{\numberline {F.3.1}Iterative Idleness Estimation Using Expected Utilization}{58}{subsubsection.F.3.1}
+\contentsline {paragraph}{Judge Model}{62}{table.caption.67}
+\contentsline {paragraph}{County Model}{64}{table.caption.72}
+\contentsline {paragraph}{Judge-County Model}{66}{table.caption.76}
+\contentsline {subsubsection}{\numberline {F.3.2}Iterative Idleness Estimation Taking Mins}{66}{subsubsection.F.3.2}
+\contentsline {subsection}{\numberline {F.4}Judge Model}{67}{subsection.F.4}
+\contentsline {subsection}{\numberline {F.5}County Model}{68}{subsection.F.5}
+\contentsline {subsection}{\numberline {F.6}Judge-County Model}{70}{subsection.F.6}
+\contentsline {subsubsection}{\numberline {F.6.1}Iterative Idleness Estimation Taking All-time Mins}{71}{subsubsection.F.6.1}
+\contentsline {subsection}{\numberline {F.7}Judge Model}{71}{subsection.F.7}
+\contentsline {subsection}{\numberline {F.8}County Model}{73}{subsection.F.8}
+\contentsline {subsection}{\numberline {F.9}Judge-County Model}{74}{subsection.F.9}
+\contentsline {subsection}{\numberline {F.10}Ad-hoc Algorithm}{75}{subsection.F.10}
+\contentsline {paragraph}{Overview of Results.}{75}{section*.95}
+\contentsline {subsubsection}{\numberline {F.10.1}Samples}{76}{subsubsection.F.10.1}
+\contentsline {paragraph}{Plea MLE Sample}{76}{section*.96}
+\contentsline {paragraph}{Plea Arrival Rate Sample}{76}{section*.98}
+\contentsline {paragraph}{Trial Rate Sample}{76}{section*.99}
+\contentsline {subsubsection}{\numberline {F.10.2}Estimation of $\mu _t$}{77}{subsubsection.F.10.2}
+\contentsline {subsubsection}{\numberline {F.10.3}Ad-hoc Algorithm for Joint Estimation of $\mu _t,\mu _p$}{78}{subsubsection.F.10.3}
+\contentsline {subsection}{\numberline {F.11}EM Algorithm}{79}{subsection.F.11}
+\contentsline {paragraph}{Overview of Results.}{79}{section*.102}
+\contentsline {paragraph}{EM Algorithm Sample}{79}{section*.103}
+\contentsline {subsubsection}{\numberline {F.11.1}EM Algorithm under Normal Distribution Assumption}{80}{subsubsection.F.11.1}
+\contentsline {subsection}{\numberline {F.12}County Fixed Effects}{81}{subsection.F.12}

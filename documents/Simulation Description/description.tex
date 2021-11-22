@@ -341,23 +341,23 @@
 	\subsection{Conviction Probability and Expected Sentence Length - $\theta \tau$}
 	  \label{theta-tau-estimation}
 
-		Following \cite{hester2017conditional}, we estimate $\theta,\tau$ using a hurdle model. In a hurdle model, the probability of a random variable, $y$, is modeled using two separate models: one model is for modeling probability that $y=0$ and a separate model is used for modeling $f(y|y>0)$. Our hurdle model estimates $P(y=0)$ using an $l_2$ regularized logistic regression. As in \cite{hester2017conditional}, we use a negative binomial model to estimate $f(y|y>0,x)$. The full hurdle model is then:
+		Following \cite{hester2017conditional}, we estimate $\theta,\tau$ using a hurdle model. In a hurdle model, the probability of a random variable, $y$, is modeled using two separate models: one model is for modeling probability that $y=0$ and a separate model is used for modeling $f(y|y>0)$. Our hurdle model estimates $P(y=0)$ using a logit model. As in \cite{hester2017conditional}, we use a negative binomial model to estimate $f(y|y>0,x)$. The full hurdle model is then:
 		\begin{align*}
 		  \text{Pr}(y_i=0|x_i) &= \frac{1}{1+\exp(-\beta^Tx_i)} = (1-\theta_i)\\
 			\text{Pr}(y_i|x_i) &= \theta_i f_{NB}(y_i|x_i) \text{ for } y_i > 0
 		\end{align*}
-		where $f_{NB}(y|x)$ is the conditional probability of $y$ given $x$ under the negative binomial model. Here, $x$ is a vector of covariates for the defendant including offense type, offense seriousness, and race. The only difference between our model and the one used by \cite{hester2017conditional} is that we use $l_2$ regularized logistic regression to estimate $\theta$, whereas \cite{hester2017conditional} uses a simple logit model. We opt for the regularized logistic regression because we find that it yields better predictive performance. For a given defendant, $x_i$,  $\theta_i =\text{Pr}(y_i=0|x_i)$ and $ \text{Pr}(\tau|x_i) = \theta_i f_{NB}(\tau|x_i)$.
+		where $f_{NB}(y|x)$ is the conditional probability of $y$ given $x$ under the negative binomial model. Here, $x$ is a vector of covariates for the defendant including offense type, offense seriousness, and race. We use the exact same model as \cite{hester2017conditional}. For a given defendant, $x_i$,  $\theta_i =\text{Pr}(y_i=0|x_i)$ and $ \text{Pr}(\tau|x_i) = \theta_i f_{NB}(\tau|x_i)$.
 
 		\subsubsection{Sample}
 			We only use the observations in the data that went to trial. There are only 258 observations in the data meeting this criteria. Of these 258 observations, 247 resulted in a conviction.
 
 	  \subsubsection{Probability of Conviction at Trial - $\theta$}
 	    \label{theta-estimation}
-	    We estimate this using $l_2$ regularized logistic regression. In logistic regression, the optimization problem is as follows:
+	    We estimate this using a logit model. In the logit model, the optimization problem is as follows:
 			\begin{align*}
-				\min_{w,c} \sum_{i=1}^n \log(\exp(-y_i(X_i^Tw+c)) &+ 1) + \frac{1}{C} \left \| w \right \|_2
+				\min_{w,c} \sum_{i=1}^n \log(\exp(-y_i(X_i^Tw+c)) &+ 1)
 			\end{align*}
-			We split our sample into train and test sets using a 67/33 split to evaluate the performance of our classifier. We choose the penalty parameter through 5 fold cross validation on the training data. We test the following values for $C$: $[10^{-4},10^{-3},10^{-2},10^{-1},10^{0},10,10^{2},10^{3},10^4]$. The optimal penalty parameter ended up being $10^3$. We use the following variables to predict this quantity: Black, Offense Type, and Offense Seriousness. We represent all variables as binary variables.  Our classifier's performance can be seen in table \ref{classifier-performance}. The classifier outputs prediction probabilities, which is what we use for $\theta$. The classifier's prediction probability can be interpreted as the probability that the observation will have a value of 1 for the incarceration variable. The final classifier we use to predict $\theta$ for all observations in our dataset is trained on the full training set.
+			We split our sample into train and test sets using a 67/33 split to evaluate the performance of our classifier. We use the following variables to predict this quantity: Black, Offense Type, and Offense Seriousness. We represent all variables as binary variables.  Our classifier's performance can be seen in table \ref{classifier-performance}. The classifier outputs prediction probabilities, which is what we use for $\theta$. The classifier's prediction probability can be interpreted as the probability that the observation will have a value of 1 for the incarceration variable. The final classifier we use to predict $\theta$ for all observations in our dataset is trained on the full training set.
 
 	    \begin{table}[H]
 	      \centering
@@ -366,9 +366,9 @@
 	      \begin{tabular}{|l|l|}
 	      \hline
 	      \textbf{Metric} & \textbf{Score} \\ \hline
-	      AUC             & 0.96           \\ \hline
-	      F1              & 0.94           \\ \hline
-	      Accuracy        & 0.89           \\ \hline
+	      AUC             & 0.91           \\ \hline
+	      F1              & 0.96           \\ \hline
+	      Accuracy        & 0.93           \\ \hline
 	      \end{tabular}
 	    \end{table}
 
@@ -390,7 +390,7 @@
 		Then, we let $\mathscr{L} = \prod_{j=1}^J \mathscr{L}_j$ and $\argmax \mathscr{L}$ helps us choose the parameters of the distribution $F$. We set $F$ to be the Normal distribution.
 
   \subsection{Judge minimum and maximum plea - $l_j(\theta \tau),u_j(\theta \tau)$}\label{convex_hull-estimation}
-    \paragraph{Mathematical Description.} Recall that a key quantity for us is $\theta\tau$. Fix a judge, say judge $j$, and focus only on the pleas he sentenced. For each such case, we can calculate $\hat{\theta}\hat{\tau}$ using the estimates from the hurdle model described in Section (tbd). Suppose judge $j$ handled $I_j$ such cases, indexed by $i=1,\ldots,I_j$. Let $\mathcal{A}_j$ denote the convex hull of the origin $(0,0)$ and the points $(\hat{\theta}_i\hat{\tau}_i,s_i)$ for $i=1,\ldots,I_j$. Given the set $\mathcal{A}_j$, we impute $l_j(\cdot)$ and $u_j(\cdot)$ as functions of $\theta\tau$ as follows: For $\theta \in [0,\max_{i=1,...,I_j} \hat{\theta_i}\hat{\tau_i}]$
+    \paragraph{Mathematical Description.} Recall that a key quantity for us is $\theta\tau$. Fix a judge, say judge $j$, and focus only on the pleas he sentenced. For each such case, we can calculate $\hat{\theta}\hat{\tau}$ using the estimates from the hurdle model described in Section (tbd). Suppose judge $j$ handled $I_j$ such cases, indexed by $i=1,\ldots,I_j$. Let $\mathcal{A}_j$ denote the convex hull of the origin $(0,0)$, the point $(\max_i \hat{\theta}_i \hat{\tau}_i, \max_i s_i))$ and the points $(\hat{\theta}_i\hat{\tau}_i,s_i)$ for $i=1,\ldots,I_j$. Given the set $\mathcal{A}_j$, we impute $l_j(\cdot)$ and $u_j(\cdot)$ as functions of $\theta\tau$ as follows: For $\theta \in [0,\max_{i=1,...,I_j} \hat{\theta_i}\hat{\tau_i}]$
 		\begin{align*}
 			&l_j(\theta\tau) \,=\, \min\{y:(\theta\tau,y)\in\mathcal{A}_j \}, \\
 			&u_j(\theta\tau) \,=\, \max\{y:(\theta\tau,y)\in\mathcal{A}_j \}.
@@ -1083,73 +1083,33 @@
 
   	% Table \ref{Table_Schedule_Of_Unmapped_Judge_Names} (in Appendix \ref{Sec:Appendix:Supplementary_Figures}) depicts the list of counties visited by the fictitious judge (Juge 1) alongside the list of counties to which the unmapped judge names were assigned. Table \ref{Table_Schedule_Of_Unmapped_Judge_Names} shows that judge 1 is not a combination of the unmapped judge names.
 
-		\section{Judge Convex Hulls}
-		  \label{app-judge-convex-hulls}
-		  We created the convex hulls for each judge using the actual sentence and the expected minimum sentence as calculated by \cite{hester2017conditional}. The ones with the actual sentence are on the left column, and the ones with the expected minimum sentence are on the right column. We use the convex hulls created using the expected minimum sentence because they are more robust to outliers. For example, the convex hull for Judge 4 that uses the actual sentence is triangle shaped because a single point has outsized influence. Judge 4's convex hull using the expected minimum sentence, on the other hand, has a more normal shape.
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=0.9\textwidth]{../../output/figures/Exploration/judge_convex_hulls_0.png}
-			\end{figure}
+\section{Judge Convex Hulls}
+	\label{app-judge-convex-hulls}
+	We created the convex hulls for each judge using the sentence (truncated at 720 months) as done in \cite{hester2017conditional}.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{../../output/figures/Exploration/judge_convex_hulls_0.png}
+	\end{figure}
 
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=0.9\textwidth]{../../output/figures/Exploration/judge_convex_hulls_1.png}
-			\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{../../output/figures/Exploration/judge_convex_hulls_1.png}
+	\end{figure}
 
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=0.9\textwidth]{../../output/figures/Exploration/judge_convex_hulls_2.png}
-			\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{../../output/figures/Exploration/judge_convex_hulls_2.png}
+	\end{figure}
 
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=0.9\textwidth]{../../output/figures/Exploration/judge_convex_hulls_3.png}
-			\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{../../output/figures/Exploration/judge_convex_hulls_3.png}
+	\end{figure}
 
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=0.9\textwidth]{../../output/figures/Exploration/judge_convex_hulls_4.png}
-			\end{figure}
-
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=0.9\textwidth]{../../output/figures/Exploration/judge_convex_hulls_5.png}
-			\end{figure}
-
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=0.9\textwidth]{../../output/figures/Exploration/judge_convex_hulls_6.png}
-			\end{figure}
-
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=0.9\textwidth]{../../output/figures/Exploration/judge_convex_hulls_7.png}
-			\end{figure}
-
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=0.9\textwidth]{../../output/figures/Exploration/judge_convex_hulls_8.png}
-			\end{figure}
-
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=0.9\textwidth]{../../output/figures/Exploration/judge_convex_hulls_9.png}
-			\end{figure}
-
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=0.9\textwidth]{../../output/figures/Exploration/judge_convex_hulls_10.png}
-			\end{figure}
-
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=0.9\textwidth]{../../output/figures/Exploration/judge_convex_hulls_11.png}
-			\end{figure}
-
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=0.9\textwidth]{../../output/figures/Exploration/judge_convex_hulls_12.png}
-			\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{../../output/figures/Exploration/judge_convex_hulls_4.png}
+	\end{figure}
 
 \section{Service Rate Estimation: Other Attempts}
   In this section, we describe other methods we tried for estimating the service rates. A brief overview is provided below.

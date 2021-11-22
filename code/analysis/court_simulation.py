@@ -9,6 +9,9 @@ import statsmodels.formula.api as smf
 from sklearn.linear_model import LogisticRegression
 from scipy.spatial import ConvexHull
 import matplotlib.pyplot as plt
+import sys
+# sys.path.append('code/analysis')
+# import parameter_estimation as pe
 
 from dotenv import load_dotenv, find_dotenv
 dotenv_path = find_dotenv()
@@ -30,7 +33,8 @@ class Judge:
         self.past_pleas = judge_df.loc[judge_df[sentence].notna(),['ExpectedTrialSentence',sentence]].to_numpy()
         self.capacity = np.ones(50)*77
         self.current_week = 0
-        self.convex_hull = ConvexHull(np.concatenate((self.past_pleas,[[0,0]])))
+        max_point = self.past_pleas.max(axis=0)
+        self.convex_hull = ConvexHull(np.concatenate((self.past_pleas,[[0,0]],[max_point])))
 
     def get_min_plea_knn(self,expected_trial_sentence):
         prior_expected_sentences = self.past_pleas[:,0]
@@ -215,24 +219,19 @@ def make_calendar(judges,counties,time_periods):
     return(calendar)
 
 def plot_convex_hulls():
-    df = pd.read_csv(sentencing_data_file)
+    df = pe.make_covariate_matrix()
     df.loc[df.ExpMinSentence.isna(),'ExpMinSentence'] = 0
     judge_ids = ['Judge '+str(i) for i in range(1,51)]
     judges = {id:Judge(id,df.loc[df.JudgeID == id]) for id in judge_ids}
-    exp_min_judges = {id:Judge(id,df.loc[df.JudgeID == id],'ExpMinSentence') for id in judge_ids}
 
-    judge_groups = np.array_split(judge_ids,np.arange(4,len(judge_ids),4))
+    judge_groups = np.array_split(judge_ids,np.arange(10,len(judge_ids),10))
     i = 0
     for group in judge_groups:
-        fig, axes = plt.subplots(4,2,figsize=(10,10))
-        for judge, ax_row in zip(group,axes):
-            ax1, ax2 = ax_row
+        fig, axes = plt.subplots(5,2,figsize=(10,10))
+        for judge, ax in zip(group,axes.ravel()):
             normal_judge = judges[judge]
-            exp_min_judge = exp_min_judges[judge]
-            normal_judge.plot_convex_hull(ax1)
-            exp_min_judge.plot_convex_hull(ax2)
-            ax1.set_title('{}: Sentence'.format(judge))
-            ax2.set_title('Expected Minimum Sentence')
+            normal_judge.plot_convex_hull(ax)
+            ax.set_title(judge)
 
         plt.tight_layout()
         filename = PROJECT_DIR + '/output/figures/Exploration/judge_convex_hulls_{}.png'.format(i)

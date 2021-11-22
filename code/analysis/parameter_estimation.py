@@ -7,6 +7,7 @@ import patsy as pt
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 from sklearn.linear_model import LogisticRegressionCV
+from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import f1_score
@@ -38,7 +39,7 @@ def make_covariate_matrix():
     df = add_conviction_probability(df)
     df['ExpectedTrialSentence'] = df['ConvictionProb']*df['PredictedSentence']
     df = add_min_and_max_pleas(df)
-    df = estimate_defendant_cost_of_trial(df)
+    # df = estimate_defendant_cost_of_trial(df)
     return(df)
 
 def estimate_defendant_cost_of_trial(df):
@@ -92,6 +93,28 @@ def estimate_theta():
     f1 = f1_score(y_test,theta.predict(X_test))
     c = theta.C_
     print('f1 score: {} \n auc: {} \n C: {}'.format(f1,auc,c))
+
+    theta = LogisticRegression(penalty='none',class_weight='balanced').fit(X_train,y_train)
+    auc = roc_auc_score(y_test,theta.predict_proba(X_test)[:,1])
+    f1 = f1_score(y_test,theta.predict(X_test))
+    accuracy = (y_test == theta.predict(X_test)).mean()
+    print('f1 score: {} \n auc: {} \n Accuracy: {}'.format(f1,auc,accuracy))
+    return(theta)
+
+def estimate_plea_conviction_probability():
+    sdf = pd.read_csv(sentencing_data_file)
+    pred_cols = ['Incarceration','Black','OffenseType','OffenseSeriousness','JudgeID']
+    sdf = sdf.loc[sdf.Plea == 1,pred_cols].dropna()
+    formula = 'Incarceration ~ Black + OffenseType + C(OffenseSeriousness) + JudgeID'
+
+    y, X = pt.dmatrices(formula,sdf)
+    X_train, X_test, y_train, y_test = train_test_split(X,y.ravel(),test_size = 0.33,stratify=y.ravel())
+
+    theta = LogisticRegression(penalty='none',class_weight='balanced').fit(X_train,y_train)
+    auc = roc_auc_score(y_test,theta.predict_proba(X_test)[:,1])
+    f1 = f1_score(y_test,theta.predict(X_test))
+    accuracy = (y_test == theta.predict(X_test)).mean()
+    print('f1 score: {} \n auc: {} \n Accuracy: {}'.format(f1,auc,accuracy))
     return(theta)
 
 def add_predicted_sentence(df):
