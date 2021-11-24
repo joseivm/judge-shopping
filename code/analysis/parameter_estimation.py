@@ -43,7 +43,7 @@ def make_covariate_matrix():
     return(df)
 
 def estimate_defendant_cost_of_trial(df):
-    df.loc[(df.Sentence < df.MaxPlea) & (df.Plea == 1), 'DefendantType'] = 'SubMax'
+    df.loc[(df.Sentence < df.MaxPlea) & (df.Plea == 1) & (df.Sentence > 0), 'DefendantType'] = 'SubMax'
     df.loc[(df.DefendantType != 'SubMax') & (df.Plea == 1),'DefendantType'] = 'Max'
     df.loc[df.Trial == 1,'DefendantType'] = 'Trial'
 
@@ -54,23 +54,57 @@ def estimate_defendant_cost_of_trial(df):
     submax_data = df.loc[df.DefendantType == 'SubMax','ExtraSentence'].to_numpy()
     max_data = df.loc[df.DefendantType == 'Max','Leniency'].to_numpy()
     trial_data = df.loc[df.DefendantType == 'Trial','Harshness'].to_numpy()
+    harshness_data = df.Harshness.to_numpy()
+    num_trials = df.Trial.sum()
 
-    x_0 = [8,8]
-    res = minimize(NLL,x_0,args=(submax_data,max_data,trial_data,0.00001))
+    x_0 = [0.5,3,5,4,4] # [pi,mu1,sigma1,mu2,sigma2]
+    eq_con = {'type':'eq',
+            'fun':expected_trials,
+            'args':(harshness_data,num_trials)}
+    res = minimize(NLL,x_0,args=(submax_data,max_data,trial_data,0.00001),constraints=[eq_con],
+         bounds=[(0,1),(None,None),(None,None),(None,None),(None,None)])
 
 def NLL(x,submax_data,max_data,trial_data,eps=0.001):
-    mu = x[0]
-    sigma = x[1]
-    dist = norm(loc=mu,scale=sigma)
+    pi = x[0]
+    mu1 = x[1]
+    sigma1 = x[2]
+    dist1 = norm(loc=mu1,scale=sigma1)
 
-    submax_pdf = dist.pdf(submax_data) + eps
-    max_idf = 1-dist.cdf(max_data) + eps
-    trial_cdf = dist.cdf(trial_data) + eps
+    mu2 = x[3]
+    sigma2 = x[4]
+    dist2 = norm(loc=mu2,scale=sigma2)
+
+    submax_pdf = pi*dist1.pdf(submax_data) + (1-pi)*dist2.pdf(submax_data) + eps
+    max_idf = pi*(1-dist1.cdf(max_data)) + (1-pi)*(1-dist2.cdf(max_data)) + eps
+    trial_cdf = pi*dist1.cdf(trial_data) + (1-pi)*dist2.cdf(trial_data) + eps
 
     submax_ll = -np.log(submax_pdf).sum()
     max_ll = -np.log(max_idf).sum()
     trial_ll = -np.log(trial_cdf).sum()
     return(submax_ll+max_ll+trial_ll)
+
+def expected_trials(x,harshness_data,num_trials):
+    pi = x[0]
+    mu1 = x[1]
+    sigma1 = x[2]
+    dist1 = norm(loc=mu1,scale=sigma1)
+
+    mu2 = x[3]
+    sigma2 = x[4]
+    dist2 = norm(loc=mu2,scale=sigma2)
+    trial_probability = pi*dist1.cdf(harshness_data) + (1-pi)*dist2.cdf(harshness_data)
+    return trial_probability.sum()-num_trials
+
+def plot_cd_histograms(submax_data,max_data,trial_data):
+    fig, axes = plt.subplots(2,2,figsize=(10,10))
+    def_subset = ['I1','I2','K','All']
+    data = {'I1':submax_data,'I2':max_data,'K':trial_data,'All':np.concatenate((submax_data,max_data,trial_data),axis=None)}
+    for subset, ax in zip(def_subset,axes.ravel()):
+        ax.hist(data[subset],bins=30)
+        ax.set_title(subset)
+
+    plt.tight_layout()
+    plt.show()
 
 def add_conviction_probability(df):
     theta = estimate_theta()
