@@ -11,95 +11,97 @@
 \contentsline {subsection}{\numberline {3.1}Assumptions/Restrictions}{14}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Judge Weekly Availability}{14}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Conviction Probability and Expected Sentence Length - $\theta \tau $}{14}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Sample}{15}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Probability of Conviction at Trial - $\theta $}{15}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.1}Sample for $\theta \tau $}{15}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Estimating the probability of incarceration in a plea bargain - $\rho $}{15}{subsubsection.3.3.2}
+\contentsline {paragraph}{Sample}{15}{section*.15}
+\contentsline {subsubsection}{\numberline {3.3.3}Probability of Conviction at Trial - $\theta $}{16}{subsubsection.3.3.3}
 \contentsline {subsection}{\numberline {3.4}Defendant Cost of Trial - $c_d$}{16}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Judge minimum and maximum plea - $l_j(\theta \tau ),u_j(\theta \tau )$}{17}{subsection.3.5}
-\contentsline {paragraph}{Mathematical Description.}{17}{section*.16}
-\contentsline {subsubsection}{\numberline {3.5.1}Sample}{17}{subsubsection.3.5.1}
-\contentsline {subsection}{\numberline {3.6}County Arrival Rates - $\lambda _c$}{17}{subsection.3.6}
-\contentsline {subsection}{\numberline {3.7}Service Rates - $\mu _p,\mu _t$}{17}{subsection.3.7}
-\contentsline {subsubsection}{\numberline {3.7.1}Model}{17}{subsubsection.3.7.1}
-\contentsline {section}{\numberline {4}Simulation Plan}{19}{section.4}
-\contentsline {subsection}{\numberline {4.1}State Variables}{19}{subsection.4.1}
-\contentsline {paragraph}{Judges.}{19}{section*.18}
-\contentsline {paragraph}{Counties.}{20}{section*.19}
-\contentsline {subsection}{\numberline {4.2}Dynamics}{20}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}Judge Schedules}{20}{subsubsection.4.2.1}
-\contentsline {paragraph}{Trials}{20}{section*.20}
-\contentsline {paragraph}{Assigning Judges to Counties}{20}{section*.21}
-\contentsline {subsubsection}{\numberline {4.2.2}Iteration/Simulation Step/Action}{21}{subsubsection.4.2.2}
-\contentsline {paragraph}{Defendant Arrivals.}{21}{section*.22}
-\contentsline {paragraph}{Defendant Choice.}{21}{section*.23}
-\contentsline {subsubsection}{\numberline {4.2.3}Calibration}{22}{subsubsection.4.2.3}
-\contentsline {section}{\numberline {5}Next Steps}{22}{section.5}
-\contentsline {section}{\numberline {A}Sentencing Data Set}{22}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}Variables}{23}{subsection.A.1}
-\contentsline {subsubsection}{\numberline {A.1.1}CSV File}{24}{subsubsection.A.1.1}
-\contentsline {subsubsection}{\numberline {A.1.2}Stata File}{25}{subsubsection.A.1.2}
-\contentsline {subsubsection}{\numberline {A.1.3}Expected Minimum Sentence}{26}{subsubsection.A.1.3}
-\contentsline {subsection}{\numberline {A.2}Missing Data}{27}{subsection.A.2}
-\contentsline {subsubsection}{\numberline {A.2.1}Variables with missing data}{27}{subsubsection.A.2.1}
-\contentsline {subsubsection}{\numberline {A.2.2}Imputation of Missing Dates}{27}{subsubsection.A.2.2}
-\contentsline {section}{\numberline {B}Master Calendar Data}{29}{appendix.B}
-\contentsline {subsection}{\numberline {B.1}Data Cleaning}{29}{subsection.B.1}
-\contentsline {subsection}{\numberline {B.2}Descriptive Statistics}{32}{subsection.B.2}
-\contentsline {subsection}{\numberline {B.3}Creation of Figure \ref {Figure_Assignment_Type_Sentencing_Event_Histogram}}{34}{subsection.B.3}
-\contentsline {section}{\numberline {C}Discrepancies between the Sentencing Data and the Master Calendar Data}{34}{appendix.C}
-\contentsline {subsection}{\numberline {C.1}No Assignments Case}{35}{subsection.C.1}
-\contentsline {subsection}{\numberline {C.2}Single Assignment Case}{35}{subsection.C.2}
-\contentsline {subsubsection}{\numberline {C.2.1}Single assignment, no dates}{35}{subsubsection.C.2.1}
-\contentsline {subsubsection}{\numberline {C.2.2}Single assignment with dates}{37}{subsubsection.C.2.2}
-\contentsline {subsection}{\numberline {C.3}Multiple Assignments Case}{37}{subsection.C.3}
-\contentsline {subsubsection}{\numberline {C.3.1}Multiple assignments, no dates}{37}{subsubsection.C.3.1}
-\contentsline {subsubsection}{\numberline {C.3.2}Multiple assignments, some dates}{38}{subsubsection.C.3.2}
-\contentsline {subsubsection}{\numberline {C.3.3}Multiple assignments, all dates}{40}{subsubsection.C.3.3}
-\contentsline {section}{\numberline {D}Merging the Sentencing Data and the Calendar Data}{42}{appendix.D}
-\contentsline {subsection}{\numberline {D.1}Alternative mapping methods}{42}{subsection.D.1}
-\contentsline {paragraph}{Perfect Componentwise Match.}{42}{section*.38}
-\contentsline {paragraph}{Overlapping Componentwise Match.}{43}{section*.39}
-\contentsline {paragraph}{Algorithm.}{43}{section*.40}
-\contentsline {paragraph}{Step 0.}{43}{section*.41}
-\contentsline {paragraph}{Step 1.}{43}{section*.42}
-\contentsline {paragraph}{Step $n>1$.}{43}{section*.43}
-\contentsline {subsection}{\numberline {D.2}Evaluating the mapping}{45}{subsection.D.2}
-\contentsline {subsection}{\numberline {D.3}Limitations}{45}{subsection.D.3}
-\contentsline {section}{\numberline {E}Judge Convex Hulls}{46}{appendix.E}
-\contentsline {section}{\numberline {F}Service Rate Estimation: Other Attempts}{51}{appendix.F}
-\contentsline {subsection}{\numberline {F.1}Judge Fixed Effects}{52}{subsection.F.1}
-\contentsline {paragraph}{Overview of Results.}{52}{section*.51}
-\contentsline {paragraph}{Motivation.}{52}{section*.52}
-\contentsline {subsection}{\numberline {F.2}Nonlinear Model}{53}{subsection.F.2}
-\contentsline {paragraph}{Overview of Results.}{53}{section*.54}
-\contentsline {paragraph}{Description.}{53}{section*.55}
-\contentsline {subsubsection}{\numberline {F.2.1}Results}{54}{subsubsection.F.2.1}
-\contentsline {paragraph}{County Model}{54}{section*.56}
-\contentsline {paragraph}{Judge Model}{56}{section*.58}
-\contentsline {subsection}{\numberline {F.3}Iterative Algorithms}{58}{subsection.F.3}
-\contentsline {paragraph}{Overview of Results.}{58}{section*.60}
-\contentsline {paragraph}{Description.}{58}{section*.62}
-\contentsline {subsubsection}{\numberline {F.3.1}Iterative Idleness Estimation Using Expected Utilization}{58}{subsubsection.F.3.1}
-\contentsline {paragraph}{Judge Model}{62}{table.caption.67}
-\contentsline {paragraph}{County Model}{64}{table.caption.72}
-\contentsline {paragraph}{Judge-County Model}{66}{table.caption.76}
-\contentsline {subsubsection}{\numberline {F.3.2}Iterative Idleness Estimation Taking Mins}{66}{subsubsection.F.3.2}
-\contentsline {subsection}{\numberline {F.4}Judge Model}{67}{subsection.F.4}
-\contentsline {subsection}{\numberline {F.5}County Model}{68}{subsection.F.5}
-\contentsline {subsection}{\numberline {F.6}Judge-County Model}{70}{subsection.F.6}
-\contentsline {subsubsection}{\numberline {F.6.1}Iterative Idleness Estimation Taking All-time Mins}{71}{subsubsection.F.6.1}
-\contentsline {subsection}{\numberline {F.7}Judge Model}{71}{subsection.F.7}
-\contentsline {subsection}{\numberline {F.8}County Model}{73}{subsection.F.8}
-\contentsline {subsection}{\numberline {F.9}Judge-County Model}{74}{subsection.F.9}
-\contentsline {subsection}{\numberline {F.10}Ad-hoc Algorithm}{75}{subsection.F.10}
-\contentsline {paragraph}{Overview of Results.}{75}{section*.95}
-\contentsline {subsubsection}{\numberline {F.10.1}Samples}{76}{subsubsection.F.10.1}
-\contentsline {paragraph}{Plea MLE Sample}{76}{section*.96}
-\contentsline {paragraph}{Plea Arrival Rate Sample}{76}{section*.98}
-\contentsline {paragraph}{Trial Rate Sample}{76}{section*.99}
-\contentsline {subsubsection}{\numberline {F.10.2}Estimation of $\mu _t$}{77}{subsubsection.F.10.2}
-\contentsline {subsubsection}{\numberline {F.10.3}Ad-hoc Algorithm for Joint Estimation of $\mu _t,\mu _p$}{78}{subsubsection.F.10.3}
-\contentsline {subsection}{\numberline {F.11}EM Algorithm}{79}{subsection.F.11}
-\contentsline {paragraph}{Overview of Results.}{79}{section*.102}
-\contentsline {paragraph}{EM Algorithm Sample}{79}{section*.103}
-\contentsline {subsubsection}{\numberline {F.11.1}EM Algorithm under Normal Distribution Assumption}{80}{subsubsection.F.11.1}
-\contentsline {subsection}{\numberline {F.12}County Fixed Effects}{81}{subsection.F.12}
+\contentsline {subsection}{\numberline {3.5}Judge minimum and maximum plea - $l_j(\theta \tau ),u_j(\theta \tau )$}{18}{subsection.3.5}
+\contentsline {paragraph}{Mathematical Description.}{18}{section*.18}
+\contentsline {subsubsection}{\numberline {3.5.1}Sample}{18}{subsubsection.3.5.1}
+\contentsline {subsection}{\numberline {3.6}County Arrival Rates - $\lambda _c$}{18}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.7}Service Rates - $\mu _p,\mu _t$}{19}{subsection.3.7}
+\contentsline {subsubsection}{\numberline {3.7.1}Model}{19}{subsubsection.3.7.1}
+\contentsline {section}{\numberline {4}Simulation Plan}{20}{section.4}
+\contentsline {subsection}{\numberline {4.1}State Variables}{21}{subsection.4.1}
+\contentsline {paragraph}{Judges.}{21}{section*.20}
+\contentsline {paragraph}{Counties.}{21}{section*.21}
+\contentsline {subsection}{\numberline {4.2}Dynamics}{21}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Judge Schedules}{21}{subsubsection.4.2.1}
+\contentsline {paragraph}{Trials}{21}{section*.22}
+\contentsline {paragraph}{Assigning Judges to Counties}{22}{section*.23}
+\contentsline {subsubsection}{\numberline {4.2.2}Iteration/Simulation Step/Action}{22}{subsubsection.4.2.2}
+\contentsline {paragraph}{Defendant Arrivals.}{22}{section*.24}
+\contentsline {paragraph}{Defendant Choice.}{22}{section*.25}
+\contentsline {subsubsection}{\numberline {4.2.3}Calibration}{23}{subsubsection.4.2.3}
+\contentsline {section}{\numberline {5}Next Steps}{23}{section.5}
+\contentsline {section}{\numberline {A}Sentencing Data Set}{24}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Variables}{24}{subsection.A.1}
+\contentsline {subsubsection}{\numberline {A.1.1}CSV File}{25}{subsubsection.A.1.1}
+\contentsline {subsubsection}{\numberline {A.1.2}Stata File}{26}{subsubsection.A.1.2}
+\contentsline {subsubsection}{\numberline {A.1.3}Expected Minimum Sentence}{27}{subsubsection.A.1.3}
+\contentsline {subsection}{\numberline {A.2}Missing Data}{28}{subsection.A.2}
+\contentsline {subsubsection}{\numberline {A.2.1}Variables with missing data}{28}{subsubsection.A.2.1}
+\contentsline {subsubsection}{\numberline {A.2.2}Imputation of Missing Dates}{28}{subsubsection.A.2.2}
+\contentsline {section}{\numberline {B}Master Calendar Data}{30}{appendix.B}
+\contentsline {subsection}{\numberline {B.1}Data Cleaning}{30}{subsection.B.1}
+\contentsline {subsection}{\numberline {B.2}Descriptive Statistics}{33}{subsection.B.2}
+\contentsline {subsection}{\numberline {B.3}Creation of Figure \ref {Figure_Assignment_Type_Sentencing_Event_Histogram}}{35}{subsection.B.3}
+\contentsline {section}{\numberline {C}Discrepancies between the Sentencing Data and the Master Calendar Data}{35}{appendix.C}
+\contentsline {subsection}{\numberline {C.1}No Assignments Case}{36}{subsection.C.1}
+\contentsline {subsection}{\numberline {C.2}Single Assignment Case}{36}{subsection.C.2}
+\contentsline {subsubsection}{\numberline {C.2.1}Single assignment, no dates}{36}{subsubsection.C.2.1}
+\contentsline {subsubsection}{\numberline {C.2.2}Single assignment with dates}{38}{subsubsection.C.2.2}
+\contentsline {subsection}{\numberline {C.3}Multiple Assignments Case}{38}{subsection.C.3}
+\contentsline {subsubsection}{\numberline {C.3.1}Multiple assignments, no dates}{38}{subsubsection.C.3.1}
+\contentsline {subsubsection}{\numberline {C.3.2}Multiple assignments, some dates}{39}{subsubsection.C.3.2}
+\contentsline {subsubsection}{\numberline {C.3.3}Multiple assignments, all dates}{41}{subsubsection.C.3.3}
+\contentsline {section}{\numberline {D}Merging the Sentencing Data and the Calendar Data}{43}{appendix.D}
+\contentsline {subsection}{\numberline {D.1}Alternative mapping methods}{43}{subsection.D.1}
+\contentsline {paragraph}{Perfect Componentwise Match.}{43}{section*.40}
+\contentsline {paragraph}{Overlapping Componentwise Match.}{44}{section*.41}
+\contentsline {paragraph}{Algorithm.}{44}{section*.42}
+\contentsline {paragraph}{Step 0.}{44}{section*.43}
+\contentsline {paragraph}{Step 1.}{44}{section*.44}
+\contentsline {paragraph}{Step $n>1$.}{44}{section*.45}
+\contentsline {subsection}{\numberline {D.2}Evaluating the mapping}{46}{subsection.D.2}
+\contentsline {subsection}{\numberline {D.3}Limitations}{46}{subsection.D.3}
+\contentsline {section}{\numberline {E}Judge Convex Hulls}{47}{appendix.E}
+\contentsline {section}{\numberline {F}Service Rate Estimation: Other Attempts}{52}{appendix.F}
+\contentsline {subsection}{\numberline {F.1}Judge Fixed Effects}{53}{subsection.F.1}
+\contentsline {paragraph}{Overview of Results.}{53}{section*.53}
+\contentsline {paragraph}{Motivation.}{53}{section*.54}
+\contentsline {subsection}{\numberline {F.2}Nonlinear Model}{54}{subsection.F.2}
+\contentsline {paragraph}{Overview of Results.}{54}{section*.56}
+\contentsline {paragraph}{Description.}{54}{section*.57}
+\contentsline {subsubsection}{\numberline {F.2.1}Results}{55}{subsubsection.F.2.1}
+\contentsline {paragraph}{County Model}{55}{section*.58}
+\contentsline {paragraph}{Judge Model}{57}{section*.60}
+\contentsline {subsection}{\numberline {F.3}Iterative Algorithms}{59}{subsection.F.3}
+\contentsline {paragraph}{Overview of Results.}{59}{section*.62}
+\contentsline {paragraph}{Description.}{59}{section*.64}
+\contentsline {subsubsection}{\numberline {F.3.1}Iterative Idleness Estimation Using Expected Utilization}{59}{subsubsection.F.3.1}
+\contentsline {paragraph}{Judge Model}{63}{table.caption.69}
+\contentsline {paragraph}{County Model}{65}{table.caption.74}
+\contentsline {paragraph}{Judge-County Model}{67}{table.caption.78}
+\contentsline {subsubsection}{\numberline {F.3.2}Iterative Idleness Estimation Taking Mins}{67}{subsubsection.F.3.2}
+\contentsline {subsection}{\numberline {F.4}Judge Model}{68}{subsection.F.4}
+\contentsline {subsection}{\numberline {F.5}County Model}{69}{subsection.F.5}
+\contentsline {subsection}{\numberline {F.6}Judge-County Model}{71}{subsection.F.6}
+\contentsline {subsubsection}{\numberline {F.6.1}Iterative Idleness Estimation Taking All-time Mins}{72}{subsubsection.F.6.1}
+\contentsline {subsection}{\numberline {F.7}Judge Model}{72}{subsection.F.7}
+\contentsline {subsection}{\numberline {F.8}County Model}{74}{subsection.F.8}
+\contentsline {subsection}{\numberline {F.9}Judge-County Model}{75}{subsection.F.9}
+\contentsline {subsection}{\numberline {F.10}Ad-hoc Algorithm}{76}{subsection.F.10}
+\contentsline {paragraph}{Overview of Results.}{76}{section*.97}
+\contentsline {subsubsection}{\numberline {F.10.1}Samples}{77}{subsubsection.F.10.1}
+\contentsline {paragraph}{Plea MLE Sample}{77}{section*.98}
+\contentsline {paragraph}{Plea Arrival Rate Sample}{77}{section*.100}
+\contentsline {paragraph}{Trial Rate Sample}{77}{section*.101}
+\contentsline {subsubsection}{\numberline {F.10.2}Estimation of $\mu _t$}{78}{subsubsection.F.10.2}
+\contentsline {subsubsection}{\numberline {F.10.3}Ad-hoc Algorithm for Joint Estimation of $\mu _t,\mu _p$}{79}{subsubsection.F.10.3}
+\contentsline {subsection}{\numberline {F.11}EM Algorithm}{80}{subsection.F.11}
+\contentsline {paragraph}{Overview of Results.}{80}{section*.104}
+\contentsline {paragraph}{EM Algorithm Sample}{80}{section*.105}
+\contentsline {subsubsection}{\numberline {F.11.1}EM Algorithm under Normal Distribution Assumption}{81}{subsubsection.F.11.1}
+\contentsline {subsection}{\numberline {F.12}County Fixed Effects}{82}{subsection.F.12}

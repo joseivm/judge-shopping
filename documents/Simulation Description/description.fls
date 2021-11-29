@@ -2,8 +2,8 @@ PWD /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description
 INPUT /usr/local/texlive/2018/texmf.cnf
 INPUT /usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT description.tex
-OUTPUT description.log
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/description.tex
+OUTPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/description.log
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/size11.clo
@@ -392,9 +392,9 @@ INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xypdf-cu.tex
 INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xypdf-fr.tex
 INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xypdf-li.tex
 INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xypdf-ro.tex
-INPUT description.aux
-INPUT description.aux
-OUTPUT description.aux
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/description.aux
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/description.aux
+OUTPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/description.aux
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 INPUT /usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -409,14 +409,14 @@ INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
-INPUT description.out
-INPUT description.out
-INPUT description.out
-INPUT description.out
-OUTPUT description.pdf
-INPUT ./description.out
-INPUT ./description.out
-OUTPUT description.out
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/description.out
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/description.out
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/description.out
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/description.out
+OUTPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/description.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/description.out
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/description.out
+OUTPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/description.out
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
@@ -447,11 +447,11 @@ INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecrm1728.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecrm1440.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm
-INPUT description.toc
-INPUT description.toc
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/description.toc
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/description.toc
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecbx1095.tfm
 INPUT /usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-OUTPUT description.toc
+OUTPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/description.toc
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecrm0900.tfm
@@ -468,34 +468,34 @@ INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecti0900.tfm
-INPUT Figures/County_Histogram.pdf
-INPUT ./Figures/County_Histogram.pdf
-INPUT ./Figures/County_Histogram.pdf
-INPUT Figures/Judge_Histogram.pdf
-INPUT ./Figures/Judge_Histogram.pdf
-INPUT ./Figures/Judge_Histogram.pdf
-INPUT Figures/Judge_Trial_Percentage_Histogram.pdf
-INPUT ./Figures/Judge_Trial_Percentage_Histogram.pdf
-INPUT ./Figures/Judge_Trial_Percentage_Histogram.pdf
-INPUT Tables/sentencing_variables.tex
-INPUT Tables/sentencing_variables.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/County_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/County_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/County_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Judge_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Judge_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Judge_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Judge_Trial_Percentage_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Judge_Trial_Percentage_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Judge_Trial_Percentage_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Tables/sentencing_variables.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Tables/sentencing_variables.tex
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecti1095.tfm
-INPUT Figures/Fig4.png
-INPUT ./Figures/Fig4.png
-INPUT ./Figures/Fig4.png
-INPUT Figures/Type_of_Assignment_Histogram.pdf
-INPUT ./Figures/Type_of_Assignment_Histogram.pdf
-INPUT ./Figures/Type_of_Assignment_Histogram.pdf
-INPUT Tables/assignment_meanings.tex
-INPUT Tables/assignment_meanings.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Fig4.png
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Fig4.png
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Fig4.png
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Type_of_Assignment_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Type_of_Assignment_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Type_of_Assignment_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Tables/assignment_meanings.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Tables/assignment_meanings.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/../../output/figures/Description/sentencing_work_type_hist.png
 INPUT ../../output/figures/Description/sentencing_work_type_hist.png
 INPUT ../../output/figures/Description/sentencing_work_type_hist.png
-INPUT ../../output/figures/Description/sentencing_work_type_hist.png
-INPUT Tables/assignments.tex
-INPUT Tables/assignments.tex
-INPUT Tables/calendar_example.tex
-INPUT Tables/calendar_example.tex
-INPUT ../../output/figures/Description/assignment_type_hist.png
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Tables/assignments.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Tables/assignments.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Tables/calendar_example.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Tables/calendar_example.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/../../output/figures/Description/assignment_type_hist.png
 INPUT ../../output/figures/Description/assignment_type_hist.png
 INPUT ../../output/figures/Description/assignment_type_hist.png
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm
@@ -506,52 +506,54 @@ INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
-INPUT description.bbl
-INPUT description.bbl
-INPUT Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf
-INPUT ./Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf
-INPUT ./Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf
-INPUT Figures/Judge_Schedule_GS_Percentage_Histogram.pdf
-INPUT ./Figures/Judge_Schedule_GS_Percentage_Histogram.pdf
-INPUT ./Figures/Judge_Schedule_GS_Percentage_Histogram.pdf
-INPUT Figures/Judge_Schedule_CP_Percentage_Histogram.pdf
-INPUT ./Figures/Judge_Schedule_CP_Percentage_Histogram.pdf
-INPUT ./Figures/Judge_Schedule_CP_Percentage_Histogram.pdf
-INPUT Figures/Judge_Schedule_GS_CP_Percentage_Histogram.pdf
-INPUT ./Figures/Judge_Schedule_GS_CP_Percentage_Histogram.pdf
-INPUT ./Figures/Judge_Schedule_GS_CP_Percentage_Histogram.pdf
-INPUT Tables/Missing.tex
-INPUT Tables/Missing.tex
-INPUT Tables/Single.tex
-INPUT Tables/Single.tex
-INPUT Tables/SingleWD.tex
-INPUT Tables/SingleWD.tex
-INPUT Tables/MultipleND.tex
-INPUT Tables/MultipleND.tex
-INPUT Tables/MultipleSD.tex
-INPUT Tables/MultipleSD.tex
-INPUT Tables/MultipleAD.tex
-INPUT Tables/MultipleAD.tex
-INPUT Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf
-INPUT ./Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf
-INPUT ./Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/../../output/tables/Description/rho_performance.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/../../output/tables/Description/rho_performance.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/description.bbl
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/description.bbl
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Missing_Date_Histogram_of_Potential_Week_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Judge_Schedule_GS_Percentage_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Judge_Schedule_GS_Percentage_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Judge_Schedule_GS_Percentage_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Judge_Schedule_CP_Percentage_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Judge_Schedule_CP_Percentage_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Judge_Schedule_CP_Percentage_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Judge_Schedule_GS_CP_Percentage_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Judge_Schedule_GS_CP_Percentage_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Judge_Schedule_GS_CP_Percentage_Histogram.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Tables/Missing.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Tables/Missing.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Tables/Single.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Tables/Single.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Tables/SingleWD.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Tables/SingleWD.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Tables/MultipleND.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Tables/MultipleND.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Tables/MultipleSD.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Tables/MultipleSD.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Tables/MultipleAD.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Tables/MultipleAD.tex
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/First_Vs_Second_Vs_Third_Best_Match_Perfect.pdf
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm
-INPUT Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf
-INPUT ./Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf
-INPUT ./Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/First_Vs_Second_Vs_Third_Best_Match_Overlapping.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/../../output/figures/Exploration/judge_convex_hulls_0.png
 INPUT ../../output/figures/Exploration/judge_convex_hulls_0.png
 INPUT ../../output/figures/Exploration/judge_convex_hulls_0.png
-INPUT ../../output/figures/Exploration/judge_convex_hulls_0.png
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/../../output/figures/Exploration/judge_convex_hulls_1.png
 INPUT ../../output/figures/Exploration/judge_convex_hulls_1.png
 INPUT ../../output/figures/Exploration/judge_convex_hulls_1.png
-INPUT ../../output/figures/Exploration/judge_convex_hulls_1.png
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/../../output/figures/Exploration/judge_convex_hulls_2.png
 INPUT ../../output/figures/Exploration/judge_convex_hulls_2.png
 INPUT ../../output/figures/Exploration/judge_convex_hulls_2.png
-INPUT ../../output/figures/Exploration/judge_convex_hulls_2.png
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/../../output/figures/Exploration/judge_convex_hulls_3.png
 INPUT ../../output/figures/Exploration/judge_convex_hulls_3.png
 INPUT ../../output/figures/Exploration/judge_convex_hulls_3.png
-INPUT ../../output/figures/Exploration/judge_convex_hulls_3.png
-INPUT ../../output/figures/Exploration/judge_convex_hulls_4.png
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/../../output/figures/Exploration/judge_convex_hulls_4.png
 INPUT ../../output/figures/Exploration/judge_convex_hulls_4.png
 INPUT ../../output/figures/Exploration/judge_convex_hulls_4.png
 INPUT ../../output/tables/Exploration/nlreg_rand_County.tex
@@ -569,7 +571,7 @@ INPUT ../../output/tables/Exploration/regression_summary.tex
 INPUT ../../output/tables/Exploration/regression_summary.tex
 INPUT ../../output/tables/Exploration/utilization_model_JudgeID.tex
 INPUT ../../output/tables/Exploration/utilization_model_JudgeID.tex
-INPUT ../../output/figures/Exploration/fit_utilization_JudgeID.png
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/../../output/figures/Exploration/fit_utilization_JudgeID.png
 INPUT ../../output/figures/Exploration/fit_utilization_JudgeID.png
 INPUT ../../output/figures/Exploration/fit_utilization_JudgeID.png
 INPUT ../../output/tables/Exploration/utilization_model_iters_JudgeID.tex
@@ -578,7 +580,7 @@ INPUT ../../output/tables/Exploration/utilization_model_convergence_JudgeID.tex
 INPUT ../../output/tables/Exploration/utilization_model_convergence_JudgeID.tex
 INPUT ../../output/tables/Exploration/utilization_model_County.tex
 INPUT ../../output/tables/Exploration/utilization_model_County.tex
-INPUT ../../output/figures/Exploration/fit_utilization_County.png
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/../../output/figures/Exploration/fit_utilization_County.png
 INPUT ../../output/figures/Exploration/fit_utilization_County.png
 INPUT ../../output/figures/Exploration/fit_utilization_County.png
 INPUT ../../output/tables/Exploration/utilization_model_iters_County.tex
@@ -587,57 +589,57 @@ INPUT ../../output/tables/Exploration/utilization_model_convergence_County.tex
 INPUT ../../output/tables/Exploration/utilization_model_convergence_County.tex
 INPUT ../../output/tables/Exploration/utilization_model_JudgeIDCounty.tex
 INPUT ../../output/tables/Exploration/utilization_model_JudgeIDCounty.tex
-INPUT ../../output/figures/Exploration/fit_utilization_JudgeIDCounty.png
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/../../output/figures/Exploration/fit_utilization_JudgeIDCounty.png
 INPUT ../../output/figures/Exploration/fit_utilization_JudgeIDCounty.png
 INPUT ../../output/figures/Exploration/fit_utilization_JudgeIDCounty.png
 INPUT ../../output/tables/Exploration/utilization_model_iters_JudgeIDCounty.tex
 INPUT ../../output/tables/Exploration/utilization_model_iters_JudgeIDCounty.tex
 INPUT ../../output/tables/Exploration/utilization_model_JudgeID.tex
 INPUT ../../output/tables/Exploration/utilization_model_JudgeID.tex
-INPUT ../../output/figures/Exploration/fit_utilization_JudgeID.png
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/../../output/figures/Exploration/fit_utilization_JudgeID.png
 INPUT ../../output/figures/Exploration/fit_utilization_JudgeID.png
 INPUT ../../output/tables/Exploration/utilization_model_iters_JudgeID.tex
 INPUT ../../output/tables/Exploration/utilization_model_iters_JudgeID.tex
 INPUT ../../output/tables/Exploration/min_model_County.tex
 INPUT ../../output/tables/Exploration/min_model_County.tex
-INPUT ../../output/figures/Exploration/fit_min_County.png
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/../../output/figures/Exploration/fit_min_County.png
 INPUT ../../output/figures/Exploration/fit_min_County.png
 INPUT ../../output/figures/Exploration/fit_min_County.png
 INPUT ../../output/tables/Exploration/min_model_iters_County.tex
 INPUT ../../output/tables/Exploration/min_model_iters_County.tex
 INPUT ../../output/tables/Exploration/min_model_JudgeIDCounty.tex
 INPUT ../../output/tables/Exploration/min_model_JudgeIDCounty.tex
-INPUT ../../output/figures/Exploration/fit_min_JudgeIDCounty.png
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/../../output/figures/Exploration/fit_min_JudgeIDCounty.png
 INPUT ../../output/figures/Exploration/fit_min_JudgeIDCounty.png
 INPUT ../../output/figures/Exploration/fit_min_JudgeIDCounty.png
 INPUT ../../output/tables/Exploration/min_model_iters_JudgeIDCounty.tex
 INPUT ../../output/tables/Exploration/min_model_iters_JudgeIDCounty.tex
 INPUT ../../output/tables/Exploration/all_time_min_model_JudgeID.tex
 INPUT ../../output/tables/Exploration/all_time_min_model_JudgeID.tex
-INPUT ../../output/figures/Exploration/fit_min_JudgeID.png
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/../../output/figures/Exploration/fit_min_JudgeID.png
 INPUT ../../output/figures/Exploration/fit_min_JudgeID.png
 INPUT ../../output/figures/Exploration/fit_min_JudgeID.png
 INPUT ../../output/tables/Exploration/min_model_iters_JudgeID.tex
 INPUT ../../output/tables/Exploration/min_model_iters_JudgeID.tex
 INPUT ../../output/tables/Exploration/all_time_min_model_County.tex
 INPUT ../../output/tables/Exploration/all_time_min_model_County.tex
-INPUT ../../output/figures/Exploration/fit_min_County.png
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/../../output/figures/Exploration/fit_min_County.png
 INPUT ../../output/figures/Exploration/fit_min_County.png
 INPUT ../../output/tables/Exploration/min_model_iters_County.tex
 INPUT ../../output/tables/Exploration/min_model_iters_County.tex
 INPUT ../../output/tables/Exploration/all_time_min_model_JudgeIDCounty.tex
 INPUT ../../output/tables/Exploration/all_time_min_model_JudgeIDCounty.tex
-INPUT ../../output/figures/Exploration/fit_min_JudgeIDCounty.png
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/../../output/figures/Exploration/fit_min_JudgeIDCounty.png
 INPUT ../../output/figures/Exploration/fit_min_JudgeIDCounty.png
 INPUT ../../output/tables/Exploration/min_model_iters_JudgeIDCounty.tex
 INPUT ../../output/tables/Exploration/min_model_iters_JudgeIDCounty.tex
-INPUT Figures/Judge_Capacity_Vs_Number_of_Trials.pdf
-INPUT ./Figures/Judge_Capacity_Vs_Number_of_Trials.pdf
-INPUT ./Figures/Judge_Capacity_Vs_Number_of_Trials.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Judge_Capacity_Vs_Number_of_Trials.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Judge_Capacity_Vs_Number_of_Trials.pdf
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/Figures/Judge_Capacity_Vs_Number_of_Trials.pdf
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecti1000.tfm
-INPUT description.aux
-INPUT ./description.out
-INPUT ./description.out
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/description.aux
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/description.out
+INPUT /Users/joseivelarde/Projects/judge-shopping/documents/Simulation Description/description.out
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb

@@ -1,9 +1,9 @@
 import pandas as pd
 import numpy as np
 import os
-import datetime
-import re
+import random
 import patsy as pt
+import matplotlib.pyplot as plt
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 from sklearn.linear_model import LogisticRegressionCV
@@ -31,6 +31,7 @@ sentencing_data_file = PROJECT_DIR + '/data/processed/augmented_sentencing_data.
 
 # Output files
 processed_sentencing_data_file = PROJECT_DIR + '/data/processed/sentencing_data.csv'
+table_dir = PROJECT_DIR + '/output/tables/Description/'
 
 def make_covariate_matrix():
     df = pd.read_csv(sentencing_data_file)
@@ -56,13 +57,30 @@ def estimate_defendant_cost_of_trial(df):
     trial_data = df.loc[df.DefendantType == 'Trial','Harshness'].to_numpy()
     harshness_data = df.Harshness.to_numpy()
     num_trials = df.Trial.sum()
-
-    x_0 = [0.5,3,5,4,4] # [pi,mu1,sigma1,mu2,sigma2]
+    # plot_cd_histograms(submax_data,max_data,trial_data)
+    
+    x_0 = [0.5,2,2,8,8] # [pi,mu1,sigma1,mu2,sigma2]
     eq_con = {'type':'eq',
             'fun':expected_trials,
             'args':(harshness_data,num_trials)}
-    res = minimize(NLL,x_0,args=(submax_data,max_data,trial_data,0.00001),constraints=[eq_con],
-         bounds=[(0,1),(None,None),(None,None),(None,None),(None,None)])
+    results = []
+    for power in [6,5,4,3]:
+        for i in range(2):
+            eps = 10**(-power)
+            x_0 = np.random.randint(2,25,size=4)
+            x_0 = np.concatenate(([random.uniform(0,1)],x_0),axis=None)
+            x_opt = minimize(NLL,x_0,args=(submax_data,max_data,trial_data,eps),constraints=[eq_con],
+                bounds=[(0,1),(None,None),(None,None),(None,None),(None,None)])
+
+            pi0, mu10, sigma10, mu20, sigma20 = x_0
+            pi, mu1, sigma1, mu2, sigma2 = x_opt.x
+            results.append({'eps':eps,'pi_0':pi0,'mu1_0':mu10, 'sigma1_0':sigma10,'mu2_0':mu20,'sigma2_0':sigma20,
+            'Success':x_opt.success,'pi':pi,'mu1':mu1,'sigma1':sigma1,'mu2':mu2,'sigma2':sigma2})
+    
+    results = pd.DataFrame(results)
+    filename = table_dir + 'cd_estimation_results.csv'
+    results.to_csv(filename,index=False,float_format="%.2f")
+    
 
 def NLL(x,submax_data,max_data,trial_data,eps=0.001):
     pi = x[0]
@@ -148,7 +166,10 @@ def estimate_plea_conviction_probability():
     auc = roc_auc_score(y_test,theta.predict_proba(X_test)[:,1])
     f1 = f1_score(y_test,theta.predict(X_test))
     accuracy = (y_test == theta.predict(X_test)).mean()
-    print('f1 score: {} \n auc: {} \n Accuracy: {}'.format(f1,auc,accuracy))
+    results = pd.DataFrame({'Metric':['F1','AUC','Accuracy'],'Score':[f1,auc,accuracy]})
+    print(results)
+    filename = table_dir + 'rho_performance.tex'
+    results.to_latex(filename,index=False,float_format="{:,.2f}")
     return(theta)
 
 def add_predicted_sentence(df):

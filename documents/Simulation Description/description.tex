@@ -338,7 +338,7 @@
 
 		Using the restrictions/assumptions described above, we created an auxiliary dataset with each judge's availability for criminal cases for each week of the year.
 
-	\subsection{Conviction Probability and Expected Sentence Length - $\theta \tau$}
+  \subsection{Conviction Probability and Expected Sentence Length - $\theta \tau$}
 	  \label{theta-tau-estimation}
 
 		Following \cite{hester2017conditional}, we estimate $\theta,\tau$ using a hurdle model. In a hurdle model, the probability of a random variable, $y$, is modeled using two separate models: one model is for modeling probability that $y=0$ and a separate model is used for modeling $f(y|y>0)$. Our hurdle model estimates $P(y=0)$ using a logit model. As in \cite{hester2017conditional}, we use a negative binomial model to estimate $f(y|y>0,x)$. The full hurdle model is then:
@@ -348,8 +348,26 @@
 		\end{align*}
 		where $f_{NB}(y|x)$ is the conditional probability of $y$ given $x$ under the negative binomial model. Here, $x$ is a vector of covariates for the defendant including offense type, offense seriousness, and race. We use the exact same model as \cite{hester2017conditional}. For a given defendant, $x_i$,  $\theta_i =\text{Pr}(y_i=0|x_i)$ and $ \text{Pr}(\tau|x_i) = \theta_i f_{NB}(\tau|x_i)$.
 
-		\subsubsection{Sample}
+		\subsubsection{Sample for $\theta \tau$}
 			We only use the observations in the data that went to trial. There are only 258 observations in the data meeting this criteria. Of these 258 observations, 247 resulted in a conviction.
+
+	  \subsubsection{Estimating the probability of incarceration in a plea bargain - $\rho$}
+		We estimate this using a logit model. In the logit model, the optimization problem is as follows:
+		\begin{align*}
+			\min_{w,c} \sum_{i=1}^n \log(\exp(-y_i(X_i^Tw+c)) &+ 1)
+		\end{align*}
+
+		\paragraph{Sample} We use the observations in the data that correspond to plea bargains. There are 17,258 such observations in the data. Of these observations, 6,322 resulted in incarceration.
+
+		We split our sample into train and test sets using a 67/33 split to evaluate the performance of our classifier. We use the following variables to predict this quantity: Black, Offense Type, Offense Seriousness, and presiding judge (i.e. the judge that heard the case). We represent all variables as binary variables.  Our classifier's performance can be seen in table \ref{plea-classifier-performance}. The classifier outputs prediction probabilities, which is what we use for $\rho$. The classifier's prediction probability can be interpreted as the probability that the observation will have a value of 1 for the incarceration variable. The final classifier we use to predict $\rho$ for all observations in our dataset is trained on the full training set.
+
+		\begin{table}[H]
+			\centering
+			% \small
+			\caption{Plea Incarceration Classifier Performance}
+			\label{plea-classifier-performance}
+			\input{../../output/tables/Description/rho_performance.tex}
+		  \end{table}
 
 	  \subsubsection{Probability of Conviction at Trial - $\theta$}
 	    \label{theta-estimation}
@@ -376,18 +394,33 @@
     \label{c_d-estimation}
     Recall that $i=1,\ldots,I_j$ are the plea bargains judge $j$ oversaw, and that their sentence is given by $s_i=\min(\theta_i\tau_i+c_d(i),u_i)$, where $u_i = u_j(\theta_i\tau_i)$ and $u_j(\cdot)$ is defined above. We define the sets $\mathcal{I}_j^1$ and $\mathcal{I}_j^2$ as follows:
 			\begin{align*}
-				\mathcal{I}_j^1 &\,=\, \{i=1,\ldots,I_j: s < u_i\}, \\
+				\mathcal{I}_j^1 &\,=\, \{i=1,\ldots,I_j: 0 < s < u_i\}, \\
 				\mathcal{I}_j^2 &\,=\, \{1,\ldots,I_j\} \,\backslash\, \mathcal{I}_j^1 \,=\, \{i=1,\ldots,I_j:s_i=u_i\}.
 			\end{align*}
 			Then, we can infer $c_d(i) = s_i - \hat{\theta}_i\hat{\tau}_i$ for $i\in\mathcal{I}_j^1$. On the other hand, we can only infer that $c_d(i) \geq u_i - \hat{\theta}_i\hat{\tau}_i$ for $i\in\mathcal{I}^2_j$.
 
 		Next, we let $K_j$ denote the number of trials judge $j$ oversaw, which are indexed by $k \in \mathcal{K}_j = \{1,\ldots,K_j\}$. Recall that a case goes to trial if $\theta_i\tau_i+c_d(i)<l_i$. Thus, for $i=1,\ldots,K_j$, we infer that $c_d(i) < l_i-\hat{\theta}_i\hat{\tau}_i$.
 
-		In summary, although we can impute $c_d(i)$ exactly for $i\in\mathcal{I}_j^1$, we can only infer that $c_d(i)$ falls into an interval for $i\in\mathcal{I}^2_j\cup \mathcal{K}_j$. However, assuming a parametric distribution for $c_d$, e.g., $c_d \sim N(\mu,\sigma^2)$, we can estimate its parameters using maximum likelihood. To this end, we let $F$ and $f$ denote the cdf and pdf of the distribution of $c_d$, and define the likelihood function $\mathscr{L}_j$ as follows:
+		In summary, although we can impute $c_d(i)$ exactly for $i\in\mathcal{I}_j^1$, we can only infer that $c_d(i)$ falls into an interval for $i\in\mathcal{I}^2_j\cup \mathcal{K}_j$. However, assuming a parametric distribution for $c_d$, e.g., $c_d \sim N(\mu,\sigma^2)$, we can estimate its parameters using maximum likelihood. To this end, we let $F$ and $f$ denote the cdf and pdf of the distribution of $c_d$. We assume that $F$ is a mixture of two Gaussians, that is, $c_d(i) \sim F$ whose density $f$ is:
+		\begin{align*}
+			f(x) &= \pi \mathcal{N}(x;\mu_1,\sigma_1^2) + (1-\pi)\mathcal{N}(x;\mu_2,\sigma_2^2)
+		\end{align*}
+		where $0 \leq \pi \leq 1$ and $\mathcal{N}(\cdot;\mu,\sigma^2)$ is the normal pdf.
+
+		Then the estimation problem is to maximize log likelihood subject to the constraint that the expected fraction of cases going to trial equals to the fraction of ('serious') cases that end up in trial in the data. Note that the expected fraction of cases going to trial is given by:
+		\begin{align*}
+			\frac{1}{|\mathcal{I}^1| + |\mathcal{I}^2| + |\mathcal{K}|} \sum_{i \in \mathcal{I}^1 \cup \mathcal{I}^2 \cup \mathcal{K}} P(c_d(i) < l_i - \hat{\theta_i} \hat{\tau_i}) &= \frac{1}{|\mathcal{I}^1| + |\mathcal{I}^2| + |\mathcal{K}|} \sum_{i \in \mathcal{I}^1 \cup \mathcal{I}^2 \cup \mathcal{K}} F(l_i - \hat{\theta_i} \hat{\tau_i})
+		\end{align*}
+		 The likelihood function $\mathscr{L}_j$ is defined as follows:
 		\begin{align*}
 			\mathscr{L}_j \,=\, \prod_{i\in\mathcal{I}_j^1} f(s_i-\hat{\theta}_i\hat{\tau}_i) \prod_{i\in\mathcal{I}_j^2} \bar{F}(u_i-\hat{\theta}_i\hat{\tau}_i) \prod_{i\in \mathcal{K}_j} F(l_i-\hat{\theta}_i\hat{\tau}_i).
 		\end{align*}
-		Then, we let $\mathscr{L} = \prod_{j=1}^J \mathscr{L}_j$ and $\argmax \mathscr{L}$ helps us choose the parameters of the distribution $F$. We set $F$ to be the Normal distribution.
+		Combining these and letting $\mathscr{L} = \prod_{j=1}^J \mathscr{L}_j$, the estimation problem is as follows:
+		\begin{align*}
+			\max_{\mu_1,\mu_1,\sigma_1,\sigma2,\pi \in [0,1]} & \log \mathcal{L}\\
+			\text{s.t.           }\\
+			\frac{1}{|\mathcal{I}^1| + |\mathcal{I}^2| + |\mathcal{K}|} \sum_{i \in \mathcal{I}^1 \cup \mathcal{I}^2 \cup \mathcal{K}} P(c_d(i) < l_i - \hat{\theta_i} \hat{\tau_i}) &= \frac{1}{|\mathcal{I}^1| + |\mathcal{I}^2| + |\mathcal{K}|} \sum_{i \in \mathcal{I}^1 \cup \mathcal{I}^2 \cup \mathcal{K}} F(l_i - \hat{\theta_i} \hat{\tau_i})
+		\end{align*}
 
   \subsection{Judge minimum and maximum plea - $l_j(\theta \tau),u_j(\theta \tau)$}\label{convex_hull-estimation}
     \paragraph{Mathematical Description.} Recall that a key quantity for us is $\theta\tau$. Fix a judge, say judge $j$, and focus only on the pleas he sentenced. For each such case, we can calculate $\hat{\theta}\hat{\tau}$ using the estimates from the hurdle model described in Section (tbd). Suppose judge $j$ handled $I_j$ such cases, indexed by $i=1,\ldots,I_j$. Let $\mathcal{A}_j$ denote the convex hull of the origin $(0,0)$, the point $(\max_i \hat{\theta}_i \hat{\tau}_i, \max_i s_i))$ and the points $(\hat{\theta}_i\hat{\tau}_i,s_i)$ for $i=1,\ldots,I_j$. Given the set $\mathcal{A}_j$, we impute $l_j(\cdot)$ and $u_j(\cdot)$ as functions of $\theta\tau$ as follows: For $\theta \in [0,\max_{i=1,...,I_j} \hat{\theta_i}\hat{\tau_i}]$
@@ -1074,7 +1107,7 @@
 
   \subsection{Evaluating the mapping}
   	Next, we assess the performance of the (derived) mapping (from the judge numbers to the judge names). Under this mapping, we observe that only in $4.1\%$ of the sentencing events with a date, the judge was sentencing in a county to which he was not assigned. These $4.1\%$ problematic sentencing events belong to one of two categories: About $0.9\%$ belong to judge-week combinations in which the judge did not have any county assignments on the master calendar. The remaining $3.2\%$ belong to judge-week combinations in which the judge had county assignments on the master calendar. However, he was not assigned to the county in which the sentencing event occurred. %Figure \ref{Figure_Mapping_Problematic_Sentencing_Events_Judge_Distribution} depicts the number of problematic sentencing events for each judge number. Figure \ref{Figure_Mapping_Problematic_Sentencing_Events_Week_Distribution} (in Appendix \ref{Sec:Appendix:Supplementary_Figures}) depicts the number of problematic sentencing events for each week. Figures \ref{Figure_Mapping_Problematic_Sentencing_Events_Judge_Distribution}-\ref{Figure_Mapping_Problematic_Sentencing_Events_Week_Distribution} show that the problematic sentencing events are not concentrated in just some judges or some weeks. %
-		These problematic sentencing events are discussed in detail in Section \ref{Appendix:Discrepancies}}.
+		These problematic sentencing events are discussed in detail in Section \ref{Appendix:Discrepancies}.
 
   \subsection{Limitations}
   	Assumption \ref{Assumption_Mapping_Only_County_Assignment_Matter} ignores the "circuit" assignments on the master calendar. Each circuit contains multiple counties. Instead, our matching algorithm works with the most granular geographic unit of interest, the county. As mentioned above, 3.2\% of the sentencing events with dates are at odds with the master calendar under the alphabetical mapping depicted in Table \ref{Table_Mapping_Judge_Numbers_To_Judge_Names}. Including "circuit" assignments and matching them on the basis of circuit courts as opposed to counties addresses only 12\% of the problematic sentencing events (corresponding to $0.4\%$ of the total number of sentencing events). As such, we stick with the choice of county for the matching purposes because it is more granular, and likely more accurate. Other assignments we ignore should be harmless because judges would not be involved in sentencing events or trials in those cases; see Figure  \ref{Figure_Assignment_Histogram}.
