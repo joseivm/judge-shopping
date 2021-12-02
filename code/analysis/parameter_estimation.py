@@ -74,8 +74,8 @@ def estimate_defendant_cost_of_trial(df):
 
             pi0, mu10, sigma10, mu20, sigma20 = x_0
             pi, mu1, sigma1, mu2, sigma2 = x_opt.x
-            results.append({'eps':eps,'pi_0':pi0,'mu1_0':mu10, 'sigma1_0':sigma10,'mu2_0':mu20,'sigma2_0':sigma20,
-            'Success':x_opt.success,'pi':pi,'mu1':mu1,'sigma1':sigma1,'mu2':mu2,'sigma2':sigma2})
+            results.append({'eps':'10^(-{})'.format(power),'pi_0':pi0,'mu1_0':mu10, 'sigma1_0':sigma10,'mu2_0':mu20,'sigma2_0':sigma20,
+            'Success':x_opt.success,'pi':pi,'mu1':mu1,'sigma1':sigma1,'mu2':mu2,'sigma2':sigma2,'Objective':x_opt.fun})
     
     results = pd.DataFrame(results)
     filename = table_dir + 'cd_estimation_results.csv'

@@ -374,8 +374,8 @@ def get_home_county(cdf):
     home = counts.sort_values(['JudgeID','N'],ascending=False).groupby('JudgeID').head(1)
 
 def main():
-    # df = create_calendar_data(daily=False)
-    # df.to_csv(processed_weekly_schedule_file,index=False)
+    df = create_calendar_data(daily=False)
+    df.to_csv(processed_weekly_schedule_file,index=False)
     ddf = create_calendar_data(daily=True)
     ddf.to_csv(processed_daily_schedule_file,index=False)
 
