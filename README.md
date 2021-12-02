@@ -8,11 +8,10 @@
   - [Data Cleaning](#data-cleaning)
   - [Parameter Estimation](#parameter-estimation)
   - [Simulation](#simulation)
-- [Matching Procedure](#matching-procedure)
 
 ## <a name="overview"/> Overview
 
-This repository contains the code for the Judge Shopping porject. The Judge Shopping project
+This repository contains the code for the Judge Shopping project. The Judge Shopping project
 aims to study the judicial system of South Carolina. This judicial system is particularly of interest because in it, judges rotate across counties. This allows defendants to have some choice with regards to the judge that hears their case. Previous studies have found this system to be more equitable than systems with stricter sentencing guidlines. The purpose of this project is to study how changes to the system would affect sentencing outcomes.  This involves first specifying a model of the system, estimating the relevant parameters, and then simulating the system. 
 
 The main functions of this repository are:
@@ -93,6 +92,6 @@ This section describes the different files used for parameter estimation. At the
 2. `tau_estimation.R`: this file estimates $\tau$, the expected sentence length if convicted. It outputs a file called `augmented_sentencing_data.csv` which contains estimates of $\tau$ for each defendant. 
 3. `parameter_estimation.py`: this file estimates $\theta$, the probability of conviction at trial, and $u_j(),l_j()$ the maximum/minimum sentence functions for each judge. This file depends on the file `court_simulation.py`, which has the code for creating the convex hull for every judge. 
 
-### <a name="matching"/> Simluation
+### <a name="simulation"/> Simluation
 
 The code for the simulation is in the file `court_simulation.py`. 
